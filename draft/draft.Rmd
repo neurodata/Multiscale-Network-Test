@@ -1,0 +1,394 @@
+---
+title: "Testing Network Dependence via Multiscale metrics and Multiscale Distance Correlation (MNT?)" 
+author: "Youjin Lee"
+header-includes:
+   - \usepackage{amsmath}
+output: html_document
+---
+
+
+## Abstract 
+
+Network dependence over network space, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear, latently dependent properties. Unfortunately, without knowledge on specific neighborhood structures, no statistic has been suggested to test network dependence further on globally linear dependence. In this study we propose a multiscale dependence test statistic, which borrows the idea of diffusion maps and Multiscale Generalized Correlation (MGC). Through simplest network simulation and theory, we have found that the newly proposed test is a consistent test and achieves higher power than other available ones without any parametric assumptions. 
+
+## Outlines
+- [Introduction](# Introduction)
+- [Multiscale Distance Metrics](# diffusion)
+- [Multiscale Generalized Correlation](# MGC)
+- [Simulation](# Simulation)
+- [Dicussion](# Discussion)
+- [Appendix](# Appendix)
+- [Reference](# Reference)
+
+<hr />
+# Introduction
+<a name=" Introduction"/>
+
+#### * Introduce interests in association between network and nodal attributes and the related literatures.
+
+  Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of psychology, information theory, biology, statistics, economics, etc. The relationship between the way a pair of nodes are connected and the values of their attribute is a common interest in network analysis. There has been a lot of efforts to represent a network as a function of nodal attributes or model an outcome of nodal attribute variables through their underlying network structures. However, it is very obscure to determine which one should be put as a dependent variable. And most of all network often does not have a natural structure. This is why there exist a plethora of works on latent structure of network, which also depends on the characteristics of each node ( [Hoff et al. (2002)](#Hoff) , [Austin, Linkletter, and Wu (2013)](#Austin) ). In a latent space model, local independence between network and nodal attributes, conditional on a latent variable is often assumed ( [Lazarsfeld & Henry (1968)](#local)), which makes easier to interpret the dependence mechanism. In real network data, however, it is almost impossible to estimate such latent variable without any knowledge on true network generative model and also we cannot guarantee that direction or amount of association of network and nodal attributes keeps consistent acorss latent variables, i.e. we cannot guanrantee linear dependence. 
+  
+
+  
+#### * Introduce notations we are going to use and introduce a common network model of nodal attributes.
+
+  Throughout this paper, assume that we are given an unweighted and undirected, connected network $\boldsymbol{G}$ comprised of $n$ nodes, for a fixed $n \in \mathbb{N}$. Suppose that our obervation of $\boldsymbol{G}$ is one random sample from true, population distribution of $\mathcal{G}$. Even though we assume that $\boldsymbol{G}$ is an undirected and unweighted network but we are able to extend all of the theory to directed and even weighted network. An adjacency matrix of a given network, denoted by $\boldsymbol{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize this relational data. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\boldsymbol{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\boldsymbol{G}$ and $\boldsymbol{X}$ and testing whether their distributions are independent or not is the key focus in our study. 
+  
+  Distribution of graph $\boldsymbol{G}$ is often formalized through modeling adjacent relations $\{a_{ij} : i,j = 1,... , n \}$ between each pair of nodes in $\boldsymbol{G}$. Rather than regressing $a_{ij}$ on observed attribute values $x_{i}$ or $x_{j}$, [Fosdick & Hoff](#Fosdick) proposed a latent variable model to estimate node-specific network factor which provides a one-to-one correspondence between $\boldsymbol{G}$ and $\boldsymbol{X}$ as well as reduces a dimension of network data. In their paper, Fosdick and Hoff also used these factors to test independence between $\boldsymbol{G}$ and $\boldsymbol{X}$. However, the performance of this test would not be good enough when the relational data $\boldsymbol{A}$ does not have linear relationship to network factors or has a latent mixture model. Since we never know the structure of networks and the way they are related to other variables, there always exist a limitation on testing based on modelling.    
+  
+
+# Multiscale Distance Metrics
+<a name=" diffusion"/>
+
+#### * Represent a network structure as a (multivariate) variable
+  
+  There have been a lot of efforts to represent the network in terms of a summarizing network factor( [Fosdick & Hoff (2015)](#Fosdick) ) or some meaningful coefficients, e.g. centrality or connectivity. However, there has been no vertex-wise variable which provides a configuration of vertex over network space withiout losing any information. [Coifman & Lafon](#Coifman) demonstrated that diffusion maps provide a meaningful multiscale geometries of data while keeping information on every local relation. Diffusion maps is constructed via Markov chain on graph. Here an adjacency matrix $\boldsymbol{A}$ acts as a kernel, representing a similarity between each node in $\boldsymbol{G}$. The adjacency matrix also takes into account every single relationships between nodes, rather than estimating or summarizing network structures.
+  
+  
+  Let $(\boldsymbol{G}, \mathcal{A}, \mu)$ be a measure space. Throughout all of the arguments, assume that we have a countable vertex set with size of $n \in \mathbb{N}$. The vertex set of network $\boldsymbol{G}$ is the data set of vertices and edges and $\mathcal{A}$ is a set of a pair of nodes $\{(i,j) : v_{i}, v_{i} \in V(\boldsymbol{G}) \}$. A measure of $\mu$ which represents a distribution of the vertices on $\boldsymbol{G}$, is equivalent to an adjacency matrix $\boldsymbol{A}$. A transition matrix $P = \{P[i,j] : i,j=1,...,n \}$ in markov chain on $\boldsymbol{G}$, which represents the probability that flow or signal goes from Node $i$ to Node $j$, is defined as below:
+  
+$$P[i,j] = A_{ij} \big/ \sum\limits_{j=1} A_{ij}$$
+
+A transition matrix $P$ is a new kernel of a Markov chain of which element $P[i,j]$ represents the probability of travel from Node $i$ to Node $j$ in one time step. On the other hand, corresponding probability in $t$ steps is given by the $t$ th ($t \in \mathbb{N}$) power of $P$. How to derive diffusion distance over a directed network or weighted network is provided in [Tang & Trosset (2010)](#Tang). Other than a transition matrix, we need a stationary probability $\boldsymbol{\pi} = \{\pi(1), \pi(2), ... , \pi(n) \}$ of which $\pi(i)$ represents the probability that the chain stays in Node $i$ regardless of the starting state. In our setting, $\pi(i)$ is proportional to the degree of Node $i$, i.e. $\pi(i) = \sum\limits_{j=1}^{n} A_{ij} \big/ \sum\limits_{i=1}^{n}\sum\limits_{j=1}^{n} A_{ij}$ ($i=1,2,..., n$).   
+
+For each time point $t \in \mathbb{N}$, we can define a diffusion distance $C_{t}$  given by :
+
+$$C^2_{t}[i,j] = \sum\limits_{w =1}^{n} \big( P^{t}[i,w] - P^{t}[j,w]  \big)^{2} \frac{1}{\pi(w)} = \sum\limits_{w=1}^{n} \left(  \frac{P^{t}[i,w]}{\sqrt{\pi(w)}} - \frac{P^{t}[j,w]}{\sqrt{\pi(w)}}   \right)^2 = \parallel P^{t}[i, \cdot] - P^{t}[i, \cdot]  \parallel^2_{L^{2}(\boldsymbol{G}, d\mu / \pi)  }$$
+
+As diffusion time $t$ increases, distance matrix $C_{t}$ is more likely to take into account distance between two nodes far away in terms of the length of the path. Key idea behind such diffusion distance at fixed time $t$ is that it measures the chance that we are likely to stay between Node $i$ and Node $j$ at $t$ step on our journey of all other possible paths. The higher the chance is, the smaller the distance between two is. This distance well reflects the connectivity between two nodes. Connectivity between two nodes is higher if we need to eliminate more number of vertices to disconnect these two. Unlike an adjacency relation or geodesic distance, a connectivity between two nodes depends on their relationship to other vertices in a given network so it is more robust to the unexpected edges. Often a set of nodes with higher connectivity have a higher propensity of having edges within this set and they are likely to form a cluster. Thus diffusion distance is very robust measure and also very sensitive to the clustering structure of network. 
+
+
+#### * Spectral properties of diffusion maps
+
+  Diffusion distance of $\boldsymbol{G}$ defined as above can be represented via a spectral decomposition of its transition matrix $P$. That is, we can derive diffusion distance using its eigenvectors and eigenvalues. The spectral analysis on diffusion distance or diffusion maps have been studied for its usefullness for nonlinear dimensionality reduction ([Coifman & Lafon (2006)](#Coifman), [Lafon & Lee (2006)](#Lafon) ). 
+  
+  Recall that diffusion distance at time $t$, $C_{t}$ is a functional $L^2$ distance, weighted by 1/$\pi$. If we transform the way to represent $C_{t}[i,j]$ slightly, we are able to obtain an orthonomal basis of $L^{2}(\mathbf{G}, d\mu / \pi)$ via eigenvalues and eigenvectors. 
+  
+ Keeping mind that a symmetry of an adjacency matrix $A$ does not guarantee a symmetric of $P$, define a symmetric kernel $\boldsymbol{Q} = \boldsymbol{\Pi^{1/2} P \Pi^{-1/2}},$ where $\mathbf{\Pi}$ is a $n \times n$ diagonal matrix of which $i$th diagonal element is $\pi(i)$. Under compactness of $P$, $\boldsymbol{Q}$ has a discrete set of real nonzero eiganvalues $\{ \lambda_{r} \}_{r = \{1,2,...,q \}}$ and a set of their corresponding orthonormal eivenvectors $\{ \psi_{r} \}_{r = \{1,2,..., q \} },$ i.e. $Q[i,j] = \sum\limits_{r=1}^{q} \lambda_{r} \psi_{r}(i) \psi_{r}(j)$ ($1 \leq q \leq n$).  
+ Since $P[i,j] = \sqrt{\pi(j) / \pi(i) } Q[i,j]$,
+ $P[i,j]= \sum\limits_{r=1}^{q} \lambda_{r} \{ \psi_{r}(i) / \sqrt{\pi(i)}  \} \{ \psi_{r}(j) \sqrt{\pi(j)} \} := \sum\limits_{r=1}^{q} \lambda_{r} \phi_{r}(i) \{ \psi_{r}(j) \sqrt{\pi(j)} \}$, where $\phi_{r}(i) := \psi_{r}(i) / \sqrt{\pi(i)}$. Then from $\sum\limits_{r=1}^{q} \psi_{r}(j) \sqrt{\pi(j)} = 1$ for all $j \in \{1,2,...,n\}$, we can represent the diffusion distance as: 
+
+$$C^2_{t}[i,j] = \sum\limits_{r=1}^{n} \lambda^{2t}_{r} \big( \phi_{r} (i) - \phi_{r}(j)   \big)^2     = \parallel P^{t}[i, \cdot] - P^{t}[i, \cdot]  \parallel^2_{L^{2}(\boldsymbol{G}, d\mu / \pi)  }$$
+
+That is,
+
+$$C_{t}[i,j] = \parallel \boldsymbol{U}_{t}(i) - \boldsymbol{U}_{t}(j) \parallel$$
+
+, where 
+
+$$\boldsymbol{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) \\ \lambda^{t}_{2} \phi_{2} (i)  \\ \vdots \\ \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}.$$
+
+
+The advantages from such representation is that it is now possible to represent given network $\boldsymbol{G}$ as a system of $n$ coordinates called diffusion coordinate, of which metric well reflects how corresponding vertices are connected each other at each diffusion time point. A set of diffusion maps for each vertex provides an invertible set of $n$-coordinate vectors having such properties:
+
+
+<a name = "Lemma1"/>
+<b> <center> [Lemma 1] </center>
+<center> Exchangeability and iid of $A$ </center>
+Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon, i.e. an exchangeable random graph from an infinite graph. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are i.i.d.. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \}$, $i \in \{ 1,2,... , n \}$ are i.i.d..  
+</b>
+
+<center> <b> Proof of Lemma1 </b> </center>
+
+$P \big(  A_{ij} = a_{ij} \big) = \int P \big( A_{ij} | w_{i}, w_{j} \big) f(W_{i} = w_{i}) f(W_{j} = w_{j}) dw_{i} dw_{j} = \int_{0}^{1} \int_{0}^{1} g( w_{i},  w_{j})^{a_{ij}} \big( 1- g( w_{i},  w_{j}) \big)^{1-a_{ij}} dw_{i} dw_{j}$
+
+
+<a name = "Lemma2"/>
+<b> <center> [Lemma 2] </center>
+<center> Exchangeability and iid of $A$ </center>
+ Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphex, i.e. an exchangeable random graph from an infinite graph. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are i.i.d..
+</b>
+
+<center> <b> Proof of Lemma2 </b>
+
+$P \big(  A_{ij} = a_{ij} \big) = \int P \big( A_{ij} | \vartheta_{i}, \vartheta_{j} \big) f( \vartheta_{i} = \vartheta_{i}) f( \vartheta_{j} = \vartheta_{j}) d \vartheta_{i} d \vartheta_{j} = \int_{0}^{c} \int_{0}^{c} g( \vartheta_{i},  \vartheta_{j})^{a_{ij}} \big( 1- g( \vartheta_{i},  \vartheta_{j}) \big)^{1-a_{ij}}  dPoisson_{\lambda = 1}(\vartheta_{i})  dPoisson_{\lambda = 1}(\vartheta_{j}) d \vartheta_{i} d \vartheta_{j}$
+
+
+
+
+<a name = "Lemma3"/>
+<b> <center> Lemma 3 </center>
+<center> Exchangeability of $P$ </center>
+<center> Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon, i.e. an exchangeable random graph from an infinite graph. Then its transition probability $P_{ij}$ is also jointly exchangeable. Thus diffusion maps at fixed time $t$ are also exchangeable. 
+</center></b>
+
+<center> <b> Proof of Lemma3 </b>
+
+
+We have shown that for fixed time $t$, diffusion distance is defined as an Euclidean distance of diffusion maps. Diffusion maps is represented as follows :
+
+$$\boldsymbol{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \cdots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}.$$
+
+Recall that $\Phi = \Pi^{-1/2}\Psi$ and $\mathbf{Q}=\mathbf{\Psi}\mathbf{\Lambda}\mathbf{\Psi}^{T} = \mathbf{\Pi}^{1/2} \mathbf{P} \mathbf{\Pi}^{-1/2}$. 
+Thus, $\mathbf{P \Pi^{-1/2} \Psi = \Pi^{-1/2} \Psi \Lambda}$. 
+
+
+Then for any $r \in \{1,2, ... , q \}$ th row $(q \leq n)$, we can see that $P \phi_{r} = \lambda_{r} \phi_{r}$, where $\phi_{r} = \begin{pmatrix}  \frac{\psi_{r}(1)}{\sqrt{\pi(1)}} & \frac{\psi_{r}(2)}{\sqrt{\pi(2)}} & \cdots & \frac{\psi_{r}(n)}{\sqrt{\pi(n)}} \end{pmatrix}$.
+
+Therefore for exchangeability (or i.i.d.) of $\mathbf{U}_{t}$, it suffices to show exchangeability (or i.i.d.) of $\mathbf{P}$.
+
+Assume joint exchangeability of $\mathbf{G}$, i.e. $(A_{ij}) \stackrel{d}{=} \big( A_{\sigma(i) \sigma(j)} \big)$. 
+
+Then $\frac{A_{ij}}{\sum\limits_{ij} A_{ij}} = \frac{A_{ij}}{ 1 + \sum\limits_{l \neq j} A_{il}}$ since $A_{ij}$ is binary. Moreover, $A_{ij}$ and $(1 + \sum\limits_{l \neq j} A_{il})$ are independent, and $A_{\sigma(i) \sigma(j)}$ and $(1 + \sum\limits_{l \neq j} A_{\sigma(i) \sigma(l)})$ are independent.
+
+Then the following joint exchangeability of transition probability holds:
+
+$$\big( P_{ij} \big) = \left(  \frac{A_{ij}}{1 - A_{ij} + \sum\limits_{j=1}^{n} A_{ij} } \right)  \stackrel{d}{=} \left( \frac{A_{\sigma(i) \sigma(j)} }{1 - A_{\sigma(i) \sigma(j)} + \sum\limits_{\sigma(j) = 1}^{n} A_{\sigma(i) \sigma(j)} } \right) = \big( P_{\sigma(i) \sigma(j)} \big)$$
+
+
+Thus, transition probability is exchangeable. 
+This results exchangeable eigenfunctions $\{ \Phi(1), \Phi(2), , ... , \Phi(n) \}$ where $\Phi(i) := \begin{pmatrix} \phi_{1}(i) & \phi_{2}(i) & \cdots & \phi_{q}(i) \end{pmatrix}^{T}$. Thus diffusion maps at fixed $t$, $\mathbf{U}_{t} = \begin{pmatrix} \Lambda^{t} \Phi(1)  & \Lambda^{t} \Phi(2) & \cdots & \Lambda^{t} \Phi(n)  \end{pmatrix}$ are exchangeable. 
+
+
+
+
+Proof is provided in [Appendix](# Appendix).
+
+Invertibility of an adjacency matrix, a critical assumption in proving independence between observed diffusion maps, cannot be acheived in an unconnected network due to zero column (row). Necessary and sufficient condition for an invertible adjacency matrix is given in [Sciriha (2007)](#singular). 
+A more straightforward condition for invertibility is provided for random regular graphs [Cook (2015)](#regular), but in reality it is hard to satisfy a uniform degree conditions. 
+
+
+In perspective of dimensional reduction, we are able to introduce diffusion distance through a low dimension $q < n$ of diffusion maps. We can pre-specify the accuracy level $\epsilon > 0$ so that we only include the subset of eigenvalues and eigenvectors to construct diffusion maps. For instance, for a given $0 < \epsilon < 1$ and $t \in \mathbb{N}$, the family of diffusion maps $\{ \boldsymbol{U}^{*}_{t} \}$ can be the following:
+
+$$\boldsymbol{U}^{*}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) \\ \lambda^{t}_{2} \phi_{2} (i)  \\ \vdots \\ \lambda^{t}_{q_{t}(\epsilon)} \phi_{q_{t}(\epsilon)} (i)     \end{pmatrix} \in \mathbb{R}^{q_{t}(\epsilon)}.$$
+where $q_{t}(\epsilon) = \mbox{max}\{ r \in \mathbb{N} : |\lambda_{r}|^t > \epsilon |\lambda_{1}|^{t}  \}$.
+
+In terms of dimension, usage of $\boldsymbol{U}^{*}_{t}$ instead of $\boldsymbol{U}_{t}$ is efficient at the expense of some accuracy. However, more fundamental problem concerning such dimensional reduction is that $n$ columns are always dependent when $n > q_{t}(\epsilon)$. Thus we cannot earn independent vectors assigned to each vertex in $\boldsymbol{G}$ in this way. 
+
+
+
+# Multiscale Generalized Correlation
+<a name=" MGC"/>
+
+
+#### * Introduce a Distance Correlation and Multiscale version. 
+
+
+  Relationship between network and nodal attributes often exhibits local or nonlinear properties. Moreover, dimension of spectrum of network increases as a sample size increases. Unfortunately, widely used correlation measures often fail to characterize non-linear associations or multivariate associations so they fail to provide a consistent test statistic against all types of dependencies. [Szekely et al. (2007)](#Szekely) extended pairwise constructed generalized correlation coefficient and developed a novel statistics called distance correlation (dCor) as a measure for all types of dependence between two random vectors in any dimension. Let us start from a general setting that we are given $n \in \mathbb{N}$ pairs of random samples $\{ (x_{i}, y_{i}) : x_{i} \in \mathbb{R}^{p}, y_{i} \in \mathbb{R}^{q}, i = 1,...,n \}$. Define $C_{ij} = \parallel x_{i} - x_{j} \parallel$ and $D_{ij} = \parallel y_{i} - y_{j} \parallel$ for $i,j=1,...,n$. 
+  
+  Distance correlation (dCorr) is defined via distance covariance (dCov) $\mathcal{V}^2_{n}$ of $\boldsymbol{X}$ and $\boldsymbol{Y}$, which is the following: 
+  
+  $$\mathcal{V}^2_{n}(\boldsymbol{X}, \boldsymbol{Y}) = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij}$$
+
+, where $\tilde{C}$ and $\tilde{D}$ is a doubly-centered $C$ and $D$ respectively, by its column mean and row mean. Distance correlation $\mathcal{R}^{2}_{n}(\boldsymbol{X}, \boldsymbol{Y})$ is a standardized dCov by $\mathcal{V}^2_{n}(\boldsymbol{X}, \boldsymbol{X})$ and $\mathcal{V}^2_{n}(\boldsymbol{Y}, \boldsymbol{Y}).$
+
+$$\mathcal{R}_{n}^{2} (\boldsymbol{X}, \boldsymbol{Y}) = \frac{\mathcal{V}^2_{n} (\boldsymbol{X}, \boldsymbol{Y}) }{\sqrt{\mathcal{V}^2_{n} (\boldsymbol{X}, \boldsymbol{X}) \mathcal{V}^2_{n} (\boldsymbol{Y}, \boldsymbol{Y}) } }$$
+
+[Lyons (2013)](#Lyons) proved that we can extend the theory behind test statistics proposed by Szekely et al from Euclidean space to more general metric spaces. On the other hand, a modified distance covariance (MCov) $\mathcal{V}^*_{n}$ and a modified distance correlation (MCorr) $\mathcal{R}^{*}_{n}$ for testing high dimensional random vectors were also proposed in [Szekely et al. (2013)]( #Szekely2).  
+However, dCorr and even MCorr still perform not very well in various non-linear settings and under existence of outliers ( [Cencheng et al. (2016)](#MGC) ). Out of this concern, Cencheng at al. developed Multiscale Generalized Correlation (MGC) by adding local scale on correlation coefficients. 
+
+#### * Choice of distance metrics.
+
+Returning to the problem of network setting, the fundamental problem is in measuring all types of dependence between $\boldsymbol{G}$ and $\boldsymbol{X}$, we are required a vertex-wise coordinates of which Euclidean distance measures a distance between them. You might first propose directly using a column of an adjacency matrix so that we have a $n$-pair of observations $\big\{ \big( \boldsymbol{A}_{i \cdot} , \boldsymbol{X}_{i} \big) : \boldsymbol{A}_{i \cdot} = (A_{i 1} , ... , A_{i n} ), \boldsymbol{X}_{i} \in \mathbb{R}^{m}, i=1,...,n  \big\}.$ In the context of network, however, it is almost impossible to assume $\{ \boldsymbol{A}_{1 \cdot}, \boldsymbol{A}_{2 \cdot} ... , \boldsymbol{A}_{n \cdot} \}$ is an independent observation from a common distribution. Since an adjacency matrix $\boldsymbol{A}$ is formed by relational data, one row is dependent on the other. Even if it is not, Euclidean distance between $\{ \boldsymbol{A}_{i \cdot} : i =1, ... , n \}$ is not a proper metric over network space. For simplest example, assume that a given network $\boldsymbol{G}$ is an undirected network so that its adjacency matrix $\boldsymbol{A}$ must be a symmetric matrix. Then for any $i \neq j$, $\boldsymbol{A}_{i \cdot}$ and $\boldsymbol{A}_{j \cdot}$ cannot be independent, and under no self-loop, $A_{ii} = 0$ for all $i \in \{1,...,n\}.$ Moreover, as for the validity of its Euclidean distance, let us introduce a simple example. Let a given network $\boldsymbol{G}$ having 8 nodes be an unweighted, directed network and possibly having self-loop. Let $\boldsymbol{A}$ be its $8 \times 8$ binaray adjacency matrix. Assume $Node$ 1, $Node$ 4 and $Node$ 8 have the following row entries:
+
+$$\boldsymbol{A}_{1 \cdot} = \left( \begin{array}{r} 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \end{array} \right)$$
+$$\boldsymbol{A}_{4 \cdot} = \left( \begin{array}{r} 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \end{array} \right)$$
+$$\boldsymbol{A}_{8 \cdot} = \left( \begin{array}{r} 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \end{array} \right)$$
+
+,which results $\parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{4 \cdot} \parallel^2 = 4$, $\parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel^2 = 7$,and $\parallel \boldsymbol{A}_{4 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel^2 = 3.$ Accordingly, $\parallel \boldsymbol{A}_{4 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel  < \parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{4 \cdot} \parallel$. However, you can easily see that this does not make sense because $Node$ 4 and $Node$ 8 are connected each other only through $Node$ 1. 
+
+Therefore instead of using an adjacency matrix directly, we are considering embedding a vertex $v \in V(\boldsymbol{G})$ into its diffusion map of $\boldsymbol{U}$ and apply Euclidean distance metric, which is exactly a diffusion distance. As explained before, its Euclidean distance takes into account all possible paths between every pair of node and measure the connectivity between them. Unlike in the other metrics in network, i.e. adjacency matrix or geodesic distance, triangle inequality holds in diffusion distance (proof in [Appendix](# Appendix)). Thanks to these properties of diffusion maps, we have better intrepretation of its Euclidean distance so that we will use it to the distance matrix in MGC.
+
+
+#### * Explictly formalize our testing goal 
+  
+  Different from an adjacency matrix, diffusion maps at each time point $\{ \boldsymbol{U}_{t}(i) \}_{i \in \{ 1,2,...,n \}}$ provides a linearly independent representation of each node and Euclidean distance between them is equivalent to diffusion distance, which is a well-defined measure for connectivity. However invertibility condition might be too strong. Even in the case where $\boldsymbol{U}_{t}(i) \in \mathbb{R}^{q} < n$, we have nice properties in testing independence.
+ 
+ Assume that we have a random graph $\mathbf{G} \in \mathcal{G}$ of $n \in \mathbb{N}$ vertices. Derive or observe $n$ pairs of $\{ (\mathbf{U}_{t}(i), \mathbf{X}_{i}) : t \in \mathbb{N}, i = 1,2,... , n\}$, where $\mathbf{U}_{t} \in \mathbb{R}^{q} \leq n$ and $\mathbf{X} \in \mathbb{R}^{m}$. 
+  Explicitly we specify what we aim to test through MNT as follows:
+  
+  $$H_{0} : f_{ux} = f_{u} \cdot f_{x}$$
+  $$H_{A} : f_{ux} \neq f_{u} \cdot f_{x}$$
+  
+, where $f_{u}$ and $f_{x}$ are a marginal characteristic function of $\boldsymbol{U}$ and $\boldsymbol{X}$ respectively and $f_{ux}$ is a joint characteristic function of $\boldsymbol{U}$ and $\boldsymbol{X}$. Since $\boldsymbol{U}$ provides a configuration of vertices in $\boldsymbol{G},$ the above hypothesis implies testing independence between the configuration of vertices in network space and in attribute space. The following theorem explictly justifies the use of distance correlation in testing independence between these two.
+
+<a name = "Theorem2"/>
+<b> $$\mbox{Theorem 2}$$  <center>  Assume $E| \boldsymbol{U}^2 | < \infty$   and $E | \boldsymbol{X}^2 | < \infty$. For a fixed $t$, $P[ \mathcal{T}_{n} < t ] \rightarrow P[t_{\nu - 1} < t]$ as $q,m \rightarrow \infty$
+
+where $\mathcal{T}_{n} = \sqrt{\nu-1} \frac{\mathcal{R}^{*}_{n} }{ \sqrt{1 - \mathcal{R}^{* 2}_{n} }}$ and $\nu = \frac{n(n-3)}{2}$.
+</center></b> 
+
+
+Details are provided in [Appendix](# Appendix). 
+
+
+
+# Simulation
+<a name=" Simulation"/>
+
+#### * Stochastic Block Model and Degree-Corrected Stochastic Block Model
+
+ We mentioned in the Introduction that latent network model is very common followed by the assumption of local independence. Stochastic Block Model (SBM) is one of the most popular and also useful network generative model, especially as a tool for community detection ([Karrerl & Newman](SBM)). The SBM, in the simplest setting, assumes that each of $n$ vertices in graph $\boldsymbol{G}$ belongs to one of $K \in \mathbb{N} (\leq n)$ blocks or groups. Block affiliation is important because the probability of having edges between a pair of vertices depends on which blocks they are in. In the simplest model, if two vertices are assigned to different blocks each other, they are likely to be adjacent each other via undirected edges independently with the certain given probability $q$. On the other hand, undirected edges are likely to be placed independently with probability $p_{k} (k \in \{ 1, 2, ..., K \})$ if a pair of vertices are both assigned to the same block $k$ :
+ 
+ 
+ $$f \left(  \boldsymbol{A} | \boldsymbol{Z} \right) = \prod\limits_{k=1}^{K} \prod\limits_{z_{i} = z_{k} = k} p^{a_{ij}}_{k} (1 - p_{k})^{a_{ij}} \times \prod\limits_{z_{i} \neq z_{j}} q^{a_{ij}} (1 - q)^{a_{ij}}$$
+ 
+We can further assume heterogeous between-block probabilities $\{q_{l}\}$.
+ 
+ Connecting to a latent model, we can treat block affiliation for each vertex as an unobserved, latent variable assigned to each vertex. Let this latent variable denoting each vertex's block be $Z$. Let $\boldsymbol{X} \in \mathbb{R}^{m}$ be a variable representing nodal attribute we are interested in. Recall that what we want to test is independence between $\boldsymbol{G}$ and $\boldsymbol{X}$. Since an adjacency matrix $\boldsymbol{A}$ determines the distribution of a graph (network) $\boldsymbol{G}$, it suffices to examine association between $\boldsymbol{A}$ and $\boldsymbol{X}$. Throughout all the simulations, we assume that the way $\boldsymbol{A}$ and $\boldsymbol{X}$ are related to each other is only through a latent, block variable $\boldsymbol{Z}$: $\boldsymbol{A}$ and $\boldsymbol{X}$ are independent each other conditional on $\boldsymbol{Z}$. This implies local independence assumption also mentioned in the Introduction. However, the way $\boldsymbol{Z}$ are correlated to $\boldsymbol{X}$ and $\boldsymbol{Z}$ are correlated to $\boldsymbol{A}$ could not be consistent, which would results nonlinear correlation between $\boldsymbol{X}$ and $\boldsymbol{G}$. 
+ 
+ 
+#### * Show the results of two block case 
+
+$$X_{i} \overset{i.i.d}{\sim} Bern(0.5), i = 1,... , 100$$ 
+
+$$Z_{i}  \sim  \left\{  \begin{array}{cc} Bern(0.6) & X_{i} = 0 \\ Bern(0.4) & X_{i} = 1  \end{array} \right.$$
+
+
+$$A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{cc}   \textbf{0.4} & \textbf{0.1}  \\ \textbf{0.1} & \textbf{0.4} \end{array}  \right]$$ 
+
+
+```{r, out.width = 400, out.height = 400, echo = FALSE, fig.align='center', fig.show='hold', out.extra='style="float:left"'}
+#knitr::include_graphics("../figure/T441_t1.png")
+```
+```{r, out.width = 400, out.height = 400, echo = FALSE, fig.align='center', fig.show='hold'}
+#knitr::include_graphics("../figure/T441_t10.png")
+```
+
+In general case where within block probability and between block probability are homogeneous across blocks, let the former one is $p \in (0,1)$ and the latter one is $q \in (0,1)$:   
+
+$$A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{cc}   \textbf{p} & \textbf{q}  \\ \textbf{p} & \textbf{q} \end{array}  \right]$$. 
+
+In this very general and simple case, we observe the increased power as $|p-q|$ is larger. Moreover the optimal diffusion time when the highest local optimal is observed differs across all the combination of $(p,q)$.
+
+
+
+
+```{r, out.width = 400, out.height = 400, echo = FALSE, fig.align='center', fig.show='hold', out.extra='style="float:left"'}
+#knitr::include_graphics("../figure/two_same_optimal.png")
+```
+```{r, out.width = 400, out.height = 400, echo = FALSE, fig.align='center', fig.show='hold'}
+#knitr::include_graphics("../figure/two_same_t.png")
+```
+
+
+#### * Show the results of three block case 
+
+
+
+\bigskip
+
+ Under SBM, we assume that all nodes within the same block have the same expected degrees. However, this block model is limited by homogeneous distribution within block and it provides a poor fit to networks with highly varying node degrees within blocks, which are common in practice. The Degree-Corrected Stochastic Blockmodel (DC-SBM) instead adds an additional set of parameter, often denoted by $\theta$, to control the node degrees. This model allows variation in node degrees within a block while preserving the overall block community structure. We now compare how MNT works in DC-SBM compared to SBM in order to demonstrate the usefulness of the method in real data. 
+
+
+#### * Linear latent variable model 
+
+ [Fosdick & Hoff](#Fosdick) proposed the method for testing independence between network and nodal attributes by jointly modelling them. They represent $n \times n$ matrix of network relations $\boldsymbol{A}$ with a low dimensional structure defined by a $n \times r$ matrix $N$ of network factors ($r < n$). These network factors $N$ are not observed so should be estimated from the observed network $\boldsymbol{A}$, assuming a specific netowkr model. In our simplest representation of $\boldsymbol{A}$ as a binary relational data, their joint model can be formalized as follows : 
+ 
+ 
+
+
+
+
+# Discussion
+<a name=" Discussion"/>
+
+#### * merits of using MNT
+
+
+Throughout this study, we demonstrate that multiscale network test statistic to test network independence performs well in diverse settings, being supported by thorough theory on distance correlation and diffusion maps. 
+Testing independence is often the very first step in investigating relationship between network topology and nodal variables in our interest. It is more likely that we want to know more than binary decision of rejecting or not rejecting the hypothesis. Multiscale test statistics due to both neighborhood choice and time spent in diffusion processes provides us a hint on a latent dependence structure as well.  
+
+#### * remaining challenges
+
+
+
+
+
+
+# Appendix
+<a name=" Appendix"/>
+
+
+#### * Proof of linear independence of diffusion maps ([Theorem 1](#Theorem1)).
+
+  Assume that a unweighted and undirected, connected network $\boldsymbol{G}$ has a finite number of vertices $n \in \mathbb{N}$. Connectiveness of $\boldsymbol{G}$ leads to non-zero stationary probabilities $\{ \pi(i) > 0 : i =1, ... , n \}$. Also its adjacency matrix $\boldsymbol{A}$ is a symmetric but its transition matrix $\boldsymbol{P}[i,j] = A_{ij} \big/ \sum\limits_{j=1}^{n} A_{ij} = A_{ij} \big/ \sum\limits_{i,j=1}^{n} A_{ij} \pi(i)$ does not guarantee its symmetry. Define a symmetric kernel $\boldsymbol{Q} = \boldsymbol{\Pi^{1/2} P \Pi^{-1/2}}$ instead, where $\boldsymbol{\Pi}$ is a $n \times n$ diagonal matrix of which $i$th diagonal element of $\pi(i)$. That is, for any $i,j = \{1,2,... , n \}:$ 
+  
+  $$Q[i,j] = \frac{\sqrt{\pi(i)}}{\sqrt{\pi(j)}} \frac{A_{ij}}{\sum\limits_{i,j=1}^{n} A_{ij} \pi(i)} = \frac{A_{ij}}{\sqrt{\pi(i)} \sqrt{\pi(j)}} \big(\sum\limits_{i,j=1}^{n} A_{ij} \big)^{-1}.$$
+
+
+Since an adjacency matrix for an undirected graph is symmetric, $\boldsymbol{Q}$ is also symmetric. Thanks to the symmetry of $\boldsymbol{Q}$ and invertibility of $\mathbf{A}$, it has $n$ non-zero eigenvalues $\{(\lambda_{1}, \lambda_{2}, ... , \lambda_{n}) : 1 = |\lambda_{1}| \geq |\lambda_{2}| \geq ... \geq |\lambda_{n}| > 0 \}$ and the eigenvectors $\{ \boldsymbol{\psi_{1}, \psi_{2}, ... , \psi_{n} }\}$ which are orthogonal to each other. 
+
+$$\mathbf{Q}=\mathbf{\Psi}\mathbf{\Lambda}\mathbf{\Psi}^{T}$$  
+
+where $\mathbf{\Lambda}$ is a diagonal matrix whose entries are the eigenvalues of $\boldsymbol{Q}$. Diffusion map of a network graph $\boldsymbol{G}$ for fixed diffusion time $t$ given by $\boldsymbol{U}_{t} = \{ \boldsymbol{U}_{t}(1), \boldsymbol{U}_{t}(2), ... , \boldsymbol{U}_{t}(n)\}$, where
+
+$$\boldsymbol{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) \\ \lambda^{t}_{2} \phi_{2} (i)  \\ \vdots \\ \lambda^{t}_{n} \phi_{n}(i) \end{pmatrix} =  \begin{pmatrix} \frac{\lambda^{t}_{1}}{\sqrt{\pi(i)}} \psi_{1}(i) \\ \frac{\lambda^{t}_{2}}{\sqrt{\pi(i)}} \psi_{2} (i)  \\ \vdots \\ \frac{\lambda^{t}_{n}}{\sqrt{\pi(i)}} \psi_{n}(i) \end{pmatrix}  \in \mathbb{R}^{n}.$$
+
+Let $\mathbf{\Lambda^{t}}$ and $\mathbf{\Pi}$ be a $n \times n$ diagonal matrix of which $i$th diagonal element is $\lambda^{t}_{i}$ and $\pi(i)$ respectively. Let $\mathbf{\Psi}$ be a $n \times n$ matrix whose columns contain the eigenvectors of $\boldsymbol{Q}$. 
+Then diffusion map matrix of $\boldsymbol{U}_{t}$ at $t$ of which each column denotes Node $i$'s diffusion map can be represented as :        
+
+$$\boldsymbol{U}_{t} = \mathbf{\Lambda^{t} \Psi \Pi^{-1/2}}$$ 
+
+Note that each of $\mathbf{\Lambda^{t}}$, $\mathbf{\Pi^{-1/2}}$, and $\mathbf{\Psi}$ are invertible, so $\boldsymbol{U}_{t}$ is also invertible. Thus each column of $\boldsymbol{U}_{t}$ is linearly independent.  $\blacksquare$ 
+
+#### * Proof of distance correlation (U,X) ([Theorem 2](#Theorem2)).
+
+Throughout this paper, we assume that our observed network $\boldsymbol{G}$ is a randomly sampled network from its population, denoted by $\mathbf{\mathbb{G}} = \big( \mathbf{\mathbb{A}}, \mathbf{\mathbb{X}}  \big)$. A $n \times n$ matrix $\mathbb{A}$ is an adjacency matrix of $\mathbf{\mathbb{G}}$ and $m$-variate vector $\mathbf{\mathbb{X}}_{i}$ denotes each node's attribute values $(i=1,2,...,n)$. 
+
+
+Fix a diffusion time $t > 0$. Recall that a set of diffusion distance $\boldsymbol{U}_{t} = \{ \boldsymbol{U}_{t}(1) , \boldsymbol{U}_{t}(2) , ... , \boldsymbol{U}_{t}(n)  \}$ are constructed from an adjacency matrix. If we let $\mathbf{\mathbb{U}}_{t}$ be a diffusion map at $t$ defined from $\mathbf{\mathbb{A}}$, since $\boldsymbol{A}$ is a random graph of $\mathbf{\mathbb{A}}$, $\boldsymbol{U}_{t}$ is also a random diffusion map from $\mathbf{\mathbb{A}}$, i.e. $\boldsymbol{U}_{t}$ is a random observation of $\mathbf{\mathbb{U}_{t}}$. Each coordinate of $\mathbf{U}_{t}$ is exchangeable since $\mathbf{U}_{t}(i)$ is represented by eigenvalues, eigenvectors and stationary distribution of a given network. For an attribute variable $\mathbf{X}$, exchangability is satified from iid variable assumption. Even though exchangeability is a weaker condition than independence, we could still enjoy some theoretical results from asymptotic properties.
+
+
+Then under the provided assumptions, ``MCorr`` defined on these pairs of observations, $\mathcal{R}^{*}_{n}$ are measuring distance between the joint characteristic function $f_{UX}$ of $\mathbf{U}$ and $\mathbf{X}$ and the the product $f_{U}$ $f_{X}$ of the marginal characteristic functions for each $\mathbf{U}$ and $\mathbf{X}$ ([Szekely and Rizzo, 2013](Szekely2)). The desired asymptotic properties are well proven for exchangeable observations.  $\blacksquare$ 
+
+
+#### * Proof of triangle inequality
+
+Let $x, y, z \in V(G).$
+
+$$\begin{align*} D^{2}_{t}(x,z) & = \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(z,w)   \big)^2 \frac{1}{\pi(w)}  \\ & = \sum\limits_{w \in V(G)} \big(P^{t}(x, w) - P^{t}(y,w) + P^{t}(y,w) - P^{t}(z,w) \big)^2 \frac{1}{\pi(w)} \\ & = \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w) \big)^2 \frac{1}{\pi(w)}  + \sum\limits_{w \in V(G)} \big( P^{t}(y,w) - P^{t}(z,w)  \big)^2 \frac{1}{\pi(w)} \\ & + 2 \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)} \\ &= D^{2}_{t}(x,y) + D^{2}_{t}(y,z) +  2 \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)}   \end{align*}.$$
+
+Thus it suffices to show that 
+
+$$\begin{align} 
+\sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)} \leq D_{t}(x,y) \cdot D_{t}(y,z). \end{align}$$
+
+Let $a_{w} = \big(P^{t}(x,w) - P^{t}(y,w) \big) \sqrt{1 / \pi(w)}$ and $b_{w} = \big( P^{t}(y,w) - P^{t}(z,w) \big) \sqrt{1 / \pi(w)}$. Then the above inequality is equivalent to :
+
+$$\begin{align} 
+\sum\limits_{w \in V(G)} a_{w} \cdot b_{w} \leq \sqrt{\sum\limits_{w \in V(G)} a^2_{w} \cdot \sum\limits_{w \in V(G)} b^2_{w} } \end{align}$$
+
+,which is true by Cauchy-Schwarz inequality.
+
+
+
+
+
+
+# Reference
+<a name=" Reference"/>
+
+
+<a name = "Hoff"/> Hoff, P. D., Raftery, A. E., & Handcock, M. S. (2002). Latent space approaches to social network analysis. Journal of the american Statistical association, 97(460), 1090-1098.
+
+
+<a name = "Austin"/> Austin, A., Linkletter, C., & Wu, Z. (2013). Covariate-defined latent space random effects model. Social Networks, 35(3), 338-346.
+
+<a name = "local"/> Lazarsfeld, P. F, & Henry, N. W. (1968). Latent structure analysis. New York: Houghton, Mifflin.
+
+<a name = "Fosdick"/> Fosdick, B. K., & Hoff, P. D. (2015). Testing and modeling dependencies between a network and nodal attributes. Journal of the American Statistical Association, 110(511), 1047-1056.
+
+ <a name = "Szekely"/> Székely, G. J., Rizzo, M. L., & Bakirov, N. K. (2007). Measuring and testing dependence by correlation of distances. The Annals of Statistics, 35(6), 2769-2794.
+
+
+<a name = "Szekely2"/> Székely, G. J., & Rizzo, M. L. (2013). The distance correlation t-test of independence in high dimension. Journal of Multivariate Analysis, 117, 193-213.
+
+
+ <a name = "MGC"/> Cecheng at al, Revealing the structure of dependency between multimodal datasets via multiscale generalized correlation.
+
+
+<a name = "Lyons"/> Lyons, R. (2013). Distance covariance in metric spaces. The Annals of Probability, 41(5), 3284-3305.
+
+<a name = "negative"/> Lee, J. R. (2006). Distance scales, embeddings, and metrics of negative type. University of California, Berkeley.
+
+<a name = "Tang"/> Tang, Minh, and Michael Trosset. "Graph metrics and dimension reduction." Indiana University, Indianapolis, IN (2010).
+
+<a name = "Lafon"/> Lafon, S., & Lee, A. B. (2006). Diffusion maps and coarse-graining: A unified framework for dimensionality reduction, graph partitioning, and data set parameterization. IEEE transactions on pattern analysis and machine intelligence, 28(9), 1393-1403.
+
+<a name = "SBM"/> Karrer, B., & Newman, M. E. (2011). Stochastic blockmodels and community structure in networks. Physical Review E, 83(1), 016107.
+
+<a name = "singular"/> Sciriha, I. (2007). A characterization of singular graphs. Electronic Journal of Linear Algebra, 16(1), 38.
+
+<a name = "regular"/> Cook, N. A. (2015). On the singularity of adjacency matrices for random regular digraphs. Probability Theory and Related Fields, 1-58.
+
