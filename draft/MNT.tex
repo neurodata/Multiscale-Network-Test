@@ -1,0 +1,649 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt]{article}
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{url,enumerate, amssymb, anysize, booktabs, amsfonts}
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+\usepackage{setspace,listings}
+%\usepackage{cite}
+\usepackage[square,numbers]{natbib}
+\bibliographystyle{abbrvnat, lipsum}
+\usepackage{mathrsfs}
+%\usepackage{hanging}
+\renewcommand*\thesection{\arabic{section}}
+\usepackage{color,amssymb}
+\usepackage{fancyhdr, mathtools}
+\usepackage{dcolumn}
+\usepackage{indentfirst, verbatim}
+\newcounter{equationset, sectsty, breqn}
+\usepackage{setspace,float,lscape,amsmath,color}
+\usepackage[font=sf, labelfont={sf,bf}, margin=1cm]{caption}
+\usepackage{amsthm}
+\captionsetup{font={small,sf,singlespacing}}
+\newcommand{\pb}{\mathbb{P}}
+\newcommand{\E}{\ensuremath{\mbox{E}}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}{Remark}
+% Page style definition
+\geometry{margin=1.0in}
+\pagestyle{fancy}
+\usepackage{scicite}
+
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 16cm 
+\textheight 21cm
+\footskip 1.0cm
+
+
+%The next command sets up an environment for the abstract to your paper.
+
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+
+
+% If your reference list includes text notes as well as references,
+% include the following line; otherwise, comment it out.
+
+\renewcommand\refname{References and Notes}
+
+% The following lines set up an environment for the last note in the
+% reference list, which commonly includes acknowledgments of funding,
+% help, etc.  It's intended for users of BibTeX or the {thebibliography}
+% environment.  Users who are hand-coding their references at the end
+% using a list environment such as {enumerate} can simply add another
+% item at the end, and it will be numbered automatically.
+
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{Testing independence between networks and nodal attributes via multiscale metrics and multiscale distance correlation} 
+
+% Place the author information here.  Please hand-code the contact
+% information and notecalls; do *not* use \footnote commands.  Let the
+% author contact information appear immediately below the author names
+% as shown.  We would also prefer that you don't change the type-size
+% settings shown here.
+
+\author
+{John Smith,$^{1\ast}$ Jane Doe,$^{1}$ Joe Scientist$^{2}$\\
+\\
+\normalsize{$^{1}$Department of Chemistry, University of Wherever,}\\
+\normalsize{An Unknown Address, Wherever, ST 00000, USA}\\
+\normalsize{$^{2}$Another Unknown Address, Palookaville, ST 99999, USA}\\
+\\
+\normalsize{$^\ast$To whom correspondence should be addressed; E-mail:  ylee160@jhu.edu.}
+}
+
+% Include the date command, but leave its argument blank.
+
+\date{}
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+
+\begin{document} 
+
+% Double-space the manuscript.
+
+\baselineskip24pt
+
+% Make the title.
+
+\maketitle 
+
+% Place your abstract within the special {sciabstract} environment.
+
+\begin{sciabstract}
+ Network dependence over network space, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear dependent properties. Unfortunately, without knowledge on specific neighborhood structures, no statistic has been suggested to test network dependence further than globally linear dependence. In this study we propose a multiscale dependence test statistic, which borrows the idea of diffusion maps and Multiscale Generalized Correlation (MGC). Through simplest network simulation and the supportive theory, we have found that the newly proposed test is a consistent test and achieves higher power than other available ones without any parametric assumptions neither on graphical model nor dependency structure, but only with the restriction of exchangeability. 
+\end{sciabstract}
+
+% In setting up this template for *Science* papers, we've used both
+% the \section* command and the \paragraph* command for topical
+% divisions.  Which you use will of course depend on the type of paper
+% you're writing.  Review Articles tend to have displayed headings, for
+% which \section* is more appropriate; Research Articles, when they have
+% formal topical divisions at all, tend to signal them with bold text
+% that runs into the paragraph, for which \paragraph* is the right
+% choice.  Either way, use the asterisk (*) modifier, as shown, to
+% suppress numbering.
+\newpage
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\section{Introduction}
+
+\subsection{intro1}
+\begin{itemize}
+\item {\it  [intro1] Introduce interests in association between network and nodal attributes and the related literature.   \/}
+\end{itemize}
+
+Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of psychology, information theory, biology, statistics, economics, etc. The relationship between the way a pair of nodes are connected and the values of their attribute is a common interest in network analysis. There has been a lot of efforts to represent a network as a function of nodal attributes or model an outcome of nodal attribute variables through their underlying network structures. However, it is very obscure to determine which one should be put as a dependent variable. And most of all network often does not have a natural structure. This is why there exist a plethora of works on latent structure of network, which also depends on the characteristics of each node ( Hoff et al. (2002) , Austin, Linkletter, and Wu (2013) ). In a latent space model, local independence between network and nodal attributes, conditional on a latent variable is often assumed ( Lazarsfeld and Henry (1968) ), which makes easier to interpret the dependency mechanism. In real network data, however, it is almost impossible to estimate such latent variable without any knowledge on true network generative model and also we cannot guarantee that direction or amount of association between network and nodal attributes keeps consistent across latent variables, i.e. we cannot guarantee linear dependence. 
+
+
+\subsection{intro2}
+\begin{itemize}
+	\item {\it  [intro2] Introduce notations we are going to use and introduce a common network model of nodal attributes.   \/}
+\end{itemize}
+
+ 
+ Throughout this paper, assume that we are given an unweighted and undirected, connected network $\boldsymbol{G}$ comprised of $n$ nodes, for a fixed $n \in \mathbb{N}$. Suppose that our observation of $\boldsymbol{G}$ is one random sample from true, population distribution of $\mathcal{G}$. Even though we assume that $\boldsymbol{G}$ is an undirected and unweighted network but we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of a given network, denoted by $\boldsymbol{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize this relational data of network. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\boldsymbol{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\boldsymbol{G}$ and $\boldsymbol{X}$ and testing whether their distributions are independent or not is the key focus in our study. 
+ 
+ Even though distribution of graph $\boldsymbol{G}$ is often formalized through modeling adjacent relations $\{a_{ij} : i,j = 1,... , n \}$, we cannot directly use $\mathbf{A}$ in testing independence to $\mathbf{X}$. Rather than regressing $a_{ij}$ on observed attribute values $x_{i}$ or $x_{j}$, Fosdick and Hoff proposed a latent variable model to estimate node-specific network factor which provides a one-to-one correspondence between $\boldsymbol{G}$ and $\boldsymbol{X}$ as well as reduces a dimension of network data. In their paper, Fosdick and Hoff also used these factors to test independence between $\boldsymbol{G}$ and $\boldsymbol{X}$. However, the performance of this test would not be good enough when the relational data $\boldsymbol{A}$ does not have linear relationship to network factors or has a latent mixture model. Since we never know the structure of networks and the way they are related to other variables, there always exist a limitation on testing based on modeling network.    
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Multiscale Distance Metrics}
+
+\subsection{[MDM1]}
+\begin{itemize}
+	\item {\it  [MDM1] represent a network structure as a one-parameter family of multivariate variables \/}
+\end{itemize}
+
+
+There have been a lot of efforts to represent the network in terms of a summarizing network factor( [Fosdick $\&$ Hoff (2015)] ) or some meaningful coefficients, e.g. centrality or connectivity. However, there has been no vertex-wise variable which provides a configuration of vertex over network space without losing any information. [Coifman $\&$ Lafon] demonstrated that diffusion maps provide a meaningful multiscale geometries of data while keeping information on every local relation. Diffusion maps is constructed via Markov chain on graph. Here an adjacency matrix $\boldsymbol{A}$ acts as a kernel, representing a similarity between each node in $\boldsymbol{G}$. The adjacency matrix also takes into account every single relationships between nodes, rather than estimating or summarizing network structures.
+
+Let $(\boldsymbol{G}, \mathcal{A}, \mu)$ be a measure space. Throughout all of the arguments, assume that we have a countable vertex set with size of $n \in \mathbb{N}$. The vertex set of network $\boldsymbol{G}$ is the data set of vertices and edges and $\mathcal{A}$ is a set of a pair of nodes $\{(i,j) : v_{i}, v_{i} \in V(\boldsymbol{G}) \}$. A measure of $\mu$ which represents a distribution of the vertices on $\boldsymbol{G}$, is equivalent to an adjacency matrix $\boldsymbol{A}$. A transition matrix $P = \{P[i,j] : i,j=1,...,n \}$ in Markov chain on $\boldsymbol{G}$, which represents the probability that flow or signal goes from Node $i$ to Node $j$, is defined as below:
+
+\begin{equation}
+P[i,j] = A_{ij} \big/ \sum\limits_{j=1} A_{ij}
+\end{equation}
+
+A transition matrix $P$ is a new kernel of a Markov chain of which element $P[i,j]$ represents the probability of travel from Node $i$ to Node $j$ in one time step. On the other hand, corresponding probability in $t$ steps is given by the $t$ th ($t \in \mathbb{N}$) power of $P$. How to derive diffusion distance over a directed network or weighted network is provided in Tang $\&$ Trosset (2010)]. Other than a transition matrix, we need a stationary probability $\boldsymbol{\pi} = \{\pi(1), \pi(2), ... , \pi(n) \}$ of which $\pi(i)$ represents the probability that the chain stays in Node $i$ regardless of the starting state. In our setting, $\pi(i)$ is proportional to the degree of Node $i$, i.e. $\pi(i) = \sum\limits_{j=1}^{n} A_{ij} \big/ \sum\limits_{i=1}^{n}\sum\limits_{j=1}^{n} A_{ij}$ ($i=1,2,..., n$).   
+
+For each time point $t \in \mathbb{N}$, we can define a diffusion distance $C_{t}$  given by :
+
+\begin{equation}
+\begin{split}
+C^2_{t}[i,j] & = \sum\limits_{w =1}^{n} \big( P^{t}[i,w] - P^{t}[j,w]  \big)^{2} \frac{1}{\pi(w)} = \sum\limits_{w=1}^{n} \left(  \frac{P^{t}[i,w]}{\sqrt{\pi(w)}} - \frac{P^{t}[j,w]}{\sqrt{\pi(w)}}   \right)^2 \\ & = \parallel P^{t}[i, \cdot] - P^{t}[i, \cdot]  \parallel^2_{L^{2}(\boldsymbol{G}, d\mu / \pi)  }
+\end{split}
+\end{equation}
+
+As diffusion time $t$ increases, distance matrix $C_{t}$ is more likely to take into account distance between two nodes far away in terms of the length of the path. Key idea behind such diffusion distance at fixed time $t$ is that it measures the chance that we are likely to stay between Node $i$ and Node $j$ at $t$ step on our journey of all other possible paths. The higher chance is, the smaller distance between two is. This distance well reflects the connectivity between two nodes. Connectivity between two nodes is higher if we need to eliminate more number of vertices to disconnect these two. Unlike an adjacency relation or geodesic distance, a connectivity between two nodes depends on their relationship to other vertices in a given network so it is more robust to the unexpected edges. Often a set of nodes with higher connectivity have a higher propensity of having edges within this set and they are likely to form a cluster. Thus diffusion distance is very robust measure and also very sensitive to the clustering structure of network. 
+
+
+
+\subsection{[MDM2]}
+\begin{itemize}
+	\item {\it  [MDM2] explain spectral properties of diffusion maps \/}
+\end{itemize}
+
+
+Diffusion distance of $\boldsymbol{G}$ defined as above can be represented via a spectral decomposition of its transition matrix $P$. That is, we can derive diffusion distance using its eigenvectors and eigenvalues. The spectral analysis on diffusion distance or diffusion maps have been studied for its usefulness for nonlinear dimensionality reduction ([Coifman $\&$ Lafon (2006)], [Lafon $\&$ Lee (2006)]). 
+ 
+Recall that diffusion distance at time $t$, $C_{t}$ is a functional $L^2$ distance, weighted by 1/$\pi$. If we transform the way to represent $C_{t}[i,j]$ slightly, we are able to obtain an orthonormal basis of $L^{2}(\mathbf{G}, d\mu / \pi)$ via eigenvalues and eigenvectors. 
+ 
+ Keeping mind that a symmetry of an adjacency matrix $A$ does not guarantee a symmetric of $P$, define a symmetric kernel $\boldsymbol{Q} = \boldsymbol{\Pi^{1/2} P \Pi^{-1/2}},$ where $\mathbf{\Pi}$ is a $n \times n$ diagonal matrix of which $i$th diagonal element is $\pi(i)$. Under compactness of $P$, $\boldsymbol{Q}$ has a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}_{r = \{1,2,...,q \}}$ and a set of their corresponding orthonormal eigenvectors $\{ \psi_{r} \}_{r = \{1,2,..., q \} },$ i.e. $Q[i,j] = \sum\limits_{r=1}^{q} \lambda_{r} \psi_{r}(i) \psi_{r}(j)$ ($1 \leq q \leq n$).  
+ Since $P[i,j] = \sqrt{\pi(j) / \pi(i) } Q[i,j]$, $P[i,j]= \sum\limits_{r=1}^{q} \lambda_{r} \{ \psi_{r}(i) / \sqrt{\pi(i)}  \} \{ \psi_{r}(j) \sqrt{\pi(j)} \} := \sum\limits_{r=1}^{q} \lambda_{r} \phi_{r}(i) \{ \psi_{r}(j) \sqrt{\pi(j)} \}$, where $\phi_{r}(i) := \psi_{r}(i) / \sqrt{\pi(i)}$. Then from $\sum\limits_{r=1}^{q} \psi_{r}(j) \sqrt{\pi(j)} = 1$ for all $j \in \{1,2,...,n\}$, 
+ we can represent the diffusion distance as: 
+ 
+ \begin{equation}
+ \begin{split}
+ C^2_{t}[i,j] & = \sum\limits_{r=1}^{n} \lambda^{2t}_{r} \big( \phi_{r} (i) - \phi_{r}(j)   \big)^2   \\ &  = \parallel P^{t}[i, \cdot] - P^{t}[i, \cdot]  \parallel^2_{L^{2}(\boldsymbol{G}, d\mu / \pi)  }
+ \end{split}
+ \end{equation}
+ 
+ That is,
+ 
+ \begin{equation}
+ C_{t}[i,j] = \parallel \boldsymbol{U}_{t}(i) - \boldsymbol{U}_{t}(j) \parallel
+ \end{equation}
+ , where 
+
+\begin{equation} 
+ \boldsymbol{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) \\ \lambda^{t}_{2} \phi_{2} (i)  \\ \vdots \\ \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}.
+ \end{equation}
+
+
+
+\subsection{[MDM3]}
+\begin{itemize}
+	\item {\it  [MDM3] introduce exchangeable graph \/}
+\end{itemize}
+
+
+Due to the inter-correlated construction of $U$, e.g. $i$th subject's diffusion depends on others in the given network, it is hard to say that the observed diffusion coordinates of $n$ subjects are independent samples without any restrictions on networks. Independence within sample of one variable is important in testing independence with other variable. (why? example)
+
+To talk about independence of $U$, we need more general concept of exchangeable graph. Formally speaking, an exchangeable sequence of random variables is a finite or infinite sequence $U_{1}, U_{2}, ...$ of random variables such that for any finite permutation $\sigma$ of the indices 1,2,3, ... , the joint probability distribution of the permutated sequence 
+$U_{\sigma(1)}, U_{\sigma(2)}, U_{\sigma(3)}, ...$
+is the same as joint probability distribution of the original sequence. 
+
+The property of exchangeability is closely related to the use of independent and identically-distributed(i.i.d) random variable. A sequence of random variables that are i.i.d. conditional on some underlying distributional form is exchangeable. 
+Moreover, the converse can be established for ``infinite sequence`` by [Bruno de Finetti](\ref{finetti})'s representation theorem. The extended versions of the theorem show that in any infinite sequence of exchangeable random variables, random variables are conditionally i.i.d, given the underlying distributional form.
+
+It is straightforward to check that $\mathbf{G}$ is an exchangeable graph if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable.  
+
+\begin{definition}
+A random 2-array $(A_{ij})$ is called $\mathbf{\mbox{jointly exchangeable}}$ if 
+$$(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma(j)})$$
+for every permutation $\sigma$ of $n$,
+and separately exchangeable if 
+$$(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma^{\prime}(j) })$$
+for every pair of permutation $\sigma, \sigma^{\prime}$ of $n$.
+\end{definition}
+
+\textbf{joint exchangeability} of $A$ is what we need. 
+Widely used graphical model, e.g. Stochastic Block Model (SBM), Random Dot Product Graph (RDPG), satisfies this definition of jointly exchangeable graph under some constraints. 
+
+
+\subsection{[MDM4]}
+\begin{itemize}
+	\item {\it  [MDM4] Derive exchangeability and iid representation of diffusion maps \/}
+\end{itemize}
+
+
+The main advantage from such representation is that it becomes now possible to represent given network $\boldsymbol{G}$ as a one-parameter family of $q(<n)$-coordinates called diffusion coordinate, of which metric well reflects how corresponding vertices are connected each other at each diffusion time point. A set of diffusion maps for each vertex have some desirable properties which will be helpful in testing. The followings are concerning about a few conditions for earning them. 
+
+\begin{lemma}[Exchangeability and i.i.d. of $A$ in graphon]
+	\label{lemma1}
+Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are i.i.d. conditioning on random link function $g : [0,1]^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \}$, $i \in \{ 1,2,... , n \}$ are i.i.d. on random link function $g$.  
+\end{lemma}
+
+On the other hand, a graphon, despite its advantage on simple representation, is either empty or dense. Thus, it fails to represent real network data where the sparsity or scale-free distribution is fairly common. Thus we introduce a concept of graphex introduced by \href{http://arxiv.org/abs/1512.03099}{Veitch and Roy, 2015}, which is more generalized version of graphon. The following claim says that we can still have i.i.d. sequence from $\mathbf{A}$ conditioning on random link function $g : \mathbb{N}^2 \rightarrow [0,1]$:
+
+\begin{lemma}[Exchangeability and i.i.d. of $A$ in graphex]
+	\label{lemma2}
+Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphex. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are i.i.d. conditioning on random link function $h : \mathbb{N}^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \}$, $i \in \{ 1,2,... , n \}$ are conditionally i.i.d. on random link function $g$.   
+\end{lemma}
+
+
+From the above Lemma \ref{lemma1}, \ref{lemma2}, we can also prove exchangeability and conditional i.i.d. of diffusion maps at each time point. 
+
+\begin{lemma}[Exchangeability and iid of $U$]
+	\label{lemma3}
+Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon or graphex, i.e. any exchangeable random graph from an infinite graph. Then its transition probability $P_{ij}$ so thus  diffusion maps at fixed time $t$ also exchangeable conditional on link function of graph. Furthermore, by [de Finetti]'s Theorem, we can say that such diffusion maps at $t$ are conditionally i.i.d given random probability measure $\eta$ on $U_{t}$.    
+\end{lemma}
+
+
+Lemma \ref{lemma3} above provides us i.i.d. one-parameter family of $\{ \mathbf{U}_{t} \}_{t \in \mathbb{N}}$ conditional on a random probability measure of $\mathbf{U}_{t}$, which is free of any further model assumptions on network structures.   
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Multiscale Generalized Correlation}
+
+\subsection{[MGC1]}
+\begin{itemize}
+	\item {\it  [MGC1] Introduce a Distance Correlation and Multiscale version\/}
+\end{itemize}
+
+Relationship between network and nodal attributes often exhibits local or nonlinear properties. Moreover, dimension of spectrum of network increases as a sample size increases. Unfortunately, widely used correlation measures often fail to characterize non-linear associations or multivariate associations so they fail to provide a consistent test statistic against all types of dependencies. [Szekely et al. (2007)] extended pairwise constructed generalized correlation coefficient and developed a novel statistics called distance correlation (\texttt{dCor}) as a measure for all types of dependence between two random vectors in any dimension. Let us start from a general setting that we are given $n \in \mathbb{N}$ pairs of random samples $\{ (x_{i}, y_{i}) : x_{i} \in \mathbb{R}^{p}, y_{i} \in \mathbb{R}^{q}, i = 1,...,n \}$. Define $C_{ij} = \parallel x_{i} - x_{j} \parallel$ and $D_{ij} = \parallel y_{i} - y_{j} \parallel$ for $i,j=1,...,n$. 
+	 
+Distance correlation (\texttt{dCorr}) is defined via distance covariance (\texttt{dCov}) $\mathcal{V}^2_{n}$ of $\boldsymbol{X}$ and $\boldsymbol{Y}$, which is the following: 
+
+\begin{equation}	 
+\mathcal{V}^2_{n}(\boldsymbol{X}, \boldsymbol{Y}) = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij}
+\end{equation}
+, where $\tilde{C}$ and $\tilde{D}$ is a doubly-centered $C$ and $D$ respectively, by its column mean and row mean. Distance correlation $\mathcal{R}^{2}_{n}(\boldsymbol{X}, \boldsymbol{Y})$ is a standardized \texttt{dCov} by $\mathcal{V}^2_{n}(\boldsymbol{X}, \boldsymbol{X})$ and $\mathcal{V}^2_{n}(\boldsymbol{Y}, \boldsymbol{Y}).$
+
+\begin{equation}	 
+\mathcal{R}_{n}^{2} (\boldsymbol{X}, \boldsymbol{Y}) = \frac{\mathcal{V}^2_{n} (\boldsymbol{X}, \boldsymbol{Y}) }{\sqrt{\mathcal{V}^2_{n} (\boldsymbol{X}, \boldsymbol{X}) \mathcal{V}^2_{n} (\boldsymbol{Y}, \boldsymbol{Y}) } }
+\end{equation}
+	 
+On the other hand, a modified distance covariance (\texttt{MCov}) $\mathcal{V}^*_{n}$ and a modified distance correlation (\texttt{MCorr}) $\mathcal{R}^{*}_{n}$ for testing high dimensional random vectors were also proposed in [Szekely et al. (2013)].  
+However, \texttt{dCorr} and even MCorr still perform not very well in various non-linear settings and under existence of outliers ( [Cencheng et al. (2016)]). Out of this concern, Cencheng at al. developed Multiscale Generalized Correlation (\texttt{MGC}) by adding local scale on correlation coefficients. 
+	 
+
+\subsection{[MGC2]}
+\begin{itemize}
+	\item {\it  [MGC2] choice of proper metrics for testing network independence \/}
+\end{itemize}
+
+
+Returning to the problem of network setting, the fundamental problem is in measuring all types of dependence between $\boldsymbol{G}$ and $\boldsymbol{X}$, we are required a vertex-wise coordinates of which Euclidean distance measures a distance between them. You might first propose directly using a column of an adjacency matrix so that we have a $n$-pair of observations $\big\{ \big( \boldsymbol{A}_{i \cdot} , \boldsymbol{X}_{i} \big) : \boldsymbol{A}_{i \cdot} = (A_{i 1} , ... , A_{i n} ), \boldsymbol{X}_{i} \in \mathbb{R}^{m}, i=1,...,n  \big\}.$ In the context of network, however, it is almost impossible to assume $\{ \boldsymbol{A}_{1 \cdot}, \boldsymbol{A}_{2 \cdot} ... , \boldsymbol{A}_{n \cdot} \}$ is an independent observation from a common distribution. Since an adjacency matrix $\boldsymbol{A}$ is formed by relational data, one row is dependent on the other. Even if it is not, Euclidean distance between $\{ \boldsymbol{A}_{i \cdot} : i =1, ... , n \}$ is not a proper metric over network space. For simplest example, assume that a given network $\boldsymbol{G}$ is an undirected network so that its adjacency matrix $\boldsymbol{A}$ must be a symmetric matrix. Then for any $i \neq j$, $\boldsymbol{A}_{i \cdot}$ and $\boldsymbol{A}_{j \cdot}$ cannot be independent, and under no self-loop, $A_{ii} = 0$ for all $i \in \{1,...,n\}.$ Moreover, as for the validity of its Euclidean distance, let us introduce a simple example. Let a given network $\boldsymbol{G}$ having 8 nodes be an unweighted, directed network and possibly having self-loop. Let $\boldsymbol{A}$ be its $8 \times 8$ binary adjacency matrix. Assume \texttt{Node 1}, \texttt{Node 4} and \texttt{Node 8} have the following row entries:
+
+\begin{equation}
+\boldsymbol{A}_{1 \cdot} = \left( \begin{array}{rrrrrrrr} 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \end{array} \right)
+\end{equation}
+\begin{equation}
+\boldsymbol{A}_{4 \cdot} = \left( \begin{array}{rrrrrrrr} 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \end{array} \right)
+\end{equation}
+\begin{equation}
+\boldsymbol{A}_{8 \cdot} = \left( \begin{array}{rrrrrrrr} 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \end{array} \right)
+\end{equation}
+
+,which results $\parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{4 \cdot} \parallel^2 = 4$, $\parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel^2 = 7$,and $\parallel \boldsymbol{A}_{4 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel^2 = 3.$ Accordingly, $\parallel \boldsymbol{A}_{4 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel  < \parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{4 \cdot} \parallel$. However, you can easily see that this does not make sense because \texttt{Node 4} and \texttt{Node 8} are connected each other only through \texttt{Node 1}. 
+
+Therefore instead of using an adjacency matrix directly, we are considering embedding a vertex $v \in V(\boldsymbol{G})$ into its diffusion map of $\boldsymbol{U}$ and apply Euclidean distance metric, which is exactly a diffusion distance. As explained before, its Euclidean distance takes into account all possible paths between every pair of node and measure the connectivity between them. Unlike in the other metrics in network, i.e. adjacency matrix or geodesic distance, triangle inequality holds in diffusion distance (proof in [Appendix]). 
+
+\begin{corollary}[Triangle inequality]
+\label{corollary1}
+For fixed time $t$, 
+\end{corollary}	
+
+Thanks to these properties of diffusion maps, we have better interpretation of its Euclidean distance so that we will use it to the distance matrix in \texttt{MGC}.
+
+
+
+\subsection{[MGC3]}
+\begin{itemize}
+	\item {\it  [MGC3] present the main theorem  \/}
+\end{itemize}
+
+We have discussed one-parameter family i.i.d. representation of network structures, called diffusion maps, and also when given i.i.d. pair of observations of two variables, how distance correlation and its multiscale version test independence between these two. Now it is time to combine these two to test independence between network structures and nodal attributes.
+
+
+\begin{theorem}[MGC of testing independence]
+	\label{theorem1}
+Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is an exchangeable graph.  Assume that we are given $n$-pair of observations $\{ (u^{(t)}_{i}, x_{i}): i = 1,2,... , n  , t \in \mathbb{N} \}$. Then $u^{(t)}_{i} \overset{i.i.d.}{\sim} f^{(t)}_{u} \big(  \eta, g \big)$, $t \in \mathbb{N}$ and $x_{i} \overset{i.i.d.}{\sim} f_{x}$, where $f^{(t)}_{u} \big( \eta, g \big)$ are conditional distribution function given a link function $g$ and a random probability measure $\eta_{t}$ of $U_{(t)}$. Then \texttt{MGC} applied to these pair of data is theoretically consistent against all dependent alternatives in testing :
+$$H_{0} : f_{U(t) \cdot X} = f^{(t)}_{U} \cdot f_{X}$$
+\end{theorem}
+
+
+Since $\boldsymbol{U}$ provides a configuration of vertices in $\boldsymbol{G},$ the above hypothesis implies testing independence between the configuration of vertices in network space and in attribute space, but as a function of a link function $g$ and a random function (variable) of $\eta$ of $\mathbf{U}$.
+
+
+\begin{remark}
+Roughly speaking, we can say that diffusion maps are i.i.d. function of a link function $g$ and a random function of $\mathbf{U}$, $\eta$. Thus testing independence between conditional $U$ and $X$ can be considered as testing independence between $f \big( g, \eta \big)$ and $X$. A link function $g$ concerns the distribution of edges and a random function $\eta$ concerns nature distribution of diffusion maps. Our testing basically examines whether how edges are constructed and how diffusions(propagation) process are correlated to nodal attributes.  
+\end{remark}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Simulation Study}
+
+\subsection{[sim1]}
+\begin{itemize}
+	\item {\it  [sim1] present simplest examples of stochastic block model (graphon) \/}
+\end{itemize}
+
+ We mentioned in the Introduction that latent network model is very common followed by the assumption of local independence. Stochastic Block Model (SBM) is one of the most popular and also useful network generative model, especially as a tool for community detection ([Karrerl and Newman]). The SBM, in the simplest setting, assumes that each of $n$ vertices in graph $\boldsymbol{G}$ belongs to one of $K \in \mathbb{N} (\leq n)$ blocks or groups. Block affiliation is important because the probability of having edges between a pair of vertices depends on which blocks they are in. 
+ 
+ Assume that the latent variable $Z_{1}, Z_{2}, ... , Z_{n} \overset{i.i.d.}{\sim} Multinomial\big( \pi_{1}, \pi_{2}, ... , \pi_{K} \big)$. Then the uppwer triangular entries of $\mathbf{A}$ are independent with 
+ $A_{ij} \overset{i.i.d.}{\sim} Bern\big( \sum\limits_{k,l=1}^{K} p_{kl} I\big( Z_{i} = k, Z_{j} = l  \big)    \big), \forall  i < j$.
+ 
+ Let $W_{1}, W_{2}, ... , W_{n} \overset{i.i.d.}{\sim} Unif[0,1]$. Then such $\mathbf{A}$ can be represented with respect to $\{ W_{i} \}$ as follows:
+
+\begin{equation} 
+A_{ij} \overset{i.i.d.}{\sim} Bern \big( g(W_{i}, W_{j})  \big), \forall i < j
+\end{equation}
+ , where $g\big( W_{i}, W_{j} \big) = \sum\limits_{k,l=1}^{K} p_{kl} I \big( W_{i} \in [\sum\limits_{j=1}^{k-1} \pi_{j}, \sum\limits_{j=1}^{k} \pi_{j}   ] , W_{j} \in [\sum\limits_{j=1}^{l-1} \pi_{j}, \sum\limits_{j=1}^{l} \pi_{j}  ]  \big)$
+
+
+\subsubsection{[sim1.1]}
+
+\begin{equation}
+X_{i} \overset{i.i.d}{\sim} Bern(0.5), i = 1,... , 100
+\end{equation}
+
+\begin{equation}
+Z_{i}  \sim  \left\{  \begin{array}{cc} Bern(0.6) & X_{i} = 0 \\ Bern(0.4) & X_{i} = 1  \end{array} \right.
+\end{equation}
+
+\begin{equation}
+A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{cc}   \textbf{0.4} & \textbf{0.1}  \\ \textbf{0.1} & \textbf{0.4} \end{array}  \right]
+\end{equation}
+
+
+
+
+\subsection{[sim2]}
+\begin{itemize}
+	\item {\it  [sim2] present simplest examples of sparse block model (graphex) \/}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Real Data Examples}
+
+\subsection{c.elegans}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Discussions}
+
+\subsection{[dis1]}
+\begin{itemize}
+	\item {\it  [dis1] discuss merits of using MNT   \/}
+\end{itemize}
+
+Throughout this study, we demonstrate that multiscale network test statistic to test network independence performs well in diverse settings, being supported by thorough theory on distance correlation and diffusion maps. 
+Testing independence is often the very first step in investigating relationship between network topology and nodal variables in our interest. It is more likely that we want to know more than binary decision of rejecting or not rejecting the hypothesis. Multiscale test statistics due to both neighborhood choice and time spent in diffusion processes provides us a hint on a latent dependence structure as well.  
+
+
+\subsection{[dis2]}
+\begin{itemize}
+	\item {\it  [dis2] discuss limitations of using MNT   \/}
+\end{itemize}
+
+
+\subsection{[dis3]}
+\begin{itemize}
+	\item {\it  [dis3] discuss possible contributions of MNT and future works  \/}
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Appendix}
+
+\subsection{[apd1]}
+\begin{itemize}
+	\item {\it  [apd1] additional plots   \/}
+\end{itemize}
+
+
+\subsection{[apd2]}
+\begin{itemize}
+	\item {\it  [apd2] (proof of) lemmas and theorems   \/}
+\end{itemize}
+
+
+\begin{theorem}[de Finetti's Theorem] 
+\label{finetti}
+
+1. Let $X_{1}, X_{2}, ...$ be an infinite sequence of random variables with values in a space $\mathbf{X}$. The sequence $X_{1}, X_{2}, ...$ is exchangeable if and only if there is a random probability measure $\eta$ on $\mathbf{X}$ such that the $X_{i}$ are conditionally i.i.d. given $\eta$. 
+
+2. If the sequence is exchangeable, the empirical distributions
+
+$$\hat{S}_{n} ( . ) := \frac{1}{n} \sum\limits_{i=1}^{n} \delta_{X_{i}} ( .), n \in \mathbb{N}$$
+converges to $\eta$ as $n \rightarrow \infty$ with probability 1.
+\end{theorem}
+
+\begin{theorem}
+	\label{Aldous_Hoover}
+
+Let $\mathbf{A} = \{A_{ij}\}, 1 \leq i,j \leq \infty$ be a jointly exchangeable binary array if and only if there exists a random measurable function $f : [0,1]^{3} \rightarrow \mathbf{A}$ such that 
+
+\begin{equation}
+\big(  A_{ij}  \big) \stackrel{d}{=} \left( f \big( U_{i}, U_{j}, U_{ij} \big)  \right)
+\end{equation}
+where $(U_{i})_{i \in \mathbb{N}}$ and $(U_{ij})_{i,j > i \in mathbb{N}}$ with $U_{ij} = U_{ji}$ are a sequence and matrix, respectively, of i.i.d. Uniform[0,1] random variables. 
+\end{theorem}
+
+
+
+\begin{proof}[Proof of Lemma \ref{lemma1}]
+By [Aldous-Hoover]Theorem, a random array $(A_{ij})$ is jointly exchangeable if and only if it can be represented as follows : there is a random function $g : [0,1]^2 \rightarrow [0,1]$ such that 
+
+$$(A_{ij})  \stackrel{d}{=} Bern( g(W_{i}, W_{j}))$$
+, where $W_{i} \overset{i.i.d.}{\sim} Uniform(0,1)$. 
+
+Thus if $\mathbf{A}$ is an adjacency matrix of an undirected, exchangeable network, for any $i < j,$ $i,j = 1,... , n$:
+
+
+\begin{equation}
+\begin{split}
+P \big(  A_{ij} = a_{ij} \big) & = \int P \big( A_{ij} \big| w_{i}, w_{j} \big) Pr(W_{i} = w_{i}) Pr(W_{j} = w_{j}) dw_{i} dw_{j} \\ & = \int_{0}^{1} \int_{0}^{1} g( w_{i},  w_{j})^{a_{ij}} \big( 1- g( w_{i},  w_{j}) \big)^{1-a_{ij}} dw_{i} dw_{j} 
+\end{split}
+\end{equation}
+
+For fixed row index to $i \in \{1,2,... , n\}$,
+$$P(A_{i1} = a_{i1}, A_{i2} = a_{i2}, ... , A_{in} = a_{in} ) = \prod\limits_{j=1}^{n} P(A_{ij} = a_{ij})$$
+
+\end{proof}
+
+
+\begin{proof}[Proof of Lemma \ref{lemma2}]
+Based on Kallenberg and Exchangeable Graph (KEG) frameworks, introduced in \ref{http://arxiv.org/abs/1512.03099}{Veitch and Roy}, a random array $(A_{ij})$ is jointly exchangeable if and only if it can be represented as follows : there is a random function $g : [0,1]^2 \rightarrow [0,1]$ such that 
+
+\begin{equation}
+(A_{ij})  \stackrel{d}{=} (A_{v_{i}, v_{j}} )  \stackrel{d}{=} Bern( g( \vartheta_{i}, \vartheta_{j}))
+\end{equation}
+, where $v_{i} \overset{i.i.d.}{\sim} Poisson(1), \vartheta_{i} \overset{i.i.d.}{\sim} Poisson(1), v_{i} \leq \nu, i = 1,2,... , n$, for some pre-specified $\nu >0$ so that finite size graphs can include vertices only if they participate in at least one edges. 
+
+Thus if $\mathbf{A}$ is an adjacency matrix of an undirected, exchangeable network, for any $i < j,$ $i,j = 1,... , n$:
+
+\begin{equation}
+\begin{split}
+P \big(  A_{ij} = a_{ij} \big) & = \int P \big( A_{ij} \big| v_{i}, v_{j} \big) Pr(V_{i} = v_{i}) Pr(V_{j} = v_{j}) Pr(\vartheta_{i} = \vartheta_{i}) Pr(\vartheta_{j} = \vartheta_{j})   dv_{i} dv_{j} d\vartheta_{i} d\vartheta_{j}   \\ & = \int_{0}^{\tau} \int_{0}^{\tau} \int_{0}^{\infty} \int_{0}^{\infty} g( \vartheta_{i},  \vartheta{j})^{a_{ij}} \big( 1- g( \vartheta_{i},  \vartheta_{j}) \big)^{1-a_{ij}} \times dPois_{1}(x_{1}) \times dPois_{1}(x_{2}) \times dPois_{1}(x_{3}) \times dPoi_{1}(x_{4})  dx_{1} dx_{2} dx_{3} dx_{4}.
+\end{split}
+\end{equation}
+
+\end{proof}
+
+
+\begin{proof}[Proof of Lemma \ref{lemma3}]
+
+We have shown that for fixed time $t$, diffusion distance is defined as an Euclidean distance of diffusion maps. Diffusion maps is represented as follows :
+
+\begin{equation}
+\boldsymbol{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \cdots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}.
+\end{equation}
+
+Recall that $\Phi = \Pi^{-1/2}\Psi$ and $\mathbf{Q}=\mathbf{\Psi}\mathbf{\Lambda}\mathbf{\Psi}^{T} = \mathbf{\Pi}^{1/2} \mathbf{P} \mathbf{\Pi}^{-1/2}$. 
+Thus, $\mathbf{P \Pi^{-1/2} \Psi = \Pi^{-1/2} \Psi \Lambda}$. 
+
+
+Then for any $r \in \{1,2, ... , q \}$ th row $(q \leq n)$, we can see that $P \phi_{r} = \lambda_{r} \phi_{r}$, where $\phi_{r} = \begin{pmatrix}  \frac{\psi_{r}(1)}{\sqrt{\pi(1)}} & \frac{\psi_{r}(2)}{\sqrt{\pi(2)}} & \cdots & \frac{\psi_{r}(n)}{\sqrt{\pi(n)}} \end{pmatrix}$.
+
+Therefore for exchangeability (or i.i.d.) of $\mathbf{U}_{t}$, it suffices to show exchangeability (or i.i.d.) of $\mathbf{P}$.
+
+Assume joint exchangeability of $\mathbf{G}$, i.e. $(A_{ij}) \stackrel{d}{=} \big( A_{\sigma(i) \sigma(j)} \big)$. 
+
+Then $\frac{A_{ij}}{\sum\limits_{ij} A_{ij}} = \frac{A_{ij}}{ 1 + \sum\limits_{l \neq j} A_{il}}$ since $A_{ij}$ is binary. Moreover, $A_{ij}$ and $(1 + \sum\limits_{l \neq j} A_{il})$ are independent given its link function $g$, and $A_{\sigma(i) \sigma(j)}$ and $(1 + \sum\limits_{l \neq j} A_{\sigma(i) \sigma(l)})$ are independent also given $g$.
+
+Then the following joint exchangeability of transition probability holds:
+
+\begin{equation}
+\big( P_{ij} \big) = \left(  \frac{A_{ij}}{1 - A_{ij} + \sum\limits_{j=1}^{n} A_{ij} } \right)  \stackrel{d}{=} \left( \frac{A_{\sigma(i) \sigma(j)} }{1 - A_{\sigma(i) \sigma(j)} + \sum\limits_{\sigma(j) = 1}^{n} A_{\sigma(i) \sigma(j)} } \right) = \big( P_{\sigma(i) \sigma(j)} \big)
+\end{equation}
+
+Thus, transition probability is exchangeable. 
+This results exchangeable eigenfunctions $\{ \Phi(1), \Phi(2), , ... , \Phi(n) \}$ 
+where $\Phi(i) := \begin{pmatrix} \phi_{1}(i) & \phi_{2}(i) & \cdots & \phi_{q}(i) \end{pmatrix}^{T}$. Thus diffusion maps at fixed $t$, $\mathbf{U}_{t} = \begin{pmatrix} \Lambda^{t} \Phi(1)  & \Lambda^{t} \Phi(2) & \cdots & \Lambda^{t} \Phi(n)  \end{pmatrix}$ are exchangeable. 
+
+By de Finetti's Theorem(\ref{finetti}), we can say that $\mathbf{U}(t) = \{ U^{(t)}_{1}, U^{(t)}_{2}, ... , U^{(t)}_{n} \}$ are conditionally independent on a random probability measure $\eta$. 
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem \ref{theorem1}]
+\end{proof}
+
+
+\begin{proof}[Proof of corollary \ref{corollary1}]
+\end{proof}
+
+Let $x, y, z \in V(G).$
+
+\begin{equation}
+\begin{split}
+ D^{2}_{t}(x,z) & = \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(z,w)   \big)^2 \frac{1}{\pi(w)}  \\ & = \sum\limits_{w \in V(G)} \big(P^{t}(x, w) - P^{t}(y,w) + P^{t}(y,w) - P^{t}(z,w) \big)^2 \frac{1}{\pi(w)} \\ & = \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w) \big)^2 \frac{1}{\pi(w)}  + \sum\limits_{w \in V(G)} \big( P^{t}(y,w) - P^{t}(z,w)  \big)^2 \frac{1}{\pi(w)} \\ & + 2 \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)} \\ &= D^{2}_{t}(x,y) + D^{2}_{t}(y,z) +  2 \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)}   
+\end{split}
+\end{equation}
+
+
+Thus it suffices to show that 
+
+\begin{equation}
+\sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)} \leq D_{t}(x,y) \cdot D_{t}(y,z). 
+\end{equation}
+
+Let $a_{w} = \big(P^{t}(x,w) - P^{t}(y,w) \big) \sqrt{1 / \pi(w)}$ and $b_{w} = \big( P^{t}(y,w) - P^{t}(z,w) \big) \sqrt{1 / \pi(w)}$. Then the above inequality is equivalent to :
+
+\begin{equation} 
+\sum\limits_{w \in V(G)} a_{w} \cdot b_{w} \leq \sqrt{\sum\limits_{w \in V(G)} a^2_{w} \cdot \sum\limits_{w \in V(G)} b^2_{w} }.
+\end{equation}
+
+,which is true by Cauchy-Schwarz inequality.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%% Biobliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{thebibliography}{1}
+	
+	\bibitem{Hoff} Hoff, P. D., Raftery, A. E., $\&$ Handcock, M. S. (2002). Latent space approaches to social network analysis. Journal of the american Statistical association, 97(460), 1090-1098.
+	
+	
+	\bibitem{Austin} Austin, A., Linkletter, C., $\&$ Wu, Z. (2013). Covariate-defined latent space random effects model. Social Networks, 35(3), 338-346.
+	
+	\bibitem{Lazarsfeld} Lazarsfeld, P. F, $\&$ Henry, N. W. (1968). Latent structure analysis. New York: Houghton, Mifflin.
+	
+	\bibitem{Fosdick} Fosdick, B. K., $\&$ Hoff, P. D. (2015). Testing and modeling dependencies between a network and nodal attributes. Journal of the American Statistical Association, 110(511), 1047-1056.
+	
+	\bibitem{Szekely2007} Székely, G. J., Rizzo, M. L., $\&$ Bakirov, N. K. (2007). Measuring and testing dependence by correlation of distances. The Annals of Statistics, 35(6), 2769-2794.
+	
+	
+	\bibitem{Szekely2013} Székely, G. J., $\&$ Rizzo, M. L. (2013). The distance correlation t-test of independence in high dimension. Journal of Multivariate Analysis, 117, 193-213.
+	
+	
+	\bibitem{Cencheng} Cencheng at al, Revealing the structure of dependency between multimodal datasets via multiscale generalized correlation.
+	
+	
+	\bibitem{Lyons} Lyons, R. (2013). Distance covariance in metric spaces. The Annals of Probability, 41(5), 3284-3305.
+	
+	\bibitem{Lee} Lee, J. R. (2006). Distance scales, embeddings, and metrics of negative type. University of California, Berkeley.
+	
+	\bibitem{Tang} Tang, Minh, and Michael Trosset. "Graph metrics and dimension reduction." Indiana University, Indianapolis, IN (2010).
+	
+	\bibitem{Lafon} Lafon, S., $\&$ Lee, A. B. (2006). Diffusion maps and coarse-graining: A unified framework for dimensionality reduction, graph partitioning, and data set parameterization. IEEE transactions on pattern analysis and machine intelligence, 28(9), 1393-1403.
+	
+	\bibitem{Karrer} Karrer, B., $\&$ Newman, M. E. (2011). Stochastic blockmodels and community structure in networks. Physical Review E, 83(1), 016107.
+	
+	
+	
+\end{thebibliography}
+
+
+
+
+\end{document}
