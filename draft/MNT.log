@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  20 AUG 2016 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  22 AUG 2016 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -577,13 +577,20 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 136.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 137.
+
+
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 137.
  [1
 
 {/usr/local/texlive/2016basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 150.
-
-(./MNT.toc
+ (./MNT.toc
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -640,18 +647,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7]
-Overfull \hbox (2.2384pt too wide) in paragraph at lines 218--221
-\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12  []\OMS/cmsy/m/n/12 g[]\OML/cmm/m/it/12 ;$ \
-OT1/ptm/m/n/12 i.e. $\OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 i; j\O
-T1/cmr/m/n/12 ] = [] \OML/cmm/m/it/12 ^^U[] []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
- i\OT1/cmr/m/n/12 )\OML/cmm/m/it/12  []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 j\OT1/
-cmr/m/n/12 )$ \OT1/ptm/m/n/12 ($\OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12 ^^T \OML/cmm
-/m/it/12 q \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 n$\OT1/ptm/m/n/12 ). Since $\O
-ML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 i; j\OT1/cmr/m/n/12 ] = []\OM
-L/cmm/m/it/12 Q\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 i; j\OT1/cmr/m/n/12 ]$\OT1/ptm
-/m/n/12 ,
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -680,11 +675,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [11]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 312.
-
- (/usr/local/texlive/2016basic/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -748,12 +738,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [20]
-
-LaTeX Warning: Reference `http://arxiv.org/abs/1512.03099' on page 21 undefined
- on input line 525.
-
-
-Overfull \hbox (211.28174pt too wide) in paragraph at lines 538--538
+Overfull \hbox (13.09013pt too wide) in paragraph at lines 563--563
 [] 
  []
 
@@ -764,20 +749,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [21]
-Overfull \hbox (88.30573pt too wide) in paragraph at lines 569--572
-[]\OT1/ptm/m/n/12 Thus, tran-si-tion prob-a-bil-ity is ex-change-able. This re-
-sults ex-change-able eigen-func-tions $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 ^^H(1)
-\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 ^^H(2)\OML/cmm/m/it/12 ; ; :::; \OT1/cmr/m/n
-/12 ^^H(\OML/cmm/m/it/12 n\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$
- []
-
-
-Overfull \hbox (97.02629pt too wide) in paragraph at lines 569--572
-\OT1/ptm/m/n/12 where $\OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 i\OT1/cmr/m/n/12 ) 
-:= [][]$\OT1/ptm/m/n/12 . Thus dif-fu-sion maps at fixed $\OML/cmm/m/it/12 t$\O
-T1/ptm/m/n/12 , $\OT1/cmr/bx/n/12 U[] \OT1/cmr/m/n/12 = []$
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -785,7 +756,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [22]
-Overfull \hbox (4.07756pt too wide) in paragraph at lines 590--590
+Overfull \hbox (4.07756pt too wide) in paragraph at lines 615--615
 [] 
  []
 
@@ -815,7 +786,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 649.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 674.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -824,26 +795,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 649.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 674.
  (./MNT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 649.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 649.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 674.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 674.
 Package rerunfilecheck Info: File `MNT.out' has not changed.
-(rerunfilecheck)             Checksum: 6FB5BCCB5FE4479297EDBEB381E9EF2C;1392.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 649.
+(rerunfilecheck)             Checksum: 6FF9130C3825406E7864A433BA90D885;2181.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 674.
  ) 
 Here is how much of TeX's memory you used:
- 10342 strings out of 494447
- 154594 string characters out of 6166766
- 252396 words of memory out of 5000000
- 13403 multiletter control sequences out of 15000+600000
- 30676 words of font info for 81 fonts, out of 8000000 for 9000
+ 10360 strings out of 494447
+ 154969 string characters out of 6166766
+ 252424 words of memory out of 5000000
+ 13412 multiletter control sequences out of 15000+600000
+ 31191 words of font info for 83 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 36i,20n,43p,1751b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,20n,43p,1418b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
 cal/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb
 ></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12
@@ -864,15 +831,16 @@ asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
 016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
 e/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
 live/2016basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
-local/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loc
-al/texlive/2016basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/te
-xlive/2016basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive
-/2016basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016
-basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on MNT.pdf (26 pages, 285333 bytes).
+local/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/loc
+al/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/
+texlive/2016basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texli
+ve/2016basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
+16basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016bas
+ic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on MNT.pdf (26 pages, 294508 bytes).
 PDF statistics:
- 417 PDF objects out of 1000 (max. 8388607)
- 362 compressed objects within 4 object streams
- 98 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 465 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 265 words of extra memory for PDF output out of 10000 (max. 10000000)
 
