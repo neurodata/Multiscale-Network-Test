@@ -27,6 +27,7 @@ anchorcolor = blue]{hyperref}
 \usepackage{indentfirst, verbatim}
 \newcounter{equationset, sectsty, breqn}
 \usepackage{setspace,float,lscape,amsmath,color}
+\usepackage{outlines}
 \usepackage[font=sf, labelfont={sf,bf}, margin=1cm]{caption}
 \usepackage{amsthm}
 \captionsetup{font={small,sf,singlespacing}}
@@ -39,6 +40,8 @@ anchorcolor = blue]{hyperref}
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{remark}{Remark}
+
+
 % Page style definition
 \geometry{margin=1.0in}
 \pagestyle{fancy}
@@ -134,8 +137,90 @@ anchorcolor = blue]{hyperref}
 % Place your abstract within the special {sciabstract} environment.
 
 \begin{sciabstract}
- Network dependence over network space, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear dependent properties. Unfortunately, without knowledge on specific neighborhood structures, no statistic has been suggested to test network dependence further than globally linear dependence. This paper introduces a multiscale dependence test statistic called Multiscale Network Test (\texttt{MNT}), which borrows the idea of diffusion maps and Multiscale Generalized Correlation (MGC). Our methodology for testing network independence to any multivariate nodal attributes can be applied to any exchangeable graph. We prove the consistency of MGC and demonstrate better performance than any other model-based, global test statistics. 
+ Network dependence over network space, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear dependent properties. Unfortunately, without knowledge on specific neighborhood structures, no statistic has been suggested to test network dependence further than globally linear dependence. This paper introduces a multiscale dependence test statistic called Multiscale Network Test (\texttt{MNT}), which borrows the idea of diffusion maps and Multiscale Generalized Correlation (\texttt{MGC}). Our methodology for testing network independence to any multivariate nodal attributes can be applied to any exchangeable graph. We prove the consistency of \texttt{MGC} in this application and demonstrate better performance than any other model-based, global test statistics. 
 \end{sciabstract}
+
+\newpage
+
+\textbf{Outlines}
+\bigskip
+\begin{outline}[enumerate]
+\1 Abstract : 
+\begin{itemize}
+	\item This paper introduces the novel statistical methods to test independence between network and nodal attributes.
+
+	\item KEY WORDS : multivariate independence test, diffusion maps, distance correlation, k-nearest neighbors,
+
+\end{itemize}
+
+\1 INTRODUCTION
+
+\2 introduce interests in association between network and nodal attributes and the related literatures.
+\begin{itemize}
+\item explicitly state the problem and its importance, previous approaches' weakness. 
+\item difference to previous/common approach, what is our specialty.
+\end{itemize}
+
+\2 Introduce notations we are going to use and introduce a common network model of nodal attributes.
+\begin{itemize}
+\item briefly explains the difficulties (how to represent network topology) and how we overcome them
+\item introduce outlines
+\end{itemize}
+
+\1 METHODOLOGY
+
+	\2 introduce a exchangeable graph
+		\3 definition of exchangeable graph and lemmas under directed graph
+		\3 explain difficulties in undirected or more general graph and introduce representation theorem
+		\3 explains more general version of graph, i.e. graphex
+		\3 state corollary that commonly used graphical models which satisfy exchangeability, e.g. SBM, RDPG, Fosdick's latent model
+
+	\2 represent a network structures as a one-parameter family or multivariate variables
+		\3 introduce notations and definition (coifman $\&$ ming)
+		\3 explains spectral properties of diffusion maps
+		\3 Lemmas about properties of diffusion maps under exchangeable graphs
+
+	\2 introduce Dcor and MGC to apply testing independence G and X
+		\3 introduce distance correlation and multiscale version
+		\3 discuss the choice of proper metrics for testing network independence and demonstrate diffuion distance is appropriate.
+		\3 present the main theorem and a few remarks.
+
+
+\1 SIMULATION PERFORMANCE AND PRACTICAL IMPLEMENTATION
+
+	\2 stochastic block model
+		\3 simplest two block model
+		\3 simplest three block model
+		\3 sparse version of block model
+
+	\2 random-dot product grap
+		\3 simplest RDPG + "remarks" about consistent estimation on latent variable
+		\3 comparison to Fosdick's method.	
+
+
+\1 APPLICATION
+
+(black box)
+
+
+\1 CONCLUDING REMARKS
+
+	\2 discuss merits of using MNT 
+	\2 discuss limitations of using MNT
+	\2 discuss possible contributions of MNT and future works
+
+
+
+\1 APPENDIX
+
+
+\1 REFERENCES
+
+
+\1 SUPPLEMANTARY FIGURES
+
+\end{outline}
+
 
 % In setting up this template for *Science* papers, we've used both
 % the \section* command and the \paragraph* command for topical
@@ -180,14 +265,11 @@ Network, a collection of nodes and edges between them, has been a celebrated are
 
 \subsubsection{[EG1]}
 \begin{itemize}
-	\item {\it  [EG1] introduce an exchangeable graph \/}
+	\item {\it  [EG1] definition of exchangeable graph \/}
 \end{itemize}
 
 
-Due to the inter-correlated construction of $U$, e.g. $i$th subject's diffusion depends on others in the given network, it is hard to say that the observed diffusion coordinates of $n$ subjects are independent samples without any restrictions on networks. Independence within sample of one variable is important in testing independence with other variable. (\textcolor{red}{why? example})
-
-To talk about independence of $U$, we need more general concept of exchangeable graph. 
-The property of exchangeability is closely related to the use of independent and identically-distributed(i.i.d) random variable. A sequence of random variables that are i.i.d. conditional on some underlying distributional form is exchangeable. 
+ The property of exchangeability is closely related to the use of independent and identically-distributed(i.i.d) random variable. A sequence of random variables that are i.i.d. conditional on some underlying distributional form is exchangeable. 
 Moreover, the converse can be established for ``infinite sequence`` by [Bruno de Finetti](\ref{finetti})'s representation theorem. The extended versions of the theorem show that in any infinite sequence of exchangeable random variables, random variables are conditionally i.i.d, given the underlying distributional form.
 It is straightforward to check that $\mathbf{G}$ is an exchangeable graph if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable.  
 
@@ -205,27 +287,24 @@ It is straightforward to check that $\mathbf{G}$ is an exchangeable graph if and
 
 \subsubsection{[EG2]}
 \begin{itemize}
-	\item {\it  [EG2] Derive exchangeability and iid representation of A \/}
+	\item {\it  [EG2] explain difficulties in undirected or more general graph and introduce representation theorem \/}
 \end{itemize}
 
-The main advantage from such representation of $\mathbf{A}$ is that it becomes now possible to represent given network $\boldsymbol{G}$ as a one-parameter family of $q(<n)$-coordinates called diffusion coordinate, of which metric well reflects how corresponding vertices are connected each other at each diffusion time point. A set of diffusion maps for each vertex have some desirable properties which will be helpful in testing. The followings are concerning about a few conditions for earning them. 
 
-\begin{lemma}[Exchangeability and i.i.d. of $A$ in graphon]
-	\label{lemma1}
-	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i \leq j \}$ are i.i.d. conditioning on random link function $g : [0,1]^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \}$, $i \in \{ 1,2,... , n \}$ are conditionally i.i.d. on random link function $g$.  
-\end{lemma}
 
-On the other hand, a graphon, despite its advantage on simple representation, is either empty or dense. Thus, it fails to represent real network data where the sparsity or scale-free distribution is fairly common. Thus we introduce a concept of graphex introduced by \href{http://arxiv.org/abs/1512.03099}{Veitch and Roy, 2015}, which is more generalized version of graphon and also covers sparse graphs. The following claim says that we can still have i.i.d. sequence from $\mathbf{A}$ conditioning on random link function $g : \mathbb{N}^2 \rightarrow [0,1]$:
-
-\begin{lemma}[Exchangeability and i.i.d. of $A$ in graphex]
-	\label{lemma2}
-	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphex. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i \leq j \}$ are i.i.d. conditioning on random link function $h : \mathbb{N}^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \}$, $i \in \{ 1,2,... , n \}$ are conditionally i.i.d. on random link function $g$.   
-\end{lemma}
 
 
 \subsubsection{[EG3]}
 \begin{itemize}
-	\item {\it  [EG3] examples of exchangeable graphs \/}
+	\item {\it  [EG3] explain more general version og graph, i.e. graphex \/}
+\end{itemize}
+
+
+
+
+\subsubsection{[EG4]}
+\begin{itemize}
+	\item {\it  [EG4] examples of exchangeable graphs \/}
 \end{itemize}
 
 Widely used graphical model, e.g. Stochastic Block Model (SBM), Random Dot Product Graph (RDPG), satisfies this definition of jointly exchangeable graph under some constraints. 
@@ -302,6 +381,23 @@ Now we call the family of $q$-variate($q \leq n$) diffusion maps $\{ U_{t} \}_{t
 \begin{itemize}
 	\item {\it  [MDM3] properties of diffusion maps under exchangeable graphs \/}
 \end{itemize}
+
+Due to the inter-correlated construction of $U$, e.g. $i$th subject's diffusion depends on others in the given network, it is hard to say that the observed diffusion coordinates of $n$ subjects are independent samples without any restrictions on networks. Independence within sample of one variable is important in testing independence with other variable. (\textcolor{red}{why? example})
+
+To talk about independence of $U$, we need more general concept of exchangeable graph. Remind that under jointly exchangeable graph, $(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma(j)})$
+for every permutation $\sigma$ of $n$. The main advantage from such representation of $\mathbf{A}$ is that it becomes now possible to represent given network $\boldsymbol{G}$ as a one-parameter family of $q(<n)$-coordinates called diffusion coordinate, of which metric well reflects how corresponding vertices are connected each other at each diffusion time point. A set of diffusion maps for each vertex have some desirable properties which will be helpful in testing. The followings are concerning about a few conditions for earning them. 
+
+\begin{lemma}[Exchangeability and i.i.d. of $A$ in graphon]
+	\label{lemma1}
+	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i \leq j \}$ are i.i.d. conditioning on random link function $g : [0,1]^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \}$, $i \in \{ 1,2,... , n \}$ are conditionally i.i.d. on random link function $g$.  
+\end{lemma}
+
+On the other hand, a graphon, despite its advantage on simple representation, is either empty or dense. Thus, it fails to represent real network data where the sparsity or scale-free distribution is fairly common. Thus we introduce a concept of graphex introduced by \href{http://arxiv.org/abs/1512.03099}{Veitch and Roy, 2015}, which is more generalized version of graphon and also covers sparse graphs. The following claim says that we can still have i.i.d. sequence from $\mathbf{A}$ conditioning on random link function $g : \mathbb{N}^2 \rightarrow [0,1]$:
+
+\begin{lemma}[Exchangeability and i.i.d. of $A$ in graphex]
+	\label{lemma2}
+	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphex. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i \leq j \}$ are i.i.d. conditioning on random link function $h : \mathbb{N}^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \}$, $i \in \{ 1,2,... , n \}$ are conditionally i.i.d. on random link function $g$.   
+\end{lemma}
 
 
 From the above Lemma \ref{lemma1}, \ref{lemma2}, we can also prove exchangeability and conditional i.i.d. of diffusion maps at each time point. 
@@ -444,7 +540,16 @@ A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{cc}   \textbf{0.4} & \textbf{0.
 
 \subsubsection{[sim2.1] simplest RDPG}
 
+
+
+
 \subsubsection{[sim2.2] comparison to Fosdick's method}
+
+
+Fosdick and Hoff proposed a approach of jointly modelling network and its attributes, where networks represent additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors.
+
+As a connection to RDPG, this model can also represented as a product of combined latent factor $\tilde{u}$ and $\tilde{v}$. 
+
 
 
 

@@ -1,33 +1,34 @@
-\contentsline {section}{\numberline {1}Introduction}{4}{section.1}
-\contentsline {subsection}{\numberline {1.1}intro1}{4}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}intro2}{4}{subsection.1.2}
-\contentsline {section}{\numberline {2}Methodology}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Exchangeable Graph}{6}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}[EG1]}{6}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}[EG2]}{7}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}[EG3]}{8}{subsubsection.2.1.3}
-\contentsline {subsection}{\numberline {2.2}Multiscale Distance Metrics}{8}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}[MDM1]}{8}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}[MDM2]}{10}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}[MDM3]}{11}{subsubsection.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Multiscale Generalized Correlation}{12}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}[MGC1]}{12}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}[MGC2]}{13}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}[MGC3]}{14}{subsubsection.2.3.3}
-\contentsline {section}{\numberline {3}Simulation Study}{16}{section.3}
-\contentsline {subsection}{\numberline {3.1}[sim1] Stochastic Block Model}{16}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}[sim1.1] simplest two block model}{16}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}[sim1.2] simplest three block model}{17}{subsubsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.3}[sim1.3] sparse version of block model}{17}{subsubsection.3.1.3}
-\contentsline {subsection}{\numberline {3.2}[sim2] Random Dot Product Graph}{17}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}[sim2.1] simplest RDPG}{17}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}[sim2.2] comparison to Fosdick's method}{17}{subsubsection.3.2.2}
-\contentsline {section}{\numberline {4}Real Data Examples}{18}{section.4}
-\contentsline {subsection}{\numberline {4.1}c.elegans}{18}{subsection.4.1}
-\contentsline {section}{\numberline {5}Discussions}{19}{section.5}
-\contentsline {subsection}{\numberline {5.1}[dis1]}{19}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}[dis2]}{19}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}[dis3]}{19}{subsection.5.3}
-\contentsline {section}{\numberline {6}Appendix}{20}{section.6}
-\contentsline {subsection}{\numberline {6.1}[apd1]}{20}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}[apd2]}{20}{subsection.6.2}
+\contentsline {section}{\numberline {1}Introduction}{7}{section.1}
+\contentsline {subsection}{\numberline {1.1}intro1}{7}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}intro2}{7}{subsection.1.2}
+\contentsline {section}{\numberline {2}Methodology}{9}{section.2}
+\contentsline {subsection}{\numberline {2.1}Exchangeable Graph}{9}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}[EG1]}{9}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}[EG2]}{9}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}[EG3]}{10}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}[EG4]}{10}{subsubsection.2.1.4}
+\contentsline {subsection}{\numberline {2.2}Multiscale Distance Metrics}{10}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}[MDM1]}{10}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}[MDM2]}{12}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}[MDM3]}{13}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Multiscale Generalized Correlation}{15}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}[MGC1]}{15}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}[MGC2]}{16}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}[MGC3]}{17}{subsubsection.2.3.3}
+\contentsline {section}{\numberline {3}Simulation Study}{19}{section.3}
+\contentsline {subsection}{\numberline {3.1}[sim1] Stochastic Block Model}{19}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}[sim1.1] simplest two block model}{19}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}[sim1.2] simplest three block model}{20}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}[sim1.3] sparse version of block model}{20}{subsubsection.3.1.3}
+\contentsline {subsection}{\numberline {3.2}[sim2] Random Dot Product Graph}{20}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}[sim2.1] simplest RDPG}{20}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}[sim2.2] comparison to Fosdick's method}{20}{subsubsection.3.2.2}
+\contentsline {section}{\numberline {4}Real Data Examples}{21}{section.4}
+\contentsline {subsection}{\numberline {4.1}c.elegans}{21}{subsection.4.1}
+\contentsline {section}{\numberline {5}Discussions}{22}{section.5}
+\contentsline {subsection}{\numberline {5.1}[dis1]}{22}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}[dis2]}{22}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}[dis3]}{22}{subsection.5.3}
+\contentsline {section}{\numberline {6}Appendix}{23}{section.6}
+\contentsline {subsection}{\numberline {6.1}[apd1]}{23}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}[apd2]}{23}{subsection.6.2}
