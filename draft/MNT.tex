@@ -12,7 +12,7 @@
 \usepackage[colorlinks = true,
 linkcolor = blue,
 urlcolor  = blue,
-citecolor = blue,
+citecolor = green,
 anchorcolor = blue]{hyperref}
 \usepackage{setspace,listings}
 %\usepackage{cite}
@@ -45,7 +45,7 @@ anchorcolor = blue]{hyperref}
 % Page style definition
 \geometry{margin=1.0in}
 \pagestyle{fancy}
-\usepackage{scicite}
+%\usepackage{scicite}
 
 % Use times if you have the font installed; otherwise, comment out the
 % following line.
@@ -57,6 +57,7 @@ anchorcolor = blue]{hyperref}
 % out into a separate .sty file (which could lead to the loss of some
 % information when we convert the file to other formats).  Instead, keep
 % them in the preamble of your main LaTeX source file.
+
 
 
 % The following parameters seem to provide a reasonable page setup.
@@ -245,7 +246,7 @@ anchorcolor = blue]{hyperref}
 \item {\it  [intro1] Introduce interests in association between network and nodal attributes and the related literature.   \/}
 \end{itemize}
 
-Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of psychology, information theory, biology, statistics, economics, etc. The relationship between the way a pair of nodes are connected and the values of their attribute is a common interest in network analysis. There has been a lot of efforts to represent a network as a function of nodal attributes or model an outcome of nodal attribute variables through their underlying network structures. However, it is very obscure to determine which one should be put as a dependent variable. And most of all network often does not have a natural structure. This is why there exist a plethora of works on latent structure of network, which also depends on the characteristics of each node ( [Hoff et al. (2002)] , [Austin, Linkletter, and Wu (2013)] ). In a latent space model, local independence between network and nodal attributes, conditional on a latent variable is often assumed ( [Lazarsfeld and Henry (1968)] ), which makes easier to interpret the dependency mechanism. In real network data, however, it is almost impossible to estimate such latent variable without any knowledge on true network generative model and also we cannot guarantee that direction or amount of association between network and nodal attributes keeps consistent across latent variables, i.e. we cannot guarantee linear dependence. 
+Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of psychology, information theory, biology, statistics, economics, etc. The relationship between the way a pair of nodes are connected and the values of their attribute is a common interest in network analysis. There has been a lot of efforts to represent a network as a function of nodal attributes or model an outcome of nodal attribute variables through their underlying network structures. However, it is very obscure to determine which one should be put as a dependent variable. And most of all network often does not have a natural structure. This is why there exist a plethora of works on latent structure of network, which also depends on the characteristics of each node ( \hyperlink{Hoff}{Hoff et al. (2002)}  , \hyperlink{Austin}{Austin, Linkletter, and Wu (2013)} ). In a latent space model, local independence between network and nodal attributes, conditional on a latent variable is often assumed ( \hyperlink{Lazarsfeld}{Lazarsfeld and Henry (1968)} ), which makes easier to interpret the dependency mechanism. In real network data, however, it is almost impossible to estimate such latent variable without any knowledge on true network generative model and also we cannot guarantee that direction or amount of association between network and nodal attributes keeps consistent across latent variables, i.e. we cannot guarantee linear dependence. 
 
 
 \subsection{intro2}
@@ -261,6 +262,8 @@ Network, a collection of nodes and edges between them, has been a celebrated are
 \newpage
 \section{Methodology}
 
+First step in testing network independence to other variables is to figure out the variable which configurates location of vertices over network space.  We hope that our observed network be a realization of such variable so that our test results can be generalized to those from population of given network. Moveover a pair of our observations for each variable we are going to test should be i.i.d realization to guarantee representativeness and avoid redundant intra-dependence.  
+
 \subsection{Exchangeable Graph}
 
 \subsubsection{[EG1]}
@@ -268,12 +271,12 @@ Network, a collection of nodes and edges between them, has been a celebrated are
 	\item {\it  [EG1] definition of exchangeable graph \/}
 \end{itemize}
 
+Assuming that we are given one network, equivalently one graph, it is not clear to consider given network as an independent and identically distributed sample of some variable. It is true that if you consider each edge is i.i.d., then observed adjacency matrix is a random sample of  a single parameter which is the probability of having edge or not. However, in this case, the resulting network model only depends on number of edges \cite{Orbanz} and does not cover undirected or no self-loop networks.  
 
- The property of exchangeability is closely related to the use of independent and identically-distributed(i.i.d) random variable. A sequence of random variables that are i.i.d. conditional on some underlying distributional form is exchangeable. 
-Moreover, the converse can be established for ``infinite sequence`` by [Bruno de Finetti](\ref{finetti})'s representation theorem. The extended versions of the theorem show that in any infinite sequence of exchangeable random variables, random variables are conditionally i.i.d, given the underlying distributional form.
-It is straightforward to check that $\mathbf{G}$ is an exchangeable graph if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable.  
+ The property of exchangeability is closely related to the use of independent and identically-distributed(i.i.d) random variable. Network or graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \cite{Orbanz}. 
 
-\begin{definition}
+\begin{definition}[2-array exchangeability]
+	\label{exchangeability}
 	A random 2-array $(A_{ij})$ is called $\mathbf{\mbox{jointly exchangeable}}$ if 
 	$$(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma(j)})$$
 	for every permutation $\sigma$ of $n$,
@@ -282,7 +285,11 @@ It is straightforward to check that $\mathbf{G}$ is an exchangeable graph if and
 	for every pair of permutation $\sigma, \sigma^{\prime}$ of $n$.
 \end{definition}
 
-\textbf{joint exchangeability} of $A$ is what we need. 
+
+
+
+
+In the next section, we will explain the shortcomings of representing network as a graphon and introduce more general exchangeable graph in the next. 
 
 
 \subsubsection{[EG2]}
@@ -290,15 +297,41 @@ It is straightforward to check that $\mathbf{G}$ is an exchangeable graph if and
 	\item {\it  [EG2] explain difficulties in undirected or more general graph and introduce representation theorem \/}
 \end{itemize}
 
+However, exchangeability itself cannot guarantee being $i.i.d$. Fortunately, thanks to the celebrated  \textit{de Finetti}(\ref{finetti})'s representation theorem, it has been proven that there exists a random probability measure $\eta$ on random variable $\mathbf{Z}$ that a sequence of $Z_{1}, Z_{2}, ... $ are \textit{i.i.d} conditional $\eta$ \textit{if and only if} the sequence is exchangeable \cite{Orbanz} \cite{Caron}. \textit{Aldous-Hoover theorem}(\ref{Aldous_Hoover}) is the representation theorem of 2-array exchangeable array, which would be useful to explain jointly exchangeable adjacent matrix. Exchangeable graph is commonly called \textit{graphon}. Exchangeable graphon is defined through a random measurable functions follows \cite{Chan}:
+
+\begin{definition}[graphon]
+	\label{graphon}
+	
+	A \textit{graphon} with $n (\in \mathbb{N})$ nodes is defined as a function of a symmetric measurable function $g : [0,1]^2 \rightarrow [0,1]$ with input of $u_{i} \overset{i.i.d}{\sim} Uniform[0,1], i = 1,2,... ,n$. 
+	Let $\mathbf{A}$ be an adjacency matrix of graphon. Then for any $i \leq j, i,j=1,2,...,n$:	
+	\begin{equation}
+	Pr \big(   A_{ij} = 1 \big| u_{i}, u_{j} \big) = g \big(  u_{i}, u_{j} \big)
+	\end{equation}
+	
+\end{definition}
+
+Thanks to \textit{Aldous-Hoover theorem}, we can now better represent exchangeable network through measurable function, but we are still halfway done in case of undirected network where $A_{ij} = A_{ji}$  $(i,j=1,2,... , n)$.  Under undirected network where self-loop is still allowed, we can represent $\{ A_{ij} : i \leq j \}$ as a function of $g$ conditioning on $\{ u_{i}\}$. 
 
 
+
+\begin{equation}
+( A_{ij} )  =  (   A_{\sigma(i) \sigma(j)}  ) \Longleftrightarrow A_{ij} \overset{ind}{\sim} Bern\big(  g(u_{i}, u_{j}) \big), i \leq j
+\end{equation}  
 
 
 \subsubsection{[EG3]}
 \begin{itemize}
-	\item {\it  [EG3] explain more general version og graph, i.e. graphex \/}
+	\item {\it  [EG3] explain more general version of graph, i.e. graphex \/}
 \end{itemize}
 
+Graphon has been studied widely as a limit of random graphs \textcolor{red}{(ref : )}. However, despite its advantage on simple representation, is either empty or dense. Thus it fails to represent real network data where sparsity or scale-free distribution if fairly common. In addition to graphon,we introduce a concept of \textit{graphex}, first proposed by \href{http://arxiv.org/abs/1512.03099}{Veitch and Roy, 2015}, which is more generalized version of graphon and also covers sparse graphs.
+
+\begin{definition}[graphex]
+	\label{graphex}
+	
+
+	
+\end{definition}
 
 
 
@@ -336,7 +369,7 @@ For each time point $t \in \mathbb{N}$, we can define a diffusion distance $C_{t
 
 \begin{equation}
 \begin{split}
-C^2_{t}[i,j] & = \sum\limits_{w =1}^{n} \big( P^{t}[i,w] - P^{t}[j,w]  \big)^{2} \frac{1}{\pi(w)} = \sum\limits_{w=1}^{n} \left(  \frac{P^{t}[i,w]}{\sqrt{\pi(w)}} - \frac{P^{t}[j,w]}{\sqrt{\pi(w)}}   \right)^2 \\ & = \parallel P^{t}[i, \cdot] - P^{t}[i, \cdot]  \parallel^2_{L^{2}(\boldsymbol{G}, d\mu / \pi)  }
+C^2_{t}[i,j] & = \sum\limits_{w =1}^{n} \big( P^{t}[i,w] - P^{t}[j,w]  \big)^{2} \frac{1}{\pi(w)} = \sum\limits_{w=1}^{n} \left(  \frac{P^{t}[i,w]}{\sqrt{\pi(w)}} - \frac{P^{t}[j,w]}{\sqrt{\pi(w)}}   \right)^2 \\ & = \parallel P^{t}[i, \cdot] - P^{t}[j, \cdot]  \parallel^2_{L^{2}(\boldsymbol{G}, d\mu / \pi)  }
 \end{split}
 \end{equation}
 
@@ -358,7 +391,7 @@ Since an adjacency matrix $A$ does not guarantee a symmetric of $P$, define a sy
  
  \begin{equation}
  \begin{split}
- C^2_{t}[i,j] & = \sum\limits_{r=1}^{n} \lambda^{2t}_{r} \big( \phi_{r} (i) - \phi_{r}(j)   \big)^2   \\ &  = \parallel P^{t}[i, \cdot] - P^{t}[i, \cdot]  \parallel^2_{L^{2}(\boldsymbol{G}, d\mu / \pi)  }
+ C^2_{t}[i,j] & = \sum\limits_{r=1}^{n} \lambda^{2t}_{r} \big( \phi_{r} (i) - \phi_{r}(j)   \big)^2   \\ &  = \parallel P^{t}[i, \cdot] - P^{t}[j, \cdot]  \parallel^2_{L^{2}(\boldsymbol{G}, d\mu / \pi)  }
  \end{split}
  \end{equation}
  
@@ -392,7 +425,7 @@ for every permutation $\sigma$ of $n$. The main advantage from such representati
 	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i \leq j \}$ are i.i.d. conditioning on random link function $g : [0,1]^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \}$, $i \in \{ 1,2,... , n \}$ are conditionally i.i.d. on random link function $g$.  
 \end{lemma}
 
-On the other hand, a graphon, despite its advantage on simple representation, is either empty or dense. Thus, it fails to represent real network data where the sparsity or scale-free distribution is fairly common. Thus we introduce a concept of graphex introduced by \href{http://arxiv.org/abs/1512.03099}{Veitch and Roy, 2015}, which is more generalized version of graphon and also covers sparse graphs. The following claim says that we can still have i.i.d. sequence from $\mathbf{A}$ conditioning on random link function $g : \mathbb{N}^2 \rightarrow [0,1]$:
+
 
 \begin{lemma}[Exchangeability and i.i.d. of $A$ in graphex]
 	\label{lemma2}
@@ -581,11 +614,27 @@ Testing independence is often the very first step in investigating relationship 
 	\item {\it  [dis2] discuss limitations of using MNT   \/}
 \end{itemize}
 
+\begin{itemize}
+	\item choosing the optimal time $t$, optimal choice of neighborhood $(k,l)$ might be burdensome. 
+	\item real network data cannot satisfy the condition of exchangeability
+	\item we often do not have any idea about a latent function of $g$ or $\eta$.
+\end{itemize}	
+
+
 
 \subsection{[dis3]}
 \begin{itemize}
 	\item {\it  [dis3] discuss possible contributions of MNT and future works  \/}
 \end{itemize}
+
+\begin{itemize}
+	\item We can use it to study latent structure of network (graph) by exploring testing p-value maps across diffusion times.
+	\item Other than testing network independence to nodal attributes, we can use MNT to test independence between a pair of networks.  
+	\item This novel, nonparametric testing would help to understand complex data, i.e. network, which could be entangled with variables that we are interested in. 
+\end{itemize}	
+
+
+
 
 
 
@@ -741,10 +790,17 @@ Let $a_{w} = \big(P^{t}(x,w) - P^{t}(y,w) \big) \sqrt{1 / \pi(w)}$ and $b_{w} = 
 \newpage
 \begin{thebibliography}{1}
 	
-	\bibitem{Hoff} Hoff, P. D., Raftery, A. E., $\&$ Handcock, M. S. (2002). Latent space approaches to social network analysis. Journal of the american Statistical association, 97(460), 1090-1098.
+	
+	\bibitem[]{Orbanz} Orbanz, P., $\&$ Roy, D. M. (2015). Bayesian models of graphs, arrays and other exchangeable random structures. IEEE transactions on pattern analysis and machine intelligence, 37(2), 437-461.
+	
+	\bibitem[]{Caron} Caron, F., $\&$ Fox, E. B. (2014). Sparse graphs using exchangeable random measures. arXiv preprint arXiv:1401.1137.
+	
+	\bibitem[]{Chan} Chan, S. H., Costa, T. B., $\&$ Airoldi, E. M. (2013, December). Estimation of exchangeable graph models by stochastic blockmodel approximation. In Global Conference on Signal and Information Processing (GlobalSIP), 2013 IEEE (pp. 293-296). IEEE.
+	
+	\bibitem{Hoff}\hypertarget{Hoff}{ Hoff, P. D., Raftery, A. E., $\&$ Handcock, M. S. (2002). Latent space approaches to social network analysis. Journal of the american Statistical association, 97(460), 1090-1098.}
 	
 	
-	\bibitem{Austin} Austin, A., Linkletter, C., $\&$ Wu, Z. (2013). Covariate-defined latent space random effects model. Social Networks, 35(3), 338-346.
+	\bibitem{Austin}\hypertarget{Austin}{ Austin, A., Linkletter, C., $\&$ Wu, Z. (2013). Covariate-defined latent space random effects model. Social Networks, 35(3), 338-346.}
 	
 	\bibitem{Lazarsfeld} Lazarsfeld, P. F, $\&$ Henry, N. W. (1968). Latent structure analysis. New York: Houghton, Mifflin.
 	
@@ -769,6 +825,7 @@ Let $a_{w} = \big(P^{t}(x,w) - P^{t}(y,w) \big) \sqrt{1 / \pi(w)}$ and $b_{w} = 
 	
 	\bibitem{Karrer} Karrer, B., $\&$ Newman, M. E. (2011). Stochastic blockmodels and community structure in networks. Physical Review E, 83(1), 016107.
 	
+
 	
 	
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  24 AUG 2016 22:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  25 AUG 2016 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -446,11 +446,6 @@ Package: amsthm 2015/03/04 v2.20.2
 \c@corollary=\count135
 \c@remark=\count136
 
-(./scicite.sty
-LaTeX Info: Redefining \cite on input line 160.
-LaTeX Info: Redefining \nocite on input line 227.
-Package: scicite 2003/11/04  v 4.01
-)
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
@@ -458,21 +453,21 @@ Package: times 2005/04/12 PSNFSS-v9.2a (SPQR)
  (./MNT.aux)
 \openout1 = `MNT.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 127.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 128.
 
  (/usr/local/texlive/2016basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -513,7 +508,7 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 
 \c@lstlisting=\count138
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring ON on input line 127.
+Package hyperref Info: Link coloring ON on input line 128.
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -523,9 +518,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 127.
-LaTeX Info: Redefining \pageref on input line 127.
-LaTeX Info: Redefining \nameref on input line 127.
+LaTeX Info: Redefining \ref on input line 128.
+LaTeX Info: Redefining \pageref on input line 128.
+LaTeX Info: Redefining \nameref on input line 128.
  (./MNT.out) (./MNT.out)
 \@outlinefile=\write3
 \openout3 = `MNT.out'.
@@ -566,42 +561,42 @@ Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 136.
+LaTeX Font Info:    Try loading font information for U+msa on input line 137.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 136.
+LaTeX Font Info:    Try loading font information for U+msb on input line 137.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 136.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 137.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 140.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 140.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 141.
 
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 140.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 141.
  [1
 
 {/usr/local/texlive/2016basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 150.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 151.
 
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 150.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 151.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -625,7 +620,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 236.
  (./MNT.toc
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -646,7 +641,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [6]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 243.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 244.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -767,10 +762,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [23]
-Overfull \hbox (13.09013pt too wide) in paragraph at lines 668--668
-[] 
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -785,7 +776,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [25]
-Overfull \hbox (4.07756pt too wide) in paragraph at lines 720--720
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26]
+Overfull \hbox (13.09013pt too wide) in paragraph at lines 723--723
 [] 
  []
 
@@ -795,19 +793,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [27]
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no © in font ptmr7t!
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no © in font ptmr7t!
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -815,7 +801,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [28]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 779.
+Overfull \hbox (4.07756pt too wide) in paragraph at lines 775--775
+[] 
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -824,52 +812,83 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 779.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30]
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 842.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 842.
  (./MNT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 779.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 779.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 842.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 842.
 Package rerunfilecheck Info: File `MNT.out' has not changed.
 (rerunfilecheck)             Checksum: CFF69D8A99E27261A4D7FD31BA7DF9E2;2246.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 779.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 842.
  ) 
 Here is how much of TeX's memory you used:
- 10475 strings out of 494447
- 156053 string characters out of 6166766
- 253480 words of memory out of 5000000
- 13483 multiletter control sequences out of 15000+600000
+ 10445 strings out of 494447
+ 155786 string characters out of 6166766
+ 253059 words of memory out of 5000000
+ 13443 multiletter control sequences out of 15000+600000
  31191 words of font info for 83 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 36i,20n,43p,1418b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
-cal/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb
-></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12
-.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-bx8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmex10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfont
-s/cmextra/cmex8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2016basic/texmf-dist/fon
-ts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2016basic/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016basic/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016basic
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016bas
-ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016b
-asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
-016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
-e/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
-live/2016basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
-local/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/loc
-al/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/
-texlive/2016basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texli
-ve/2016basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
-16basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016bas
-ic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on MNT.pdf (29 pages, 298901 bytes).
+ 36i,20n,43p,1493b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Lazarsfeld} has been referenced but does not exis
+t, replaced by a fixed one
+
+{/usr/local/texlive/2016basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/loca
+l/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb><
+/usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
+fb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
+cmextra/cmex8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts
+/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2016basic/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016basic/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016basic/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016basic
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016bas
+ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
+6basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
+ve/2016basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
+cal/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local
+/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/te
+xlive/2016basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
+/2016basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016
+basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016basic
+/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on MNT.pdf (32 pages, 306301 bytes).
 PDF statistics:
- 523 PDF objects out of 1000 (max. 8388607)
- 463 compressed objects within 5 object streams
- 143 named destinations out of 1000 (max. 500000)
+ 558 PDF objects out of 1000 (max. 8388607)
+ 495 compressed objects within 5 object streams
+ 156 named destinations out of 1000 (max. 500000)
  273 words of extra memory for PDF output out of 10000 (max. 10000000)
 
