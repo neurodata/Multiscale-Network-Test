@@ -344,9 +344,6 @@ Widely used graphical model, e.g. Stochastic Block Model (SBM), Random Dot Produ
 
 
 
-
-
-
 \subsection{Multiscale Distance Metrics}
 
 
@@ -355,7 +352,7 @@ Widely used graphical model, e.g. Stochastic Block Model (SBM), Random Dot Produ
 	\item {\it  [MDM1] represent a network structure as a one-parameter family of multivariate variables \/}
 \end{itemize}
 
-There have been a lot of efforts to represent the network in terms of a summarizing network factor( [Fosdick $\&$ Hoff (2015)] ) or some meaningful coefficients, e.g. centrality or connectivity. However, there has been no vertex-wise variable which provides a configuration of vertex over network space without losing any information. [Coifman $\&$ Lafon] demonstrated that diffusion maps provide a meaningful multiscale geometries of data while keeping information on every local relation. Diffusion map is constructed via Markov chain on graph. Here an adjacency matrix $\boldsymbol{A}$ acts as a kernel, representing a similarity between each node in $\boldsymbol{G}$. The adjacency matrix also takes into account every single relationship between nodes, rather than estimating or summarizing network structures.
+There have been a lot of efforts to represent the network in terms of a summarizing network factor\cite{Hoff} or some meaningful coefficients, e.g. centrality\cite{centrality1}\cite{centrality2}. However, there has been no vertex-wise variable which provides a configuration of vertex over network space without losing any information. \hyperlink{Coifman}{Coifman $\&$ Lafon}\cite{Coifman} demonstrated that diffusion maps provide a meaningful multiscale geometries of data while keeping information on every local relation. Diffusion map is constructed via Markov chain on graph. Here an adjacency matrix $\boldsymbol{A}$ acts as a kernel, representing a similarity between each node in $\boldsymbol{G}$; thus we do not have to estimate anything to obtain multidimensional representation of network topology through diffusion maps. 
 
 Let $(\boldsymbol{G}, \mathcal{A}, \mu)$ be a measure space. Throughout all of the arguments, assume that we have a countable vertex set with size of $n \in \mathbb{N}$. The vertex set of network $\boldsymbol{G}$ is the data set of vertices and edges and $\mathcal{A}$ is a set of a pair of nodes $\{(i,j) : v_{i}, v_{i} \in V(\boldsymbol{G}) \}$. A measure of $\mu$ which represents a distribution of the vertices on $\boldsymbol{G}$, is equivalent to an adjacency matrix $\boldsymbol{A}$. A transition matrix $\mathbf{P} = \{P[i,j] : i,j=1,...,n \}$ in Markov chain on $\boldsymbol{G}$, which represents the probability that flow or signal goes from Node $i$ to Node $j$, is defined as below:
 
@@ -453,8 +450,8 @@ Lemma \ref{lemma3} above provides us i.i.d. one-parameter family of $\{ \mathbf{
 	\item {\it  [MGC1] Introduce a Distance Correlation and Multiscale version\/}
 \end{itemize}
 
-Relationship between network and nodal attributes often exhibits local or nonlinear properties. Moreover, dimension of spectrum of network increases as a sample size increases. Unfortunately, widely used correlation measures often fail to characterize non-linear associations or multivariate associations so they fail to provide a consistent test statistic against all types of dependencies. [Szekely et al. (2007)] extended pairwise constructed generalized correlation coefficient and developed a novel statistics called distance correlation (\texttt{dCor}) as a measure for all types of dependence between two random vectors in any dimension. Let us start from a general setting that we are given $n \in \mathbb{N}$ pairs of random samples $\{ (x_{i}, y_{i}) : x_{i} \in \mathbb{R}^{q}, y_{i} \in \mathbb{R}^{m}, i = 1,...,n \}$. Define $C_{ij} = \parallel x_{i} - x_{j} \parallel$ and $D_{ij} = \parallel y_{i} - y_{j} \parallel$ for $i,j=1,...,n$. 
-Distance correlation (\texttt{dCorr}) is defined via distance covariance (\texttt{dCov}) $\mathcal{V}^2_{n}$ of $\boldsymbol{X}$ and $\boldsymbol{Y}$, which is the following: 
+Relationship between network and nodal attributes often exhibits local or nonlinear properties. Moreover, dimension of spectrum of network increases as a sample size increases. Unfortunately, widely used correlation measures often fail to characterize non-linear associations or multivariate associations so they fail to provide a consistent test statistic against all types of dependencies. [Szekely et al. (2007)] extended pairwise constructed generalized correlation coefficient and developed a novel statistics called distance correlation (\texttt{dCov}) as a measure for all types of dependence between two random vectors in any dimension. Let us start from a general setting that we are given $n \in \mathbb{N}$ pairs of random samples $\{ (x_{i}, y_{i}) : x_{i} \in \mathbb{R}^{q}, y_{i} \in \mathbb{R}^{m}, i = 1,...,n \}$. Define $C_{ij} = \parallel x_{i} - x_{j} \parallel$ and $D_{ij} = \parallel y_{i} - y_{j} \parallel$ for $i,j=1,...,n$. 
+Distance correlation (\texttt{dCov}) is defined via distance covariance (\texttt{dCov}) $\mathcal{V}^2_{n}$ of $\boldsymbol{X}$ and $\boldsymbol{Y}$, which is the following: 
 
 \begin{equation}	 
 \mathcal{V}^2_{n}(\boldsymbol{X}, \boldsymbol{Y}) = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij}
@@ -466,7 +463,7 @@ Distance correlation (\texttt{dCorr}) is defined via distance covariance (\textt
 \end{equation}
 	 
 On the other hand, a modified distance covariance (\texttt{MCov}) $\mathcal{V}^*_{n}$ and a modified distance correlation (\texttt{MCorr}) $\mathcal{R}^{*}_{n}$ for testing high dimensional random vectors were also proposed in [Szekely et al. (2013)].  
-However, \texttt{dCorr} and even \texttt{MCorr} still perform not very well in various non-linear settings and under existence of outliers ( [Cencheng et al. (2016)]). Out of this concern, Cencheng at al. developed Multiscale Generalized Correlation (\texttt{MGC}) by adding local scale on correlation coefficients. 
+However, \texttt{dCov} and even \texttt{MCorr} still perform not very well in various non-linear settings and under existence of outliers ( [Cencheng et al. (2016)]). Out of this concern, Cencheng at al. developed Multiscale Generalized Correlation (\texttt{MGC}) by adding local scale on correlation coefficients. 
 	 
 (\textcolor{red}{add MGC test statistics})
 
@@ -527,6 +524,8 @@ Roughly speaking, we can say that diffusion maps are i.i.d. function of a link f
 \newpage
 \section{Simulation Study}
 
+In simulation studies presented in this paper, we make a comparison of estimated testing power across various multivariate independence test statistics: \texttt{MGC}, \texttt{dCov}, Heller-Heller-Gorfine (\texttt{HHG})\cite{HHG}, and likelihood ratio test of Fosdick and Hoff (\texttt{FH}). For computing statistical power, we used type I error $\alpha = 0.05$ and obtain p-values of each sample network via permutations. For fair comparison between these testing methods, we also present a additive model of latent factors, which is mostly targeted by \texttt{FH}.   
+
 \subsection{[sim1] Stochastic Block Model}
 \begin{itemize}
 	\item {\it  [sim1] present simplest examples of stochastic block model (graphon/graphex) \/}
@@ -583,6 +582,17 @@ Fosdick and Hoff proposed a approach of jointly modelling network and its attrib
 
 As a connection to RDPG, this model can also represented as a product of combined latent factor $\tilde{u}$ and $\tilde{v}$. 
 
+(factor additive model)
+
+
+\begin{equation}
+u_{i} \overset{i.i.d}{\sim} Uniform[0,1]
+\end{equation}
+\begin{equation}
+A_{ij}  \overset{i.i.d}{\sim} Bern \big(  ( 1 + u_{i})^2 \times (1 + u_{j})^2  + e_{ij}  \big), 
+e_{ij} \overset{i.i.d}{\sim} N(0,1), i,j = 1,2,...,n
+\end{equation}
+
 
 
 
@@ -632,6 +642,9 @@ Testing independence is often the very first step in investigating relationship 
 	\item Other than testing network independence to nodal attributes, we can use MNT to test independence between a pair of networks.  
 	\item This novel, nonparametric testing would help to understand complex data, i.e. network, which could be entangled with variables that we are interested in. 
 \end{itemize}	
+
+
+
 
 
 
@@ -799,12 +812,20 @@ Let $a_{w} = \big(P^{t}(x,w) - P^{t}(y,w) \big) \sqrt{1 / \pi(w)}$ and $b_{w} = 
 	
 	\bibitem{Hoff}\hypertarget{Hoff}{ Hoff, P. D., Raftery, A. E., $\&$ Handcock, M. S. (2002). Latent space approaches to social network analysis. Journal of the american Statistical association, 97(460), 1090-1098.}
 	
-	
 	\bibitem{Austin}\hypertarget{Austin}{ Austin, A., Linkletter, C., $\&$ Wu, Z. (2013). Covariate-defined latent space random effects model. Social Networks, 35(3), 338-346.}
+	
+	\bibitem{centrality1} Mantzaris, A. V., Bassett, D. S., Wymbs, N. F., Estrada, E., Porter, M. A., Mucha, P. J., ... $\&$ Higham, D. J. (2013). Dynamic network centrality summarizes learning in the human brain. Journal of Complex Networks, 1(1), 83-92.
+	
+	\bibitem{centrality2} Sporns, O., Honey, C. J., $\&$ Kötter, R. (2007). Identification and classification of hubs in brain networks. PloS one, 2(10), e1049.
 	
 	\bibitem{Lazarsfeld} Lazarsfeld, P. F, $\&$ Henry, N. W. (1968). Latent structure analysis. New York: Houghton, Mifflin.
 	
-	\bibitem{Fosdick} Fosdick, B. K., $\&$ Hoff, P. D. (2015). Testing and modeling dependencies between a network and nodal attributes. Journal of the American Statistical Association, 110(511), 1047-1056.
+	\bibitem{Coifman}\hypertarget{Coifman}  Coifman, R. R., $\&$ Lafon, S. (2006). Diffusion maps. Applied and computational harmonic analysis, 21(1), 5-30.
+	
+	\bibitem{HHG} Heller, R., Heller, Y., $\&$ Gorfine, M. (2012). A consistent multivariate test of association based on ranks of distances. Biometrika, ass070.
+
+	
+	\bibitem{Fosdick}\hypertarget{Fosdick} Fosdick, B. K., $\&$ Hoff, P. D. (2015). Testing and modeling dependencies between a network and nodal attributes. Journal of the American Statistical Association, 110(511), 1047-1056.
 	
 	\bibitem{Szekely2007} Székely, G. J., Rizzo, M. L., $\&$ Bakirov, N. K. (2007). Measuring and testing dependence by correlation of distances. The Annals of Statistics, 35(6), 2769-2794.
 	
