@@ -23,7 +23,7 @@ binAME <- function(popn, link.g){
     	}
   	}
   		
-  	G  <- graph.adjacency(A)
+  	G  <- graph.adjacency(A, "undirected")
 	V(G)$X <- X
 	
 	return(G)
