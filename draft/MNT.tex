@@ -467,17 +467,11 @@ On the other hand, a modified distance covariance (\texttt{MCov}) $\mathcal{V}^*
 However, \texttt{dCov} and even \texttt{MCorr} still perform not very well in existence of various nonlinear dependency and under existence of outliers (\cite{Cencheng}). Out of this concern, Cencheng at al (2016) \cite{Cencheng} developed Multiscale Generalized Correlation (\texttt{MGC}) by adding local scale on correlation coefficients. Multiscale version of distance covariance $\{ { {\mathcal{V}^{*}}^2_{n} }   \}_{kl}$ is defined as following : 
 	
 \begin{equation}
-\label{MGC}
+\label{eq:MGC}
 {\mathcal{V}^{*}}^2_{n} (\boldsymbol{X}, \boldsymbol{Y})_{kl} = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij} I \big( r(C_{ij}) \leq k \big) I \big( r(D_{ij})) \leq l  \big), \quad k,l=1,2,..., n 
 \end{equation}
-,where $r(C_{ij})$ ($r(D_{ij})$) is a rank $\mathbf{x}_{i}$ ($\mathbf{y}_{i}$) relative to $\mathbf{x}_{j}$ ($\mathbf{y}_{j}$). That is c 
+,where $r(C_{ij})$ ($r(D_{ij})$) is a rank $\mathbf{x}_{i}$ ($\mathbf{y}_{i}$) relative to $\mathbf{x}_{j}$ ($\mathbf{y}_{j}$). We basically truncate each pairwise element of distance covariance with respect to rank in terms of (Euclidean) distance. Note that if $k=l=n$, $\mathcal{V}^2_{n}$ and ${\mathcal{V}^{*}}^2_{n}$ are equivalent. Since we call all family of $\{  {\mathcal{R}^{*}}^2_{n} \}_{k,l = 1,2,...,n}$ as \texttt{MGC} and choose the optimal set of neighborhood choice of $(k,l)$, \texttt{MGC} is more generalized version of \texttt{dCor}. Its superiority and consistency have been proven against all alternatives \cite{Cencheng}. Particularly, in simulation\ref{sec:sim} we are going to show in which pattern of underlying dependency exists \texttt{MGC} is much more sensitive than global scale of statistics. 
 
-
-Local scale of test statistics 
-
-
-
-(\textcolor{red}{brief explanation on neighborhood choice})
 
 \subsubsection{[MGC2]}
 
@@ -584,15 +578,26 @@ A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{ccc}   0.5 & 0.2 &  0.3  \\ 0.2
 \textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
 
 
-\subsection{[sim]}
+
+\subsection{[sim] other version of graph generation}
 
 
-\subsubsection{[sim2.1] sparse version of block model}
+\subsubsection{[sim2.1] degree-corrected stochastic block model}
+
+Under SBM, we assume that all nodes within the same block have the same expected degree. However, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with hubs or highly varying node degrees within blocks or communities, which are common in practice. On the other hand, the Degree-Corrected Stochastic Block model (DCSBM) adds an additional set of parameter, often denoted by $\theta$, to control the node degrees. This model allows variation in node degrees within a block while preserving the overall block community structure. 
 
 
 
-\textcolor{red}{figure which compares degree distribution of SBM vs. sparse graph}
 
+
+
+
+
+\textcolor{red}{figure which compares degree distribution of SBM vs. DCSBM}
+
+
+
+\subsubsection{[sim2.2] exchangeable graph on Poisson process}
 
 
 \textcolor{red}{simulation study explained in Veitch and Roy, 2015}
@@ -612,7 +617,7 @@ N_{\nu} \sim Poi( c \nu) \\
 
 
 
-\subsubsection{[sim2.2] comparison to Fosdick's method}
+\subsubsection{[sim2.3] comparison to Fosdick's method}
 
 
 Fosdick and Hoff proposed a approach of jointly modelling network and its attributes, where networks represent additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors.
@@ -642,9 +647,23 @@ Additionally some noise could be introduced as well due to artificially added ed
 \section{Real Data Examples}
 \label{sec:real}
 
-\subsection{c.elegans}
+\subsection{MRI}
 
+look into one largest connected component. 
 
+$\{ \mathbf{U}_{t} \in \mathbb{R}^{q} \}_{t \in \mathbb{N}}$ $\mathbf{X} = (x,y,z) \in \mathbb{R}^{3}$
+
+(it turns out that $q=$ )?
+
+test what? test independence between brain network and its 3-dimensional locations; test independence between functional location and physical location. 
+
+\begin{figure}[H]
+	\label{fig:mri}
+\includegraphics[width = 0.3\textwidth]{../Figure/brain1_x.pdf}
+\includegraphics[width = 0.3\textwidth]{../Figure/brain1_y.pdf}
+\includegraphics[width = 0.3\textwidth]{../Figure/brain1_z.pdf}
+\caption{Subnetwork of MRI network. Darker colored nodes indicate higher positioned node in terms of $x$-axis(left), $y$-axis(middle), and $z$-axis(right).}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -658,27 +677,26 @@ Additionally some noise could be introduced as well due to artificially added ed
 
 
 Throughout this study, we demonstrate that multiscale network test statistic to test network independence performs well in diverse settings, being supported by thorough theory on distance correlation and diffusion maps. 
-Testing independence is often the very first step in investigating relationship between network topology and nodal variables in our interest. It is more likely that we want to know more than binary decision of rejecting or not rejecting the hypothesis. Multiscale test statistics due to both neighborhood choice and time spent in diffusion processes provides us a hint on a latent dependence structure as well.  
+Testing independence is often the very first step in investigating relationship between network topology and nodal attributes in our interest. It is more likely that we want to know more than binary decision of rejecting or not rejecting the hypothesis. Multiscale test statistics due to both neighborhood choice $\{ (k,l)  \}$ and time spent in diffusion processes $\{ t \}$ provides us a hint on latent dependence structure as well.  
 
 
 \subsection{[dis2]}
 
-\begin{itemize}
-	\item choosing the optimal time $t$, optimal choice of neighborhood $(k,l)$ might be burdensome. 
-	\item real network data cannot satisfy the condition of exchangeability
-	\item we often do not have any idea about a latent function of $g$ or $\eta$.
-\end{itemize}	
-
-
+	Due to the ambiguousness of saying \textit{optimal}, our work has some limitations; we do not suggest any theoretically supported tools to select the \textit{optimal} time to obtain p-values of test statistics or maybe we want a family of p-values as a function of $t$. Further research can be focused on restoring true dependence pattern or estimating \textit{optimal} scale from a family of statistics. On the other hand, obtaining a full family of statistics are also computationally infeasible; at every Markov process, we chose the optimal region of neighborhood. As an ad hoc, we chose $t$ with highest power or lowest p-values from 1 to 10 for our simulation \ref{sec:sim}.  
+	
+	Other than these computational issues, someone might be uncomfortable about being conditioned by a random function of $g$ and $\eta$.  However, this is inevitable for arguing sample properties of being \textit{i.i.d.}, which is also very conceptual and impossible to prove. By conditioning diffusion maps $\{ \mathbf{U}_{t} \}$ by unknown network generative model $g(\cdot, \cdot)$ and also unknown diffusion process model $\eta(\cdot)$, we are finally able to assert that our observations are a fair sample eligible for test. 
+	
+	 
 
 \subsection{[dis3]}
 
+	Despite a few shortcomings listed above, a range of applications of \textit{MNT} statistics and multiscale representation of network is very diverse. Especially multiscale version of test would be very useful when indirect networking not directly from edge is not ignorable or cluster membership significantly affects attributes. 
+	
+	Furthermore even though we specifically constraint the statistic into testing independence between network and nodal attributes, we can now do independence testing of two networks with same size by inputting diffusion distance at each time point from each of network in equation \ref{eq:MGC}. This type of test would be useful when we want to show a pair of networks are topologically or structurally independent. For example, we might wonder if network on \textit{Facebook} and network induced by club activity within class or school are independent or not. 
 
-\begin{itemize}
-	\item We can use it to study latent structure of network (graph) by exploring testing p-value maps across diffusion times.
-	\item Other than testing network independence to nodal attributes, we can use MNT to test independence between a pair of networks.  
-	\item This novel, nonparametric testing would help to understand complex data, i.e. network, which could be entangled with variables that we are interested in. 
-\end{itemize}	
+	
+
+
 
 
 

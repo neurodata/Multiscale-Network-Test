@@ -19,15 +19,16 @@
 \contentsline {subsection}{\numberline {3.1}[sim1] Stochastic Block Model}{21}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}[sim1.1] simplest two block model}{22}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}[sim1.2] simplest three block model}{22}{subsubsection.3.1.2}
-\contentsline {subsection}{\numberline {3.2}[sim]}{22}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}[sim2.1] sparse version of block model}{22}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}[sim2.2] comparison to Fosdick's method}{23}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2}[sim] other version of graph generation}{22}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}[sim2.1] degree-corrected stochastic block model}{22}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}[sim2.2] exchangeable graph on Poisson process}{23}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}[sim2.3] comparison to Fosdick's method}{23}{subsubsection.3.2.3}
 \contentsline {section}{\numberline {4}Real Data Examples}{24}{section.4}
-\contentsline {subsection}{\numberline {4.1}c.elegans}{24}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.1}MRI}{24}{subsection.4.1}
 \contentsline {section}{\numberline {5}Discussions}{25}{section.5}
 \contentsline {subsection}{\numberline {5.1}[dis1]}{25}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}[dis2]}{25}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}[dis3]}{25}{subsection.5.3}
-\contentsline {section}{\numberline {A}appendix}{26}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}[apd1]}{26}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}[apd2]}{26}{subsection.A.2}
+\contentsline {subsection}{\numberline {5.3}[dis3]}{26}{subsection.5.3}
+\contentsline {section}{\numberline {A}appendix}{27}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}[apd1]}{27}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}[apd2]}{27}{subsection.A.2}

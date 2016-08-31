@@ -19,15 +19,16 @@
 \BOOKMARK [2][-]{subsection.3.1}{[sim1] Stochastic Block Model}{section.3}% 19
 \BOOKMARK [3][-]{subsubsection.3.1.1}{[sim1.1] simplest two block model}{subsection.3.1}% 20
 \BOOKMARK [3][-]{subsubsection.3.1.2}{[sim1.2] simplest three block model}{subsection.3.1}% 21
-\BOOKMARK [2][-]{subsection.3.2}{[sim]}{section.3}% 22
-\BOOKMARK [3][-]{subsubsection.3.2.1}{[sim2.1] sparse version of block model}{subsection.3.2}% 23
-\BOOKMARK [3][-]{subsubsection.3.2.2}{[sim2.2] comparison to Fosdick's method}{subsection.3.2}% 24
-\BOOKMARK [1][-]{section.4}{Real Data Examples}{}% 25
-\BOOKMARK [2][-]{subsection.4.1}{c.elegans}{section.4}% 26
-\BOOKMARK [1][-]{section.5}{Discussions}{}% 27
-\BOOKMARK [2][-]{subsection.5.1}{[dis1]}{section.5}% 28
-\BOOKMARK [2][-]{subsection.5.2}{[dis2]}{section.5}% 29
-\BOOKMARK [2][-]{subsection.5.3}{[dis3]}{section.5}% 30
-\BOOKMARK [1][-]{appendix.A}{appendix}{}% 31
-\BOOKMARK [2][-]{subsection.A.1}{[apd1]}{appendix.A}% 32
-\BOOKMARK [2][-]{subsection.A.2}{[apd2]}{appendix.A}% 33
+\BOOKMARK [2][-]{subsection.3.2}{[sim] other version of graph generation}{section.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.2.1}{[sim2.1] degree-corrected stochastic block model}{subsection.3.2}% 23
+\BOOKMARK [3][-]{subsubsection.3.2.2}{[sim2.2] exchangeable graph on Poisson process}{subsection.3.2}% 24
+\BOOKMARK [3][-]{subsubsection.3.2.3}{[sim2.3] comparison to Fosdick's method}{subsection.3.2}% 25
+\BOOKMARK [1][-]{section.4}{Real Data Examples}{}% 26
+\BOOKMARK [2][-]{subsection.4.1}{MRI}{section.4}% 27
+\BOOKMARK [1][-]{section.5}{Discussions}{}% 28
+\BOOKMARK [2][-]{subsection.5.1}{[dis1]}{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.2}{[dis2]}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.3}{[dis3]}{section.5}% 31
+\BOOKMARK [1][-]{appendix.A}{appendix}{}% 32
+\BOOKMARK [2][-]{subsection.A.1}{[apd1]}{appendix.A}% 33
+\BOOKMARK [2][-]{subsection.A.2}{[apd2]}{appendix.A}% 34

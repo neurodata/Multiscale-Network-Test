@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  28 AUG 2016 18:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  30 AUG 2016 19:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -761,14 +761,42 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[23]
+[23] <../Figure/brain1_x.pdf, id=414, 505.89pt x 505.89pt>
+File: ../Figure/brain1_x.pdf Graphic file (type pdf)
+
+<use ../Figure/brain1_x.pdf>
+Package pdftex.def Info: ../Figure/brain1_x.pdf used on input line 662.
+(pdftex.def)             Requested size: 136.5746pt x 136.57668pt.
+
+<../Figure/brain1_y.pdf, id=415, 505.89pt x 505.89pt>
+File: ../Figure/brain1_y.pdf Graphic file (type pdf)
+
+<use ../Figure/brain1_y.pdf>
+Package pdftex.def Info: ../Figure/brain1_y.pdf used on input line 663.
+(pdftex.def)             Requested size: 136.5746pt x 136.57668pt.
+
+<../Figure/brain1_z.pdf, id=416, 505.89pt x 505.89pt>
+File: ../Figure/brain1_z.pdf Graphic file (type pdf)
+
+<use ../Figure/brain1_z.pdf>
+Package pdftex.def Info: ../Figure/brain1_z.pdf used on input line 664.
+(pdftex.def)             Requested size: 136.5746pt x 136.57668pt.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 665.
+
+
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 665.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24]
+[24 <../Figure/brain1_x.pdf> <../Figure/brain1_y.pdf> <../Figure/brain1_z.pdf>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -790,10 +818,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [27]
-Overfull \hbox (13.09013pt too wide) in paragraph at lines 775--775
-[] 
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -801,7 +825,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [28]
-Overfull \hbox (4.07756pt too wide) in paragraph at lines 827--827
+Overfull \hbox (13.09013pt too wide) in paragraph at lines 793--793
 [] 
  []
 
@@ -812,6 +836,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [29]
+Overfull \hbox (4.07756pt too wide) in paragraph at lines 845--845
+[] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -819,6 +847,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [30]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¶ in font ptmr7t!
 
@@ -828,20 +863,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31]
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no © in font ptmr7t!
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no © in font ptmr7t!
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 908.
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -850,20 +876,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 908.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 926.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 926.
  (./MNT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 908.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 908.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 926.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 926.
 Package rerunfilecheck Info: File `MNT.out' has not changed.
-(rerunfilecheck)             Checksum: 21EA75FE164A76A39EF227F34B634366;2141.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 908.
+(rerunfilecheck)             Checksum: B1003BFBC9FAEC36A22F5FF3882E4AF5;2285.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 926.
  ) 
 Here is how much of TeX's memory you used:
- 10477 strings out of 494447
- 156198 string characters out of 6166766
- 253433 words of memory out of 5000000
- 13460 multiletter control sequences out of 15000+600000
- 29139 words of font info for 79 fonts, out of 8000000 for 9000
+ 10572 strings out of 494447
+ 157670 string characters out of 6166766
+ 253496 words of memory out of 5000000
+ 13540 multiletter control sequences out of 15000+600000
+ 35060 words of font info for 92 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  36i,20n,43p,1493b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Lazarsfeld} has been referenced but does not exis
@@ -876,29 +911,32 @@ fb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
 8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mex10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
 cmextra/cmex8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts
-/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2016basic/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016basic/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016basic/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016basic
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016bas
-ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-6basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
-2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
-ve/2016basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
-cal/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local
-/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/te
+msfonts/cm/cmmi10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2016basic/texmf-dist/f
+onts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2016basic/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016basic/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016bas
+ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016b
+asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
+6basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
+ive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/t
+exlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
+r/local/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/l
+ocal/texlive/2016basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/loca
+l/texlive/2016basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/
+texlive/2016basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/te
 xlive/2016basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
 /2016basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016
 basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016basic
 /texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on MNT.pdf (33 pages, 314272 bytes).
+Output written on MNT.pdf (34 pages, 442352 bytes).
 PDF statistics:
- 594 PDF objects out of 1000 (max. 8388607)
- 529 compressed objects within 6 object streams
- 171 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 635 PDF objects out of 1000 (max. 8388607)
+ 560 compressed objects within 6 object streams
+ 174 named destinations out of 1000 (max. 500000)
+ 288 words of extra memory for PDF output out of 10000 (max. 10000000)
 
