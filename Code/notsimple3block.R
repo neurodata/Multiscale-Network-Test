@@ -114,23 +114,10 @@ notsimple3block <- function(popn, p, q, r){
   }
   
      
-  G <- graph.adjacency(adj)
+  G <- graph.adjacency(adj, "undirected")
   G <- connect_graph(G)
   V(G)$outcome <- outcome
 
   return(G)
 }  
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
