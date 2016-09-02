@@ -68,7 +68,7 @@ simple2block <- function(popn, p1, p2, q){
   }
 
  
-  G <- graph.adjacency(adj)
+  G <- graph.adjacency(adj, "undirected")
   G <- connect_graph(G)
   V(G)$outcome <- outcome
   V(G)$group <- group
