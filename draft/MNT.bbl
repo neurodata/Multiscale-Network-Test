@@ -1,0 +1,110 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Caron and Fox}{Caron and
+  Fox}{2014}]{caron2014sparse}
+Caron, F. and E.~B. Fox (2014).
+\newblock Sparse graphs using exchangeable random measures.
+\newblock {\em arXiv preprint arXiv:1401.1137\/}.
+
+\bibitem[\protect\citeauthoryear{Chan, Costa, and Airoldi}{Chan
+  et~al.}{2013}]{chan2013estimation}
+Chan, S.~H., T.~B. Costa, and E.~M. Airoldi (2013).
+\newblock Estimation of exchangeable graph models by stochastic blockmodel
+  approximation.
+\newblock In {\em Global Conference on Signal and Information Processing
+  (GlobalSIP), 2013 IEEE}, pp.\  293--296. IEEE.
+
+\bibitem[\protect\citeauthoryear{Coifman and Lafon}{Coifman and
+  Lafon}{2006}]{coifman2006diffusion}
+Coifman, R.~R. and S.~Lafon (2006).
+\newblock Diffusion maps.
+\newblock {\em Applied and computational harmonic analysis\/}~{\em 21\/}(1),
+  5--30.
+
+\bibitem[\protect\citeauthoryear{Fosdick and Hoff}{Fosdick and
+  Hoff}{2015}]{fosdick2015testing}
+Fosdick, B.~K. and P.~D. Hoff (2015).
+\newblock Testing and modeling dependencies between a network and nodal
+  attributes.
+\newblock {\em Journal of the American Statistical Association\/}~{\em
+  110\/}(511), 1047--1056.
+
+\bibitem[\protect\citeauthoryear{Heller, Heller, and Gorfine}{Heller
+  et~al.}{2012}]{heller2012consistent}
+Heller, R., Y.~Heller, and M.~Gorfine (2012).
+\newblock A consistent multivariate test of association based on ranks of
+  distances.
+\newblock {\em Biometrika\/}, ass070.
+
+\bibitem[\protect\citeauthoryear{Hoff, Raftery, and Handcock}{Hoff
+  et~al.}{2002}]{hoff2002latent}
+Hoff, P.~D., A.~E. Raftery, and M.~S. Handcock (2002).
+\newblock Latent space approaches to social network analysis.
+\newblock {\em Journal of the american Statistical association\/}~{\em
+  97\/}(460), 1090--1098.
+
+\bibitem[\protect\citeauthoryear{Kallenberg}{Kallenberg}{1990}]{kallenberg1990exchangeable}
+Kallenberg, O. (1990).
+\newblock Exchangeable random measures in the plane.
+\newblock {\em Journal of Theoretical Probability\/}~{\em 3\/}(1), 81--136.
+
+\bibitem[\protect\citeauthoryear{Karrer and Newman}{Karrer and
+  Newman}{2011}]{karrer2011stochastic}
+Karrer, B. and M.~E. Newman (2011).
+\newblock Stochastic blockmodels and community structure in networks.
+\newblock {\em Physical Review E\/}~{\em 83\/}(1), 016107.
+
+\bibitem[\protect\citeauthoryear{Lafon and Lee}{Lafon and
+  Lee}{2006}]{lafon2006diffusion}
+Lafon, S. and A.~B. Lee (2006).
+\newblock Diffusion maps and coarse-graining: A unified framework for
+  dimensionality reduction, graph partitioning, and data set parameterization.
+\newblock {\em IEEE transactions on pattern analysis and machine
+  intelligence\/}~{\em 28\/}(9), 1393--1403.
+
+\bibitem[\protect\citeauthoryear{Mantzaris, Bassett, Wymbs, Estrada, Porter,
+  Mucha, Grafton, and Higham}{Mantzaris et~al.}{2013}]{mantzaris2013dynamic}
+Mantzaris, A.~V., D.~S. Bassett, N.~F. Wymbs, E.~Estrada, M.~A. Porter, P.~J.
+  Mucha, S.~T. Grafton, and D.~J. Higham (2013).
+\newblock Dynamic network centrality summarizes learning in the human brain.
+\newblock {\em Journal of Complex Networks\/}~{\em 1\/}(1), 83--92.
+
+\bibitem[\protect\citeauthoryear{Orbanz and Roy}{Orbanz and
+  Roy}{2015}]{orbanz2015bayesian}
+Orbanz, P. and D.~M. Roy (2015).
+\newblock Bayesian models of graphs, arrays and other exchangeable random
+  structures.
+\newblock {\em IEEE transactions on pattern analysis and machine
+  intelligence\/}~{\em 37\/}(2), 437--461.
+
+\bibitem[\protect\citeauthoryear{Sporns, Honey, and K{\"o}tter}{Sporns
+  et~al.}{2007}]{sporns2007identification}
+Sporns, O., C.~J. Honey, and R.~K{\"o}tter (2007).
+\newblock Identification and classification of hubs in brain networks.
+\newblock {\em PloS one\/}~{\em 2\/}(10), e1049.
+
+\bibitem[\protect\citeauthoryear{Sz{\'e}kely and Rizzo}{Sz{\'e}kely and
+  Rizzo}{2013}]{szekely2013distance}
+Sz{\'e}kely, G.~J. and M.~L. Rizzo (2013).
+\newblock The distance correlation t-test of independence in high dimension.
+\newblock {\em Journal of Multivariate Analysis\/}~{\em 117}, 193--213.
+
+\bibitem[\protect\citeauthoryear{Sz{\'e}kely, Rizzo, Bakirov,
+  et~al.}{Sz{\'e}kely et~al.}{2007}]{szekely2007measuring}
+Sz{\'e}kely, G.~J., M.~L. Rizzo, N.~K. Bakirov, et~al. (2007).
+\newblock Measuring and testing dependence by correlation of distances.
+\newblock {\em The Annals of Statistics\/}~{\em 35\/}(6), 2769--2794.
+
+\bibitem[\protect\citeauthoryear{Tang and Trosset}{Tang and
+  Trosset}{2010}]{tang2010graph}
+Tang, M. and M.~Trosset (2010).
+\newblock Graph metrics and dimension reduction.
+\newblock {\em Indiana University, Indianapolis, IN\/}.
+
+\bibitem[\protect\citeauthoryear{Veitch and Roy}{Veitch and
+  Roy}{2015}]{veitch2015class}
+Veitch, V. and D.~M. Roy (2015).
+\newblock The class of random graphs arising from exchangeable random measures.
+\newblock {\em arXiv preprint arXiv:1512.03099\/}.
+
+\end{thebibliography}
