@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Methodology}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Exchangeable Graph}{section.2}% 3
-\BOOKMARK [3][-]{subsubsection.2.1.1}{graphon}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Exchangeability on point process}{subsection.2.1}% 4
 \BOOKMARK [2][-]{subsection.2.2}{Multiscale Distance Metrics}{section.2}% 5
 \BOOKMARK [3][-]{subsubsection.2.2.1}{Diffusion maps and diffusion distance}{subsection.2.2}% 6
 \BOOKMARK [3][-]{subsubsection.2.2.2}{Properties of diffusion maps under exchangeable graphs}{subsection.2.2}% 7
@@ -22,4 +22,4 @@
 \BOOKMARK [1][-]{section.5}{Discussions}{}% 22
 \BOOKMARK [1][-]{appendix.A}{appendix}{}% 23
 \BOOKMARK [2][-]{subsection.A.1}{supplementary figures}{appendix.A}% 24
-\BOOKMARK [2][-]{subsection.A.2}{[apd2]}{appendix.A}% 25
+\BOOKMARK [2][-]{subsection.A.2}{Lemmas and Theorems}{appendix.A}% 25

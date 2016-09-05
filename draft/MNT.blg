@@ -6,49 +6,51 @@ Database file #1: Biblio.bib
 Warning--no number and no volume in caron2014sparse
 Warning--page numbers missing in caron2014sparse
 Warning--no number and no volume in heller2012consistent
+Warning--no number and no volume in palla2012infinite
+Warning--page numbers missing in palla2012infinite
 Warning--no number and no volume in tang2010graph
 Warning--page numbers missing in tang2010graph
 Warning--no number and no volume in veitch2015class
 Warning--page numbers missing in veitch2015class
-You've used 16 entries,
+You've used 31 entries,
             2861 wiz_defined-function locations,
-            720 strings with 7765 characters,
-and the built_in function-call counts, 12142 in all, are:
-= -- 1031
-> -- 962
-< -- 1
-+ -- 300
-- -- 334
-* -- 1140
-:= -- 2192
-add.period$ -- 49
-call.type$ -- 16
-change.case$ -- 122
-chr.to.int$ -- 16
-cite$ -- 23
-duplicate$ -- 294
-empty$ -- 684
-format.name$ -- 394
-if$ -- 2255
+            816 strings with 10562 characters,
+and the built_in function-call counts, 23711 in all, are:
+= -- 2022
+> -- 1873
+< -- 2
++ -- 588
+- -- 644
+* -- 2249
+:= -- 4255
+add.period$ -- 95
+call.type$ -- 31
+change.case$ -- 236
+chr.to.int$ -- 31
+cite$ -- 40
+duplicate$ -- 574
+empty$ -- 1344
+format.name$ -- 760
+if$ -- 4418
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 16
-newline$ -- 83
-num.names$ -- 160
-pop$ -- 79
+missing$ -- 31
+newline$ -- 158
+num.names$ -- 310
+pop$ -- 153
 preamble$ -- 1
-purify$ -- 218
+purify$ -- 422
 quote$ -- 0
-skip$ -- 332
+skip$ -- 639
 stack$ -- 0
-substring$ -- 640
-swap$ -- 99
-text.length$ -- 1
+substring$ -- 1291
+swap$ -- 194
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 320
-warning$ -- 7
-while$ -- 160
+type$ -- 620
+warning$ -- 9
+while$ -- 309
 width$ -- 0
-write$ -- 212
-(There were 7 warnings)
+write$ -- 409
+(There were 9 warnings)

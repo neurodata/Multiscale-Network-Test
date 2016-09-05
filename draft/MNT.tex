@@ -96,7 +96,7 @@ anchorcolor = blue]{hyperref}
 	\section{Introduction}
 	\label{sec:intro}
 	
-Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of psychology, information theory, biology, statistics, economics, etc. The relationship between a way that a pair of nodes is connected and the values of their attribute is a common interest in network analysis. According to an assumption on how they are related each other, there has been a lot of efforts to represent a network as a function of nodal attributes \textcolor{red}{references} or model an outcome of nodal attribute variables through their underlying network structures \textcolor{red}{references}. However, it is very obscure to determine which one should be put as a dependent variable or even whether networks are truly related to nodal attributes and how they are, if any. A fundamental difficulty is that network often does not have a natural structure and networks of individuals in the network, nodes, are dependent on others. Thus it is not easy to intuitively think of how to represent network as a node-wise random variable. \cite{fosdick2015testing} therefore suggested estimating network factors which are believed to represent each node's locations in network space and using them to test independence network topology and nodal attributes by implementing standard statistical testing between the factors and attributes. Through controlling the dimension of latent factors they make up the constraints due to parametric modeling. However statistical modeling on networks still rely on the assumption that all the nodes in network would follow the same pattern of dependence and also same amount of dependence. This might not be true for always. We develop a nonparametric test statistic which is also sensitive to nonlinear and local dependence pattern.  
+Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of sociology \citep{pinquart2000influences, ellison2007benefits}, information theory \citep{gross2005information}, biology \citep{barabasi2004network, pujol2010unveiling}, statistics \citep{raftery2012fast, palla2012infinite}, economics \citep{banerjee2013diffusion}, etc. The relationship between a way that a pair of nodes is connected and the values of their attribute is a common interest in network analysis. According to an assumption on how they are related each other, there has been a lot of efforts to represent a network as a function of nodal attributes \citep{wasserman1996logit, howard2016understanding} or model an outcome of nodal attribute variables through their underlying network structures \citep{christakis2007spread, christakis2008collective}. However, it is very obscure to determine which one should be put as a dependent variable or even whether networks are truly related to nodal attributes and how they are, if any. A fundamental difficulty is that network often does not have a natural structure and networks of individuals in the network, nodes, are dependent on others. Thus it is not easy to intuitively think of how to represent network as a node-wise random variable. \cite{fosdick2015testing} therefore suggested estimating network factors which are believed to represent each node's locations in network space and using them to test independence network topology and nodal attributes by implementing standard statistical testing between the factors and attributes. Through controlling the dimension of latent factors they make up the constraints due to parametric modeling. However statistical modeling on networks still rely on the assumption that all the nodes in network would follow the same pattern of dependence and also same amount of dependence. This might not be true for always. We develop a nonparametric test statistic which is also sensitive to nonlinear and local dependence pattern.  
 	
 	Throughout this paper, assume that we are given an unweighted and undirected, connected network $\boldsymbol{G}$ comprised of $n$ nodes, for a fixed $n \in \mathbb{N}$. Even though we assume that $\boldsymbol{G}$ is an undirected and unweighted network, we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of a given network, denoted by $\boldsymbol{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize this relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\boldsymbol{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\boldsymbol{G}$ and $\boldsymbol{X}$ and testing whether their distributions are independent or not is the key focus in our study. An observed network $\mathbf{G}$ can represent social network within a school and $\boldsymbol{X}$ is students' grades or heights, for example; or $\mathbf{G}$ is a neuronal network in human brain and $\boldsymbol{X}$ is a few factors of personality. 
 	
@@ -125,7 +125,7 @@ First step in testing network independence to attributes is figuring out a varia
 		for every pair of permutation $\sigma, \sigma^{\prime}$ of $n$.
 	\end{definition}
 	
-	However, exchangeability itself cannot guarantee being \textit{i.i.d}. Fortunately, thanks to the celebrated  \textit{de Finetti}(\ref{finetti})'s representation theorem, it has been proven that there exists a random probability measure $\eta$ on random variable $\mathbf{Z}$ that a sequence of $Z_{1}, Z_{2}, \ldots $ are \textit{i.i.d} conditional $\eta$ \textit{if and only if} the sequence is exchangeable \citep{orbanz2015bayesian, caron2014sparse}. \textit{Aldous-Hoover theorem}(\ref{Aldous_Hoover}) is the representation theorem of 2-array exchangeable array, which is useful to explain jointly exchangeable adjacent matrix. Exchangeable graph is commonly called \textit{graphon}. Exchangeable graphon is defined through a random measurable functions \citep{chan2013estimation}.
+	However, exchangeability itself cannot guarantee being \textit{i.i.d}. Fortunately, thanks to the celebrated  \textit{de Finetti}(\ref{finetti})'s representation theorem, it has been proven that there exists a random probability measure $\eta$ on random variable $\mathbf{Z}$ that a sequence of $Z_{1}, Z_{2}, \ldots $ are \textit{i.i.d} conditional $\eta$ \textit{if and only if} the sequence is exchangeable \citep{orbanz2015bayesian, caron2014sparse}. \textit{Aldous-Hoover theorem}(\ref{Aldous_Hoover}) is the representation theorem of 2-array exchangeable array, which is useful to explain jointly exchangeable adjacent matrix. Exchangeable graph is commonly called \textit{graphon} \citep{lovasz2006limits}. Exchangeable graphon is defined through a random measurable functions \citep{chan2013estimation}.
 	
 \begin{definition}[graphon]
 		\label{graphon}
@@ -142,7 +142,7 @@ By \textit{Aldous-Hoover theorem}, we can now better represent exchangeable netw
 ( A_{ij} )  =  (   A_{\sigma(i) \sigma(j)}  ) \Longleftrightarrow A_{ij} \overset{ind}{\sim} Bern\big(  g(u_{i}, u_{j}) \big), i < j
 \end{equation}  
 	
-Networks from widely used graphical model are exchangeable. One of the most popular models is Stochastic Block Model (SBM). 
+Networks from widely used graphical model are exchangeable. One of the most popular models is Stochastic Block Model (SBM) \cite{holland1983stochastic}. 
 The SBM, in the simplest setting, assumes that each of $n$ nodes in graph $\boldsymbol{G}$ belongs to one of $K \in \mathbb{N} (\leq n)$ blocks or groups. Block affiliation is important in that the probability of having edges between a pair of nodes depends on which blocks they are in.  Assume that latent variables corresponding to block affiliation follow $Z_{1}, Z_{2}, ... , Z_{n} \overset{i.i.d.}{\sim} Multinomial\big( \pi_{1}, \pi_{2}, ... , \pi_{K} \big)$. Then the upper triangular entries of $\mathbf{A}$ are independent and identically distributed conditional on $\{\mathbf{Z}\}$:
 	\begin{equation} 
 	A_{ij} \overset{i.i.d.}{\sim} Bern\big( \sum\limits_{k,l=1}^{K} p_{kl} I\big( Z_{i} = k, Z_{j} = l  \big)    \big), \forall  i < j.
@@ -154,39 +154,41 @@ A_{ij} \overset{i.i.d.}{\sim} Bern \big( g(W_{i}, W_{j})  \big), \forall i < j
 \end{equation}
 Even though this is not the only representation of edge distribution, for any exchangeable graphs, including SBM and also Random dot product graph (RDPG), there exists a random function $g$ which edges are independent identically distributed conditioning on.
 	
-\subsubsection{\textcolor{red}{graphon}}
+\subsubsection{Exchangeability on point process}
 	
-Graphon has been studied widely as a limit of random graphs \textcolor{red}{(ref : )}. However, despite its advantage on simple representation, is either empty or dense. Thus it fails to represent real network data where sparsity or scale-free distribution if fairly common. In addition to graphon,we introduce a concept of \textit{graphex}, first proposed by \cite{veitch2015class}, which is more generalized version of graphon and also includes sparse exchangeable graphs \citep{caron2014sparse}. A trick used in \cite{caron2014sparse} is representing a network as a point process on $\mathbb{R}^2_{+}$ based on \textit{Kallengerg Representation Theorem}\cite{kallenberg1990exchangeable}. Like we are able to represent $\{ A_{ij} \}$ through random transformation of \textit{i.i.d} uniform variables, jointly exchangeable point processing network also can be represented via a random function of \textit{i.i.d} unit rate Poisson process and uniform variables. 
+Graphon has been studied widely as a limit of random graphs \citep{lovasz2006limits}. However, despite its advantage on simple representation, it is either empty or dense. Thus it fails to represent real network data where sparsity or scale-free distribution is fairly common. In addition to graphon, we introduce a concept of \textit{graphex}, first proposed by \cite{veitch2015class}, which is more generalized version of graphon and also includes sparse exchangeable graphs \citep{caron2014sparse}. A trick used in \cite{caron2014sparse} is representing a network as a point process on $\mathbb{R}^2_{+}$ based on \textit{Kallengerg Representation Theorem} \cite{kallenberg1990exchangeable}. As we are able to represent $\{ A_{ij} \}$ through random transformation of \textit{i.i.d} uniform variables, jointly exchangeable point processing network also can be represented via a random function of \textit{i.i.d} unit rate Poisson process and uniform variables. 
 To be specific, undirected graph on a point process on $\mathbb{R}^2_{+}$ can be thought of 
 \begin{equation}
 \mathbf{A} = \sum\limits_{i,j} A_{ij} \delta_{( \theta_{i}, \theta_{j})} 
 \end{equation}	
-,where $A_{ij} = A_{ji} \in \{ 0 , 1  \}$ with $\theta_{i} \in \mathbb{R}$, $i,j = 1,2,...$. We can think \texttt{Node} $i$ is embedded on real line, at $\theta_{i} \in \mathbb{R}_{+}$. 	
-	
-\begin{definition}[Joint exchangeability on point process]
-\label{point}
-Let $h > 0$ and  $V_{i} = [h(i-1), hi ]$ for $i \in \mathbb{N}$ then
-\begin{equation}
-\big( A( V_{i} \times V_{j}  )   \big)  \stackrel{d}{=} \big( A( V_{\sigma(i)} \times V_{\sigma(j)}     \big)
-\end{equation}	
-for any permutation $\sigma$ of $\mathbb{N}$.		
-\end{definition}
-	
+where $A_{ij} = A_{ji} \in \{ 0 , 1  \}$ with node label space $\mathbf{\theta} \in \mathbb{R}_{+}$, $i,j = 1,2,...$. We can think \texttt{Node} $i$ is embedded on real line, at $\theta \in \mathbb{R}_{+}$. 	
+		
 		
 \begin{definition}[graphex \cite{kallenberg1990exchangeable}]
 \label{graphex}
-		
-		
+Random graphs defined on exchangeable random measures are characterized by triple $(I, S, g)$, \textit{graphex}, where a $I \in \mathbb{R}_{+}$ is non-negative real, $S : \mathbb{R}_{+ } \rightarrow \mathbb{R}_{+}$ is an integrable function and $g : \mathbb{R}^{2}_{+} \rightarrow [0,1]$. Then conditional on $g$ and unit rate Poisson processed $\theta \times \vartheta$, random graphs $\mathbf{G}$ of graphex with node set $\{ \mathbf{\theta} \}$ is constructed as:
+\begin{equation}
+A_{\theta_{i} \theta_{j}} = g(\vartheta_{i}, \vartheta_{j})
+\end{equation}
+and exclude $\theta_{i}$ from $\mathbf{G}$ if $\theta_{i}$ is isolated and we can obtain finite subgraphs by restricting $\mathbf{\theta}  < \nu$ for some $\nu > 0$.		
 \end{definition}
 	
+Then joint exchangeability in this case is applied to a point processed node label, not on a node label itself:
+\begin{definition}[Joint exchangeability on point process]
+	\label{point}
+	Let $h > 0$ and  $V_{i} = [h(i-1), hi ]$ for $i \in \mathbb{N}$ then
+	\begin{equation}
+	\big( A( V_{i} \times V_{j}  )   \big)  \stackrel{d}{=} \big( A( V_{\sigma(i)} \times V_{\sigma(j)}     \big)
+	\end{equation}	
+	for any permutation $\sigma$ of $\mathbb{N}$.		
+\end{definition}
+Complexities induced by Poisson process on node will require one more condition in testing in the next section. Despite its more intricate form, representation of sparse graph as exchangeable formation helps us to demonstrate the validity of the methods in real data.
 
-	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Multiscale Distance Metrics}	
 
 
-\subsubsection{Diffusion maps and diffusion distance}
-	
+\subsubsection{Diffusion maps and diffusion distance}	
 There have been a lot of efforts to represent the network in terms of a summarizing network factor \citep{hoff2002latent} or some meaningful coefficients, e.g. centrality \citep{mantzaris2013dynamic, sporns2007identification}. However, there has been no node-specific variable which provides a configuration of node over network space without losing any information. \cite{coifman2006diffusion} proposed a meaningful multiscale geometries of data called \textit{diffusion maps} while keeping information on every local relation. Diffusion map is constructed via Markov chain on graph. Without any model assumption on graph, an adjacency matrix $\boldsymbol{A}$ acts as a kernel, representing a similarity between each node in $\boldsymbol{G}$; thus we do not have to estimate anything in order to obtain multidimensional representation of network topology. 
 	
 Let $(\boldsymbol{G}, \mathcal{A}, \mu)$ be a measure space. Throughout all of the arguments, assume that we have a countable node set with size of $n \in \mathbb{N}$. The vertex set of network $\boldsymbol{G}$ is the data set of nodes and edges and $\mathcal{A}$ is a set of a pair of nodes $\{(i,j) : v_{i}, v_{j} \in V(\boldsymbol{G}) \}$. A measure of $\mu$ which represents a distribution of the nodes on $\boldsymbol{G}$, is equivalent to an adjacency matrix $\boldsymbol{A}$. A transition matrix $\mathbf{P} = \{P[i,j] : i,j=1,...,n \}$ in Markov chain on $\boldsymbol{G}$, which represents the probability that flow or signal goes from Node $i$ to Node $j$, is defined as below:
@@ -230,44 +232,40 @@ where
 \begin{equation} 
 \boldsymbol{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) \\ \lambda^{t}_{2} \phi_{2} (i)  \\ \vdots \\ \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}.
 \end{equation}
-Now we have  a family of $q$-variate($q \leq n$) diffusion maps $\{ U_{t} \}_{t \in \mathbb{N}} $, of which Euclidean distance is diffusion distance. Representing each node on Euclidean metric is a novel approach in testing independence on network space; there is no estimation nor model assumption involved. However there remains a matter of dependence between observed diffusion maps.
+Now we have  a family of $q$-variate($q \leq n$) diffusion maps $\{ U_{t} \}_{t \in \mathbb{N}} $, of which Euclidean distance is diffusion distance. Embedding each node on Euclidean metric is a novel approach in testing independence on network space; there is no estimation nor model assumption involved. However there remains a matter of dependence between observed diffusion maps.
 	
 \subsubsection{Properties of diffusion maps under exchangeable graphs}
 
-We hope that diffusion maps are multivariate configuration of each node whose distance metric well reflects relative location on network space. However, due to the inter-correlated construction of $U$, e.g. $i$th subject's diffusion depends on others in the given network, it is hard to say that the observed diffusion coordinates of $n$ subjects are independent observations. To talk about independence of $U$, we need a concept of exchangeable graph explained in the earlier section. 
+We wish that diffusion maps are multivariate configuration of each node whose distance metric well reflects relative location on network space. However, due to the inter-correlated construction of $U$, e.g. $i$th subject's diffusion depends on others in the given network, it is hard to say that the observed diffusion coordinates of $n$ subjects are independent observations. As for independence of $U$, we need a concept of exchangeable graph explained in the earlier section. 
 
 \begin{lemma}[Exchangeability and \textit{i.i.d} of $A$ in graphon]
 	\label{lemma1}
-Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are  \textit{i.i.d} conditioning on random link function $g : [0,1]^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \} \setminus \{ A_{ii} \} $ , $i \in \{ 1,2,... , n \}$ are conditionally i.i.d. on random link function $g$.  
+Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are  \textit{i.i.d} conditioning on some random link function $g : [0,1]^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \} \setminus \{ A_{ii} \} $ , $i \in \{ 1,2,... , n \}$ are conditionally i.i.d. on random link function $g$.  
 \end{lemma}
-	
-	
-
-	
-\begin{lemma}[Exchangeability and \textit{i.i.d} of $A$ in graphex]
-		\label{lemma2}
-		Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphex. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i \leq j \}$ \textcolor{red}{need cautions}
-\end{lemma}
-	
-	
-	From the above Lemma \ref{lemma1}, \ref{lemma2}, we can also prove exchangeability and conditional i.i.d. of diffusion maps at each time point. 
+		
+From the above Lemma \ref{lemma1}, we can also prove exchangeability and conditional \textit{i.i.d} of diffusion maps at each time point. 
 	
 \begin{lemma}[Exchangeability and \textit{i.i.d} of $U$]
-	\label{lemma3}
-	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon, i.e. any exchangeable random graph from an infinite graph. Then its transition probability $P_{ij}$ so thus  diffusion maps at fixed time $t$ also exchangeable conditional on link function of graph. Furthermore, by [de Finetti]'s Theorem \ref{finetti}, we can say that such diffusion maps at $t$ are conditionally i.i.d given random probability measure $\eta$ on $U_{t}$ and random link function $g$.    
+	\label{main_lemma}
+	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon, i.e. any exchangeable random graph from an infinite graph. Then its transition probability $P_{ij}$ so thus  diffusion maps at fixed time $t$ also exchangeable conditional on link function of graph. Furthermore, by \textit{de Finetti's Theorem} \ref{finetti}, we can say that such diffusion maps at $t$ are conditionally \textit{i.i.d} given random probability measure $\eta$ on $U_{t}$ and random link function $g$.    
 \end{lemma}
 	
+Lemma \ref{main_lemma} above provides us \textit{i.i.d} one-parameter family of $\{ \mathbf{U}_{t} \}_{t \in \mathbb{N}}$ conditional on a random probability measure of $\mathbf{U}_{t}$ and a random link function of $g$. At each time of $t$,  $q$-variate diffusion coordinate assigns each node to the position where $t$ step diffusion process results. Unfortunately this is a story only applied to exchangeable graph, which cannot be sparse. If we want to embed a set of nodes in sparse graphs, one more step of conditioning on point process $\mathbf{\theta}$ is needed, explained in def. $\ref{graphex}$.  
 	
-	Lemma \ref{lemma3} above provides us i.i.d. one-parameter family of $\{ \mathbf{U}_{t} \}_{t \in \mathbb{N}}$ conditional on a random probability measure of $\mathbf{U}_{t}$ and a random link function of $g$.
 	
+\begin{lemma}[Exchangeability and \textit{i.i.d} of $A$ in graphex]
+\label{lemma2}
+Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphex. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are  \textit{i.i.d} conditioning on some random link function $g : [0,1]^2 \rightarrow [0,1]$ and unit-Poisson process $\mathbf{\theta}$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \} \setminus \{ A_{ii} \} $ , $i \in \{ 1,2,... , n \}$ are conditionally i.i.d. on random link function $g$ and $\mathbf{\theta}$.  
+\end{lemma}	
+
+Similar to Lemma \ref{main_lemma}, we are able to prove exchangeability of a transition matrix conditional on $g$ and also on $\theta$. Implicit interpretation of conditioning on node generating process $\theta$ is not very clear. However in testing independence between networks and nodal attributes, we are usually given a fixed number of nodes and network topology often implies edge structures. 
 	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Applying to Multiscale Generalized Correlation}
 	
 \subsubsection{Distance correlation and its multiscale version}
 	
-Relationship between network and nodal attributes often exhibits local or nonlinear properties. Moreover, dimension of spectrum of network$(q)$ increases as a sample size increases. Unfortunately, widely used correlation measures often fail to capture nonlinear associations or multivariate associations. \cite{szekely2007measuring} extended pairwise constructed generalized correlation coefficient and developed a novel statistics called distance correlation (\texttt{dCov}) as a measure for all types of dependence between two random vectors in any dimension. Let us first start from a general setting that we are given $n \in \mathbb{N}$ pairs of random samples $\{ (x_{i}, y_{i}) : x_{i} \in \mathbb{R}^{q}, y_{i} \in \mathbb{R}^{m}, i = 1,...,n \}$. Define $C_{ij} = \parallel x_{i} - x_{j} \parallel$ and $D_{ij} = \parallel y_{i} - y_{j} \parallel$ for $i,j=1,...,n$, where $\parallel \cdot \parallel$ denotes Euclidean distance defined on any vectors.   
+Relationship between network and nodal attributes often exhibits local or nonlinear properties. Moreover, dimension of network spectrum$(q)$ increases as a sample size increases. Unfortunately, widely used correlation measures often fail to capture nonlinear associations or multivariate associations. \cite{szekely2007measuring} extended pairwise constructed generalized correlation coefficient and developed a novel statistics called distance correlation (\texttt{dCov}) as a measure for all types of dependence between two random vectors in any dimension. Let us first start from a general setting that we are given $n \in \mathbb{N}$ pairs of random samples $\{ (x_{i}, y_{i}) : x_{i} \in \mathbb{R}^{q}, y_{i} \in \mathbb{R}^{m}, i = 1,...,n \}$. Define $C_{ij} = \parallel x_{i} - x_{j} \parallel$ and $D_{ij} = \parallel y_{i} - y_{j} \parallel$ for $i,j=1,...,n$, where $\parallel \cdot \parallel$ denotes Euclidean distance defined on any vectors.   
 Distance correlation (\texttt{dCor}) is defined via distance covariance (\texttt{dCov}) $\mathcal{V}^2_{n}$ of $\boldsymbol{X}$ and $\boldsymbol{Y}$, which is the following: 
 	
 \begin{equation}	 
@@ -286,12 +284,11 @@ However, \texttt{dCov} and even \texttt{MCorr} still perform not very well in ex
 \label{eq:MGC}
 {\mathcal{V}^{*}}^2_{n} (\boldsymbol{X}, \boldsymbol{Y})_{kl} = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij} I \big( r(C_{ij}) \leq k \big) I \big( r(D_{ij})) \leq l  \big), \quad k,l=1,2,..., n 
 \end{equation}
-,where $r(C_{ij})$ ($r(D_{ij})$) is a rank $\mathbf{x}_{i}$ ($\mathbf{y}_{i}$) relative to $\mathbf{x}_{j}$ ($\mathbf{y}_{j}$). We basically truncate each pairwise element of distance covariance with respect to rank in terms of (Euclidean) distance. Note that if $k=l=n$, $\mathcal{V}^2_{n}$ and ${\mathcal{V}^{*}}^2_{n}$ are equivalent. Since we call all family of $\{  {\mathcal{R}^{*}}^2_{n} \}_{k,l = 1,2,...,n}$ as \texttt{MGC} and choose the optimal set of neighborhood choice of $(k,l)$, \texttt{MGC} is more generalized version of \texttt{dCor}. Its superiority and consistency have been proven against all alternatives Cencheng. Particularly, in simulation\ref{sec:sim} we are going to show in which pattern of underlying dependency exists \texttt{MGC} is much more sensitive than global scale of statistics. 
-	
-	
+,where $r(C_{ij})$ ($r(D_{ij})$) is a rank $\mathbf{x}_{i}$ ($\mathbf{y}_{i}$) relative to $\mathbf{x}_{j}$ ($\mathbf{y}_{j}$). We basically truncate each pairwise element of distance covariance with respect to rank in terms of (Euclidean) distance. Note that if $k=l=n$, $\mathcal{V}^2_{n}$ and ${\mathcal{V}^{*}}^2_{n}$ are equivalent. Since we call all family of $\{  {\mathcal{R}^{*}}^2_{n} \}_{k,l = 1,2,...,n}$ as \texttt{MGC} and choose the optimal set of neighborhood choice of $(k,l)$, \texttt{MGC} is more generalized version of \texttt{dCor}. Its superiority and consistency have been proven against all alternatives (Cencheng). Particularly, in simulation\ref{sec:sim} we are going to show in which pattern of underlying dependency exists \texttt{MGC} is much more sensitive than global scale of statistics. 
+		
 \subsubsection{Choice of proper metric on network}
 
-Returning to the problem of network setting, the fundamental problem is in measuring all types of dependence between $\boldsymbol{G}$ and $\boldsymbol{X}$ via \texttt{MGC}, we are required a \textit{i.i.d.} vertex-wise coordinates of which Euclidean distance measures a distance between them. You might first propose directly using a column of an adjacency matrix so that we have a $n$-pair of observations $\big\{ \big( \boldsymbol{A}_{i \cdot} , \boldsymbol{X}_{i} \big) : \boldsymbol{A}_{i \cdot} = (A_{i 1} , ... , A_{i n} ), \boldsymbol{X}_{i} \in \mathbb{R}^{m}, i=1,...,n  \big\}.$ In an undirected graph, $\{ \mathbf{A_{i \cdot}}  \}$ cannot be independent. Even if it is in e.g. directed graph, Euclidean distance between $\{ \boldsymbol{A}_{i \cdot} : i =1, ... , n \}$ is not a proper metric over network space. Let us introduce a simple example. Let a given network $\boldsymbol{G}$ having 8 nodes be an unweighted, directed network and possibly having self-loop. Let $\boldsymbol{A}$ be its $8 \times 8$ binary adjacency matrix. Assume \texttt{Node 1}, \texttt{Node 4} and \texttt{Node 8} have the following row entries:
+On the other hand, the fundamental problem in measuring all types of dependence between $\boldsymbol{G}$ and $\boldsymbol{X}$ via \texttt{MGC} is that we are required a \textit{i.i.d.} node-specific coordinates of which Euclidean distance measures a distance between them. (We are not always required Euclidean metric \citep{lyons2013distance} but discussion on this is out of scope in this paper.) You might first propose directly using a column of an adjacency matrix so that we have a $n$-pair of observations $\big\{ \big( \boldsymbol{A}_{i \cdot} , \boldsymbol{X}_{i} \big) : \boldsymbol{A}_{i \cdot} = (A_{i 1} , ... , A_{i n} ), \boldsymbol{X}_{i} \in \mathbb{R}^{m}, i=1,...,n  \big\}.$ In an undirected graph, $\{ \mathbf{A_{i \cdot}}  \}$ cannot be independent. Even if it is in e.g. directed graph, Euclidean distance between $\{ \boldsymbol{A}_{i \cdot} : i =1, ... , n \}$ is not a proper metric over network space. Let us introduce a simple example. Let a given network $\boldsymbol{G}$ having 8 nodes be an unweighted, directed network and possibly having self-loop. Let $\boldsymbol{A}$ be its $8 \times 8$ binary adjacency matrix. Assume \texttt{Node 1}, \texttt{Node 4} and \texttt{Node 8} have the following row entries:
 	
 \begin{equation}
 	\begin{gathered}
@@ -332,7 +329,7 @@ Since $\boldsymbol{U}$ provides a configuration of vertices in $\boldsymbol{G},$
 \section{Simulation Study}
 \label{sec:sim}
 	
-In simulation studies presented in this paper, we make a comparison of estimated testing power across various multivariate independence test statistics: \texttt{MGC}, \texttt{dCov}, Heller-Heller-Gorfine (\texttt{HHG}) (\cite{heller2012consistent}), and likelihood ratio test of Fosdick and Hoff (\texttt{FH}). For computing statistical power, we used type I error $\alpha = 0.05$ and obtain p-values of each sample network via permutations. For fair comparison between these testing methods, we also present a additive model of latent factors, which is mostly targeted by \texttt{FH}.   
+In simulation studies presented in this paper, we make a comparison of estimated testing power across various multivariate independence test statistics: \texttt{MGC}, \texttt{dCov}, Heller-Heller-Gorfine (\texttt{HHG}) \citep{heller2012consistent}, and likelihood ratio test of Fosdick and Hoff (\texttt{FH}). For computing statistical power, we used type I error $\alpha = 0.05$ and obtain p-values of each sample network via permutations. For fair comparison between these testing methods, we also present a additive model of latent factors, which is mostly targeted by \texttt{FH}.   
 	
 \subsection{Stochastic Block Model}
 
@@ -356,21 +353,18 @@ We mentioned in the Introduction that latent network model is very common follow
 \subsubsection{[sim1.2] simplest three block model}
 	
 	
-	\begin{equation}
-	\begin{gathered}
+\begin{equation}
+\begin{gathered}
 	X_{i} \overset{i.i.d}{\sim} Multi(1/3, 1/3, 1/3), i = 1,2, ... , n \\ 
 	Z_{i}  \sim  \left\{  \begin{array}{ccc} Multi(1/2, 1/4, 1/4) & X_{i} = 1 \\ Multi(1/4, 1/2, 1/4) & X_{i} = 2 \\ Multi(1/4, 1/4, 1/2) & X_{i} = 3  \end{array} \right. \\
 	A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{ccc}   0.5 & 0.2 &  0.3  \\ 0.2 & 0.5 & 0. 2  \\ 0.3 & 0.2 & 0.5  \end{array}  \right]
-	\end{gathered}
-	\end{equation}
+\end{gathered}
+\end{equation}
 	
-	\textcolor{red}{comparison to patter of power of MGC/dCov/hhg/FH from "simple" three block graph - figures in appendix}
+\textcolor{red}{comparison to patter of power of MGC/dCov/hhg/FH from "simple" three block graph - figures in appendix}
 	
-	
-	\textcolor{red}{explain briefly why local optimal performs better in this case}
-	
-	
-	\textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
+\textcolor{red}{explain briefly why local optimal performs better in this case}
+\textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
 	
 	
 	
@@ -469,15 +463,13 @@ Despite a few shortcomings listed above, a range of applications of \texttt{MNT}
 	
 	
 	
-\subsection{[apd2]}
-	\begin{itemize}
-		\item {\it  Proof of Lemmas and Theorems  \/}
-	\end{itemize}
+\subsection{Lemmas and Theorems}
 	
 \begin{theorem}[de Finetti's Theorem] 
-		\label{finetti}
-		
-1. Let $X_{1}, X_{2}, ...$ be an infinite sequence of random variables with values in a space $\mathbf{X}$. The sequence $X_{1}, X_{2}, ...$ is exchangeable if and only if there is a random probability measure $\eta$ on $\mathbf{X}$ such that the $X_{i}$ are conditionally i.i.d. given $\eta$. 
+	\label{finetti}
+	
+\bigskip			
+1. Let $X_{1}, X_{2}, ...$ be an infinite sequence of random variables with values in a space $\mathbf{X}$. The sequence $X_{1}, X_{2}, ...$ is exchangeable \textit{if and only if} there is a random probability measure $\eta$ on $\mathbf{X}$ such that the $X_{i}$ are conditionally i.i.d. given $\eta$. 
 		
 2. If the sequence is exchangeable, the empirical distributions
 		
@@ -498,8 +490,8 @@ $$\hat{S}_{n} ( . ) := \frac{1}{n} \sum\limits_{i=1}^{n} \delta_{X_{i}} ( .), n 
 	
 	
 	
-\begin{proof}[Proof of Lemma \ref{lemma1}]
-	By \textit{Aldous-Hoover Theorem} \ref{Aldous_Hoover}, a random array $(A_{ij})$ is jointly exchangeable if and only if it can be represented as follows : 
+\begin{proof}[\textbf{Proof of Lemma \ref{lemma1} }] 
+	By \textit{Aldous-Hoover Theorem} \ref{Aldous_Hoover}, a random array $(A_{ij})$ is jointly exchangeable \textit{if and only if} it can be represented as follows : 
 		
 	There is a random function $g : [0,1]^2 \rightarrow [0,1]$ such that 
 \begin{equation}
@@ -512,54 +504,54 @@ where $W_{i} \overset{i.i.d.}{\sim} Uniform(0,1)$. Thus if $\mathbf{A}$ is an ad
 \end{split}
 \end{equation}
 		
-Then within each row, adjacent elements are independent and also identically distributed ,i.e. for fixed row index to $i \in \{1,2,... , n\}$,
-$$P(A_{i1} = a_{i1}, A_{i2} = a_{i2}, ... , A_{in} = a_{in} ) = \prod\limits_{j=1}^{n} P(A_{ij} = a_{ij})$$
-		
+Then within each row, adjacent elements are independent and also identically distributed except a diagonal element.
+
 \end{proof}
 	
-	
-\begin{proof}[Proof of Lemma \ref{lemma2}]
-	Based on Kallenberg and Exchangeable Graph (KEG) frameworks, introduced in \href{http://arxiv.org/abs/1512.03099}{[Veitch and Roy]}, a random array $(A_{ij})$ is jointly exchangeable if and only if it can be represented as follows : there is a random function $g : [0,1]^2 \rightarrow [0,1]$ such that 
-		
-\begin{equation}
-	(A_{ij})  \stackrel{d}{=} (A_{v_{i}, v_{j}} )  \stackrel{d}{=} Bern( g( \vartheta_{i}, \vartheta_{j}))
-\end{equation}
-where $v_{i} \overset{i.i.d.}{\sim} Poisson(1), \vartheta_{i} \overset{i.i.d.}{\sim} Poisson(1), v_{i} \leq \nu, i = 1,2,... , n$, for some pre-specified $\nu >0$ so that finite size graphs can include vertices only if they participate in at least one edges. 
-		
-Thus if $\mathbf{A}$ is an adjacency matrix of an undirected, exchangeable network, for any $i \leq j,$ $i,j = 1,... , n$:
-		
-\begin{equation}
-\begin{split}
-	P \big(  A_{ij} = a_{ij} \big) & = \int P \big( A_{ij} \big| v_{i}, v_{j} \big) Pr(V_{i} = v_{i}) Pr(V_{j} = v_{j}) Pr(\vartheta_{i} = \vartheta_{i}) Pr(\vartheta_{j} = \vartheta_{j})   dv_{i} dv_{j} d\vartheta_{i} d\vartheta_{j}   \\ & = \int_{0}^{\tau} \int_{0}^{\tau} \int_{0}^{\infty} \int_{0}^{\infty}  g( \vartheta_{i},  \vartheta{j})^{a_{ij}} \big( 1- g( \vartheta_{i},  \vartheta_{j}) \big)^{1-a_{ij}}  \\ & \quad \times dPois_{1}(x_{1}) \times dPois_{1}(x_{2}) \times dPois_{1}(x_{3}) \times dPoi_{1}(x_{4})  dx_{1} dx_{2} dx_{3} dx_{4}.
-\end{split}
-\end{equation}
-\end{proof}
-	
-\begin{proof}[Proof of Lemma \ref{lemma3}]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\begin{proof}[\textbf{Proof of Lemma \ref{main_lemma}}]
 We have shown that for fixed time $t$, diffusion distance is defined as an Euclidean distance of diffusion maps. Diffusion map is represented as follows :
 \begin{equation}
 	\boldsymbol{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \cdots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}.
 \end{equation}
-where $\Phi = \Pi^{-1/2}\Psi$ and $\mathbf{Q}=\mathbf{\Psi}\mathbf{\Lambda}\mathbf{\Psi}^{T} = \mathbf{\Pi}^{1/2} \mathbf{P} \mathbf{\Pi}^{-1/2}$. 
-Thus $\mathbf{P \Pi^{-1/2} \Psi = \Pi^{-1/2} \Psi \Lambda}$. 
-Then for any $r$th row ($r \in \{1,2, ... , q \}$, $(q \leq n)$), we can see that $P \phi_{r} = \lambda_{r} \phi_{r}$, where $\phi_{r} = \begin{pmatrix}  \frac{\psi_{r}(1)}{\sqrt{\pi(1)}} & \frac{\psi_{r}(2)}{\sqrt{\pi(2)}} & \cdots & \frac{\psi_{r}(n)}{\sqrt{\pi(n)}} \end{pmatrix}$.
-Therefore to guarantee exchangeability (or i.i.d.) of $\mathbf{U}_{t}$, it suffices to show exchangeability (or i.i.d.) of $\mathbf{P}$.
+where $\Phi = \Pi^{-1/2}\Psi$ and $Q= \Psi \Lambda \Psi^{T} = \Pi^{1/2} P \Pi^{-1/2}$. 
+Thus $P \Pi^{-1/2} \Psi = \Pi^{-1/2} \Psi \Lambda$. 
+Then for any $r$th row ($r \in \{1,2, ... , q \}$, $(q \leq n)$), we can see that $P \phi_{r} = \lambda_{r} \phi_{r}$  where $\phi_{r} = \begin{pmatrix}  \psi_{r}(1) / \sqrt{\pi(1)} &  \psi_{r}(2) /  \sqrt{\pi(2)} & \cdots & \psi_{r}(n) /  \sqrt{\pi(n)}  \end{pmatrix}$.
+Therefore to guarantee exchangeability (or \textit{i.i.d}) of $\mathbf{U}_{t}$, it suffices to show exchangeability (or \textit{i.i.d}) of $P$.
 
 Assume joint exchangeability of $\mathbf{G}$, i.e. $(A_{ij}) \stackrel{d}{=} \big( A_{\sigma(i) \sigma(j)} \big)$. 
-Since $A_{ij}$ is binary, $\frac{A_{ij}}{\sum\limits_{ij} A_{ij}} = \frac{A_{ij}}{ 1 + \sum\limits_{l \neq j} A_{il}}$. Moreover, $A_{ij}$ and $(1 + \sum\limits_{l \neq j} A_{il})$ are independent given its link function $g$, and $A_{\sigma(i) \sigma(j)}$ and $(1 + \sum\limits_{l \neq j} A_{\sigma(i) \sigma(l)})$ are independent also given $g$.
-Then the following joint exchangeability of transition probability holds:
+Since $A_{ij}$ is binary, $A_{ij} / \sum\limits_{ij} A_{ij} = A_{ij} /  (1 + \sum\limits_{l \neq j} A_{il})$. Moreover, $A_{ij}$ and $(1 + \sum\limits_{l \neq j} A_{il})$ are independent given its link function $g$, and $A_{\sigma(i) \sigma(j)}$ and $(1 + \sum\limits_{l \neq j} A_{\sigma(i) \sigma(l)})$ are independent also given $g$.
+Then the following joint exchangeability of transition probability holds for $i \neq j; i,j = 1,2, \ldots,n$:
 
 \begin{equation}
 \big( P_{ij} \big) = \left(  \frac{A_{ij}}{1 - A_{ij} + \sum\limits_{j=1}^{n} A_{ij} } \right)  \stackrel{d}{=} \left( \frac{A_{\sigma(i) \sigma(j)} }{1 - A_{\sigma(i) \sigma(j)} + \sum\limits_{\sigma(j) = 1}^{n} A_{\sigma(i) \sigma(j)} } \right) = \big( P_{\sigma(i) \sigma(j)} \big)
 \end{equation}
 		
-Thus, transition probability is exchangeable. 
+When $i = j$, $P_{ij} = P_{\sigma(i) \sigma(j)} = 0$ for $i=1,2, \ldots, n$.
+Thus, transition probability is also exchangeable. 
 This results exchangeable eigenfunctions $\{ \Phi(1), \Phi(2), , ... , \Phi(n) \}$ 
-where $\Phi(i) := \begin{pmatrix} \phi_{1}(i) & \phi_{2}(i) & \cdots & \phi_{q}(i) \end{pmatrix}^{T}$. Thus diffusion maps at fixed $t$, $\mathbf{U}_{t} = \begin{pmatrix} \Lambda^{t} \Phi(1)  & \Lambda^{t} \Phi(2) & \cdots & \Lambda^{t} \Phi(n)  \end{pmatrix}$ are exchangeable. 
-		
-Furthermore by \textit{de Finetti's Theorem} (\ref{finetti}), we can say that $\mathbf{U}(t) = \{ U^{(t)}_{1}, U^{(t)}_{2}, ... , U^{(t)}_{n} \}$ are conditionally independent on a random probability measure $\eta$. 
+where $\Phi(i) := \begin{pmatrix} \phi_{1}(i) & \phi_{2}(i) & \cdots & \phi_{q}(i) \end{pmatrix}^{T}$, $i=1,2, \ldots, n$. Thus diffusion maps at fixed $t$, $\mathbf{U}_{t} = \begin{pmatrix} \Lambda^{t} \Phi(1)  & \Lambda^{t} \Phi(2) & \cdots & \Lambda^{t} \Phi(n)  \end{pmatrix}$ are exchangeable.  Furthermore by \textit{de Finetti's Theorem} (\ref{finetti}), we can say that $\mathbf{U}(t) = \{ U^{(t)}_{1}, U^{(t)}_{2}, ... , U^{(t)}_{n} \}$ are conditionally independent on a random probability measure $\eta$. 
 \end{proof}
 	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\begin{proof}[\textbf{Proof of Lemma \ref{lemma2}}]
+	Based on Kallenberg and Exchangeable Graph (KEG) frameworks, introduced in \cite{veitch2015class}, a random array $(A_{ij})$ is jointly exchangeable \textit{if and only if} it can be represented as follows : there is a random function $g : \mathbb{R}^{2}_{+} \rightarrow [0,1]$ such that 
+	
+	\begin{equation}
+	(A_{ij})  \stackrel{d}{=} (A_{v_{i}, v_{j}} )  \stackrel{d}{=} Bern( g( \vartheta_{i}, \vartheta_{j}))
+	\end{equation}
+	where $v_{i} \overset{i.i.d.}{\sim} Poisson(1), \vartheta_{i} \overset{i.i.d.}{\sim} Poisson(1), v_{i} \leq \nu, i = 1,2,... , n$, for some pre-specified $\nu >0$ so that finite size graphs can include vertices only if they participate in at least one edges. Thus if $\mathbf{A}$ is an adjacency matrix of such undirected, exchangeable network, for any $i < j,$ $i,j = 1,... , n$:
+\begin{equation}
+\begin{split}
+	P \big(  A_{ij} = a_{ij} \big| V_{i}, V_{j} \big) & = \int P \big( A_{ij} \big| v_{i}, v_{j} \big) Pr(\vartheta_{i} = \vartheta_{i}) Pr(\vartheta_{j} = \vartheta_{j})   dv_{i} dv_{j} d\vartheta_{i} d\vartheta_{j}   \\ & = \int_{0}^{\tau} \int_{0}^{\tau}   \int_{0}^{\infty} \int_{0}^{\infty}  g( \vartheta_{i},  \vartheta_{j})^{a_{ij}} \big( 1- g( \vartheta_{i},  \vartheta_{j}) \big)^{1-a_{ij}}  \\ & \quad \times dPois_{1}(\vartheta_{i}) \times dPoi_{1}(\vartheta_{j})  d \vartheta_{i} d \vartheta_{j}.
+\end{split}
+\end{equation}
+\end{proof}
+where $dPois_{1}(\cdot)$ is a probability distribution function of Poisson process with rate of 1.  Thus given $\{ \mathbf{V} \}$, edge probability except self-loop within each row (or column) is conditionally $\textit{i.i.d}$ given a link function $g$ and Poisson process $V$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 	
 \begin{proof}[Proof of Theorem \ref{theorem1}]
 \end{proof}
@@ -594,18 +586,18 @@ which is true by Cauchy-Schwarz inequality.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \newpage
 \bigskip
-	\begin{center}
-		{\large\bf SUPPLEMENTARY MATERIAL}
-	\end{center}
+\begin{center}
+	{\large\bf SUPPLEMENTARY MATERIAL}
+\end{center}
 	
-	\begin{description}
+\begin{description}
 		
-		\item[Title:] Brief description. (file type)
+\item[\texttt{R} functions:] 
 		
-		\item[R-package for  MYNEW routine:] R-package ÒMYNEWÓ containing code to perform the diagnostic methods described in the article. The package also contains all datasets used as examples in the article. (GNU zipped tar file)
+\item[\texttt{R} Data:] 
 		
-		\item[HIV data set:] Data set used in the illustration of MYNEW method in Section~ 3.2. (.txt file)
-	\end{description}
+\item[Data set] 
+\end{description}
 	
 	
 \end{document}
