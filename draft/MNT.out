@@ -12,11 +12,11 @@
 \BOOKMARK [1][-]{section.3}{Simulation Study}{}% 12
 \BOOKMARK [2][-]{subsection.3.1}{Stochastic Block Model}{section.3}% 13
 \BOOKMARK [3][-]{subsubsection.3.1.1}{[sim1.1] simplest two block model}{subsection.3.1}% 14
-\BOOKMARK [3][-]{subsubsection.3.1.2}{[sim1.2] simplest three block model}{subsection.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.2}{[sim] other version of graph generation}{section.3}% 16
-\BOOKMARK [3][-]{subsubsection.3.2.1}{[sim2.1] degree-corrected stochastic block model}{subsection.3.2}% 17
-\BOOKMARK [3][-]{subsubsection.3.2.2}{[sim2.2] exchangeable graph on Poisson process}{subsection.3.2}% 18
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Additive and multiplicative graph model}{subsection.3.2}% 19
+\BOOKMARK [3][-]{subsubsection.3.1.2}{[sim1.2] degree-corrected two block model}{subsection.3.1}% 15
+\BOOKMARK [3][-]{subsubsection.3.1.3}{[sim1.3] simplest three block model}{subsection.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.2}{[sim] other version of graph generation}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.2.1}{[sim2.1] exchangeable graph on Poisson process}{subsection.3.2}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Additive and multiplicative graph model}{subsection.3.2}% 19
 \BOOKMARK [1][-]{section.4}{Real Data Examples}{}% 20
 \BOOKMARK [2][-]{subsection.4.1}{MRI}{section.4}% 21
 \BOOKMARK [1][-]{section.5}{Discussions}{}% 22

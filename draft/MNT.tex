@@ -288,7 +288,7 @@ However, \texttt{dCov} and even \texttt{MCorr} still perform not very well in ex
 		
 \subsubsection{Choice of proper metric on network}
 
-On the other hand, the fundamental problem in measuring all types of dependence between $\boldsymbol{G}$ and $\boldsymbol{X}$ via \texttt{MGC} is that we are required a \textit{i.i.d.} node-specific coordinates of which Euclidean distance measures a distance between them. (We are not always required Euclidean metric \citep{lyons2013distance} but discussion on this is out of scope in this paper.) You might first propose directly using a column of an adjacency matrix so that we have a $n$-pair of observations $\big\{ \big( \boldsymbol{A}_{i \cdot} , \boldsymbol{X}_{i} \big) : \boldsymbol{A}_{i \cdot} = (A_{i 1} , ... , A_{i n} ), \boldsymbol{X}_{i} \in \mathbb{R}^{m}, i=1,...,n  \big\}.$ In an undirected graph, $\{ \mathbf{A_{i \cdot}}  \}$ cannot be independent. Even if it is in e.g. directed graph, Euclidean distance between $\{ \boldsymbol{A}_{i \cdot} : i =1, ... , n \}$ is not a proper metric over network space. Let us introduce a simple example. Let a given network $\boldsymbol{G}$ having 8 nodes be an unweighted, directed network and possibly having self-loop. Let $\boldsymbol{A}$ be its $8 \times 8$ binary adjacency matrix. Assume \texttt{Node 1}, \texttt{Node 4} and \texttt{Node 8} have the following row entries:
+On the other hand, we are required a \textit{i.i.d.} node-specific coordinates of which Euclidean distance measures a distance between them in order to test independence via \texttt{MGC}. (We are not always required Euclidean metric \citep{lyons2013distance} but discussion on this is out of scope for this paper.) You might first propose directly using a column of an adjacency matrix so that we have a $n$-pair of observations $\big\{ \big( \boldsymbol{A}_{i \cdot} , \boldsymbol{X}_{i} \big) : \boldsymbol{A}_{i \cdot} = (A_{i 1} , ... , A_{i n} ), \boldsymbol{X}_{i} \in \mathbb{R}^{m}, i=1,...,n  \big\}.$ In an undirected graph, $\{ \mathbf{A_{i \cdot}}  \}$ cannot be independent. Even if it is in directed graph, Euclidean distance between $\{ \boldsymbol{A}_{i \cdot} : i =1, ... , n \}$ is not a proper metric over network space. Let us introduce a simple example. Let a given network $\boldsymbol{G}$ having 8 nodes be an unweighted, directed network and possibly allowing self-loop. Let $\boldsymbol{A}$ be its $8 \times 8$ binary adjacency matrix. Assume \texttt{Node 1}, \texttt{Node 4} and \texttt{Node 8} have the following row entries:
 	
 \begin{equation}
 	\begin{gathered}
@@ -297,11 +297,11 @@ On the other hand, the fundamental problem in measuring all types of dependence 
 	\boldsymbol{A}_{8 \cdot} = \left( \begin{array}{rrrrrrrr} 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \end{array} \right)
 	\end{gathered}
 \end{equation}
-,which results $\parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{4 \cdot} \parallel^2 = 4$, $\parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel^2 = 7$,and $\parallel \boldsymbol{A}_{4 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel^2 = 3.$ Accordingly, $\parallel \boldsymbol{A}_{4 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel  < \parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{4 \cdot} \parallel$. However, you can easily see that this does not make sense because \texttt{Node 4} and \texttt{Node 8} are connected each other only through \texttt{Node 1}. 
-Therefore instead of using an adjacency matrix directly, we are considering embedding a vertex $v \in V(\boldsymbol{G})$ into its diffusion map of $\boldsymbol{U}$ and apply Euclidean distance metric, which is exactly a diffusion distance. As explained before, its Euclidean distance takes into account all possible paths between every pair of node and measure the connectivity between them. Unlike in the other metrics in network, i.e. adjacency matrix or geodesic distance, triangle inequality holds in diffusion distance (proof in [Appendix]). 
+which results $\parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{4 \cdot} \parallel^2 = 4$,  $\parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel^2 = 7$, and $\parallel \boldsymbol{A}_{4 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel^2 = 3.$ Accordingly, $\parallel \boldsymbol{A}_{4 \cdot} -\boldsymbol{A}_{8 \cdot} \parallel  < \parallel \boldsymbol{A}_{1 \cdot} -\boldsymbol{A}_{4 \cdot} \parallel$. However, you can easily see that this does not make sense because \texttt{Node 4} and \texttt{Node 8} are connected each other only through \texttt{Node 1}. 
+Therefore instead of using an adjacency matrix directly, we are considering embedding a vertex $v \in V(\boldsymbol{G})$ into its diffusion map of $\boldsymbol{U}$ and apply Euclidean distance metric, which is exactly same as diffusion distance. As explained before, its Euclidean distance takes into account all possible paths between every pair of nodes and measure the connectivity between them. Unlike in the other metrics in network, i.e. adjacency matrix or geodesic distance, triangle inequality holds in diffusion distance. Proof is provided in Appendix.
 \begin{corollary}[Triangle inequality]
 	\label{corollary1}
-		For fixed time $t$, let $C_{t} : V(\mathbf{G})^2 \rightarrow \mathbb{R}_{+}$ be a diffusion distance defined on a pair of vertices in any connected and undirected graph $\mathbf{G}$. Then for any $v, w, z \in V(\mathbf{G})$,  
+		For fixed time $t$, let $C_{t} : V(\mathbf{G})^2 \rightarrow \mathbb{R}_{+}$ be a diffusion distance defined on a pair of nodes in any connected and undirected graph $\mathbf{G}$. Then for any $v, w, z \in V(\mathbf{G})$,  
 		\begin{equation}
 		C_{t}(v,z) \leq C_{t}(v,w) + C_{t}(w,z)
 \end{equation}
@@ -311,20 +311,22 @@ Thanks to these properties of diffusion maps, we have better interpretation of i
 	
 \subsubsection{One parameter family of test statistic}
 
-We have discussed one-parameter family \textit{i.i.d.} representation of network structures, called diffusion maps, and also discussed when given \textit{i.i.d}. pair of observations of two variables, how distance correlation and its multiscale version test independence between these two. Now it is time to combine these two to test independence between network structures and nodal attributes efficiently and effectively.
+We have discussed one-parameter family \textit{i.i.d.} representation of network structures, called diffusion maps, and also discussed when given \textit{i.i.d}. pair of observations of two variables, how distance correlation and its multiscale version test independence between these two. Now it is time to combine these two to test independence between network topology and nodal attributes efficiently and effectively.
 	
 \begin{theorem}[MGC of testing independence]
  \label{theorem1}
-	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is an exchangeable graph.  Assume that we are given $n$-pair of observations $\{ (u^{(t)}_{i}, x_{i}): i = 1,2,... , n  , t \in \mathbb{N} \}$. Then $u_{t}(i) \overset{i.i.d.}{\sim} f_{U_t} \big(  \eta, g \big)$, $t \in \mathbb{N}$ and $x_{i} \overset{i.i.d.}{\sim} f_{X}$, where $f_{U_t} \big( \eta, g \big)$ are conditional distribution function given a link function $g$ and a random probability measure $\eta_{t}$ of $U_t$. Then \texttt{MGC} applied to these pair of data is theoretically consistent against all dependent alternatives in testing :
-		$$H_{0} : f_{U_t \cdot X} = f_{U_t} \cdot f_{X}$$
+Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is an exchangeable graph.  Assume that we are given $n$-pair of observations $\{ ( \mathbf{u}_{t}(i), \mathbf{x}_{i}): i = 1,2,... , n  , t \in \mathbb{N} \}$, where $u_{t}(i) \overset{i.i.d.}{\sim} f_{U_t} \big(  \eta, g \big)$, $t \in \mathbb{N}$ and $\mathbf{x}_{i} \overset{i.i.d.}{\sim} f_{X}$ Then \texttt{MGC} applied to these pair of data is theoretically consistent against all dependent alternatives in testing :
+\begin{equation}
+H_{0} : f_{U_t \cdot X} = f_{U_t} \cdot f_{X}
+\end{equation}
 \end{theorem}
-	
-Since $\boldsymbol{U}$ provides a configuration of vertices in $\boldsymbol{G},$ the above hypothesis implies testing independence between the configuration of vertices in network space and in attribute space, but as a function of a link function $g$ and a random function (variable) of $\eta$ of $\mathbf{U}$.
+Remind that  conditional distribution of $f_{U_t} \big( \eta, g \big)$ given a link function $g$ and a random probability measure $\eta_{t}$ of $\mathbf{U}_t$ has been introduced to argue being $\textit{i.i.d}$ from exchangeability. 	Since $\boldsymbol{U}  = \{ \boldsymbol{U}_{t} \}_{t \in \mathbb{N}}$ provides a configuration of nodes in $\boldsymbol{G},$ the above hypothesis implies testing independence between the configuration of nodes in network space and in attribute space at each time of diffusion, but as a function of a link function $g$ and a random function (variable) of $\eta$ of $\mathbf{U}$.
 	
 \begin{remark}
 	Roughly speaking, we can say that diffusion maps are i.i.d. function of a link function $g$ and a random function of $\mathbf{U}$, $\eta$. Thus testing independence between conditional $U$ and $X$ can be considered as testing independence between $f \big( g, \eta \big)$ and $X$. A link function $g$ concerns the distribution of edges and a random function $\eta$ concerns nature distribution of diffusion maps. Our testing basically examines whether how edges are constructed and how diffusions(propagation) process are correlated to nodal attributes.  
-	\end{remark}
-	
+\end{remark}
+Even though we are not able to present testing results in \textit{all} alternatives, in the following section a few examples of sparse networks as well as exchangeable networks will help you understand when and why our proposing method performs better than others. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulation Study}
 \label{sec:sim}
@@ -333,24 +335,49 @@ In simulation studies presented in this paper, we make a comparison of estimated
 	
 \subsection{Stochastic Block Model}
 
-We mentioned in the Introduction that latent network model is very common followed by the assumption of local independence. Stochastic Block Model (SBM) is one of the most popular and also useful network generative model, especially as a tool for community detection \cite{karrer2011stochastic}. 
+We mentioned in the Introduction that latent network model is very common followed by the assumption of local independence. Stochastic Block Model (SBM) is one of the most popular and also useful network generative model, especially as a tool for community detection \citep{karrer2011stochastic}. 
 	
 \subsubsection{[sim1.1] simplest two block model}
 	
-	\begin{equation}
-	\begin{gathered}
+\begin{equation}
+\label{eq:twoSBM}
+\begin{gathered}
 	X_{i} \overset{i.i.d}{\sim} Bern(0.5), i = 1,... , n \\ 
 	Z_{i}  \sim  \left\{  \begin{array}{cc} Bern(0.6) & X_{i} = 0 \\ Bern(0.4) & X_{i} = 1  \end{array} \right. \\
 	A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{cc}   0.4 & 0.1  \\ 0.1 & 0.4 \end{array}  \right]
 	\end{gathered}
-	\end{equation}
+\end{equation}
+	
+\textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
+
+\begin{figure}[H]
+	\centering
+	\label{fig:twoSBM}
+	\includegraphics[width=4in]{../Figure/tmp_twoSBM.pdf}
+	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:twoSBM}.}
+\end{figure}
+
+
+\subsubsection{[sim1.2] degree-corrected two block model}
+
+Under SBM, we assume that all nodes within the same block have the same expected degree. However, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with hubs or highly varying node degrees within blocks or communities, which are common in practice. On the other hand, the Degree-Corrected Stochastic Block model (DCSBM) proposed by \cite{karrer2011stochastic} adds an additional set of parameter, often denoted by $\theta$, to control the node degrees. This model allows variation in node degrees within a block while preserving the overall block community structure. 
+
+\begin{equation}
+\label{eq:twoSBM}
+\begin{gathered}
+X_{i} \overset{i.i.d}{\sim} Bern(0.5), i = 1, \ldots , n \\ 
+\theta_{i} \overset{i.i.d}{\sim} Uniform(0,2), i = 1, \ldots, n
+Z_{i}  \sim  \left\{  \begin{array}{cc} Bern(0.6) & X_{i} = 0 \\ Bern(0.4) & X_{i} = 1  \end{array} \right. \\
+A_{z_{i}, z_{j} | \mathbf{\theta}} \sim Bern \left[  \begin{array}{cc}  \theta_{i} \theta_{j} 0.2 &  \theta_{i} \theta_{j} 0.05  \\  \theta_{i} \theta_{j} 0.05 &  \theta_{i} \theta_{j} 0.2 \end{array}  \right]
+\end{gathered}
+\end{equation}
+
+\textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
+
 	
 	
-	\textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
 	
-	
-	
-\subsubsection{[sim1.2] simplest three block model}
+\subsubsection{[sim1.3] simplest three block model}
 	
 	
 \begin{equation}
@@ -371,17 +398,10 @@ We mentioned in the Introduction that latent network model is very common follow
 \subsection{[sim] other version of graph generation}
 	
 	
-\subsubsection{[sim2.1] degree-corrected stochastic block model}
-	
-Under SBM, we assume that all nodes within the same block have the same expected degree. However, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with hubs or highly varying node degrees within blocks or communities, which are common in practice. On the other hand, the Degree-Corrected Stochastic Block model (DCSBM) adds an additional set of parameter, often denoted by $\theta$, to control the node degrees. This model allows variation in node degrees within a block while preserving the overall block community structure. 
-	
-	
-	
-	
 	
 \textcolor{red}{figure which compares degree distribution of SBM vs. DCSBM}
 	
-\subsubsection{\textcolor{red}{[sim2.2] exchangeable graph on Poisson process}}
+\subsubsection{\textcolor{red}{[sim2.1] exchangeable graph on Poisson process}}
 	
 	
 	\textcolor{red}{simulation study explained in Veitch and Roy, 2015}
@@ -405,11 +425,23 @@ Under SBM, we assume that all nodes within the same block have the same expected
 As a connection to RDPG, this model can also represented as a product of combined latent factor $\tilde{u}$ and $\tilde{v}$. 
 	
 \begin{equation}
+\label{eq:ame}
 \begin{gathered}
 	u_{i} \overset{i.i.d}{\sim} Uniform[0,1] \\ 
 	A_{ij}  \overset{i.i.d}{\sim} Bern \big(  ( 1 - u_{i})^2 \times (1 - u_{j})^2    \big)
 \end{gathered}
 \end{equation}
+
+
+\begin{figure}[H]
+	\centering
+	\label{fig:ame}
+	\includegraphics[width=4in]{../Figure/tmp_ame.pdf}
+	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:ame}.}
+\end{figure}
+
+
+
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real Data Examples}
@@ -417,12 +449,16 @@ As a connection to RDPG, this model can also represented as a product of combine
 	
 \subsection{MRI}
 	
-look into one largest connected component. 
+\textcolor{red}{needs contexts}	
 	
-$\{ \mathbf{U}_{t} \in \mathbb{R}^{q} \}_{t \in \mathbb{N}}$ $\mathbf{X} = (x,y,z) \in \mathbb{R}^{3}$
+We look into one of the connected components with $n = 95$ nodes of whole disconnected network. 
 	
-	(it turns out that $q=$ )?
-test what? test independence between brain network and its 3-dimensional locations; test independence between functional location and physical location. 
+$\{ \mathbf{U}_{t} \in \mathbb{R}^{95} \}_{t \in \mathbb{N}}$ $\mathbf{X} = (x,y,z) \in \mathbb{R}^{3}$
+	
+It turns out that $q=95$, i.e. full rank of transition matrix. In other words we are testing independence between 95-dimensional diffusion maps and 3-dimensional nodal attributes at each $t \in \mathbb{N}$.
+	
+	
+test independence between brain network and its 3-dimensional locations; test independence between functional location and physical location. 
 	
 \begin{figure}[H]
 	\centering
@@ -438,7 +474,7 @@ test what? test independence between brain network and its 3-dimensional locatio
 \section{Discussions}
 \label{sec:discussion}
 	
-Throughout this study, we demonstrate that multiscale network test statistic to test network independence performs well in diverse settings, being supported by thorough theory on distance correlation and diffusion maps. These two tools are both specialized in detecting local and nonlinear dependence patterns, which other existing methods are lack of. Testing independence is often the very first step in investigating relationship between network topology and nodal attributes in our interest. It is more likely that we want to know more than binary decision of rejecting or not rejecting the hypothesis. Multiscale test statistics due to both neighborhood choice $\{ (k,l)  \}$ and time spent in diffusion processes $\{ t \}$ provides us a hint on latent dependence structure as well.  However due to the ambiguousness of saying \textit{optimal}, our work has some limitations; we do not suggest any theoretically supported tools to select the \textit{optimal} time to obtain p-values of test statistics or maybe we want a family of p-values as a function of $t$. Further research can be focused on restoring true dependence pattern or estimating \textit{optimal} scale from a family of statistics. On the other hand, obtaining a full family of statistics are also computationally infeasible; at every Markov process, we chose the optimal region of neighborhood. As an ad hoc, we selected optimal $t$ with highest power or lowest p-values from 1 to 10 for our simulation \ref{sec:sim}.  Other than these computational issues, someone might be uncomfortable about being conditioned by a random function of $g$ and $\eta$.  However, this is inevitable for arguing sample properties of being \textit{i.i.d.}, which is also very conceptual and impossible to prove. By conditioning diffusion maps $\{ \mathbf{U}_{t} \}$ by unknown network generative model $g(\cdot, \cdot)$ and also unknown diffusion process model $\eta(\cdot)$, we are finally able to assert that our observations are a fair sample eligible for test. 
+Throughout this study, we demonstrate that multiscale network test statistic to test network independence between network and its nodal attributes performs well in diverse settings, being supported by thorough theory on distance correlation and diffusion maps. These two tools of local version of distance correlation and diffusion maps are both specialized in detecting local and nonlinear dependence patterns, which other existing methods are lack of. However testing independence is often the very first step in investigating relationship between network topology and nodal attributes in our interest. It is more likely that we want to know more than binary decision of rejecting or not rejecting the hypothesis. Multiscale test statistics due to both neighborhood choice $\{ (k,l)  \}$ and time spent in diffusion processes $\{ t \}$ provides us a hint on latent dependence structure as well.  However due to the ambiguousness of saying \textit{optimal}, our work has some limitations; we do not suggest any theoretically supported tools to select the \textit{optimal} time to obtain p-values of test statistics or maybe we want a family of p-values as a function of $t$. Further research can be focused on restoring true dependence pattern or estimating \textit{optimal} scale from a family of statistics. On the other hand, obtaining a full family of statistics are also computationally infeasible; at every Markov process, we chose the optimal region of neighborhood. As an ad hoc, we selected optimal $t$ with highest power or lowest p-values from 1 to 10 for our simulation \ref{sec:sim}.  Other than these computational issues, someone might be uncomfortable about being conditioned by a random function of $g$ and $\eta$.  However, this is inevitable for arguing sample properties of being \textit{i.i.d.}, which is also very conceptual and impossible to prove. By conditioning diffusion maps $\{ \mathbf{U}_{t} \}$ by unknown network generative model $g(\cdot, \cdot)$ and also unknown diffusion process model $\eta(\cdot)$, we are finally able to assert that our observations are a fair sample eligible for test. 
 	
 Despite a few shortcomings listed above, a range of applications of \texttt{MNT} statistics and node-specific representation of network is very diverse. Especially multiscale version of test would be very useful when indirect networking through diffusion process is not ignorable or cluster membership significantly affects attributes. Furthermore even though we specifically constraint the statistic into testing independence between network and nodal attributes, we can now implement independence testing of two networks with same size by inputting diffusion distance at each time point from each of network in Eq. \ref{eq:MGC}. This type of test will be useful when we want to show a pair of networks are topologically or structurally independent. For example, we might wonder if network on \textit{Facebook} and network induced by club activity within class or school are independent or not. 
  
@@ -590,13 +626,19 @@ which is true by Cauchy-Schwarz inequality.
 	{\large\bf SUPPLEMENTARY MATERIAL}
 \end{center}
 	
+All of the \texttt{R} functions and simulation data in \texttt{RData} format are provided in \url{https://github.com/neurodata/Multiscale-Network-Test}.
+	
 \begin{description}
 		
 \item[\texttt{R} functions:] 
 		
+		
 \item[\texttt{R} Data:] 
 		
-\item[Data set] 
+\item[Data set:]
+
+
+ 
 \end{description}
 	
 	
