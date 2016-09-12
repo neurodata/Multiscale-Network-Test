@@ -372,7 +372,12 @@ A_{z_{i}, z_{j} | \mathbf{\theta}} \sim Bern \left[  \begin{array}{cc}  \theta_{
 \end{gathered}
 \end{equation}
 
-\textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
+\begin{figure}[H]
+	\centering
+	\label{fig:ame}
+	\includegraphics[width=4in]{../Figure/tmp_dcSBM.pdf}
+	\caption{Estimated power based on $M = 500$ independently generated DCSBM.}
+\end{figure}	
 
 	
 	
@@ -388,10 +393,22 @@ A_{z_{i}, z_{j} | \mathbf{\theta}} \sim Bern \left[  \begin{array}{cc}  \theta_{
 \end{gathered}
 \end{equation}
 	
+	
+\begin{figure}[H]
+	\centering
+	\label{fig:ame}
+	\includegraphics[width=4in]{../Figure/tmp_ThreeSBM.pdf}
+	\caption{Estimated power based on $M = 500$ independently generated SBM when \texttt{sample MGC} is used.}
+\end{figure}	
+	
+	
 \textcolor{red}{comparison to patter of power of MGC/dCov/hhg/FH from "simple" three block graph - figures in appendix}
 	
 \textcolor{red}{explain briefly why local optimal performs better in this case}
 \textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
+	
+	
+	
 	
 	
 	
@@ -427,8 +444,8 @@ As a connection to RDPG, this model can also represented as a product of combine
 \begin{equation}
 \label{eq:ame}
 \begin{gathered}
-	u_{i} \overset{i.i.d}{\sim} Uniform[0,1] \\ 
-	A_{ij}  \overset{i.i.d}{\sim} Bern \big(  ( 1 - u_{i})^2 \times (1 - u_{j})^2    \big)
+	W_{i} \overset{i.i.d}{\sim} Uniform[0,1] \\ 
+	A_{ij}  \overset{i.i.d}{\sim} Bern \big(  ( 1 - w_{i})^2 \times (1 - w_{j})^2    \big)
 \end{gathered}
 \end{equation}
 
@@ -436,12 +453,19 @@ As a connection to RDPG, this model can also represented as a product of combine
 \begin{figure}[H]
 	\centering
 	\label{fig:ame}
-	\includegraphics[width=4in]{../Figure/tmp_ame.pdf}
-	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:ame}.}
+	\includegraphics[width=3in]{../Figure/ame.pdf}
+	\includegraphics[width=3in]{../Figure/ame_factor.pdf}
+	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:ame} (left); estimated power when \texttt{FH} and \texttt{MGC} both make use of estimated network factors.}
 \end{figure}
 
 
+A family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship. What \cite{fosdick2015testing} did is embedding nodes into network factors assuming that additive an multiplicative network model is \textit{correct}. Thus in the model explained in Eq. \ref{eq:ame}, where logit of $A$ is an additive and multiplicative function of $\{\mathbf{w} \}$, their estimated factors would be very close to the truth, much closer than embedding made from diffusion maps. When such model is correct using network factors as independent observations from graph $\mathbf{G}$ and applying to \texttt{MGC} will be more sensitive. However we rarely see the network which is fitted to the model.
 
+Simply speaking, if network really fits well to additive and multiplicative model or we have basic knowledge about network model, we is can make sure of their node-specific additive factor $\{ a_{i} \}$ and multiplicative factor $\{ \mathbf{m}^{T}_{i} : \mathbf{m}_{i} \in \mathbb{R}^{k} \}$ in testing directly. Since they assume \textit{i.i.d} generative model for factors of each node, $\mathbf{F}_{i}$, i.e. $\mathbf{F}_{i} = \begin{pmatrix} a_{i} & \mathbf{m}^{T}_{i} \end{pmatrix} \overset{i.i.d}{\sim} MNormal$, there is nothing wrong with applying \textit{MGC} using \textit{i.i.d} observations of $\{ \mathbf{F}_{i}, \mathbf{X}_{i} \}$.   
+	
+\textcolor{red}{figures comparing MGC test with network factors and FH test}	
+	
+	
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real Data Examples}
