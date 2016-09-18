@@ -80,12 +80,12 @@ anchorcolor = blue]{hyperref}
 	} \fi
 	
 	
-	\sloppy
-	\bigskip
-	\begin{abstract}
-		%The text of your abstract. 200 or fewer words.
+\sloppy
+\bigskip
+\begin{abstract}
+	%The text of your abstract. 200 or fewer words.
 		Network dependence over network space, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear dependent patterns. Unfortunately, without knowledge on specific neighborhood structures, no statistic has been suggested to test network dependence further than globally linear dependence. This paper introduces a multiscale dependence test statistic called Multiscale Network Test (\texttt{MNT}), which borrows the idea of diffusion maps and Multiscale Generalized Correlation (\texttt{MGC}). Our methodology for testing network independence to any multivariate nodal attributes can be applied to any exchangeable graph. We prove the consistency of test statistics and demonstrate better performance than any other model-based, global test statistics. Simulation in a variety of networks shows higher power of test and also application to dMRI networks will be followed. 
-	\end{abstract}
+\end{abstract}
 	
 	\noindent%
 	{\it Keywords:} distance correlation, multiscale generalized correlation, diffusion maps, exchangeable graph, stochastic block model 
@@ -96,23 +96,23 @@ anchorcolor = blue]{hyperref}
 	\section{Introduction}
 	\label{sec:intro}
 	
-Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of sociology \citep{pinquart2000influences, ellison2007benefits}, information theory \citep{gross2005information}, biology \citep{barabasi2004network, pujol2010unveiling}, statistics \citep{raftery2012fast, palla2012infinite}, economics \citep{banerjee2013diffusion}, etc. The relationship between a way that a pair of nodes is connected and the values of their attribute is a common interest in network analysis. According to an assumption on how they are related each other, there has been a lot of efforts to represent a network as a function of nodal attributes \citep{wasserman1996logit, howard2016understanding} or model an outcome of nodal attribute variables through their underlying network structures \citep{christakis2007spread, christakis2008collective}. However, it is very obscure to determine which one should be put as a dependent variable or even whether networks are truly related to nodal attributes and how they are, if any. A fundamental difficulty is that network often does not have a natural structure and networks of individuals in the network, nodes, are dependent on others. Thus it is not easy to intuitively think of how to represent network as a node-wise random variable. \cite{fosdick2015testing} therefore suggested estimating network factors which are believed to represent each node's locations in network space and using them to test independence network topology and nodal attributes by implementing standard statistical testing between the factors and attributes. Through controlling the dimension of latent factors they make up the constraints due to parametric modeling. However statistical modeling on networks still rely on the assumption that all the nodes in network would follow the same pattern of dependence and also same amount of dependence. This might not be true for always. We develop a nonparametric test statistic which is also sensitive to nonlinear and local dependence pattern.  
+Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of sociology \citep{pinquart2000influences, ellison2007benefits}, information theory \citep{gross2005information}, biology \citep{barabasi2004network, pujol2010unveiling}, statistics \citep{raftery2012fast, palla2012infinite}, economics \citep{banerjee2013diffusion}, etc. The relationship between a way that a pair of nodes is connected and the values of their attribute is a common interest in network analysis. According to an assumption on how they are related each other, there has been a lot of efforts to represent a network as a function of nodal attributes \citep{wasserman1996logit, howard2016understanding} or model an outcome of nodal attribute variables through their underlying network structures \citep{christakis2007spread, christakis2008collective}. However, it is very obscure to determine which one should be put as a dependent variable or even whether networks are truly related to nodal attributes and how they are, if any. A fundamental difficulty comes from that network often does not have a natural structure and networks of each individual are dependent on others. Thus it is not easy to intuitively come up with how to represent network as a node-specific random variable. \cite{fosdick2015testing} therefore suggested estimating network factors which are believed to represent each node's locations in network space. These factors are in the end used to test independence between network topology and nodal attributes by implementing standard statistical testing method. Through allowing us to choose the dimension of latent factors, they make up the constraints due to parametric modeling. However their statistical modeling on networks still rely on the assumption that all the nodes in network would follow the same pattern of dependence and also same amount of dependence. This might not be true for always. In this paper we develop a nonparametric test statistic which is sensitive to nonlinear and local dependence pattern.  
 	
-	Throughout this paper, assume that we are given an unweighted and undirected, connected network $\boldsymbol{G}$ comprised of $n$ nodes, for a fixed $n \in \mathbb{N}$. Even though we assume that $\boldsymbol{G}$ is an undirected and unweighted network, we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of a given network, denoted by $\boldsymbol{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize this relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\boldsymbol{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\boldsymbol{G}$ and $\boldsymbol{X}$ and testing whether their distributions are independent or not is the key focus in our study. An observed network $\mathbf{G}$ can represent social network within a school and $\boldsymbol{X}$ is students' grades or heights, for example; or $\mathbf{G}$ is a neuronal network in human brain and $\boldsymbol{X}$ is a few factors of personality. 
+Throughout this paper, assume that we are given an unweighted and undirected, connected network $\boldsymbol{G}$ without self-loop, comprised of $n$ nodes for a fixed $n \in \mathbb{N}$. Even though we assume that $\boldsymbol{G}$ is an undirected and unweighted network, we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of a given network, denoted by $\boldsymbol{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize this relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\boldsymbol{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\boldsymbol{G}$ and $\boldsymbol{X}$, and testing whether their distributions are independent or not is the key focus in our study. An observed network $\mathbf{G}$ can represent social network within a school and $\boldsymbol{X}$ is students' grades or heights, for example; or $\mathbf{G}$ can be a neuronal network in human brain and $\boldsymbol{X}$ is a few factors of personality. 
 	
-	In this paper without modeling nor estimating networks, we develop multiscale test statistics which are robust to both nonlinearity and high dimensionality. Multiscale is not avoidable because we view relationship or distance over network as dynamic process so we choose the optimal scale where distance in network space and distance in terms of attributes become most correlated each other. Thus basically we define a coordinate over network at each time in process and test independence to attributes $\mathbf{X}$. In the next methodology section \ref{sec:method}, we are going to define such multiscale distance and its properties, and test statistic using multiscale distance metrics will be followed. In section \ref{sec:sim}, we demonstrate best performance of our method compared to the existing under various circumstances through numerical results. Real data example in section \ref{sec:real} show one of the applications among many.  
+The main contribution of this study is we develop multiscale test statistics which are robust to both nonlinearity and high dimensionality without modeling nor estimating networks. Having multiscale statistics is not avoidable because we regard relationship or distance between nodes over network as dynamic process so we choose the optimal scale where distance in network space and distance in terms of attributes become most correlated each other. To explore this time-dependent distances we define a coordinate over network at each time in process and test independence to attributes $\mathbf{X}$. In the next methodology section \ref{sec:method}, we are going to define such multiscale distance and its properties, and test statistic using multiscale distance metrics will be followed. In section \ref{sec:sim}, we demonstrate best performance of our method compared to the existing under various circumstances through numerical results. Real data example in section \ref{sec:real} show one of the applications among many.  
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
-	\bigskip
-	\section{Methodology}
-	\label{sec:method}
+\bigskip
+\section{Methodology}
+\label{sec:method}
 	
 First step in testing network independence to attributes is figuring out a variable which configurates location of nodes over network space. We hope that our observed network be a representative realization of this variable so that our test results can be generalized to population network. To be specific a pair of our observations for each variable we are going to test should be independent and identically-distributed(\textit{i.i.d}) realization to guarantee representativeness and avoid redundant intra-dependence.  
 	
-	\subsection{Exchangeable Graph}
+\subsection{Exchangeable Graph}
 	
-	Assuming that we are given one network, equivalently one \textit{graph} comprised of nodes and edges. If you consider each edge as \textit{i.i.d}, then observed adjacency matrix is a random sample of a single parameter which is the probability of having edge or not. However, in this case, the resulting network model only depends on number of edges \citep{orbanz2015bayesian} and does not cover undirected or no self-loop networks. Instead of assuming \textit{i.i.d} of edges right away, we are going to assume underlying distribution of edges and then consider a set of edges as \textit{i.i.d} conditional on random function. This idea comes from exchangeable representation of edges.
+Assuming that we are given one network, equivalently one \textit{graph} comprised of nodes and edges. If you consider each edge as \textit{i.i.d}, then observed adjacency matrix is a random sample of a single parameter which is the probability of having edge or not. However, in this case, the resulting network model only depends on number of edges \citep{orbanz2015bayesian} and does not cover undirected or no self-loop networks. Instead of assuming \textit{i.i.d} of edges right away, we are going to assume underlying distribution of edges and then consider a set of edges as \textit{i.i.d} conditional on random function. This idea comes from exchangeable representation of edges.
 	The property of exchangeability is closely related to the use of \textit{i.i.d} random variable. Network or graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \citep{orbanz2015bayesian}. 
 	
 	\begin{definition}[2-array exchangeability]
@@ -265,26 +265,25 @@ Similar to Lemma \ref{main_lemma}, we are able to prove exchangeability of a tra
 	
 \subsubsection{Distance correlation and its multiscale version}
 	
-Relationship between network and nodal attributes often exhibits local or nonlinear properties. Moreover, dimension of network spectrum$(q)$ increases as a sample size increases. Unfortunately, widely used correlation measures often fail to capture nonlinear associations or multivariate associations. \cite{szekely2007measuring} extended pairwise constructed generalized correlation coefficient and developed a novel statistics called distance correlation (\texttt{dCov}) as a measure for all types of dependence between two random vectors in any dimension. Let us first start from a general setting that we are given $n \in \mathbb{N}$ pairs of random samples $\{ (x_{i}, y_{i}) : x_{i} \in \mathbb{R}^{q}, y_{i} \in \mathbb{R}^{m}, i = 1,...,n \}$. Define $C_{ij} = \parallel x_{i} - x_{j} \parallel$ and $D_{ij} = \parallel y_{i} - y_{j} \parallel$ for $i,j=1,...,n$, where $\parallel \cdot \parallel$ denotes Euclidean distance defined on any vectors.   
+Relationship between network and nodal attributes often exhibits local or nonlinear properties. Moreover, dimension of network spectrum$(q)$ often increases as a sample size increases. Unfortunately, widely used correlation measures often fail to capture nonlinear associations especially embedded in high-dimensional data set. \cite{szekely2007measuring} extended pairwise constructed generalized correlation coefficient and developed a novel statistic called distance correlation (\texttt{dCov}) as a measure for all types of dependence between two random vectors in any dimension. Let us first start from a general setting that we are given $n \in \mathbb{N}$ pairs of random samples $\{ (x_{i}, y_{i}) : x_{i} \in \mathbb{R}^{q}, y_{i} \in \mathbb{R}^{m}, i = 1,...,n \}$. Define $C_{ij} = \parallel x_{i} - x_{j} \parallel$ and $D_{ij} = \parallel y_{i} - y_{j} \parallel$ for $i,j=1,...,n$, where $\parallel \cdot \parallel$ denotes Euclidean distance defined on any vectors.   
 Distance correlation (\texttt{dCor}) is defined via distance covariance (\texttt{dCov}) $\mathcal{V}^2_{n}$ of $\boldsymbol{X}$ and $\boldsymbol{Y}$, which is the following: 
 	
 \begin{equation}	 
 \mathcal{V}^2_{n}(\boldsymbol{X}, \boldsymbol{Y}) = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij}
 \end{equation}
-, where $\tilde{C}$ and $\tilde{D}$ is a doubly-centered $C$ and $D$ respectively, by its column mean and row mean. Distance correlation $\mathcal{R}^{2}_{n}(\boldsymbol{X}, \boldsymbol{Y})$ is a standardized \texttt{dCov} by $\mathcal{V}^2_{n}(\boldsymbol{X}, \boldsymbol{X})$ and $\mathcal{V}^2_{n}(\boldsymbol{Y}, \boldsymbol{Y}).$
+, where $\tilde{C}$ and $\tilde{D}$ is a doubly-centered $C$ and $D$ respectively, by its column mean and row mean. Distance correlation $\mathcal{R}^{2}_{n}(\boldsymbol{X}, \boldsymbol{Y})$ is a standardized \texttt{dCov} scaled by $\mathcal{V}^2_{n}(\boldsymbol{X}, \boldsymbol{X})$ and $\mathcal{V}^2_{n}(\boldsymbol{Y}, \boldsymbol{Y}).$
 	
 \begin{equation}	 
 \mathcal{R}_{n}^{2} (\boldsymbol{X}, \boldsymbol{Y}) = \frac{\mathcal{V}^2_{n} (\boldsymbol{X}, \boldsymbol{Y}) }{\sqrt{\mathcal{V}^2_{n} (\boldsymbol{X}, \boldsymbol{X}) \mathcal{V}^2_{n} (\boldsymbol{Y}, \boldsymbol{Y}) } }
 \end{equation}
-	
 On the other hand, a modified distance covariance (\texttt{MCov}) $\mathcal{V}^*_{n}$ and a modified distance correlation (\texttt{MCorr}) $\mathcal{R}^{*}_{n}$ for testing high dimensional random vectors were also proposed in \cite{szekely2013distance}.   
-However, \texttt{dCov} and even \texttt{MCorr} still perform not very well in existence of various nonlinear dependency and under existence of outliers (Cencheng). Out of this concern, Cencheng at al (2016) developed Multiscale Generalized Correlation (\texttt{MGC}) by adding local scale on correlation coefficients. Multiscale version of distance covariance $\{ { {\mathcal{V}^{*}}^2_{n} }   \}_{kl}$ is defined as following : 
+However, \texttt{dCov} and even \texttt{MCorr} still perform not very well in existence of various nonlinear dependency and under existence of outliers (Cencheng). Out of this concern, Cencheng at al (2016) proposed Multiscale Generalized Correlation (\texttt{MGC}) by adding local scale in a sense of nearest neighbors on correlation coefficients. Multiscale version of distance covariance $\{ { {\mathcal{V}^{*}}^2_{n} }   \}_{kl}$ is defined as following : 
 	
 \begin{equation}
 \label{eq:MGC}
-{\mathcal{V}^{*}}^2_{n} (\boldsymbol{X}, \boldsymbol{Y})_{kl} = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij} I \big( r(C_{ij}) \leq k \big) I \big( r(D_{ij})) \leq l  \big), \quad k,l=1,2,..., n 
+{\mathcal{V}^{*}}^2_{n} (\boldsymbol{X}, \boldsymbol{Y})_{kl} = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij} I \big( r(C_{ij}) \leq k \big) I \big( r(D_{ij}) \leq l  \big), \quad k,l=1,2,..., n 
 \end{equation}
-,where $r(C_{ij})$ ($r(D_{ij})$) is a rank $\mathbf{x}_{i}$ ($\mathbf{y}_{i}$) relative to $\mathbf{x}_{j}$ ($\mathbf{y}_{j}$). We basically truncate each pairwise element of distance covariance with respect to rank in terms of (Euclidean) distance. Note that if $k=l=n$, $\mathcal{V}^2_{n}$ and ${\mathcal{V}^{*}}^2_{n}$ are equivalent. Since we call all family of $\{  {\mathcal{R}^{*}}^2_{n} \}_{k,l = 1,2,...,n}$ as \texttt{MGC} and choose the optimal set of neighborhood choice of $(k,l)$, \texttt{MGC} is more generalized version of \texttt{dCor}. Its superiority and consistency have been proven against all alternatives (Cencheng). Particularly, in simulation\ref{sec:sim} we are going to show in which pattern of underlying dependency exists \texttt{MGC} is much more sensitive than global scale of statistics. 
+where $r(C_{ij})$ ( $r(D_{ij})$) is a rank $\mathbf{x}_{i}$ ($\mathbf{y}_{i}$) relative to $\mathbf{x}_{j}$ ($\mathbf{y}_{j}$). It basically truncates each pairwise element of distance covariance with respect to rank in terms of (Euclidean) distance. Note that if $k=l=n$, $\mathcal{V}^2_{n}$ and ${\mathcal{V}^{*}}^2_{n}$ are equivalent. Since we call all family of $\{  {\mathcal{R}^{*}}^2_{n} \}_{k,l = 1,2,...,n}$ as \texttt{MGC} and choose the optimal set of neighborhood choice of $(k,l)$, \texttt{MGC} is more generalized version of \texttt{dCor}. How to chose the the optimal scale of $(k,l)$, $(k^{*}, l^{*})$, explained in (Cencehng) as well as its superiority and consistency. Particularly, in simulation\ref{sec:sim} we are going to show in which pattern of underlying dependency exists \texttt{MGC} is much more sensitive than global scale of statistics. 
 		
 \subsubsection{Choice of proper metric on network}
 
@@ -327,6 +326,22 @@ Remind that  conditional distribution of $f_{U_t} \big( \eta, g \big)$ given a l
 \end{remark}
 Even though we are not able to present testing results in \textit{all} alternatives, in the following section a few examples of sparse networks as well as exchangeable networks will help you understand when and why our proposing method performs better than others. 
 
+\subsubsection{Each node's contribution to dependency measure}
+
+In presence of nonlinear dependency or local (in)dependency, some nodes often exerts more dependence on their attributes than other nodes since the amount of dependence is not consistent over a set of nodes. Like other node-specific measure of its importance, e.g. centrality, each node's leverage on dependency measure \ref{Eq:MGC} can be of interest. 
+
+Let $(k^{*}, l^{*})$ be the optimal neighborhood choice in distance matrix $(C, D)$.  Denote the contribution of node $v \in V(G)$ to the testing statistic by  $c(\cdot) : v \rightarrow \mathbb{R}$. 
+
+\begin{equation}
+\label{contribution}
+c(v) = \frac{1}{2 n^2} \sum\limits_{j=1}^{n} \left\{     \tilde{C}_{v j} \tilde{D}_{v j} I \big(  r (C_{v j}) \leq k^{*}  \big) I \big( r (D_{ v j }) \leq l^{*} \big) + \tilde{C}_{j v} \tilde{D}_{j v} I \big(  r (C_{j v}) \leq k^{*}  \big) I \big( r (D_{j v}) \leq l^{*} \big) \right\} 
+\end{equation}
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulation Study}
 \label{sec:sim}
@@ -335,9 +350,7 @@ In simulation studies presented in this paper, we make a comparison of estimated
 	
 \subsection{Stochastic Block Model}
 
-We mentioned in the Introduction that latent network model is very common followed by the assumption of local independence. Stochastic Block Model (SBM) is one of the most popular and also useful network generative model, especially as a tool for community detection \citep{karrer2011stochastic}. 
-	
-\subsubsection{[sim1.1] simplest two block model}
+We mentioned in the Introduction that latent network model is very common followed by the assumption of local independence. Stochastic Block Model (SBM) is one of the most popular and also useful network generative model, especially as a tool for community detection \citep{karrer2011stochastic}. We first present the simplest SBM with $K = 2$ blocks where block affiliation for each node is correlated with its attributes $X$. Let us introduce block affiliation variable $Z \in \{ 0, 1 \}$. We set If $Z_{i}  = Z_{j}$, $A_{ij} = 0.4$ and $A_{ij} = 0.1$ so that nodes in the same block are more likely to be adjacent than nodes having different value of $Z$. 
 	
 \begin{equation}
 \label{eq:twoSBM}
@@ -348,17 +361,17 @@ We mentioned in the Introduction that latent network model is very common follow
 	\end{gathered}
 \end{equation}
 	
-\textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
+Figure \label{fig:twoSBM} illustrated two estimated power of \texttt{MGC}, \texttt{dCov}, and \texttt{HHG} based on diffusion distance and \texttt{FH}. 
 
 \begin{figure}[H]
 	\centering
 	\label{fig:twoSBM}
-	\includegraphics[width=3in]{../Figure/tmp_twoSBM.pdf}
-	\includegraphics[width=3in]{../Figure/tmp_twoSBM2.pdf}
-	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:twoSBM} (left); estimated power based on the smallest p-values (right). }
+	\includegraphics[width=3in]{../Figure/twoSBM.pdf}
+	\includegraphics[width =3in]{../Figure/twoSBM_diffusion.pdf}
+	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:twoSBM} (left) and estimated power according to diffusion time (right).}
 \end{figure}
 
-
+Higher sensitivity of \texttt{MGC} to any pattern of dependence \texttt{MGC} can be attributed both to dynamic diffusion process and optimal neighborhood choice. Figure \ref{fig:twoSBM_power} illustrates neighborhood-wise power heatmap. Note that since univariate attribute $X$ is defined binary, the heatmap looks dichotomized.
 
 \begin{figure}[H]
 	\centering
@@ -369,61 +382,28 @@ We mentioned in the Introduction that latent network model is very common follow
 	\caption{Estimated power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:twoSBM}}
 \end{figure}
 
+The above figures support choosing optimal neighborhood as same as global scale almost consistently across diffusion process from $t=1$ to $t=10$. This makes sense in that block affiliation exhibit global dependence on the attributes, i.e. every pair of nodes in the same block has higher probability of being adjacent. On the other hand it is still possible that nodes in different block have attribute values not monotonically dependent on the probability of having edges between them. This scheme can be realized in the following model. Let $X$ be an univariate attribute variable which has ordinal scale 1,2, and 3. 
 
-
-
-\subsubsection{[sim1.2] degree-corrected two block model}
-
-Under SBM, we assume that all nodes within the same block have the same expected degree. However, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with hubs or highly varying node degrees within blocks or communities, which are common in practice. On the other hand, the Degree-Corrected Stochastic Block model (DCSBM) proposed by \cite{karrer2011stochastic} adds an additional set of parameter, often denoted by $\theta$, to control the node degrees. This model allows variation in node degrees within a block while preserving the overall block community structure. 
-
-\begin{equation}
-\label{eq:twoSBM}
-\begin{gathered}
-X_{i} \overset{i.i.d}{\sim} Bern(0.5), i = 1, \ldots , n \\ 
-\theta_{i} \overset{i.i.d}{\sim} Uniform(0,2), i = 1, \ldots, n
-Z_{i}  \sim  \left\{  \begin{array}{cc} Bern(0.6) & X_{i} = 0 \\ Bern(0.4) & X_{i} = 1  \end{array} \right. \\
-A_{z_{i}, z_{j} | \mathbf{\theta}} \sim Bern \left[  \begin{array}{cc}  \theta_{i} \theta_{j} 0.2 &  \theta_{i} \theta_{j} 0.05  \\  \theta_{i} \theta_{j} 0.05 &  \theta_{i} \theta_{j} 0.2 \end{array}  \right]
-\end{gathered}
-\end{equation}
-
-\begin{figure}[H]
-	\centering
-	\label{fig:ame}
-	\includegraphics[width=4in]{../Figure/dcSBM.pdf}
-	\caption{Estimated power based on $M = 500$ independently generated DCSBM.}
-\end{figure}	
-
-	
-	
-	
-\subsubsection{[sim1.3] simplest three block model}
-	
-	
 \begin{equation}
 \label{eq:Three}
 \begin{gathered}
-	X_{i} \overset{i.i.d}{\sim} Multi(1/3, 1/3, 1/3), i = 1,2, ... , n \\ 
-	Z_{i}  \sim  \left\{  \begin{array}{ccc} Multi(1/2, 1/4, 1/4) & X_{i} = 1 \\ Multi(1/4, 1/2, 1/4) & X_{i} = 2 \\ Multi(1/4, 1/4, 1/2) & X_{i} = 3  \end{array} \right. \\
-	A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{ccc}   0.5 & 0.2 &  0.3  \\ 0.2 & 0.5 & 0. 2  \\ 0.3 & 0.2 & 0.5  \end{array}  \right]
+X_{i} \overset{i.i.d}{\sim} Multi(1/3, 1/3, 1/3), i = 1,2, ... , n \\ 
+Z_{i}  \sim  \left\{  \begin{array}{ccc} Multi(1/2, 1/4, 1/4) & X_{i} = 1 \\ Multi(1/4, 1/2, 1/4) & X_{i} = 2 \\ Multi(1/4, 1/4, 1/2) & X_{i} = 3  \end{array} \right. \\
+A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{ccc}   0.5 & 0.2 &  0.3  \\ 0.2 & 0.5 & 0. 2  \\ 0.3 & 0.2 & 0.5  \end{array}  \right]
 \end{gathered}
 \end{equation}
-	
-	
+
 \begin{figure}[H]
 	\centering
 	\label{fig:ame}
-	\includegraphics[width=3in]{../Figure/tmp_ThreeSBM.pdf}
-	\includegraphics[width=3in]{../Figure/tmp_ThreeSBM2.pdf}
-	\caption{Estimated power based on $M = 500$ independently generated SBM when \texttt{sample MGC} is used (Left); estimated power based on the smallest p-values among different neighborhood choices $(k,l)$. (right) }
+	\includegraphics[width=3in]{../Figure/ThreeSBM.pdf}
+	\includegraphics[width=3in]{../Figure/ThreeSBM_diffusion.pdf}
+	\caption{Estimated power based on $M = 500$ independently generated SBM based on optimal neighborhood choices $(k,l)$ (left) and estimate power across diffusion time when sample size is $n=100$ (right). }
 \end{figure}	
-	
-	
-\textcolor{red}{comparison to patter of power of MGC/dCov/hhg/FH from "simple" three block graph - figures in appendix}
-
 
 \begin{figure}[H]
 	\centering
-	\label{fig:twoSBM}
+	\label{fig:ThreeSBM_power}
 	\includegraphics[width=2in]{../Figure/ThreeSBM_power1.png}
 	\includegraphics[width=2in]{../Figure/ThreeSBM_power5.png}
 	\includegraphics[width=2in]{../Figure/ThreeSBM_power10.png}
@@ -431,40 +411,55 @@ A_{z_{i}, z_{j} | \mathbf{\theta}} \sim Bern \left[  \begin{array}{cc}  \theta_{
 \end{figure}
 
 
+Figures \ref{fig:ThreeSBM_power} demonstrates that neighborhood choice of $(k,l)$ in \texttt{MGC} statistic achieves its optimal in local scale. Roughly speaking, considering a pair of nodes in the nearest neighbor, in term of attribute values of $X$, e.g. (1,2) or (2,3), exhibits most significant dependence. If you set every pair of nodes in different blocks to have the same propensity of having edges, discrepancy between local and global scale of $(k,l)$ diminishes, which you can find in Appendix \ref{sec:appendix}.
+
+
+\subsection{degree-corrected two block model}
+
+Under SBM, we assume that all nodes within the same block have the same expected degree. However, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with hubs or highly varying node degrees within blocks or communities, which are common in practice. On the other hand, the Degree-Corrected Stochastic Block model (DCSBM) proposed by \cite{karrer2011stochastic} adds an additional set of parameter, often denoted by $\theta$, to control the node degrees. This model allows variation in node degrees within a block while preserving the overall block community structure. 
+
+\begin{equation}
+\label{eq:dcSBM}
+\begin{gathered}
+X_{i} \overset{i.i.d}{\sim} Bern(0.5), i = 1, \ldots , n \\ 
+\theta_{i} \overset{i.i.d}{\sim} Uniform(0,2), i = 1, \ldots, n \\ 
+Z_{i}  \sim  \left\{  \begin{array}{cc} Bern(0.6) & X_{i} = 0 \\ Bern(0.4) & X_{i} = 1  \end{array} \right. \\
+A_{z_{i}, z_{j} | \mathbf{\theta}} \sim Bern \left[  \begin{array}{cc}  \theta_{i} \theta_{j} 0.2 &  \theta_{i} \theta_{j} 0.05  \\  \theta_{i} \theta_{j} 0.05 &  \theta_{i} \theta_{j} 0.2 \end{array}  \right]
+\end{gathered}
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\label{fig:dcSBM}
+	\includegraphics[width=3in]{../Figure/dcSBM.pdf}
+	\includegraphics[width=3in]{../Figure/dcSBM_diffusion.pdf}
+	\caption{Estimated optimal power based on $M = 500$ independently generated DCSBM (left) and estimated power over diffusion time from $t=1$ to $t=10$.}
+\end{figure}	
 	
-\textcolor{red}{explain briefly why local optimal performs better in this case}
-\textcolor{red}{figure which compares power of MGC/dCov/hhg/FH}
-	
-	
-	
-	
-	
-	
-\subsection{[sim] other version of graph generation}
-	
-	
-	
-\textcolor{red}{figure which compares degree distribution of SBM vs. DCSBM}
-	
-\subsubsection{\textcolor{red}{[sim2.1] exchangeable graph on Poisson process}}
-	
-	
-	\textcolor{red}{simulation study explained in Veitch and Roy, 2015}
-	Sample a (latent) unit rate Poisson process $\Pi$ on $\theta \times \vartheta \in [0, \nu] \times [0, c]$.
-	
-	\begin{equation}
-	\begin{gathered}
+
+\subsection{Exchangeable graph on Poisson process}
+
+We have discussed SBM and its derivative dcSBM in consideration of real network data. However an exchangeable network defined as Def. \ref{exchangeability} is still dense. Here we revisit the example of graphex which is provided in \cite{veitch2015class}, which has power-law degree distribution.
+\begin{equation}
+\begin{gathered}
 	N_{\nu} \sim Poi( c \nu) \\ 
 	\{ \theta_{i} \} \big| N_{\nu} \overset{iid}{\sim} Uniform[0, \nu]  \\ 
 	\{ \vartheta_{i} \} \big| N_{\nu} \overset{iid}{\sim} Uniform[0,1] \\ 
 	\{ X_{i}  \} | N_{\nu} \overset{ind}{\sim} Normal \big( \vartheta_{i}, 0.1 \big)  \\ 
 	(\theta_{i}, \theta_{j}) \big| W, \vartheta_{i}, \vartheta_{j} \overset{ind}{\sim} Bernoulli \big( W\big( \vartheta_{i}, \vartheta_{j} \big) \big) 
 	\end{gathered}
-	\end{equation}
-	
-	
-	
-\subsubsection{Additive and multiplicative graph model}
+\end{equation}
+where $W(\vartheta_{i}, \vartheta_{j} ) = (\vartheta_{i} + 1)^{-2} ( \vartheta_{j} + 1 )^{-2}$ or 0 if $\vartheta_{i} = \vartheta_{j}$. 
+
+\subsection{Additive and multiplicative graph model}
+
+\begin{figure}[H]
+	\centering
+	\label{fig:ame}
+	\includegraphics[width=3in]{../Figure/ame.pdf}
+	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:ame} with different distance metric on network.}
+\end{figure}
+
 	
 \cite{hoff2002latent} proposed a approach of jointly modelling network and its attributes, where networks represent additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors.
 As a connection to RDPG, this model can also represented as a product of combined latent factor $\tilde{u}$ and $\tilde{v}$. 
@@ -478,23 +473,11 @@ As a connection to RDPG, this model can also represented as a product of combine
 \end{equation}
 
 
-\begin{figure}[H]
-	\centering
-	\label{fig:ame}
-	\includegraphics[width=3in]{../Figure/ame.pdf}
-	\includegraphics[width=3in]{../Figure/ame_factor.pdf}
-	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:ame} (left); estimated power when \texttt{FH} and \texttt{MGC} both make use of estimated network factors.}
-\end{figure}
 
-
-A family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship. What \cite{fosdick2015testing} did is embedding nodes into network factors assuming that additive an multiplicative network model is \textit{correct}. Thus in the model explained in Eq. \ref{eq:ame}, where logit of $A$ is an additive and multiplicative function of $\{\mathbf{w} \}$, their estimated factors would be very close to the truth, much closer than embedding made from diffusion maps. When such model is correct using network factors as independent observations from graph $\mathbf{G}$ and applying to \texttt{MGC} will be more sensitive. However we rarely see the network which is fitted to the model.
-
+A family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship; while \cite{fosdick2015testing} embedded nodes into network factors assuming that additive an multiplicative network model is \textit{correct}. Thus in the model explained in Eq. \ref{eq:ame}, where logit of $A$ is an additive and multiplicative function of $\{\mathbf{w} \}$, their estimated factors would be very close to the truth, much closer than embedding made from diffusion maps. However we rarely see the network which is fitted to the model in reality. If you see that your observed network actually fits to theri model, using network factors as independent observations from graph $\mathbf{G}$ and applying to \texttt{MGC} performs not very worse than \texttt{FH} statistic (Fig. \ref{fit.ame}).
 Simply speaking, if network really fits well to additive and multiplicative model or we have basic knowledge about network model, we is can make sure of their node-specific additive factor $\{ a_{i} \}$ and multiplicative factor $\{ \mathbf{m}^{T}_{i} : \mathbf{m}_{i} \in \mathbb{R}^{k} \}$ in testing directly. Since they assume \textit{i.i.d} generative model for factors of each node, $\mathbf{F}_{i}$, i.e. $\mathbf{F}_{i} = \begin{pmatrix} a_{i} & \mathbf{m}^{T}_{i} \end{pmatrix} \overset{i.i.d}{\sim} MNormal$, there is nothing wrong with applying \textit{MGC} using \textit{i.i.d} observations of $\{ \mathbf{F}_{i}, \mathbf{X}_{i} \}$.   
 	
-\textcolor{red}{figures comparing MGC test with network factors and FH test}	
-	
-	
-	
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real Data Examples}
 \label{sec:real}
@@ -515,9 +498,10 @@ test independence between brain network and its 3-dimensional locations; test in
 \begin{figure}[H]
 	\centering
 		\label{fig:mri}
-		\includegraphics[width=2in]{../Figure/brain1_x.pdf}
-		\includegraphics[width=2in]{../Figure/brain1_y.pdf}
-		\includegraphics[width=2in]{../Figure/brain1_z.pdf}
+		\includegraphics[width=1.5in]{../Figure/brain1_x.pdf}
+		\includegraphics[width=1.5in]{../Figure/brain1_y.pdf}
+		\includegraphics[width=1.5in]{../Figure/brain1_z.pdf}
+		\includegraphics[width=1.5in]{../Figure/brain1_weight.pdf}
 	\caption{Subnetwork of MRI network. Darker colored nodes indicate higher positioned node in terms of $x$-axis(left), $y$-axis(middle), and $z$-axis(right).}
 \end{figure}
 	
@@ -529,16 +513,11 @@ test independence between brain network and its 3-dimensional locations; test in
 Throughout this study, we demonstrate that multiscale network test statistic to test network independence between network and its nodal attributes performs well in diverse settings, being supported by thorough theory on distance correlation and diffusion maps. These two tools of local version of distance correlation and diffusion maps are both specialized in detecting local and nonlinear dependence patterns, which other existing methods are lack of. However testing independence is often the very first step in investigating relationship between network topology and nodal attributes in our interest. It is more likely that we want to know more than binary decision of rejecting or not rejecting the hypothesis. Multiscale test statistics due to both neighborhood choice $\{ (k,l)  \}$ and time spent in diffusion processes $\{ t \}$ provides us a hint on latent dependence structure as well.  However due to the ambiguousness of saying \textit{optimal}, our work has some limitations; we do not suggest any theoretically supported tools to select the \textit{optimal} time to obtain p-values of test statistics or maybe we want a family of p-values as a function of $t$. Further research can be focused on restoring true dependence pattern or estimating \textit{optimal} scale from a family of statistics. On the other hand, obtaining a full family of statistics are also computationally infeasible; at every Markov process, we chose the optimal region of neighborhood. As an ad hoc, we selected optimal $t$ with highest power or lowest p-values from 1 to 10 for our simulation \ref{sec:sim}.  Other than these computational issues, someone might be uncomfortable about being conditioned by a random function of $g$ and $\eta$.  However, this is inevitable for arguing sample properties of being \textit{i.i.d.}, which is also very conceptual and impossible to prove. By conditioning diffusion maps $\{ \mathbf{U}_{t} \}$ by unknown network generative model $g(\cdot, \cdot)$ and also unknown diffusion process model $\eta(\cdot)$, we are finally able to assert that our observations are a fair sample eligible for test. 
 	
 Despite a few shortcomings listed above, a range of applications of \texttt{MNT} statistics and node-specific representation of network is very diverse. Especially multiscale version of test would be very useful when indirect networking through diffusion process is not ignorable or cluster membership significantly affects attributes. Furthermore even though we specifically constraint the statistic into testing independence between network and nodal attributes, we can now implement independence testing of two networks with same size by inputting diffusion distance at each time point from each of network in Eq. \ref{eq:MGC}. This type of test will be useful when we want to show a pair of networks are topologically or structurally independent. For example, we might wonder if network on \textit{Facebook} and network induced by club activity within class or school are independent or not. 
- 
-
-
-
-
-	
+ 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 \section{appendix}
-	
+\label{sec:appendix}
 \subsection{supplementary figures}
 
 \begin{equation}
@@ -548,8 +527,16 @@ Despite a few shortcomings listed above, a range of applications of \texttt{MNT}
 	A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{ccc}   0.5 & 0.2 &  0.2  \\ 0.2 & 0.5 & 0. 2  \\ 0.2 & 0.2 & 0.2  \end{array}  \right]
 \end{gathered}
 \end{equation}
-	
-	
+
+\begin{figure}[H]
+	\centering
+	\label{fig:threeSBM}
+	\includegraphics[width=3in]{../Figure/threeSBM_2.pdf}
+	\includegraphics[width=2in]{../Figure/threeSBM_power1_2.png}
+	\includegraphics[width=2in]{../Figure/threeSBM_power5_2.png}
+	\caption{Estimated optimal power based on diffusion maps and \texttt{FH} test statistics (left) and estimated power heatmap using \texttt{MGC} when sample size $n = 100$ (right).}
+\end{figure}
+
 	
 \subsection{Lemmas and Theorems}
 	

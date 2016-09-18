@@ -31,11 +31,11 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2}Methodology}{3}{section.2}}
 \newlabel{sec:method}{{2}{3}{Methodology}{section.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Exchangeable Graph}{3}{subsection.2.1}}
-\newlabel{exchangeability}{{2.1}{3}{2-array exchangeability}{definition.2.1}{}}
 \citation{orbanz2015bayesian,caron2014sparse}
 \citation{lovasz2006limits}
 \citation{chan2013estimation}
 \citation{holland1983stochastic}
+\newlabel{exchangeability}{{2.1}{4}{2-array exchangeability}{definition.2.1}{}}
 \newlabel{graphon}{{2.2}{4}{graphon}{definition.2.2}{}}
 \citation{lovasz2006limits}
 \citation{veitch2015class}
@@ -67,49 +67,53 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Choice of proper metric on network}{11}{subsubsection.2.3.2}}
 \newlabel{corollary1}{{2.3.1}{12}{Triangle inequality}{corollary.2.3.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}One parameter family of test statistic}{12}{subsubsection.2.3.3}}
-\newlabel{theorem1}{{2.4}{12}{MGC of testing independence}{theorem.2.4}{}}
+\newlabel{theorem1}{{2.4}{13}{MGC of testing independence}{theorem.2.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.4}Each node's contribution to dependency measure}{13}{subsubsection.2.3.4}}
 \citation{heller2012consistent}
 \citation{karrer2011stochastic}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Simulation Study}{13}{section.3}}
-\newlabel{sec:sim}{{3}{13}{Simulation Study}{section.3}{}}
+\newlabel{contribution}{{20}{14}{Each node's contribution to dependency measure}{equation.2.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Simulation Study}{14}{section.3}}
+\newlabel{sec:sim}{{3}{14}{Simulation Study}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Stochastic Block Model}{14}{subsection.3.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}[sim1.1] simplest two block model}{14}{subsubsection.3.1.1}}
-\newlabel{eq:twoSBM}{{20}{14}{[sim1.1] simplest two block model}{equation.3.20}{}}
-\newlabel{fig:twoSBM}{{3.1.1}{14}{[sim1.1] simplest two block model}{equation.3.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref  {eq:twoSBM} (left); estimated power based on the smallest p-values (right). }}{14}{figure.1}}
-\citation{karrer2011stochastic}
-\newlabel{fig:twoSBM_power}{{3.1.1}{15}{[sim1.1] simplest two block model}{figure.1}{}}
+\newlabel{eq:twoSBM}{{21}{14}{Stochastic Block Model}{equation.3.21}{}}
+\newlabel{fig:twoSBM}{{3.1}{14}{Stochastic Block Model}{equation.3.21}{}}
+\newlabel{fig:twoSBM}{{3.1}{15}{Stochastic Block Model}{equation.3.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref  {eq:twoSBM} (left) and estimated power according to diffusion time (right).}}{15}{figure.1}}
+\newlabel{fig:twoSBM_power}{{3.1}{15}{Stochastic Block Model}{figure.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Estimated power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated SBM presented in Eq.\ref  {eq:twoSBM}}}{15}{figure.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}[sim1.2] degree-corrected two block model}{15}{subsubsection.3.1.2}}
-\newlabel{eq:twoSBM}{{21}{15}{[sim1.2] degree-corrected two block model}{equation.3.21}{}}
-\newlabel{fig:ame}{{3.1.2}{16}{[sim1.2] degree-corrected two block model}{equation.3.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Estimated power based on $M = 500$ independently generated DCSBM.}}{16}{figure.3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.3}[sim1.3] simplest three block model}{16}{subsubsection.3.1.3}}
-\newlabel{eq:Three}{{22}{16}{[sim1.3] simplest three block model}{equation.3.22}{}}
-\newlabel{fig:ame}{{3.1.3}{17}{[sim1.3] simplest three block model}{equation.3.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Estimated power based on $M = 500$ independently generated SBM when \texttt  {sample MGC} is used (Left); estimated power based on the smallest p-values among different neighborhood choices $(k,l)$. (right) }}{17}{figure.4}}
-\newlabel{fig:twoSBM}{{3.1.3}{17}{[sim1.3] simplest three block model}{figure.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Estimated power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated SBM presented in Eq.\ref  {eq:Three}}}{17}{figure.5}}
+\newlabel{eq:Three}{{22}{16}{Stochastic Block Model}{equation.3.22}{}}
+\newlabel{fig:ame}{{3.1}{16}{Stochastic Block Model}{equation.3.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Estimated power based on $M = 500$ independently generated SBM based on optimal neighborhood choices $(k,l)$ (left) and estimate power across diffusion time when sample size is $n=100$ (right). }}{16}{figure.3}}
+\citation{karrer2011stochastic}
+\newlabel{fig:ThreeSBM_power}{{3.1}{17}{Stochastic Block Model}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Estimated power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated SBM presented in Eq.\ref  {eq:Three}}}{17}{figure.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}degree-corrected two block model}{17}{subsection.3.2}}
+\citation{veitch2015class}
+\newlabel{eq:dcSBM}{{23}{18}{degree-corrected two block model}{equation.3.23}{}}
+\newlabel{fig:dcSBM}{{3.2}{18}{degree-corrected two block model}{equation.3.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Estimated optimal power based on $M = 500$ independently generated DCSBM (left) and estimated power over diffusion time from $t=1$ to $t=10$.}}{18}{figure.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Exchangeable graph on Poisson process}{18}{subsection.3.3}}
 \citation{hoff2002latent}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}[sim] other version of graph generation}{18}{subsection.3.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}\leavevmode {\color  {red}[sim2.1] exchangeable graph on Poisson process}}{18}{subsubsection.3.2.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Additive and multiplicative graph model}{18}{subsubsection.3.2.2}}
-\newlabel{eq:ame}{{24}{18}{Additive and multiplicative graph model}{equation.3.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Additive and multiplicative graph model}{19}{subsection.3.4}}
+\newlabel{fig:ame}{{3.4}{19}{Additive and multiplicative graph model}{subsection.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref  {eq:ame} with different distance metric on network.}}{19}{figure.6}}
 \citation{fosdick2015testing}
-\newlabel{fig:ame}{{3.2.2}{19}{Additive and multiplicative graph model}{equation.3.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref  {eq:ame} (left); estimated power when \texttt  {FH} and \texttt  {MGC} both make use of estimated network factors.}}{19}{figure.6}}
+\newlabel{eq:ame}{{25}{20}{Additive and multiplicative graph model}{equation.3.25}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Real Data Examples}{20}{section.4}}
 \newlabel{sec:real}{{4}{20}{Real Data Examples}{section.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}MRI}{20}{subsection.4.1}}
-\newlabel{fig:mri}{{4.1}{20}{MRI}{subsection.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Subnetwork of MRI network. Darker colored nodes indicate higher positioned node in terms of $x$-axis(left), $y$-axis(middle), and $z$-axis(right).}}{20}{figure.7}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Discussions}{20}{section.5}}
-\newlabel{sec:discussion}{{5}{20}{Discussions}{section.5}{}}
+\newlabel{fig:mri}{{4.1}{21}{MRI}{subsection.4.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Subnetwork of MRI network. Darker colored nodes indicate higher positioned node in terms of $x$-axis(left), $y$-axis(middle), and $z$-axis(right).}}{21}{figure.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussions}{21}{section.5}}
+\newlabel{sec:discussion}{{5}{21}{Discussions}{section.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}appendix}{22}{appendix.A}}
+\newlabel{sec:appendix}{{A}{22}{appendix}{appendix.A}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.1}supplementary figures}{22}{subsection.A.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Lemmas and Theorems}{22}{subsection.A.2}}
-\newlabel{finetti}{{A.1}{22}{de Finetti's Theorem}{theorem.A.1}{}}
-\newlabel{Aldous_Hoover}{{A.2}{22}{Aldous Hoover Theorem}{theorem.A.2}{}}
+\newlabel{fig:threeSBM}{{A.1}{23}{supplementary figures}{equation.A.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Estimated optimal power based on diffusion maps and \texttt  {FH} test statistics (left) and estimated power heatmap using \texttt  {MGC} when sample size $n = 100$ (right).}}{23}{figure.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Lemmas and Theorems}{23}{subsection.A.2}}
+\newlabel{finetti}{{A.1}{23}{de Finetti's Theorem}{theorem.A.1}{}}
+\newlabel{Aldous_Hoover}{{A.2}{23}{Aldous Hoover Theorem}{theorem.A.2}{}}
 \citation{veitch2015class}
 \bibstyle{Chicago}
 \bibdata{Biblio}
