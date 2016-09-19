@@ -12,6 +12,13 @@ Barabasi, A.-L. and Z.~N. Oltvai (2004).
 \newblock Network biology: understanding the cell's functional organization.
 \newblock {\em Nature reviews genetics\/}~{\em 5\/}(2), 101--113.
 
+\bibitem[\protect\citeauthoryear{Bartlett, Olhede, and Zaikin}{Bartlett
+  et~al.}{2014}]{bartlett2014dna}
+Bartlett, T.~E., S.~C. Olhede, and A.~Zaikin (2014).
+\newblock A dna methylation network interaction measure, and detection of
+  network oncomarkers.
+\newblock {\em PloS one\/}~{\em 9\/}(1), e84573.
+
 \bibitem[\protect\citeauthoryear{Caron and Fox}{Caron and
   Fox}{2014}]{caron2014sparse}
 Caron, F. and E.~B. Fox (2014).

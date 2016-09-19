@@ -12,45 +12,45 @@ Warning--no number and no volume in tang2010graph
 Warning--page numbers missing in tang2010graph
 Warning--no number and no volume in veitch2015class
 Warning--page numbers missing in veitch2015class
-You've used 31 entries,
+You've used 32 entries,
             2861 wiz_defined-function locations,
-            816 strings with 10562 characters,
-and the built_in function-call counts, 23711 in all, are:
-= -- 2022
-> -- 1873
+            820 strings with 10723 characters,
+and the built_in function-call counts, 24452 in all, are:
+= -- 2080
+> -- 1934
 < -- 2
-+ -- 588
-- -- 644
-* -- 2249
-:= -- 4255
-add.period$ -- 95
-call.type$ -- 31
-change.case$ -- 236
-chr.to.int$ -- 31
-cite$ -- 40
-duplicate$ -- 574
-empty$ -- 1344
-format.name$ -- 760
-if$ -- 4418
++ -- 608
+- -- 662
+* -- 2327
+:= -- 4387
+add.period$ -- 98
+call.type$ -- 32
+change.case$ -- 244
+chr.to.int$ -- 32
+cite$ -- 41
+duplicate$ -- 592
+empty$ -- 1387
+format.name$ -- 782
+if$ -- 4557
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 31
-newline$ -- 158
-num.names$ -- 310
-pop$ -- 153
+missing$ -- 32
+newline$ -- 163
+num.names$ -- 320
+pop$ -- 158
 preamble$ -- 1
-purify$ -- 422
+purify$ -- 436
 quote$ -- 0
-skip$ -- 639
+skip$ -- 656
 stack$ -- 0
-substring$ -- 1291
-swap$ -- 194
+substring$ -- 1331
+swap$ -- 200
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 620
+type$ -- 640
 warning$ -- 9
-while$ -- 309
+while$ -- 316
 width$ -- 0
-write$ -- 409
+write$ -- 422
 (There were 9 warnings)
