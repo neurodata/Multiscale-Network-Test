@@ -194,7 +194,26 @@ Let $(\boldsymbol{G}, \mathcal{A}, \mu)$ be a measure space. Throughout all of t
 P[i,j] = A_{ij} \big/ \sum\limits_{j=1} A_{ij}
 \end{equation}
 	
+\begin{figure}[H]
+	\centering
+	\label{fig:matrics}
+	\includegraphics[width=2.3in]{../Figure/pmat.png}
+	\includegraphics[width=2.3in]{../Figure/Amat.png}
+	\includegraphics[width=2.3in]{../Figure/Tmat.png}
+	\caption{Population probability distribution (left), realized adjacent matrix (middle), and transition matrix of sample graph $G$ from Stochastic Block Model provided in simulation (Eq. \ref{eq:Three}).}
+\end{figure}	
+		
 A transition matrix $\mathbf{P}$ is a new kernel of a Markov chain of which element $P[i,j]$ represents the probability of travel from Node $i$ to Node $j$ in one time step. A corresponding probability in $t$ step is given by the $t$ th ($t \in \mathbb{N}$) power of $P$. Now we assume that diffusion process occurs within a given graph with this transition probability at each time step. Distance between a pair of nodes at each time is called \textit{diffusion distance}. That is we have distance between every pair of nodes throughout diffusion process. How to derive diffusion distance over a directed network or weighted network is provided in \cite{tang2010graph}. Other than a transition matrix, we need a stationary probability $\boldsymbol{\pi} = \{\pi(1), \pi(2), ... , \pi(n) \}$ of which $\pi(i)$ represents the probability that the diffusion process in the end is stuck in Node $i$ regardless of the starting state. In our setting, $\pi(i)$ is assumed to be proportional to the degree of Node $i$, i.e. $\pi(i) = \sum\limits_{j=1}^{n} A_{ij} \big/ \sum\limits_{i=1}^{n}\sum\limits_{j=1}^{n} A_{ij}$ ($i=1,2,..., n$).   
+
+
+\begin{figure}[H]
+	\centering
+	\label{fig:diffusions}
+	\includegraphics[width=2.3in]{../Figure/Dx1.png}
+	\includegraphics[width=2.3in]{../Figure/Dx2.png}
+	\includegraphics[width=2.3in]{../Figure/Dx3.png}
+	\caption{Diffusion distance, i.e. Euclidean distance of diffusion maps at $t=1$, $t=2$, and $t=3$ of sample graph $G$ from Stochastic Block Model provided in simulation (Eq. \ref{eq:Three}).}
+\end{figure}	
 	
 For each time point $t \in \mathbb{N}$, we can define a diffusion distance $C_{t}$ defined on each pair of nodes given by :	
 \begin{equation}
@@ -356,9 +375,10 @@ Figure \label{fig:twoSBM} illustrated two estimated power of \texttt{MGC}, \text
 \begin{figure}[H]
 	\centering
 	\label{fig:twoSBM}
-	\includegraphics[width=3in]{../Figure/twoSBM.pdf}
-	\includegraphics[width =3in]{../Figure/twoSBM_diffusion.pdf}
-	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:twoSBM} (left) and estimated power according to diffusion time (right).}
+	\includegraphics[width=2.3in]{../Figure/twoSBM.pdf}
+	\includegraphics[width=2.3in]{../Figure/EtwoSBM.pdf}
+	\includegraphics[width =2.3in]{../Figure/twoSBM_diffusion.pdf}
+	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:twoSBM} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated power according to diffusion time (right).}
 \end{figure}
 
 Higher sensitivity of \texttt{MGC} to any pattern of dependence \texttt{MGC} can be attributed both to dynamic diffusion process and optimal neighborhood choice. Figure \ref{fig:twoSBM_power} illustrates neighborhood-wise power heatmap. Note that since univariate attribute $X$ is defined binary, the heatmap looks dichotomized.
@@ -385,10 +405,11 @@ A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{ccc}   0.5 & 0.2 &  0.3  \\ 0.2
 
 \begin{figure}[H]
 	\centering
-	\label{fig:ame}
-	\includegraphics[width=3in]{../Figure/ThreeSBM.pdf}
-	\includegraphics[width=3in]{../Figure/ThreeSBM_diffusion.pdf}
-	\caption{Estimated power based on $M = 500$ independently generated SBM based on optimal neighborhood choices $(k,l)$ (left) and estimate power across diffusion time when sample size is $n=100$ (right). }
+	\label{fig:Three}
+		\includegraphics[width=2.3in]{../Figure/ThreeSBM.pdf}
+		\includegraphics[width=2.3in]{../Figure/EThreeSBM.pdf}
+		\includegraphics[width =2.3in]{../Figure/ThreeSBM_diffusion.pdf}
+		\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:Three} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated power according to diffusion time (right).}
 \end{figure}	
 
 \begin{figure}[H]
@@ -421,8 +442,9 @@ A_{z_{i}, z_{j} | \mathbf{\theta}} \sim Bern \left[  \begin{array}{cc}  \theta_{
 \begin{figure}[H]
 	\centering
 	\label{fig:dcSBM}
-	\includegraphics[width=3in]{../Figure/dcSBM.pdf}
-	\includegraphics[width=3in]{../Figure/dcSBM_diffusion.pdf}
+	\includegraphics[width=2.3in]{../Figure/dcSBM.pdf}
+	\includegraphics[width=2.3in]{../Figure/EdcSBM.pdf}
+	\includegraphics[width=2.3in]{../Figure/dcSBM_diffusion.pdf}
 	\caption{Estimated optimal power based on $M = 500$ independently generated DCSBM (left) and estimated power over diffusion time from $t=1$ to $t=10$.}
 \end{figure}	
 	
@@ -447,6 +469,7 @@ where $W(\vartheta_{i}, \vartheta_{j} ) = (\vartheta_{i} + 1)^{-2} ( \vartheta_{
 	\centering
 	\label{fig:ame}
 	\includegraphics[width=3in]{../Figure/ame.pdf}
+	\includegraphics[width=3in]{../Figure/Eame.pdf}
 	\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:ame} with different distance metric on network.}
 \end{figure}
 
