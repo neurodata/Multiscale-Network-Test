@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  21 SEP 2016 00:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  21 SEP 2016 14:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -528,129 +528,136 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.207 
+l.206 
        <../Figure/pmat.png> <../Figure/Amat.png> <../Figure/Tmat.png>]
-<../Figure/Dx1.png, id=265, 481.8pt x 481.8pt>
+<../Figure/Dx1.png, id=266, 481.8pt x 481.8pt>
 File: ../Figure/Dx1.png Graphic file (type png)
  <use ../Figure/Dx1.png>
-Package pdftex.def Info: ../Figure/Dx1.png used on input line 212.
-(pdftex.def)             Requested size: 166.2212pt x 166.22118pt.
+Package pdftex.def Info: ../Figure/Dx1.png used on input line 211.
+(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/Dx2.png, id=266, 481.8pt x 481.8pt>
+<../Figure/Dx2.png, id=267, 481.8pt x 481.8pt>
 File: ../Figure/Dx2.png Graphic file (type png)
  <use ../Figure/Dx2.png>
-Package pdftex.def Info: ../Figure/Dx2.png used on input line 213.
-(pdftex.def)             Requested size: 166.2212pt x 166.22118pt.
+Package pdftex.def Info: ../Figure/Dx2.png used on input line 212.
+(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/Dx3.png, id=267, 481.8pt x 481.8pt>
-File: ../Figure/Dx3.png Graphic file (type png)
- <use ../Figure/Dx3.png>
-Package pdftex.def Info: ../Figure/Dx3.png used on input line 214.
-(pdftex.def)             Requested size: 166.2212pt x 166.22118pt.
- [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
- has been already used, duplicate ignored
+<../Figure/Dx5.png, id=268, 481.8pt x 481.8pt>
+File: ../Figure/Dx5.png Graphic file (type png)
+ <use ../Figure/Dx5.png>
+Package pdftex.def Info: ../Figure/Dx5.png used on input line 213.
+(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
+
+<../Figure/Dx50.png, id=269, 481.8pt x 481.8pt>
+File: ../Figure/Dx50.png Graphic file (type png)
+ <use ../Figure/Dx50.png>
+Package pdftex.def Info: ../Figure/Dx50.png used on input line 214.
+(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
+
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.226 
-       <../Figure/Dx1.png> <../Figure/Dx2.png> <../Figure/Dx3.png>] [9]
-[10] [11] [12] [13] [14] <../Figure/twoSBM.pdf, id=352, 505.89pt x 505.89pt>
+       <../Figure/Dx1.png> <../Figure/Dx2.png> <../Figure/Dx5.png> <../Figure/D
+x50.png>] [9] [10] [11] [12] [13] [14]
+<../Figure/twoSBM.pdf, id=356, 505.89pt x 505.89pt>
 File: ../Figure/twoSBM.pdf Graphic file (type pdf)
-
-<use ../Figure/twoSBM.pdf>
-Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 378.
+ <use ../Figure/twoSBM.pdf>
+Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 379.
 (pdftex.def)             Requested size: 166.2212pt x 166.2186pt.
 
-<../Figure/EtwoSBM.pdf, id=353, 505.89pt x 505.89pt>
+<../Figure/EtwoSBM.pdf, id=357, 505.89pt x 505.89pt>
 File: ../Figure/EtwoSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/EtwoSBM.pdf>
-Package pdftex.def Info: ../Figure/EtwoSBM.pdf used on input line 379.
+Package pdftex.def Info: ../Figure/EtwoSBM.pdf used on input line 380.
 (pdftex.def)             Requested size: 166.2212pt x 166.2186pt.
 
-<../Figure/twoSBM_diffusion.pdf, id=354, 505.89pt x 505.89pt>
+<../Figure/twoSBM_diffusion.pdf, id=358, 505.89pt x 505.89pt>
 File: ../Figure/twoSBM_diffusion.pdf Graphic file (type pdf)
 
 <use ../Figure/twoSBM_diffusion.pdf>
-Package pdftex.def Info: ../Figure/twoSBM_diffusion.pdf used on input line 380.
+Package pdftex.def Info: ../Figure/twoSBM_diffusion.pdf used on input line 381.
 
 (pdftex.def)             Requested size: 166.2212pt x 166.2186pt.
  [15]
-<../Figure/twoSBM_power1.png, id=366, 481.8pt x 481.8pt>
+<../Figure/twoSBM_power1.png, id=371, 481.8pt x 481.8pt>
 File: ../Figure/twoSBM_power1.png Graphic file (type png)
 
 <use ../Figure/twoSBM_power1.png>
-Package pdftex.def Info: ../Figure/twoSBM_power1.png used on input line 389.
+Package pdftex.def Info: ../Figure/twoSBM_power1.png used on input line 390.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/twoSBM_power5.png, id=367, 481.8pt x 481.8pt>
+<../Figure/twoSBM_power5.png, id=372, 481.8pt x 481.8pt>
 File: ../Figure/twoSBM_power5.png Graphic file (type png)
 
 <use ../Figure/twoSBM_power5.png>
-Package pdftex.def Info: ../Figure/twoSBM_power5.png used on input line 390.
+Package pdftex.def Info: ../Figure/twoSBM_power5.png used on input line 391.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/twoSBM_power10.png, id=368, 481.8pt x 481.8pt>
+<../Figure/twoSBM_power10.png, id=373, 481.8pt x 481.8pt>
 File: ../Figure/twoSBM_power10.png Graphic file (type png)
 
 <use ../Figure/twoSBM_power10.png>
-Package pdftex.def Info: ../Figure/twoSBM_power10.png used on input line 391.
+Package pdftex.def Info: ../Figure/twoSBM_power10.png used on input line 392.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
  [16pdfTeX warning (ext4): destination with the same identifier (name{figure.3}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.396 
+l.397 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.396 
+l.397 
        <../Figure/twoSBM.pdf> <../Figure/EtwoSBM.pdf> <../Figure/twoSBM_diffusi
 on.pdf> <../Figure/twoSBM_power1.png> <../Figure/twoSBM_power5.png> <../Figure/
-twoSBM_power10.png>] <../Figure/ThreeSBM.pdf, id=398, 505.89pt x 505.89pt>
+twoSBM_power10.png>] <../Figure/ThreeSBM.pdf, id=403, 505.89pt x 505.89pt>
 File: ../Figure/ThreeSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/ThreeSBM.pdf>
-Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 409.
+Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 410.
 (pdftex.def)             Requested size: 166.2212pt x 166.2186pt.
 
-<../Figure/EThreeSBM.pdf, id=399, 505.89pt x 505.89pt>
+<../Figure/EThreeSBM.pdf, id=404, 505.89pt x 505.89pt>
 File: ../Figure/EThreeSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/EThreeSBM.pdf>
-Package pdftex.def Info: ../Figure/EThreeSBM.pdf used on input line 410.
+Package pdftex.def Info: ../Figure/EThreeSBM.pdf used on input line 411.
 (pdftex.def)             Requested size: 166.2212pt x 166.2186pt.
 
-<../Figure/ThreeSBM_diffusion.pdf, id=400, 505.89pt x 505.89pt>
+<../Figure/ThreeSBM_diffusion.pdf, id=405, 505.89pt x 505.89pt>
 File: ../Figure/ThreeSBM_diffusion.pdf Graphic file (type pdf)
 
 <use ../Figure/ThreeSBM_diffusion.pdf>
 Package pdftex.def Info: ../Figure/ThreeSBM_diffusion.pdf used on input line 41
-1.
+2.
 (pdftex.def)             Requested size: 166.2212pt x 166.2186pt.
 
-<../Figure/ThreeSBM_power1.png, id=403, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_power1.png, id=408, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_power1.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_power1.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power1.png used on input line 418.
+Package pdftex.def Info: ../Figure/ThreeSBM_power1.png used on input line 419.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/ThreeSBM_power5.png, id=404, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_power5.png, id=409, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_power5.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_power5.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power5.png used on input line 419.
+Package pdftex.def Info: ../Figure/ThreeSBM_power5.png used on input line 420.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/ThreeSBM_power10.png, id=405, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_power10.png, id=410, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_power10.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_power10.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power10.png used on input line 420.
+Package pdftex.def Info: ../Figure/ThreeSBM_power10.png used on input line 421.
 
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
  [17pdfTeX warning (ext4): destination with the same identifier (name{figure.5}
@@ -658,119 +665,119 @@ Package pdftex.def Info: ../Figure/ThreeSBM_power10.png used on input line 420.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.423 
+l.424 
        <../Figure/ThreeSBM.pdf> <../Figure/EThreeSBM.pdf> <../Figure/ThreeSBM_d
 iffusion.pdf>] [18pdfTeX warning (ext4): destination with the same identifier (
 name{figure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.440 \end{equation}
+l.441 \end{equation}
                      <../Figure/ThreeSBM_power1.png> <../Figure/ThreeSBM_power5
 .png> <../Figure/ThreeSBM_power10.png>]
-<../Figure/dcSBM.pdf, id=443, 505.89pt x 505.89pt>
+<../Figure/dcSBM.pdf, id=448, 505.89pt x 505.89pt>
 File: ../Figure/dcSBM.pdf Graphic file (type pdf)
  <use ../Figure/dcSBM.pdf>
-Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 445.
+Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 446.
 (pdftex.def)             Requested size: 166.2212pt x 166.2186pt.
 
-<../Figure/EdcSBM.pdf, id=444, 505.89pt x 505.89pt>
+<../Figure/EdcSBM.pdf, id=449, 505.89pt x 505.89pt>
 File: ../Figure/EdcSBM.pdf Graphic file (type pdf)
  <use ../Figure/EdcSBM.pdf>
-Package pdftex.def Info: ../Figure/EdcSBM.pdf used on input line 446.
+Package pdftex.def Info: ../Figure/EdcSBM.pdf used on input line 447.
 (pdftex.def)             Requested size: 166.2212pt x 166.2186pt.
 
-<../Figure/dcSBM_diffusion.pdf, id=445, 505.89pt x 505.89pt>
+<../Figure/dcSBM_diffusion.pdf, id=450, 505.89pt x 505.89pt>
 File: ../Figure/dcSBM_diffusion.pdf Graphic file (type pdf)
 
 <use ../Figure/dcSBM_diffusion.pdf>
-Package pdftex.def Info: ../Figure/dcSBM_diffusion.pdf used on input line 447.
+Package pdftex.def Info: ../Figure/dcSBM_diffusion.pdf used on input line 448.
 (pdftex.def)             Requested size: 166.2212pt x 166.2186pt.
  [19pdfTeX warning (ext4): destination with the same identifier (name{figure.7}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.463 \end{equation}
+l.464 \end{equation}
                      <../Figure/dcSBM.pdf> <../Figure/EdcSBM.pdf> <../Figure/dc
-SBM_diffusion.pdf>] <../Figure/ame.pdf, id=475, 505.89pt x 505.89pt>
+SBM_diffusion.pdf>] <../Figure/ame.pdf, id=480, 505.89pt x 505.89pt>
 File: ../Figure/ame.pdf Graphic file (type pdf)
 
 <use ../Figure/ame.pdf>
-Package pdftex.def Info: ../Figure/ame.pdf used on input line 471.
+Package pdftex.def Info: ../Figure/ame.pdf used on input line 472.
 (pdftex.def)             Requested size: 216.81pt x 216.81056pt.
- <../Figure/Eame.pdf, id=476, 505.89pt x 505.89pt>
+ <../Figure/Eame.pdf, id=481, 505.89pt x 505.89pt>
 File: ../Figure/Eame.pdf Graphic file (type pdf)
 
 <use ../Figure/Eame.pdf>
-Package pdftex.def Info: ../Figure/Eame.pdf used on input line 472.
+Package pdftex.def Info: ../Figure/Eame.pdf used on input line 473.
 (pdftex.def)             Requested size: 216.81pt x 216.81056pt.
  [20pdfTeX warning (ext4): destination with the same identifier (name{figure.8}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.486 \end{equation}
+l.487 \end{equation}
                      <../Figure/ame.pdf> <../Figure/Eame.pdf>]
 
-LaTeX Warning: Reference `fit.ame' on page 21 undefined on input line 490.
+LaTeX Warning: Reference `fit.ame' on page 21 undefined on input line 491.
 
-<../Figure/brain1_x.pdf, id=503, 505.89pt x 505.89pt>
+<../Figure/brain1_x.pdf, id=508, 505.89pt x 505.89pt>
 File: ../Figure/brain1_x.pdf Graphic file (type pdf)
 
 <use ../Figure/brain1_x.pdf>
-Package pdftex.def Info: ../Figure/brain1_x.pdf used on input line 514.
+Package pdftex.def Info: ../Figure/brain1_x.pdf used on input line 515.
 (pdftex.def)             Requested size: 108.405pt x 108.40141pt.
 
-<../Figure/brain1_y.pdf, id=504, 505.89pt x 505.89pt>
+<../Figure/brain1_y.pdf, id=509, 505.89pt x 505.89pt>
 File: ../Figure/brain1_y.pdf Graphic file (type pdf)
 
 <use ../Figure/brain1_y.pdf>
-Package pdftex.def Info: ../Figure/brain1_y.pdf used on input line 515.
+Package pdftex.def Info: ../Figure/brain1_y.pdf used on input line 516.
 (pdftex.def)             Requested size: 108.405pt x 108.40141pt.
 
-<../Figure/brain1_z.pdf, id=505, 505.89pt x 505.89pt>
+<../Figure/brain1_z.pdf, id=510, 505.89pt x 505.89pt>
 File: ../Figure/brain1_z.pdf Graphic file (type pdf)
 
 <use ../Figure/brain1_z.pdf>
-Package pdftex.def Info: ../Figure/brain1_z.pdf used on input line 516.
+Package pdftex.def Info: ../Figure/brain1_z.pdf used on input line 517.
 (pdftex.def)             Requested size: 108.405pt x 108.40141pt.
 
-<../Figure/brain1_weight.pdf, id=506, 505.89pt x 505.89pt>
+<../Figure/brain1_weight.pdf, id=511, 505.89pt x 505.89pt>
 File: ../Figure/brain1_weight.pdf Graphic file (type pdf)
 
 <use ../Figure/brain1_weight.pdf>
-Package pdftex.def Info: ../Figure/brain1_weight.pdf used on input line 517.
+Package pdftex.def Info: ../Figure/brain1_weight.pdf used on input line 518.
 (pdftex.def)             Requested size: 108.405pt x 108.40141pt.
  [21] [22pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.528 D
+l.529 D
        espite a few shortcomings listed above, a range of applications of \t...
  <../Figure/brain1_x.pdf> <../Figure/brain1_y.pdf> <../Figure/brain1_z.pdf> <..
 /Figure/brain1_weight.pdf>] [23]
-<../Figure/threeSBM_2.pdf, id=549, 505.89pt x 505.89pt>
+<../Figure/threeSBM_2.pdf, id=554, 505.89pt x 505.89pt>
 File: ../Figure/threeSBM_2.pdf Graphic file (type pdf)
 
 <use ../Figure/threeSBM_2.pdf>
-Package pdftex.def Info: ../Figure/threeSBM_2.pdf used on input line 549.
+Package pdftex.def Info: ../Figure/threeSBM_2.pdf used on input line 550.
 (pdftex.def)             Requested size: 216.81pt x 216.81056pt.
 
-<../Figure/threeSBM_power1_2.png, id=550, 481.8pt x 481.8pt>
+<../Figure/threeSBM_power1_2.png, id=555, 481.8pt x 481.8pt>
 File: ../Figure/threeSBM_power1_2.png Graphic file (type png)
 
 <use ../Figure/threeSBM_power1_2.png>
-Package pdftex.def Info: ../Figure/threeSBM_power1_2.png used on input line 550
+Package pdftex.def Info: ../Figure/threeSBM_power1_2.png used on input line 551
 .
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/threeSBM_power5_2.png, id=551, 481.8pt x 481.8pt>
+<../Figure/threeSBM_power5_2.png, id=556, 481.8pt x 481.8pt>
 File: ../Figure/threeSBM_power5_2.png Graphic file (type png)
 
 <use ../Figure/threeSBM_power5_2.png>
-Package pdftex.def Info: ../Figure/threeSBM_power5_2.png used on input line 551
+Package pdftex.def Info: ../Figure/threeSBM_power5_2.png used on input line 552
 .
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
  [24pdfTeX warning (ext4): destination with the same identifier (name{figure.10
@@ -778,11 +785,11 @@ Package pdftex.def Info: ../Figure/threeSBM_power5_2.png used on input line 551
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.564 2
+l.565 2
        . If the sequence is exchangeable, the empirical distributions <../Figur
 e/threeSBM_2.pdf> <../Figure/threeSBM_power1_2.png> <../Figure/threeSBM_power5_
 2.png>] [25]
-Underfull \hbox (badness 1803) in paragraph at lines 621--625
+Underfull \hbox (badness 1803) in paragraph at lines 622--626
 []\OT1/cmr/m/n/12 When $\OML/cmm/m/it/12 i \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 j
 $\OT1/cmr/m/n/12 , $\OML/cmm/m/it/12 P[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P[]
  \OT1/cmr/m/n/12 = 0$ for $\OML/cmm/m/it/12 i \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/
@@ -800,15 +807,15 @@ Missing character: There is no ù in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
- [28] [29]) [30]
+ [28] [29] [30]) [31]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 687.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 699.
- [31]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 699.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 692.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 704.
+ [32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 704.
  (./MNT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 699.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 699.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 704.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 704.
 Package rerunfilecheck Info: File `MNT.out' has not changed.
 (rerunfilecheck)             Checksum: A1202023A9051441136A7C908CC19858;1758.
 
@@ -818,16 +825,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 699.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 704.
  ) 
 Here is how much of TeX's memory you used:
- 9134 strings out of 494447
- 135752 string characters out of 6166766
- 225851 words of memory out of 5000000
- 12148 multiletter control sequences out of 15000+600000
+ 9144 strings out of 494447
+ 135955 string characters out of 6166766
+ 225913 words of memory out of 5000000
+ 12155 multiletter control sequences out of 15000+600000
  18515 words of font info for 69 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 30i,20n,43p,2135b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,20n,43p,2135b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
@@ -853,10 +860,10 @@ al/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
 fb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on MNT.pdf (31 pages, 781851 bytes).
+Output written on MNT.pdf (32 pages, 803251 bytes).
 PDF statistics:
- 725 PDF objects out of 1000 (max. 8388607)
- 596 compressed objects within 6 object streams
- 146 named destinations out of 1000 (max. 500000)
- 335 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 740 PDF objects out of 1000 (max. 8388607)
+ 607 compressed objects within 7 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 340 words of extra memory for PDF output out of 10000 (max. 10000000)
 

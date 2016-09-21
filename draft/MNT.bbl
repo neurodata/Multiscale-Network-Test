@@ -183,10 +183,17 @@ Sporns, O., C.~J. Honey, and R.~K{\"o}tter (2007).
 \newblock {\em PloS one\/}~{\em 2\/}(10), e1049.
 
 \bibitem[\protect\citeauthoryear{Sz{\'e}kely and Rizzo}{Sz{\'e}kely and
-  Rizzo}{2013}]{szekely2013distance}
-Sz{\'e}kely, G.~J. and M.~L. Rizzo (2013).
+  Rizzo}{2013a}]{szekely2013distance}
+Sz{\'e}kely, G.~J. and M.~L. Rizzo (2013a).
 \newblock The distance correlation t-test of independence in high dimension.
 \newblock {\em Journal of Multivariate Analysis\/}~{\em 117}, 193--213.
+
+\bibitem[\protect\citeauthoryear{Sz{\'e}kely and Rizzo}{Sz{\'e}kely and
+  Rizzo}{2013b}]{szekely2013energy}
+Sz{\'e}kely, G.~J. and M.~L. Rizzo (2013b).
+\newblock Energy statistics: A class of statistics based on distances.
+\newblock {\em Journal of statistical planning and inference\/}~{\em 143\/}(8),
+  1249--1272.
 
 \bibitem[\protect\citeauthoryear{Sz{\'e}kely, Rizzo, Bakirov,
   et~al.}{Sz{\'e}kely et~al.}{2007}]{szekely2007measuring}
