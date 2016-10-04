@@ -1,6 +1,10 @@
 %&pdflatex
 \documentclass[12pt]{article}
-
+\usepackage{algorithmicx}
+\usepackage[ruled]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{algpascal}
+\usepackage{algc}
 \usepackage{url,enumerate, amssymb, anysize, booktabs, amsfonts}
 \usepackage[colorlinks = true,
 linkcolor = blue,
@@ -11,11 +15,11 @@ anchorcolor = blue]{hyperref}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{amsmath}
 \usepackage{psfrag}
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{enumerate}
 \usepackage{natbib}
 \usepackage{url} % not crucial - just used below for the URL 
-%\usepackage[style=chicago-notes-df]{biblatex}
-%\pdfminorversion=4
+
 % NOTE: To produce blinded version, replace "0" with "1" below.
 \newcommand{\blind}{1}
 
@@ -25,17 +29,11 @@ anchorcolor = blue]{hyperref}
 \addtolength{\textwidth}{1in}%
 \addtolength{\textheight}{-.3in}%
 \addtolength{\topmargin}{-.8in}%
-
-
-\newcommand{\pb}{\mathbb{P}}
-\newcommand{\E}{\ensuremath{\mbox{E}}}
-
-
 \usepackage{color,amssymb}
 \usepackage{fancyhdr, mathtools}
 \usepackage{dcolumn}
 \usepackage{indentfirst, verbatim}
-\newcounter{equationset, sectsty, breqn}
+%\newcounter{equationset, sectsty, breqn}
 \usepackage{setspace,float,lscape,amsmath,color}
 \usepackage{color,amssymb}
 \usepackage{fancyhdr, mathtools, amsthm}
@@ -45,6 +43,22 @@ anchorcolor = blue]{hyperref}
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{remark}{Remark}
+
+
+\newcommand{\Linefor}[2]{%
+	\State \algorithmicfor\ {#1}\ \algorithmicdo\ {#2} \algorithmicend\ \algorithmicfor%
+}
+\newcommand{\Lineif}[2]{%
+	\State \algorithmicif\ {#1}\ \algorithmicdo\ {#2} \algorithmicend\ \algorithmicif%
+}
+
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+%\usepackage{algorithmicx}
+
+%\algdisablelines
 
 \begin{document}
 	
@@ -84,7 +98,7 @@ anchorcolor = blue]{hyperref}
 \bigskip
 \begin{abstract}
 	%The text of your abstract. 200 or fewer words.
-		Network dependence over network space, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear dependent patterns. Unfortunately, without knowledge on specific neighborhood structures, no statistic has been suggested to test network dependence further beyond globally linear dependence. This paper introduces a multiscale dependence test statistic called Multiscale Network Test (\texttt{MNT}), which borrows the idea of diffusion maps and Multiscale Generalized Correlation (\texttt{MGC}). Our methodology for testing network independence to any multivariate nodal attributes can be applied to any exchangeable graph. We prove the consistency of test statistics and demonstrate better performance than any other model-based, global test statistics. Simulation in a variety of networks shows higher power of test and also application to dMRI networks will be followed. 
+		Network dependence over network space, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear dependent patterns. Unfortunately, without knowledge on metrics over network, no statistic has been suggested to test network dependence further beyond globally linear dependence. This paper introduces a multiscale dependence test statistic called Multiscale Network Test (\texttt{MNT}), which borrows the idea of diffusion maps and Multiscale Generalized Correlation (\texttt{MGC}). Our methodology for testing network independence to any multivariate nodal attributes can be applied to any exchangeable graph under some mild conditions. We prove the consistency of test statistic and demonstrate superior performance than any other model-based, global test statistics. Simulation in a variety of networks shows higher power of test and also application to dMRI networks will be followed. 
 \end{abstract}
 	
 	\noindent%
@@ -95,12 +109,19 @@ anchorcolor = blue]{hyperref}
 	\spacingset{1.45} % DON'T change the spacing!
 	\section{Introduction}
 	\label{sec:intro}
+
+Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of sociology \citep{pinquart2000influences, ellison2007benefits}, information theory \citep{gross2005information}, biology \citep{barabasi2004network, pujol2010unveiling}, statistics \citep{raftery2012fast, palla2012infinite}, economics \citep{banerjee2013diffusion}, etc. The correlation between network relationship of nodes and their attribute values is a common interest in network analysis. According to an assumption on how they are related each other, there has been lots of efforts to manifest a network as a function of nodal attributes \citep{wasserman1996logit, howard2016understanding} or model an outcome of nodal attribute variables through their underlying network structures \citep{christakis2007spread, christakis2008collective}. However, it is very obscure to determine which one should be put as a dependent variable or even whether networks are truly related to nodal attributes and how they are, if any. Moreover, a fundamental difficulty comes from the empirical fact that network often does not have a natural structure. Thus it is not easy to intuitively come up with how to represent network as a node-specific random variable. \cite{fosdick2015testing} overcomes this issue by estimating network factors which are believed to embody each node's locations in network space. These factors are in the end used to test independence between network topology and nodal attributes by implementing standard statistical testing method. Through allowing us to choose the dimension of latent factors, they make up the constraints of parametric modeling. However their statistical modeling on networks still rely on the assumption that all the nodes in network would follow the same pattern of dependence -- additive and multiplicative effect. This might not be true for always. In this paper we develop a nonparametric test statistic which is also sensitive to nonlinear and local dependence pattern.  
+
+\begin{figure}[h]
+	\centering
+	\label{fig:intro}
+	\includegraphics[width=4in]{../Figure/intro.pdf}	
+	\caption{Physical location of one component of human brain network and its tracts that connect one vertex to another.}
+\end{figure}
+
+Throughout this paper, assume that we are given an unweighted and undirected, connected network, equivalently graph $\boldsymbol{G}$ without self-loop, comprised of $n$ nodes for a fixed $n \in \mathbb{N}$. Even though we assume that $\boldsymbol{G}$ is undirected and unweighted, we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of a given network, denoted by $\boldsymbol{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize the relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\boldsymbol{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\boldsymbol{G}$ and $\boldsymbol{X}$, and testing whether their distributions are independent or not is the key focus in our study. An observed network $\mathbf{G}$ can represent social network within a school and $\boldsymbol{X}$ is students' grades or heights, for example; or $\mathbf{G}$ can be a neuronal network in human brain and $\boldsymbol{X}$ is a few factors of personality. For example, Figure \ref{fig:intro} exemplifies one connected network from human brain network where dots denote nodes and tracts connected them represent edges. Location over network space, i.e. whether or how much a pair of nodes are closer than others, is different from actual spatial location, which can be measured by Euclidean distance over three-dimensional $x-y-z$ space. As correlation between spatial location of subjects and its attributes has been studied, we are going to explore correlation of subjects' attributes to their network location. 
 	
-Network, a collection of nodes and edges between them, has been a celebrated area of study over a field of sociology \citep{pinquart2000influences, ellison2007benefits}, information theory \citep{gross2005information}, biology \citep{barabasi2004network, pujol2010unveiling}, statistics \citep{raftery2012fast, palla2012infinite}, economics \citep{banerjee2013diffusion}, etc. The relationship between a way that a pair of nodes is connected each other and their attribute values is a common interest in network analysis. According to an assumption on how they are related each other, there has been a lot of efforts to represent a network as a function of nodal attributes \citep{wasserman1996logit, howard2016understanding} or model an outcome of nodal attribute variables through their underlying network structures \citep{christakis2007spread, christakis2008collective}. However, it is very obscure to determine which one should be put as a dependent variable or even whether networks are truly related to nodal attributes and how they are, if any. A fundamental difficulty comes from that network often does not have a natural structure and networks of each individual are dependent on others. Thus it is not easy to intuitively come up with how to represent network as a node-specific random variable. \cite{fosdick2015testing} therefore suggested estimating network factors which are believed to represent each node's locations in network space. These factors are in the end used to test independence between network topology and nodal attributes by implementing standard statistical testing method. Through allowing us to choose the dimension of latent factors, they make up the constraints due to parametric modeling. However their statistical modeling on networks still rely on the assumption that all the nodes in network would follow the same pattern of dependence and also same amount of dependence. This might not be true for always. In this paper we develop a nonparametric test statistic which is sensitive to nonlinear and local dependence pattern.  
-	
-Throughout this paper, assume that we are given an unweighted and undirected, connected network $\boldsymbol{G}$ without self-loop, comprised of $n$ nodes for a fixed $n \in \mathbb{N}$. Even though we assume that $\boldsymbol{G}$ is an undirected and unweighted network, we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of a given network, denoted by $\boldsymbol{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize this relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\boldsymbol{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\boldsymbol{G}$ and $\boldsymbol{X}$, and testing whether their distributions are independent or not is the key focus in our study. An observed network $\mathbf{G}$ can represent social network within a school and $\boldsymbol{X}$ is students' grades or heights, for example; or $\mathbf{G}$ can be a neuronal network in human brain and $\boldsymbol{X}$ is a few factors of personality. 
-	
-The main contribution of this study is we develop multiscale test statistics which are robust to both nonlinearity and high dimensionality without modeling nor estimating networks. Having multiscale statistics is not avoidable because we regard relationship or distance between nodes over network as dynamic process so we choose the optimal scale where distance in network space and distance in terms of attributes become most correlated each other. To explore this time-dependent distances we define a coordinate over network at each time in process and test independence to attributes $\mathbf{X}$. In the next methodology section \ref{sec:method}, we are going to define such multiscale distance and its properties, and test statistic using multiscale distance metrics will be followed. In section \ref{sec:sim}, we demonstrate best performance of our method compared to the existing under various circumstances through numerical results. Real data example in section \ref{sec:real} show one of the applications among many.  
+The main contribution of this study is we develop multiscale test statistics which are robust to both nonlinearity and high dimensionality without modeling nor estimating networks. Having multiscale statistics is not avoidable because we regard location of or distance between nodes over network as dynamic process. We then choose the optimal scale where distance in network space and distance in attributes become most correlated each other. To explore this time-dependent distances we define a coordinate over network space at each time in the process and test independence to attributes $\mathbf{X}$. In the next methodology section \ref{sec:method}, we are going to define such multiscale distance and its properties A test statistic using multiscale distance metrics will be followed. In section \ref{sec:sim}, we demonstrate best performance of our method compared to the existing under various circumstances through numerical results. Real data example in section \ref{sec:real} show one of the applications among many.  
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
@@ -112,8 +133,8 @@ First step in testing network independence to attributes is figuring out a varia
 	
 \subsection{Exchangeable Graph}
 	
-Assuming that we are given one network, equivalently one \textit{graph} comprised of nodes and edges. If you consider each edge as \textit{i.i.d}, then observed adjacency matrix is a random sample of a single parameter which is the probability of having edge or not. However, in this case, the resulting network model only depends on number of edges \citep{orbanz2015bayesian} and does not cover undirected or no self-loop networks. Instead of assuming \textit{i.i.d} of edges right away, we are going to assume underlying distribution of edges and then consider a set of edges as \textit{i.i.d} conditional on random function. This idea comes from exchangeable representation of edges.
-	The property of exchangeability is closely related to the use of \textit{i.i.d} random variable. Network or graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \citep{orbanz2015bayesian}. 
+Assuming that we are given one network, equivalently one \textit{graph} comprised of nodes and edges. If you consider each edge as \textit{i.i.d}, then observed adjacency matrix is a random sample of a single parameter which is the probability of having edge or not. However, in this case, the resulting network model only depends on number of edges \citep{orbanz2015bayesian} and does not cover undirected or no self-loop networks, which is very common. Instead of assuming \textit{i.i.d} of edges right away, we are going to assume underlying distribution of edges and then consider a set of edges as \textit{i.i.d} conditional on random function. This idea comes from exchangeable representation of edges.
+The property of exchangeability is closely related to the use of \textit{i.i.d} random variable. A graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \citep{orbanz2015bayesian}. 
 	
 	\begin{definition}[2-array exchangeability]
 		\label{exchangeability}
@@ -125,7 +146,7 @@ Assuming that we are given one network, equivalently one \textit{graph} comprise
 		for every pair of permutation $\sigma, \sigma^{\prime}$ of $n$.
 	\end{definition}
 	
-	However, exchangeability itself cannot guarantee being \textit{i.i.d}. Fortunately, thanks to the celebrated  \textit{de Finetti}(\ref{finetti})'s representation theorem, it has been proven that there exists a random probability measure $\eta$ on random variable $\mathbf{Z}$ that a sequence of $Z_{1}, Z_{2}, \ldots $ are \textit{i.i.d} conditional $\eta$ \textit{if and only if} the sequence is exchangeable \citep{orbanz2015bayesian, caron2014sparse}. \textit{Aldous-Hoover theorem}(\ref{Aldous_Hoover}) is the representation theorem of 2-array exchangeable array, which is useful to explain jointly exchangeable adjacent matrix. Exchangeable graph is commonly called \textit{graphon} \citep{lovasz2006limits}. Exchangeable graphon is defined through a random measurable functions \citep{chan2013estimation}.
+However, exchangeability itself cannot guarantee being \textit{i.i.d}. Fortunately, thanks to the celebrated  \textit{de Finetti}(\ref{finetti})'s representation theorem, it has been proven that there exists a random probability measure $\eta$ on random variable $\mathbf{Z}$ that a sequence of $Z_{1}, Z_{2}, \ldots $ are \textit{i.i.d} conditional $\eta$ \textit{if and only if} the sequence is exchangeable \citep{orbanz2015bayesian, caron2014sparse}. \textit{Aldous-Hoover theorem}(\ref{Aldous_Hoover}) is the representation theorem of 2-array exchangeable array, which is useful to explain jointly exchangeable adjacent matrix. Exchangeable graph is commonly called \textit{graphon} \citep{lovasz2006limits}. Exchangeable graphon is defined through a random measurable functions \citep{chan2013estimation}.
 	
 \begin{definition}[graphon]
 		\label{graphon}
@@ -188,7 +209,7 @@ Complexities induced by Poisson process on node will require one more condition 
 \subsubsection{Diffusion maps and diffusion distance}	
 There have been a lot of efforts to represent the network in terms of a summarizing network factor \citep{hoff2002latent} or some meaningful coefficients, e.g. centrality \citep{mantzaris2013dynamic, sporns2007identification}. However, there has been no node-specific variable which provides a configuration of node over network space without losing any information. \cite{coifman2006diffusion} proposed a meaningful multiscale geometries of data called \textit{diffusion maps} while keeping information on every local relation. Diffusion map is constructed via Markov chain on graph. Without any model assumption on graph, an adjacency matrix $\boldsymbol{A}$ acts as a kernel, representing a similarity between each node in $\boldsymbol{G}$; thus we do not have to estimate anything in order to obtain multidimensional representation of network topology. 
 	
-Let $(\boldsymbol{G}, \mathcal{A}, \mu)$ be a measure space. Throughout all of the arguments, assume that we have a countable node set with size of $n \in \mathbb{N}$. A network $\boldsymbol{G}$ is the data set of nodes and edges and $\mathcal{A}$ is a set of a pair of nodes $\{(i,j) : v_{i}, v_{j} \in V(\boldsymbol{G}) \}$. A measure of $\mu$ which represents a distribution of the nodes on $\boldsymbol{G}$, is equivalent to an adjacency matrix $\boldsymbol{A}$. A transition matrix $\mathbf{P} = \{P[i,j] : i,j=1,...,n \}$ in Markov chain on $\boldsymbol{G}$, which represents the probability that flow or signal goes from Node $i$ to Node $j$, is defined as below:
+Let $(\boldsymbol{G}, \mathcal{A}, \mu)$ be a measure space. Throughout all of the arguments, assume that we have a countable node set with size of $n \in \mathbb{N}$. A network $\boldsymbol{G}$ is the data set of nodes and edges and $\mathcal{A}$ is a set of a pair of nodes $\{(i,j) : v_{i}, v_{j} \in V(\boldsymbol{G}) \}$. A measure of $\mu$ which represents a distribution of the nodes on $\boldsymbol{G}$, is equivalent to an adjacency matrix $\boldsymbol{A}$. A transition matrix $\mathbf{P} = \{P[i,j] : i,j=1,...,n \}$ in Markov chain of the simple random walk on $\boldsymbol{G}$, which represents the probability that flow or signal goes from Node $i$ to Node $j$, is defined as below:
 	
 \begin{equation}
 P[i,j] = A_{ij} \big/ \sum\limits_{j=1} A_{ij}
@@ -327,6 +348,11 @@ Thanks to these properties of diffusion maps, we earn better interpretation of i
 \subsubsection{One parameter family of test statistic}
 
 We have discussed one-parameter family \textit{i.i.d.} representation of network structures, called diffusion maps, and also discussed when given \textit{i.i.d}. pair of observations of two variables, how distance correlation and its multiscale version test independence between these two. Now it is time to combine these two.
+
+\begin{theorem}[empirical characteristic function of conditionally \textit{i.i.d} variable]
+	\textcolor{red}{empirical cf of exchangeable variable converges to true cf.}
+\end{theorem}	
+
 	
 \begin{theorem}[MGC of testing independence]
  \label{theorem1}
@@ -409,7 +435,7 @@ A_{z_{i}, z_{j}} \sim Bern \left[  \begin{array}{ccc}   0.5 & 0.2 &  0.3  \\ 0.2
 	\label{fig:Three}
 		\includegraphics[width=2.3in]{../Figure/ThreeSBM.pdf}
 		\includegraphics[width=2.3in]{../Figure/EThreeSBM.pdf}
-		\includegraphics[width =2.3in]{../Figure/ThreeSBM_diffusion.pdf}
+		\includegraphics[width =2.3in]{../Figure/fThreeSBM.pdf}
 		\caption{Estimated power based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:Three} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated power according to diffusion time (right).}
 \end{figure}	
 
@@ -482,6 +508,7 @@ As a connection to RDPG, this model can also represented as a product of combine
 \label{eq:ame}
 \begin{gathered}
 	W_{i} \overset{i.i.d}{\sim} Uniform[0,1] \\ 
+	X_{i} \overset{i.i.d}{\sim} Normal(W_{i}, 1) \\
 	A_{ij}  \overset{i.i.d}{\sim} Bern \big(  ( 1 - w_{i})^2 \times (1 - w_{j})^2    \big)
 \end{gathered}
 \end{equation}
@@ -552,8 +579,97 @@ Despite a few shortcomings listed above, a range of applications of \texttt{MNT}
 	\includegraphics[width=2in]{../Figure/threeSBM_power5_2.png}
 	\caption{Estimated optimal power based on diffusion maps and \texttt{FH} test statistics (left) and estimated power heatmap using \texttt{MGC} when sample size $n = 100$ (right).}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\subsection{Algorithms}
+\alglanguage{pseudocode}
 
-	
+\begin{algorithm}[H]
+	\caption{Mutiscale representation of nodes in network}
+	\begin{algorithmic}[1]
+		\Require Transition probability matrix of network $G$ and time points($\in N$) of diffusion time. 
+		\Ensure A list of diffusion maps at each time point.
+		\Function{ \texttt{dmap} }{ $n \times n$ transition matrix $P$, time points $\{ t_{1}, t_{2}, \ldots, t_{K} \}$ } 
+		\State $\mathbf{\pi} :=$ \texttt{statdistr}($P$)\Comment{stationary distribution of $P$} 
+		\State $\Pi : =$ \texttt{Diag}($\mathbf{\pi}$)\Comment{Diagonal matrix with diagonal element of $\mathbf{\pi}$}
+		\State $Q: = \Pi^{1/2} P \Pi^{-1/2}$ 
+		\State $\lambda := $ \texttt{eigenvalue}($Q$)\Comment{a real-valued vector with length of $q (\leq n)$. }
+		\State $\Lambda : =$ \texttt{Diag}($\lambda$)
+		\State $\Psi : =$ \texttt{eigenfunction}($Q$)\Comment{$n \times q$ real-valued matrix} 
+		\State $\Phi :=  \Pi^{-1/2} \Psi$\Comment{$n \times q$ real-valued eigenfunction matrix of $P$}
+		\For{$t_{i}$ :  $i$ = 1 }{ $K$}
+		\Begin
+		\State \texttt{Maps}$[i] := \Phi \Lambda^{t_{i}}$  
+		\End
+		\EndFor
+		\State \texttt{Maps} = list( \texttt{Maps}[1], \texttt{Maps}[2], $\ldots$, \texttt{Maps}[$K$]  )
+		
+		\Return \texttt{Maps}
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+%%%%%%%%%%%%%%%%%%%%
+\begin{algorithm}[H]
+	\caption{Multiscale Generalized Correlation (\texttt{MGC}) test statistics when diffusion maps are applied.}
+	\begin{algorithmic}[1]
+		\Require A connected, undirected network $G$ with its nodal attributes $\mathbf{X}$.
+		\Ensure A list of \big(  (a) p-value of \texttt{sample MGC}, (b) estimated \texttt{sample MGC} statistic, (c) p-value map for all local correlations, (d) a set of estimated optimal neighborhood scales $\{  (k^{*}, l^{*}  ) \}$  \big) for each diffusion maps.
+		\Function{ \texttt{NetworkTest} }{ $G$, $\textbf{X}$,  $\mathbf{T}$ := (diffusion time points $\{ t_{1}, t_{2}, \ldots, t_{K} \}$)  }
+		\State $A :=$ \texttt{get.adjacency}$(G)$\Comment{obtain an adjacency matrix of network $G$}
+		\State $P := A $ / \texttt{rowSums}($A$) 
+		\State $U :=$ \texttt{dmap}($P$, $\mathbf{T}$) \Comment{a list of diffusion maps in each time point}
+		\For{$t_{i}$ :  $i$ = 1 }{ $K$}
+		\Begin
+		\State $C : =$  \texttt{dist}($U[i]$) \Comment{distance matrix of diffusion maps at time $t_{i}$}
+		\State $D : =$ \texttt{dist}($X$) \Comment{distance matrix of nodal attributes}
+		\State \texttt{MGC}$[i]$ = \texttt{MGCPermutationTest}( $C$, $D$ ) 
+		\End
+		\EndFor
+		\State \texttt{MGC} = list( \texttt{MGC}[1], \texttt{MGC}[2], $\ldots$, \texttt{MGC}[$K$]  )
+		
+		\Return \texttt{MGC}
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{algorithm}[H]
+	\caption{Node-specific contribution to detecting dependency via \texttt{MGC} statistic}
+	\begin{algorithmic}[1]
+		\Require Distance metric of $G$ and $X$ for each and (one of) the estimated optimal scales $\{ k^{*}, l^{*} \}$ 
+		\Ensure  Standardized contributions of each node in network $\{  c(v) \}$
+		\Function{ \texttt{Contribution} }{   C, D , $\{  (k^{*}, l^{*}) \}$   }
+		\State $\tilde{C} : = \texttt{DoubleCentering}(C)$
+		\State $\tilde{D} := \texttt{DoubleCentering}(D)$
+		\State \texttt{Rank}($M_{i}$):= (rank of node $i$'s nearest neighbors in terms of distance matrix $M$)
+		\For{$v = 1$}{ $n$}
+		\State $c(v) = 0$
+		\For{$j = 1$}{ $n$}
+		\Begin
+		\State $c(v) =  c(v) + \tilde{C}_{vj} \tilde{D}_{v j} I(  \texttt{Rank}(C_{v})  \leq k^{*}, \texttt{Rank}(D_{v}) \leq l^{*} )$
+		\State  $c(v) = c(v) + \tilde{C}_{jv} \tilde{D}_{jv} I(  \texttt{Rank}(C_{j}) \geq k^{*}, \texttt{Rank}(D_{j}) \leq l^{*} )$
+		\End
+		\EndFor
+		\State $c(v) = c(v) / 2 n^2$
+		\EndFor
+		\State \texttt{cset} $:= \{ c(v) : v = 1,2, \ldots ,n  \}$
+		
+		\Return  \texttt{cset}
+		\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\newpage
 \subsection{Lemmas and Theorems}
 	
 \begin{theorem}[de Finetti's Theorem] 
