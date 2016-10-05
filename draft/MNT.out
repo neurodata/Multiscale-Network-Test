@@ -13,12 +13,13 @@
 \BOOKMARK [1][-]{section.3}{Simulation Study}{}% 13
 \BOOKMARK [2][-]{subsection.3.1}{Stochastic Block Model}{section.3}% 14
 \BOOKMARK [2][-]{subsection.3.2}{degree-corrected two block model}{section.3}% 15
-\BOOKMARK [2][-]{subsection.3.3}{Exchangeable graph on Poisson process}{section.3}% 16
-\BOOKMARK [2][-]{subsection.3.4}{Additive and multiplicative graph model}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Additive and multiplicative graph model}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.4}{Exchangeable graph on Poisson process}{section.3}% 17
 \BOOKMARK [1][-]{section.4}{Real Data Examples}{}% 18
 \BOOKMARK [2][-]{subsection.4.1}{MRI}{section.4}% 19
-\BOOKMARK [1][-]{section.5}{Discussions}{}% 20
-\BOOKMARK [1][-]{appendix.A}{appendix}{}% 21
-\BOOKMARK [2][-]{subsection.A.1}{supplementary figures}{appendix.A}% 22
-\BOOKMARK [2][-]{subsection.A.2}{Algorithms}{appendix.A}% 23
-\BOOKMARK [2][-]{subsection.A.3}{Lemmas and Theorems}{appendix.A}% 24
+\BOOKMARK [1][-]{section.5}{\(one more example that MGC or diffusion works differently \)}{}% 20
+\BOOKMARK [1][-]{section.6}{Discussions}{}% 21
+\BOOKMARK [1][-]{appendix.A}{appendix}{}% 22
+\BOOKMARK [2][-]{subsection.A.1}{supplementary figures}{appendix.A}% 23
+\BOOKMARK [2][-]{subsection.A.2}{Algorithms}{appendix.A}% 24
+\BOOKMARK [2][-]{subsection.A.3}{Lemmas and Theorems}{appendix.A}% 25
