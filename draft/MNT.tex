@@ -356,21 +356,48 @@ Thanks to these properties of diffusion maps, we earn better interpretation of i
 
 We have discussed one-parameter family \textit{i.i.d.} representation of network structures, called diffusion maps, and also discussed when given \textit{i.i.d}. pair of observations of two variables, how distance correlation and its multiscale version test independence between these two. Now it is time to combine these two.
 
-\begin{lemma}[empirical characteristic function of conditionally \textit{i.i.d} variable]
-	\label{main_lemma}
-	\textcolor{red}{empirical cf of exchangeable variable converges to true cf.}
-\end{lemma}	
 
-\begin{corollary}
- \label{main.cor}
- If exchangeable random variable $\mathbf{X}^{(E)}$ and $\mathbf{Y}^{(E)}$ satisfy $E|{X^{(E)}}^2| < \infty$ and $E|{Y^{(E)}}^2| < \infty$ for each, then almost surely 
- \begin{equation}
- \lim\limits_{n \rightarrow \infty} \mathcal{V}_{n} (\mathbf{X}^{E} , \mathbf{Y}^{E} ) = \mathcal{V}(X, Y)
- \end{equation}
-where $\mathcal{V}^2 (X, Y) := \| f_{X,Y}(t,s) - f_{X}(t) f_{Y}(s) \|^2$ , $X$ and $Y$ are conditionally \textit{i.i.d} random variable of $X^{(E)}$ and $Y^{(E)}$ respectively. 
-\end{corollary}
+\begin{lemma}
+	\label{lemma1}
+	Using the notation of Theorem~\ref{theoremMain}, we have 
+	\begin{eqnarray*}
+		\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) &= \|g_{\mathbf{x},\mathbf{y}}^{n}(t,s)-g_{\mathbf{x}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2},
+	\end{eqnarray*}
+	where $g_{\cdot}^{n}$ is the empirical characteristic function, i.e., 
+	\begin{eqnarray*}
+		&g_{\mathbf{x},\mathbf{y}}^{n}(t,s) = \frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle t,\mathbf{x}_{j} \right\rangle  +i \left\langle  s,\mathbf{y}_{j}\right\rangle \}, \\
+		&g_{\mathbf{x}}^{n}(t) = \frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle t,\mathbf{x}_{j}\right\rangle\}, \\
+		&g_{\mathbf{y}}^{n}(s) = \frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle s,\mathbf{y}_{j}\right\rangle\}.
+	\end{eqnarray*}
+\end{lemma}
 
-Lemma \ref{main_lemma} and its following Corollary \ref{main.cor} facilitates the use of distance correlation through satisfying \textit{Theorem 2} in \cite{szekely2007measuring}.  
+\begin{lemma}
+	\label{lemma2}
+	Under the assumption of Theorem~\ref{theoremMain}, we have 
+	\begin{eqnarray*}
+		\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\rightarrow \mathcal{V}^{2}(\mathbf{x},\mathbf{y}),
+	\end{eqnarray*}
+	where $\mathcal{V}^{2} (\mathbf{x},\mathbf{y}) := \| g_{\mathbf{x},\mathbf{y}}(t,s) - g_{\mathbf{x}}(t) g_{\mathbf{y}}(s) \|^2$, and $g_{\cdot}$ is the characteristic function, e.g., $g_{\mathbf{x},\mathbf{y}}(t,s) = E\{\exp\{i \left\langle t,\mathbf{x} \right\rangle  +i \left\langle  s,\mathbf{y}\right\rangle \}\}$, etc.
+	
+	It follows that 
+	\begin{eqnarray*}
+		\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\rightarrow 0 \quad \mbox{ as } n \rightarrow \infty
+	\end{eqnarray*}
+	if and only if $g_{\mathbf{x},\mathbf{y}}(t,s) = g_{\mathbf{x}}(t) g_{\mathbf{y}}(s)$, i.e., $\mathbf{x}$ is independent of $\mathbf{y}$.
+\end{lemma}
+
+Lemma \ref{lemma1} and its following Corollary \ref{lemma2} facilitates the use of distance correlation through satisfying \textit{Theorem 2} in \cite{szekely2007measuring}.  
+
+
+\begin{theorem}
+	\label{theoremMain}
+	Suppose that $(\mathbf{X},\mathbf{Y})=\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$ is a sequence of exchangeable random variables, where $(\mathbf{x}_{j},\mathbf{y}_{j})$ is identically distributed as $(\mathbf{x},\mathbf{y})$ with finite moments. Then $\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) \rightarrow 0$ if and only if $x$ is independent of $y$. Moreover, distance correlation and MGC are consistent for testing dependence between $\mathbf{X}$ and $\mathbf{Y}$, i.e., the testing power converges to $1$ asymptotically for any dependency of finite moments.
+\end{theorem}
+
+\begin{theorem}
+	\label{theorem2}
+	MGC is consistent in network (graph0 dependence testing, for any graph metric such that $(\mathbf{X},\mathbf{Y})$ is exchangeable and of finite moments. In particular, the consistency holds for the diffusion maps, adjacency vectors, and the estimated latent positions.
+\end{theorem}
 	
 \begin{theorem}[MGC of testing independence]
  \label{theorem1}
@@ -482,7 +509,7 @@ E(A_{ij} | X_{i}, X_{j}) & = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| 
 	\caption{Estimated power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated SBM presented in Eq.\ref{eq:Three}}
 	\label{fig:ThreeSBM_power}
 \end{figure}
-Due to non-linear network dependence on attributes in the latter case, optimal neighborhood choice of $(k^{*}, l^{*})$ exerts not global scale.  Figure \ref{fig:ThreeSBM_power} demonstrates that neighborhood choice of $(k,l)$ in \texttt{MGC} statistic achieves its optimal in local scale. Roughly speaking, considering a pair of nodes in the nearest neighbor, in term of attribute values of $X$, e.g. (1,2) or (2,3), exhibits most significant dependence. When you only take into account these subsets of observations, you can actually represent $E(A_{ij} | X_{i}, X_{j})$ as a monotonic function of $|X_{i} - X_{j}|$. On the other hand, even in the three block SBM, If you set every pair of nodes in different blocks to have the same propensity of having edges, discrepancy between local and global scale of $(k,l)$ diminishes, which you can find in Appendix \ref{sec:appendix}.
+Due to non-linear network dependence on attributes in the latter case, optimal neighborhood choice of $(k^{*}, l^{*})$ exerts not global scale.  Figure \ref{fig:ThreeSBM_power} demonstrates that neighborhood choice of $(k,l)$ in \texttt{MGC} statistic achieves its optimal in local scale. Roughly speaking, considering a pair of nodes in the nearest neighbor, in term of attribute values of $X$, e.g. (1,2) or (2,3), exhibits most significant dependence. When you only take into account these subsets of observations, you can actually represent $E(A_{ij} | X_{i}, X_{j})$ as a monotonic function of $|X_{i} - X_{j}|$. On the other hand, even in the three block SBM, If you set every pair of nodes in different blocks to have the same propensity of having edges, discrepancy between local and global scale of $(k,l)$ diminishes, which you can find in \textbf{Three Block SBM 2}, Appendix \ref{sec:appendix}.
 
 \subsection{degree-corrected two block model}
 
@@ -506,7 +533,7 @@ A_{ij} | \mathbf{Z}, \mathbf{\theta}   \overset{i.i.d}{\sim}   f_{A|Z, \theta}(a
 		\label{fig:dcSBM}
 \end{figure}	
 
-As in the previous two block SBM, in this simulation scheme, we also observe monotonic edge distribution function of Euclidean distance. However its variance becomes inflated due to $\theta$. 	
+As in the previous two block SBM, in this simulation scheme, we also observe monotonic edge distribution function of Euclidean distance. However its variance becomes inflated due to $\theta$ (Eq. \ref{eq:dcVariance}). If you see the testing results with Euclidean distance adjacency matrix in Figure \ref{fig:dcSBM}, empirical power of \texttt{dCov} or \texttt{HHG} shows far less than that of \texttt{MGC}. This might imply that multiscale statistic performs better than the other global ones even in the presence of variability of degree distribution. On the other hand, node-specific variable $\theta$ is captured by latent position estimation model \citep{fosdick2015testing} and \texttt{FH} test looks most sensitive in this case.  
 	
 \begin{equation}
 \begin{aligned}
@@ -530,22 +557,21 @@ Var( Bern(0.05 \cdot \theta_{i} \theta_{j}) ) I( |X_{i} - X_{j}| = 1) \\
 		\label{fig:ame}
 \end{figure}
 
-	
-\cite{hoff2002latent} proposed a approach of jointly modeling network and its attributes, where networks represent additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors.
-As a connection to RDPG, this model can also represented as a product of combined latent factor $\tilde{u}$ and $\tilde{v}$. 
+\cite{hoff2002latent} proposed a approach of jointly modeling network and its attributes, where networks possess additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors. The following simulation scheme mimics the additive and multiplicative network models where distribution of $A_{ij}$ is directly formalized through $Z_{i}$ and $Z_{j}$. 
 	
 \begin{equation}
 \label{eq:ame}
 \begin{gathered}
-	Z_{i} \overset{i.i.d}{\sim} Uniform[0,1] \\ 
-	X_{i} \overset{i.i.d}{\sim} Normal(Z_{i}, 1) \\
-	A_{ij}  \overset{i.i.d}{\sim} Bern \big(  ( 1 - z_{i})^2 \times (1 - z_{j})^2    \big)
+\begin{aligned}
+&	Z_{i} \overset{i.i.d}{\sim} f_{Z}(z) \stackrel{d}{=} Uniform[0,1]. \quad i = 1, \ldots, n \\ 
+&	X_{i} | Z_{i} \overset{i.i.d}{\sim}  f_{Z|X}(z|x) \stackrel{d}{=}  Normal(Z_{i}, 1), \quad i= 1, \ldots, n \\
+&	A_{ij} | Z_{i}, Z_{j} \overset{i.i.d}{\sim}  f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}   Bern \big(  ( 1 - z_{i})^2 \times (1 - z_{j})^2    \big), \quad i < j, i,j = 1, \ldots, n
+\end{aligned}
 \end{gathered}
 \end{equation}
 
-
 A family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship; while \cite{fosdick2015testing} embedded nodes into network factors assuming that additive an multiplicative network model is \textit{correct}. Thus in the model explained in Eq. \ref{eq:ame}, where logit of $A$ is an additive and multiplicative function of $\{\mathbf{w} \}$, their estimated factors would be very close to the truth, much closer than embedding made from diffusion maps. However we rarely see the network which is fitted to the model in reality. If you see that your observed network actually fits to theri model, using network factors as independent observations from graph $\mathbf{G}$ and applying to \texttt{MGC} performs not very worse than \texttt{FH} statistic (Fig. \ref{fit.ame}).
-Simply speaking, if network really fits well to additive and multiplicative model or we have basic knowledge about network model, we is can make sure of their node-specific additive factor $\{ a_{i} \}$ and multiplicative factor $\{ \mathbf{m}^{T}_{i} : \mathbf{m}_{i} \in \mathbb{R}^{k} \}$ in testing directly. Since they assume \textit{i.i.d} generative model for factors of each node, $\mathbf{F}_{i}$, i.e. $\mathbf{F}_{i} = \begin{pmatrix} a_{i} & \mathbf{m}^{T}_{i} \end{pmatrix} \overset{i.i.d}{\sim} MNormal$, there is nothing wrong with applying \textit{MGC} using \textit{i.i.d} observations of $\{ \mathbf{F}_{i}, \mathbf{X}_{i} \}$.   
+Simply speaking, if network really fits well to additive and multiplicative model or we have basic knowledge about network model, we is can make sure of their node-specific additive factor $\{ a_{i} \}$ and multiplicative factor $\{ \mathbf{m}^{T}_{i} : \mathbf{m}_{i} \in \mathbb{R}^{k} \}$ in testing directly. Since they assume \textit{i.i.d} generative model for factors of each node, $\mathbf{F}_{i}$, i.e. $\mathbf{F}_{i} = \begin{pmatrix} a_{i} & \mathbf{m}^{T}_{i} \end{pmatrix} \overset{i.i.d}{\sim} MVNormal$, there is nothing wrong with applying \textit{MGC} using \textit{i.i.d} observations of $\{ \mathbf{F}_{i}, \mathbf{X}_{i} \}$.   
 	
 
 
@@ -742,7 +768,7 @@ $$\hat{S}_{n} ( . ) := \frac{1}{n} \sum\limits_{i=1}^{n} \delta_{X_{i}} ( .), n 
 		\begin{equation}
 		\big(  A_{ij}  \big) \stackrel{d}{=} \left( f \big( U_{i}, U_{j}, U_{ij} \big)  \right)
 		\end{equation}
-		where $(U_{i})_{i \in \mathbb{N}}$ and $(U_{ij})_{i,j > i \in mathbb{N}}$ with $U_{ij} = U_{ji}$ are a sequence and matrix, respectively, of i.i.d. Uniform[0,1] random variables. 
+		where $(U_{i})_{i \in \mathbb{N}}$ and $(U_{ij})_{i,j > i \in \mathbb{N}}$ with $U_{ij} = U_{ji}$ are a sequence and matrix, respectively, of i.i.d. Uniform[0,1] random variables. 
 \end{theorem}
 	
 	
@@ -841,75 +867,47 @@ Let $a_{w} = \big(P^{t}(x,w) - P^{t}(y,w) \big) \sqrt{1 / \pi(w)}$ and $b_{w} = 
 which is true by Cauchy-Schwarz inequality.
 \end{proof}	
 
-\begin{theorem}
-\label{theoremMain}
-Suppose that $(\mathbf{X},\mathbf{Y})=\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$ is a sequence of exchangeable random variables, where $(\mathbf{x}_{j},\mathbf{y}_{j})$ is identically distributed as $(\mathbf{x},\mathbf{y})$ with finite moments.
-
-Then $\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) \rightarrow 0$ if and only if $x$ is independent of $y$. Moreover, distance correlation and MGC are consistent for testing dependence between $\mathbf{X}$ and $\mathbf{Y}$, i.e., the testing power converges to $1$ asymptotically for any dependency of finite moments.
-\end{theorem}
-\begin{proof}
-Under the exchangeability and finite moments assumptions, it follows from Lemma~\ref{lemma1} and ~\ref{lemma2} that $\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) \rightarrow 0$ if and only if $\mathbf{x}$ is independent from $\mathbf{y}$.
-
-Therefore, the distance correlation (or the modified distance correlation) converges to $0$ if and only if independence; and its testing power converges to $1$ under any joint distribution of finite moments. Because the multiscale generalized correlation based on any consistent global correlation is also consistent (see in [Cencheng]), MGC by dcorr or mcorr is also consistent in testing dependence.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[\textbf{Proof of Lemma \ref{lemma2}} Convergence of empirical characteristic function of exchangeable variables]
+	
+	This follows exactly the same as Theorem $1$ in \cite{szekely2007measuring}. Note that this lemma always holds without any assumption on $\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$, e.g., it holds without assuming exchangeability, nor identically distributed, nor finite moments.
 \end{proof}
 
-\begin{theorem}
-\label{theorem2}
-MGC is consistent in graph dependence testing, for any graph metric such that $(\mathbf{X},\mathbf{Y})$ is exchangeable and of finite moments. In particular, the consistency holds for the diffusion maps, adjacency vectors, and the estimated latent positions.
-\end{theorem}
-\begin{proof}
+
+\begin{proof}[\textbf{Proof of Lemma \ref{lemma1}} Empirical characteristic function of exchangeable variables]
+	
+	It suffices to prove the first equation, because the second equation immediately follows from the first one by the property of characteristic functions.
+	
+	Proving the first equation is equivalent to Theorem $2$ in \cite{szekely2007measuring}. However, they required $(\mathbf{x}_{j},\mathbf{y}_{j})$ to be independently identically distributed as $(\mathbf{x},\mathbf{y})$ with finite second moments; and here we extend this result to exchangeable random variables.
+	
+	The only step that needs to be justified for the exchangeable random variables, is the strong law of large numbers for V-statistics, i.e., 
+	\begin{eqnarray*}
+		\displaystyle\int_{D(\delta)}{\|g_{\mathbf{x},\mathbf{y}}^{n}(t,s)-g_{\mathbf{x}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2}}dw &\stackrel{n \rightarrow \infty}{\longrightarrow} \displaystyle\int_{D(\delta)}{\|g_{\mathbf{x},\mathbf{y}}(t,s)-g_{\mathbf{x}}(t)g_{\mathbf{y}}(s)\|^{2}}dw,
+	\end{eqnarray*}
+	where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and $w(t,s)$ is the weight function chosen in \cite{szekely2007measuring}. 
+	
+	Since exchangeable random variables are also 2-exchangeable, strong law of large numbers holds for exchangeable random variables by Etemadi and Kaminski (Strong law of large numbers for 2-exchangeable random variables). It follows that the strong law of large numbers for V-statistics also holds for exchangeable random variables.
+	
+	Therefore this lemma holds.
+	
+	Note that 2-exchangeable and thus SLLN holds for the adjacency matrix case (to be used in the TBA proof).
+	
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[\textbf{Proof of Theorem \ref{theoremMain}} Consistency of \texttt{dCorr} applied to exchangeable variables]
+
+Under the exchangeability and finite moments assumptions, it follows from Lemma~\ref{lemma1} and ~\ref{lemma2} that $\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) \rightarrow 0$ if and only if $\mathbf{x}$ is independent from $\mathbf{y}$.
+
+Therefore, the distance correlation (or the modified distance correlation) converges to $0$ if and only if independence; and its testing power converges to $1$ under any joint distribution of finite moments. Because the multiscale generalized correlation based on any consistent global correlation is also consistent (see in [Cencheng]), MGC by \texttt{dcorr} or \texttt{mcorr} is also consistent in testing dependence.
+\end{proof}
+
+\begin{proof}[\textbf{Proof of Theorem \ref{theorem2}} Consistency of \texttt{MGC} applied to exchangeable variables]
+
 TBA
 \end{proof}
 
-\begin{lemma}
-\label{lemma1}
-Using the notation of Theorem~\ref{theoremMain}, we have 
-\begin{eqnarray*}
-\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) &= \|g_{\mathbf{x},\mathbf{y}}^{n}(t,s)-g_{\mathbf{x}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2},
-\end{eqnarray*}
-where $g_{\cdot}^{n}$ is the empirical characteristic function, i.e., 
-\begin{eqnarray*}
-&g_{\mathbf{x},\mathbf{y}}^{n}(t,s) = \frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle t,\mathbf{x}_{j} \right\rangle  +i \left\langle  s,\mathbf{y}_{j}\right\rangle \}, \\
-&g_{\mathbf{x}}^{n}(t) = \frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle t,\mathbf{x}_{j}\right\rangle\}, \\
-&g_{\mathbf{y}}^{n}(s) = \frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle s,\mathbf{y}_{j}\right\rangle\}.
-\end{eqnarray*}
-\end{lemma}
-\begin{proof}
-This follows exactly the same as Theorem $1$ in \cite{szekely2007measuring}. Note that this lemma always holds without any assumption on $\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$, e.g., it holds without assuming exchangeability, nor identically distributed, nor finite moments.
-\end{proof}
 
-\begin{lemma}
-\label{lemma2}
-Under the assumption of Theorem~\ref{theoremMain}, we have 
-\begin{eqnarray*}
-\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\rightarrow \mathcal{V}^{2}(\mathbf{x},\mathbf{y}),
-\end{eqnarray*}
-where $\mathcal{V}^{2} (\mathbf{x},\mathbf{y}) := \| g_{\mathbf{x},\mathbf{y}}(t,s) - g_{\mathbf{x}}(t) g_{\mathbf{y}}(s) \|^2$, and $g_{\cdot}$ is the characteristic function, e.g., $g_{\mathbf{x},\mathbf{y}}(t,s) = E\{\exp\{i \left\langle t,\mathbf{x} \right\rangle  +i \left\langle  s,\mathbf{y}\right\rangle \}\}$, etc.
-
-It follows that 
-\begin{eqnarray*}
-\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\rightarrow 0
-\end{eqnarray*}
-if and only if $g_{\mathbf{x},\mathbf{y}}(t,s) = g_{\mathbf{x}}(t) g_{\mathbf{y}}(s)$, i.e., $\mathbf{x}$ is independent of $\mathbf{y}$.
-\end{lemma}
-\begin{proof}
-It suffices to prove the first equation, because the second equation immediately follows from the first one by the property of characteristic functions.
-
-Proving the first equation is equivalent to Theorem $2$ in \cite{szekely2007measuring}. However, they required $(\mathbf{x}_{j},\mathbf{y}_{j})$ to be independently identically distributed as $(\mathbf{x},\mathbf{y})$ with finite second moments; and here we extend this result to exchangeable random variables.
-
-The only step that needs to be justified for the exchangeable random variables, is the strong law of large numbers for V-statistics, i.e., 
-\begin{eqnarray*}
-\displaystyle\int_{D(\delta)}{\|g_{\mathbf{x},\mathbf{y}}^{n}(t,s)-g_{\mathbf{x}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2}}dw &\stackrel{n \rightarrow \infty}{\longrightarrow} \displaystyle\int_{D(\delta)}{\|g_{\mathbf{x},\mathbf{y}}(t,s)-g_{\mathbf{x}}(t)g_{\mathbf{y}}(s)\|^{2}}dw,
-\end{eqnarray*}
-where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and $w(t,s)$ is the weight function chosen in \cite{szekely2007measuring}. 
-
-Since exchangeable random variables are also 2-exchangeable, strong law of large numbers holds for exchangeable random variables by Etemadi and Kaminski (Strong law of large numbers for 2-exchangeable random variables). It follows that the strong law of large numbers for V-statistics also holds for exchangeable random variables.
-
-Therefore this lemma holds.
-
-Note that 2-exchangeable and thus SLLN holds for the adjacency matrix case (to be used in the TBA proof).
-
-\end{proof}
 
 \bibliographystyle{Chicago}
 \bibliography{Biblio}
