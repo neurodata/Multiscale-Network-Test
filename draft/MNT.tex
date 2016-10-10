@@ -840,7 +840,77 @@ Let $a_{w} = \big(P^{t}(x,w) - P^{t}(y,w) \big) \sqrt{1 / \pi(w)}$ and $b_{w} = 
 \end{equation}
 which is true by Cauchy-Schwarz inequality.
 \end{proof}	
-	
+
+\begin{theorem}
+\label{theoremMain}
+Suppose that $(\mathbf{X},\mathbf{Y})=\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$ is a sequence of exchangeable random variables, where $(\mathbf{x}_{j},\mathbf{y}_{j})$ is identically distributed as $(\mathbf{x},\mathbf{y})$ with finite moments.
+
+Then $\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) \rightarrow 0$ if and only if $x$ is independent of $y$. Moreover, distance correlation and MGC are consistent for testing dependence between $\mathbf{X}$ and $\mathbf{Y}$, i.e., the testing power converges to $1$ asymptotically for any dependency of finite moments.
+\end{theorem}
+\begin{proof}
+Under the exchangeability and finite moments assumptions, it follows from Lemma~\ref{lemma1} and ~\ref{lemma2} that $\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) \rightarrow 0$ if and only if $\mathbf{x}$ is independent from $\mathbf{y}$.
+
+Therefore, the distance correlation (or the modified distance correlation) converges to $0$ if and only if independence; and its testing power converges to $1$ under any joint distribution of finite moments. Because the multiscale generalized correlation based on any consistent global correlation is also consistent (see in [Cencheng]), MGC by dcorr or mcorr is also consistent in testing dependence.
+\end{proof}
+
+\begin{theorem}
+\label{theorem2}
+MGC is consistent in graph dependence testing, for any graph metric such that $(\mathbf{X},\mathbf{Y})$ is exchangeable and of finite moments. In particular, the consistency holds for the diffusion maps, adjacency vectors, and the estimated latent positions.
+\end{theorem}
+\begin{proof}
+TBA
+\end{proof}
+
+\begin{lemma}
+\label{lemma1}
+Using the notation of Theorem~\ref{theoremMain}, we have 
+\begin{eqnarray*}
+\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) &= \|g_{\mathbf{x},\mathbf{y}}^{n}(t,s)-g_{\mathbf{x}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2},
+\end{eqnarray*}
+where $g_{\cdot}^{n}$ is the empirical characteristic function, i.e., 
+\begin{eqnarray*}
+&g_{\mathbf{x},\mathbf{y}}^{n}(t,s) = \frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle t,\mathbf{x}_{j} \right\rangle  +i \left\langle  s,\mathbf{y}_{j}\right\rangle \}, \\
+&g_{\mathbf{x}}^{n}(t) = \frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle t,\mathbf{x}_{j}\right\rangle\}, \\
+&g_{\mathbf{y}}^{n}(s) = \frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle s,\mathbf{y}_{j}\right\rangle\}.
+\end{eqnarray*}
+\end{lemma}
+\begin{proof}
+This follows exactly the same as Theorem $1$ in \cite{szekely2007measuring}. Note that this lemma always holds without any assumption on $\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$, e.g., it holds without assuming exchangeability, nor identically distributed, nor finite moments.
+\end{proof}
+
+\begin{lemma}
+\label{lemma2}
+Under the assumption of Theorem~\ref{theoremMain}, we have 
+\begin{eqnarray*}
+\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\rightarrow \mathcal{V}^{2}(\mathbf{x},\mathbf{y}),
+\end{eqnarray*}
+where $\mathcal{V}^{2} (\mathbf{x},\mathbf{y}) := \| g_{\mathbf{x},\mathbf{y}}(t,s) - g_{\mathbf{x}}(t) g_{\mathbf{y}}(s) \|^2$, and $g_{\cdot}$ is the characteristic function, e.g., $g_{\mathbf{x},\mathbf{y}}(t,s) = E\{\exp\{i \left\langle t,\mathbf{x} \right\rangle  +i \left\langle  s,\mathbf{y}\right\rangle \}\}$, etc.
+
+It follows that 
+\begin{eqnarray*}
+\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\rightarrow 0
+\end{eqnarray*}
+if and only if $g_{\mathbf{x},\mathbf{y}}(t,s) = g_{\mathbf{x}}(t) g_{\mathbf{y}}(s)$, i.e., $\mathbf{x}$ is independent of $\mathbf{y}$.
+\end{lemma}
+\begin{proof}
+It suffices to prove the first equation, because the second equation immediately follows from the first one by the property of characteristic functions.
+
+Proving the first equation is equivalent to Theorem $2$ in \cite{szekely2007measuring}. However, they required $(\mathbf{x}_{j},\mathbf{y}_{j})$ to be independently identically distributed as $(\mathbf{x},\mathbf{y})$ with finite second moments; and here we extend this result to exchangeable random variables.
+
+The only step that needs to be justified for the exchangeable random variables, is the strong law of large numbers for V-statistics, i.e., 
+\begin{eqnarray*}
+\displaystyle\int_{D(\delta)}{\|g_{\mathbf{x},\mathbf{y}}^{n}(t,s)-g_{\mathbf{x}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2}}dw &\stackrel{n \rightarrow \infty}{\longrightarrow} \displaystyle\int_{D(\delta)}{\|g_{\mathbf{x},\mathbf{y}}(t,s)-g_{\mathbf{x}}(t)g_{\mathbf{y}}(s)\|^{2}}dw,
+\end{eqnarray*}
+where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and $w(t,s)$ is the weight function chosen in \cite{szekely2007measuring}. 
+
+Since exchangeable random variables are also 2-exchangeable, strong law of large numbers holds for exchangeable random variables by Etemadi and Kaminski (Strong law of large numbers for 2-exchangeable random variables). It follows that the strong law of large numbers for V-statistics also holds for exchangeable random variables.
+
+Therefore this lemma holds.
+
+Note that 2-exchangeable and thus SLLN holds for the adjacency matrix case (to be used in the TBA proof).
+
+\end{proof}
+
 \bibliographystyle{Chicago}
 \bibliography{Biblio}
 	
