@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: MNT.aux
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: MNT.aux
 The style file: Chicago.bst
 Database file #1: Biblio.bib
 Warning--no number and no volume in caron2014sparse
@@ -10,4 +12,45 @@ Warning--no number and no volume in tang2010graph
 Warning--page numbers missing in tang2010graph
 Warning--no number and no volume in veitch2015class
 Warning--page numbers missing in veitch2015class
+You've used 33 entries,
+            2861 wiz_defined-function locations,
+            826 strings with 10858 characters,
+and the built_in function-call counts, 25118 in all, are:
+= -- 2143
+> -- 1976
+< -- 2
++ -- 622
+- -- 678
+* -- 2388
+:= -- 4504
+add.period$ -- 101
+call.type$ -- 33
+change.case$ -- 251
+chr.to.int$ -- 32
+cite$ -- 42
+duplicate$ -- 608
+empty$ -- 1429
+format.name$ -- 801
+if$ -- 4682
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 33
+newline$ -- 168
+num.names$ -- 328
+pop$ -- 162
+preamble$ -- 1
+purify$ -- 447
+quote$ -- 0
+skip$ -- 673
+stack$ -- 0
+substring$ -- 1379
+swap$ -- 205
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 656
+warning$ -- 9
+while$ -- 326
+width$ -- 0
+write$ -- 435
 (There were 9 warnings)
