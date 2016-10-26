@@ -141,13 +141,13 @@ where $\tilde{C}$ and $\tilde{D}$ is a doubly-centered $C$ and $D$ respectively,
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.5in]{../Figure/C.png}
-	\includegraphics[width=1.5in]{../Figure/D.png}
-	\includegraphics[width=1.5in]{../Figure/CD.png}
+	\includegraphics[width=2in]{../Figure/C.png}
+	\includegraphics[width=2in]{../Figure/D.png}
+	\includegraphics[width=2in]{../Figure/CD.png}
 		
-	\includegraphics[width=1.5in]{../Figure/tildeCtrunc.png}
-	\includegraphics[width=1.5in]{../Figure/tildeDtrunc.png}
-	\includegraphics[width=1.5in]{../Figure/tildeCDtrunc.png}
+	\includegraphics[width=2in]{../Figure/tildeCtrunc.png}
+	\includegraphics[width=2in]{../Figure/tildeDtrunc.png}
+	\includegraphics[width=2in]{../Figure/tildeCDtrunc.png}
 	\caption{(a) Top : Euclidean distance of diffusion maps at time $t=3$, $C$; Euclidean distance of $X$, $D$; element-wise product of $C$ and $D$. (b) Bottom : truncated double-centered  $\tilde{C}$ by $k^{*}$th nearest neighbor in $C$; truncated double-centered $\tilde{D}$ by $l^{*}$th nearest neighbor in $D$; element-wise product of two truncated matrices $\tilde{C}^{*}$ and $\tilde{D}^{*}$. }
 	\label{fig:MGCmatrices}
 \end{figure}	
@@ -203,7 +203,7 @@ Even though exchangeability itself cannot guarantee being \textit{i.i.d}, thanks
 \end{definition}
 By \textit{Aldous-Hoover theorem}, we obtain clear representation of exchangeable network through measurable function $g$, but we are still halfway done in the case of undirected network where $A_{ij} = A_{ji}$  $(i,j=1,2,... , n)$.  Under undirected network without self-loop, we have $\{ A_{ij} : i < j \}$ as a function of $g$. 	
 \begin{equation}
-( A_{ij} )  =  (   A_{\sigma(i) \sigma(j)}  ) \Longleftrightarrow A_{ij} \overset{ind}{\sim} Bern\big( E_{U} \big[  g(u_{i}, u_{j})   \big] \big),  \quad i < j
+( A_{ij} )  =  (   A_{\sigma(i) \sigma(j)}  ) \Longleftrightarrow A_{ij} \overset{i.i.d}{\sim} Bern\big( E_{U} \big[  g(u_{i}, u_{j})   \big] \big),  \quad i < j
 \end{equation}  	
 Networks based on  widely used graphical model are exchangeable. One of the most popular models is Stochastic Block Model (SBM) \citep{holland1983stochastic}. In the simplest setting of SBM, we assume that each $n$ nodes of $\mathbf{G}$ belongs to one of $K \in \mathbb{N} (\leq n)$ blocks or groups. Block affiliation is important in that the probability of having edges between a pair of nodes depends on which blocks they are in.  Assume that latent variables corresponding to block affiliation follow $Z_{1}, Z_{2}, ... , Z_{n} \overset{i.i.d.}{\sim} Multinomial\big( \pi_{1}, \pi_{2}, ... , \pi_{K} \big)$. Then the upper triangular entries of $A$ are independent and identically distributed conditional on $\{\mathbf{Z}\}$:
 	\begin{equation} 
@@ -410,7 +410,7 @@ Note that if $\{ \mathbf{x}_{i} : i = 1,2,\ldots, n \}$ are \textit{i.i.d}, they
 
 \begin{theorem}
 	\label{theorem2}
-	\texttt{MGC} is consistent in testing network independence with any exchangeable graph metric and nodal attributes, in particular testing independence between underlying distribution of diffusion maps and nodal attributes $\{ ( \mathbf{u}_{t},  \mathbf{x}  ) : i =1,2, \ldots , n \}$.
+	\texttt{MGC} is consistent in testing network independence with any exchangeable graph metric and nodal attributes, in particular testing independence between underlying distribution of diffusion maps and nodal attributes $\{ ( \mathbf{u}_{ti},  \mathbf{x}_{i}  ) : i =1,2, \ldots , n \}$ such that conditioned on each underlying distribution, $\mathbf{u}_{ti} \overset{i.i.d}{\sim} f_{U^(t)}$ and $\mathbf{x}_{i} \overset{i.i.d}{\sim} f_{\mathbf{X}}$.
 	\begin{equation}
 	H_{0}  \quad : \quad f_{\mathbf{U}^{(t)} \cdot \mathbf{X}  }  = f_{\mathbf{U^{(t)}}} \cdot f_{\mathbf{X}}
 	\label{eq:hypothesis}
