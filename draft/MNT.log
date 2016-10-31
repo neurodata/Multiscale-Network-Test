@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  30 OCT 2016 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  31 OCT 2016 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -632,260 +632,241 @@ File: ../Figure/distX.png Graphic file (type png)
 Package pdftex.def Info: ../Figure/distX.png used on input line 179.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
  [6] [7 <../Figure/pmat.png> <../Figure/Amat.png> <../Figure/distA.png> <../Fig
-ure/distX.png>] [8]
-Underfull \hbox (badness 3780) in paragraph at lines 214--216
-\OT1/cmr/m/n/12 The above dis-tri-bu-tion can also be rep-re-sented through som
-e ran-dom func-tion
- []
-
-
-Underfull \hbox (badness 3375) in paragraph at lines 214--216
-\OML/cmm/m/it/12 g \OT1/cmr/m/n/12 : [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1][] 
-\OMS/cmsy/m/n/12 ! \OT1/cmr/m/n/12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1]$. Le
-t $\OML/cmm/m/it/12 W[]; W[]; :::; W[] [] Unif\OT1/cmr/m/n/12 [0\OML/cmm/m/it/1
-2 ; \OT1/cmr/m/n/12 1]$ and $\OML/cmm/m/it/12 g[]W[]; W[][] \OT1/cmr/m/n/12 =
- []
-
-[9] [10] <../Figure/Dx1.png, id=322, 481.8pt x 481.8pt>
+ure/distX.png>] [8] [9] [10] [11]
+<../Figure/Dx1.png, id=334, 481.8pt x 481.8pt>
 File: ../Figure/Dx1.png Graphic file (type png)
-
-<use ../Figure/Dx1.png>
-Package pdftex.def Info: ../Figure/Dx1.png used on input line 277.
+ <use ../Figure/Dx1.png>
+Package pdftex.def Info: ../Figure/Dx1.png used on input line 276.
 (pdftex.def)             Requested size: 122.85876pt x 122.85368pt.
- <../Figure/Dx3.png, id=323, 481.8pt x 481.8pt>
+
+<../Figure/Dx3.png, id=335, 481.8pt x 481.8pt>
 File: ../Figure/Dx3.png Graphic file (type png)
-
-<use ../Figure/Dx3.png>
-Package pdftex.def Info: ../Figure/Dx3.png used on input line 278.
+ <use ../Figure/Dx3.png>
+Package pdftex.def Info: ../Figure/Dx3.png used on input line 277.
 (pdftex.def)             Requested size: 122.85876pt x 122.85368pt.
- <../Figure/Dx50.png, id=324, 481.8pt x 481.8pt>
+
+<../Figure/Dx50.png, id=336, 481.8pt x 481.8pt>
 File: ../Figure/Dx50.png Graphic file (type png)
-
-<use ../Figure/Dx50.png>
-Package pdftex.def Info: ../Figure/Dx50.png used on input line 279.
+ <use ../Figure/Dx50.png>
+Package pdftex.def Info: ../Figure/Dx50.png used on input line 278.
 (pdftex.def)             Requested size: 122.85876pt x 122.85368pt.
- [11] [12 <../Figure/Dx1.png> <../Figure/Dx3.png> <../Figure/Dx50.png>] [13] [1
-4] [15]
-Overfull \hbox (12.54593pt too wide) detected at line 394
+
+[12 <../Figure/Dx1.png> <../Figure/Dx3.png> <../Figure/Dx50.png>] [13] [14]
+[15]
+Overfull \hbox (12.54593pt too wide) detected at line 393
 \OML/cmm/m/it/12 c\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 v\OT1/cmr/m/n/12 ) = [] [] 
 []
  []
 
-[16] <../Figure/density.pdf, id=399, 2168.1pt x 578.16pt>
+[16] <../Figure/density.pdf, id=398, 2168.1pt x 578.16pt>
 File: ../Figure/density.pdf Graphic file (type pdf)
 
 <use ../Figure/density.pdf>
-Package pdftex.def Info: ../Figure/density.pdf used on input line 413.
+Package pdftex.def Info: ../Figure/density.pdf used on input line 412.
 (pdftex.def)             Requested size: 433.62pt x 115.62994pt.
  [17 <../Figure/density.pdf>]
-<../Figure/twoSBM.pdf, id=420, 1300.86pt x 361.35pt>
+<../Figure/twoSBM.pdf, id=419, 1300.86pt x 361.35pt>
 File: ../Figure/twoSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/twoSBM.pdf>
-Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 431.
+Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 430.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/ThreeSBM.pdf, id=423, 1300.86pt x 361.35pt>
+<../Figure/ThreeSBM.pdf, id=422, 1300.86pt x 361.35pt>
 File: ../Figure/ThreeSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/ThreeSBM.pdf>
-Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 437.
+Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 436.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [18 <../Figure/twoSBM.pdf>]
-<../Figure/powerplot.pdf, id=445, 1300.86pt x 361.35pt>
+<../Figure/powerplot.pdf, id=444, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot.pdf>
-Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 451.
+Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 450.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
  [19 <../Figure/ThreeSBM.pdf>]
-<../Figure/dcSBM.pdf, id=462, 1300.86pt x 361.35pt>
+<../Figure/dcSBM.pdf, id=461, 1300.86pt x 361.35pt>
 File: ../Figure/dcSBM.pdf Graphic file (type pdf)
  <use ../Figure/dcSBM.pdf>
-Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 463.
+Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 462.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figure/dcSBM_density.pdf, id=465, 2023.56pt x 578.16pt>
+<../Figure/dcSBM_density.pdf, id=464, 2023.56pt x 578.16pt>
 File: ../Figure/dcSBM_density.pdf Graphic file (type pdf)
 
 <use ../Figure/dcSBM_density.pdf>
-Package pdftex.def Info: ../Figure/dcSBM_density.pdf used on input line 471.
+Package pdftex.def Info: ../Figure/dcSBM_density.pdf used on input line 470.
 (pdftex.def)             Requested size: 433.62pt x 123.88734pt.
  [20 <../Figure/powerplot.pdf>]
-Overfull \hbox (41.0584pt too wide) detected at line 486
+Overfull \hbox (41.0584pt too wide) detected at line 485
 [] []
  []
 
 [21 <../Figure/dcSBM.pdf> <../Figure/dcSBM_density.pdf>]
-<../Figure/ame.pdf, id=501, 1300.86pt x 361.35pt>
+<../Figure/ame.pdf, id=500, 1300.86pt x 361.35pt>
 File: ../Figure/ame.pdf Graphic file (type pdf)
  <use ../Figure/ame.pdf>
-Package pdftex.def Info: ../Figure/ame.pdf used on input line 492.
+Package pdftex.def Info: ../Figure/ame.pdf used on input line 491.
 (pdftex.def)             Requested size: 505.89pt x 140.52342pt.
 
-Overfull \hbox (36.13501pt too wide) in paragraph at lines 492--493
+Overfull \hbox (36.13501pt too wide) in paragraph at lines 491--492
  [][] 
  []
 
-[22 <../Figure/ame.pdf>] <../Figure/brain1_x.pdf, id=522, 505.89pt x 505.89pt>
+[22 <../Figure/ame.pdf>] <../Figure/brain1_x.pdf, id=521, 505.89pt x 505.89pt>
 File: ../Figure/brain1_x.pdf Graphic file (type pdf)
 
 <use ../Figure/brain1_x.pdf>
-Package pdftex.def Info: ../Figure/brain1_x.pdf used on input line 519.
+Package pdftex.def Info: ../Figure/brain1_x.pdf used on input line 518.
 (pdftex.def)             Requested size: 108.405pt x 108.40141pt.
 
-<../Figure/brain1_y.pdf, id=523, 505.89pt x 505.89pt>
+<../Figure/brain1_y.pdf, id=522, 505.89pt x 505.89pt>
 File: ../Figure/brain1_y.pdf Graphic file (type pdf)
 
 <use ../Figure/brain1_y.pdf>
-Package pdftex.def Info: ../Figure/brain1_y.pdf used on input line 520.
+Package pdftex.def Info: ../Figure/brain1_y.pdf used on input line 519.
 (pdftex.def)             Requested size: 108.405pt x 108.40141pt.
 
-<../Figure/brain1_z.pdf, id=524, 505.89pt x 505.89pt>
+<../Figure/brain1_z.pdf, id=523, 505.89pt x 505.89pt>
 File: ../Figure/brain1_z.pdf Graphic file (type pdf)
 
 <use ../Figure/brain1_z.pdf>
-Package pdftex.def Info: ../Figure/brain1_z.pdf used on input line 521.
+Package pdftex.def Info: ../Figure/brain1_z.pdf used on input line 520.
 (pdftex.def)             Requested size: 108.405pt x 108.40141pt.
 
-<../Figure/brain1_weight.pdf, id=525, 505.89pt x 505.89pt>
+<../Figure/brain1_weight.pdf, id=524, 505.89pt x 505.89pt>
 File: ../Figure/brain1_weight.pdf Graphic file (type pdf)
 
 <use ../Figure/brain1_weight.pdf>
-Package pdftex.def Info: ../Figure/brain1_weight.pdf used on input line 522.
+Package pdftex.def Info: ../Figure/brain1_weight.pdf used on input line 521.
 (pdftex.def)             Requested size: 108.405pt x 108.40141pt.
  [23 <../Figure/brain1_x.pdf> <../Figure/brain1_y.pdf> <../Figure/brain1_z.pdf>
  <../Figure/brain1_weight.pdf>] [24]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 546.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 544.
 
-Overfull \hbox (17.40334pt too wide) detected at line 570
+Overfull \hbox (17.40334pt too wide) detected at line 568
 [] []
  []
 
-[25]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 579.
+(amsmath)                trying to recover with `aligned' on input line 577.
 
-
-Overfull \hbox (85.67711pt too wide) detected at line 581
-[] []
- []
-
-<../Figure/twoSBM_power1.png, id=569, 481.8pt x 481.8pt>
+[25] <../Figure/twoSBM_power1.png, id=568, 481.8pt x 481.8pt>
 File: ../Figure/twoSBM_power1.png Graphic file (type png)
 
 <use ../Figure/twoSBM_power1.png>
-Package pdftex.def Info: ../Figure/twoSBM_power1.png used on input line 613.
+Package pdftex.def Info: ../Figure/twoSBM_power1.png used on input line 611.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/twoSBM_power5.png, id=570, 481.8pt x 481.8pt>
+<../Figure/twoSBM_power5.png, id=569, 481.8pt x 481.8pt>
 File: ../Figure/twoSBM_power5.png Graphic file (type png)
 
 <use ../Figure/twoSBM_power5.png>
-Package pdftex.def Info: ../Figure/twoSBM_power5.png used on input line 614.
+Package pdftex.def Info: ../Figure/twoSBM_power5.png used on input line 612.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/twoSBM_power10.png, id=571, 481.8pt x 481.8pt>
+<../Figure/twoSBM_power10.png, id=570, 481.8pt x 481.8pt>
 File: ../Figure/twoSBM_power10.png Graphic file (type png)
 
 <use ../Figure/twoSBM_power10.png>
-Package pdftex.def Info: ../Figure/twoSBM_power10.png used on input line 615.
+Package pdftex.def Info: ../Figure/twoSBM_power10.png used on input line 613.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/ThreeSBM_power1.png, id=574, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_power1.png, id=573, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_power1.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_power1.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power1.png used on input line 621.
+Package pdftex.def Info: ../Figure/ThreeSBM_power1.png used on input line 619.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/ThreeSBM_power5.png, id=575, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_power5.png, id=574, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_power5.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_power5.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power5.png used on input line 622.
+Package pdftex.def Info: ../Figure/ThreeSBM_power5.png used on input line 620.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/ThreeSBM_power10.png, id=576, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_power10.png, id=575, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_power10.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_power10.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power10.png used on input line 623.
+Package pdftex.def Info: ../Figure/ThreeSBM_power10.png used on input line 621.
 
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
  [26]
-<../Figure/simplethreeSBM.pdf, id=584, 1300.86pt x 361.35pt>
+<../Figure/simplethreeSBM.pdf, id=583, 1300.86pt x 361.35pt>
 File: ../Figure/simplethreeSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/simplethreeSBM.pdf>
-Package pdftex.def Info: ../Figure/simplethreeSBM.pdf used on input line 631.
+Package pdftex.def Info: ../Figure/simplethreeSBM.pdf used on input line 629.
 (pdftex.def)             Requested size: 505.89pt x 140.52342pt.
 
-Overfull \hbox (36.13501pt too wide) in paragraph at lines 631--632
+Overfull \hbox (36.13501pt too wide) in paragraph at lines 629--630
  [][] 
  []
 
 [27 <../Figure/twoSBM_power1.png> <../Figure/twoSBM_power5.png> <../Figure/twoS
 BM_power10.png> <../Figure/ThreeSBM_power1.png> <../Figure/ThreeSBM_power5.png>
  <../Figure/ThreeSBM_power10.png>]
-Overfull \hbox (76.65248pt too wide) detected at line 650
+Overfull \hbox (76.65248pt too wide) detected at line 648
 [] []
  []
 
-<../Figure/binary_contribution.pdf, id=597, 794.97pt x 361.35pt>
+<../Figure/binary_contribution.pdf, id=596, 794.97pt x 361.35pt>
 File: ../Figure/binary_contribution.pdf Graphic file (type pdf)
 
 <use ../Figure/binary_contribution.pdf>
 Package pdftex.def Info: ../Figure/binary_contribution.pdf used on input line 6
-60.
+58.
 (pdftex.def)             Requested size: 433.62pt x 197.10553pt.
  [28 <../Figure/simplethreeSBM.pdf>]
-<../Figure/powerplot_mmono.pdf, id=611, 1300.86pt x 361.35pt>
+<../Figure/powerplot_mmono.pdf, id=610, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_mmono.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_mmono.pdf>
-Package pdftex.def Info: ../Figure/powerplot_mmono.pdf used on input line 678.
+Package pdftex.def Info: ../Figure/powerplot_mmono.pdf used on input line 676.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
  [29 <../Figure/binary_contribution.pdf> <../Figure/powerplot_mmono.pdf>]
-<../Figure/powerplot_mmmono.pdf, id=631, 1300.86pt x 361.35pt>
+<../Figure/powerplot_mmmono.pdf, id=630, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_mmmono.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_mmmono.pdf>
-Package pdftex.def Info: ../Figure/powerplot_mmmono.pdf used on input line 689.
+Package pdftex.def Info: ../Figure/powerplot_mmmono.pdf used on input line 687.
 
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/powerplot_monoton.pdf, id=632, 1300.86pt x 361.35pt>
+<../Figure/powerplot_monoton.pdf, id=631, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_monoton.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_monoton.pdf>
-Package pdftex.def Info: ../Figure/powerplot_monoton.pdf used on input line 700
+Package pdftex.def Info: ../Figure/powerplot_monoton.pdf used on input line 698
 .
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
  [30 <../Figure/powerplot_mmmono.pdf> <../Figure/powerplot_monoton.pdf>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 711.
+put line 709.
  [31] [32] [33] [34] [35] [36]
-Overfull \hbox (45.39252pt too wide) in paragraph at lines 930--931
+Overfull \hbox (45.39252pt too wide) in paragraph at lines 928--929
 []
  []
 
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 952--953
+Underfull \hbox (badness 10000) in paragraph at lines 950--951
 []\OT1/cmr/m/n/12 Under
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 957--959
+Underfull \hbox (badness 10000) in paragraph at lines 955--957
 []\OT1/cmr/m/n/12 Suppose
  []
 
@@ -900,15 +881,15 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
  [40] [41]) [42]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 975.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 973.
  [43]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 975.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 973.
  (./MNT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 975.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 975.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 973.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 973.
 Package rerunfilecheck Info: File `MNT.out' has not changed.
 (rerunfilecheck)             Checksum: 69E93BC60E7F73D175A9E3205E857AF1;1729.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 975.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 973.
  ) 
 Here is how much of TeX's memory you used:
  10978 strings out of 494447
@@ -917,7 +898,7 @@ Here is how much of TeX's memory you used:
  13923 multiletter control sequences out of 15000+600000
  18897 words of font info for 73 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 36i,19n,43p,2079b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,19n,43p,2072b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
@@ -944,10 +925,10 @@ r/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on MNT.pdf (43 pages, 917630 bytes).
+Output written on MNT.pdf (43 pages, 917093 bytes).
 PDF statistics:
- 886 PDF objects out of 1000 (max. 8388607)
- 728 compressed objects within 8 object streams
+ 885 PDF objects out of 1000 (max. 8388607)
+ 727 compressed objects within 8 object streams
  187 named destinations out of 1000 (max. 500000)
  373 words of extra memory for PDF output out of 10000 (max. 10000000)
 
