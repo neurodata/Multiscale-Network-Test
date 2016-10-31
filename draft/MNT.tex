@@ -23,12 +23,16 @@ anchorcolor = blue]{hyperref}
 % NOTE: To produce blinded version, replace "0" with "1" below.
 \newcommand{\blind}{1}
 
-% DON'T change margins - should be 1 inch all around.
-\addtolength{\oddsidemargin}{-.5in}%
-\addtolength{\evensidemargin}{-.5in}%
-\addtolength{\textwidth}{1in}%
-\addtolength{\textheight}{-.3in}%
-\addtolength{\topmargin}{-.8in}%
+%%%%%%%%%% EXACT 1in MARGINS %%%%%%%                                   %%
+\setlength{\textwidth}{6.5in}     %%                                   %%
+\setlength{\oddsidemargin}{0in}   %% (It is recommended that you       %%
+\setlength{\evensidemargin}{0in}  %%  not change these parameters,     %%
+\setlength{\textheight}{8.5in}    %%  at the risk of having your       %%
+\setlength{\topmargin}{0in}       %%  proposal dismissed on the basis  %%
+\setlength{\headheight}{0in}      %%  of incorrect formatting!!!)      %%
+\setlength{\headsep}{0in}         %%                                   %%
+\setlength{\footskip}{.5in}       %%                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \usepackage{color,amssymb}
 \usepackage{fancyhdr, mathtools}
 \usepackage{dcolumn}
@@ -119,7 +123,7 @@ Network, a collection of nodes and edges between them, has been a celebrated are
 	\label{fig:intro}
 \end{figure}
 
-Throughout this paper, assume that we are given an unweighted and undirected, connected network, equivalently a graph $\mathbf{G}$ without self-loop, comprised of $n$ nodes for a fixed $n \in \mathbb{N}$. Even though we assume that $\mathbf{G}$ is undirected and unweighted, we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of a given network, denoted by $\mathbf{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize the relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\mathbf{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\mathbf{G}$ and $\mathbf{X}$, i.e. testing whether their distributions are independent or not is a key focus in our study. An observed network $\mathbf{G}$ can represent social network within a school and $\mathbf{X}$ is students' grades or heights, for example; or $\mathbf{G}$ can be a neuronal network in human brain and $\mathbf{X}$ is a few factors of personality. For example, Figure~\ref{fig:intro} exemplifies one connected network from human brain where dots denote nodes and tracts connected them represent edges. Location over network space, i.e. whether or how much a pair of nodes are closer than the others, is different from actual spatial location, which can be measured by Euclidean distance over three-dimensional $xyz$ space. As correlation between spatial location of subjects and its attributes has been studied, we are going to explore correlation of subjects' attributes to their network location. 
+Throughout this paper, assume that we are given an unweighted and undirected, connected network, equivalently a graph $\mathbf{G}$ without self-loop, comprised of$n (\in \mathbb{N})$ nodes. Even though we assume that $\mathbf{G}$ is undirected and unweighted, we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of a given network, denoted by $\mathbf{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize the relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\mathbf{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\mathbf{G}$ and $\mathbf{X}$, i.e. testing whether their distributions are independent or not is a key focus in our study. An observed network $\mathbf{G}$ can represent social network within a school and $\mathbf{X}$ is students' grades or heights, for example; or $\mathbf{G}$ can be a neuronal network in human brain and $\mathbf{X}$ is a few factors of personality. For example, Figure~\ref{fig:intro} exemplifies one connected network from human brain where dots denote nodes and tracts connected them represent edges. Location over network space, i.e. whether or how much a pair of nodes are closer than the others, is different from actual spatial location, which can be measured by Euclidean distance over three-dimensional $xyz$ space. As correlation between spatial location of subjects and its attributes has been studied, we are going to explore correlation of subjects' attributes to their network location. 
 	
 The main contribution of this study is to develop multiscale test statistics for network independence which are robust to both nonlinearity and high dimensionality without modeling nor estimating networks. Having multiscale statistics is not avoidable because we regard location of or distance between nodes over network as a dynamic process. We then choose the optimal scale where distance in network space and distance in attributes maximize their correlation. To parse into this time-dependent distances, we construct a coordinate over network space and test independence to attributes $\mathbf{X}$ at each time in the process. In the next methodology section~\ref{sec:method}, we are going to introduce a test statistic using multiscale distance metrics which inherit desirable properties. In section~\ref{sec:sim}, numerical results demonstrate the best performance of our method compared to the existing under various circumstances. Real data example in section~\ref{sec:real} show one of the applications among many.  
 	
@@ -133,11 +137,11 @@ The main contribution of this study is to develop multiscale test statistics for
 Relationship between network and nodal attributes often exhibits local or nonlinear properties. For example, it is likely that attributes of some subjects may be affected by their network relationship but those of the others are not; or that attributes are correlated on network only when network relationships are too week or too strong. Moreover, we could expect that dimension of network spectrum increases as the number of nodes increases. Unfortunately, widely used correlation measures often fail to capture nonlinear associations especially embedded in high-dimensional data set. \cite{szekely2007measuring} extended pairwise constructed generalized correlation coefficient and developed a novel statistic called distance correlation (\texttt{dCorr}) as a measure for all types of dependence between two random vectors in any dimension.
 
 Let us first start from a general setting that we are given $n \in \mathbb{N}$ pairs of \textit{i.i.d} random samples $\big(  \mathbf{X}, \mathbf{Y}  \big)  = \{ (\mathbf{x}_{i}, \mathbf{y}_{i}) : \mathbf{x}_{i} \in \mathbb{R}^{q}, \mathbf{y}_{i} \in \mathbb{R}^{m}, i = 1,...,n \}$. Define $C_{ij} = \parallel \mathbf{x}_{i} - \mathbf{x}_{j} \parallel$ and $D_{ij} = \parallel \mathbf{y}_{i} - \mathbf{y}_{j} \parallel$ for $i,j=1,2, \ldots ,n$, where $\parallel \cdot \parallel$ denotes Euclidean distance of any vectors.   
-Distance correlation (\texttt{dCorr}) is defined via distance covariance (\texttt{dCov}) $\mathcal{V}^2_{n}$ of $\mathbf{X}$ and $\mathbf{Y}$, which is the following: 
+Distance correlation (\texttt{dCorr}) is standardized version of a distance covariance (\texttt{dCov}) $\mathcal{V}^2_{n}$ of $\mathbf{X}$ and $\mathbf{Y}$, which is the following: 
 \begin{equation}	 
 \mathcal{V}^2_{n}(\mathbf{X}, \mathbf{Y}) = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij},
 \end{equation}
-where $\tilde{C}$ and $\tilde{D}$ is a doubly-centered $C$ and $D$ respectively, by its column mean and row mean. Distance correlation $\mathcal{R}^{2}_{n}(\mathbf{X}, \mathbf{Y})$ is a standardized \texttt{dCov} scaled by $\mathcal{V}^2_{n}(\mathbf{X}, \mathbf{X})$ and $\mathcal{V}^2_{n}(\mathbf{Y}, \mathbf{Y}).$
+where $\tilde{C}$ and $\tilde{D}$ is a doubly-centered $C$ and $D$ respectively, by its column mean and row mean. Distance correlation $\mathcal{R}^{2}_{n}(\mathbf{X}, \mathbf{Y})$ is scaled by $\mathcal{V}^2_{n}(\mathbf{X}, \mathbf{X})$ and $\mathcal{V}^2_{n}(\mathbf{Y}, \mathbf{Y}).$
 
 \begin{figure}[H]
 	\centering
@@ -165,30 +169,29 @@ However, \texttt{dCorr} nor even \texttt{MCorr} still perform not very well in t
 \quad k,l=1,2,..., n ,
 \end{split}
 \end{equation}
-where $r(C_{ij})$ ($r(D_{ij})$) denotes a rank $\mathbf{x}_{i}$ ($\mathbf{y}_{i}$) relative to $\mathbf{x}_{j}$ ($\mathbf{y}_{j}$). It basically truncates each pairwise element of distance covariance with respect to rank in terms of (Euclidean) distance. Note that if $k=l=n$, $\mathcal{V}^2_{n}$ and ${\mathcal{V}^{*}}^2_{n}$ are equivalent. You can see panels to illustrate both Euclidean distance matrices and truncated, double-centered Euclidean distance matrices in Figure~\ref{fig:MGCmatrices}. Simply speaking, given an appropriate distance matrix for $\{  \mathbf{x}_{i}  : i = 1,2, \ldots, n \}$ and $\{ \mathbf{y}_{i} : i=1,2,\ldots, n \}$ each, we take an double centering and truncate them by column ranking up to $k$ and $l$ in order to obtain $\tilde{C}^{*}$ or $\tilde{D}^{*}$ respectively. Since we call all family of $\{  {\mathcal{R}^{*}}^2_{n} \}_{k,l = 1,2,...,n}$ as \texttt{MGC}, \texttt{MGC} is more generalized version of \texttt{dCorr}. How to choose the optimal neighborhood scale of $(k,l)$, say $(k^{*}, l^{*})$, is illustrated in [Cencheng] as well as its superiority and consistency. In the simulation section~\ref{sec:sim} we are going to show in which pattern of underlying dependency particularly \texttt{MGC} exhibits improved performance than the global scale. On the other hand, we often do not know the correct optimal scale of $(k^{*}, l^{*})$ given one single observations; while the optimal neighborhood choice can be closely estimated by simulated networks. Following the terminology made by [Cencheng], we call \texttt{MGC} when $(k^{*}, l^{*})$ should be estimated upon a single network as \texttt{Sample MGC} while \texttt{Oracle MGC} denotes \texttt{MGC} at near the true scale of $(k^{*}, l^{*})$. We are able to estimate \texttt{Oracle MGC} in simulation data only or when underlying network is known.  
+where $r(C_{ij})$ ($r(D_{ij})$) denotes a rank $\mathbf{x}_{i}$ ($\mathbf{y}_{i}$) relative to $\mathbf{x}_{j}$ ($\mathbf{y}_{j}$). It basically truncates each pairwise element of distance covariance with respect to rank in terms of (Euclidean) distance. Note that if $k=l=n$, $\mathcal{V}^2_{n}$ and ${\mathcal{V}^{*}}^2_{n}$ are equivalent. You can see panels to illustrate both Euclidean distance matrices and truncated, double-centered Euclidean distance matrices in Figure~\ref{fig:MGCmatrices}. Simply speaking, given an appropriate distance matrix for $\{  \mathbf{x}_{i}  : i = 1,2, \ldots, n \}$ and $\{ \mathbf{y}_{i} : i=1,2,\ldots, n \}$ each, we take an double centering and truncate them by column ranking up to $k$ and $l$ in order to obtain $\tilde{C}^{*}$ or $\tilde{D}^{*}$ respectively. Since we call all family of $\{  {\mathcal{R}^{*}}^2_{n} \}_{k,l = 1,2,...,n}$ as \texttt{MGC}, \texttt{MGC} is more generalized version of \texttt{dCorr}. How to choose the optimal neighborhood scale of $(k,l)$, say $(k^{*}, l^{*})$, is illustrated in [Cencheng] as well as its superiority and consistency. In the simulation section~\ref{sec:sim} we are going to show which pattern of underlying dependency particularly \texttt{MGC} exhibits improved performance than the global scale. On the other hand, we often do not know the correct optimal scale of $(k^{*}, l^{*})$ given one single observations; while the optimal neighborhood choice can be closely estimated by simulated networks. Following the terminology used by [Cencheng], we call \texttt{MGC} when $(k^{*}, l^{*})$ should be estimated upon a single network as \texttt{Sample MGC} while \texttt{Oracle MGC} denotes \texttt{MGC} at near the true scale of $(k^{*}, l^{*})$. We are able to estimate \texttt{Oracle MGC} in simulation data only or when underlying network is known.  
 
-When we are given multivariate, real valued nodal attributes $\mathbf{X}$, its Euclidean distance $D$ is easily constructed. However what would be the distance metric over network $\mathbf{G}$ is still remaining question. We are required to find \textit{i.i.d} node-specific coordinates of which Euclidean distance as $C$ in Figure~\ref{fig:MGCmatrices} reflects a network-based distance between nodes (We are not always required Euclidean metric \citep{lyons2013distance} but discussion on this is out of scope for this paper). You might first propose directly using a column of an adjacency matrix so that we have a $n$-pair of observations $\big\{ \big( \mathbf{A}_{i \cdot} , \mathbf{X}_{i} \big) : \mathbf{A}_{i \cdot} = (A_{i 1} , ... , A_{i n} ) \in \mathbb{R}^{n}, \mathbf{X}_{i} \in \mathbb{R}^{m}, i=1,...,n  \big\}.$ In fact, the main downside of using adjacency matrix is that $\{ \mathbf{A_{i \cdot}}  \}$ cannot be independent in an undirected graph. Even if it is in directed graph, Euclidean distance between $\{ \mathbf{A}_{i \cdot} : i =1, ... , n \}$ is not a proper metric over network space. Let us introduce a simple example. Assume that a given network $\mathbf{G}$ having 8 nodes is an unweighted, directed network and possibly allowing self-loop. Let $\mathbf{A}$ be its $8 \times 8$ binary adjacency matrix of which \texttt{Node 1}, \texttt{Node 4} and \texttt{Node 8} row entries as follows:	
-\begin{equation}
-\begin{gathered}
-\mathbf{A}_{1 \cdot} = \left( \begin{array}{rrrrrrrr} 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \end{array} \right) \\
-\mathbf{A}_{4 \cdot} = \left( \begin{array}{rrrrrrrr} 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 \end{array} \right) \\
-\mathbf{A}_{8 \cdot} = \left( \begin{array}{rrrrrrrr} 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \end{array} \right)
-\end{gathered}
-\end{equation}
-Those above leads to $\parallel \mathbf{A}_{1 \cdot} -\mathbf{A}_{4 \cdot} \parallel^2 = 4$,  $\parallel \mathbf{A}_{1 \cdot} -\mathbf{A}_{8 \cdot} \parallel^2 = 7$, and $\parallel \mathbf{A}_{4 \cdot} -\mathbf{A}_{8 \cdot} \parallel^2 = 3.$ Accordingly, $\parallel \mathbf{A}_{4 \cdot} -\mathbf{A}_{8 \cdot} \parallel  < \parallel \mathbf{A}_{1 \cdot} -\mathbf{A}_{4 \cdot} \parallel$. However, you can easily see that this does not make sense because \texttt{Node 4} and \texttt{Node 8} are connected each other only through \texttt{Node 1}. Thus there exist empirical and also theoretical limitations in using Euclidean distance of $A$ as a distance matrix in \texttt{MGC} statistics. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.5in]{../Figure/pmat.png}
+	\includegraphics[width=1.5in]{../Figure/Amat.png}
+	\includegraphics[width=1.5in]{../Figure/distA.png}
+	\includegraphics[width=1.5in]{../Figure/distX.png}
+	\caption{Population probability distribution and realized values of $A$ and $X$ (scaled by 1/3) in the left two panels. Euclidean distance applied to realized $A$ and $X$ are presented in the right two panels. Data generation follows Eq.~\ref{eq:Three}.}
+	\label{fig:matrics}
+\end{figure}	
+
+When we are given multivariate, real valued nodal attributes $\mathbf{X}$, its Euclidean distance $D$ is easily constructed. However what would be the distance metric over network $\mathbf{G}$ is still remaining question. We are required to find \textit{i.i.d} node-specific coordinates of which Euclidean distance as $C$ in Figure~\ref{fig:MGCmatrices} reflects a network-based distance between nodes (We are not always required Euclidean metric \citep{lyons2013distance} but discussion on this is out of scope for this paper). You might first propose directly using a column of an adjacency matrix since an adjacency matrix inherits every edge distribution with certain amount of noise. Then we have a $n$-pair of observations $\big\{ \big( \mathbf{A}_{i \cdot} , \mathbf{X}_{i} \big) : \mathbf{A}_{i \cdot} = (A_{i 1} , ... , A_{i n} ) \in \mathbb{R}^{n}, \mathbf{X}_{i} \in \mathbb{R}^{m}, i=1,...,n  \big\}$ as Figure \ref{fig:matrics}. In fact, the main downside of using adjacency matrix is that $\{ \mathbf{A_{i \cdot}}  \}$ cannot enjoy independent samples in an undirected graph. Even if it is in directed graph, there is a lack of reasonable rationale behind using Euclidean distance of $A$ as a distance matrix in \texttt{MGC} statistics. 
 	
 \subsection{Exchangeable Graph}
 
- In order to guarantee the requirement of being \textit{i.i.d}, we are going to restrict applicable network to a certain family of graphs. Assume that we are given one network, equivalently one \textit{graph} comprised of nodes and edges. Instead of assuming \textit{i.i.d} edges as a directed graph allowing self-loop, we are going to regard a set of edges as exchangeable and then exploit \textit{exchangeable representation} theorem, which furnish representation as conditional \textit{i.i.d} observations. A graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \citep{orbanz2015bayesian}. 
+ In order to guarantee the requirement of being \textit{i.i.d} edge distribution, we are going to restrict applicable network to a certain family of graphs. Instead of assuming \textit{i.i.d} edges as a directed graph allowing self-loop, we are going to regard a set of edges as exchangeable and then exploit \textit{exchangeable representation} theorem, which furnish representation as conditional \textit{i.i.d} observations. A graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \citep{orbanz2015bayesian}. 
 	
 \begin{definition}[2-array exchangeability]
 	\label{exchangeability}
-	A random 2-array $(A_{ij})$ is called $\mathbf{\mbox{jointly exchangeable}}$ if 
+	A random 2-array $(A_{ij})$ is called jointly exchangeable if 
 	$$(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma(j)})$$
-	for every permutation $\sigma$ of $n$,
-	and separately exchangeable if 
-	$$(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma^{\prime}(j) })$$
-	for every pair of permutation $\sigma, \sigma^{\prime}$ of $n$.
+	for every permutation $\sigma$ of $n$.
 \end{definition}
 Even though exchangeability itself cannot guarantee being \textit{i.i.d}, thanks to the celebrated  \textit{de Finetti}~\ref{finetti}'s representation theorem, it has been proven that there exists a random probability measure $\eta$ on exchangeable random variable $\mathbf{Z}$ so that a sequence of $Z_{1}, Z_{2}, \ldots $ are \textit{i.i.d} conditional $\eta$ \textit{if and only if} the sequence is exchangeable \citep{orbanz2015bayesian, caron2014sparse}. \textit{Aldous-Hoover theorem}~\ref{Aldous_Hoover} is the representation theorem of 2-array exchangeable array, which is useful to explain jointly exchangeable adjacent matrix. Exchangeable graph is commonly called \textit{graphon} \citep{lovasz2006limits}, which is defined through a random measurable functions \citep{chan2013estimation}.
 	
@@ -257,67 +260,27 @@ Despite its more intricate form mostly due to Poisson process on node, represent
 \subsection{Multiscale Distance Metrics}	
 
 \subsubsection{Diffusion maps and diffusion distance}	
-Despite a surge of research on network representation in terms of a summarizing network factor \citep{hoff2002latent} or some meaningful coefficients, e.g.centrality \citep{mantzaris2013dynamic, sporns2007identification}, there has been no node-specific variable which provides a configuration of node over network space without losing any information. \cite{coifman2006diffusion} proposed a meaningful multiscale geometries of data called \textit{diffusion maps} while keeping every information on every local relation over a graph. Diffusion map is constructed via Markov chain on graph. Without any model assumption on graph, an adjacency matrix $A$ acts as a kernel, representing a similarity between each node in $\mathbf{G}$. 
-	
-Let $(\mathbf{G}, \mathcal{A}, \mu)$ be a measure space. Throughout all of the arguments, assume that we have a countable node set with size of $n \in \mathbb{N}$. An connected network $\mathbf{G}$ is the data set of nodes and edges, and $\mathcal{A}$ is a set of pairs of nodes $\{(i,j) : v_{i}, v_{j} \in V(\mathbf{G}) \}$. A measure of $\mu$ which represents a distribution of the nodes on $\mathbf{G}$, is equivalent to an adjacency matrix $A$. Figure~\ref{fig:matrics} illustrates one example of network $\mathbf{G}$ under SBM and its attributes which follow the provided probability matrix in the most left. However its realized edge distribution, realized adjacency matrix $A$ and its attribute values $\mathbf{X}$ contain lots of noise. Euclidean distance of an adjacency matrix $A$ still possess block patterns which differentiate edge distribution depending $\mathbf{X}$ but we are going to consider different kernel for both theoretical and empirical perspectives. 
-	
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1.7in]{../Figure/pmat.png}
-	\includegraphics[width=1.7in]{../Figure/Amat.png}
-	\includegraphics[width=1.7in]{../Figure/distA.png}
-	\includegraphics[width=1.7in]{../Figure/distX.png}
-	\caption{Population probability distribution and realized values of $A$ and $X$ (scaled by 1/3) in the left two panels. Euclidean distance applied to realized $A$ and $X$ are presented in the right two panels. Data generation follows Eq.~\ref{eq:Three}.}
-	\label{fig:matrics}
-\end{figure}	
 
-A transition matrix $P$ is a new kernel of a Markov chain of which element $P[i,j]$ represents the probability of travel from Node $i$ to Node $j$ in one time step. A transition matrix $P = \{P[i,j] : i,j=1,...,n \}$ in a Markov chain on $\mathbf{G}$ is defined as below:
+Then which distance metrics should be defined on exchangeable graph? Despite a surge of research on network representation in terms of a summarizing network factor \citep{hoff2002latent} or some meaningful coefficients, e.g.centrality \citep{mantzaris2013dynamic, sporns2007identification}, there has been no node-specific variable which provides a configuration of node over network space without losing any information. \cite{coifman2006diffusion} proposed a meaningful multiscale geometries of data called \textit{diffusion maps} while keeping every information on every local relation over a graph, defined on every discrete time. Distance between a pair of nodes at each time is called \textit{diffusion distance} which is constructed by Euclidean distance of such diffusion maps at each time point. For each time point $t \in \mathbb{N}$, we can define a diffusion distance at time $t$, $C_{t}$, which is also related to a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}$ and eigenvectors $\{ \phi_{r}  \}$ of a transitionmatrix~\citep{coifman2006diffusion,lafon2006diffusion}. 
 \begin{equation}
-P[i,j] = A_{ij} \big/ \sum\limits_{j=1}^{n} A_{ij}.
+\label{eq:diffusion}
+C^2_{t}[i,j]  :=   \parallel \mathbf{U}_{t}(i) - \mathbf{U}_{t}(j) \parallel   \quad i,j = 1,2, \ldots , n
 \end{equation}
- A corresponding probability in $t$ step is given by the $t^{\mbox{th}}$ ($t \in \mathbb{N}$) power of $P$. Now we assume that diffusion process occurs within a given graph with this transition probability at each time step. Distance between a pair of nodes at each time is called \textit{diffusion distance}. That is we have distance between every pair of nodes throughout diffusion process. How to derive diffusion distance over a directed network or weighted network is provided in \cite{tang2010graph}. Other than a transition matrix, we need a stationary probability $\mathbf{\pi} = \{\pi(1), \pi(2), ... , \pi(n) \}$ of which $\pi(i)$ represents the probability that the diffusion process in the end is stuck in Node $i$ regardless of the starting state. In our setting, $\pi(i)$ is assumed to be proportional to the degree of Node $i$, i.e. $\pi(i) = \sum\limits_{j=1}^{n} A_{ij} \big/ \sum\limits_{i=1}^{n}\sum\limits_{j=1}^{n} A_{ij}$ ($i=1,2,..., n$).  For each time point $t \in \mathbb{N}$, we can define a diffusion distance at time $t$, $C_{t}$:	
- \begin{equation}
- \label{eq:diffusion}
- \begin{split}
- C^2_{t}[i,j] & = \sum\limits_{w =1}^{n} \big( P^{t}[i,w] - P^{t}[j,w]  \big)^{2} \frac{1}{\pi(w)} = \sum\limits_{w=1}^{n} \left(  \frac{P^{t}[i,w]}{\sqrt{\pi(w)}} - \frac{P^{t}[j,w]}{\sqrt{\pi(w)}}   \right)^2 \\ & = \parallel P^{t}[i, \cdot] - P^{t}[j, \cdot]  \parallel^2_{L^{2}(\mathbf{G}, d\mu / \pi)  } \quad i,j = 1,2, \ldots , n
- \end{split}
- \end{equation}
+where 
+\begin{equation} 
+\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \ldots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{t} \in \mathbb{R}^{q}.
+\end{equation}
+As diffusion time $t$ increases, distance matrix $C_{t}$ is more likely to take into account distance between two nodes which are relatively difficult to reach each other. If you see Figure~\ref{fig:diffusions}, difference between blocks in distance matrix at $t=3$ looks more distinct than that at $t=1$.  However if the propagation takes enough, e.g. at $t=50$, it becomes hard to detect the differences as nodes under the peer influence are at the end assimilated. Compared to adjacent relation or geodesic distance, diffusion distance well reflects the connectivity since it takes into account every possible path between two nodes. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.7in]{../Figure/Dx1.png}
 	\includegraphics[width=1.7in]{../Figure/Dx3.png}
-	\includegraphics[width=1.7in]{../Figure/Dx5.png}
 	\includegraphics[width=1.7in]{../Figure/Dx50.png}
-	\caption{Diffusion distance, i.e. Euclidean distance of diffusion maps at $t=1$, $t=3$, $t=5$, and $t=50$ of sample graph $G$ from Stochastic Block Model provided in simulation (Eq.~\ref{eq:Three}).}
+	\caption{Diffusion distance, i.e. Euclidean distance of diffusion maps at $t=1$, $t=3$  and $t=50$ of sample graph $G$ from Stochastic Block Model provided in simulation (Eq.~\ref{eq:Three}).}
 	\label{fig:diffusions}
-\end{figure}	
-As diffusion time $t$ increases, distance matrix $C_{t}$ is more likely to take into account distance between two nodes which are relatively difficult to reach each other. Basically diffusion distance at fixed time $t$ measures the chance that we are likely to stay between Node i and Node j at $t$ step on our journey of all other possible paths. The higher this chance is, the smaller distance between two is. Depending on the distribution of network or graph, the optimal time $t$ when the diffusion distance is most correlated to the distance in terms of $\mathbf{X}$ can be different. If you see Figure~\ref{fig:diffusions}, difference between blocks in distance matrix at $t=3$ looks more distinct than that at $t=1$.  If you move to diffusion distance at $t=5$, you are able to distinguish every block in upper (or lower) diagonal. However if the propagation takes enough, e.g. at $t=50$, it becomes hard to detect the differences as nodes under the peer influence are at the end assimilated. On the other hand, compared to adjacent relation or geodesic distance, diffusion distance well reflects the connectivity since it takes into account every possible path between two nodes. Connectivity between two nodes is higher if we need to eliminate more number of nodes to disconnect these two. It is more robust measure to the unexpected edges than geodesic distance. Often a set of nodes with higher connectivity also have a higher propensity of having edges within this set and they are likely to form a cluster. This kind of cluster can be considered as a block in SBM framework. 
-	
-Diffusion distance of $\mathbf{G}$ defined as above can be represented via a spectral decomposition of its transition matrix $P$. That is, we can derive diffusion distance using its eigenvectors and eigenvalues \citep{coifman2006diffusion,lafon2006diffusion}. 
-Recall that diffusion distance at time $t$, $C_{t}$, is a functional $L^2$ distance, weighted by 1/$\pi$ in Eq.~\ref{eq:diffusion}. If we transform the way to represent $C_{t}[i,j]$ slightly, we are able to obtain an orthonormal basis of $L^{2}(\mathbf{G}, d\mu / \pi)$ via eigenvalues and eigenvectors. 
-Since an adjacency matrix $A$ does not guarantee a symmetric of $P$, define a symmetric kernel $Q = \Pi^{1/2} P \Pi^{-1/2}$, where $\Pi$ is a $n \times n$ diagonal matrix of which $i$th diagonal element is $\pi(i)$. Under compactness of $P$, $Q$ has a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}_{r = \{1,2,...,q \}}$ and a set of their corresponding orthonormal eigenvectors $\{ \psi_{r} \}_{r = \{1,2,..., q \} },$ i.e. $Q[i,j] = \sum\limits_{r=1}^{q} \lambda_{r} \psi_{r}(i) \psi_{r}(j)$ ($1 \leq q \leq n$).  Return to transition probability between Node $i$ and Node $j$,
+\end{figure}
 
-\begin{equation}
-\begin{split}
-P[i,j] &  = \sqrt{\pi(j) / \pi(i) } Q[i,j] \\ &   = \sum\limits_{r=1}^{q} \lambda_{r} \big\{ \psi_{r}(i) / \sqrt{\pi(i)}  \big\} \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}  \\ & : = \sum\limits_{r=1}^{q} \lambda_{r} \phi_{r}(i) \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}
-\end{split}
-\end{equation}
-where $\phi_{r}(i) := \psi_{r}(i) / \sqrt{\pi(i)}$. Then from $\sum\limits_{r=1}^{q} \psi^2_{r}(j) = 1$ for all $j \in \{1,2,...,n\}$, 
-we can represent the diffusion distance as: 	
-\begin{equation}
-\begin{split}
-C^2_{t}[i,j]  = \sum\limits_{r=1}^{n} \lambda^{2t}_{r} \big( \phi_{r} (i) - \phi_{r}(j)   \big)^2  
-\end{split}
-\end{equation}
-That is,
-\begin{equation}
-C_{t}[i,j] = \parallel \mathbf{U}_{t}(i) - \mathbf{U}_{t}(j) \parallel
-\end{equation}
-where 
-\begin{equation} 
-\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) \\ \lambda^{t}_{2} \phi_{2} (i)  \\ \vdots \\ \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}.
-\end{equation}
 Now we have  a family of $q$-variate($q \leq n$) diffusion maps $\{ \mathbf{U}_{t} \}_{t \in \mathbb{N}} $, of which Euclidean distance is diffusion distance. Embedding each node on Euclidean metric is a novel approach in testing independence on network space; there is no estimation nor model assumption involved. However there remains a matter of dependence between observed diffusion maps. 
 	
 \subsubsection{Properties of diffusion maps under exchangeable graphs}
@@ -398,7 +361,7 @@ where $\mathcal{V}^{2} (\mathbf{x},\mathbf{y}) := \| g_{\mathbf{x},\mathbf{y}}(t
 Lemma~\ref{lemma1} and its following Lemma~\ref{lemma2} facilitate the use of distance correlation while satisfying \textit{Theorem 2} in \cite{szekely2007measuring}.  
 
 \begin{theorem}
-	Suppose that we are given $n$ pairs of exchangeable observations $(\mathbf{X}, \mathbf{Y}) = \{  (\mathbf{x}_{i}, \mathbf{y}_{i} ), i = 1,2, \ldots, n \}$ having finite second moment. Assume $\mathbf{x}_{i} \overset{i.i.d}{\sim} \mathbf{x}$ and $\mathbf{y}_{i} \overset{i.i.d}{\sim} \mathbf{y}, i = 1,2, \ldots, n$. Then
+	Suppose that we are given $n$ pairs of exchangeable observations $(\mathbf{X}, \mathbf{Y}) = \{  (\mathbf{x}_{i}, \mathbf{y}_{i} ), i = 1,2, \ldots, n \}$ having finite second moment. Assume $\mathbf{x}_{i} \overset{i.i.d}{\sim} f_{\mathbf{x}}$ and $\mathbf{y}_{i} \overset{i.i.d}{\sim} f_{\mathbf{y}}$ given underlying distribution for $i = 1,2, \ldots, n$. Then
 	\begin{eqnarray}
 		\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\longrightarrow 0 \quad \mbox{ as } n \rightarrow \infty
 	\end{eqnarray}	
@@ -406,7 +369,7 @@ Lemma~\ref{lemma1} and its following Lemma~\ref{lemma2} facilitate the use of di
 	\label{theoremMain}
 \end{theorem}
 
-Note that if $\{ \mathbf{x}_{i} : i = 1,2,\ldots, n \}$ are \textit{i.i.d}, they are exchangeable. thus estimated latent factors, which are assumed \textit{i.i.d} by \cite{fosdick2015testing} can also be applied to Theorem~\ref{theoremMain}. We already have shown that even under undirected network, diffusion maps remain exchangeable at each diffusion time point $t$. 
+Note that if $\{ \mathbf{x}_{i} : i = 1,2,\ldots, n \}$ are \textit{i.i.d}, they are exchangeable. Thus estimated latent factors, which are assumed \textit{i.i.d} by \cite{fosdick2015testing} can also be applied to Theorem~\ref{theoremMain}. We already have shown that even under undirected network, diffusion maps remain exchangeable at each diffusion time point $t$. 
 
 \begin{theorem}
 	\label{theorem2}
@@ -418,8 +381,8 @@ Note that if $\{ \mathbf{x}_{i} : i = 1,2,\ldots, n \}$ are \textit{i.i.d}, they
 	 In particular, the consistency also holds for the estimated latent positions and adjacency matrix of directed network.
 \end{theorem}
 		
- Underlying distribution of $\mathbf{U}_{t}$, i.e. $\iint  f_{\mathbf{U}_t} \big( \eta, g \big) P(d \eta) P(dg) = f_{\mathbf{U}^{(t)} } (\mathbf{u})$, given a link function $g$ and a random probability measure $\eta_{t}$ of $\mathbf{U}_t$ has been introduced to draw $\textit{i.i.d}$ from exchangeability. Since a family of diffusion maps, $\{ \mathbf{U}_{t} \}_{t \in \mathbb{N}}$ provides a configuration of every node in $\mathbf{G},$ the above hypothesis implies testing independence between the configuration of nodes in network space and in attribute space at each time of diffusion given the underlying distribution of $\mathbf{U}$.	
-We are not going to state otherwise but if you assume to be given a unit-Poisson process $\{ \theta_{i} \}_{i=1}^{n}$, you can lead to the same results for sparse graphex as Theorem~\ref{theoremMain}. Even though we are not able to present testing results in \textit{all} alternatives, in the following section a few examples of sparse networks as well as exchangeable networks will guide you when and why our proposing method performs better than others. 
+ Underlying distribution of $\mathbf{U}_{t}$, i.e. $\iint  f_{\mathbf{U}_t} \big( \eta, g \big) P(d \eta) P(dg) = f_{\mathbf{U}^{(t)} } (\mathbf{u})$, given a link function $g$ and a random probability measure $\eta_{t}$ of $\mathbf{U}_t$ has been introduced to draw $\textit{i.i.d}$ from exchangeability. Since a family of diffusion maps, $\{ \mathbf{U}_{t} \}_{t \in \mathbb{N}}$ provides a configuration of every node in $\mathbf{G},$ the above hypothesis implies testing independence between the configuration of nodes in network space and in attribute space at each time of diffusion given the underlying distribution of $\mathbf{U}_{t}$.	
+We are not going to state otherwise but if you assume to be given a unit-Poisson process $\{ \theta_{i} \}_{i=1}^{n}$, you can lead to the same results for sparse graphex as Theorem~\ref{theoremMain}. 
 
 \subsubsection{Each node's contribution to dependency measure}
 
@@ -447,7 +410,7 @@ According to the joint model in Eq.~\ref{eq:joint_model}, edge distribution and 
 For each simulated network, empirical power will be derived by comparing observed statistic to the empirical distribution under the null. One example of empirical distributions under both independence and dependence are shown in Figure~\ref{fig:density} where the vertical lines indicate 95$\%$ quantiles of the null.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=7in]{../Figure/density.pdf}
+	\includegraphics[width=6in]{../Figure/density.pdf}
 	\caption{Statistics under null distribution and dependent distribution based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:Three}}
 	\label{fig:density}
 \end{figure}		
@@ -465,13 +428,13 @@ E(A_{ij} | X_{i}, X_{j}) & = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=7in]{../Figure/twoSBM.pdf}
+	\includegraphics[width=6in]{../Figure/twoSBM.pdf}
 	\caption{Empirical power based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:twoSBM} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 		\label{fig:twoSBM}
 \end{figure}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=7in]{../Figure/ThreeSBM.pdf}
+	\includegraphics[width=6in]{../Figure/ThreeSBM.pdf}
 	\caption{Empirical power based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:Three} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 	\label{fig:Three}
 \end{figure}	
@@ -485,7 +448,7 @@ Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=7in]{../Figure/powerplot.pdf}
+	\includegraphics[width=6in]{../Figure/powerplot.pdf}
 	\caption{Change of empirical power across $\theta$ in both local and global scale of distance correlation (left). Change of difference between these two powers in Oracle and Sample \texttt{MGC}. Superiority of optimal local scale become evident from $\theta > 0.2$, when distribution of edges have non-linear dependence on $X$.}
 	\label{fig:powerplot}
 \end{figure}
@@ -497,13 +460,21 @@ Under SBM, we assumed that all nodes within the same block have the same expecte
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=7in]{../Figure/dcSBM.pdf}
+	\includegraphics[width=6in]{../Figure/dcSBM.pdf}
 	\caption{Empirical power based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:dcSBM} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 		\label{fig:dcSBM}
 \end{figure}	
 
-As in the previous two block SBM, in this simulation scheme, we also observe monotonic edge distribution function of Euclidean distance. However its variance becomes inflated due to $\theta$ (model~\ref{eq:dcVariance}). If you see the testing results with Euclidean distance adjacency matrix in Figure~\ref{fig:dcSBM}, empirical power of \texttt{dCorr} or \texttt{HHG} shows far less than that of \texttt{MGC}. This might imply that multiscale statistic performs better than the other global ones even in the presence of variability of degree distribution. On the other hand, node-specific variable $\theta$ is captured by latent position estimation model \citep{fosdick2015testing} and \texttt{FH} test looks most sensitive in this case. (\textcolor{red}{why?}) 
-	
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{../Figure/dcSBM_density.pdf}
+	\caption{Empirical distribution of \texttt{Oracle MGC}(left), \texttt{Sample MGC}(middle) and p-values from \texttt{FH test} when $n=200$.}
+	\label{fig:dcSBM_density}
+\end{figure}
+
+
+As in the previous two block SBM, in this simulation scheme, we also observe monotonic edge distribution function of Euclidean distance. However its variance becomes inflated due to $\theta$ (model~\ref{eq:dcVariance}). If you see the testing results with Euclidean distance adjacency matrix in Figure~\ref{fig:dcSBM}, empirical power of \texttt{dCorr} or \texttt{HHG} shows far less than that of \texttt{MGC}. This might imply that multiscale statistic performs better than the other global ones even in the presence of variability of degree distribution. On the other hand, node-specific variable $\theta$ is captured by latent position estimation model \citep{fosdick2015testing} and \texttt{FH} test looks most sensitive in this case. 
 \begin{equation}
 \begin{aligned}
 E(A_{ij} | X_{i}, X_{j}) &  =  0.2 I(|X_{i} - X_{j}| = 0) + 0.05 I(|X_{i} - X_{i}| = 1) \\
@@ -514,36 +485,18 @@ Var( Bern(0.05 \cdot \theta_{i} \theta_{j}) ) I( |X_{i} - X_{j}| = 1) \\
 \label{eq:dcVariance}
 \end{equation}	
 	
-	
-\subsection{Gaussian mixture model and SBM}
-
-We only looked through univariate, binary value of nodal attributes $X$. Now let us consider multivariate, continuous nodal attributes $\mathbf{X}$, which specifically follows 2-dimensional Gaussian mixture model. 
-
-
-	
 \subsection{Additive and multiplicative graph model}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=7in]{../Figure/ame.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:ame} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
+	\caption{Empirical power based on $M = 500$ independently generated additive and multiplicative graph model presented in Eq.~\ref{eq:ame} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 		\label{fig:ame}
 \end{figure}
 
 \cite{hoff2002latent} proposed an approach of jointly modeling network and its attributes, where networks possess additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors. Whereas \cite{fosdick2015testing} embedded nodes into network factors assuming that additive an multiplicative network model is \textit{correct}, a family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship. Thus in the model~\ref{eq:ame}, where logit of $A$ is an additive and multiplicative function of $\{\mathbf{w} \}$, their estimated factors would be very close to the truth, much closer than embedding made from diffusion maps. However we rarely see the network which is fitted to the model in reality. If you see that your observed network actually fits to their model, using network factors as independent observations from graph $\mathbf{G}$ and applying them to \texttt{MGC} performs not very worse than \texttt{FH} statistic (Fig.~\ref{fig:ame}).
 Simply speaking, if network really fits well to additive and multiplicative model or we have basic knowledge about network model, then it becomes safe to use their node-specific additive factor $\{ a_{i} \}$ and multiplicative factor $\{ \mathbf{m}^{T}_{i} : \mathbf{m}_{i} \in \mathbb{R}^{k} \}$ in testing independence directly. Since they assume \textit{i.i.d} generative model for factors of each node, $\mathbf{F}_{i}$, i.e. $\mathbf{F}_{i} = \begin{pmatrix} a_{i} & \mathbf{m}^{T}_{i} \end{pmatrix} \overset{i.i.d}{\sim} MVNormal$, there is nothing wrong with applying \textit{MGC} using \textit{i.i.d} observations of $\{ \mathbf{F}_{i}, \mathbf{X}_{i} \}$.   
 	
-\subsection{Exchangeable graph on Poisson process}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=7in]{../Figure/sparse.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated Poisson-processed exchangeable graphs presented in the model~\ref{eq:sparse} using diffusion maps (left), Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
-	\label{fig:sparse}
-\end{figure}
-
-We have discussed SBM and its derivative dcSBM in consideration of real network data. However an exchangeable network defined formally as Def.~\ref{exchangeability} still cannot embrace sparse network. Here we revisit the example of \textit{graphex} which is provided in \cite{veitch2015class}, which has power-law degree distribution (\ref{eq:sparse}). Simulation results in Figure~\ref{fig:sparse} does not show the linear power as $\nu$ increases since the variance of sample size ($N_{\nu}$) also increases as $\nu$ increases. In most cases, performance of \texttt{Oracle MGC} looks much better than the others and \texttt{Sample MGC} succeeds in catching up \texttt{Oracle MGC} under metrics of diffusion maps. 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real Data Examples}
 \label{sec:real}
@@ -627,49 +580,20 @@ Despite a few shortcomings listed above, a range of applications of \texttt{MNT}
 	\end{gathered}
 	\end{equation}
 	
-	\item \textbf{Gaussian mixture model and SBM}
-	\begin{equation}
-		\label{eq:gaus}
-		\begin{gathered}
-		\begin{split}
-		&Z_{i} \overset{i.i.d}{\sim}  f_{Z}(z) \stackrel{d}{=} Bern(0.5), i = 1, \ldots, n \\ 
-		& \mathbf{X}_{i} | Z_{i} \overset{i.i.d}{\sim} f_{\mathbf{X}|Z}(\mathbf{x}|z) \stackrel{d}{=} (0.3+0.4z) \mathbf{N}_{1} + (0.7 - 0.4z) \mathbf{N}_{2} \\
-		& A_{ij} | Z_{i}, Z_{j} \overset{i.i.d}{\sim} f_{A|Z} (a_{ij} | z_{i}, z_{j}) \stackrel{d}{=} Bern(0.4) I\big( |z_{i} - z_{j}| = 0 \big) + Bern(0.1 ) I(|z_{i} - z_{j}| > 0), \\
-		& \quad \quad \quad  i < j, i,j =1,\ldots, n
-		\end{split}
-		\end{gathered}
-	\end{equation}
-	where $\mathbf{N}_{1} = \left(  \begin{pmatrix}  0 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 & 0.5 \\ 0.5 & 1 \end{pmatrix}    \right)$ and $\mathbf{N}_{2} = \left(  \begin{pmatrix}  1 \\ -1 \end{pmatrix}, \begin{pmatrix} 1 & 0.5 \\ 0.5 & 1 \end{pmatrix}    \right)$.
-	
-	\item \textbf{Additive and Multiplicative Graph Model}
-	\begin{equation}
-		\label{eq:ame}
-		\begin{gathered}
-		\begin{aligned}
-		&	Z_{i} \overset{i.i.d}{\sim} f_{Z}(z) \stackrel{d}{=} Uniform[0,1]. \quad i = 1, \ldots, n \\ 
-		&	X_{i} | Z_{i} \overset{i.i.d}{\sim}  f_{Z|X}(z|x) \stackrel{d}{=}  Normal(Z_{i}, 1), \quad i= 1, \ldots, n \\
-		&	A_{ij} | Z_{i}, Z_{j} \overset{i.i.d}{\sim}  f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}   Bern \big(  ( 1 - z_{i})^2 \times (1 - z_{j})^2    \big), \quad i < j, i,j = 1, \ldots, n
-		\end{aligned}
-		\end{gathered}
-	\end{equation}
-	
-	\item \textbf{Exchangeable Graph on Poisson Process}
-	
-	\begin{eqnarray}
-	\begin{gathered}
-	\begin{split}
-	N_{\nu} \overset{i.i.d}{\sim} f_{N}(n)   \stackrel{d}{=} Poi( c \nu)  &   \quad \quad &
-	\vartheta_{i}  \overset{i.i.d}{\sim} f_{\vartheta} \stackrel{d}{=} Uniform[0,1] \\
-	\theta_{i} \overset{i.i.d}{\sim} f_{\theta |  N_{\nu}} (\theta)     Uniform[0, \nu]  & \quad \quad  & X_{i}    \overset{ind}{\sim} f_{X | \vartheta}(x_{i}) \stackrel{d}{=} Normal \big( \vartheta_{i}, 4^2 \big)  \\ 
-	(\theta_{i}, \theta_{j})  \overset{ind}{\sim} f_{ (\theta_{i}, \theta_{j})  | W, \vartheta} ( (\theta_{i}, \theta_{j}) ) \stackrel{d}{=}   Bernoulli \big( W\big( \vartheta_{i}, \vartheta_{j} \big) \big)  &  \quad \quad & A_{ij}  \stackrel{d}{=} (\theta_{i}, \theta_{j})
-	\label{eq:sparse}
-	\end{split}
-	\end{gathered}	 
-	\end{eqnarray}	
-	where $c = 1$ and $W(\vartheta_{i}, \vartheta_{j} ) = (\vartheta_{i} + 1)^{-2} ( \vartheta_{j} + 1 )^{-2}$ or 0 if $\vartheta_{i} = \vartheta_{j}$. 
-\end{itemize}
 
-\textbf{Three Block SBM 2}
+\item \textbf{Additive and Multiplicative Graph Model}
+\begin{equation}
+	\label{eq:ame}
+	\begin{gathered}
+	\begin{aligned}
+	&	Z_{i} \overset{i.i.d}{\sim} f_{Z}(z) \stackrel{d}{=} Uniform[0,1]. \quad i = 1, \ldots, n \\ 
+	&	X_{i} | Z_{i} \overset{i.i.d}{\sim}  f_{Z|X}(z|x) \stackrel{d}{=}  Normal(Z_{i}, 1), \quad i= 1, \ldots, n \\
+	&	A_{ij} | Z_{i}, Z_{j} \overset{i.i.d}{\sim}  f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}   Bern \big(  ( 1 - z_{i})^2 \times (1 - z_{j})^2    \big), \quad i < j, i,j = 1, \ldots, n
+	\end{aligned}
+	\end{gathered}
+\end{equation}
+	
+\item \textbf{Three Block SBM 2}
 \begin{equation}
 \begin{gathered}
 \begin{aligned}
@@ -679,6 +603,8 @@ Despite a few shortcomings listed above, a range of applications of \texttt{MNT}
 \end{gathered}
 \label{eq:simplethree}
 \end{equation}
+
+\end{itemize}
 
 \subsection{supplementary figures}
 
@@ -708,54 +634,73 @@ Despite a few shortcomings listed above, a range of applications of \texttt{MNT}
 \end{figure}
 
 
-\subsection{exploratory analysis}
-
-
-
-\textbf{Mixed Gaussian attributes and SBM}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=5in]{../Figure/tmp_gaus.pdf}
-	\caption{Empirical power based on $M = 500$ networks using diffusion maps.}
-	\label{fig:threeSBM}
-\end{figure}
-
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=2in]{../Figure/gaus_power1.png}
-	\includegraphics[width=2in]{../Figure/gaus_power5.png}
-	\includegraphics[width=2in]{../Figure/gaus_power10.png}
-	\caption{Empirical power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated networks}
-\end{figure}
-
-
-
 
 
 %%%%%%%%
-\textbf{Node Contribution}
+\subsection{Node Contribution}
+
+\begin{equation}
+\begin{gathered}
+\begin{aligned}
+& X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Bern(0.5)  \quad i = 1, \ldots ,100, \ldots, 200 \\ & Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Bern(0.6) I(x = 0) + Bern(0.4) I(x=1), \quad  i = 1,\ldots,100, \ldots, 200  \\
+& A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j})  \stackrel{d}{=} \left\{  \begin{array}{cc} Bern(0.4) I(|z_{i} - z_{j}| = 0)  + Bern(0.1) I(|z_{i} - z_{j}| > 0) & i = 1,\ldots,100 \\   Bern(0.25)  & i=101, \ldots, 200  \end{array} \right.
+\end{aligned}
+\end{gathered}
+\label{eq:contri}
+\end{equation}
+
+
+\begin{equation}
+\mbox{ inclustion rate}\big(  g(v) \big) = \# \big\{  rank_{g(v)}\big(  u \big)  \leq  m  \big\}   /  m,
+\label{eq:inclustion_rate}
+\end{equation}
+where $m (\leq |V(G)|)$ is the number of nodes under network dependence. We have $m=100$ out of $|V(\mathbf{G})| = 200$.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{../Figure/binary_contribution.pdf}
+	\caption{Change of empirical power and inclusion rate at each diffusion time $t=1,\ldots, 5$. You can see that inclusion rate of $|c(v)|$ increases as empirical power of \texttt{MGC} increases.}
+	\label{fig:binary_contribution}
+\end{figure}
+
+
+
+
+%%%%%%%%%
+\subsection{Monotonicity and Power}
+
+
+\begin{equation}
+1. \quad Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.1 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)
+\end{equation}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=2.3in]{../Figure/twoSBM_weight.pdf}
-	\includegraphics[width=2.3in]{../Figure/ThreeSBM_weight.pdf}
-	\includegraphics[width=2.3in]{../Figure/simplethree_weight.pdf}
-	\caption{Node-specific contribution to testing independence in model~\ref{eq:twoSBM} (left), ~\ref{eq:Three} (middle) and ~\ref{eq:simplethree} (right).}
-	\label{fig:weight1}
+	\includegraphics[width=6in]{../Figure/powerplot_mmono.pdf}
+	\caption{Change of empirical power across $\theta$ in both local and global scale of distance correlation (left). Change of difference between these two powers in Oracle and Sample \texttt{MGC}. Superiority of optimal local scale become evident from $\theta > 0.1$, when distribution of edges have non-linear dependence on $X$.}
+	\label{fig:powerplot_mmono}
 \end{figure}
+
+\begin{equation}
+2. \quad Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.2 I(|X_{i} - X_{j}| = 0) + 0.8 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)
+\end{equation}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=3in]{../Figure/dcSBM_weight.pdf}
-	\includegraphics[width=3in]{../Figure/ame_weight.pdf}
-	\caption{Node-specific contribution to testing independence in model~\ref{eq:dcSBM} (left) and ~\ref{eq:ame} (right).}
-	\label{fig:weight2}
+	\includegraphics[width=6in]{../Figure/powerplot_mmmono.pdf}
+	\caption{Change of empirical power across $\theta$ in both local and global scale of distance correlation (left). Change of difference between these two powers in Oracle and Sample \texttt{MGC}. Superiority of optimal local scale become evident from $\theta < 0.8$, when distribution of edges have non-linear dependence on $X$.}
+	\label{fig:powerplot_mmmono}
 \end{figure}
 
+\begin{equation}
+3. \quad Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.5 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)
+\end{equation}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{../Figure/powerplot_monoton.pdf}
+	\caption{Change of empirical power across $\theta$ in both local and global scale of distance correlation (left). Change of difference between these two powers in Oracle and Sample \texttt{MGC}. Across all $\theta > 0$, we have linear dependency.}
+	\label{fig:powerplot_monoton}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -885,6 +830,33 @@ where $W_{i} \overset{i.i.d.}{\sim} Uniform(0,1)$. Thus if $\mathbf{A}$ is an ad
 Then within each row, adjacent elements are independent and also identically distributed except a diagonal element.
 
 \end{proof}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[\textbf{Spectral decomposition of diffusion distance}]
+Diffusion distance of $\mathbf{G}$ can be represented via a spectral decomposition of its transition matrix $P$~\citep{coifman2006diffusion,lafon2006diffusion}. Recall that diffusion distance at time $t$, $C_{t}$, is a functional $L^2$ distance, weighted by 1/$\pi$ in Eq.~\ref{eq:diffusion}. Since an adjacency matrix $A$ does not guarantee a symmetry of $P$, define a symmetric kernel $Q = \Pi^{1/2} P \Pi^{-1/2}$, where $\Pi$ is a $n \times n$ diagonal matrix of which $i$th diagonal element is $\pi(i)$. Under compactness of $P$, $Q$ has a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}_{r = \{1,2,...,q \}}$ and a set of their corresponding orthonormal eigenvectors $\{ \psi_{r} \}_{r = \{1,2,..., q \} },$ i.e. $Q[i,j] = \sum\limits_{r=1}^{q} \lambda_{r} \psi_{r}(i) \psi_{r}(j)$ ($1 \leq q \leq n$).  Return to transition probability between Node $i$ and Node $j$,
+
+\begin{equation}
+\begin{split}
+P[i,j] &  = \sqrt{\pi(j) / \pi(i) } Q[i,j] \\ &   = \sum\limits_{r=1}^{q} \lambda_{r} \big\{ \psi_{r}(i) / \sqrt{\pi(i)}  \big\} \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}  \\ & : = \sum\limits_{r=1}^{q} \lambda_{r} \phi_{r}(i) \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}
+\end{split}
+\end{equation}
+where $\phi_{r}(i) := \psi_{r}(i) / \sqrt{\pi(i)}$. Since $\sum\limits_{r=1}^{q} \psi^2_{r}(j) = 1$ for all $j \in \{1,2,...,n\}$, we can represent the diffusion distance as: 	
+\begin{equation}
+\begin{split}
+C^2_{t}[i,j]  = \sum\limits_{r=1}^{n} \lambda^{2t}_{r} \big( \phi_{r} (i) - \phi_{r}(j)   \big)^2  
+\end{split}
+\end{equation}
+That is,
+\begin{equation}
+C_{t}[i,j] = \parallel \mathbf{U}_{t}(i) - \mathbf{U}_{t}(j) \parallel
+\end{equation}
+where 
+\begin{equation} 
+\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \ldots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{t} \in \mathbb{R}^{q}.
+\end{equation}
+
+\end{proof}	
+	
 	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
