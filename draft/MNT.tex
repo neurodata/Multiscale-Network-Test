@@ -102,7 +102,7 @@ anchorcolor = blue]{hyperref}
 \bigskip
 \begin{abstract}
 	%The text of your abstract. 200 or fewer words.
-		Network dependence, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear patterns. Unfortunately, without knowledge on metrics defined over network, no statistic has been proposed to test network dependence further beyond globally linear dependence. This paper introduces a multiscale dependence test statistic called Multiscale Network Test (\texttt{MNT}), which borrows the idea from diffusion maps and Multiscale Generalized Correlation (\texttt{MGC}). Our method can be applied to any exchangeable graph under some mild conditions, without further model assumption nor estimation. We prove the consistency of test statistic and demonstrate superior performance than any other model-based, global test statistics. Simulation in a variety of networks shows higher power of test, especially in stochastic block model under nonlinear dependency. The application to dMRI networks will be followed. 
+		Network dependence, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear patterns. Unfortunately, without knowledge on metrics defined over network, no statistic has been proposed to test network dependence further beyond globally linear dependence. This paper introduces a multiscale dependence test statistic called Multiscale Network Test (\texttt{MNT}), which borrows the idea from diffusion maps and Multiscale Generalized Correlation (\texttt{MGC}). Our method can be applied to any exchangeable graph under some mild conditions, without further model assumption nor estimation. We prove the consistency of test statistic and demonstrate superior performance than any other model-based, global test statistics. Simulation in a variety of networks shows outstanding performance of the proposed test, especially in stochastic block model under nonlinear dependency. The application to dMRI networks will be followed. 
 \end{abstract}
 	
 	\noindent%
@@ -143,19 +143,6 @@ Distance correlation (\texttt{dCorr}) is standardized version of a distance cova
 \end{equation}
 where $\tilde{C}$ and $\tilde{D}$ is a doubly-centered $C$ and $D$ respectively, by its column mean and row mean. Distance correlation $\mathcal{R}^{2}_{n}(\mathbf{X}, \mathbf{Y})$ is scaled by $\mathcal{V}^2_{n}(\mathbf{X}, \mathbf{X})$ and $\mathcal{V}^2_{n}(\mathbf{Y}, \mathbf{Y}).$
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=2in]{../Figure/C.png}
-	\includegraphics[width=2in]{../Figure/D.png}
-	\includegraphics[width=2in]{../Figure/CD.png}
-		
-	\includegraphics[width=2in]{../Figure/tildeCtrunc.png}
-	\includegraphics[width=2in]{../Figure/tildeDtrunc.png}
-	\includegraphics[width=2in]{../Figure/tildeCDtrunc.png}
-	\caption{(a) Top : Euclidean distance of diffusion maps at time $t=3$, $C$; Euclidean distance of $X$, $D$; element-wise product of $C$ and $D$. (b) Bottom : truncated double-centered  $\tilde{C}$ by $k^{*}$th nearest neighbor in $C$; truncated double-centered $\tilde{D}$ by $l^{*}$th nearest neighbor in $D$; element-wise product of two truncated matrices $\tilde{C}^{*}$ and $\tilde{D}^{*}$. }
-	\label{fig:MGCmatrices}
-\end{figure}	
-
 \begin{equation}	 
 \mathcal{R}_{n}^{2} (\mathbf{X}, \mathbf{Y}) = \frac{\mathcal{V}^2_{n} (\mathbf{X}, \mathbf{Y}) }{\sqrt{\mathcal{V}^2_{n} (\mathbf{X}, \mathbf{X}) \mathcal{V}^2_{n} (\mathbf{Y}, \mathbf{Y}) } }
 \end{equation}
@@ -177,7 +164,7 @@ where $r(C_{ij})$ ($r(D_{ij})$) denotes a rank $\mathbf{x}_{i}$ ($\mathbf{y}_{i}
 	\includegraphics[width=1.5in]{../Figure/Amat.png}
 	\includegraphics[width=1.5in]{../Figure/distA.png}
 	\includegraphics[width=1.5in]{../Figure/distX.png}
-	\caption{Population probability distribution and realized values of $A$ and $X$ (scaled by 1/3) in the left two panels. Euclidean distance applied to realized $A$ and $X$ are presented in the right two panels. Data generation follows Eq.~\ref{eq:Three}.}
+	\caption{Population probability distribution and realized values of $A$ and $X$ (scaled by 1/3) in the left two panels. Euclidean distance applied to realized $A$ and $X$ are presented in the right two panels. Data generation follows model~\ref{eq:Three}.}
 	\label{fig:matrics}
 \end{figure}	
 
@@ -594,6 +581,20 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 \end{itemize}
 
 \subsection{supplementary figures}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=2in]{../Figure/C.png}
+	\includegraphics[width=2in]{../Figure/D.png}
+	\includegraphics[width=2in]{../Figure/CD.png}
+	
+	\includegraphics[width=2in]{../Figure/tildeCtrunc.png}
+	\includegraphics[width=2in]{../Figure/tildeDtrunc.png}
+	\includegraphics[width=2in]{../Figure/tildeCDtrunc.png}
+	\caption{(a) Top : Euclidean distance of diffusion maps at time $t=3$, $C$; Euclidean distance of $X$, $D$; element-wise product of $C$ and $D$. (b) Bottom : truncated double-centered  $\tilde{C}$ by $k^{*}$th nearest neighbor in $C$; truncated double-centered $\tilde{D}$ by $l^{*}$th nearest neighbor in $D$; element-wise product of two truncated matrices $\tilde{C}^{*}$ and $\tilde{D}^{*}$. }
+	\label{fig:MGCmatrices}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
