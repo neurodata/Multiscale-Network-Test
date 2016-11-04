@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  30 OCT 2016 23:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  4 NOV 2016 14:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -469,156 +469,161 @@ Package pdftex.def Info: ../Figure/intro.pdf used on input line 36.
 <../Figure/C.png, id=5, 481.8pt x 481.8pt>
 File: ../Figure/C.png Graphic file (type png)
  <use ../Figure/C.png>
-Package pdftex.def Info: ../Figure/C.png used on input line 48.
+Package pdftex.def Info: ../Figure/C.png used on input line 44.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 <../Figure/D.png, id=7, 481.8pt x 481.8pt>
 File: ../Figure/D.png Graphic file (type png)
  <use ../Figure/D.png>
-Package pdftex.def Info: ../Figure/D.png used on input line 49.
+Package pdftex.def Info: ../Figure/D.png used on input line 45.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 <../Figure/CD.png, id=8, 481.8pt x 481.8pt>
 File: ../Figure/CD.png Graphic file (type png)
  <use ../Figure/CD.png>
-Package pdftex.def Info: ../Figure/CD.png used on input line 50.
+Package pdftex.def Info: ../Figure/CD.png used on input line 46.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 <../Figure/tildeCtrunc.png, id=9, 481.8pt x 481.8pt>
 File: ../Figure/tildeCtrunc.png Graphic file (type png)
 
 <use ../Figure/tildeCtrunc.png>
-Package pdftex.def Info: ../Figure/tildeCtrunc.png used on input line 52.
+Package pdftex.def Info: ../Figure/tildeCtrunc.png used on input line 48.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 <../Figure/tildeDtrunc.png, id=10, 481.8pt x 481.8pt>
 File: ../Figure/tildeDtrunc.png Graphic file (type png)
 
 <use ../Figure/tildeDtrunc.png>
-Package pdftex.def Info: ../Figure/tildeDtrunc.png used on input line 53.
+Package pdftex.def Info: ../Figure/tildeDtrunc.png used on input line 49.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 <../Figure/tildeCDtrunc.png, id=11, 481.8pt x 481.8pt>
 File: ../Figure/tildeCDtrunc.png Graphic file (type png)
 
 <use ../Figure/tildeCDtrunc.png>
-Package pdftex.def Info: ../Figure/tildeCDtrunc.png used on input line 54.
+Package pdftex.def Info: ../Figure/tildeCDtrunc.png used on input line 50.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
  [1
 Non-PDF special ignored!
 
 {/usr/local/texlive/2016basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <..
 /Figure/intro.pdf>]
-Overfull \hbox (27.21477pt too wide) in paragraph at lines 59--60
+Overfull \hbox (27.21477pt too wide) in paragraph at lines 54--55
 \OT1/cmr/m/n/12 As an ef-fi-cient distance-based test in ex-is-tence of non-lin
 -ear de-pen-dency and high-dimensionality,
  []
 
-<../Figure/pmat.png, id=30, 481.8pt x 481.8pt>
+<../Figure/pmat.png, id=28, 481.8pt x 481.8pt>
 File: ../Figure/pmat.png Graphic file (type png)
  <use ../Figure/pmat.png>
-Package pdftex.def Info: ../Figure/pmat.png used on input line 65.
+Package pdftex.def Info: ../Figure/pmat.png used on input line 60.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/Amat.png, id=31, 481.8pt x 481.8pt>
+<../Figure/Amat.png, id=29, 481.8pt x 481.8pt>
 File: ../Figure/Amat.png Graphic file (type png)
  <use ../Figure/Amat.png>
-Package pdftex.def Info: ../Figure/Amat.png used on input line 66.
+Package pdftex.def Info: ../Figure/Amat.png used on input line 61.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/distA.png, id=32, 481.8pt x 481.8pt>
+<../Figure/distA.png, id=30, 481.8pt x 481.8pt>
 File: ../Figure/distA.png Graphic file (type png)
  <use ../Figure/distA.png>
-Package pdftex.def Info: ../Figure/distA.png used on input line 67.
+Package pdftex.def Info: ../Figure/distA.png used on input line 62.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/distX.png, id=33, 481.8pt x 481.8pt>
+<../Figure/distX.png, id=31, 481.8pt x 481.8pt>
 File: ../Figure/distX.png Graphic file (type png)
  <use ../Figure/distX.png>
-Package pdftex.def Info: ../Figure/distX.png used on input line 68.
+Package pdftex.def Info: ../Figure/distX.png used on input line 63.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/Dx1.png, id=34, 481.8pt x 481.8pt>
+<../Figure/Dx1.png, id=32, 481.8pt x 481.8pt>
 File: ../Figure/Dx1.png Graphic file (type png)
  <use ../Figure/Dx1.png>
-Package pdftex.def Info: ../Figure/Dx1.png used on input line 79.
+Package pdftex.def Info: ../Figure/Dx1.png used on input line 73.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/Dx3.png, id=35, 481.8pt x 481.8pt>
+<../Figure/Dx3.png, id=33, 481.8pt x 481.8pt>
 File: ../Figure/Dx3.png Graphic file (type png)
  <use ../Figure/Dx3.png>
-Package pdftex.def Info: ../Figure/Dx3.png used on input line 80.
+Package pdftex.def Info: ../Figure/Dx3.png used on input line 74.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/Dx50.png, id=36, 481.8pt x 481.8pt>
+<../Figure/Dx50.png, id=34, 481.8pt x 481.8pt>
 File: ../Figure/Dx50.png Graphic file (type png)
  <use ../Figure/Dx50.png>
-Package pdftex.def Info: ../Figure/Dx50.png used on input line 81.
+Package pdftex.def Info: ../Figure/Dx50.png used on input line 75.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 [2 <../Figure/C.png> <../Figure/D.png> <../Figure/CD.png> <../Figure/tildeCtrun
 c.png> <../Figure/tildeDtrunc.png> <../Figure/tildeCDtrunc.png> <../Figure/pmat
 .png> <../Figure/Amat.png> <../Figure/distA.png> <../Figure/distX.png>]
-<../Figure/density.pdf, id=57, 2168.1pt x 578.16pt>
+<../Figure/density.pdf, id=53, 2168.1pt x 578.16pt>
 File: ../Figure/density.pdf Graphic file (type pdf)
 
 <use ../Figure/density.pdf>
-Package pdftex.def Info: ../Figure/density.pdf used on input line 92.
+Package pdftex.def Info: ../Figure/density.pdf used on input line 85.
 (pdftex.def)             Requested size: 433.62pt x 115.62994pt.
 
-<../Figure/twoSBM.pdf, id=58, 1300.86pt x 361.35pt>
+<../Figure/twoSBM.pdf, id=54, 1300.86pt x 361.35pt>
 File: ../Figure/twoSBM.pdf Graphic file (type pdf)
  <use ../Figure/twoSBM.pdf>
-Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 104.
+Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 96.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-[3 <../Figure/Dx1.png> <../Figure/Dx3.png> <../Figure/Dx50.png> <../Figure/dens
-ity.pdf>] <../Figure/ThreeSBM.pdf, id=77, 1300.86pt x 361.35pt>
+<../Figure/ThreeSBM.pdf, id=55, 1300.86pt x 361.35pt>
 File: ../Figure/ThreeSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/ThreeSBM.pdf>
-Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 116.
+Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 107.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
-
-<../Figure/powerplot.pdf, id=78, 1300.86pt x 361.35pt>
+ [3 <../Figure/Dx1.png> <../Figure/Dx3.png> <../Figure/Dx50.png> <../Figure/den
+sity.pdf> <../Figure/twoSBM.pdf>]
+<../Figure/powerplot.pdf, id=82, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot.pdf>
-Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 127.
+Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 117.
 (pdftex.def)             Requested size: 361.34999pt x 100.3723pt.
- [4 <../Figure/twoSBM.pdf> <../Figure/ThreeSBM.pdf>] <../Figure/dcSBM.pdf, id=1
-00, 1300.86pt x 361.35pt>
+
+<../Figure/dcSBM.pdf, id=83, 1300.86pt x 361.35pt>
 File: ../Figure/dcSBM.pdf Graphic file (type pdf)
-
-<use ../Figure/dcSBM.pdf>
-Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 138.
+ <use ../Figure/dcSBM.pdf>
+Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 127.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
- <../Figure/ame.pdf, id=101, 1300.86pt x 361.35pt>
+
+[4 <../Figure/ThreeSBM.pdf> <../Figure/powerplot.pdf> <../Figure/dcSBM.pdf>]
+<../Figure/ame.pdf, id=114, 1300.86pt x 361.35pt>
 File: ../Figure/ame.pdf Graphic file (type pdf)
-
-<use ../Figure/ame.pdf>
-Package pdftex.def Info: ../Figure/ame.pdf used on input line 151.
+ <use ../Figure/ame.pdf>
+Package pdftex.def Info: ../Figure/ame.pdf used on input line 139.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
- [5 <../Figure/powerplot.pdf> <../Figure/dcSBM.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
 
-[6 <../Figure/ame.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
+<../Figure/nodecontri.pdf, id=115, 794.97pt x 361.35pt>
+File: ../Figure/nodecontri.pdf Graphic file (type pdf)
+
+<use ../Figure/nodecontri.pdf>
+Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 150.
+(pdftex.def)             Requested size: 433.62pt x 197.10553pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 156.
+ [5 <../Figure/ame.pdf> <../Figure/nodecontri.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
  (./outline.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 156.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 156.
 Package rerunfilecheck Info: File `outline.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 156.
  ) 
 Here is how much of TeX's memory you used:
- 9625 strings out of 494447
- 143182 string characters out of 6166766
- 229309 words of memory out of 5000000
- 12792 multiletter control sequences out of 15000+600000
+ 9631 strings out of 494447
+ 143340 string characters out of 6166766
+ 227065 words of memory out of 5000000
+ 12797 multiletter control sequences out of 15000+600000
  14958 words of font info for 58 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 38i,7n,39p,590b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,6n,39p,319b,382s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
@@ -628,14 +633,13 @@ msfonts/cm/cmmi8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016basic/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2016basic/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on outline.pdf (6 pages, 365458 bytes).
+pe1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016basic/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2016basic/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on outline.pdf (5 pages, 349545 bytes).
 PDF statistics:
  183 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams
  28 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

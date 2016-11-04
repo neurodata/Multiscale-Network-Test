@@ -34,13 +34,9 @@ anchorcolor = blue]{hyperref}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=2in]{../Figure/intro.pdf}	
-	\caption{Physical location of one component of human brain network and its tracts that connect one vertex to another.}
 	\label{fig:intro}
 \end{figure}
-
 We introduce a concept of each node's location over their underlying network to bring up the problem of testing independence between distance in terms of network in distance-based test. 
-
-
 \subsection*{2. Multiscale Generalized Correlation}
 
 \begin{figure}[H]
@@ -52,7 +48,6 @@ We introduce a concept of each node's location over their underlying network to 
 	\includegraphics[width=1.5in]{../Figure/tildeCtrunc.png}
 	\includegraphics[width=1.5in]{../Figure/tildeDtrunc.png}
 	\includegraphics[width=1.5in]{../Figure/tildeCDtrunc.png}
-	\caption{(a) Top : Euclidean distance of diffusion maps at time $t=3$, $C$; Euclidean distance of $X$, $D$; element-wise product of $C$ and $D$. (b) Bottom : truncated double-centered  $\tilde{C}$ by $k^{*}$th nearest neighbor in $C$; truncated double-centered $\tilde{D}$ by $l^{*}$th nearest neighbor in $D$; element-wise product of two truncated matrices $\tilde{C}^{*}$ and $\tilde{D}^{*}$. }
 	\label{fig:MGCmatrices}
 \end{figure}	
 
@@ -66,7 +61,6 @@ As an efficient distance-based test in existence of nonlinear dependency and hig
 	\includegraphics[width=1.5in]{../Figure/Amat.png}
 	\includegraphics[width=1.5in]{../Figure/distA.png}
 	\includegraphics[width=1.5in]{../Figure/distX.png}
-	\caption{Population probability distribution and realized values of $A$ and $X$ (scaled by 1/3) in the left two panels. Euclidean distance applied to realized $A$ and $X$ are presented in the right two panels.}
 	\label{fig:matrics}
 \end{figure}	
   
@@ -79,7 +73,6 @@ Every information on edge distribution is denoted in an adjacency matrix so we c
 	\includegraphics[width=1.5in]{../Figure/Dx1.png}
 	\includegraphics[width=1.5in]{../Figure/Dx3.png}
 	\includegraphics[width=1.5in]{../Figure/Dx50.png}
-	\caption{Diffusion distance, i.e. Euclidean distance of diffusion maps at $t=1$, $t=3$  and $t=50$ of sample graph $G$ from Stochastic Block Model.}
 	\label{fig:diffusions}
 \end{figure}	
 
@@ -90,7 +83,6 @@ Out of concerns on theoretical and also practical shortcomings of using an adjac
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/density.pdf}
-	\caption{Statistics under null distribution and dependent distribution based on $M = 500$ independently generated SBM with three Blocks}
 	\label{fig:density}
 \end{figure}	
  
@@ -102,7 +94,6 @@ Out of concerns on theoretical and also practical shortcomings of using an adjac
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/twoSBM.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated two-block SBM using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 	\label{fig:twoSBM}
 \end{figure}
 
@@ -114,7 +105,6 @@ First simplest SBM with two blocks illustrates the typical case of linear-depend
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/ThreeSBM.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated three-block SBM using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 	\label{fig:Three}
 \end{figure}	
 
@@ -125,7 +115,6 @@ Next SBM is our punch line that \texttt{MGC} shows its superiority over other st
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=5in]{../Figure/powerplot.pdf}
-	\caption{Change of empirical power across $\theta$ in both local and global scale of distance correlation (left). Change of difference between these two powers in Oracle and Sample \texttt{MGC}. Superiority of optimal local scale become evident from $\theta > 0.2$, when distribution of edges have non-linear dependence on $X$.}
 	\label{fig:powerplot}
 \end{figure}
 
@@ -136,7 +125,6 @@ This plot deeps into when exactly our proposed tests exerts better performance; 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/dcSBM.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated degree-corrected SBM using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 	\label{fig:dcSBM}
 \end{figure}	
 
@@ -149,7 +137,6 @@ Since previous two SBMs might not demonstrate the real example, we introduce a S
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/ame.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated additive and multiplicative graph model using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 	\label{fig:ame}
 \end{figure}	
 
@@ -157,9 +144,13 @@ However it would be fair to include others' mode-based tests and we can still su
 
 \subsection*{11. Node Contribution}
 
-\textcolor{red}{Include one plot which shows validity of our measure of node-specific contribution to the tests.}
 
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{../Figure/nodecontri.pdf}
+	\caption{Change of empirical power and inclusion rate at each total sample size $n$. You can see that inclusion rate of $c(v)$ increases as empirical power of \texttt{MGC} increases.}
+	\label{fig:contribution}
+\end{figure}
 
 
 \end{document}

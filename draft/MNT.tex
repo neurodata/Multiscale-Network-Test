@@ -389,14 +389,15 @@ In the presence of nonlinear dependency or local (in)dependency, some nodes ofte
 Let $(k^{*}, l^{*})$ be the optimal neighborhood choice in distance matrix $(C, D)$.  Denote the contribution of node $v \in V(G)$ to the testing statistic by  $c(\cdot) : v \rightarrow \mathbb{R}$. 
 \begin{equation}
 \label{contribution}
-c(v) = \frac{1}{2 n^2} \sum\limits_{j=1}^{n} \left\{     \tilde{C}_{v j} \tilde{D}_{v j} I \big(  r (C_{v j}) \leq k^{*}  \big) I \big( r (D_{ v j }) \leq l^{*} \big) + \tilde{C}_{j v} \tilde{D}_{j v} I \big(  r (C_{j v}) \leq k^{*}  \big) I \big( r (D_{j v}) \leq l^{*} \big) \right\} 
+c(v) \propto \sum\limits_{j=1}^{n} \tilde{C}_{v j} \tilde{D}_{v j} I \big(  r (C_{v j}) \leq k^{*}  \big) I \big( r (D_{ v j }) \leq l^{*} \big) 
 \end{equation}
+which is $v^{th}$ column-sum of the test statistic~\ref{eq:MGC}. Since I\big( $r(C_{vj}) \leq k^{*}  \big)$ indicates we only include $j^{th}$ subject's $k^{*}$ nearest neighbor, and same arguments for $I\big( r(D_{vj}) \leq l^{*} \big)$, a node-specific attribution $c(v)$ does not take into account element-wise distance product beyond the optimal level of neighborhood.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulation Study}
 \label{sec:sim}
 	
-In simulation studies presented in this paper, we make a comparison between empirical testing power across various multivariate independence test statistics: \texttt{MGC}, \texttt{dCorr}(\texttt{mCorr}), Heller-Heller-Gorfine (\texttt{HHG}) \citep{heller2012consistent}, and likelihood ratio test of Fosdick and Hoff (\texttt{FH}). For computing statistical power, we used type I error $\alpha = 0.05$ and obtain p-values of each sample network via permutations. For fair comparison between these testing methods, we also present an additive model of latent factors, which is mostly targeted by \texttt{FH}.  All the simulation models are illustrated by joint distribution of adjacent matrix $\mathbf{A}$, nodal attributes $\mathbf{X}$, and latent variable $\mathbf{Z}$, which explains dependence structure between $\mathbf{A}$ and $\mathbf{X}$. 
+In simulation studies presented in this paper, we make a comparison between empirical testing power across various multivariate independence test statistics: \texttt{MGC}, \texttt{dCorr}(\texttt{mCorr}), Heller-Heller-Gorfine (\texttt{HHG}) \citep{heller2012consistent}, and likelihood ratio test of Fosdick and Hoff (\texttt{FH}). For computing statistical power, we used type I error $\alpha = 0.05$ and obtain p-values of each sample network via permutations. For fair comparison between these testing methods, we also present an additive model of latent factors, which \texttt{FH} mostly watch for. All the simulation models are illustrated by joint distribution of adjacent matrix $\mathbf{A}$, nodal attributes $\mathbf{X}$, and latent variable $\mathbf{Z}$, which explains dependence structure between $\mathbf{A}$ and $\mathbf{X}$. 
 \begin{equation}
 \begin{split}
 f(\mathbf{A}, \mathbf{X}, \mathbf{Z}) & = f_{A | Z}(\mathbf{A} | \mathbf{Z}) \cdot f_{Z | X}(\mathbf{Z} | \mathbf{X}) \cdot f_{X}(\mathbf{X}) 
@@ -404,20 +405,25 @@ f(\mathbf{A}, \mathbf{X}, \mathbf{Z}) & = f_{A | Z}(\mathbf{A} | \mathbf{Z}) \cd
 \end{split}
 \label{eq:joint_model}
 \end{equation}	
-According to the joint model in Eq.~\ref{eq:joint_model}, edge distribution and nodal attributes are correlated only through a node-specific latent variable $\mathbf{Z}$ no matter whether $\mathbf{X}$ is modeled via $\mathbf{Z}$ or vice versa. 
-
-For each simulated network, empirical power will be derived by comparing observed statistic to the empirical distribution under the null. One example of empirical distributions under both independence and dependence are shown in Figure~\ref{fig:density} where the vertical lines indicate 95$\%$ quantiles of the null.
+According to the joint model in Eq.~\ref{eq:joint_model}, edge distribution and nodal attributes are correlated only through a node-specific latent variable $\mathbf{Z}$ no matter whether $\mathbf{X}$ is modeled via $\mathbf{Z}$ or vice versa. For each simulated network, empirical power will be derived by comparing observed statistic to the empirical distribution under the null. One example of empirical distributions under both independence and dependence are shown in Figure~\ref{fig:density} where the vertical lines indicate 95$\%$ quantiles of the null.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/density.pdf}
-	\caption{Statistics under null distribution and dependent distribution based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:Three}}
+	\caption{Statistics under null distribution and dependent distribution based on $M = 500$ independently generated SBM presented in model~\ref{eq:Three}. Area under the curve (AUC) beyond 95 $\%$ quantiles of the null is equivalent to the empirical power.}
 	\label{fig:density}
 \end{figure}		
 						
 \subsection{Stochastic Block Model}
 
-We already mentioned that Stochastic Block Model (SBM) is one of the most popular and also useful network generative model, especially as a tool for community detection \citep{karrer2011stochastic}. We first present the simplest SBM with $K = 2$ blocks where block affiliation for each node is correlated with its attributes $X$. Let us introduce block affiliation (latent) variable $Z \in \{ 0, 1 \}$. We set if $Z_{i}  = Z_{j}$, $A_{ij} = 0.4$ and $A_{ij} = 0.1$  otherwise so that nodes in the same block are more likely to be adjacent than nodes having different value of $Z$. 
-For both cases, let $A_{ij} = A_{ji}$ and $A_{ii} = 0$, $i,j=1, \ldots n$. Figure~\ref{fig:twoSBM} and ~\ref{fig:Three} describe empirical power of \texttt{MGC}, \texttt{dCov}, and \texttt{HHG} based on diffusion distance, Euclidean distance of adjacent matrix and \texttt{FH}. In two block SBM, the performance of \texttt{MGC} is very similar to others while it is most superior in three block. This comparative advantage of \texttt{MGC} is attributed to its ability to capture non-linear dependence. Note that expectation of having edge between a pair of nodes is a monotonic function of (Euclidean) distance of their attributes in model~\ref{eq:twoSBM} but non-monotonic in model~\ref{eq:Three} as illustrate below. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=6in]{../Figure/twoSBM.pdf}
+	\includegraphics[width=6in]{../Figure/ThreeSBM.pdf}
+	\caption{Empirical power based on $M = 500$ independently generated SBM presented in model~\ref{eq:twoSBM} (top) and model~\ref{eq:Three} (bottom) using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
+	\label{fig:SBM}
+\end{figure}
+
+We already mentioned that Stochastic Block Model (SBM) is one of the most popular and also useful network generative model, especially as a tool for community detection \citep{karrer2011stochastic}. We present the SBM with $K = 2$ blocks (model~\ref{eq:twoSBM}) and $K=3$ blocks (model~\ref{eq:Three}) where block affiliation for each node is correlated with its attributes $X$. Figure~\ref{fig:SBM} describes empirical power of \texttt{MGC}, \texttt{dCov}, and \texttt{HHG} based on diffusion distance, Euclidean distance of adjacent matrix and Euclidean distance latent factors. In two block SBM, the performance of \texttt{MGC} is very similar to others while it is most outstanding in three block SBM. This comparative advantage of \texttt{MGC} is attributed to its ability to capture non-linear dependence. Note that expectation of having edge between a pair of nodes is a monotonic function of (Euclidean) distance of their attributes in model~\ref{eq:twoSBM} but non-monotonic in model~\ref{eq:Three} as formalized below. 
 \begin{equation}
 \begin{aligned}
 E(A_{ij} | X_{i}, X_{j}) &  =  0.6 I(|X_{i} - X_{j}| = 0) + 0.4 I(|X_{i} - X_{i}| = 1)  \\
@@ -425,22 +431,9 @@ E(A_{ij} | X_{i}, X_{j}) & = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| 
 \end{aligned}
 \end{equation}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=6in]{../Figure/twoSBM.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:twoSBM} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
-		\label{fig:twoSBM}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=6in]{../Figure/ThreeSBM.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:Three} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
-	\label{fig:Three}
-\end{figure}	
+Due to non-linear network dependence on attributes in the latter case, optimal neighborhood choice of $(k^{*}, l^{*})$ results in not global scale.  Figure~\ref{fig:ThreeSBM_power} in Appendix demonstrates that neighborhood choice of $(k,l)$ in \texttt{MGC} statistic achieves its optimal in local scale. Roughly speaking, considering a pair of nodes in the nearest neighbor, in term of attribute values of $X$, e.g. (1,2) or (2,3), exhibits most significant dependence. When you only take into account these subsets of observations, you can actually represent $E(A_{ij} | X_{i}, X_{j})$ as a monotonic function of $|X_{i} - X_{j}|$ (equivalently $\parallel \mathbf{X}_{i} - \mathbf{X}_{j} \parallel$ in multivariate case). On the other hand, if you keep linear dependence even in three block SBM, discrepancy between local and global scale of $(k,l)$ diminishes so thus global distance-based tests do as good as \texttt{MGC}, which you can find in \textbf{Three Block SBM 2} and Figure~\ref{fig:threeSBM}, Appendix~\ref{sec:appendix}.
 
-Due to non-linear network dependence on attributes in the latter case, optimal neighborhood choice of $(k^{*}, l^{*})$ results in not global scale.  Figure~\ref{fig:ThreeSBM_power} demonstrates that neighborhood choice of $(k,l)$ in \texttt{MGC} statistic achieves its optimal in local scale. Roughly speaking, considering a pair of nodes in the nearest neighbor, in term of attribute values of $X$, e.g. (1,2) or (2,3), exhibits most significant dependence. When you only take into account these subsets of observations, you can actually represent $E(A_{ij} | X_{i}, X_{j})$ as a monotonic function of $|X_{i} - X_{j}|$ (equivalently $\parallel \mathbf{X}_{i} - \mathbf{X}_{j} \parallel$ in multivariate case). On the other hand, even in the three block SBM, If you set every pair of nodes in different blocks to have the same propensity of having edges, discrepancy between local and global scale of $(k,l)$ diminishes, which you can find in \textbf{Three Block SBM 2}, Appendix~\ref{sec:appendix}.
-
- To demonstrate better performance of local optimal scaled \texttt{MGC} over global scale of \texttt{dCorr} or \texttt{mCorr}, we control the amount of \textit{non-linear dependency} through changing the value of $\theta \in (0, 1)$. When $\theta > 0.2$, linear dependency of edge distribution upon nodal attribute $X$ is lost.
+ To deep into studying performance of local optimal scaled \texttt{MGC} in the presence of both linear dependency and non-linear dependency, we control these two phases through changing the value of $\theta \in (0, 1)$. When $\theta > 0.2$, linear dependency of edge distribution upon nodal attribute $X$ is lost.
 \begin{equation}
 Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)
 \end{equation}
@@ -451,51 +444,47 @@ Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X
 	\caption{Change of empirical power across $\theta$ in both local and global scale of distance correlation (left). Change of difference between these two powers in Oracle and Sample \texttt{MGC}. Superiority of optimal local scale become evident from $\theta > 0.2$, when distribution of edges have non-linear dependence on $X$.}
 	\label{fig:powerplot}
 \end{figure}
-If you see Figure~\ref{fig:powerplot}, power of \texttt{dCorr} starts to drop from $\theta = 0.2$ while that of \texttt{MGC} almost stays clam, which implies \texttt{MGC} is significantly more sensitive to nonlinear dependency compared to \texttt{dCorr}.
+If you see Figure~\ref{fig:powerplot}, power of \texttt{dCorr} starts to drop from $\theta = 0.2$ while that of \texttt{MGC} almost stays clam, which implies \texttt{MGC} keeps its sensitivity even under nonlinear dependency compared to \texttt{dCorr}.
 
 \subsection{degree-corrected two block model}
 
-Under SBM, we assumed that all nodes within the same block have the same expected degree. However, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with hubs or highly varying node degrees within blocks or communities, which are common in practice. On the other hand, the Degree-Corrected Stochastic Block model (DCSBM) proposed by \cite{karrer2011stochastic} adds an additional set of parameter, often denoted by $\theta (>0)$, to control the node degrees. This model allows variation in node degrees within a block while preserving the overall block community structure. Consider two block SBM having same distribution of $X$ and $Z$ as model ~\ref{eq:twoSBM} but having different adjacency matrix with more variability induced by $\theta$.
+The SBM connotes that all nodes within the same block have the same expected degree. However, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with hubs or highly varying node degrees within blocks or communities. Instead, the Degree-Corrected Stochastic Block model (DCSBM) proposed by \cite{karrer2011stochastic} varies distribution of node degree within a block, preserving the overall block community structure. Consider two block SBM having more variability induced by $\theta$ (model~\ref{eq:dcSBM}).
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=6in]{../Figure/dcSBM.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:dcSBM} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
+	\caption{Empirical power based on $M = 500$ independently generated SBM presented in model~\ref{eq:dcSBM} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 		\label{fig:dcSBM}
 \end{figure}	
 
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=6in]{../Figure/dcSBM_density.pdf}
-	\caption{Empirical distribution of \texttt{Oracle MGC}(left), \texttt{Sample MGC}(middle) and p-values from \texttt{FH test} when $n=200$.}
-	\label{fig:dcSBM_density}
-\end{figure}
-
-
-As in the previous two block SBM, in this simulation scheme, we also observe monotonic edge distribution function of Euclidean distance. However its variance becomes inflated due to $\theta$ (model~\ref{eq:dcVariance}). If you see the testing results with Euclidean distance adjacency matrix in Figure~\ref{fig:dcSBM}, empirical power of \texttt{dCorr} or \texttt{HHG} shows far less than that of \texttt{MGC}. This might imply that multiscale statistic performs better than the other global ones even in the presence of variability of degree distribution. On the other hand, node-specific variable $\theta$ is captured by latent position estimation model \citep{fosdick2015testing} and \texttt{FH} test looks most sensitive in this case. 
-\begin{equation}
-\begin{aligned}
-E(A_{ij} | X_{i}, X_{j}) &  =  0.2 I(|X_{i} - X_{j}| = 0) + 0.05 I(|X_{i} - X_{i}| = 1) \\
-Var(A_{ij} | X_{i}, X_{j}) & = Var( Bern(0.2 \cdot \theta_{i} \theta_{j})) I(|X_{i} - X_{j}| = 0) +
-Var( Bern(0.05 \cdot \theta_{i} \theta_{j}) ) I( |X_{i} - X_{j}| = 1) \\
-& > Var(Bern(0.2)) I(|X_{i} - X_{j}| = 0) + Var(Bern(0.05)) I(|X_{i} - X_{j}| = 1).
-\end{aligned}
-\label{eq:dcVariance}
-\end{equation}	
+As in the previous two block SBM, in this simulation scheme, we also observe monotonic edge distribution function of Euclidean distance. However its variance becomes inflated due to $\theta$ (model~\ref{eq:dcVariance}). Relatively poor performance of an adjacency metric as presented in Figure~\ref{fig:dcSBM} can be attributed to large variability in it. Even in this case, multiscale statistic performs better than the other global ones. On the other hand, node-specific latent factors look more sensitive in \texttt{FH} model shown in the right panel, but still diffusion maps metrics work better.
 	
 \subsection{Additive and multiplicative graph model}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=7in]{../Figure/ame.pdf}
-	\caption{Empirical power based on $M = 500$ independently generated additive and multiplicative graph model presented in Eq.~\ref{eq:ame} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
+	\includegraphics[width=6in]{../Figure/ame.pdf}
+	\caption{Empirical power based on $M = 500$ independently generated additive and multiplicative graph model presented in model~\ref{eq:ame} using diffusion maps (left) and Euclidean of adjacency matrix (middle)  and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 		\label{fig:ame}
 \end{figure}
 
-\cite{hoff2002latent} proposed an approach of jointly modeling network and its attributes, where networks possess additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors. Whereas \cite{fosdick2015testing} embedded nodes into network factors assuming that additive an multiplicative network model is \textit{correct}, a family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship. Thus in the model~\ref{eq:ame}, where logit of $A$ is an additive and multiplicative function of $\{\mathbf{w} \}$, their estimated factors would be very close to the truth, much closer than embedding made from diffusion maps. However we rarely see the network which is fitted to the model in reality. If you see that your observed network actually fits to their model, using network factors as independent observations from graph $\mathbf{G}$ and applying them to \texttt{MGC} performs not very worse than \texttt{FH} statistic (Fig.~\ref{fig:ame}).
-Simply speaking, if network really fits well to additive and multiplicative model or we have basic knowledge about network model, then it becomes safe to use their node-specific additive factor $\{ a_{i} \}$ and multiplicative factor $\{ \mathbf{m}^{T}_{i} : \mathbf{m}_{i} \in \mathbb{R}^{k} \}$ in testing independence directly. Since they assume \textit{i.i.d} generative model for factors of each node, $\mathbf{F}_{i}$, i.e. $\mathbf{F}_{i} = \begin{pmatrix} a_{i} & \mathbf{m}^{T}_{i} \end{pmatrix} \overset{i.i.d}{\sim} MVNormal$, there is nothing wrong with applying \textit{MGC} using \textit{i.i.d} observations of $\{ \mathbf{F}_{i}, \mathbf{X}_{i} \}$.   
-	
+\cite{hoff2002latent} proposed an approach of jointly modeling network and its attributes, where networks possess additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors. Whereas \cite{fosdick2015testing} embedded nodes into network factors assuming that additive an multiplicative network model is \textit{correct}, a family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship. Thus in the model~\ref{eq:ame}, where logit of $A$ is an additive and multiplicative function of their estimated factors, estimated latent position would be very close to the truth, much closer than embedding made from diffusion maps. However we rarely see the network which is fitted to the model in reality. If we should, using network factors as independent observations from graph \textbf{G} and applying them to \texttt{MGC} performs not very worse than \texttt{FH} statistic (Figure~\ref{fig:ame}). In other words, if network really fits well to the network model with node-specific latent factors as covariates, then it would safe to use those factors in testing independence directly. Since they assume \textit{i.i.d} generative model for factors, there is nothing wrong with applying \texttt{MGC} using \textit{i.i.d} observations of estimated factors.
+
+\subsubsection{Node Contribution Test}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{../Figure/nodecontri.pdf}
+	\caption{Change of empirical power and inclusion rate at each total sample size $n$. You can see that inclusion rate of $c(v)$ increases as empirical power of \texttt{MGC} increases.}
+	\label{fig:contribution}
+\end{figure}
+To examine the effectiveness of node contribution measure in testing dependency as presented in Eq.~\ref{contribution}, we deliberately simulate the network and its nodal attributes as half of the nodes are independent while the other half are dependent on network (model~\ref{eq:contri}). As an ad hoc test of node contribution, we rank the nodes in terms of decreasing order of $c(v)$ and count the ratio of dependent samples's ranks within the number of dependent nodes. If it works perfectly, all dependent nodes would take higher rank than every independent node so thus the rate equals to one. We call this rate as \textit{inclusion rate}:
+\begin{equation}
+\mbox{ inclustion rate}\big(  c(v) \big) = \# \big\{  rank_{c(v)}\big(  u \big)  \leq  m  \big\}   /  m,
+\label{eq:inclusion_rate}
+\end{equation}
+where $m (\leq |V(G)|)$ is the number of nodes under network dependence. We set $m=n/2$ out of $|V(\mathbf{G})| = n$.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real Data Examples}
 \label{sec:real}
@@ -539,7 +528,6 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 \label{sec:appendix}
 
 \subsection{simulation schemes}
-
 \begin{itemize}	
 	\item \textbf{Two Block SBM}	
 	%\begin{equation}
@@ -548,7 +536,7 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 	\begin{aligned}
 	&	X_{i}  \overset{i.i.d}{\sim} f_{X}(x)  \stackrel{d}{=}  Bern(0.5), \quad   i = 1, \ldots , n \\ 
 	&	Z_{i} | X_{i}   \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}  Bern(0.6) I( x = 0 ) +   Bern(0.4) I (x = 1), \quad  i = 1,\ldots,n  \\
-	&	A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}  Bern(0.4) I ( |z_{i} - z_{j}| = 0 )  + Bern(0.1) I(|z_{i} - z_{j}| > 0) \\ & \quad \quad \quad i < j, i,j=1, \ldots n 
+	&	A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}  Bern(0.4) I ( |z_{i} - z_{j}| = 0 )  + Bern(0.1) I(|z_{i} - z_{j}| > 0) \\ & \quad \quad \quad i,j=1, \ldots n ; i < j.
 	\end{aligned}
 	\end{gathered}
 	\label{eq:twoSBM}
@@ -562,22 +550,32 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 	\begin{aligned}
 	&  X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Multi(1/3, 1/3, 1/3), i = 1, \ldots , n \\ 
 	&  Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Multi(0.5, 0.25, 0.25) I( x = 1 ) +   Multi(0.25, 0.5, 0.25) I (x = 2)  \qquad  \\ & \quad \quad + Multi(0.25, 0.25, 0.5)I(x = 3), \quad  i = 1,\ldots,n  \\
-	&  A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}  Bern(0.5) I ( |z_{i} - z_{j}| = 0 )  + Bern(0.2) I(|z_{i} - z_{j}| = 1) \\ & \quad \quad + Bern(0.3) I (|z_{i} - z_{j}| = 2),  \quad i < j, i,j=1, \ldots n 
+	&  A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}  Bern(0.5) I ( |z_{i} - z_{j}| = 0 )  + Bern(0.2) I(|z_{i} - z_{j}| = 1) \\ & \quad \quad + Bern(0.3) I (|z_{i} - z_{j}| = 2),  \quad i,j=1, \ldots n ; i < j.
 	\end{aligned}
 	\end{gathered}
+	\end{equation}
+	
+	\item \textbf{Three Block SBM 2}
+	\begin{equation}
+	\begin{gathered}
+	\begin{aligned}
+	& X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Multi(1/3, 1/3, 1/3), \quad i = 1, \ldots , n \\ & Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Multi(0.5, 0.25, 0.25) I( x = 1 ) +   Multi(0.25, 0.5, 0.25) I (x = 2)   \\ &  \quad \quad + Multi(0.25, 0.25, 0.5), \quad  i = 1,\ldots,n   \\
+	& A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j})  \stackrel{d}{=} Bern(0.5) I ( |z_{i} - z_{j}| = 0 ) \\  &  \quad \quad + Bern(0.2) I(|z_{i} - z_{j}| > 1) \quad i,j=1, \ldots n; i < j \\ & A_{ji} = A_{ij} ;   A_{ii} = 0,   \quad  i,j=1, \ldots n
+	\end{aligned}
+	\end{gathered}
+	\label{eq:simplethree}
 	\end{equation}
 	
 	\item \textbf{Degree-corrected SBM}
 	\begin{equation}
 	\label{eq:dcSBM}
 	\begin{gathered}
-	\begin{split}
-	\theta_{i} \overset{i.i.d}{\sim} Uniform(0,2), i = 1, \ldots, n \\ 
-	A_{ij} | \mathbf{Z}, \mathbf{\theta}   \overset{i.i.d}{\sim}   f_{A|Z, \theta}(a_{ij} | z_{i}, z_{j}, \theta_{i}, \theta_{j}) \stackrel{d}{=} & Bern(0.2 \cdot \theta_{i}\theta_{j}) I ( |z_{i} - z_{j}| = 0 )  \\ \quad \quad + Bern(0.05 \cdot \theta_{i} \theta_{j} ) I(|z_{i} - z_{j}| = 1) 
-	\end{split}
+	\begin{aligned}
+	& \theta_{i} \overset{i.i.d}{\sim} Uniform(0,2), i = 1, \ldots, n \\ 
+	& A_{ij} | \mathbf{Z}, \mathbf{\theta}   \overset{i.i.d}{\sim}   f_{A|Z, \theta}(a_{ij} | z_{i}, z_{j}, \theta_{i}, \theta_{j}) \stackrel{d}{=} Bern(0.2 \cdot \theta_{i}\theta_{j}) I ( |z_{i} - z_{j}| = 0 ) \\ & \quad \quad + Bern(0.05 \cdot \theta_{i} \theta_{j} ) I(|z_{i} - z_{j}| = 1), \quad i,j=1, \ldots, n; i < j. 
+	\end{aligned}
 	\end{gathered}
 	\end{equation}
-	
 
 \item \textbf{Additive and Multiplicative Graph Model}
 \begin{equation}
@@ -585,22 +583,13 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 	\begin{gathered}
 	\begin{aligned}
 	&	Z_{i} \overset{i.i.d}{\sim} f_{Z}(z) \stackrel{d}{=} Uniform[0,1]. \quad i = 1, \ldots, n \\ 
-	&	X_{i} | Z_{i} \overset{i.i.d}{\sim}  f_{Z|X}(z|x) \stackrel{d}{=}  Normal(Z_{i}, 1), \quad i= 1, \ldots, n \\
-	&	A_{ij} | Z_{i}, Z_{j} \overset{i.i.d}{\sim}  f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}   Bern \big(  ( 1 - z_{i})^2 \times (1 - z_{j})^2    \big), \quad i < j, i,j = 1, \ldots, n
+	&	X_{i} | Z_{i} \overset{i.i.d}{\sim}  f_{X|Z}(x|z) \stackrel{d}{=}  Normal(Z_{i}, 1), \quad i= 1, \ldots, n \\
+	&	A_{ij} | Z_{i}, Z_{j} \overset{i.i.d}{\sim}  f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}   Bern \big(  ( 1 - z_{i})^2 \times (1 - z_{j})^2    \big), \quad i,j = 1, \ldots, n; i < j.
 	\end{aligned}
 	\end{gathered}
 \end{equation}
 	
-\item \textbf{Three Block SBM 2}
-\begin{equation}
-\begin{gathered}
-\begin{aligned}
-& X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Multi(1/3, 1/3, 1/3), \quad i = 1, \ldots , n \\ & Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Multi(0.5, 0.25, 0.25) I( x = 1 ) +   Multi(0.25, 0.5, 0.25) I (x = 2)   \\ &  \quad \quad + Multi(0.25, 0.25, 0.5), \quad  i = 1,\ldots,n  \\
-& A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j})  \stackrel{d}{=} Bern(0.5) I ( |z_{i} - z_{j}| = 0 ) \\  &  \quad \quad + Bern(0.2) I(|z_{i} - z_{j}| > 1) \quad i < j, i,j=1, \ldots n \\ & A_{ji} = A_{ij} ;   A_{ii} = 0,   \quad  i,j=1, \ldots n
-\end{aligned}
-\end{gathered}
-\label{eq:simplethree}
-\end{equation}
+
 
 \end{itemize}
 
@@ -611,7 +600,7 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 	\includegraphics[width=2in]{../Figure/twoSBM_power1.png}
 	\includegraphics[width=2in]{../Figure/twoSBM_power5.png}
 	\includegraphics[width=2in]{../Figure/twoSBM_power10.png}
-	\caption{Empirical power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:twoSBM}}
+	\caption{Empirical power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated SBM presented in model~\ref{eq:twoSBM}}
 	\label{fig:twoSBM_power}
 \end{figure}
 \begin{figure}[H]
@@ -619,20 +608,16 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 	\includegraphics[width=2in]{../Figure/ThreeSBM_power1.png}
 	\includegraphics[width=2in]{../Figure/ThreeSBM_power5.png}
 	\includegraphics[width=2in]{../Figure/ThreeSBM_power10.png}
-	\caption{Empirical power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated SBM presented in Eq.~\ref{eq:Three}}
+	\caption{Empirical power heatmap at diffusion time point $t=1$(left), $t=5$(middle), and $t=10$(right) based on $M = 500$ independently generated SBM presented in model~\ref{eq:Three}}
 	\label{fig:ThreeSBM_power}
 \end{figure}
 
-
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=7in]{../Figure/simplethreeSBM.pdf}
+	\includegraphics[width=6in]{../Figure/simplethreeSBM.pdf}
 	\caption{Empirical power based on $M = 500$ of three SBM under linear dependence using diffusion maps (left), Euclidean of adjacency matrix (middle) and estimated latent position(right). The most right figure contains the results of \texttt{FH} test as well.}
 	\label{fig:threeSBM}
 \end{figure}
-
-
-
 
 %%%%%%%%
 \subsection{Node Contribution}
@@ -640,68 +625,38 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 \begin{equation}
 \begin{gathered}
 \begin{aligned}
-& X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Bern(0.5)  \quad i = 1, \ldots ,100, \ldots, 200 \\ & Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Bern(0.6) I(x = 0) + Bern(0.4) I(x=1), \quad  i = 1,\ldots,100, \ldots, 200  \\
-& A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j})  \stackrel{d}{=} \left\{  \begin{array}{cc} Bern(0.4) I(|z_{i} - z_{j}| = 0)  + Bern(0.1) I(|z_{i} - z_{j}| > 0) & i = 1,\ldots,100 \\   Bern(0.25)  & i=101, \ldots, 200  \end{array} \right.
+& X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Bern(0.5)  \quad i = 1, \ldots ,100, \ldots, 200 \\ & Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Bern(0.6) I(x = 0) + Bern(0.4) I(x=1), \quad  i = 1,\ldots,100, \ldots, n \\
+& A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j})  \\ & \quad  \quad \stackrel{d}{=} \left\{  \begin{array}{cc} Bern(0.4) I(|z_{i} - z_{j}| = 0)  + Bern(0.1) I(|z_{i} - z_{j}| > 0) & i = 1,\ldots,n/2 \\   Bern(0.25)  & i=1+n/2, \ldots, n  \end{array} \right.
 \end{aligned}
 \end{gathered}
 \label{eq:contri}
 \end{equation}
 
-
-\begin{equation}
-\mbox{ inclustion rate}\big(  g(v) \big) = \# \big\{  rank_{g(v)}\big(  u \big)  \leq  m  \big\}   /  m,
-\label{eq:inclustion_rate}
-\end{equation}
-where $m (\leq |V(G)|)$ is the number of nodes under network dependence. We have $m=100$ out of $|V(\mathbf{G})| = 200$.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=6in]{../Figure/binary_contribution.pdf}
-	\caption{Change of empirical power and inclusion rate at each diffusion time $t=1,\ldots, 5$. You can see that inclusion rate of $|c(v)|$ increases as empirical power of \texttt{MGC} increases.}
-	\label{fig:binary_contribution}
-\end{figure}
-
-
-
-
 %%%%%%%%%
 \subsection{Monotonicity and Power}
-
-
-\begin{equation}
-1. \quad Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.1 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)
-\end{equation}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/powerplot_mmono.pdf}
-	\caption{Change of empirical power across $\theta$ in both local and global scale of distance correlation (left). Change of difference between these two powers in Oracle and Sample \texttt{MGC}. Superiority of optimal local scale become evident from $\theta > 0.1$, when distribution of edges have non-linear dependence on $X$.}
+	\caption{Change of empirical power across $\theta$ in $Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.1 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta > 0.1$, when distribution of edges have non-linear dependence on $X$.}
 	\label{fig:powerplot_mmono}
 \end{figure}
-
-\begin{equation}
-2. \quad Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.2 I(|X_{i} - X_{j}| = 0) + 0.8 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)
-\end{equation}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/powerplot_mmmono.pdf}
-	\caption{Change of empirical power across $\theta$ in both local and global scale of distance correlation (left). Change of difference between these two powers in Oracle and Sample \texttt{MGC}. Superiority of optimal local scale become evident from $\theta < 0.8$, when distribution of edges have non-linear dependence on $X$.}
+	\caption{Change of empirical power across $\theta$ in $Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.2 I(|X_{i} - X_{j}| = 0) + 0.8 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta < 0.8$, when distribution of edges have non-linear dependence on $X$.}
 	\label{fig:powerplot_mmmono}
 \end{figure}
-
-\begin{equation}
-3. \quad Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.5 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)
-\end{equation}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/powerplot_monoton.pdf}
-	\caption{Change of empirical power across $\theta$ in both local and global scale of distance correlation (left). Change of difference between these two powers in Oracle and Sample \texttt{MGC}. Across all $\theta > 0$, we have linear dependency.}
+	\caption{Change of empirical power across $\theta$ in $Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.5 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. You can see that across $\theta (>0)$, \texttt{MGC} and global distance-based tests are very similar since we have linear-dependence for all range or $\theta$.}
 	\label{fig:powerplot_monoton}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
 \subsection{Algorithms}
 \alglanguage{pseudocode}
 
@@ -732,7 +687,7 @@ where $m (\leq |V(G)|)$ is the number of nodes under network dependence. We have
 
 %%%%%%%%%%%%%%%%%%%%
 \begin{algorithm}[H]
-	\caption{Multiscale Generalized Correlation (\texttt{MGC}) test statistics when diffusion maps are applied.}
+	\caption{Multiscale Generalized Correlation (\texttt{MGC}) test statistics with diffusion maps as a network-based distance.}
 	\begin{algorithmic}[1]
 		\Require A connected, undirected network $G$ with its nodal attributes $\mathbf{X}$.
 		\Ensure A list of \big(  (a) p-value of \texttt{sample MGC}, (b) estimated \texttt{sample MGC} statistic, (c) p-value map for all local correlations, (d) a set of estimated optimal neighborhood scales $\{  (k^{*}, l^{*}  ) \}$  \big) for each diffusion maps.
@@ -754,29 +709,25 @@ where $m (\leq |V(G)|)$ is the number of nodes under network dependence. We have
 	\end{algorithmic}
 \end{algorithm}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%
 \begin{algorithm}[H]
 	\caption{Node-specific contribution to detecting dependency via \texttt{MGC} statistic}
 	\begin{algorithmic}[1]
-		\Require Distance metric of $G$ and $X$ for each and (one of) the estimated optimal scales $\{ k^{*}, l^{*} \}$ 
-		\Ensure  Standardized contributions of each node in network $\{  c(v) \}$
+		\Require Distance metric of graph $G$, $C$, and attributes $X$, $D$, and (one of) the estimated optimal scales $\{ k^{*}, l^{*} \}$ 
+		\Ensure  unstandardized contributions of each node in network $\{  c(v) \}$
 		\Function{ \texttt{Contribution} }{   C, D , $\{  (k^{*}, l^{*}) \}$   }
 		\State $\tilde{C} : = \texttt{DoubleCentering}(C)$
 		\State $\tilde{D} := \texttt{DoubleCentering}(D)$
-		\State \texttt{Rank}($M_{i}$):= (rank of node $i$'s nearest neighbors in terms of distance matrix $M$)
-		\For{$v = 1$}{ $n$}
+		\State \texttt{Rank}($M_{ij}$):= (rank of node $j$ with respect to node $i$)
+		\For{$v = 1$}{ $|V(G)|$} \Comment{iterate over every each node}
 		\State $c(v) = 0$
 		\For{$j = 1$}{ $n$}
 		\Begin
-		\State $c(v) =  c(v) + \tilde{C}_{vj} \tilde{D}_{v j} I(  \texttt{Rank}(C_{v})  \leq k^{*}, \texttt{Rank}(D_{v}) \leq l^{*} )$
-		\State  $c(v) = c(v) + \tilde{C}_{jv} \tilde{D}_{jv} I(  \texttt{Rank}(C_{j}) \geq k^{*}, \texttt{Rank}(D_{j}) \leq l^{*} )$
+		\State $c(v) =  c(v) + \tilde{C}_{vj} \tilde{D}_{v j} I(  \texttt{Rank}(C_{vj})  \leq k^{*}, \texttt{Rank}(D_{vj}) \leq l^{*} )$
 		\End
 		\EndFor
-		\State $c(v) = c(v) / 2 n^2$
 		\EndFor
-		\State \texttt{cset} $:= \{ c(v) : v = 1,2, \ldots ,n  \}$
+		\State \texttt{cset} $:= \{ c(v) : v = 1,2, \ldots , |V(G)|  \}$	
 		
 		\Return  \texttt{cset}
 		\EndFunction
@@ -791,7 +742,7 @@ where $m (\leq |V(G)|)$ is the number of nodes under network dependence. We have
 	\label{finetti}
 	
 \bigskip			
-1. Let $X_{1}, X_{2}, ...$ be an infinite sequence of random variables with values in a space $\mathbf{X}$. The sequence $X_{1}, X_{2}, ...$ is exchangeable \textit{if and only if} there is a random probability measure $\eta$ on $\mathbf{X}$ such that the $X_{i}$ are conditionally i.i.d. given $\eta$. 
+1. Let $X_{1}, X_{2}, ...$ be an infinite sequence of random variables with values in a space of $\mathbf{X}$. The sequence $X_{1}, X_{2}, ...$ is exchangeable \textit{if and only if} there is a random probability measure $\eta$ on $\mathbf{X}$ such that the $X_{i}$ are conditionally i.i.d. given $\eta$. 
 		
 2. If the sequence is exchangeable, the empirical distributions
 		
@@ -805,9 +756,9 @@ $$\hat{S}_{n} ( . ) := \frac{1}{n} \sum\limits_{i=1}^{n} \delta_{X_{i}} ( .), n 
 		Let $\mathbf{A} = \{A_{ij}\}, 1 \leq i,j \leq \infty$ be a jointly exchangeable binary array if and only if there exists a random measurable function $f : [0,1]^{3} \rightarrow \mathbf{A}$ such that 
 		
 		\begin{equation}
-		\big(  A_{ij}  \big) \stackrel{d}{=} \left( f \big( U_{i}, U_{j}, U_{ij} \big)  \right)
+		\big(  A_{ij}  \big) \stackrel{d}{=} \left( f \big( U_{i}, U_{j}, U_{ij} \big)  \right),
 		\end{equation}
-		where $(U_{i})_{i \in \mathbb{N}}$ and $(U_{ij})_{i,j > i \in \mathbb{N}}$ with $U_{ij} = U_{ji}$ are a sequence and matrix, respectively, of i.i.d. Uniform[0,1] random variables. 
+		where $(U_{i})_{i \in \mathbb{N}}$ and $(U_{ij})_{i,j > i \in \mathbb{N}}$ with $U_{ij} = U_{ji}$ are a sequence and matrix, respectively, of \textit{i.i.d} Uniform[0,1] random variables. 
 \end{theorem}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
@@ -816,9 +767,9 @@ $$\hat{S}_{n} ( . ) := \frac{1}{n} \sum\limits_{i=1}^{n} \delta_{X_{i}} ( .), n 
 		
 	There is a random function $g : [0,1]^2 \rightarrow [0,1]$ such that 
 \begin{equation}
-(A_{ij})  \stackrel{d}{=} Bern( g(W_{i}, W_{j}))
+(A_{ij})  \stackrel{d}{=} Bern( g(W_{i}, W_{j})), \quad i,j=1,\ldots,n; i < j
 \end{equation}
-where $W_{i} \overset{i.i.d.}{\sim} Uniform(0,1)$. Thus if $\mathbf{A}$ is an adjacency matrix of an undirected, exchangeable network, for any $i < j,$ $i,j = 1,... , n$:
+where $W_{i} \overset{i.i.d.}{\sim} Uniform(0,1)$. Thus if $\mathbf{A}$ is an adjacency matrix of an undirected, exchangeable network, for any $i,j = 1,... , n; i < j$:
 \begin{equation}
 \begin{split}
 	P \big(  A_{ij} = a_{ij} \big) & = \int P \big( A_{ij} \big| w_{i}, w_{j} \big) Pr(W_{i} = w_{i}) Pr(W_{j} = w_{j}) dw_{i} dw_{j} \\ & = \int_{0}^{1} \int_{0}^{1} g( w_{i},  w_{j})^{a_{ij}} \big( 1- g( w_{i},  w_{j}) \big)^{1-a_{ij}} dw_{i} dw_{j} 
@@ -830,15 +781,15 @@ Then within each row, adjacent elements are independent and also identically dis
 \end{proof}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{proof}[\textbf{Spectral decomposition of diffusion distance}]
-Diffusion distance of $\mathbf{G}$ can be represented via a spectral decomposition of its transition matrix $P$~\citep{coifman2006diffusion,lafon2006diffusion}. Recall that diffusion distance at time $t$, $C_{t}$, is a functional $L^2$ distance, weighted by 1/$\pi$ in Eq.~\ref{eq:diffusion}. Since an adjacency matrix $A$ does not guarantee a symmetry of $P$, define a symmetric kernel $Q = \Pi^{1/2} P \Pi^{-1/2}$, where $\Pi$ is a $n \times n$ diagonal matrix of which $i$th diagonal element is $\pi(i)$. Under compactness of $P$, $Q$ has a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}_{r = \{1,2,...,q \}}$ and a set of their corresponding orthonormal eigenvectors $\{ \psi_{r} \}_{r = \{1,2,..., q \} },$ i.e. $Q[i,j] = \sum\limits_{r=1}^{q} \lambda_{r} \psi_{r}(i) \psi_{r}(j)$ ($1 \leq q \leq n$).  Return to transition probability between Node $i$ and Node $j$,
+\begin{proof}[\textbf{Proof of spectral decomposition of diffusion distance}]
+Diffusion distance of $\mathbf{G}$ can be represented via a spectral decomposition of its transition matrix $P$~\citep{coifman2006diffusion,lafon2006diffusion}. Recall that diffusion distance at time $t$, $C_{t}$, is a functional $L^2$ distance, weighted by 1/$\pi$ in Eq.~\ref{eq:diffusion}. Since an adjacency matrix $A$ does not guarantee a symmetry of $P$, define a symmetric kernel $Q = \Pi^{1/2} P \Pi^{-1/2}$, where $\Pi$ is a $n \times n$ diagonal matrix of which $i$th diagonal element is $\pi(i)$. Under compactness of $P$, $Q$ has a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}_{r = \{1,2,...,q \}}$ and a set of their corresponding orthonormal eigenvectors $\{ \psi_{r} \}_{r = \{1,2,..., q \} },$ i.e. $Q[i,j] = \sum\limits_{r=1}^{q} \lambda_{r} \psi_{r}(i) \psi_{r}(j)$ ($1 \leq q \leq n$). Returning to the transition probability between Node $i$ and Node $j$,
 
 \begin{equation}
 \begin{split}
 P[i,j] &  = \sqrt{\pi(j) / \pi(i) } Q[i,j] \\ &   = \sum\limits_{r=1}^{q} \lambda_{r} \big\{ \psi_{r}(i) / \sqrt{\pi(i)}  \big\} \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}  \\ & : = \sum\limits_{r=1}^{q} \lambda_{r} \phi_{r}(i) \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}
 \end{split}
 \end{equation}
-where $\phi_{r}(i) := \psi_{r}(i) / \sqrt{\pi(i)}$. Since $\sum\limits_{r=1}^{q} \psi^2_{r}(j) = 1$ for all $j \in \{1,2,...,n\}$, we can represent the diffusion distance as: 	
+where $\phi_{r}(i) := \psi_{r}(i) / \sqrt{\pi(i)}$. Since $\sum\limits_{r=1}^{q} \psi^2_{r}(j) = 1$ for all $j \in \{1,2,...,n\}$, we can represent the diffusion distance at time $t$ as: 	
 \begin{equation}
 \begin{split}
 C^2_{t}[i,j]  = \sum\limits_{r=1}^{n} \lambda^{2t}_{r} \big( \phi_{r} (i) - \phi_{r}(j)   \big)^2  
@@ -850,16 +801,15 @@ C_{t}[i,j] = \parallel \mathbf{U}_{t}(i) - \mathbf{U}_{t}(j) \parallel
 \end{equation}
 where 
 \begin{equation} 
-\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \ldots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{t} \in \mathbb{R}^{q}.
+\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \ldots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{T} \in \mathbb{R}^{q}.
 \end{equation}
 
 \end{proof}	
 	
 	
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{proof}[\textbf{Proof of Lemma~\ref{main_lemma}}]
-We have shown that for fixed time $t$, diffusion distance is defined as an Euclidean distance of diffusion maps. Diffusion map is represented as follows :
+We have shown that for fixed time $t$, diffusion distance is defined as an Euclidean distance of diffusion maps. Diffusion map at time $t$ is represented as follows :
 \begin{equation}
 	\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \cdots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}.
 \end{equation}
@@ -868,31 +818,27 @@ Thus $P \Pi^{-1/2} \Psi = \Pi^{-1/2} \Psi \Lambda$.
 Then for any $r$th row ($r \in \{1,2, ... , q \}$, $(q \leq n)$), we can see that $P \phi_{r} = \lambda_{r} \phi_{r}$  where $\phi_{r} = \begin{pmatrix}  \psi_{r}(1) / \sqrt{\pi(1)} &  \psi_{r}(2) /  \sqrt{\pi(2)} & \cdots & \psi_{r}(n) /  \sqrt{\pi(n)}  \end{pmatrix}$.
 Therefore to guarantee exchangeability (or \textit{i.i.d}) of $\mathbf{U}_{t}$, it suffices to show exchangeability (or \textit{i.i.d}) of $P$.
 
-Assume joint exchangeability of $\mathbf{G}$, i.e. $(A_{ij}) \stackrel{d}{=} \big( A_{\sigma(i) \sigma(j)} \big)$. 
-Since $A_{ij}$ is binary, $A_{ij} / \sum\limits_{ij} A_{ij} = A_{ij} /  (1 + \sum\limits_{l \neq j} A_{il})$. Moreover, $A_{ij}$ and $(1 + \sum\limits_{l \neq j} A_{il})$ are independent given its link function $g$, and $A_{\sigma(i) \sigma(j)}$ and $(1 + \sum\limits_{l \neq j} A_{\sigma(i) \sigma(l)})$ are independent also given $g$.
+Assume joint exchangeability of $\mathbf{G}$, i.e. $(A_{ij}) \stackrel{d}{=} \big( A_{\sigma(i) \sigma(j)} \big)$. Since $A_{ij}$ is binary, $A_{ij} / \sum\limits_{j} A_{ij} = A_{ij} /  (1 + \sum\limits_{l \neq j} A_{il})$. Moreover, $A_{ij}$ and $(1 + \sum\limits_{l \neq j} A_{il})$ are independent given its link function $g$, and $A_{\sigma(i) \sigma(j)}$ and $(1 + \sum\limits_{l \neq j} A_{\sigma(i) \sigma(l)})$ are independent also given $g$.
 Then the following joint exchangeability of transition probability holds for $i \neq j; i,j = 1,2, \ldots,n$:
 
 \begin{equation}
 \big( P_{ij} \big) = \left(  \frac{A_{ij}}{1 - A_{ij} + \sum\limits_{j=1}^{n} A_{ij} } \right)  \stackrel{d}{=} \left( \frac{A_{\sigma(i) \sigma(j)} }{1 - A_{\sigma(i) \sigma(j)} + \sum\limits_{\sigma(j) = 1}^{n} A_{\sigma(i) \sigma(j)} } \right) = \big( P_{\sigma(i) \sigma(j)} \big)
 \end{equation}
 		
-When $i = j$, $P_{ij} = P_{\sigma(i) \sigma(j)} = 0$ for $i=1,2, \ldots, n$.
-Thus, transition probability is also exchangeable. 
-This results exchangeable eigenfunctions $\{ \Phi(1), \Phi(2), , ... , \Phi(n) \}$ 
-where $\Phi(i) := \begin{pmatrix} \phi_{1}(i) & \phi_{2}(i) & \cdots & \phi_{q}(i) \end{pmatrix}^{T}$, $i=1,2, \ldots, n$. Thus diffusion maps at fixed $t$, $\mathbf{U}_{t} = \begin{pmatrix} \Lambda^{t} \Phi(1)  & \Lambda^{t} \Phi(2) & \cdots & \Lambda^{t} \Phi(n)  \end{pmatrix}$ are exchangeable.  Furthermore by \textit{de Finetti's Theorem}~\ref{finetti}, we can say that $\mathbf{U}(t) = \{ U^{(t)}_{1}, U^{(t)}_{2}, ... , U^{(t)}_{n} \}$ are conditionally independent on a random probability measure $\eta$. 
+When $i = j$, $P_{ij} = P_{\sigma(i) \sigma(j)} = 0$ for $i=1,2, \ldots, n$. Thus, transition probability is also exchangeable. This results exchangeable eigenfunctions $\{ \Phi(1), \Phi(2), , ... , \Phi(n) \}$ where $\Phi(i) := \begin{pmatrix} \phi_{1}(i) & \phi_{2}(i) & \cdots & \phi_{q}(i) \end{pmatrix}^{T}$, $i=1,2, \ldots, n$. Thus diffusion maps at fixed $t$, $\mathbf{U}_{t} = \begin{pmatrix} \Lambda^{t} \Phi(1)  & \Lambda^{t} \Phi(2) & \cdots & \Lambda^{t} \Phi(n)  \end{pmatrix}$ are exchangeable. Furthermore by \textit{de Finetti's Theorem}~\ref{finetti}, we can say that $\mathbf{U}(t) = \{ \mathbf{U}_{t}(1), \mathbf{U}_{t}(2), \ldots, \mathbf{U}_{t}(n)    \}$ are conditionally independent on their underlying distribution.
 \end{proof}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{proof}[\textbf{Proof of Lemma~\ref{lemma_graphex}}]
-	Based on Kallenberg and Exchangeable Graph (KEG) frameworks, introduced in \cite{veitch2015class}, a random array $(A_{ij})$ is jointly exchangeable \textit{if and only if} it can be represented as follows : there is a random function $g : \mathbb{R}^{2}_{+} \rightarrow [0,1]$ such that 
+	Based on Kallenberg and Exchangeable Graph (KEG) frameworks, introduced in \cite{veitch2015class}, a random array $(A_{ij})$ is jointly exchangeable in in terms of Poisson process \textit{if and only if} it can be represented as follows : there is a random function $g : \mathbb{R}^{2}_{+} \rightarrow [0,1]$ such that 
 	
 	\begin{equation}
-	(A_{ij})  \stackrel{d}{=} (A_{v_{i}, v_{j}} )  \stackrel{d}{=} Bern( g( \vartheta_{i}, \vartheta_{j}))
+	(A_{ij})  \stackrel{d}{=} (A_{v_{i}, v_{j}} )  \stackrel{d}{=} Bern( g( \vartheta_{i}, \vartheta_{j})), \quad i,j=1,\ldots,n ; i < j,
 	\end{equation}
-	where $v_{i} \overset{i.i.d.}{\sim} Poisson(1), \vartheta_{i} \overset{i.i.d.}{\sim} Poisson(1), v_{i} \leq \nu, i = 1,2,... , n$, for some pre-specified $\nu >0$ so that finite size graphs can include vertices only if they participate in at least one edges. Thus if $\mathbf{A}$ is an adjacency matrix of such undirected, exchangeable network, for any $i < j,$ $i,j = 1,... , n$:
+	where $v_{i} \overset{i.i.d.}{\sim} Poisson(1), \vartheta_{i} \overset{i.i.d.}{\sim} Poisson(1), v_{i} \leq \nu$, for some pre-specified $\nu >0$ so that finite size graphs can include nodes only if they participate in at least one edges. Thus if $\mathbf{A}$ is an adjacency matrix of such undirected, exchangeable network, for any $i,j = 1,... , n; i < j$:
 \begin{equation}
 \begin{split}
-	P \big(  A_{ij} = a_{ij} \big| V_{i}, V_{j} \big) & = \int P \big( A_{ij} \big| v_{i}, v_{j} \big) Pr(\vartheta_{i} = \vartheta_{i}) Pr(\vartheta_{j} = \vartheta_{j})   dv_{i} dv_{j} d\vartheta_{i} d\vartheta_{j}   \\ & = \int_{0}^{\tau} \int_{0}^{\tau}   \int_{0}^{\infty} \int_{0}^{\infty}  g( \vartheta_{i},  \vartheta_{j})^{a_{ij}} \big( 1- g( \vartheta_{i},  \vartheta_{j}) \big)^{1-a_{ij}}  \\ & \quad \times dPois_{1}(\vartheta_{i}) \times dPoi_{1}(\vartheta_{j})  d \vartheta_{i} d \vartheta_{j}.
+	P \big(  A_{ij} = a_{ij} \big| V_{i}, V_{j} \big) & = \int P \big( A_{ij} \big| v_{i}, v_{j} \big) f_{\vartheta} ( \vartheta_{i}) f_{\vartheta}(\vartheta_{j})   d\vartheta_{i} d\vartheta_{j}   \\ & = \int_{0}^{\nu} \int_{0}^{\nu}   g( \vartheta_{i},  \vartheta_{j})^{a_{ij}} \big( 1- g( \vartheta_{i},  \vartheta_{j}) \big)^{1-a_{ij}}  \cdot dPois_{1}(\vartheta_{i}) \cdot dPois_{1}(\vartheta_{j})  d \vartheta_{i} d \vartheta_{j}.
 \end{split}
 \end{equation}
 \end{proof}
@@ -904,7 +850,7 @@ Let $x, y, z \in V(G).$
 	
 \begin{equation}
 \begin{split}
-D^{2}_{t}(x,z) & = \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(z,w)   \big)^2 \frac{1}{\pi(w)}  \\ & = \sum\limits_{w \in V(G)} \big(P^{t}(x, w) - P^{t}(y,w) + P^{t}(y,w) - P^{t}(z,w) \big)^2 \frac{1}{\pi(w)} \\ & = \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w) \big)^2 \frac{1}{\pi(w)}  + \sum\limits_{w \in V(G)} \big( P^{t}(y,w) - P^{t}(z,w)  \big)^2 \frac{1}{\pi(w)} \\ & + 2 \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)} \\ &= D^{2}_{t}(x,y) + D^{2}_{t}(y,z) +  2 \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)}   
+D^{2}_{t}(x,z) & = \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(z,w)   \big)^2 \frac{1}{\pi(w)}  \\ & = \sum\limits_{w \in V(G)} \big(P^{t}(x, w) - P^{t}(y,w) + P^{t}(y,w) - P^{t}(z,w) \big)^2 \frac{1}{\pi(w)} \\ & = \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w) \big)^2 \frac{1}{\pi(w)}  + \sum\limits_{w \in V(G)} \big( P^{t}(y,w) - P^{t}(z,w)  \big)^2 \frac{1}{\pi(w)} \\ &  \quad \quad + 2 \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)} \\ &= D^{2}_{t}(x,y) + D^{2}_{t}(y,z) +  2 \sum\limits_{w \in V(G)} \big( P^{t}(x,w) - P^{t}(y,w)  \big) \big( P^{t}(y,w) - P^{t}(z,w)  \big)\frac{1}{\pi(w)}   
 \end{split}
 \end{equation}
 	
@@ -925,9 +871,8 @@ which is true by Cauchy-Schwarz inequality.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{proof}[\textbf{Proof of Lemma~\ref{lemma1}} Convergence of empirical characteristic function of exchangeable variables] 
 	
-This follows exactly the same as \textit{Theorem 1} in \cite{szekely2007measuring}. Note that this lemma always holds without any assumption on $\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$, e.g., it holds without assuming exchangeability, nor identically distributed, nor finite moments.
+This follows exactly the same as \textit{Theorem 1} in \cite{szekely2007measuring}. Note that this Lemma always holds without any assumption on $\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$, e.g., it holds without assuming exchangeability, nor identically distributed, nor finite second moments.
 \end{proof}
-
 
 \begin{proof}[\textbf{Proof of Lemma~\ref{lemma2}} Empirical characteristic function of exchangeable variables] 
 \bigskip	
@@ -961,7 +906,6 @@ From the same setting of network $\mathbf{G}$, we have estimated \textit{i.i.d} 
 \bibliography{Biblio}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-\newpage
 \bigskip
 \begin{center}
 	{\large\bf SUPPLEMENTARY MATERIAL}
