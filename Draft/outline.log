@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  4 NOV 2016 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  7 NOV 2016 14:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,47 +535,71 @@ File: ../Figure/ThreeSBM.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 82.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/powerplot.pdf, id=57, 1300.86pt x 361.35pt>
+<../Figure/ThreeSBM_stat1.png, id=57, 481.8pt x 481.8pt>
+File: ../Figure/ThreeSBM_stat1.png Graphic file (type png)
+
+<use ../Figure/ThreeSBM_stat1.png>
+Package pdftex.def Info: ../Figure/ThreeSBM_stat1.png used on input line 90.
+(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
+
+<../Figure/ThreeSBM_stat5.png, id=58, 481.8pt x 481.8pt>
+File: ../Figure/ThreeSBM_stat5.png Graphic file (type png)
+
+<use ../Figure/ThreeSBM_stat5.png>
+Package pdftex.def Info: ../Figure/ThreeSBM_stat5.png used on input line 91.
+(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
+
+<../Figure/ThreeSBM_stat10.png, id=59, 481.8pt x 481.8pt>
+File: ../Figure/ThreeSBM_stat10.png Graphic file (type png)
+
+<use ../Figure/ThreeSBM_stat10.png>
+Package pdftex.def Info: ../Figure/ThreeSBM_stat10.png used on input line 92.
+(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
+ [3 <../Figure/twoSBM.pdf> <../Figure/ThreeSBM.pdf>] <../Figure/powerplot.pdf, 
+id=79, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot.pdf>
-Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 91.
-(pdftex.def)             Requested size: 361.34999pt x 100.3723pt.
- [3 <../Figure/twoSBM.pdf> <../Figure/ThreeSBM.pdf>] <../Figure/dcSBM.pdf, id=7
-7, 1300.86pt x 361.35pt>
+Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 103.
+(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
+
+<../Figure/dcSBM.pdf, id=80, 1300.86pt x 361.35pt>
 File: ../Figure/dcSBM.pdf Graphic file (type pdf)
-
-<use ../Figure/dcSBM.pdf>
-Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 101.
+ <use ../Figure/dcSBM.pdf>
+Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 113.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
- <../Figure/ame.pdf, id=78, 1300.86pt x 361.35pt>
+
+[4 <../Figure/ThreeSBM_stat1.png> <../Figure/ThreeSBM_stat5.png> <../Figure/Thr
+eeSBM_stat10.png> <../Figure/powerplot.pdf>]
+<../Figure/ame.pdf, id=99, 1300.86pt x 361.35pt>
 File: ../Figure/ame.pdf Graphic file (type pdf)
-
-<use ../Figure/ame.pdf>
-Package pdftex.def Info: ../Figure/ame.pdf used on input line 112.
+ <use ../Figure/ame.pdf>
+Package pdftex.def Info: ../Figure/ame.pdf used on input line 124.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
- [4 <../Figure/powerplot.pdf> <../Figure/dcSBM.pdf>]
-<../Figure/nodecontri.pdf, id=99, 794.97pt x 361.35pt>
+
+<../Figure/nodecontri.pdf, id=100, 794.97pt x 361.35pt>
 File: ../Figure/nodecontri.pdf Graphic file (type pdf)
 
 <use ../Figure/nodecontri.pdf>
-Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 122.
+Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 134.
 (pdftex.def)             Requested size: 433.62pt x 197.10553pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
- [5 <../Figure/ame.pdf> <../Figure/nodecontri.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
+ [5 <../Figure/dcSBM.pdf> <../Figure/ame.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
+
+[6 <../Figure/nodecontri.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
  (./outline.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 129.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 129.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
 Package rerunfilecheck Info: File `outline.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 129.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
- 9577 strings out of 494447
- 142354 string characters out of 6166766
- 226638 words of memory out of 5000000
- 12757 multiletter control sequences out of 15000+600000
+ 9596 strings out of 494447
+ 142859 string characters out of 6166766
+ 226726 words of memory out of 5000000
+ 12770 multiletter control sequences out of 15000+600000
  12006 words of font info for 47 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  38i,6n,38p,636b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -585,12 +609,13 @@ mmi12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr17.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmtt12.pfb>
-Output written on outline.pdf (5 pages, 231192 bytes).
+/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmtt12.pfb>
+Output written on outline.pdf (6 pages, 308643 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 167 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

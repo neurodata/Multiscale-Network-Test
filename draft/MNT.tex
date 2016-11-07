@@ -102,7 +102,7 @@ anchorcolor = blue]{hyperref}
 \bigskip
 \begin{abstract}
 	%The text of your abstract. 200 or fewer words.
-		Network dependence, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear patterns. Unfortunately, without knowledge on metrics defined over network, no statistic has been proposed to test network dependence further beyond globally linear dependence. This paper introduces a multiscale dependence test statistic called Multiscale Network Test (\texttt{MNT}), which borrows the idea from diffusion maps and Multiscale Generalized Correlation (\texttt{MGC}). Our method can be applied to any exchangeable graph under some mild conditions, without further model assumption nor estimation. We prove the consistency of test statistic and demonstrate superior performance than any other model-based, global test statistics. Simulation in a variety of networks shows outstanding performance of the proposed test, especially in stochastic block model under nonlinear dependency. The application to dMRI networks will be followed. 
+		Network dependence, which refers to the dependence between network topology and its nodal attributes, often exhibits nonlinear patterns. Unfortunately, without knowledge on metrics defined over network, no statistic has been proposed to test network dependence further beyond globally linear dependence. This paper introduces a multiscale dependence test statistic called Multiscale Network Test (\texttt{MNT}), which borrows the idea from diffusion maps and Multiscale Generalized Correlation (\texttt{MGC}). Our method can be applied to any exchangeable graph under some mild conditions, without further model assumption nor estimation. We prove the consistency of test statistic and demonstrate superior performance than any other model-based, global test statistics. Simulation in a variety of networks shows outstanding performance of the proposed test, especially in stochastic block model under nonlinear dependency. The application to (?) networks will be followed. 
 \end{abstract}
 	
 	\noindent%
@@ -123,7 +123,7 @@ Network, a collection of nodes and edges between them, has been a celebrated are
 	\label{fig:intro}
 \end{figure}
 
-Throughout this paper, assume that we are given an unweighted and undirected, connected network, equivalently a graph $\mathbf{G}$ without self-loop, comprised of$n (\in \mathbb{N})$ nodes. Even though we assume that $\mathbf{G}$ is undirected and unweighted, we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of a given network, denoted by $\mathbf{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize the relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\mathbf{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\mathbf{G}$ and $\mathbf{X}$, i.e. testing whether their distributions are independent or not is a key focus in our study. An observed network $\mathbf{G}$ can represent social network within a school and $\mathbf{X}$ is students' grades or heights, for example; or $\mathbf{G}$ can be a neuronal network in human brain and $\mathbf{X}$ is a few factors of personality. For example, Figure~\ref{fig:intro} exemplifies one connected network from human brain where dots denote nodes and tracts connected them represent edges. Location over network space, i.e. whether or how much a pair of nodes are closer than the others, is different from actual spatial location, which can be measured by Euclidean distance over three-dimensional $xyz$ space. As correlation between spatial location of subjects and its attributes has been studied, we are going to explore correlation of subjects' attributes to their network location. 
+Throughout this paper, assume that we are given an unweighted and undirected, connected network, equivalently a graph $\mathbf{G}$ without self-loop, comprised of $n (\in \mathbb{N})$ nodes. Even though we assume that $\mathbf{G}$ is undirected and unweighted, we are able to extend all of the theory here to directed and even weighted network. An adjacency matrix of this given network, denoted by $\mathbf{A} = \{A_{ij} : i,j= 1,..,n \}$, is often introduced to formalize the relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us introduce a $m$-variate ($m \in \mathbb{N}$) variable for nodal attributes $\mathbf{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\mathbf{G}$ and $\mathbf{X}$, i.e. testing whether their distributions are independent or not is a key focus in our study. An observed network $\mathbf{G}$ can represent social network of students within a school and $\mathbf{X}$ is student-specific grades or heights, for example; or $\mathbf{G}$ can be a neuronal network in human brain and $\mathbf{X}$ is a few factors of personality. For example, Figure~\ref{fig:intro} exemplifies one connected network from human brain where dots denote nodes and tracts connected them represent edges. Location over network space, i.e. whether or how much a pair of nodes are closer than the others, is different from actual spatial location, which can be measured by Euclidean distance over three-dimensional $xyz$ space. As correlation between spatial location of subjects and its attributes has been studied, we are going to explore correlation of subjects' attributes to their network location. 
 	
 The main contribution of this study is to develop multiscale test statistics for network independence which are robust to both nonlinearity and high dimensionality without modeling nor estimating networks. Having multiscale statistics is not avoidable because we regard location of or distance between nodes over network as a dynamic process. We then choose the optimal scale where distance in network space and distance in attributes maximize their correlation. To parse into this time-dependent distances, we construct a coordinate over network space and test independence to attributes $\mathbf{X}$ at each time in the process. In the next methodology section~\ref{sec:method}, we are going to introduce a test statistic using multiscale distance metrics which inherit desirable properties. In section~\ref{sec:sim}, numerical results demonstrate the best performance of our method compared to the existing under various circumstances. Real data example in section~\ref{sec:real} show one of the applications among many.  
 	
@@ -216,7 +216,7 @@ Let $\mathbf{G} = \big(  V, E \big)$ be a graph and $|V|$ and $|E|$ denote the n
 \frac{\sqrt{|E|}}{|V|} \xrightarrow{p} 0 \quad \mbox{as} \quad n \rightarrow \infty.
 \end{equation}
 \end{definition}
-Our exchangeable graph often fails to represent real network data where sparsity or scale-free distribution is fairly common. Thus, in addition to graphon, we introduce a concept of \textit{graphex}, first proposed by \cite{veitch2015class}, which is more generalized version of graphon and also includes sparse exchangeable graphs \citep{caron2014sparse}.  \cite{caron2014sparse} suggested formalizing a network as point process over $\mathbb{R}^2_{+}$ on the basis of \textit{Kallengerg Representation Theorem} \citep{kallenberg1990exchangeable}. As we were able to conditionally represent $\{ A_{ij} \}$ through random transformation of \textit{i.i.d} uniform variables, jointly exchangeable point processing network also can be formalized via a random function of \textit{i.i.d} unit rate Poisson process and of \textit{i.i.d} uniform variables. 
+ Exchangeable graph defined commonly often fails to represent real network data where sparsity or scale-free distribution is fairly common. Thus, in addition to graphon, we introduce a concept of \textit{graphex}, first proposed by \cite{veitch2015class}, which is more generalized version of graphon and also includes sparse exchangeable graphs \citep{caron2014sparse}.  \cite{caron2014sparse} suggested formalizing a network as point process over $\mathbb{R}^2_{+}$ on the basis of \textit{Kallengerg Representation Theorem} \citep{kallenberg1990exchangeable}. As we were able to conditionally represent $\{ A_{ij} \}$ through random transformation of \textit{i.i.d} uniform variables, jointly exchangeable point processing network also can be formalized via a random function of \textit{i.i.d} unit rate Poisson process and of \textit{i.i.d} uniform variables. 
 To be specific, undirected graph on a point process on $\mathbb{R}^2_{+}$ can be thought of 
 \begin{equation}
 \mathbf{A} = \sum\limits_{i,j} A_{ij} \delta_{( \theta_{i}, \theta_{j})} 
@@ -263,7 +263,7 @@ As diffusion time $t$ increases, distance matrix $C_{t}$ is more likely to take 
 	\includegraphics[width=1.7in]{../Figure/Dx1.png}
 	\includegraphics[width=1.7in]{../Figure/Dx3.png}
 	\includegraphics[width=1.7in]{../Figure/Dx50.png}
-	\caption{Diffusion distance, i.e. Euclidean distance of diffusion maps at $t=1$, $t=3$  and $t=50$ of sample graph $G$ from Stochastic Block Model provided in simulation (Eq.~\ref{eq:Three}).}
+	\caption{Diffusion distance, i.e. Euclidean distance of diffusion maps at $t=1$, $t=3$  and $t=50$ of sample graph $G$ from Stochastic Block Model provided in simulation (model~\ref{eq:Three}).}
 	\label{fig:diffusions}
 \end{figure}
 
@@ -304,7 +304,7 @@ We have discussed embedding a vertex $v \in V(\mathbf{G})$ of exchangeable graph
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{One parameter family of test statistic}
 
-If exchangeable observations are applicable to distance-based test statistics, e.g. \texttt{MGC}, we are almost able to dispense with obstacles in testing network independence.  Assume that we have a finite sample of infinitely exchangeable sequence $(\mathbf{X}, \mathbf{Y}) = \{ ( \mathbf{x}_{i}, \mathbf{y}_{i} ) : i=1,2, \ldots, n \}$, which is identically distributed as $(\mathbf{x}, \mathbf{y})$ with finite second moment. Then, by the properties of exchangeable sequences, there exist some random measure $\theta$ and $P$ such that : 
+If exchangeable observations are applicable to distance-based test statistics, e.g. \texttt{MGC}, we are almost able to dispense with obstacles in testing network independence.  Assume that we have a finite sample of infinitely exchangeable sequence $(\mathbf{X}, \mathbf{Y}) = \{ ( \mathbf{x}_{i}, \mathbf{y}_{i} ) : i=1,2, \ldots, n \}$, which is identically distributed as $(\mathbf{x}, \mathbf{y})$ with finite second moment. Then, by the properties of exchangeable sequences, there exist some random measure $\theta$ and its probability measure $P$ such that : 
 \begin{equation}
 \begin{split}
 & x_{i} | \theta  \overset{i.i.d}{\sim} \prod\limits_{i=1}^{n} f_{\mathbf{x}_{i} | \theta}(\mathbf{x}_{i} | \theta)  \\
@@ -313,7 +313,7 @@ If exchangeable observations are applicable to distance-based test statistics, e
 \end{split}
 \label{eq:iid}
 \end{equation}
-where $f$ is a random, marginal distribution integrated over $\theta$; same arguments hold for exchangeable $\{ \mathbf{y}_{i}  \}$.
+where $f$ is a random, marginal distribution integrated over $\theta$; same arguments hold for exchangeable $\{ \mathbf{y}_{i}  \}$. The following two Lemmas serve as the foundation for using exchangeable observations in \texttt{MGC}.
 
 \begin{lemma}
 	\label{lemma1}
@@ -392,7 +392,7 @@ f(\mathbf{A}, \mathbf{X}, \mathbf{Z}) & = f_{A | Z}(\mathbf{A} | \mathbf{Z}) \cd
 \end{split}
 \label{eq:joint_model}
 \end{equation}	
-According to the joint model in Eq.~\ref{eq:joint_model}, edge distribution and nodal attributes are correlated only through a node-specific latent variable $\mathbf{Z}$ no matter whether $\mathbf{X}$ is modeled via $\mathbf{Z}$ or vice versa. For each simulated network, empirical power will be derived by comparing observed statistic to the empirical distribution under the null. One example of empirical distributions under both independence and dependence are shown in Figure~\ref{fig:density} where the vertical lines indicate 95$\%$ quantiles of the null.
+According to the joint model~\ref{eq:joint_model}, edge distribution and nodal attributes are correlated only through a node-specific latent variable $\mathbf{Z}$ no matter whether $\mathbf{X}$ is modeled via $\mathbf{Z}$ or vice versa. For each simulated network, empirical power will be derived by comparing observed statistic to the empirical distribution under the null. One example of empirical distributions under both independence and dependence are shown in Figure~\ref{fig:density} where the vertical lines indicate 95$\%$ quantiles of the null.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/density.pdf}
@@ -476,35 +476,27 @@ where $m (\leq |V(G)|)$ is the number of nodes under network dependence. We set 
 \section{Real Data Examples}
 \label{sec:real}
 	
-\subsection{MRI}
+Connected, undirected graph with $n=148$ nodes.	
+$\mathbf{X}$ is three dimensional and very sparse (: only 10 out of 148 subjects takes one in at least one $\mathbf{X} = (X_{1}, X_{2}, X_{3} )$.)
 	
-\textcolor{red}{needs contexts}	
-	
-We look into one of the connected components with $n = 95$ nodes of whole disconnected network. 
-	
-$\{ \mathbf{U}_{t} \in \mathbb{R}^{95} \}_{t \in \mathbb{N}}$ $\mathbf{X} = (x,y,z) \in \mathbb{R}^{3}$
-	
-It turns out that $q=95$, i.e. full rank of transition matrix. In other words we are testing independence between 95-dimensional diffusion maps and 3-dimensional nodal attributes at each $t \in \mathbb{N}$.
-	
-	
-test independence between brain network and its 3-dimensional locations; test independence between functional location and physical location. 
-	
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=6in]{../Figure/fbemployer.pdf}
+\end{figure}	
+
+
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=1.5in]{../Figure/brain1_x.pdf}
-		\includegraphics[width=1.5in]{../Figure/brain1_y.pdf}
-		\includegraphics[width=1.5in]{../Figure/brain1_z.pdf}
-		\includegraphics[width=1.5in]{../Figure/brain1_weight.pdf}
-	\caption{Subnetwork of MRI network. Darker colored nodes indicate higher positioned node in terms of $x$-axis(left), $y$-axis(middle), and $z$-axis(right).}
-		\label{fig:mri}
+	\includegraphics[width=2in]{../Figure/fbemployer_pval1.png}
+	\includegraphics[width=2in]{../Figure/fbemployer_pval2.png}
+	\includegraphics[width=2in]{../Figure/fbemployer_pval10.png}
 \end{figure}
-	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussions}
 \label{sec:discussion}
 	
-Throughout this study, we demonstrate that multiscale network test statistic to test  independence between network topology and its nodal attributes performs well in diverse settings, being supported by thorough theory on distance correlation and diffusion maps. These two tools are both specialized in detecting local and nonlinear dependence patterns, which other existing methods are lack of. However, testing independence is often the very first step in investigating relationship between network topology and nodal attributes in our interest. It is more likely that we want to know more than binary decision of rejecting or not rejecting the hypothesis. Multiscale test statistics attributed to both neighborhood choice $\{ (k,l)  \}$ and time spent in diffusion processes $\{ t \}$ provides us a hint on latent dependence structure as well. On the other hand, due to the ambiguousness of saying \textit{optimal}, our work has some limitations; we do not suggest any theoretically supported tools to select the \textit{optimal} time to obtain p-values of test statistics. Future research can be focused on restoring true dependence pattern or estimating \textit{optimal} scale from a family of statistics. In addition, obtaining a full family of statistics are also computationally infeasible; at every Markov process, we chose the optimal region of neighborhood. As an ad hoc, we selected optimal $t$ with highest power or lowest p-values from 1 to 10 for our simulation~\ref{sec:sim}.  
+Throughout this study, we demonstrate that multiscale network test statistic to test  independence between network topology and its nodal attributes performs well in diverse settings, being supported by thorough theory on distance correlation and diffusion maps. These two tools are both specialized in detecting local and nonlinear dependence patterns, which other existing methods are lack of. In addition, even though we only presented univariate nodal attribute variable in simulation for simplicity in interpretation, \texttt{MGC}, \texttt{dCorr} (\texttt{mcorr}), \texttt{hhg} and \texttt{FH} test also works for test independence between multivariate network metrics and multivariate nodal attributes, and actually those tests aim at multivariate test. On the other hand, testing independence is often the very first step in investigating relationship between network topology and nodal attributes in our interest. It is more likely that we want to know more than binary decision of rejecting or not rejecting the hypothesis. Multiscale test statistics attributed to both neighborhood choice $\{ (k,l)  \}$ and time spent in diffusion processes $\{ t \}$ provides us a hint on latent dependence structure as well. On the other hand, due to the ambiguousness of saying \textit{optimal}, our work has some limitations; we do not suggest any theoretically supported tools to select the \textit{optimal} time to obtain p-values of test statistics. Future research can be focused on restoring true dependence pattern or estimating \textit{optimal} scale from a family of statistics. In addition, obtaining a full family of statistics are also computationally infeasible; at every Markov process, we chose the optimal region of neighborhood. As an ad hoc, we selected optimal $t$ with highest power or lowest p-values from 1 to 10 for our simulation~\ref{sec:sim}.  
 Despite a few shortcomings, multiscale version of test would be very useful when indirect networking through diffusion process is not ignorable or cluster membership significantly affects attributes. Furthermore even though we specifically constraint the statistic into testing independence between network and nodal attributes, we are able to implement independence testing of two networks with same size by inputting diffusion distance at each time point from each of network in Eq.~\ref{eq:MGC}. This type of test will be useful when we want to show a pair of networks are topologically or structurally independent. For example, we might wonder if network on \textit{Facebook} and network induced by club activity within class or school are independent or not; if DNA methylation network is correlated with gene expression network \citep{bartlett2014dna} so that the behavior of interest measured by DNA methylation network can be matched to that noticed by gene expression network, etc.  In a broad sense, we suggest a proper metric applied to network and justify its use in measuring correlations between \textit{network vs. attributes} or possibly \textit{network vs. network}. Even though we have fully presented procedures, e.g. testing on diffusion maps from $t=1$ to $t=10$  and obtaining a family of all local scales for each, depending on the previous knowledge or on the results of model fitting, you may shorten the steps as well. We also presented the case where additive and multiplicative models work pretty well and how to modify the statistic in this case. Likewise the application and variation of multiscale network test is almost limitless. 
 
 

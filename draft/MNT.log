@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  4 NOV 2016 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  7 NOV 2016 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -557,7 +557,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
 Non-PDF special ignored!
 
 {/usr/local/texlive/2016basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <.
-./Figure/intro.pdf, id=143, 505.89pt x 505.89pt>
+./Figure/intro.pdf, id=139, 505.89pt x 505.89pt>
 File: ../Figure/intro.pdf Graphic file (type pdf)
 
 <use ../Figure/intro.pdf>
@@ -568,44 +568,44 @@ Package pdftex.def Info: ../Figure/intro.pdf used on input line 121.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2] [3 <../Figure/intro.pdf>] [4] [5]
-<../Figure/pmat.png, id=206, 481.8pt x 481.8pt>
+<../Figure/pmat.png, id=202, 481.8pt x 481.8pt>
 File: ../Figure/pmat.png Graphic file (type png)
  <use ../Figure/pmat.png>
 Package pdftex.def Info: ../Figure/pmat.png used on input line 163.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/Amat.png, id=208, 481.8pt x 481.8pt>
+<../Figure/Amat.png, id=204, 481.8pt x 481.8pt>
 File: ../Figure/Amat.png Graphic file (type png)
  <use ../Figure/Amat.png>
 Package pdftex.def Info: ../Figure/Amat.png used on input line 164.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/distA.png, id=209, 481.8pt x 481.8pt>
+<../Figure/distA.png, id=205, 481.8pt x 481.8pt>
 File: ../Figure/distA.png Graphic file (type png)
  <use ../Figure/distA.png>
 Package pdftex.def Info: ../Figure/distA.png used on input line 165.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
-<../Figure/distX.png, id=210, 481.8pt x 481.8pt>
+<../Figure/distX.png, id=206, 481.8pt x 481.8pt>
 File: ../Figure/distX.png Graphic file (type png)
  <use ../Figure/distX.png>
 Package pdftex.def Info: ../Figure/distX.png used on input line 166.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 [6 <../Figure/pmat.png> <../Figure/Amat.png> <../Figure/distA.png> <../Figure/d
-istX.png>] [7] [8] [9] [10] <../Figure/Dx1.png, id=317, 481.8pt x 481.8pt>
+istX.png>] [7] [8] [9] [10] <../Figure/Dx1.png, id=313, 481.8pt x 481.8pt>
 File: ../Figure/Dx1.png Graphic file (type png)
 
 <use ../Figure/Dx1.png>
 Package pdftex.def Info: ../Figure/Dx1.png used on input line 263.
 (pdftex.def)             Requested size: 122.85876pt x 122.85368pt.
- <../Figure/Dx3.png, id=318, 481.8pt x 481.8pt>
+ <../Figure/Dx3.png, id=314, 481.8pt x 481.8pt>
 File: ../Figure/Dx3.png Graphic file (type png)
 
 <use ../Figure/Dx3.png>
 Package pdftex.def Info: ../Figure/Dx3.png used on input line 264.
 (pdftex.def)             Requested size: 122.85876pt x 122.85368pt.
- <../Figure/Dx50.png, id=319, 481.8pt x 481.8pt>
+ <../Figure/Dx50.png, id=315, 481.8pt x 481.8pt>
 File: ../Figure/Dx50.png Graphic file (type png)
 
 <use ../Figure/Dx50.png>
@@ -613,21 +613,21 @@ Package pdftex.def Info: ../Figure/Dx50.png used on input line 265.
 (pdftex.def)             Requested size: 122.85876pt x 122.85368pt.
  [11 <../Figure/Dx1.png> <../Figure/Dx3.png> <../Figure/Dx50.png>] [12] [13] [1
 4] [15]
-<../Figure/density.pdf, id=384, 2168.1pt x 578.16pt>
+<../Figure/density.pdf, id=380, 2168.1pt x 578.16pt>
 File: ../Figure/density.pdf Graphic file (type pdf)
 
 <use ../Figure/density.pdf>
 Package pdftex.def Info: ../Figure/density.pdf used on input line 398.
 (pdftex.def)             Requested size: 433.62pt x 115.62994pt.
  [16]
-<../Figure/twoSBM.pdf, id=394, 1300.86pt x 361.35pt>
+<../Figure/twoSBM.pdf, id=390, 1300.86pt x 361.35pt>
 File: ../Figure/twoSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/twoSBM.pdf>
 Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 407.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/ThreeSBM.pdf, id=395, 1300.86pt x 361.35pt>
+<../Figure/ThreeSBM.pdf, id=391, 1300.86pt x 361.35pt>
 File: ../Figure/ThreeSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/ThreeSBM.pdf>
@@ -635,14 +635,14 @@ Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 408.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
  [17 <../Figure/density.pdf> <../Figure/twoSBM.pdf> <../Figure/ThreeSBM.pdf>] [
 18]
-<../Figure/powerplot.pdf, id=443, 1300.86pt x 361.35pt>
+<../Figure/powerplot.pdf, id=439, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot.pdf>
 Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 430.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/dcSBM.pdf, id=448, 1300.86pt x 361.35pt>
+<../Figure/dcSBM.pdf, id=444, 1300.86pt x 361.35pt>
 File: ../Figure/dcSBM.pdf Graphic file (type pdf)
  <use ../Figure/dcSBM.pdf>
 Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 442.
@@ -656,186 +656,189 @@ LaTeX Warning: Reference `eq:dcVariance' on page 19 undefined on input line 447
 .
 
 [19 <../Figure/powerplot.pdf>]
-<../Figure/ame.pdf, id=469, 1300.86pt x 361.35pt>
+<../Figure/ame.pdf, id=465, 1300.86pt x 361.35pt>
 File: ../Figure/ame.pdf Graphic file (type pdf)
  <use ../Figure/ame.pdf>
 Package pdftex.def Info: ../Figure/ame.pdf used on input line 453.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
 [20 <../Figure/dcSBM.pdf> <../Figure/ame.pdf>]
-<../Figure/nodecontri.pdf, id=496, 794.97pt x 361.35pt>
+<../Figure/nodecontri.pdf, id=492, 794.97pt x 361.35pt>
 File: ../Figure/nodecontri.pdf Graphic file (type pdf)
 
 <use ../Figure/nodecontri.pdf>
 Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 464.
 (pdftex.def)             Requested size: 433.62pt x 197.10553pt.
  [21 <../Figure/nodecontri.pdf>]
-<../Figure/brain1_x.pdf, id=511, 505.89pt x 505.89pt>
-File: ../Figure/brain1_x.pdf Graphic file (type pdf)
+<../Figure/fbemployer.pdf, id=507, 1300.86pt x 361.35pt>
+File: ../Figure/fbemployer.pdf Graphic file (type pdf)
 
-<use ../Figure/brain1_x.pdf>
-Package pdftex.def Info: ../Figure/brain1_x.pdf used on input line 494.
-(pdftex.def)             Requested size: 108.405pt x 108.40141pt.
+<use ../Figure/fbemployer.pdf>
+Package pdftex.def Info: ../Figure/fbemployer.pdf used on input line 484.
+(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/brain1_y.pdf, id=512, 505.89pt x 505.89pt>
-File: ../Figure/brain1_y.pdf Graphic file (type pdf)
+<../Figure/fbemployer_pval1.png, id=508, 481.8pt x 481.8pt>
+File: ../Figure/fbemployer_pval1.png Graphic file (type png)
 
-<use ../Figure/brain1_y.pdf>
-Package pdftex.def Info: ../Figure/brain1_y.pdf used on input line 495.
-(pdftex.def)             Requested size: 108.405pt x 108.40141pt.
+<use ../Figure/fbemployer_pval1.png>
+Package pdftex.def Info: ../Figure/fbemployer_pval1.png used on input line 490.
 
-<../Figure/brain1_z.pdf, id=513, 505.89pt x 505.89pt>
-File: ../Figure/brain1_z.pdf Graphic file (type pdf)
+(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<use ../Figure/brain1_z.pdf>
-Package pdftex.def Info: ../Figure/brain1_z.pdf used on input line 496.
-(pdftex.def)             Requested size: 108.405pt x 108.40141pt.
+<../Figure/fbemployer_pval2.png, id=509, 481.8pt x 481.8pt>
+File: ../Figure/fbemployer_pval2.png Graphic file (type png)
 
-<../Figure/brain1_weight.pdf, id=514, 505.89pt x 505.89pt>
-File: ../Figure/brain1_weight.pdf Graphic file (type pdf)
+<use ../Figure/fbemployer_pval2.png>
+Package pdftex.def Info: ../Figure/fbemployer_pval2.png used on input line 491.
 
-<use ../Figure/brain1_weight.pdf>
-Package pdftex.def Info: ../Figure/brain1_weight.pdf used on input line 497.
-(pdftex.def)             Requested size: 108.405pt x 108.40141pt.
- [22 <../Figure/brain1_x.pdf> <../Figure/brain1_y.pdf> <../Figure/brain1_z.pdf>
- <../Figure/brain1_weight.pdf>] [23]
+(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
+
+<../Figure/fbemployer_pval10.png, id=510, 481.8pt x 481.8pt>
+File: ../Figure/fbemployer_pval10.png Graphic file (type png)
+
+<use ../Figure/fbemployer_pval10.png>
+Package pdftex.def Info: ../Figure/fbemployer_pval10.png used on input line 492
+.
+(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
+ [22 <../Figure/fbemployer.pdf> <../Figure/fbemployer_pval1.png> <../Figure/fbe
+mployer_pval2.png> <../Figure/fbemployer_pval10.png>] [23]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 519.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 511.
 
-Overfull \hbox (17.40334pt too wide) detected at line 543
+Overfull \hbox (17.40334pt too wide) detected at line 535
 [] []
  []
 
-[24] <../Figure/C.png, id=558, 481.8pt x 481.8pt>
+[24] <../Figure/C.png, id=539, 481.8pt x 481.8pt>
 File: ../Figure/C.png Graphic file (type png)
  <use ../Figure/C.png>
-Package pdftex.def Info: ../Figure/C.png used on input line 588.
+Package pdftex.def Info: ../Figure/C.png used on input line 580.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/D.png, id=559, 481.8pt x 481.8pt>
+<../Figure/D.png, id=540, 481.8pt x 481.8pt>
 File: ../Figure/D.png Graphic file (type png)
  <use ../Figure/D.png>
-Package pdftex.def Info: ../Figure/D.png used on input line 589.
+Package pdftex.def Info: ../Figure/D.png used on input line 581.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/CD.png, id=560, 481.8pt x 481.8pt>
+<../Figure/CD.png, id=541, 481.8pt x 481.8pt>
 File: ../Figure/CD.png Graphic file (type png)
  <use ../Figure/CD.png>
-Package pdftex.def Info: ../Figure/CD.png used on input line 590.
+Package pdftex.def Info: ../Figure/CD.png used on input line 582.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/tildeCtrunc.png, id=561, 481.8pt x 481.8pt>
+<../Figure/tildeCtrunc.png, id=542, 481.8pt x 481.8pt>
 File: ../Figure/tildeCtrunc.png Graphic file (type png)
 
 <use ../Figure/tildeCtrunc.png>
-Package pdftex.def Info: ../Figure/tildeCtrunc.png used on input line 592.
+Package pdftex.def Info: ../Figure/tildeCtrunc.png used on input line 584.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/tildeDtrunc.png, id=562, 481.8pt x 481.8pt>
+<../Figure/tildeDtrunc.png, id=543, 481.8pt x 481.8pt>
 File: ../Figure/tildeDtrunc.png Graphic file (type png)
 
 <use ../Figure/tildeDtrunc.png>
-Package pdftex.def Info: ../Figure/tildeDtrunc.png used on input line 593.
+Package pdftex.def Info: ../Figure/tildeDtrunc.png used on input line 585.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/tildeCDtrunc.png, id=563, 481.8pt x 481.8pt>
+<../Figure/tildeCDtrunc.png, id=544, 481.8pt x 481.8pt>
 File: ../Figure/tildeCDtrunc.png Graphic file (type png)
 
 <use ../Figure/tildeCDtrunc.png>
-Package pdftex.def Info: ../Figure/tildeCDtrunc.png used on input line 594.
+Package pdftex.def Info: ../Figure/tildeCDtrunc.png used on input line 586.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
  [25]
-<../Figure/twoSBM_power1.png, id=570, 481.8pt x 481.8pt>
+<../Figure/twoSBM_power1.png, id=551, 481.8pt x 481.8pt>
 File: ../Figure/twoSBM_power1.png Graphic file (type png)
 
 <use ../Figure/twoSBM_power1.png>
-Package pdftex.def Info: ../Figure/twoSBM_power1.png used on input line 601.
+Package pdftex.def Info: ../Figure/twoSBM_power1.png used on input line 593.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/twoSBM_power5.png, id=571, 481.8pt x 481.8pt>
+<../Figure/twoSBM_power5.png, id=552, 481.8pt x 481.8pt>
 File: ../Figure/twoSBM_power5.png Graphic file (type png)
 
 <use ../Figure/twoSBM_power5.png>
-Package pdftex.def Info: ../Figure/twoSBM_power5.png used on input line 602.
+Package pdftex.def Info: ../Figure/twoSBM_power5.png used on input line 594.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/twoSBM_power10.png, id=572, 481.8pt x 481.8pt>
+<../Figure/twoSBM_power10.png, id=553, 481.8pt x 481.8pt>
 File: ../Figure/twoSBM_power10.png Graphic file (type png)
 
 <use ../Figure/twoSBM_power10.png>
-Package pdftex.def Info: ../Figure/twoSBM_power10.png used on input line 603.
+Package pdftex.def Info: ../Figure/twoSBM_power10.png used on input line 595.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/ThreeSBM_power1.png, id=575, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_power1.png, id=556, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_power1.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_power1.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power1.png used on input line 609.
+Package pdftex.def Info: ../Figure/ThreeSBM_power1.png used on input line 601.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/ThreeSBM_power5.png, id=576, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_power5.png, id=557, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_power5.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_power5.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power5.png used on input line 610.
+Package pdftex.def Info: ../Figure/ThreeSBM_power5.png used on input line 602.
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
 
-<../Figure/ThreeSBM_power10.png, id=577, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_power10.png, id=558, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_power10.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_power10.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power10.png used on input line 611.
+Package pdftex.def Info: ../Figure/ThreeSBM_power10.png used on input line 603.
 
 (pdftex.def)             Requested size: 144.54pt x 144.53375pt.
  [26 <../Figure/C.png> <../Figure/D.png> <../Figure/CD.png> <../Figure/tildeCtr
 unc.png> <../Figure/tildeDtrunc.png> <../Figure/tildeCDtrunc.png> <../Figure/tw
 oSBM_power1.png> <../Figure/twoSBM_power5.png> <../Figure/twoSBM_power10.png>]
-<../Figure/simplethreeSBM.pdf, id=595, 1300.86pt x 361.35pt>
+<../Figure/simplethreeSBM.pdf, id=575, 1300.86pt x 361.35pt>
 File: ../Figure/simplethreeSBM.pdf Graphic file (type pdf)
 
 <use ../Figure/simplethreeSBM.pdf>
-Package pdftex.def Info: ../Figure/simplethreeSBM.pdf used on input line 618.
+Package pdftex.def Info: ../Figure/simplethreeSBM.pdf used on input line 610.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/powerplot_mmono.pdf, id=596, 1300.86pt x 361.35pt>
+<../Figure/powerplot_mmono.pdf, id=576, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_mmono.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_mmono.pdf>
-Package pdftex.def Info: ../Figure/powerplot_mmono.pdf used on input line 641.
+Package pdftex.def Info: ../Figure/powerplot_mmono.pdf used on input line 633.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
  [27 <../Figure/ThreeSBM_power1.png> <../Figure/ThreeSBM_power5.png> <../Figure
 /ThreeSBM_power10.png> <../Figure/simplethreeSBM.pdf>] <../Figure/powerplot_mmm
-ono.pdf, id=610, 1300.86pt x 361.35pt>
+ono.pdf, id=590, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_mmmono.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_mmmono.pdf>
-Package pdftex.def Info: ../Figure/powerplot_mmmono.pdf used on input line 648.
+Package pdftex.def Info: ../Figure/powerplot_mmmono.pdf used on input line 640.
 
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/powerplot_monoton.pdf, id=611, 1300.86pt x 361.35pt>
+<../Figure/powerplot_monoton.pdf, id=591, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_monoton.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_monoton.pdf>
-Package pdftex.def Info: ../Figure/powerplot_monoton.pdf used on input line 655
+Package pdftex.def Info: ../Figure/powerplot_monoton.pdf used on input line 647
 .
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 665.
+put line 657.
  [28 <../Figure/powerplot_mmono.pdf> <../Figure/powerplot_mmmono.pdf> <../Figur
 e/powerplot_monoton.pdf>] [29] [30]
 [31] [32] [33] [34]
-Overfull \hbox (45.39252pt too wide) in paragraph at lines 875--876
+Overfull \hbox (45.39252pt too wide) in paragraph at lines 867--868
 []
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 896--897
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
 []\OT1/cmr/m/n/12 Under
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 901--903
+Underfull \hbox (badness 10000) in paragraph at lines 893--895
 []\OT1/cmr/m/n/12 Suppose
  []
 
@@ -850,25 +853,25 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
  [37] [38] [39])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 918.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 910.
  [40]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 918.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 910.
  (./MNT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 918.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 918.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 910.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 910.
 Package rerunfilecheck Info: File `MNT.out' has not changed.
-(rerunfilecheck)             Checksum: 0689D4BD9F8EEE09443B910D6B5E451F;1811.
+(rerunfilecheck)             Checksum: 39920190748662D555FAF8EF31BE40A6;1758.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 918.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 910.
  ) 
 Here is how much of TeX's memory you used:
- 10964 strings out of 494447
- 165886 string characters out of 6166766
- 256896 words of memory out of 5000000
- 13918 multiletter control sequences out of 15000+600000
+ 10962 strings out of 494447
+ 165974 string characters out of 6166766
+ 256715 words of memory out of 5000000
+ 13916 multiletter control sequences out of 15000+600000
  18897 words of font info for 73 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  36i,19n,43p,2072b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -898,10 +901,10 @@ r/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on MNT.pdf (40 pages, 889072 bytes).
+Output written on MNT.pdf (40 pages, 799176 bytes).
 PDF statistics:
- 862 PDF objects out of 1000 (max. 8388607)
- 709 compressed objects within 8 object streams
+ 842 PDF objects out of 1000 (max. 8388607)
+ 690 compressed objects within 7 object streams
  179 named destinations out of 1000 (max. 500000)
- 376 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 368 words of extra memory for PDF output out of 10000 (max. 10000000)
 

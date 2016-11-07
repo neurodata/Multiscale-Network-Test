@@ -84,17 +84,29 @@ In the left panel we have empirical Null distribution of \texttt{Oracle MGC} ill
 
 Top three figures are showing power of network independence test  under two block SBM using diffusion maps, adjacency matrix, and estimated latent position as a network distance measure where results based on three metrics are similar as well as \texttt{MGC}, global distance-based tests (\texttt{dCov, HHG}) and \texttt{FH} tests are; whereas under three block SBM diffusion maps generally perform better than the other metrics across all type of distance-based tests and moreover \texttt{FH} test results worse than the others even in the metrics of latent position.
 
-\subsection*{6. Superiority of the proposed method under non-linear dependency}
+\subsection*{7. MGC statistic}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=2in]{../Figure/ThreeSBM_stat1.png}
+	\includegraphics[width=2in]{../Figure/ThreeSBM_stat5.png}
+	\includegraphics[width=2in]{../Figure/ThreeSBM_stat10.png}
+	\label{fig:ThreeSBM_stat}
+\end{figure}
+
+Under non-linear three SBM model, we obtain a family of multiscale statistic as a function of diffusion time $t$ as above where for each time $t \in \{ 1,5, 10 \}$ we chose the optimal scale statistics $(k^{*}, l^{*}) = (100, 2)$ which is not global and of which superiority that the other local scales becomes distinct from $t=1$ to $t=5$. 
+
+
+\subsection*{8. Superiority of the proposed method under non-linear dependency}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=5in]{../Figure/powerplot.pdf}
+	\includegraphics[width=6in]{../Figure/powerplot.pdf}
 	\label{fig:powerplot}
 \end{figure}
 
 A x-axis of $\theta$ controls the existence/amount of non-linear dependency and in this particular case non-linearity exists when $\theta > 0.2$ and gets larger as it increases, and you can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of global test under non-linear dependency as presented in the left panel.
 
-\subsection*{7. Degree-corrected SBM with increased variability in node distribution}	
+\subsection*{9. Degree-corrected SBM with increased variability in node distribution}	
 
 \begin{figure}[H]
 	\centering
@@ -105,7 +117,7 @@ A x-axis of $\theta$ controls the existence/amount of non-linear dependency and 
 In DCSBM, the performance of all distance-based tests under distance maps used are similar but under adjacency matrix metric, global distance-based tests fail to detect the dependency due to an increased variability in $A$, which also possibly explains why \texttt{FH} outperforms the others under also more variable latent position metric.
 
 
-\subsection*{8. Validity of the method even under competitor's model}
+\subsection*{10. Validity of the method even under competitor's model}
 
 \begin{figure}[H]
 	\centering
@@ -115,7 +127,7 @@ In DCSBM, the performance of all distance-based tests under distance maps used a
 
 Under additive and multiplicative model, where no specific test methods beat the others significantly, estimated latent positions provide most sensitive power for \texttt{MGC} and \texttt{FH}, and they result similar power even though this model is deliberately designed to favor \texttt{FH} tests.
 
-\subsection*{9. Node Contribution}
+\subsection*{11. Node Contribution}
 
 \begin{figure}[H]
 	\centering
