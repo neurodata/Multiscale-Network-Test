@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  7 NOV 2016 14:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  13 NOV 2016 20:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -368,6 +368,15 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count133
 )
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/sidecap/sidecap.sty
+Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
+\SC@BOXWD=\dimen146
+\SC@CAPWD=\dimen147
+\SC@tempdima=\dimen148
+\SC@tempdimb=\dimen149
+\c@SC@C=\count134
+\SC@BOX=\box32
+)
 (./outline.aux)
 \openout1 = `outline.aux'.
 
@@ -385,7 +394,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
-\AtBeginShipoutBox=\box32
+\AtBeginShipoutBox=\box33
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
@@ -397,20 +406,20 @@ Package color Info: Driver file: pdftex.def on input line 144.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
-\Gread@gobject=\count134
+\Gread@gobject=\count135
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count135
-\scratchdimen=\dimen146
-\scratchbox=\box33
-\nofMPsegments=\count136
-\nofMParguments=\count137
+\scratchcounter=\count136
+\scratchdimen=\dimen150
+\scratchbox=\box34
+\nofMPsegments=\count137
+\nofMParguments=\count138
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count138
-\MPscratchDim=\dimen147
-\MPnumerator=\count139
-\makeMPintoPDFobject=\count140
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen151
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
 \everyMPtoPDFconversion=\toks27
 )))
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
@@ -438,7 +447,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 y
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count141
+\c@section@level=\count142
 )
 LaTeX Info: Redefining \ref on input line 23.
 LaTeX Info: Redefining \pageref on input line 23.
@@ -447,175 +456,191 @@ LaTeX Info: Redefining \nameref on input line 23.
 \@outlinefile=\write4
 \openout4 = `outline.out'.
 
-\c@lstlisting=\count142
+\c@lstlisting=\count143
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: sidecap package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
 
-(/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 126.
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
-
-(/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+\CenteringLeftskip=\skip52
+\RaggedLeftLeftskip=\skip53
+\RaggedRightLeftskip=\skip54
+\CenteringRightskip=\skip55
+\RaggedLeftRightskip=\skip56
+\RaggedRightRightskip=\skip57
+\CenteringParfillskip=\skip58
+\RaggedLeftParfillskip=\skip59
+\RaggedRightParfillskip=\skip60
+\JustifyingParfillskip=\skip61
+\CenteringParindent=\skip62
+\RaggedLeftParindent=\skip63
+\RaggedRightParindent=\skip64
+\JustifyingParindent=\skip65
 )
 <../Figure/intro.pdf, id=4, 505.89pt x 505.89pt>
 File: ../Figure/intro.pdf Graphic file (type pdf)
  <use ../Figure/intro.pdf>
-Package pdftex.def Info: ../Figure/intro.pdf used on input line 36.
+Package pdftex.def Info: ../Figure/intro.pdf used on input line 32.
 (pdftex.def)             Requested size: 216.81pt x 216.81056pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
 
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 <../Figure/pmat.png, id=5, 481.8pt x 481.8pt>
 File: ../Figure/pmat.png Graphic file (type png)
  <use ../Figure/pmat.png>
-Package pdftex.def Info: ../Figure/pmat.png used on input line 46.
+Package pdftex.def Info: ../Figure/pmat.png used on input line 43.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 <../Figure/Amat.png, id=7, 481.8pt x 481.8pt>
 File: ../Figure/Amat.png Graphic file (type png)
  <use ../Figure/Amat.png>
-Package pdftex.def Info: ../Figure/Amat.png used on input line 47.
+Package pdftex.def Info: ../Figure/Amat.png used on input line 44.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 <../Figure/distA.png, id=8, 481.8pt x 481.8pt>
 File: ../Figure/distA.png Graphic file (type png)
  <use ../Figure/distA.png>
-Package pdftex.def Info: ../Figure/distA.png used on input line 48.
+Package pdftex.def Info: ../Figure/distA.png used on input line 45.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 <../Figure/distX.png, id=9, 481.8pt x 481.8pt>
 File: ../Figure/distX.png Graphic file (type png)
  <use ../Figure/distX.png>
-Package pdftex.def Info: ../Figure/distX.png used on input line 49.
+Package pdftex.def Info: ../Figure/distX.png used on input line 46.
+(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
+
+<../Figure/Dx1.png, id=10, 481.8pt x 481.8pt>
+File: ../Figure/Dx1.png Graphic file (type png)
+ <use ../Figure/Dx1.png>
+Package pdftex.def Info: ../Figure/Dx1.png used on input line 55.
+(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
+
+<../Figure/Dx3.png, id=11, 481.8pt x 481.8pt>
+File: ../Figure/Dx3.png Graphic file (type png)
+ <use ../Figure/Dx3.png>
+Package pdftex.def Info: ../Figure/Dx3.png used on input line 56.
+(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
+
+<../Figure/Dx50.png, id=12, 481.8pt x 481.8pt>
+File: ../Figure/Dx50.png Graphic file (type png)
+ <use ../Figure/Dx50.png>
+Package pdftex.def Info: ../Figure/Dx50.png used on input line 57.
 (pdftex.def)             Requested size: 108.405pt x 108.40031pt.
 
 [1
 Non-PDF special ignored!
 
 {/usr/local/texlive/2016basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <..
-/Figure/intro.pdf>]
-<../Figure/Dx1.png, id=27, 481.8pt x 481.8pt>
-File: ../Figure/Dx1.png Graphic file (type png)
- <use ../Figure/Dx1.png>
-Package pdftex.def Info: ../Figure/Dx1.png used on input line 59.
-(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
-
-<../Figure/Dx3.png, id=28, 481.8pt x 481.8pt>
-File: ../Figure/Dx3.png Graphic file (type png)
- <use ../Figure/Dx3.png>
-Package pdftex.def Info: ../Figure/Dx3.png used on input line 60.
-(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
-
-<../Figure/Dx50.png, id=29, 481.8pt x 481.8pt>
-File: ../Figure/Dx50.png Graphic file (type png)
- <use ../Figure/Dx50.png>
-Package pdftex.def Info: ../Figure/Dx50.png used on input line 61.
-(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
-
-<../Figure/density.pdf, id=30, 2168.1pt x 578.16pt>
+/Figure/intro.pdf> <../Figure/pmat.png> <../Figure/Amat.png> <../Figure/distA.p
+ng> <../Figure/distX.png>]
+<../Figure/density.pdf, id=38, 2168.1pt x 578.16pt>
 File: ../Figure/density.pdf Graphic file (type pdf)
 
 <use ../Figure/density.pdf>
-Package pdftex.def Info: ../Figure/density.pdf used on input line 71.
+Package pdftex.def Info: ../Figure/density.pdf used on input line 67.
 (pdftex.def)             Requested size: 433.62pt x 115.62994pt.
- [2 <../Figure/pmat.png> <../Figure/Amat.png> <../Figure/distA.png> <../Figure/
-distX.png> <../Figure/Dx1.png> <../Figure/Dx3.png> <../Figure/Dx50.png> <../Fig
-ure/density.pdf>]
-<../Figure/twoSBM.pdf, id=55, 1300.86pt x 361.35pt>
+ [2 <../Figure/Dx1.png> <../Figure/Dx3.png> <../Figure/Dx50.png> <../Figure/den
+sity.pdf>]
+<../Figure/twoSBM.pdf, id=58, 1300.86pt x 361.35pt>
 File: ../Figure/twoSBM.pdf Graphic file (type pdf)
  <use ../Figure/twoSBM.pdf>
-Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 81.
+Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 77.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/ThreeSBM.pdf, id=56, 1300.86pt x 361.35pt>
-File: ../Figure/ThreeSBM.pdf Graphic file (type pdf)
+<../Figure/ThreeSBM_results.png, id=59, 481.8pt x 481.8pt>
+File: ../Figure/ThreeSBM_results.png Graphic file (type png)
 
-<use ../Figure/ThreeSBM.pdf>
-Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 82.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
+<use ../Figure/ThreeSBM_results.png>
+Package pdftex.def Info: ../Figure/ThreeSBM_results.png used on input line 87.
+(pdftex.def)             Requested size: 216.81pt x 216.80798pt.
 
-<../Figure/ThreeSBM_stat1.png, id=57, 481.8pt x 481.8pt>
-File: ../Figure/ThreeSBM_stat1.png Graphic file (type png)
+Underfull \hbox (badness 2469) in paragraph at lines 90--90
+[][]\OT1/cmr/bx/n/10.95 : |\OT1/cmr/m/n/10.95 This power heatmap demon-
+ []
 
-<use ../Figure/ThreeSBM_stat1.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_stat1.png used on input line 90.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/ThreeSBM_stat5.png, id=58, 481.8pt x 481.8pt>
-File: ../Figure/ThreeSBM_stat5.png Graphic file (type png)
-
-<use ../Figure/ThreeSBM_stat5.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_stat5.png used on input line 91.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/ThreeSBM_stat10.png, id=59, 481.8pt x 481.8pt>
-File: ../Figure/ThreeSBM_stat10.png Graphic file (type png)
-
-<use ../Figure/ThreeSBM_stat10.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_stat10.png used on input line 92.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
- [3 <../Figure/twoSBM.pdf> <../Figure/ThreeSBM.pdf>] <../Figure/powerplot.pdf, 
-id=79, 1300.86pt x 361.35pt>
+[3 <../Figure/twoSBM.pdf> <../Figure/ThreeSBM_results.png>]
+<../Figure/powerplot.pdf, id=75, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot.pdf>
-Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 103.
+Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 98.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 
-<../Figure/dcSBM.pdf, id=80, 1300.86pt x 361.35pt>
-File: ../Figure/dcSBM.pdf Graphic file (type pdf)
- <use ../Figure/dcSBM.pdf>
-Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 113.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
+<../Figure/powerplot_var.pdf, id=76, 1589.94pt x 361.35pt>
+File: ../Figure/powerplot_var.pdf Graphic file (type pdf)
 
-[4 <../Figure/ThreeSBM_stat1.png> <../Figure/ThreeSBM_stat5.png> <../Figure/Thr
-eeSBM_stat10.png> <../Figure/powerplot.pdf>]
-<../Figure/ame.pdf, id=99, 1300.86pt x 361.35pt>
-File: ../Figure/ame.pdf Graphic file (type pdf)
- <use ../Figure/ame.pdf>
-Package pdftex.def Info: ../Figure/ame.pdf used on input line 124.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
+<use ../Figure/powerplot_var.pdf>
+Package pdftex.def Info: ../Figure/powerplot_var.pdf used on input line 107.
+(pdftex.def)             Requested size: 433.62pt x 98.54724pt.
 
-<../Figure/nodecontri.pdf, id=100, 794.97pt x 361.35pt>
+<../Figure/ame_part.pdf, id=77, 939.51pt x 361.35pt>
+File: ../Figure/ame_part.pdf Graphic file (type pdf)
+
+<use ../Figure/ame_part.pdf>
+Package pdftex.def Info: ../Figure/ame_part.pdf used on input line 116.
+(pdftex.def)             Requested size: 433.62pt x 166.77438pt.
+ [4 <../Figure/powerplot.pdf> <../Figure/powerplot_var.pdf>] <../Figure/nodecon
+tri.pdf, id=99, 794.97pt x 361.35pt>
 File: ../Figure/nodecontri.pdf Graphic file (type pdf)
 
 <use ../Figure/nodecontri.pdf>
-Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 134.
-(pdftex.def)             Requested size: 433.62pt x 197.10553pt.
- [5 <../Figure/dcSBM.pdf> <../Figure/ame.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
+Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 126.
+(pdftex.def)             Requested size: 289.07999pt x 131.40369pt.
 
-[6 <../Figure/nodecontri.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
+<../Figure/two_politics.pdf, id=100, 722.7pt x 361.35pt>
+File: ../Figure/two_politics.pdf Graphic file (type pdf)
+
+<use ../Figure/two_politics.pdf>
+Package pdftex.def Info: ../Figure/two_politics.pdf used on input line 136.
+(pdftex.def)             Requested size: 433.62pt x 216.81168pt.
+ [5 <../Figure/ame_part.pdf> <../Figure/nodecontri.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
+ [6 <../Figure/two_politics.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
  (./outline.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
 Package rerunfilecheck Info: File `outline.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
  ) 
 Here is how much of TeX's memory you used:
- 9596 strings out of 494447
- 142859 string characters out of 6166766
- 226726 words of memory out of 5000000
- 12770 multiletter control sequences out of 15000+600000
- 12006 words of font info for 47 fonts, out of 8000000 for 9000
+ 9754 strings out of 494447
+ 145485 string characters out of 6166766
+ 230761 words of memory out of 5000000
+ 12915 multiletter control sequences out of 15000+600000
+ 12188 words of font info for 46 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 38i,6n,38p,636b,327s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,48p,756b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr17.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmtt12.pfb>
-Output written on outline.pdf (6 pages, 308643 bytes).
+0.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt10.pfb>
+Output written on outline.pdf (6 pages, 300669 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 170 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

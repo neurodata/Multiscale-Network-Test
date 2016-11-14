@@ -18,28 +18,25 @@ anchorcolor = blue]{hyperref}
 \usepackage{enumerate}
 \usepackage{natbib}
 \usepackage{url} % not crucial - just used below for the URL 
-
-
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
 \begin{document}
 	
-	\title{Testing independence between networks and nodal attributes via multiscale metrics}
-	
-	\author{Youjin Lee}
-	
-	\maketitle
+	\title{Testing independence between networks and nodal attributes via multiscale metrics}	
 		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-\subsection*{1. Introducing network topology}
+\subsection*{Introducing network topology}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=3in]{../Figure/intro.pdf}	
 	\label{fig:intro}
+	\caption{You can embed each subject (node) connected via edges upon Euclidean space, e.g. $xyz$ 3D-space as above, according to their possessing attributes, e.g. physical location; while how to embed subjects from network into Euclidean space is not intuitive, which should consider their distance with respect to network relationship.}
 \end{figure}
 
-You can embed each subject (node) connected via edges upon Euclidean space, e.g. $xyz$ 3D-space as above, according to their possessing attributes, e.g. physical location; while how to embed subjects from network into Euclidean space is not intuitive, which should consider their distance with respect to network relationship.
 
-\subsection*{2. Problems in adopting  valid distance metric defined over network}
+
+\subsection*{Problems in adopting  valid distance metric defined over network}
 
 \begin{figure}[H]
 	\centering
@@ -47,12 +44,11 @@ You can embed each subject (node) connected via edges upon Euclidean space, e.g.
 	\includegraphics[width=1.5in]{../Figure/Amat.png}
 	\includegraphics[width=1.5in]{../Figure/distA.png}
 	\includegraphics[width=1.5in]{../Figure/distX.png}
+	\caption{Assume that a set of edges $\{ A \}$ follow certain stochastic block model, also depending on the distribution function of nodal attributes $X$ (a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes (b) of which Euclidean distances (c $\&$ d) are constructed to be possibly used in standard distance-based independence test.}
 	\label{fig:matrics}
 \end{figure}	
 
-Assuming that a set of edges $\{ A \}$ are distributed following certain stochastic block model, also depending on the distribution function of nodal attributes $X$(a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes(b) of which Euclidean distances (c)(d) are constructed to be possibly used in standard distance-based independence test.
-
-\subsection*{3. introduce a family of network distance matrices} 
+\subsection*{introduce a family of network distance matrices} 
 
 \begin{figure}[H]
 	\centering
@@ -60,82 +56,90 @@ Assuming that a set of edges $\{ A \}$ are distributed following certain stochas
 	\includegraphics[width=1.5in]{../Figure/Dx3.png}
 	\includegraphics[width=1.5in]{../Figure/Dx50.png}
 	\label{fig:diffusions}
+	\caption{\textit{Diffusion matrix}, as a proposed alternative for Euclidean distance of $A$, provides one-parameter family of network-based distance where at early stage, e.g. at $t=1$, distance matrix is very similar to Euclidean distance of $A$ but as time goes by the pattern shown in the distance matrix changes, and our optimal time point $t^{*}$ choose the diffusion time when diffusion distance matrix exhibits most dependence to distance matrix of $\mathbf{X}$.}
 \end{figure}	
 
-\textit{Diffusion matrix}, as a proper alternative for Euclidean distance of $A$, provides one-parameter family of network-based distance where at early stage, e.g. at $t=1$, distance matrix is very similar to Euclidean distance of $A$ by taking into account very close relationship but as time goes by the pattern shown in the distance matrix changes, depending on time $(t)$ spent on diffusion process. 
 
-\subsection*{4. Empirical power of Oracle MGC/Sample MGC}
+\subsection*{ Empirical power of Oracle MGC/Sample MGC}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/density.pdf}
+	\caption{In the left panel we have empirical Null distribution of \texttt{Oracle MGC} illustrated by dotted line of which 95$\%$ sample quantile determines testing power of \texttt{Oracle MGC} by calculating area under the curve (AUC) of the empirical distribution under alternative beyond that quantile, and AUC of \texttt{Oracle MGC} (0.644) looks similar to that of \texttt{Sample MGC} (0.608), as presented in the right panel, even though the shape of its distributions under null and alternative look different, which supports the use of \texttt{Sample MGC} as a substitute for \texttt{Oracle MGC} in real data.}
 	\label{fig:density}
 \end{figure}	
  
-In the left panel we have empirical Null distribution of \texttt{Oracle MGC} illustrated by black line of which 95$\%$ sample quantile determines testing power of \texttt{Oracle MGC} by calculating area under the curve (AUC) of the empirical distribution under alternative beyond that quantile, and AUC of \texttt{Oracle MGC} (0.644) looks similar to that of \texttt{Sample MGC} (0.608), as presented in the right panel, even though the shape of its distributions under null and alternative look different, which supports the use of \texttt{Sample MGC} as a substitute for \texttt{Oracle MGC} in real data.
- 
-\subsection*{5. Simplest Stochastic Block Model}
+ \newpage
+\subsection*{Simplest Stochastic Block Model}
  
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=6in]{../Figure/twoSBM.pdf}
-	\includegraphics[width=6in]{../Figure/ThreeSBM.pdf}
+	\caption{Above three figures are showing power of network independence test under two block SBM using diffusion maps, adjacency matrix, and estimated latent position as a network distance measure where power of \texttt{MGC} and global distance-based tests (\texttt{dCov, HHG}) are similar in each case and they are doing as good as model-based \texttt{FH} tests under latent factor metrics but still overall power under diffusion maps is the highest.}
+	\label{fig:twoSBM}
+
 \end{figure}
 
-Top three figures are showing power of network independence test  under two block SBM using diffusion maps, adjacency matrix, and estimated latent position as a network distance measure where results based on three metrics are similar as well as \texttt{MGC}, global distance-based tests (\texttt{dCov, HHG}) and \texttt{FH} tests are; whereas under three block SBM diffusion maps generally perform better than the other metrics across all type of distance-based tests and moreover \texttt{FH} test results worse than the others even in the metrics of latent position.
+\subsection*{Highest power of MGC under diffusion maps}
 
-\subsection*{7. MGC statistic}
-\begin{figure}[H]
+\begin{SCfigure}[][h]
 	\centering
-	\includegraphics[width=2in]{../Figure/ThreeSBM_stat1.png}
-	\includegraphics[width=2in]{../Figure/ThreeSBM_stat5.png}
-	\includegraphics[width=2in]{../Figure/ThreeSBM_stat10.png}
-	\label{fig:ThreeSBM_stat}
-\end{figure}
-
-Under non-linear three SBM model, we obtain a family of multiscale statistic as a function of diffusion time $t$ as above where for each time $t \in \{ 1,5, 10 \}$ we chose the optimal scale statistics $(k^{*}, l^{*}) = (100, 2)$ which is not global and of which superiority that the other local scales becomes distinct from $t=1$ to $t=5$. 
+	\includegraphics[width=3in]{../Figure/ThreeSBM_results.png}
+	\caption{This power heatmap demonstrate superior power of \texttt{Oracle MGC}(MGC*) or \texttt{Sample MGC} (MGC) under diffusion distance matrix under three SBM, compared to adjacency matrix distance or latent factor distance where four distance-based tests show similar power whereas \texttt{FH} test results much less power than the others.}
+	\label{fig:threeSBM}
+\end{SCfigure}
 
 
-\subsection*{8. Superiority of the proposed method under non-linear dependency}
+\newpage
+\subsection*{Superiority of the proposed method under non-linear dependency}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=6in]{../Figure/powerplot.pdf}
+	\caption{X-axis of $\theta$ controls the existence/amount of non-linear dependency and in this particular case non-linearity exists when $\theta > 0.2$ and gets larger as it increases, and you can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of global test but relatively stable power of \texttt{MGC} under non-linear dependency as presented in the left panel.}
 	\label{fig:powerplot}
 \end{figure}
 
-A x-axis of $\theta$ controls the existence/amount of non-linear dependency and in this particular case non-linearity exists when $\theta > 0.2$ and gets larger as it increases, and you can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of global test under non-linear dependency as presented in the left panel.
-
-\subsection*{9. Degree-corrected SBM with increased variability in node distribution}	
+\subsection*{Degree-corrected SBM with increased variability in node distribution}	
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=6in]{../Figure/dcSBM.pdf}
+	\includegraphics[width=6in]{../Figure/powerplot_var.pdf}
+	\caption{In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, power of diffusion maps are more likely to be robust against increasing variability compared to adjacency matrix and latent positions.}
 	\label{fig:dcSBM}
 \end{figure}	
 
-In DCSBM, the performance of all distance-based tests under distance maps used are similar but under adjacency matrix metric, global distance-based tests fail to detect the dependency due to an increased variability in $A$, which also possibly explains why \texttt{FH} outperforms the others under also more variable latent position metric.
-
-
-\subsection*{10. Validity of the method even under competitor's model}
+\subsection*{Validity of the method even under competitor's model}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=6in]{../Figure/ame.pdf}
+	\includegraphics[width=6in]{../Figure/ame_part.pdf}
+	\caption{Even under additive and multiplicative model which favors estimated latent position metrics, \texttt{MGC} lost some power when using diffusion maps and adjacency matrix but \texttt{MGC} does as good as \texttt{FH} tests under latent factor metrics, which supports excellent ability of \texttt{MGC} in diverse, nearly true network metrics.}
 	\label{fig:ame}
 \end{figure}	
 
-Under additive and multiplicative model, where no specific test methods beat the others significantly, estimated latent positions provide most sensitive power for \texttt{MGC} and \texttt{FH}, and they result similar power even though this model is deliberately designed to favor \texttt{FH} tests.
 
-\subsection*{11. Node Contribution}
+\subsection*{Node Contribution}
+
+\begin{SCfigure}[][h]
+	\centering
+	\includegraphics[width=4in]{../Figure/nodecontri.pdf}
+	\caption{This plot describes both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, which validates the use of node contribution measure in independence test.}
+	\label{fig:contribution}
+\end{SCfigure}
+
+
+\subsection*{Political Network}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=6in]{../Figure/nodecontri.pdf}
-	\label{fig:contribution}
+	\includegraphics[width=6in]{../Figure/two_politics.pdf}
+	\caption{Both networks depict the collaboration network  during the two time periods  comprised of five types of political organizations of which node size is proportional to the rank in terms of contribution to the network independence test.}
+	\label{fig:politics}
 \end{figure}
 
-This plot describes both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test. 
+
+
 
 
 \end{document}

@@ -444,7 +444,7 @@ The SBM connotes that all nodes within the same block have the same expected deg
 		\label{fig:dcSBM}
 \end{figure}	
 
-As in the previous two block SBM, in this simulation scheme, we also observe monotonic edge distribution function of Euclidean distance. However its variance becomes inflated due to $\theta$ (model~\ref{eq:dcVariance}). Relatively poor performance of an adjacency metric as presented in Figure~\ref{fig:dcSBM} can be attributed to large variability in it. Even in this case, multiscale statistic performs better than the other global ones. On the other hand, node-specific latent factors look more sensitive in \texttt{FH} model shown in the right panel, but still diffusion maps metrics work better.
+As in the previous two block SBM, in this simulation scheme, we also observe monotonic edge distribution function of Euclidean distance. However its variance becomes inflated due to $\tau > 0$ (model~\ref{eq:dcVariance}). Relatively poor performance of an adjacency metric as presented in Figure~\ref{fig:dcSBM} can be attributed to large variability in it. Even in this case, multiscale statistic performs better than the other global ones. On the other hand, node-specific latent factors look more sensitive in \texttt{FH} model shown in the right panel, but still diffusion maps metrics work better.
 	
 \subsection{Additive and multiplicative graph model}
 
@@ -491,6 +491,8 @@ $\mathbf{X}$ is three dimensional and very sparse (: only 10 out of 148 subjects
 	\includegraphics[width=2in]{../Figure/fbemployer_pval2.png}
 	\includegraphics[width=2in]{../Figure/fbemployer_pval10.png}
 \end{figure}
+
+	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussions}
@@ -545,12 +547,12 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 	\label{eq:simplethree}
 	\end{equation}
 	
-	\item \textbf{Degree-corrected SBM}
+\item \textbf{Increasing variance in DCSBM}
 	\begin{equation}
-	\label{eq:dcSBM}
+	\label{eq:dcVariance}
 	\begin{gathered}
 	\begin{aligned}
-	& \theta_{i} \overset{i.i.d}{\sim} Uniform(0,2), i = 1, \ldots, n \\ 
+	& \theta_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau), i = 1, \ldots, n; \quad \tau = 0, 0.2, \ldots, 1\\ 
 	& A_{ij} | \mathbf{Z}, \mathbf{\theta}   \overset{i.i.d}{\sim}   f_{A|Z, \theta}(a_{ij} | z_{i}, z_{j}, \theta_{i}, \theta_{j}) \stackrel{d}{=} Bern(0.2 \cdot \theta_{i}\theta_{j}) I ( |z_{i} - z_{j}| = 0 ) \\ & \quad \quad + Bern(0.05 \cdot \theta_{i} \theta_{j} ) I(|z_{i} - z_{j}| = 1), \quad i,j=1, \ldots, n; i < j. 
 	\end{aligned}
 	\end{gathered}
@@ -624,6 +626,7 @@ Despite a few shortcomings, multiscale version of test would be very useful when
 \end{gathered}
 \label{eq:contri}
 \end{equation}
+
 
 %%%%%%%%%
 \subsection{Monotonicity and Power}
