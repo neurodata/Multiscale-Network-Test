@@ -109,6 +109,17 @@ anchorcolor = blue]{hyperref}
 	\label{fig:dcSBM}
 \end{figure}	
 
+\textbf{Increasing variance in DCSBM}
+\begin{equation}
+\label{eq:dcVariance}
+\begin{gathered}
+\begin{aligned}
+& \theta_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau), i = 1, \ldots, n; \quad \tau = 0, 0.2, \ldots, 1\\ 
+& A_{ij} | \mathbf{Z}, \mathbf{\theta}   \overset{i.i.d}{\sim}   f_{A|Z, \theta}(a_{ij} | z_{i}, z_{j}, \theta_{i}, \theta_{j}) \stackrel{d}{=} Bern(0.2 \cdot \theta_{i}\theta_{j}) I ( |z_{i} - z_{j}| = 0 ) \\ & \quad \quad + Bern(0.05 \cdot \theta_{i} \theta_{j} ) I(|z_{i} - z_{j}| = 1), \quad i,j=1, \ldots, n; i < j. 
+\end{aligned}
+\end{gathered}
+\end{equation}
+
 \subsection*{Validity of the method even under competitor's model}
 
 \begin{figure}[H]
