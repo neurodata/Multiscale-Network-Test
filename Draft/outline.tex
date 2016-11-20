@@ -29,34 +29,34 @@ anchorcolor = blue]{hyperref}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=3in]{../Figure/intro.pdf}	
+	\includegraphics[width=3in]{../Figure/introplot.pdf}	
 	\label{fig:intro}
-	\caption{You can embed each subject (node) connected via edges upon Euclidean space, e.g. $xyz$ 3D-space as above, according to their possessing attributes, e.g. physical location; while how to embed subjects from network into Euclidean space is not intuitive, which should consider their distance with respect to network relationship.}
+	\caption{You may conjecture that organizations with the same type are more likely to collaborate each other at first glance; but there has been a lack of statistical method to \textbf{test if there exists any significant relationship between network topology and node-specific attributes and if any, which node exerts the most dependency on network.}}
 \end{figure}
 
 
 
-\subsection*{Problems in adopting  valid distance metric defined over network}
+\subsection*{Introducing two simple Euclidean distance matrix in the context of network}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.5in]{../Figure/pmat.png}
-	\includegraphics[width=1.5in]{../Figure/Amat.png}
-	\includegraphics[width=1.5in]{../Figure/distA.png}
-	\includegraphics[width=1.5in]{../Figure/distX.png}
-	\caption{Assume that a set of edges $\{ A \}$ follow certain stochastic block model, also depending on the distribution function of nodal attributes $X$ (a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes (b) of which Euclidean distances (c $\&$ d) are constructed to be possibly used in standard distance-based independence test.}
+	\includegraphics[width=0.23\linewidth]{../Figure/pmat.png} 
+	\includegraphics[width=0.23\linewidth]{../Figure/Amat.png}
+	\includegraphics[width=0.23\linewidth]{../Figure/distA.png}
+	\includegraphics[width=0.23\linewidth]{../Figure/distX.png}
+	\caption{Assume that a set of edges follow certain stochastic block model, also depending on the distribution function of nodal attributes $X$ (a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes (b) of which Euclidean distances (c $\&$ d) are suggested to be used in standard distance-based independence test \textbf{but neither of them manifests block structures evident in the data generating model.}}
 	\label{fig:matrics}
 \end{figure}	
 
-\subsection*{introduce a family of network distance matrices} 
+\subsection*{Introduce a family of network distance matrices} 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1.5in]{../Figure/Dx1.png}
-	\includegraphics[width=1.5in]{../Figure/Dx3.png}
-	\includegraphics[width=1.5in]{../Figure/Dx50.png}
+	\includegraphics[width=0.3\linewidth]{../Figure/Dx1.png}
+	\includegraphics[width=0.3\linewidth]{../Figure/Dx3.png}
+	\includegraphics[width=0.3\linewidth]{../Figure/Dx50.png}
 	\label{fig:diffusions}
-	\caption{\textit{Diffusion matrix}, as a proposed alternative for Euclidean distance of $A$, provides one-parameter family of network-based distance where at early stage, e.g. at $t=1$, distance matrix is very similar to Euclidean distance of $A$ but as time goes by the pattern shown in the distance matrix changes, and our optimal time point $t^{*}$ choose the diffusion time when diffusion distance matrix exhibits most dependence to distance matrix of $\mathbf{X}$.}
+	\caption{\textit{Diffusion matrix}, as a proposed alternative for Euclidean distance of $A$, provides \textbf{one-parameter family of network-based distances} where at early stage, e.g. at $t=1$, distance matrix is very similar to Euclidean distance of $A$ but as time goes by the pattern shown in the distance matrix changes, and \textbf{at optimal time point $t^{*} = 3$ distance matrix shows most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf{X}$.}}
 \end{figure}	
 
 
@@ -74,40 +74,49 @@ anchorcolor = blue]{hyperref}
  
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=6in]{../Figure/twoSBM.pdf}
-	\caption{Above three figures are showing power of network independence test under two block SBM using diffusion maps, adjacency matrix, and estimated latent position as a network distance measure where power of \texttt{MGC} and global distance-based tests (\texttt{dCov, HHG}) are similar in each case and they are doing as good as model-based \texttt{FH} tests under latent factor metrics but still overall power under diffusion maps is the highest.}
+	\includegraphics[width=\linewidth]{../Figure/twoSBM.pdf}
+	\caption{Above three figures are showing power of three different test statistics under two block SBM using diffusion maps, adjacency matrix, and estimated latent position as a network distance measure, and also \texttt{FH} test results are shown in the left. \textbf{This demonstrates that in the simplest stochastic block model, diffusion distance is generally better than the other two metric; while the performance of \texttt{MGC} statistic is very similar to the others in this case.}}
 	\label{fig:twoSBM}
-
 \end{figure}
 
+
+Alternate : Let \texttt{MGC} = \texttt{Sample MGC}. 
+
+\begin{figure}[h]
+	\centering
+\includegraphics[width=\linewidth]{../Figure/twoSBM_simple.pdf}	
+\end{figure}
+
+
+\newpage
 \subsection*{Highest power of MGC under diffusion maps}
 
 \begin{SCfigure}[][h]
 	\centering
-	\includegraphics[width=3in]{../Figure/ThreeSBM_results.png}
-	\caption{This power heatmap demonstrate superior power of \texttt{Oracle MGC}(MGC*) or \texttt{Sample MGC} (MGC) under diffusion distance matrix under three SBM, compared to adjacency matrix distance or latent factor distance where four distance-based tests show similar power whereas \texttt{FH} test results much less power than the others.}
+	\includegraphics[width=0.38\paperwidth, height=0.33\paperwidth]{../Figure/ThreeSBM_results_simple.png}
+	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) under diffusion distance matrix (\texttt{DF}) in three SBM (model~\ref{eq:Three}), compared to under adjacency matrix distance (\texttt{Adj}) or latent factor distance (\texttt{Factor}). \textbf{This demonstrates that especially in the presence of nonlinear network dependency, \texttt{MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.}}
 	\label{fig:threeSBM}
 \end{SCfigure}
 
 
-\newpage
 \subsection*{Superiority of the proposed method under non-linear dependency}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=6in]{../Figure/powerplot.pdf}
-	\caption{X-axis of $\theta$ controls the existence/amount of non-linear dependency and in this particular case non-linearity exists when $\theta > 0.2$ and gets larger as it increases, and you can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of global test but relatively stable power of \texttt{MGC} under non-linear dependency as presented in the left panel.}
+	\includegraphics[width=\linewidth]{../Figure/powerplot.pdf}
+	\caption{X-axis of $\theta$ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, \textbf{mostly due to decreasing power of global test but relatively stable power of \texttt{MGC} under nonlinear dependency} as presented in the left panel.}
 	\label{fig:powerplot}
 \end{figure}
 
-\subsection*{Degree-corrected SBM with increased variability in node distribution}	
+Alternate : Let \texttt{MGC} = \texttt{Sample MGC}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=6in]{../Figure/powerplot_var.pdf}
-	\caption{In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, power of diffusion maps are more likely to be robust against increasing variability compared to adjacency matrix and latent positions.}
-	\label{fig:dcSBM}
-\end{figure}	
+	\includegraphics[width=\linewidth]{../Figure/powerplot_simple.pdf}
+\end{figure}
+
+\newpage
+\subsection*{Degree-corrected SBM with increased variability in node distribution}	
 
 \textbf{Increasing variance in DCSBM}
 \begin{equation}
@@ -120,12 +129,29 @@ anchorcolor = blue]{hyperref}
 \end{gathered}
 \end{equation}
 
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=\linewidth]{../Figure/powerplot_var.pdf}
+	\caption{In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, \textbf{power of diffusion maps are more likely to be robust against increasing variability compared to adjacency matrix and latent positions.}}
+	\label{fig:dcSBM}
+\end{figure}	
+
+Alternate : Let \texttt{MGC} = \texttt{Sample MGC}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{../Figure/powerplot_var_simple.pdf}
+\end{figure}	
+
+
+\newpage
 \subsection*{Validity of the method even under competitor's model}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=6in]{../Figure/ame_part.pdf}
-	\caption{Even under additive and multiplicative model which favors estimated latent position metrics, \texttt{MGC} lost some power when using diffusion maps and adjacency matrix but \texttt{MGC} does as good as \texttt{FH} tests under latent factor metrics, which supports excellent ability of \texttt{MGC} in diverse, nearly true network metrics.}
+	\includegraphics[width=\linewidth]{../Figure/ame_part.pdf}
+	\caption{Even under additive and multiplicative model which favors estimated latent position metrics, \texttt{MGC} lost some power when using diffusion maps and adjacency matrix but \textbf{\texttt{MGC} does as good as \texttt{FH} tests under latent factor metrics which is the truth, which supports excellent ability of \texttt{MGC} in diverse, nearly true network metrics.}}
 	\label{fig:ame}
 \end{figure}	
 
@@ -134,8 +160,8 @@ anchorcolor = blue]{hyperref}
 
 \begin{SCfigure}[][h]
 	\centering
-	\includegraphics[width=4in]{../Figure/nodecontri.pdf}
-	\caption{This plot describes both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, which validates the use of node contribution measure in independence test.}
+		\includegraphics[width=0.6\linewidth, height = 0.3\linewidth]{../Figure/nodecontri.pdf}
+	\caption{This plot describes both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, \textbf{which validates the use of node contribution measure in independence test.}}
 	\label{fig:contribution}
 \end{SCfigure}
 
@@ -144,8 +170,8 @@ anchorcolor = blue]{hyperref}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=6in]{../Figure/two_politics.pdf}
-	\caption{Both networks depict the collaboration network  during the two time periods  comprised of five types of political organizations of which node size is proportional to the rank in terms of contribution to the network independence test.}
+		\includegraphics[width=\linewidth]{../Figure/two_politics.pdf}
+	\caption{Both networks depict the collaboration network during the two time periods where it turns out significant network dependency in types of organizations. \textbf{Using \texttt{MGC} statistics, we are not only able to test network independence but also rank each node in terms of the amount of contribution to detecting dependence, which is proportional to node size here.}}
 	\label{fig:politics}
 \end{figure}
 
