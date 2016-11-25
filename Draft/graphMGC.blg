@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: MNT.aux
+The top-level auxiliary file: graphMGC.aux
 The style file: Chicago.bst
 Database file #1: Biblio.bib
 Warning--no number and no volume in caron2014sparse
@@ -12,7 +12,7 @@ Warning--no number and no volume in veitch2015class
 Warning--page numbers missing in veitch2015class
 You've used 31 entries,
             2861 wiz_defined-function locations,
-            816 strings with 10606 characters,
+            816 strings with 10616 characters,
 and the built_in function-call counts, 23798 in all, are:
 = -- 2023
 > -- 1882
