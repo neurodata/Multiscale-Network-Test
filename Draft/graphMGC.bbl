@@ -1,17 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citeauthoryear{Banerjee, Chandrasekhar, Duflo, and
-  Jackson}{Banerjee et~al.}{2013}]{banerjee2013diffusion}
-Banerjee, A., A.~G. Chandrasekhar, E.~Duflo, and M.~O. Jackson (2013).
-\newblock The diffusion of microfinance.
-\newblock {\em Science\/}~{\em 341\/}(6144), 1236498.
-
-\bibitem[\protect\citeauthoryear{Barabasi and Oltvai}{Barabasi and
-  Oltvai}{2004}]{barabasi2004network}
-Barabasi, A.-L. and Z.~N. Oltvai (2004).
-\newblock Network biology: understanding the cell's functional organization.
-\newblock {\em Nature reviews genetics\/}~{\em 5\/}(2), 101--113.
-
 \bibitem[\protect\citeauthoryear{Bartlett, Olhede, and Zaikin}{Bartlett
   et~al.}{2014}]{bartlett2014dna}
 Bartlett, T.~E., S.~C. Olhede, and A.~Zaikin (2014).
@@ -52,14 +40,6 @@ Coifman, R.~R. and S.~Lafon (2006).
 \newblock {\em Applied and computational harmonic analysis\/}~{\em 21\/}(1),
   5--30.
 
-\bibitem[\protect\citeauthoryear{Ellison, Steinfield, and Lampe}{Ellison
-  et~al.}{2007}]{ellison2007benefits}
-Ellison, N.~B., C.~Steinfield, and C.~Lampe (2007).
-\newblock The benefits of facebook “friends:” social capital and college
-  students’ use of online social network sites.
-\newblock {\em Journal of Computer-Mediated Communication\/}~{\em 12\/}(4),
-  1143--1168.
-
 \bibitem[\protect\citeauthoryear{Fosdick and Hoff}{Fosdick and
   Hoff}{2015}]{fosdick2015testing}
 Fosdick, B.~K. and P.~D. Hoff (2015).
@@ -67,13 +47,6 @@ Fosdick, B.~K. and P.~D. Hoff (2015).
   attributes.
 \newblock {\em Journal of the American Statistical Association\/}~{\em
   110\/}(511), 1047--1056.
-
-\bibitem[\protect\citeauthoryear{Gross and Acquisti}{Gross and
-  Acquisti}{2005}]{gross2005information}
-Gross, R. and A.~Acquisti (2005).
-\newblock Information revelation and privacy in online social networks.
-\newblock In {\em Proceedings of the 2005 ACM workshop on Privacy in the
-  electronic society}, pp.\  71--80. ACM.
 
 \bibitem[\protect\citeauthoryear{Heller, Heller, and Gorfine}{Heller
   et~al.}{2012}]{heller2012consistent}
@@ -149,33 +122,6 @@ Orbanz, P. and D.~M. Roy (2015).
 \newblock {\em IEEE transactions on pattern analysis and machine
   intelligence\/}~{\em 37\/}(2), 437--461.
 
-\bibitem[\protect\citeauthoryear{Palla, Knowles, and Ghahramani}{Palla
-  et~al.}{2012}]{palla2012infinite}
-Palla, K., D.~Knowles, and Z.~Ghahramani (2012).
-\newblock An infinite latent attribute model for network data.
-\newblock {\em arXiv preprint arXiv:1206.6416\/}.
-
-\bibitem[\protect\citeauthoryear{Pinquart and S{\"o}rensen}{Pinquart and
-  S{\"o}rensen}{2000}]{pinquart2000influences}
-Pinquart, M. and S.~S{\"o}rensen (2000).
-\newblock Influences of socioeconomic status, social network, and competence on
-  subjective well-being in later life: a meta-analysis.
-\newblock {\em Psychology and aging\/}~{\em 15\/}(2), 187.
-
-\bibitem[\protect\citeauthoryear{Pujol, Mosca, Farr{\'e}s, and Aloy}{Pujol
-  et~al.}{2010}]{pujol2010unveiling}
-Pujol, A., R.~Mosca, J.~Farr{\'e}s, and P.~Aloy (2010).
-\newblock Unveiling the role of network and systems biology in drug discovery.
-\newblock {\em Trends in pharmacological sciences\/}~{\em 31\/}(3), 115--123.
-
-\bibitem[\protect\citeauthoryear{Raftery, Niu, Hoff, and Yeung}{Raftery
-  et~al.}{2012}]{raftery2012fast}
-Raftery, A.~E., X.~Niu, P.~D. Hoff, and K.~Y. Yeung (2012).
-\newblock Fast inference for the latent space network model using a
-  case-control approximate likelihood.
-\newblock {\em Journal of Computational and Graphical Statistics\/}~{\em
-  21\/}(4), 901--919.
-
 \bibitem[\protect\citeauthoryear{Sporns, Honey, and K{\"o}tter}{Sporns
   et~al.}{2007}]{sporns2007identification}
 Sporns, O., C.~J. Honey, and R.~K{\"o}tter (2007).
@@ -206,5 +152,12 @@ Wasserman, S. and P.~Pattison (1996).
 \newblock Logit models and logistic regressions for social networks: I. an
   introduction to markov graphs andp.
 \newblock {\em Psychometrika\/}~{\em 61\/}(3), 401--425.
+
+\bibitem[\protect\citeauthoryear{Young and Scheinerman}{Young and
+  Scheinerman}{2007}]{young2007random}
+Young, S.~J. and E.~R. Scheinerman (2007).
+\newblock Random dot product graph models for social networks.
+\newblock In {\em International Workshop on Algorithms and Models for the
+  Web-Graph}, pp.\  138--149. Springer.
 
 \end{thebibliography}

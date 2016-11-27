@@ -6,49 +6,47 @@ Database file #1: Biblio.bib
 Warning--no number and no volume in caron2014sparse
 Warning--page numbers missing in caron2014sparse
 Warning--no number and no volume in heller2012consistent
-Warning--no number and no volume in palla2012infinite
-Warning--page numbers missing in palla2012infinite
 Warning--no number and no volume in veitch2015class
 Warning--page numbers missing in veitch2015class
-You've used 31 entries,
+You've used 24 entries,
             2861 wiz_defined-function locations,
-            816 strings with 10616 characters,
-and the built_in function-call counts, 23798 in all, are:
-= -- 2023
-> -- 1882
+            769 strings with 9110 characters,
+and the built_in function-call counts, 18422 in all, are:
+= -- 1589
+> -- 1422
 < -- 2
-+ -- 592
-- -- 642
-* -- 2273
-:= -- 4264
-add.period$ -- 95
-call.type$ -- 31
-change.case$ -- 237
-chr.to.int$ -- 31
-cite$ -- 38
-duplicate$ -- 576
-empty$ -- 1353
-format.name$ -- 758
-if$ -- 4439
++ -- 446
+- -- 494
+* -- 1722
+:= -- 3292
+add.period$ -- 74
+call.type$ -- 24
+change.case$ -- 180
+chr.to.int$ -- 24
+cite$ -- 29
+duplicate$ -- 454
+empty$ -- 1060
+format.name$ -- 582
+if$ -- 3445
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 31
-newline$ -- 158
-num.names$ -- 310
-pop$ -- 154
+missing$ -- 24
+newline$ -- 123
+num.names$ -- 240
+pop$ -- 118
 preamble$ -- 1
-purify$ -- 423
+purify$ -- 324
 quote$ -- 0
-skip$ -- 634
+skip$ -- 508
 stack$ -- 0
-substring$ -- 1311
-swap$ -- 195
+substring$ -- 1037
+swap$ -- 156
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 620
-warning$ -- 7
-while$ -- 306
+type$ -- 480
+warning$ -- 5
+while$ -- 246
 width$ -- 0
-write$ -- 409
-(There were 7 warnings)
+write$ -- 318
+(There were 5 warnings)

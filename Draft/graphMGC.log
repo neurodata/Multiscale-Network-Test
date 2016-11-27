@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  25 NOV 2016 14:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  26 NOV 2016 22:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -368,6 +368,20 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count133
 )
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+\c@subfigure=\count134
+\c@subtable=\count135
+)
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/sidecap/sidecap.sty
+Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
+\SC@BOXWD=\dimen146
+\SC@CAPWD=\dimen147
+\SC@tempdima=\dimen148
+\SC@tempdimb=\dimen149
+\c@SC@C=\count136
+\SC@BOX=\box32
+)
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
 
@@ -378,7 +392,7 @@ Package color Info: Driver file: pdftex.def on input line 144.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
-\Gread@gobject=\count134
+\Gread@gobject=\count137
 ))
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip52
@@ -396,15 +410,15 @@ Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count135
-\calc@Bcount=\count136
-\calc@Adimen=\dimen146
-\calc@Bdimen=\dimen147
+\calc@Acount=\count138
+\calc@Bcount=\count139
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
 \calc@Askip=\skip61
 \calc@Bskip=\skip62
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count137
+\calc@Ccount=\count140
 \calc@Cskip=\skip63
 )
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -414,23 +428,23 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count138
-\l_MT_multwidth_dim=\dimen148
+\g_MT_multlinerow_int=\count141
+\l_MT_multwidth_dim=\dimen152
 \origjot=\skip64
-\l_MT_shortvdotswithinadjustabove_dim=\dimen149
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen150
-\l_MT_above_intertext_sep=\dimen151
-\l_MT_below_intertext_sep=\dimen152
-\l_MT_above_shortintertext_sep=\dimen153
-\l_MT_below_shortintertext_sep=\dimen154
+\l_MT_shortvdotswithinadjustabove_dim=\dimen153
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen154
+\l_MT_above_intertext_sep=\dimen155
+\l_MT_below_intertext_sep=\dimen156
+\l_MT_above_shortintertext_sep=\dimen157
+\l_MT_below_shortintertext_sep=\dimen158
 )
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/tools/dcolumn.sty
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/tools/array.sty
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen155
-\extrarowheight=\dimen156
+\col@sep=\dimen159
+\extrarowheight=\dimen160
 \NC@list=\toks26
 \extratabsurround=\skip65
 \backup@length=\skip66
@@ -459,30 +473,30 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headsep=\skip69
 \dth@everypar=\toks34
 )
-\c@definition=\count139
-\c@theorem=\count140
-\c@corollary=\count141
-\c@remark=\count142
+\c@definition=\count142
+\c@theorem=\count143
+\c@corollary=\count144
+\c@remark=\count145
 
 (./graphMGC.aux)
 \openout1 = `graphMGC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-\AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring ON on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+\AtBeginShipoutBox=\box33
+Package hyperref Info: Link coloring ON on input line 69.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -491,16 +505,16 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 y
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count143
+\c@section@level=\count146
 )
-LaTeX Info: Redefining \ref on input line 67.
-LaTeX Info: Redefining \pageref on input line 67.
-LaTeX Info: Redefining \nameref on input line 67.
+LaTeX Info: Redefining \ref on input line 69.
+LaTeX Info: Redefining \pageref on input line 69.
+LaTeX Info: Redefining \nameref on input line 69.
  (./graphMGC.out) (./graphMGC.out)
 \@outlinefile=\write4
 \openout4 = `graphMGC.out'.
 
-\c@lstlisting=\count144
+\c@lstlisting=\count147
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -520,366 +534,250 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: sidecap package is loaded.
 Package caption Info: End \AtBeginDocument code.
- (/usr/local/texlive/2016basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count145
-\scratchdimen=\dimen157
-\scratchbox=\box33
-\nofMPsegments=\count146
-\nofMParguments=\count147
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count148
-\MPscratchDim=\dimen158
-\MPnumerator=\count149
-\makeMPintoPDFobject=\count150
-\everyMPtoPDFconversion=\toks36
+ (/usr/local/texlive/2016basic/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 126.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 87.
- (/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsa.fd
+\CenteringLeftskip=\skip70
+\RaggedLeftLeftskip=\skip71
+\RaggedRightLeftskip=\skip72
+\CenteringRightskip=\skip73
+\RaggedLeftRightskip=\skip74
+\RaggedRightRightskip=\skip75
+\CenteringParfillskip=\skip76
+\RaggedLeftParfillskip=\skip77
+\RaggedRightParfillskip=\skip78
+\JustifyingParfillskip=\skip79
+\CenteringParindent=\skip80
+\RaggedLeftParindent=\skip81
+\RaggedRightParindent=\skip82
+\JustifyingParindent=\skip83
+)
+(/usr/local/texlive/2016basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count148
+\scratchdimen=\dimen161
+\scratchbox=\box34
+\nofMPsegments=\count149
+\nofMParguments=\count150
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count151
+\MPscratchDim=\dimen162
+\MPnumerator=\count152
+\makeMPintoPDFobject=\count153
+\everyMPtoPDFconversion=\toks36
+) [1
+Non-PDF special ignored!
+
+{/usr/local/texlive/2016basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <.
+./Figure/introplot.pdf, id=99, 578.16pt x 361.35pt>
+File: ../Figure/introplot.pdf Graphic file (type pdf)
+
+<use ../Figure/introplot.pdf>
+Package pdftex.def Info: ../Figure/introplot.pdf used on input line 127.
+(pdftex.def)             Requested size: 289.07999pt x 180.67456pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 133.
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+LaTeX Font Info:    Try loading font information for U+msb on input line 133.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 87.
+) [2]
+[3 <../Figure/introplot.pdf>] [4]
+<../Figure/Pmat.pdf, id=152, 505.89pt x 505.89pt>
+File: ../Figure/Pmat.pdf Graphic file (type pdf)
+ <use ../Figure/Pmat.pdf>
+Package pdftex.def Info: ../Figure/Pmat.pdf used on input line 159.
+(pdftex.def)             Requested size: 108.04163pt x 108.0386pt.
+
+<../Figure/Amat.pdf, id=153, 505.89pt x 505.89pt>
+File: ../Figure/Amat.pdf Graphic file (type pdf)
+ <use ../Figure/Amat.pdf>
+Package pdftex.def Info: ../Figure/Amat.pdf used on input line 166.
+(pdftex.def)             Requested size: 108.04163pt x 108.0386pt.
+
+<../Figure/distA.pdf, id=154, 505.89pt x 505.89pt>
+File: ../Figure/distA.pdf Graphic file (type pdf)
+ <use ../Figure/distA.pdf>
+Package pdftex.def Info: ../Figure/distA.pdf used on input line 173.
+(pdftex.def)             Requested size: 108.04163pt x 108.0386pt.
+
+<../Figure/distX.pdf, id=155, 505.89pt x 505.89pt>
+File: ../Figure/distX.pdf Graphic file (type pdf)
+ <use ../Figure/distX.pdf>
+Package pdftex.def Info: ../Figure/distX.pdf used on input line 178.
+(pdftex.def)             Requested size: 108.04163pt x 108.0386pt.
+
+[5 <../Figure/Pmat.pdf> <../Figure/Amat.pdf> <../Figure/distA.pdf> <../Figure/d
+istX.pdf>] [6] [7] [8] <../Figure/Dx1.pdf, id=261, 505.89pt x 505.89pt>
+File: ../Figure/Dx1.pdf Graphic file (type pdf)
+
+<use ../Figure/Dx1.pdf>
+Package pdftex.def Info: ../Figure/Dx1.pdf used on input line 255.
+(pdftex.def)             Requested size: 140.92792pt x 140.93033pt.
+ <../Figure/Dx3.pdf, id=262, 505.89pt x 505.89pt>
+File: ../Figure/Dx3.pdf Graphic file (type pdf)
+
+<use ../Figure/Dx3.pdf>
+Package pdftex.def Info: ../Figure/Dx3.pdf used on input line 256.
+(pdftex.def)             Requested size: 140.92792pt x 140.93033pt.
+ <../Figure/Dx50.pdf, id=263, 505.89pt x 505.89pt>
+File: ../Figure/Dx50.pdf Graphic file (type pdf)
+
+<use ../Figure/Dx50.pdf>
+Package pdftex.def Info: ../Figure/Dx50.pdf used on input line 257.
+(pdftex.def)             Requested size: 140.92792pt x 140.93033pt.
+ [9] [10 <../Figure/Dx1.pdf> <../Figure/Dx3.pdf> <../Figure/Dx50.pdf>] [11] [12
+] [13]
+<../Figure/ThreeSBM_results_simple.png, id=340, 481.8pt x 481.8pt>
+File: ../Figure/ThreeSBM_results_simple.png Graphic file (type png)
+
+<use ../Figure/ThreeSBM_results_simple.png>
+Package pdftex.def Info: ../Figure/ThreeSBM_results_simple.png used on input li
+ne 361.
+(pdftex.def)             Requested size: 238.99532pt x 238.99532pt.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 364.
+
+Underfull \hbox (badness 1521) in paragraph at lines 364--364
+\OT1/cmr/m/n/10.95 (\OT1/cmtt/m/n/10.95 Adj\OT1/cmr/m/n/10.95 ) or la-tent fac-
+tor dis-tance (\OT1/cmtt/m/n/10.95 Factor\OT1/cmr/m/n/10.95 ).
+ []
+
+[14 <../Figure/ThreeSBM_results_simple.png>]
+<../Figure/powerplot_simple.pdf, id=359, 1300.86pt x 361.35pt>
+File: ../Figure/powerplot_simple.pdf Graphic file (type pdf)
+
+<use ../Figure/powerplot_simple.pdf>
+Package pdftex.def Info: ../Figure/powerplot_simple.pdf used on input line 376.
+
+(pdftex.def)             Requested size: 469.75499pt x 130.4884pt.
+ [15 <../Figure/powerplot_simple.pdf>]
+<../Figure/powerplot_var_simple.pdf, id=378, 867.24pt x 433.62pt>
+File: ../Figure/powerplot_var_simple.pdf Graphic file (type pdf)
+
+<use ../Figure/powerplot_var_simple.pdf>
+Package pdftex.def Info: ../Figure/powerplot_var_simple.pdf used on input line 
+388.
+(pdftex.def)             Requested size: 375.80397pt x 187.90198pt.
+
+<../Figure/ame_part.pdf, id=379, 939.51pt x 361.35pt>
+File: ../Figure/ame_part.pdf Graphic file (type pdf)
+
+<use ../Figure/ame_part.pdf>
+Package pdftex.def Info: ../Figure/ame_part.pdf used on input line 399.
+(pdftex.def)             Requested size: 469.75499pt x 180.67456pt.
+ [16 <../Figure/powerplot_var_simple.pdf>]
+<../Figure/nodecontri.pdf, id=400, 794.97pt x 361.35pt>
+File: ../Figure/nodecontri.pdf Graphic file (type pdf)
+
+<use ../Figure/nodecontri.pdf>
+Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 411.
+(pdftex.def)             Requested size: 281.85847pt x 140.92593pt.
+
+Underfull \hbox (badness 3635) in paragraph at lines 414--414
+\OT1/cmr/m/n/10.95 power of \OT1/cmtt/m/n/10.95 MGC \OT1/cmr/m/n/10.95 and the 
+rate of
+ []
+
+[17 <../Figure/ame_part.pdf>]
+<../Figure/two_politics.pdf, id=416, 722.7pt x 361.35pt>
+File: ../Figure/two_politics.pdf Graphic file (type pdf)
+
+<use ../Figure/two_politics.pdf>
+Package pdftex.def Info: ../Figure/two_politics.pdf used on input line 428.
+(pdftex.def)             Requested size: 469.75499pt x 234.88023pt.
+ [18 <../Figure/nodecontri.pdf>] [19 <../Figure/two_politics.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 448.
+
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
- [1
-Non-PDF special ignored!
-
-{/usr/local/texlive/2016basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] <.
-./Figure/intro.pdf, id=139, 505.89pt x 505.89pt>
-File: ../Figure/intro.pdf Graphic file (type pdf)
-
-<use ../Figure/intro.pdf>
-Package pdftex.def Info: ../Figure/intro.pdf used on input line 121.
-(pdftex.def)             Requested size: 289.07999pt x 289.08589pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2] [3 <../Figure/intro.pdf>] [4] [5]
-<../Figure/pmat.png, id=202, 481.8pt x 481.8pt>
-File: ../Figure/pmat.png Graphic file (type png)
- <use ../Figure/pmat.png>
-Package pdftex.def Info: ../Figure/pmat.png used on input line 163.
-(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
-
-<../Figure/Amat.png, id=204, 481.8pt x 481.8pt>
-File: ../Figure/Amat.png Graphic file (type png)
- <use ../Figure/Amat.png>
-Package pdftex.def Info: ../Figure/Amat.png used on input line 164.
-(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
-
-<../Figure/distA.png, id=205, 481.8pt x 481.8pt>
-File: ../Figure/distA.png Graphic file (type png)
- <use ../Figure/distA.png>
-Package pdftex.def Info: ../Figure/distA.png used on input line 165.
-(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
-
-<../Figure/distX.png, id=206, 481.8pt x 481.8pt>
-File: ../Figure/distX.png Graphic file (type png)
- <use ../Figure/distX.png>
-Package pdftex.def Info: ../Figure/distX.png used on input line 166.
-(pdftex.def)             Requested size: 108.405pt x 108.40031pt.
-
-[6 <../Figure/pmat.png> <../Figure/Amat.png> <../Figure/distA.png> <../Figure/d
-istX.png>] [7] [8] [9] [10] <../Figure/Dx1.png, id=313, 481.8pt x 481.8pt>
-File: ../Figure/Dx1.png Graphic file (type png)
-
-<use ../Figure/Dx1.png>
-Package pdftex.def Info: ../Figure/Dx1.png used on input line 263.
-(pdftex.def)             Requested size: 122.85876pt x 122.85368pt.
- <../Figure/Dx3.png, id=314, 481.8pt x 481.8pt>
-File: ../Figure/Dx3.png Graphic file (type png)
-
-<use ../Figure/Dx3.png>
-Package pdftex.def Info: ../Figure/Dx3.png used on input line 264.
-(pdftex.def)             Requested size: 122.85876pt x 122.85368pt.
- <../Figure/Dx50.png, id=315, 481.8pt x 481.8pt>
-File: ../Figure/Dx50.png Graphic file (type png)
-
-<use ../Figure/Dx50.png>
-Package pdftex.def Info: ../Figure/Dx50.png used on input line 265.
-(pdftex.def)             Requested size: 122.85876pt x 122.85368pt.
- [11 <../Figure/Dx1.png> <../Figure/Dx3.png> <../Figure/Dx50.png>] [12] [13] [1
-4] [15]
-<../Figure/density.pdf, id=380, 2168.1pt x 578.16pt>
-File: ../Figure/density.pdf Graphic file (type pdf)
-
-<use ../Figure/density.pdf>
-Package pdftex.def Info: ../Figure/density.pdf used on input line 398.
-(pdftex.def)             Requested size: 433.62pt x 115.62994pt.
- [16]
-<../Figure/twoSBM.pdf, id=390, 1300.86pt x 361.35pt>
-File: ../Figure/twoSBM.pdf Graphic file (type pdf)
-
-<use ../Figure/twoSBM.pdf>
-Package pdftex.def Info: ../Figure/twoSBM.pdf used on input line 407.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
-
-<../Figure/ThreeSBM.pdf, id=391, 1300.86pt x 361.35pt>
-File: ../Figure/ThreeSBM.pdf Graphic file (type pdf)
-
-<use ../Figure/ThreeSBM.pdf>
-Package pdftex.def Info: ../Figure/ThreeSBM.pdf used on input line 408.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
- [17 <../Figure/density.pdf> <../Figure/twoSBM.pdf> <../Figure/ThreeSBM.pdf>] [
-18]
-<../Figure/powerplot.pdf, id=439, 1300.86pt x 361.35pt>
-File: ../Figure/powerplot.pdf Graphic file (type pdf)
-
-<use ../Figure/powerplot.pdf>
-Package pdftex.def Info: ../Figure/powerplot.pdf used on input line 430.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
-
-
-LaTeX Warning: Reference `eq:dcSBM' on page 19 undefined on input line 438.
-
-<../Figure/dcSBM.pdf, id=443, 1300.86pt x 361.35pt>
-File: ../Figure/dcSBM.pdf Graphic file (type pdf)
- <use ../Figure/dcSBM.pdf>
-Package pdftex.def Info: ../Figure/dcSBM.pdf used on input line 442.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
-
-
-LaTeX Warning: Reference `eq:dcSBM' on page 19 undefined on input line 443.
-
-
-LaTeX Warning: Reference `eq:dcSBM' on page 19 undefined on input line 443.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[19 <../Figure/powerplot.pdf>]
-<../Figure/ame.pdf, id=462, 1300.86pt x 361.35pt>
-File: ../Figure/ame.pdf Graphic file (type pdf)
- <use ../Figure/ame.pdf>
-Package pdftex.def Info: ../Figure/ame.pdf used on input line 453.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
-
-[20 <../Figure/dcSBM.pdf> <../Figure/ame.pdf>]
-<../Figure/nodecontri.pdf, id=490, 794.97pt x 361.35pt>
-File: ../Figure/nodecontri.pdf Graphic file (type pdf)
-
-<use ../Figure/nodecontri.pdf>
-Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 464.
-(pdftex.def)             Requested size: 433.62pt x 197.10553pt.
- [21 <../Figure/nodecontri.pdf>]
-<../Figure/fbemployer.pdf, id=505, 1300.86pt x 361.35pt>
-File: ../Figure/fbemployer.pdf Graphic file (type pdf)
-
-<use ../Figure/fbemployer.pdf>
-Package pdftex.def Info: ../Figure/fbemployer.pdf used on input line 484.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
-
-<../Figure/fbemployer_pval1.png, id=506, 481.8pt x 481.8pt>
-File: ../Figure/fbemployer_pval1.png Graphic file (type png)
-
-<use ../Figure/fbemployer_pval1.png>
-Package pdftex.def Info: ../Figure/fbemployer_pval1.png used on input line 490.
-
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/fbemployer_pval2.png, id=507, 481.8pt x 481.8pt>
-File: ../Figure/fbemployer_pval2.png Graphic file (type png)
-
-<use ../Figure/fbemployer_pval2.png>
-Package pdftex.def Info: ../Figure/fbemployer_pval2.png used on input line 491.
-
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/fbemployer_pval10.png, id=508, 481.8pt x 481.8pt>
-File: ../Figure/fbemployer_pval10.png Graphic file (type png)
-
-<use ../Figure/fbemployer_pval10.png>
-Package pdftex.def Info: ../Figure/fbemployer_pval10.png used on input line 492
-.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
- [22 <../Figure/fbemployer.pdf> <../Figure/fbemployer_pval1.png> <../Figure/fbe
-mployer_pval2.png> <../Figure/fbemployer_pval10.png>] [23]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 513.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 448.
 
-Overfull \hbox (17.40334pt too wide) detected at line 537
+Overfull \hbox (17.40334pt too wide) detected at line 458
 [] []
  []
 
-[24] <../Figure/C.png, id=537, 481.8pt x 481.8pt>
-File: ../Figure/C.png Graphic file (type png)
- <use ../Figure/C.png>
-Package pdftex.def Info: ../Figure/C.png used on input line 582.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
+[20]
+Overfull \hbox (2.99066pt too wide) detected at line 493
+[] []
+ []
 
-<../Figure/D.png, id=538, 481.8pt x 481.8pt>
-File: ../Figure/D.png Graphic file (type png)
- <use ../Figure/D.png>
-Package pdftex.def Info: ../Figure/D.png used on input line 583.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/CD.png, id=539, 481.8pt x 481.8pt>
-File: ../Figure/CD.png Graphic file (type png)
- <use ../Figure/CD.png>
-Package pdftex.def Info: ../Figure/CD.png used on input line 584.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/tildeCtrunc.png, id=540, 481.8pt x 481.8pt>
-File: ../Figure/tildeCtrunc.png Graphic file (type png)
-
-<use ../Figure/tildeCtrunc.png>
-Package pdftex.def Info: ../Figure/tildeCtrunc.png used on input line 586.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/tildeDtrunc.png, id=541, 481.8pt x 481.8pt>
-File: ../Figure/tildeDtrunc.png Graphic file (type png)
-
-<use ../Figure/tildeDtrunc.png>
-Package pdftex.def Info: ../Figure/tildeDtrunc.png used on input line 587.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/tildeCDtrunc.png, id=542, 481.8pt x 481.8pt>
-File: ../Figure/tildeCDtrunc.png Graphic file (type png)
-
-<use ../Figure/tildeCDtrunc.png>
-Package pdftex.def Info: ../Figure/tildeCDtrunc.png used on input line 588.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
- [25]
-<../Figure/twoSBM_power1.png, id=549, 481.8pt x 481.8pt>
-File: ../Figure/twoSBM_power1.png Graphic file (type png)
-
-<use ../Figure/twoSBM_power1.png>
-Package pdftex.def Info: ../Figure/twoSBM_power1.png used on input line 595.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/twoSBM_power5.png, id=550, 481.8pt x 481.8pt>
-File: ../Figure/twoSBM_power5.png Graphic file (type png)
-
-<use ../Figure/twoSBM_power5.png>
-Package pdftex.def Info: ../Figure/twoSBM_power5.png used on input line 596.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/twoSBM_power10.png, id=551, 481.8pt x 481.8pt>
-File: ../Figure/twoSBM_power10.png Graphic file (type png)
-
-<use ../Figure/twoSBM_power10.png>
-Package pdftex.def Info: ../Figure/twoSBM_power10.png used on input line 597.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/ThreeSBM_power1.png, id=554, 481.8pt x 481.8pt>
-File: ../Figure/ThreeSBM_power1.png Graphic file (type png)
-
-<use ../Figure/ThreeSBM_power1.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power1.png used on input line 603.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/ThreeSBM_power5.png, id=555, 481.8pt x 481.8pt>
-File: ../Figure/ThreeSBM_power5.png Graphic file (type png)
-
-<use ../Figure/ThreeSBM_power5.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power5.png used on input line 604.
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
-
-<../Figure/ThreeSBM_power10.png, id=556, 481.8pt x 481.8pt>
-File: ../Figure/ThreeSBM_power10.png Graphic file (type png)
-
-<use ../Figure/ThreeSBM_power10.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_power10.png used on input line 605.
-
-(pdftex.def)             Requested size: 144.54pt x 144.53375pt.
- [26 <../Figure/C.png> <../Figure/D.png> <../Figure/CD.png> <../Figure/tildeCtr
-unc.png> <../Figure/tildeDtrunc.png> <../Figure/tildeCDtrunc.png> <../Figure/tw
-oSBM_power1.png> <../Figure/twoSBM_power5.png> <../Figure/twoSBM_power10.png>]
-<../Figure/simplethreeSBM.pdf, id=573, 1300.86pt x 361.35pt>
-File: ../Figure/simplethreeSBM.pdf Graphic file (type pdf)
-
-<use ../Figure/simplethreeSBM.pdf>
-Package pdftex.def Info: ../Figure/simplethreeSBM.pdf used on input line 612.
-(pdftex.def)             Requested size: 433.62pt x 120.44786pt.
-
-<../Figure/powerplot_mmono.pdf, id=574, 1300.86pt x 361.35pt>
+<../Figure/powerplot_mmono.pdf, id=447, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_mmono.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_mmono.pdf>
-Package pdftex.def Info: ../Figure/powerplot_mmono.pdf used on input line 636.
+Package pdftex.def Info: ../Figure/powerplot_mmono.pdf used on input line 501.
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
- [27 <../Figure/ThreeSBM_power1.png> <../Figure/ThreeSBM_power5.png> <../Figure
-/ThreeSBM_power10.png> <../Figure/simplethreeSBM.pdf>] <../Figure/powerplot_mmm
-ono.pdf, id=588, 1300.86pt x 361.35pt>
+
+<../Figure/powerplot_mmmono.pdf, id=448, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_mmmono.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_mmmono.pdf>
-Package pdftex.def Info: ../Figure/powerplot_mmmono.pdf used on input line 643.
+Package pdftex.def Info: ../Figure/powerplot_mmmono.pdf used on input line 508.
 
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
-
-<../Figure/powerplot_monoton.pdf, id=589, 1300.86pt x 361.35pt>
+ [21 <../Figure/powerplot_mmono.pdf>]
+<../Figure/powerplot_monoton.pdf, id=460, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_monoton.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_monoton.pdf>
-Package pdftex.def Info: ../Figure/powerplot_monoton.pdf used on input line 650
+Package pdftex.def Info: ../Figure/powerplot_monoton.pdf used on input line 515
 .
 (pdftex.def)             Requested size: 433.62pt x 120.44786pt.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 660.
- [28 <../Figure/powerplot_mmono.pdf> <../Figure/powerplot_mmmono.pdf> <../Figur
-e/powerplot_monoton.pdf>] [29] [30]
-[31] [32] [33] [34]
-Overfull \hbox (45.39252pt too wide) in paragraph at lines 870--871
+put line 525.
+ [22 <../Figure/powerplot_mmmono.pdf> <../Figure/powerplot_monoton.pdf>] [23] [
+24] [25] [26] [27]
+Overfull \hbox (45.39252pt too wide) in paragraph at lines 714--715
 []
  []
 
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 891--892
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 735--736
 []\OT1/cmr/m/n/12 Under
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--898
+Underfull \hbox (badness 10000) in paragraph at lines 740--742
 []\OT1/cmr/m/n/12 Suppose
  []
 
-(./graphMGC.bbl [36]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
- [37] [38] [39])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 913.
- [40]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 913.
+[29] (./graphMGC.bbl [30] [31])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 757.
+ [32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 757.
  (./graphMGC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 913.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 913.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 757.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 757.
 Package rerunfilecheck Info: File `graphMGC.out' has not changed.
-(rerunfilecheck)             Checksum: 39920190748662D555FAF8EF31BE40A6;1758.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 913.
+(rerunfilecheck)             Checksum: 7BFEF89806DABB25E4217098C3CA5496;1180.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 757.
  ) 
 Here is how much of TeX's memory you used:
- 10959 strings out of 494447
- 166155 string characters out of 6166766
- 256683 words of memory out of 5000000
- 13913 multiletter control sequences out of 15000+600000
- 18897 words of font info for 73 fonts, out of 8000000 for 9000
+ 10996 strings out of 494447
+ 165995 string characters out of 6166766
+ 258785 words of memory out of 5000000
+ 13998 multiletter control sequences out of 15000+600000
+ 15951 words of font info for 60 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 36i,19n,43p,2077b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,19n,48p,1475b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
@@ -897,7 +795,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016basi
 c/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016ba
 sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016
 basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texli
+2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texli
 ve/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
 xlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtcsc10.pfb></usr/lo
 cal/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
@@ -906,10 +804,10 @@ r/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on graphMGC.pdf (40 pages, 799163 bytes).
+Output written on graphMGC.pdf (32 pages, 831923 bytes).
 PDF statistics:
- 839 PDF objects out of 1000 (max. 8388607)
- 688 compressed objects within 7 object streams
- 178 named destinations out of 1000 (max. 500000)
- 368 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 682 PDF objects out of 1000 (max. 8388607)
+ 583 compressed objects within 6 object streams
+ 137 named destinations out of 1000 (max. 500000)
+ 230 words of extra memory for PDF output out of 10000 (max. 10000000)
 

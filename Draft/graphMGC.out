@@ -2,23 +2,17 @@
 \BOOKMARK [1][-]{section.2}{Methodology}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Multiscale Generalized Correlation}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Exchangeable Graph}{section.2}% 4
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Exchangeability on point process}{subsection.2.2}% 5
-\BOOKMARK [2][-]{subsection.2.3}{Multiscale Distance Metrics}{section.2}% 6
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Diffusion maps and diffusion distance}{subsection.2.3}% 7
-\BOOKMARK [3][-]{subsubsection.2.3.2}{Properties of diffusion maps under exchangeable graphs}{subsection.2.3}% 8
-\BOOKMARK [3][-]{subsubsection.2.3.3}{One parameter family of test statistic}{subsection.2.3}% 9
-\BOOKMARK [3][-]{subsubsection.2.3.4}{Each node's contribution to dependency measure}{subsection.2.3}% 10
-\BOOKMARK [1][-]{section.3}{Simulation Study}{}% 11
-\BOOKMARK [2][-]{subsection.3.1}{Stochastic Block Model}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.2}{degree-corrected two block model}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.3}{Additive and multiplicative graph model}{section.3}% 14
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Node Contribution Test}{subsection.3.3}% 15
-\BOOKMARK [1][-]{section.4}{Real Data Examples}{}% 16
-\BOOKMARK [1][-]{section.5}{Discussions}{}% 17
-\BOOKMARK [1][-]{appendix.A}{appendix}{}% 18
-\BOOKMARK [2][-]{subsection.A.1}{simulation schemes}{appendix.A}% 19
-\BOOKMARK [2][-]{subsection.A.2}{supplementary figures}{appendix.A}% 20
-\BOOKMARK [2][-]{subsection.A.3}{Node Contribution}{appendix.A}% 21
-\BOOKMARK [2][-]{subsection.A.4}{Monotonicity and Power}{appendix.A}% 22
-\BOOKMARK [2][-]{subsection.A.5}{Algorithms}{appendix.A}% 23
-\BOOKMARK [2][-]{subsection.A.6}{Lemmas and Theorems}{appendix.A}% 24
+\BOOKMARK [2][-]{subsection.2.3}{Family of Network Distances}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Measure for Node Contribution}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Simulation Study}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Stochastic Block Model}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{degree-corrected two block model}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Additive and multiplicative graph model}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.4}{Node Contribution Test}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Real Data Examples}{}% 12
+\BOOKMARK [1][-]{section.5}{Discussions}{}% 13
+\BOOKMARK [1][-]{appendix.A}{appendix}{}% 14
+\BOOKMARK [2][-]{subsection.A.1}{simulation schemes}{appendix.A}% 15
+\BOOKMARK [2][-]{subsection.A.2}{Monotonicity and Power}{appendix.A}% 16
+\BOOKMARK [2][-]{subsection.A.3}{Algorithms}{appendix.A}% 17
+\BOOKMARK [2][-]{subsection.A.4}{Lemmas and Theorems}{appendix.A}% 18
