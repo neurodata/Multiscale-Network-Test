@@ -16,7 +16,7 @@ anchorcolor = blue]{hyperref}
 \usepackage{psfrag}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{enumerate}
-\usepackage{natbib}
+\usepackage{natbib, subcaption}
 \usepackage{url} % not crucial - just used below for the URL 
 \usepackage{sidecap}
 \sidecaptionvpos{figure}{c}
@@ -40,11 +40,31 @@ anchorcolor = blue]{hyperref}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.23\linewidth]{../Figure/pmat.png} 
-	\includegraphics[width=0.23\linewidth]{../Figure/Amat.png}
-	\includegraphics[width=0.23\linewidth]{../Figure/distA.png}
-	\includegraphics[width=0.23\linewidth]{../Figure/distX.png}
-	\caption{Assume that a set of edges follow certain stochastic block model, also depending on the distribution function of nodal attributes $X$ (a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes (b) of which Euclidean distances (c $\&$ d) are suggested to be used in standard distance-based independence test \textbf{but neither of them manifests block structures evident in the data generating model.}}
+	\begin{subfigure}[b]{0.23\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/Pmat.pdf}
+		\caption{}
+		\label{fig:a}
+	\end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.23\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/Amat.pdf}
+		\caption{}
+		\label{fig:b}
+	\end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.23\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/distA.pdf}
+		\caption{}
+		\label{fig:c}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.23\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/distX.pdf}
+		\caption{}
+		\label{fig:d}
+	\end{subfigure}
+	\caption{Assume that a set of edges follow certain stochastic block model, also depending on the distribution function of nodal attributes $X$ (a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes (b) of which Euclidean distances (c $\&$ d) are suggested to be used in standard distance-based independence test \textbf{but neither of them manifests block structures evident in the data generating model and each column (or row) of an adjacency matrix is constructed dependently on the others.}}
 	\label{fig:matrics}
 \end{figure}	
 
@@ -52,43 +72,14 @@ anchorcolor = blue]{hyperref}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.3\linewidth]{../Figure/Dx1.png}
-	\includegraphics[width=0.3\linewidth]{../Figure/Dx3.png}
-	\includegraphics[width=0.3\linewidth]{../Figure/Dx50.png}
+	\includegraphics[width=0.3\linewidth]{../Figure/Dx1.pdf}
+	\includegraphics[width=0.3\linewidth]{../Figure/Dx3.pdf}
+	\includegraphics[width=0.3\linewidth]{../Figure/Dx50.pdf}
 	\label{fig:diffusions}
 	\caption{\textit{Diffusion matrix}, as a proposed alternative for Euclidean distance of $A$, provides \textbf{one-parameter family of network-based distances} where at early stage, e.g. at $t=1$, distance matrix is very similar to Euclidean distance of $A$ but as time goes by the pattern shown in the distance matrix changes, and \textbf{at optimal time point $t^{*} = 3$ distance matrix shows most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf{X}$.}}
 \end{figure}	
 
 
-\subsection*{ Empirical power of Oracle MGC/Sample MGC}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=6in]{../Figure/density.pdf}
-	\caption{In the left panel we have empirical Null distribution of \texttt{Oracle MGC} illustrated by dotted line of which 95$\%$ sample quantile determines testing power of \texttt{Oracle MGC} by calculating area under the curve (AUC) of the empirical distribution under alternative beyond that quantile, and AUC of \texttt{Oracle MGC} (0.644) looks similar to that of \texttt{Sample MGC} (0.608), as presented in the right panel, even though the shape of its distributions under null and alternative look different, which supports the use of \texttt{Sample MGC} as a substitute for \texttt{Oracle MGC} in real data.}
-	\label{fig:density}
-\end{figure}	
- 
- \newpage
-\subsection*{Simplest Stochastic Block Model}
- 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\linewidth]{../Figure/twoSBM.pdf}
-	\caption{Above three figures are showing power of three different test statistics under two block SBM using diffusion maps, adjacency matrix, and estimated latent position as a network distance measure, and also \texttt{FH} test results are shown in the left. \textbf{This demonstrates that in the simplest stochastic block model, diffusion distance is generally better than the other two metric; while the performance of \texttt{MGC} statistic is very similar to the others in this case.}}
-	\label{fig:twoSBM}
-\end{figure}
-
-
-Alternate : Let \texttt{MGC} = \texttt{Sample MGC}. 
-
-\begin{figure}[h]
-	\centering
-\includegraphics[width=\linewidth]{../Figure/twoSBM_simple.pdf}	
-\end{figure}
-
-
-\newpage
 \subsection*{Highest power of MGC under diffusion maps}
 
 \begin{SCfigure}[][h]
@@ -101,21 +92,13 @@ Alternate : Let \texttt{MGC} = \texttt{Sample MGC}.
 
 \subsection*{Superiority of the proposed method under non-linear dependency}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\linewidth]{../Figure/powerplot.pdf}
-	\caption{X-axis of $\theta$ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, \textbf{mostly due to decreasing power of global test but relatively stable power of \texttt{MGC} under nonlinear dependency} as presented in the left panel.}
-	\label{fig:powerplot}
-\end{figure}
-
-Alternate : Let \texttt{MGC} = \texttt{Sample MGC}
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{../Figure/powerplot_simple.pdf}
+		\caption{X-axis of $\theta$ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, \textbf{mostly due to decreasing power of global test but relatively stable power of \texttt{MGC} under nonlinear dependency} as presented in the left panel.}
+		\label{fig:powerplot}
 \end{figure}
 
-\newpage
 \subsection*{Degree-corrected SBM with increased variability in node distribution}	
 
 \textbf{Increasing variance in DCSBM}
@@ -132,20 +115,12 @@ Alternate : Let \texttt{MGC} = \texttt{Sample MGC}
 
 \begin{figure}[h]
 	\centering
-		\includegraphics[width=\linewidth]{../Figure/powerplot_var.pdf}
+		\includegraphics[width=0.8\linewidth]{../Figure/powerplot_var_simple.pdf}
 	\caption{In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, \textbf{power of diffusion maps are more likely to be robust against increasing variability compared to adjacency matrix and latent positions.}}
 	\label{fig:dcSBM}
 \end{figure}	
 
-Alternate : Let \texttt{MGC} = \texttt{Sample MGC}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{../Figure/powerplot_var_simple.pdf}
-\end{figure}	
-
-
-\newpage
 \subsection*{Validity of the method even under competitor's model}
 
 \begin{figure}[H]
@@ -158,12 +133,12 @@ Alternate : Let \texttt{MGC} = \texttt{Sample MGC}
 
 \subsection*{Node Contribution}
 
-\begin{SCfigure}[][h]
+\begin{figure}[h]
 	\centering
-		\includegraphics[width=0.6\linewidth, height = 0.3\linewidth]{../Figure/nodecontri.pdf}
+		\includegraphics[width=0.8\linewidth]{../Figure/nodecontri.pdf}
 	\caption{This plot describes both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, \textbf{which validates the use of node contribution measure in independence test.}}
 	\label{fig:contribution}
-\end{SCfigure}
+\end{figure}
 
 
 \subsection*{Political Network}
