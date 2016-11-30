@@ -496,29 +496,7 @@ In this paper, we have shown that \texttt{MGC}, merged with a family of diffusio
 \end{equation}
 
 \end{itemize}
-%%%%%%%%%
-\subsection{Monotonicity and Power}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=6in]{../Figure/powerplot_mmono.pdf}
-	\caption{Change of empirical power across $\theta$ in $Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.1 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta > 0.1$, when distribution of edges have non-linear dependence on $X$.}
-	\label{fig:powerplot_mmono}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=6in]{../Figure/powerplot_mmmono.pdf}
-	\caption{Change of empirical power across $\theta$ in $Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.2 I(|X_{i} - X_{j}| = 0) + 0.8 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta < 0.8$, when distribution of edges have non-linear dependence on $X$.}
-	\label{fig:powerplot_mmmono}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=6in]{../Figure/powerplot_monoton.pdf}
-	\caption{Change of empirical power across $\theta$ in $Power(\theta) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.5 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. You can see that across $\theta (>0)$, \texttt{MGC} and global distance-based tests are very similar since we have linear-dependence for all range or $\theta$.}
-	\label{fig:powerplot_monoton}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Algorithms}

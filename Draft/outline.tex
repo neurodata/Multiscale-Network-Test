@@ -64,7 +64,7 @@ anchorcolor = blue]{hyperref}
 		\caption{}
 		\label{fig:d}
 	\end{subfigure}
-	\caption{Assume that a set of edges follow certain stochastic block model, also depending on the distribution function of nodal attributes $X$ (a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes (b) of which Euclidean distances (c $\&$ d) are suggested to be used in standard distance-based independence test \textbf{but neither of them manifests block structures evident in the data generating model and each column (or row) of an adjacency matrix is constructed dependently on the others.}}
+	\caption{Assume that a set of edges follow certain stochastic block model, also depending on the distribution function of nodal attributes $X$ (a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes (b) of which Euclidean distances ((c) and (d)) are suggested to be used in standard distance-based independence test \textbf{but neither of them manifests block structures evident in the data generating model and each column (or row) of an adjacency matrix is constructed dependently on the others.}}
 	\label{fig:matrics}
 \end{figure}	
 
@@ -101,6 +101,7 @@ anchorcolor = blue]{hyperref}
 
 
 \subsection*{Degree-corrected SBM with increased variability in node distribution}	
+\subsection*{Validity of the method even under competitor's model}
 
 \begin{figure}[H]
 	\centering
@@ -116,15 +117,6 @@ anchorcolor = blue]{hyperref}
 	\end{subfigure}
 	\caption{(a) In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt{FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt{MGC}. (b) \texttt{MGC} utilizing diffusion distances loses some power under additive and multiplicative model which favors estimated latent position metrics, but \texttt{MGC} does as good as \texttt{FH} tests under latent factor metrics which closes to the truth. This reveals the flexibility in distance-based matrix in \texttt{MGC} statistics, which can be chosen depending on model fit or preliminary knowledge.}
 	\label{fig:combined}
-\end{figure}	
-
-\subsection*{Validity of the method even under competitor's model}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{../Figure/ame_part.pdf}
-	\caption{Even under additive and multiplicative model which favors estimated latent position metrics, \texttt{MGC} lost some power when using diffusion maps and adjacency matrix but \textbf{\texttt{MGC} does as good as \texttt{FH} tests under latent factor metrics which is the truth, which supports excellent ability of \texttt{MGC} in diverse, nearly true network metrics.}}
-	\label{fig:ame}
 \end{figure}	
 
 
@@ -143,7 +135,7 @@ anchorcolor = blue]{hyperref}
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=\linewidth]{../Figure/two_politics.pdf}
-	\caption{Both networks depict the collaboration network during the two time periods where it turns out significant network dependency in types of organizations. \textbf{Using \texttt{MGC} statistics, we are not only able to test network independence but also rank each node in terms of the amount of contribution to detecting dependence, which is proportional to node size here.}}
+	\caption{Both networks depict the collaboration network during the two time periods where it turns out significant network dependency in types of organizations. \textbf{Considering the size of nodes is proportional to the contribution to the statistic, you can notice that throughout all periods business sector is most actively collaborating within their group.}}
 	\label{fig:politics}
 \end{figure}
 
