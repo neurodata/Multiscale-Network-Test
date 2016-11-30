@@ -22,16 +22,16 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}}
 \newlabel{sec:intro}{{1}{2}{Introduction}{section.1}{}}
 \citation{szekely2007measuring}
+\citation{szekely2007measuring}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces You may conjecture that organizations with the same type are more likely to collaborate each other at first glance; but there has been a lack of statistical method to test if there exists any significant relationship between network topology and node-specific attributes and if any, which node exerts the most dependency on network.\relax }}{3}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:intro}{{1}{3}{You may conjecture that organizations with the same type are more likely to collaborate each other at first glance; but there has been a lack of statistical method to test if there exists any significant relationship between network topology and node-specific attributes and if any, which node exerts the most dependency on network.\relax }{figure.caption.1}{}}
-\citation{szekely2007measuring}
 \citation{szekely2013distance}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Methodology}{4}{section.2}}
 \newlabel{sec:method}{{2}{4}{Methodology}{section.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Multiscale Generalized Correlation}{4}{subsection.2.1}}
+\newlabel{eq:MGC}{{2}{4}{Multiscale Generalized Correlation}{equation.2.2}{}}
 \citation{lyons2013distance}
-\newlabel{eq:MGC}{{2}{5}{Multiscale Generalized Correlation}{equation.2.2}{}}
 \newlabel{fig:a}{{2a}{5}{\relax }{figure.caption.2}{}}
 \newlabel{sub@fig:a}{{a}{5}{\relax }{figure.caption.2}{}}
 \newlabel{fig:b}{{2b}{5}{\relax }{figure.caption.2}{}}
@@ -61,7 +61,7 @@
 \citation{coifman2006diffusion,lafon2006diffusion}
 \newlabel{eq:graphon}{{7}{8}{Exchangeable Graph}{equation.2.7}{}}
 \newlabel{point}{{2.3}{8}{Joint exchangeability on point process}{definition.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Family of Network Distances}{9}{subsection.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Family of Network Distances}{8}{subsection.2.3}}
 \newlabel{eq:diffusion}{{9}{9}{Family of Network Distances}{equation.2.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textit  {Diffusion matrix}, as a proposed alternative for Euclidean distance of $A$, provides \textbf  {one-parameter family of network-based distances} where at early stage, e.g. at $t=1$, distance matrix is very similar to Euclidean distance of $A$ but as time goes by the pattern shown in the distance matrix changes, and \textbf  {at optimal time point $t^{*} = 3$ distance matrix shows most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf  {X}$.}\relax }}{10}{figure.caption.3}}
 \newlabel{fig:diffusions}{{3}{10}{\textit {Diffusion matrix}, as a proposed alternative for Euclidean distance of $A$, provides \textbf {one-parameter family of network-based distances} where at early stage, e.g. at $t=1$, distance matrix is very similar to Euclidean distance of $A$ but as time goes by the pattern shown in the distance matrix changes, and \textbf {at optimal time point $t^{*} = 3$ distance matrix shows most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf {X}$.}\relax }{figure.caption.3}{}}
@@ -91,24 +91,25 @@
 \citation{karrer2011stochastic}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces X-axis of $\theta $ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, \textbf  {mostly due to decreasing power of global test but relatively stable power of \texttt  {MGC} under nonlinear dependency} as presented in the left panel.\relax }}{15}{figure.caption.5}}
 \newlabel{fig:powerplot}{{5}{15}{X-axis of $\theta $ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, \textbf {mostly due to decreasing power of global test but relatively stable power of \texttt {MGC} under nonlinear dependency} as presented in the left panel.\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}degree-corrected two block model}{16}{subsection.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, \textbf  {power of diffusion maps are more likely to be robust against increasing variability compared to adjacency matrix and latent positions.}\relax }}{16}{figure.caption.6}}
-\newlabel{fig:dcSBM}{{6}{16}{In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, \textbf {power of diffusion maps are more likely to be robust against increasing variability compared to adjacency matrix and latent positions.}\relax }{figure.caption.6}{}}
 \citation{hoff2002latent}
 \citation{fosdick2015testing}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}degree-corrected two block model}{16}{subsection.3.2}}
+\newlabel{fig:dcSBM}{{6a}{16}{\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:dcSBM}{{a}{16}{\relax }{figure.caption.6}{}}
+\newlabel{fig:ame}{{6b}{16}{\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:ame}{{b}{16}{\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces (a) In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt  {FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt  {MGC}. (b) \texttt  {MGC} utilizing diffusion distances loses some power under additive and multiplicative model which favors estimated latent position metrics, but \texttt  {MGC} does as good as \texttt  {FH} tests under latent factor metrics which closes to the truth. This reveals the flexibility in distance-based matrix in \texttt  {MGC} statistics, which can be chosen depending on model fit or preliminary knowledge.\relax }}{16}{figure.caption.6}}
+\newlabel{fig:combined}{{6}{16}{(a) In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt {FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt {MGC}. (b) \texttt {MGC} utilizing diffusion distances loses some power under additive and multiplicative model which favors estimated latent position metrics, but \texttt {MGC} does as good as \texttt {FH} tests under latent factor metrics which closes to the truth. This reveals the flexibility in distance-based matrix in \texttt {MGC} statistics, which can be chosen depending on model fit or preliminary knowledge.\relax }{figure.caption.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Additive and multiplicative graph model}{17}{subsection.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Even under additive and multiplicative model which favors estimated latent position metrics, \texttt  {MGC} lost some power when using diffusion maps and adjacency matrix but \textbf  {\texttt  {MGC} does as good as \texttt  {FH} tests under latent factor metrics which is the truth, which supports excellent ability of \texttt  {MGC} in diverse, nearly true network metrics.}\relax }}{17}{figure.caption.7}}
-\newlabel{fig:ame}{{7}{17}{Even under additive and multiplicative model which favors estimated latent position metrics, \texttt {MGC} lost some power when using diffusion maps and adjacency matrix but \textbf {\texttt {MGC} does as good as \texttt {FH} tests under latent factor metrics which is the truth, which supports excellent ability of \texttt {MGC} in diverse, nearly true network metrics.}\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Node Contribution Test}{18}{subsection.3.4}}
-\newlabel{ssec:node}{{3.4}{18}{Node Contribution Test}{subsection.3.4}{}}
-\newlabel{SC@2}{{\caption@xref {??}{ on input line 414}}{18}{Node Contribution Test}{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces This plot describes both power of \texttt  {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, \textbf  {which validates the use of node contribution measure in independence test.}\relax }}{18}{figure.caption.8}}
-\newlabel{fig:contribution}{{8}{18}{This plot describes both power of \texttt {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, \textbf {which validates the use of node contribution measure in independence test.}\relax }{figure.caption.8}{}}
-\newlabel{eq:inclusion_rate}{{18}{18}{Node Contribution Test}{equation.3.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Node Contribution Test}{17}{subsection.3.4}}
+\newlabel{ssec:node}{{3.4}{17}{Node Contribution Test}{subsection.3.4}{}}
+\newlabel{eq:inclusion_rate}{{18}{17}{Node Contribution Test}{equation.3.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces This plot describes both power of \texttt  {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, \textbf  {which validates the use of node contribution measure in independence test.}\relax }}{18}{figure.caption.7}}
+\newlabel{fig:contribution}{{7}{18}{This plot describes both power of \texttt {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, \textbf {which validates the use of node contribution measure in independence test.}\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Real Data Examples}{19}{section.4}}
 \newlabel{sec:real}{{4}{19}{Real Data Examples}{section.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Both networks depict the collaboration network during the two time periods where it turns out significant network dependency in types of organizations. \textbf  {Using \texttt  {MGC} statistics, we are not only able to test network independence but also rank each node in terms of the amount of contribution to detecting dependence, which is proportional to node size here.}\relax }}{19}{figure.caption.9}}
-\newlabel{fig:politics}{{9}{19}{Both networks depict the collaboration network during the two time periods where it turns out significant network dependency in types of organizations. \textbf {Using \texttt {MGC} statistics, we are not only able to test network independence but also rank each node in terms of the amount of contribution to detecting dependence, which is proportional to node size here.}\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Both networks depict the collaboration network during the two time periods where it turns out significant network dependency in types of organizations. \textbf  {Using \texttt  {MGC} statistics, we are not only able to test network independence but also rank each node in terms of the amount of contribution to detecting dependence, which is proportional to node size here.}\relax }}{19}{figure.caption.8}}
+\newlabel{fig:politics}{{8}{19}{Both networks depict the collaboration network during the two time periods where it turns out significant network dependency in types of organizations. \textbf {Using \texttt {MGC} statistics, we are not only able to test network independence but also rank each node in terms of the amount of contribution to detecting dependence, which is proportional to node size here.}\relax }{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Discussions}{19}{section.5}}
 \newlabel{sec:discussion}{{5}{19}{Discussions}{section.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}appendix}{20}{appendix.A}}
@@ -119,12 +120,12 @@
 \newlabel{eq:ame}{{21}{21}{simulation schemes}{equation.A.21}{}}
 \newlabel{eq:contri}{{22}{21}{simulation schemes}{equation.A.22}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Monotonicity and Power}{21}{subsection.A.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.1 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta > 0.1$, when distribution of edges have non-linear dependence on $X$.\relax }}{21}{figure.caption.10}}
-\newlabel{fig:powerplot_mmono}{{10}{21}{Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.1 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta > 0.1$, when distribution of edges have non-linear dependence on $X$.\relax }{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.2 I(|X_{i} - X_{j}| = 0) + 0.8 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta < 0.8$, when distribution of edges have non-linear dependence on $X$.\relax }}{22}{figure.caption.11}}
-\newlabel{fig:powerplot_mmmono}{{11}{22}{Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.2 I(|X_{i} - X_{j}| = 0) + 0.8 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta < 0.8$, when distribution of edges have non-linear dependence on $X$.\relax }{figure.caption.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.5 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. You can see that across $\theta (>0)$, \texttt  {MGC} and global distance-based tests are very similar since we have linear-dependence for all range or $\theta $.\relax }}{22}{figure.caption.12}}
-\newlabel{fig:powerplot_monoton}{{12}{22}{Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.5 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. You can see that across $\theta (>0)$, \texttt {MGC} and global distance-based tests are very similar since we have linear-dependence for all range or $\theta $.\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.1 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta > 0.1$, when distribution of edges have non-linear dependence on $X$.\relax }}{21}{figure.caption.9}}
+\newlabel{fig:powerplot_mmono}{{9}{21}{Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.1 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta > 0.1$, when distribution of edges have non-linear dependence on $X$.\relax }{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.2 I(|X_{i} - X_{j}| = 0) + 0.8 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta < 0.8$, when distribution of edges have non-linear dependence on $X$.\relax }}{22}{figure.caption.10}}
+\newlabel{fig:powerplot_mmmono}{{10}{22}{Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.2 I(|X_{i} - X_{j}| = 0) + 0.8 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. Superiority of optimal local scale become evident from $\theta < 0.8$, when distribution of edges have non-linear dependence on $X$.\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.5 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. You can see that across $\theta (>0)$, \texttt  {MGC} and global distance-based tests are very similar since we have linear-dependence for all range or $\theta $.\relax }}{22}{figure.caption.11}}
+\newlabel{fig:powerplot_monoton}{{11}{22}{Change of empirical power across $\theta $ in $Power(\theta ) = E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.5 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2)$. You can see that across $\theta (>0)$, \texttt {MGC} and global distance-based tests are very similar since we have linear-dependence for all range or $\theta $.\relax }{figure.caption.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Algorithms}{23}{subsection.A.3}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Mutiscale representation of nodes in network\relax }}{23}{algorithm.1}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Multiscale Generalized Correlation (\texttt  {MGC}) test statistics with diffusion maps as a network-based distance.\relax }}{23}{algorithm.2}}
@@ -141,27 +142,24 @@
 \newlabel{eq:SLLN}{{34}{29}{Lemmas and Theorems}{equation.A.34}{}}
 \bibstyle{Chicago}
 \bibdata{Biblio}
-\bibcite{bartlett2014dna}{{1}{2014}{{Bartlett et~al.}}{{Bartlett, Olhede, and Zaikin}}}
-\bibcite{caron2014sparse}{{2}{2014}{{Caron and Fox}}{{Caron and Fox}}}
-\bibcite{chan2013estimation}{{3}{2013}{{Chan et~al.}}{{Chan, Costa, and Airoldi}}}
-\bibcite{christakis2007spread}{{4}{2007}{{Christakis and Fowler}}{{Christakis and Fowler}}}
-\bibcite{christakis2008collective}{{5}{2008}{{Christakis and Fowler}}{{Christakis and Fowler}}}
-\bibcite{coifman2006diffusion}{{6}{2006}{{Coifman and Lafon}}{{Coifman and Lafon}}}
-\bibcite{fosdick2015testing}{{7}{2015}{{Fosdick and Hoff}}{{Fosdick and Hoff}}}
-\bibcite{heller2012consistent}{{8}{2012}{{Heller et~al.}}{{Heller, Heller, and Gorfine}}}
-\bibcite{hoff2002latent}{{9}{2002}{{Hoff et~al.}}{{Hoff, Raftery, and Handcock}}}
-\bibcite{holland1983stochastic}{{10}{1983}{{Holland et~al.}}{{Holland, Laskey, and Leinhardt}}}
-\bibcite{howard2016understanding}{{11}{2016}{{Howard et~al.}}{{Howard, Cox~Pahnke, Boeker, et~al.}}}
-\bibcite{kallenberg1990exchangeable}{{12}{1990}{{Kallenberg}}{{Kallenberg}}}
-\bibcite{karrer2011stochastic}{{13}{2011}{{Karrer and Newman}}{{Karrer and Newman}}}
-\bibcite{lafon2006diffusion}{{14}{2006}{{Lafon and Lee}}{{Lafon and Lee}}}
-\bibcite{lovasz2006limits}{{15}{2006}{{Lov{\'a}sz and Szegedy}}{{Lov{\'a}sz and Szegedy}}}
-\bibcite{lyons2013distance}{{16}{2013}{{Lyons et~al.}}{{Lyons et~al.}}}
-\bibcite{mantzaris2013dynamic}{{17}{2013}{{Mantzaris et~al.}}{{Mantzaris, Bassett, Wymbs, Estrada, Porter, Mucha, Grafton, and Higham}}}
-\bibcite{orbanz2015bayesian}{{18}{2015}{{Orbanz and Roy}}{{Orbanz and Roy}}}
-\bibcite{sporns2007identification}{{19}{2007}{{Sporns et~al.}}{{Sporns, Honey, and K{\"o}tter}}}
-\bibcite{szekely2013distance}{{20}{2013}{{Sz{\'e}kely and Rizzo}}{{Sz{\'e}kely and Rizzo}}}
-\bibcite{szekely2007measuring}{{21}{2007}{{Sz{\'e}kely et~al.}}{{Sz{\'e}kely, Rizzo, Bakirov, et~al.}}}
-\bibcite{veitch2015class}{{22}{2015}{{Veitch and Roy}}{{Veitch and Roy}}}
-\bibcite{wasserman1996logit}{{23}{1996}{{Wasserman and Pattison}}{{Wasserman and Pattison}}}
-\bibcite{young2007random}{{24}{2007}{{Young and Scheinerman}}{{Young and Scheinerman}}}
+\bibcite{caron2014sparse}{{1}{2014}{{Caron and Fox}}{{Caron and Fox}}}
+\bibcite{chan2013estimation}{{2}{2013}{{Chan et~al.}}{{Chan, Costa, and Airoldi}}}
+\bibcite{christakis2007spread}{{3}{2007}{{Christakis and Fowler}}{{Christakis and Fowler}}}
+\bibcite{christakis2008collective}{{4}{2008}{{Christakis and Fowler}}{{Christakis and Fowler}}}
+\bibcite{coifman2006diffusion}{{5}{2006}{{Coifman and Lafon}}{{Coifman and Lafon}}}
+\bibcite{fosdick2015testing}{{6}{2015}{{Fosdick and Hoff}}{{Fosdick and Hoff}}}
+\bibcite{heller2012consistent}{{7}{2012}{{Heller et~al.}}{{Heller, Heller, and Gorfine}}}
+\bibcite{hoff2002latent}{{8}{2002}{{Hoff et~al.}}{{Hoff, Raftery, and Handcock}}}
+\bibcite{holland1983stochastic}{{9}{1983}{{Holland et~al.}}{{Holland, Laskey, and Leinhardt}}}
+\bibcite{howard2016understanding}{{10}{2016}{{Howard et~al.}}{{Howard, Cox~Pahnke, Boeker, et~al.}}}
+\bibcite{kallenberg1990exchangeable}{{11}{1990}{{Kallenberg}}{{Kallenberg}}}
+\bibcite{karrer2011stochastic}{{12}{2011}{{Karrer and Newman}}{{Karrer and Newman}}}
+\bibcite{lafon2006diffusion}{{13}{2006}{{Lafon and Lee}}{{Lafon and Lee}}}
+\bibcite{lovasz2006limits}{{14}{2006}{{Lov{\'a}sz and Szegedy}}{{Lov{\'a}sz and Szegedy}}}
+\bibcite{lyons2013distance}{{15}{2013}{{Lyons et~al.}}{{Lyons et~al.}}}
+\bibcite{orbanz2015bayesian}{{16}{2015}{{Orbanz and Roy}}{{Orbanz and Roy}}}
+\bibcite{szekely2013distance}{{17}{2013}{{Sz{\'e}kely and Rizzo}}{{Sz{\'e}kely and Rizzo}}}
+\bibcite{szekely2007measuring}{{18}{2007}{{Sz{\'e}kely et~al.}}{{Sz{\'e}kely, Rizzo, Bakirov, et~al.}}}
+\bibcite{veitch2015class}{{19}{2015}{{Veitch and Roy}}{{Veitch and Roy}}}
+\bibcite{wasserman1996logit}{{20}{1996}{{Wasserman and Pattison}}{{Wasserman and Pattison}}}
+\bibcite{young2007random}{{21}{2007}{{Young and Scheinerman}}{{Young and Scheinerman}}}

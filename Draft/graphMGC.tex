@@ -104,7 +104,7 @@ anchorcolor = blue]{hyperref}
 \bigskip
 \begin{abstract}
 	%The text of your abstract. 200 or fewer words.
-		Network dependence, which refers to all types of dependence between network topology and its nodal attributes, often exhibits nonlinear patterns. Unfortunately, without knowledge on true metrics defined over network, no statistic has been proposed to test network dependence further beyond globally linear dependence. This paper introduces a multiscale independence test statistics, which \textbf{combines truncated distance-based test and a family of graph geometries}. These two tools are specialized in preserving local relational information. We show outstanding \textbf{synergy effect} of them through simulation studies. The application to political collaboration networks will be followed. 
+		Network dependence, which refers to all types of dependence between network topology and its nodal attributes, often exhibits nonlinear patterns. Unfortunately, without knowledge on true metrics defined over network, no statistic has been proposed to test network dependence further beyond globally linear dependence. This paper introduces multiscale independence test statistics, which \textbf{combines truncated distance-based test and a family of graph geometries}. These two tools are specialized in preserving local relational information. We show outstanding \textbf{synergy effect} of them through simulation studies. The application to political collaboration networks will be followed. 
 \end{abstract}
 	
 	\noindent%
@@ -156,7 +156,7 @@ where $r(C_{ij})$ ($r(D_{ij})$) denotes a rank of $\mathbf{w}_{i}$ ($\mathbf{y}_
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.23\textwidth}
-		\includegraphics[width=\textwidth]{../Figure/Pmat.pdf}
+		\includegraphics[width=\textwidth]{../Figure/pmat.pdf}
 		\caption{}
 		\label{fig:a}
 	\end{subfigure}
@@ -383,35 +383,38 @@ If you see Figure~\ref{fig:powerplot}, power of \texttt{dCorr} starts to drop fr
 
 The SBM connotes that all nodes within the same block have the same expected degree. However, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with hubs or highly varying node degrees within blocks or communities. Instead, the Degree-Corrected Stochastic Block model (DCSBM) proposed by \cite{karrer2011stochastic} varies distribution of node degree within a block, preserving the overall block community structure. Consider two block SBM having more variability induced by $\theta$ (model~\ref{eq:dcVariance}). Here we have an edge distribution as a linear function of Euclidean distance of $X$. However its variance becomes inflated due to $\tau > 0$. Relatively poor performance of an adjacency metric as presented in Figure~\ref{fig:dcSBM} can be attributed to large variability in it. Even in this case, \texttt{MGC} achieves almost same level of power across increasing $\tau$s. On the other hand, node-specific latent factors look more sensitive in \texttt{FH} model, but still diffusion maps metrics work better.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\linewidth, height = 0.4\linewidth]{../Figure/powerplot_var_simple.pdf}
-	\caption{In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, \textbf{power of diffusion maps are more likely to be robust against increasing variability compared to adjacency matrix and latent positions.}}
-	\label{fig:dcSBM}
-\end{figure}	
-
-
-	
-\subsection{Additive and multiplicative graph model}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{../Figure/ame_part.pdf}
-	\caption{Even under additive and multiplicative model which favors estimated latent position metrics, \texttt{MGC} lost some power when using diffusion maps and adjacency matrix but \textbf{\texttt{MGC} does as good as \texttt{FH} tests under latent factor metrics which is the truth, which supports excellent ability of \texttt{MGC} in diverse, nearly true network metrics.}}
-	\label{fig:ame}
-\end{figure}
+	\begin{subfigure}[b]{0.35\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/onlytau.pdf}
+		\caption{}
+		\label{fig:dcSBM}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.6\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/ame_part.pdf}
+		\caption{}
+		\label{fig:ame}
+	\end{subfigure}
+	\caption{(a) In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt{FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt{MGC}. (b) \texttt{MGC} utilizing diffusion distances loses some power under additive and multiplicative model which favors estimated latent position metrics, but \texttt{MGC} does as good as \texttt{FH} tests under latent factor metrics which closes to the truth. This reveals the flexibility in distance-based matrix in \texttt{MGC} statistics, which can be chosen depending on model fit or preliminary knowledge.}
+	\label{fig:combined}
+\end{figure}	
+	
+\subsection{Additive and multiplicative graph model}
+
+
 
 \cite{hoff2002latent} proposed an approach of jointly modeling network and its attributes, where networks possess additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors. Whereas \cite{fosdick2015testing} embedded nodes into network factors assuming that additive an multiplicative network model is \textit{correct}, a family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship. Thus in the model~\ref{eq:ame}, where logit of $A$ is an additive and multiplicative function of their estimated factors, estimated latent position would be very close to the truth, much closer than embedding made from diffusion maps. However we rarely see the network which is fitted to the model in reality. If we should, using network factors as independent observations from graph \textbf{G} and applying them to \texttt{MGC} performs not very worse than \texttt{FH} statistic (Figure~\ref{fig:ame}). In other words, if network really fits well to the network model with node-specific latent factors as covariates, then it would safe to use those factors in testing independence directly. Since they assume \textit{i.i.d} generative model for factors, there is nothing wrong with applying \texttt{MGC} using \textit{i.i.d} observations of estimated factors.
 
 \subsection{Node Contribution Test}
 \label{ssec:node}
 
-\begin{SCfigure}[][h]
+\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\linewidth, height = 0.3\linewidth]{../Figure/nodecontri.pdf}
+	\includegraphics[width=\linewidth]{../Figure/nodecontri.pdf}
 	\caption{This plot describes both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, \textbf{which validates the use of node contribution measure in independence test.}}
 	\label{fig:contribution}
-\end{SCfigure}
+\end{figure}
 To examine the effectiveness of node contribution measure in testing dependency as presented in Eq.~\ref{contribution}, we deliberately simulate the network and its nodal attributes as half of the nodes are independent while the other half are dependent on network (model~\ref{eq:contri}). As an ad hoc test of node contribution, we rank the nodes in terms of decreasing order of $c(v)$ and count the ratio of dependent samples's ranks within the number of dependent nodes. If it works perfectly, all dependent nodes would take higher rank than every independent node so thus the rate equals to one. We call this rate as \textit{inclusion rate}:
 \begin{equation}
 \mbox{ inclustion rate}\big(  c(v) \big) = \# \big\{  rank_{c(v)}\big(  u \big)  \leq  m  \big\}   /  m,

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  28 NOV 2016 14:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  29 NOV 2016 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -382,7 +382,11 @@ Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
 \c@SC@C=\count136
 \SC@BOX=\box32
 )
-(./outline.aux)
+(./outline.aux
+
+LaTeX Warning: Label `fig:ame' multiply defined.
+
+)
 \openout1 = `outline.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -400,8 +404,7 @@ LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 \AtBeginShipoutBox=\box33
-
-(/usr/local/texlive/2016basic/texmf-dist/tex/latex/graphics/color.sty
+ (/usr/local/texlive/2016basic/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -490,31 +493,31 @@ LaTeX Info: Redefining \selectfont on input line 126.
 \RaggedRightParindent=\skip64
 \JustifyingParindent=\skip65
 )
-<../Figure/introplot.pdf, id=4, 578.16pt x 361.35pt>
+<../Figure/introplot.pdf, id=8, 722.7pt x 361.35pt>
 File: ../Figure/introplot.pdf Graphic file (type pdf)
 
 <use ../Figure/introplot.pdf>
 Package pdftex.def Info: ../Figure/introplot.pdf used on input line 32.
-(pdftex.def)             Requested size: 216.81pt x 135.50592pt.
- <../Figure/Pmat.pdf, id=5, 505.89pt x 505.89pt>
+(pdftex.def)             Requested size: 216.81pt x 108.40584pt.
+ <../Figure/Pmat.pdf, id=9, 481.8pt x 481.8pt>
 File: ../Figure/Pmat.pdf Graphic file (type pdf)
 
 <use ../Figure/Pmat.pdf>
 Package pdftex.def Info: ../Figure/Pmat.pdf used on input line 44.
-(pdftex.def)             Requested size: 104.7042pt x 104.70389pt.
- <../Figure/Amat.pdf, id=6, 505.89pt x 505.89pt>
+(pdftex.def)             Requested size: 104.7042pt x 104.70242pt.
+ <../Figure/Amat.pdf, id=11, 505.89pt x 505.89pt>
 File: ../Figure/Amat.pdf Graphic file (type pdf)
 
 <use ../Figure/Amat.pdf>
 Package pdftex.def Info: ../Figure/Amat.pdf used on input line 51.
 (pdftex.def)             Requested size: 104.7042pt x 104.70389pt.
- <../Figure/distA.pdf, id=7, 505.89pt x 505.89pt>
+ <../Figure/distA.pdf, id=12, 505.89pt x 505.89pt>
 File: ../Figure/distA.pdf Graphic file (type pdf)
 
 <use ../Figure/distA.pdf>
 Package pdftex.def Info: ../Figure/distA.pdf used on input line 58.
 (pdftex.def)             Requested size: 104.7042pt x 104.70389pt.
- <../Figure/distX.pdf, id=8, 505.89pt x 505.89pt>
+ <../Figure/distX.pdf, id=13, 505.89pt x 505.89pt>
 File: ../Figure/distX.pdf Graphic file (type pdf)
 
 <use ../Figure/distX.pdf>
@@ -530,19 +533,19 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 67.
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<../Figure/Dx1.pdf, id=9, 505.89pt x 505.89pt>
+<../Figure/Dx1.pdf, id=14, 505.89pt x 505.89pt>
 File: ../Figure/Dx1.pdf Graphic file (type pdf)
  <use ../Figure/Dx1.pdf>
 Package pdftex.def Info: ../Figure/Dx1.pdf used on input line 75.
 (pdftex.def)             Requested size: 136.57462pt x 136.57668pt.
 
-<../Figure/Dx3.pdf, id=10, 505.89pt x 505.89pt>
+<../Figure/Dx3.pdf, id=15, 505.89pt x 505.89pt>
 File: ../Figure/Dx3.pdf Graphic file (type pdf)
  <use ../Figure/Dx3.pdf>
 Package pdftex.def Info: ../Figure/Dx3.pdf used on input line 76.
 (pdftex.def)             Requested size: 136.57462pt x 136.57668pt.
 
-<../Figure/Dx50.pdf, id=11, 505.89pt x 505.89pt>
+<../Figure/Dx50.pdf, id=16, 505.89pt x 505.89pt>
 File: ../Figure/Dx50.pdf Graphic file (type pdf)
  <use ../Figure/Dx50.pdf>
 Package pdftex.def Info: ../Figure/Dx50.pdf used on input line 77.
@@ -554,7 +557,7 @@ Non-PDF special ignored!
 {/usr/local/texlive/2016basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <..
 /Figure/introplot.pdf> <../Figure/Pmat.pdf> <../Figure/Amat.pdf> <../Figure/dis
 tA.pdf> <../Figure/distX.pdf>]
-<../Figure/ThreeSBM_results_simple.png, id=53, 481.8pt x 481.8pt>
+<../Figure/ThreeSBM_results_simple.png, id=69, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_results_simple.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_results_simple.png>
@@ -575,81 +578,101 @@ Underfull \hbox (badness 1418) in paragraph at lines 90--90
 \OT1/cmr/bx/n/10.95 demon-strates that es-pe-cially in the
  []
 
-<../Figure/powerplot_simple.pdf, id=55, 1300.86pt x 361.35pt>
+<../Figure/powerplot_simple.pdf, id=70, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_simple.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_simple.pdf>
 Package pdftex.def Info: ../Figure/powerplot_simple.pdf used on input line 97.
 (pdftex.def)             Requested size: 455.24411pt x 126.45786pt.
- [2 <../Figure/Dx1.pdf> <../Figure/Dx3.pdf> <../Figure/Dx50.pdf> <../Figure/Thr
-eeSBM_results_simple.png>]
-<../Figure/powerplot_var_simple.pdf, id=86, 867.24pt x 433.62pt>
-File: ../Figure/powerplot_var_simple.pdf Graphic file (type pdf)
 
-<use ../Figure/powerplot_var_simple.pdf>
-Package pdftex.def Info: ../Figure/powerplot_var_simple.pdf used on input line 
-118.
-(pdftex.def)             Requested size: 364.19667pt x 182.0993pt.
 
-<../Figure/ame_part.pdf, id=87, 939.51pt x 361.35pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../Figure/onlytau.pdf, id=71, 505.89pt x 361.35pt>
+File: ../Figure/onlytau.pdf Graphic file (type pdf)
+
+<use ../Figure/onlytau.pdf>
+Package pdftex.def Info: ../Figure/onlytau.pdf used on input line 108.
+(pdftex.def)             Requested size: 159.33821pt x 113.81482pt.
+
+<../Figure/ame_part.pdf, id=72, 867.24pt x 361.35pt>
 File: ../Figure/ame_part.pdf Graphic file (type pdf)
 
 <use ../Figure/ame_part.pdf>
-Package pdftex.def Info: ../Figure/ame_part.pdf used on input line 128.
-(pdftex.def)             Requested size: 455.24411pt x 175.09464pt.
- [3 <../Figure/powerplot_simple.pdf> <../Figure/powerplot_var_simple.pdf>]
-<../Figure/nodecontri.pdf, id=113, 794.97pt x 361.35pt>
+Package pdftex.def Info: ../Figure/ame_part.pdf used on input line 113.
+(pdftex.def)             Requested size: 273.14923pt x 113.80931pt.
+ [2 <../Figure/Dx1.pdf> <../Figure/Dx3.pdf> <../Figure/Dx50.pdf> <../Figure/Thr
+eeSBM_results_simple.png>]
+File: ../Figure/ame_part.pdf Graphic file (type pdf)
+
+<use ../Figure/ame_part.pdf>
+Package pdftex.def Info: ../Figure/ame_part.pdf used on input line 125.
+(pdftex.def)             Requested size: 455.24411pt x 189.68402pt.
+ [3 <../Figure/powerplot_simple.pdf> <../Figure/onlytau.pdf> <../Figure/ame_par
+t.pdf>]
+<../Figure/nodecontri.pdf, id=142, 1084.05pt x 361.35pt>
 File: ../Figure/nodecontri.pdf Graphic file (type pdf)
 
 <use ../Figure/nodecontri.pdf>
-Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 138.
-(pdftex.def)             Requested size: 364.19667pt x 165.54483pt.
+Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 135.
+(pdftex.def)             Requested size: 364.19667pt x 121.39622pt.
 
-<../Figure/two_politics.pdf, id=114, 722.7pt x 361.35pt>
+<../Figure/two_politics.pdf, id=143, 722.7pt x 361.35pt>
 File: ../Figure/two_politics.pdf Graphic file (type pdf)
 
 <use ../Figure/two_politics.pdf>
-Package pdftex.def Info: ../Figure/two_politics.pdf used on input line 148.
+Package pdftex.def Info: ../Figure/two_politics.pdf used on input line 145.
 (pdftex.def)             Requested size: 455.24411pt x 227.62413pt.
- [4 <../Figure/ame_part.pdf> <../Figure/nodecontri.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 156.
- [5 <../Figure/two_politics.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
- (./outline.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 156.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 156.
+ [4 <../Figure/nodecontri.pdf>] [5 <../Figure/two_politics.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 156.
+
+
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 156.
+ [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 221.
+ [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 221.
+
+(./outline.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 221.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 221.
 Package rerunfilecheck Info: File `outline.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+(rerunfilecheck)             Checksum: 61A491569EE3FEC54E935240371F3E9D;44.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 156.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 221.
  ) 
 Here is how much of TeX's memory you used:
- 9801 strings out of 494447
- 146490 string characters out of 6166766
- 233375 words of memory out of 5000000
- 12965 multiletter control sequences out of 15000+600000
- 12188 words of font info for 46 fonts, out of 8000000 for 9000
+ 9828 strings out of 494447
+ 146832 string characters out of 6166766
+ 234974 words of memory out of 5000000
+ 12986 multiletter control sequences out of 15000+600000
+ 12794 words of font info for 48 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 38i,14n,48p,700b,535s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,48p,981b,535s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmmi10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016basic/texmf-dist/font
-s/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016basic/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on outline.pdf (5 pages, 580299 bytes).
+nts/cm/cmr10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt10.pfb>
+Output written on outline.pdf (7 pages, 577470 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
- 25 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 229 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 79 words of extra memory for PDF output out of 10000 (max. 10000000)
 

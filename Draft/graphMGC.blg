@@ -8,45 +8,45 @@ Warning--page numbers missing in caron2014sparse
 Warning--no number and no volume in heller2012consistent
 Warning--no number and no volume in veitch2015class
 Warning--page numbers missing in veitch2015class
-You've used 24 entries,
+You've used 21 entries,
             2861 wiz_defined-function locations,
-            769 strings with 9110 characters,
-and the built_in function-call counts, 18422 in all, are:
-= -- 1589
-> -- 1422
+            752 strings with 8456 characters,
+and the built_in function-call counts, 15787 in all, are:
+= -- 1398
+> -- 1154
 < -- 2
-+ -- 446
-- -- 494
-* -- 1722
-:= -- 3292
-add.period$ -- 74
-call.type$ -- 24
-change.case$ -- 180
-chr.to.int$ -- 24
-cite$ -- 29
-duplicate$ -- 454
-empty$ -- 1060
-format.name$ -- 582
-if$ -- 3445
++ -- 360
+- -- 410
+* -- 1429
+:= -- 2807
+add.period$ -- 65
+call.type$ -- 21
+change.case$ -- 151
+chr.to.int$ -- 21
+cite$ -- 26
+duplicate$ -- 400
+empty$ -- 933
+format.name$ -- 486
+if$ -- 2960
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 24
-newline$ -- 123
-num.names$ -- 240
-pop$ -- 118
+missing$ -- 21
+newline$ -- 108
+num.names$ -- 210
+pop$ -- 98
 preamble$ -- 1
-purify$ -- 324
+purify$ -- 277
 quote$ -- 0
-skip$ -- 508
+skip$ -- 457
 stack$ -- 0
-substring$ -- 1037
-swap$ -- 156
+substring$ -- 923
+swap$ -- 138
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 480
+type$ -- 420
 warning$ -- 5
-while$ -- 246
+while$ -- 224
 width$ -- 0
-write$ -- 318
+write$ -- 279
 (There were 5 warnings)

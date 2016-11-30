@@ -92,34 +92,31 @@ anchorcolor = blue]{hyperref}
 
 \subsection*{Superiority of the proposed method under non-linear dependency}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{../Figure/powerplot_simple.pdf}
-		\caption{X-axis of $\theta$ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, \textbf{mostly due to decreasing power of global test but relatively stable power of \texttt{MGC} under nonlinear dependency} as presented in the left panel.}
-		\label{fig:powerplot}
+	\caption{X-axis of $\theta$ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, \textbf{mostly due to decreasing power of global test but relatively stable power of \texttt{MGC} under nonlinear dependency} as presented in the left panel.}
+	\label{fig:powerplot}
 \end{figure}
+
 
 \subsection*{Degree-corrected SBM with increased variability in node distribution}	
 
-\textbf{Increasing variance in DCSBM}
-\begin{equation}
-\label{eq:dcVariance}
-\begin{gathered}
-\begin{aligned}
-& \theta_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau), i = 1, \ldots, n; \quad \tau = 0, 0.2, \ldots, 1\\ 
-& A_{ij} | \mathbf{Z}, \mathbf{\theta}   \overset{i.i.d}{\sim}   f_{A|Z, \theta}(a_{ij} | z_{i}, z_{j}, \theta_{i}, \theta_{j}) \stackrel{d}{=} Bern(0.2 \cdot \theta_{i}\theta_{j}) I ( |z_{i} - z_{j}| = 0 ) \\ & \quad \quad + Bern(0.05 \cdot \theta_{i} \theta_{j} ) I(|z_{i} - z_{j}| = 1), \quad i,j=1, \ldots, n; i < j. 
-\end{aligned}
-\end{gathered}
-\end{equation}
-
-
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-		\includegraphics[width=0.8\linewidth]{../Figure/powerplot_var_simple.pdf}
-	\caption{In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, \textbf{power of diffusion maps are more likely to be robust against increasing variability compared to adjacency matrix and latent positions.}}
-	\label{fig:dcSBM}
+	\begin{subfigure}[b]{0.35\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/onlytau.pdf}
+		\caption{}
+		\label{fig:dcSBM}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.6\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/ame_part.pdf}
+		\caption{}
+		\label{fig:ame}
+	\end{subfigure}
+	\caption{(a) In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt{FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt{MGC}. (b) \texttt{MGC} utilizing diffusion distances loses some power under additive and multiplicative model which favors estimated latent position metrics, but \texttt{MGC} does as good as \texttt{FH} tests under latent factor metrics which closes to the truth. This reveals the flexibility in distance-based matrix in \texttt{MGC} statistics, which can be chosen depending on model fit or preliminary knowledge.}
+	\label{fig:combined}
 \end{figure}	
-
 
 \subsection*{Validity of the method even under competitor's model}
 
@@ -150,7 +147,75 @@ anchorcolor = blue]{hyperref}
 	\label{fig:politics}
 \end{figure}
 
- 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Checklist}
+
+\begin{itemize}
+
+\item 1.  1 sentence summary
+We propose the nonparametric method to test independence between network and nodal attributes using multiscaled generalizing correlation with family of network-based distances applied.
+
+
+\item 2.  1 paragraph summary 
+\subitem (i) big opportunity sentence: Network data are ubiqutous.
+
+\subitem (ii) specific opportunity : We are interested in investigating relationship between network topology and a random variable associated with each node.
+
+\subitem (iii) challenge sentence : Network topology is high-dimensional data and there is often no standardized structure on network.
+
+\subitem (iv) gap sentence : Network model-based approach fails to deal with increasing information with no standard pattern of network.
+
+\subitem (v)  action sentence : Multiscale generalized correlation (MGC) statistic successfully detects the nature dependence between two data sets and we are going to utilize a family of network-based distances when implementing MGC in testing independence.
+
+\subitem (vi)  resolution sentence : As a result we have multiscale test statistics which provide the evidence of dependence between network and nodal attributes, more robust to nonlinear dependence and increased variability compared to the other statistics and other metrics.
+
+
+\item 5 paragraph intro
+
+\subitem (i)  bulleted list of ~3-5 main factors that created an opportunity for your work.
+
+\subsubitem - Statisticians have long considered the problem of revealing the relationship between two different sets.
+\subsubitem Among data having diverse types and dimensions, network is now an ubiquitous dataset which is very likely to possess the properties of both high dimensionality and nonlinearity.
+\subsubitem Beyond the interests in network topology, we consider the relationship between network topology and a random variable associated with each node. 
+
+
+\subitem (ii) one sentence summary of the gap, that is, the key ingredient that is missing.
+
+ Network model-based statistics presumed that all nodes would exhibit the same pattern of dependence on their network relationhip as specified in the model, which cannot be assured in network data.
+
+\subitem (iii) bulleted list of ~3-5 main challenges that must be overcome.
+
+\subsubitem -  Whatever the true nature of network is and however network is correlated with its nodal attributes, our testing statistics should aim at detecting significant association between network and nodal attributes.
+
+\subsubitem - We have to consider increasing amount of information inherent in network data as number of nodes increases. 
+
+\subsubitem -  There exists an dependency among columns of an adjacency matrix so theoretically we cannot directly use an Euclidean distance of an adjacency matrix.
+
+
+\item 2-3 sentence summary of what you did 
+
+First of all, considering the properties of network data, we propose applying multiscale generalized correlation statistics into testing network independence which deal with correlation between high-dimensional data sets which might have nonlinear dependence. However we confront with the difficulty in finding an appropriate an iid node-specific coordinates of which Euclidean distance will be an ingredient for MGC statistics. We claim that diffusion maps derived from random walk on graph furnish robust network metrics against to increased variability in edge distributions as well as they satisfy theoretical constraints for a jointly exchangeable graph.
+
+
+\item 2-3 sentence summary on how your work changes the world.
+
+Beyond the traditional setting of the data in independence test, i.e. two random vectors, we suggest the method to investigate unique but also ubiqutous data of network and its nodal attributes by utilizing the method testing two random vectors. By suggesting using a family of network metrics which are equipped with favored theoretical and practical properties, we are able to better understand relative locations of each node over network and also how the amount of dependency changes along with diffusion time. Moveover now away from the assumption on globally existing monotonic dependence, MGC with diffusion distances performs better than the other statistics or metrics under nonlinear dependence and we measure each node's contribution to detecting the dependence.
+
+
+
+\item  Outline of the results : list the evidence that supports that you filled the gap
+
+
+
+\item  outline of discussion, to include:
+\subitem (i) bulleted list of previous related work
+
+
+\subitem (ii) bulleted list of potential extensions 
+
+
+\end{itemize}
 
 
 \end{document}

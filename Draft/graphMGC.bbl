@@ -1,12 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citeauthoryear{Bartlett, Olhede, and Zaikin}{Bartlett
-  et~al.}{2014}]{bartlett2014dna}
-Bartlett, T.~E., S.~C. Olhede, and A.~Zaikin (2014).
-\newblock A dna methylation network interaction measure, and detection of
-  network oncomarkers.
-\newblock {\em PloS one\/}~{\em 9\/}(1), e84573.
-
 \bibitem[\protect\citeauthoryear{Caron and Fox}{Caron and
   Fox}{2014}]{caron2014sparse}
 Caron, F. and E.~B. Fox (2014).
@@ -107,13 +100,6 @@ Lyons, R. et~al. (2013).
 \newblock Distance covariance in metric spaces.
 \newblock {\em The Annals of Probability\/}~{\em 41\/}(5), 3284--3305.
 
-\bibitem[\protect\citeauthoryear{Mantzaris, Bassett, Wymbs, Estrada, Porter,
-  Mucha, Grafton, and Higham}{Mantzaris et~al.}{2013}]{mantzaris2013dynamic}
-Mantzaris, A.~V., D.~S. Bassett, N.~F. Wymbs, E.~Estrada, M.~A. Porter, P.~J.
-  Mucha, S.~T. Grafton, and D.~J. Higham (2013).
-\newblock Dynamic network centrality summarizes learning in the human brain.
-\newblock {\em Journal of Complex Networks\/}~{\em 1\/}(1), 83--92.
-
 \bibitem[\protect\citeauthoryear{Orbanz and Roy}{Orbanz and
   Roy}{2015}]{orbanz2015bayesian}
 Orbanz, P. and D.~M. Roy (2015).
@@ -121,12 +107,6 @@ Orbanz, P. and D.~M. Roy (2015).
   structures.
 \newblock {\em IEEE transactions on pattern analysis and machine
   intelligence\/}~{\em 37\/}(2), 437--461.
-
-\bibitem[\protect\citeauthoryear{Sporns, Honey, and K{\"o}tter}{Sporns
-  et~al.}{2007}]{sporns2007identification}
-Sporns, O., C.~J. Honey, and R.~K{\"o}tter (2007).
-\newblock Identification and classification of hubs in brain networks.
-\newblock {\em PloS one\/}~{\em 2\/}(10), e1049.
 
 \bibitem[\protect\citeauthoryear{Sz{\'e}kely and Rizzo}{Sz{\'e}kely and
   Rizzo}{2013}]{szekely2013distance}
