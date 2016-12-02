@@ -145,67 +145,77 @@ anchorcolor = blue]{hyperref}
 
 \begin{itemize}
 
-\item 1.  1 sentence summary
+\item \textbf{1.  1 sentence summary}
+
 We propose the nonparametric method to test independence between network and nodal attributes using multiscaled generalizing correlation with family of network-based distances applied.
 
-
-\item 2.  1 paragraph summary 
-\subitem (i) big opportunity sentence: Network data are ubiqutous.
-
-\subitem (ii) specific opportunity : We are interested in investigating relationship between network topology and a random variable associated with each node.
-
-\subitem (iii) challenge sentence : Network topology is high-dimensional data and there is often no standardized structure on network.
-
-\subitem (iv) gap sentence : Network model-based approach fails to deal with increasing information with no standard pattern of network.
-
-\subitem (v)  action sentence : Multiscale generalized correlation (MGC) statistic successfully detects the nature dependence between two data sets and we are going to utilize a family of network-based distances when implementing MGC in testing independence.
-
-\subitem (vi)  resolution sentence : As a result we have multiscale test statistics which provide the evidence of dependence between network and nodal attributes, more robust to nonlinear dependence and increased variability compared to the other statistics and other metrics.
+$\rightarrow$ \textbf{title} : Testing independence in networks via family of network metrics
 
 
-\item 5 paragraph intro
+\item \textbf{2.  1 paragraph summary} 
+\subitem \textbf{(i) big opportunity sentence}: Network data are ubiqutous.
 
-\subitem (i)  bulleted list of ~3-5 main factors that created an opportunity for your work.
+\subitem \textbf{(ii) specific opportunity} : We are interested in investigating relationship between network topology and a random variable associated with each node.
 
-\subsubitem - Statisticians have long considered the problem of revealing the relationship between two different sets.
-\subsubitem Among data having diverse types and dimensions, network is now an ubiquitous dataset which is very likely to possess the properties of both high dimensionality and nonlinearity.
-\subsubitem Beyond the interests in network topology, we consider the relationship between network topology and a random variable associated with each node. 
+\subitem \textbf{(iii) challenge sentence} : Network topology is high-dimensional data and there is often no standardized structure on network.
+
+\subitem \textbf{(iv) gap sentence} : Network model-based approach fails to deal with increasing information having no standard pattern of network.
+
+\subitem \textbf{(v)  action sentence} : Multiscale generalized correlation (MGC) statistic successfully detects the nature dependence between two data sets and we are going to utilize a family of network-based distances when implementing MGC in testing independence.
+
+\subitem \textbf{(vi) resolution sentence} : As a result we have multiscale test statistics which provide the evidence of dependence between network and nodal attributes, more robust to nonlinear dependence and increased variability compared to the other statistics and other metrics.
 
 
-\subitem (ii) one sentence summary of the gap, that is, the key ingredient that is missing.
+\item \textbf{5 paragraph intro}
 
- Network model-based statistics presumed that all nodes would exhibit the same pattern of dependence on their network relationhip as specified in the model, which cannot be assured in network data.
+\subitem \textbf{(i) bulleted list of ~3-5 main factors that created an opportunity for your work.}
 
-\subitem (iii) bulleted list of ~3-5 main challenges that must be overcome.
+\subsubitem - Statisticians have long considered the problem of revealing the relationship between two different data sets.
+\subsubitem - Among the data having diverse types and dimensions, network is now an ubiquitous dataset which is very likely to possess the properties of both high dimensionality and nonlinearity.
+\subsubitem - Beyond the interest in network topology, we consider the relationship between network topology and a random variable associated with each node. 
+
+\subitem \textbf{(ii) one sentence summary of the gap, that is, the key ingredient that is missing.}
+
+ Network model-based statistics presumed that all nodes would exhibit the same pattern of dependence on their network relationship as specified in the model, which cannot be assured in network data.
+
+\subitem \textbf{(iii) bulleted list of ~3-5 main challenges that must be overcome.}
 
 \subsubitem -  Whatever the true nature of network is and however network is correlated with its nodal attributes, our testing statistics should aim at detecting significant association between network and nodal attributes.
 
-\subsubitem - We have to consider increasing amount of information inherent in network data as number of nodes increases. 
+\subsubitem - We have to consider increasing amount of information inherent in network data as the number of nodes increases. 
 
 \subsubitem -  There exists an dependency among columns of an adjacency matrix so theoretically we cannot directly use an Euclidean distance of an adjacency matrix.
 
 
-\item 2-3 sentence summary of what you did 
+\subitem \textbf{2-3 sentence summary of what you did} 
 
-First of all, considering the properties of network data, we propose applying multiscale generalized correlation statistics into testing network independence which deal with correlation between high-dimensional data sets which might have nonlinear dependence. However we confront with the difficulty in finding an appropriate an iid node-specific coordinates of which Euclidean distance will be an ingredient for MGC statistics. We claim that diffusion maps derived from random walk on graph furnish robust network metrics against to increased variability in edge distributions as well as they satisfy theoretical constraints for a jointly exchangeable graph.
+First of all, considering the properties of network data, we propose applying multiscale generalized correlation statistics into testing network independence which deal with correlation between high-dimensional data sets which might have nonlinear dependence. However we confront with the difficulty in finding the valid iid node-specific coordinates of which Euclidean distance will be an ingredient for MGC statistics. We claim that diffusion maps derived from random walk on graph furnish robust network metrics against to increased variability in edge distributions as well as they satisfy theoretical constraints for a jointly exchangeable graph.
 
 
-\item 2-3 sentence summary on how your work changes the world.
+\subitem \textbf{2-3 sentence summary on how your work changes the world.}
 
 Beyond the traditional setting of the data in independence test, i.e. two random vectors, we suggest the method to investigate unique but also ubiqutous data of network and its nodal attributes by utilizing the method testing two random vectors. By suggesting using a family of network metrics which are equipped with favored theoretical and practical properties, we are able to better understand relative locations of each node over network and also how the amount of dependency changes along with diffusion time. Moveover now away from the assumption on globally existing monotonic dependence, MGC with diffusion distances performs better than the other statistics or metrics under nonlinear dependence and we measure each node's contribution to detecting the dependence.
 
+\item  \textbf{Outline of the results : list the evidence that supports that you filled the gap}
+
+ Through simulation studies, we demonstrate that superiority of \texttt{MGC} statistics becomes more evident when the relationship between network and nodal attributes is not linear. Moreover diffusion distance matrix maintains its stability under increased variability in network better than an adjacent matrix or latent network factors from model-based methods. 
 
 
-\item  Outline of the results : list the evidence that supports that you filled the gap
+\item  \textbf{outline of discussion, to include:}
+\subitem \textbf{(i) bulleted list of previous related work}
 
+-  We proposed the method to test independence in network data without model assumption nor estimations. 
 
+- Our methods work better than the others especially under nonlinear dependency, and we are able to measure each node's contribution to detecting dependence.
 
-\item  outline of discussion, to include:
-\subitem (i) bulleted list of previous related work
+\subitem \textbf{(ii) bulleted list of potential extensions} 
 
+- Since we did not suggest the method to derive the optimal diffusion time point but rather choose the one which shows highest power from $t=1$ to $t=10$, we can further study the algorithm that chooses the optimal diffusion time or diffusion matrix. 
 
-\subitem (ii) bulleted list of potential extensions 
+- Both \texttt{MGC} and a family of diffusion distances are specialized in preserving local relationship between two data set. Based on this strength, we may preserve the true relationship between network and nodal attributes through investigating multiscale test statistics.
 
+- We may utilize the diffusion maps from two networks and use them to test independence of network topology of two different networks with same nodes. 
+  
 
 \end{itemize}
 
