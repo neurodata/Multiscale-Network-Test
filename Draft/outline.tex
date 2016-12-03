@@ -73,22 +73,22 @@ anchorcolor = blue]{hyperref}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\linewidth]{../Figure/Dx1.pdf}
-	\includegraphics[width=0.3\linewidth]{../Figure/Dx3.pdf}
+	\includegraphics[width=0.3\linewidth]{../Figure/Dx5.pdf}
 	\includegraphics[width=0.3\linewidth]{../Figure/Dx50.pdf}
+	\caption{\textit{Diffusion matrix}, as a proposed alternative for Euclidean distance of $A$, provides \textbf{one-parameter family of network-based distances} where at early stage, e.g. at $t=1$, distance matrix is very similar to Euclidean distance of $A$ but as time goes by the pattern shown in the distance matrix changes, and \textbf{at optimal time point $t^{*} = 5$ distance matrix shows most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf{X}$.}}
 	\label{fig:diffusions}
-	\caption{\textit{Diffusion matrix}, as a proposed alternative for Euclidean distance of $A$, provides \textbf{one-parameter family of network-based distances} where at early stage, e.g. at $t=1$, distance matrix is very similar to Euclidean distance of $A$ but as time goes by the pattern shown in the distance matrix changes, and \textbf{at optimal time point $t^{*} = 3$ distance matrix shows most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf{X}$.}}
 \end{figure}	
+	
 
 
 \subsection*{Highest power of MGC under diffusion maps}
 
 \begin{SCfigure}[][h]
 	\centering
-	\includegraphics[width=0.38\paperwidth, height=0.33\paperwidth]{../Figure/ThreeSBM_results_simple.png}
-	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) under diffusion distance matrix (\texttt{DF}) in three SBM (model~\ref{eq:Three}), compared to under adjacency matrix distance (\texttt{Adj}) or latent factor distance (\texttt{Factor}). \textbf{This demonstrates that especially in the presence of nonlinear network dependency, \texttt{MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.}}
+	\includegraphics[width=0.4\paperwidth, height=0.4\paperwidth]{../Figure/ThreeSBM_results_simple.pdf}
+	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) under diffusion distance matrix (\texttt{DF}) in three SBM (model~\ref{eq:Three}), compared to under adjacency matrix distance (\texttt{Adj}) or latent factor distance (\texttt{LT}). \textbf{This demonstrates that especially in the presence of nonlinear network dependency, \texttt{MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.}}
 	\label{fig:threeSBM}
 \end{SCfigure}
-
 
 \subsection*{Superiority of the proposed method under non-linear dependency}
 
@@ -139,6 +139,13 @@ anchorcolor = blue]{hyperref}
 	\label{fig:politics}
 \end{figure}
 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{../Figure/barplots.pdf}	
+	\caption{You can tell that collaboration within the same type is strongest among the Business group while scientist relatively collaborates less with any others, and generally organizations co-work more actively between different types but still their collaboration network is highly dependent on their organization types.}
+	\label{fig:barplots}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Checklist}
