@@ -104,7 +104,7 @@ anchorcolor = blue]{hyperref}
 \bigskip
 \begin{abstract}
 	%The text of your abstract. 200 or fewer words.
-		Network dependence, which refers to all types of dependence between network topology and its nodal attributes, often exhibits nonlinear patterns. Unfortunately, without knowledge on true metrics defined over network, no statistic has been proposed to test network dependence further beyond globally linear dependence. This paper introduces multiscale independence test statistics, which \textbf{combines local distance-based test and a family of graph geometries}. These two tools are specialized in preserving local relational information. We show outstanding \textbf{synergy effect} of them through simulation studies. The application to political collaboration networks will be followed. 
+Network dependence, which refers to all types of dependence between network topology and its nodal attributes, often exhibits nonlinear patterns. Unfortunately, without knowledge on true metrics defined over network, no statistic has been proposed to test network dependence further beyond globally linear dependence. This paper introduces multiscale independence test statistics, which \textbf{combines local distance-based test and a family of graph geometries}. These two tools are specialized in preserving local relational information. We show outstanding \textbf{synergy effect} of them through simulation studies. The application to political collaboration networks will be followed. 
 \end{abstract}
 	
 	\noindent%
@@ -242,15 +242,16 @@ where $g : \mathbb{R}^{2}_{+} \rightarrow [0,1]$ is a random function defined on
 \end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Family of Network Distances}	
+\subsection{Family of Network Distances and Test Statistics}	
 
-Then which network-specific distance should be applied for an exchangeable graph? \cite{coifman2006diffusion} proposed multiscale geometries of data called \textit{diffusion maps}, which inherit every local relation between the nodes when applied in network. Location or coordinates of each node at every iteration can be derived as a family of \textit{diffusion maps}. Diffusion maps are defined by eigenvectors of Markov matrix constructed over a connected network. We basically run a random walk on graph by iterating transition matrix of Markov process. Distance between a pair of nodes at each iteration can be measured through a family of \textit{diffusion distance} which is an Euclidean distance of diffusion maps. Roughly speaking, we go on the journey starting from each node and at each iteration we can cross over one edge. At each iterating time, called \textit{diffusion time}, we calculates the chance to stay between node $i$ and node $j$ considering all possible paths between them, which is assumed to be proportional to the distance. For each diffusion time $t \in \mathbb{N}$, we can define a diffusion distance $C_{t}$, using a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}$ and eigenvectors $\{ \phi_{r}  \}$ of a transition matrix~\citep{coifman2006diffusion,lafon2006diffusion}. 
+Then which network-specific distance should be applied for an exchangeable graph? \cite{coifman2006diffusion} proposed multiscale geometries of data called \textit{diffusion maps}, which inherit every local relation between the nodes when applied in network. The geometries in network are constructed via running random walk on graph by iterating transition matrix of Markov process. Roughly speaking, we go on the journey starting from each node and at each iteration we can cross over one edge. At each iterating time, called \textit{diffusion time}, we calculates the chance to stay between node $i$ and node $j$ considering all possible paths between them, which is assumed to be proportional to the distance. For example, at diffusion time $t$, we travel from each node to others at most $t$ geodesic distance apart. Corresponding location or coordinates of each node at every iteration can be derived as a family of \textit{diffusion maps}. Diffusion maps are constructed by eigenvectors of Markov matrix of which Euclidean distance is called a diffusion distance. For each diffusion time $t \in \mathbb{N}$, we can define a diffusion distance $C_{t}$, using a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}$ and eigenvectors $\{ \phi_{r}  \}$ of a transition matrix~\citep{coifman2006diffusion,lafon2006diffusion}. 
 \begin{equation}
 \label{eq:diffusion}
 C^2_{t}[i,j]  :=   \parallel \mathbf{U}_{t}(i) - \mathbf{U}_{t}(j) \parallel   \quad i,j = 1,2, \ldots , n
 \end{equation}
-where $\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \ldots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{T} \in \mathbb{R}^{q}$ is a diffusion map at time $t$. As diffusion time $t$ increases, distance matrix $C_{t}$ is more likely to take into account distance between two nodes which are relatively difficult to reach each other. Figure~\ref{fig:diffusions} shows three exemplary distance matrices among whole one-parameter family of distance $\{ C_{t} : t \in \mathbb{N} \}$. There are two main merits in using a set of diffusion distances under exchangeable graphs: First of all, compared to adjacent relation or geodesic distance which are two extremes, diffusion distance well reflects the connectivity since it takes into account every possible path between the two nodes. Second, each diffusion map provides \textit{i.i.d} multivariate coordinates of nodes so that using diffusion distance in distance-based test statistics is valid method. The following Lemmas show how $\mathbf{U}_{t}$ retains (conditional) independence privileged to exchangeable graph. 
+where $\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \ldots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{T} \in \mathbb{R}^{q}$ is a diffusion map at time $t$. As diffusion time $t$ increases, distance matrix $C_{t}$ is more likely to take into account distance between two nodes which are relatively difficult to reach each other. Figure~\ref{fig:diffusions} shows three exemplary distance matrices among whole one-parameter family of distance $\{ C_{t} : t \in \mathbb{N} \}$. 
 
+There are two main merits in using a set of diffusion distances under exchangeable graphs: First of all, compared to an adjacency relationship or geodesic distance which are two extremes, diffusion distance well reflects the connectivity since it takes into account every possible path between the two nodes. Second, each diffusion map provides \textit{i.i.d} multivariate coordinates of nodes so that using diffusion distance in distance-based test statistics is a valid method. The following Lemmas show how $\mathbf{U}_{t}$ retains (conditional) independence privileged to exchangeable graph. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.3\linewidth]{../Figure/Dx1.pdf}
@@ -260,15 +261,14 @@ where $\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda
 	\label{fig:diffusions}
 \end{figure}	
 
-
 \begin{lemma}[Exchangeability and \textit{i.i.d} of $A$ in graphon]
 	\label{lemma_graphon}
-Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are  \textit{i.i.d} conditioning on some random link function $g : [0,1]^2 \rightarrow [0,1]$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \} \setminus \{ A_{ii} \} $ , $i \in \{ 1,2,... , n \}$ are conditionally \textit{i.i.d} given a random link function $g$ or equivalently, its underlying distribution.  
+Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are  \textit{i.i.d} conditioning on some random link function $g : [0,1]^2 \rightarrow [0,1]$. Thus for fixed row (column) of $A$, $\{ A_{i1}, A_{i2}, ... , A_{in} \} \setminus \{ A_{ii} \} $ , $i \in \{ 1,2,... , n \}$ are conditionally \textit{i.i.d} given a random link function $g$ or equivalently, its underlying distribution.  
 \end{lemma}
 	
 \begin{lemma}[Exchangeability and \textit{i.i.d} of $\mathbf{U}_{t}$]
 \label{main_lemma}
-	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon, i.e. any exchangeable random graph from an infinite graph. Then its transition probability so thus diffusion maps at fixed time $t$ also exchangeable, conditional on link function of graph. Furthermore, by \textit{de Finetti's Theorem}~\ref{finetti}, such diffusion maps at $t$ are conditionally \textit{i.i.d} given its underlying distribution, specifically given random probability measure $\eta$ on $U_{t}$ and random link function $g$ on graph.    
+	Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphon. Then its transition probability so thus diffusion maps at fixed time $t$ also exchangeable, conditional on a link function of graph. Furthermore, by \textit{de Finetti's Theorem}~\ref{finetti}, such diffusion maps at $t$ are conditionally \textit{i.i.d} given its underlying distribution.    
 \end{lemma}
 	
 Lemma~\ref{main_lemma} above provides us with \textit{i.i.d} one-parameter family of $\{ \mathbf{U}_{t} \}_{t \in \mathbb{N}}$ conditional on its underlying distribution. Unfortunately this is a story only applied to an exchangeable graph, which cannot be sparse. In sparse version of exchangeable graphs, i.e. graphex, one more step of conditioning on point process $\mathbf{\theta}$ is needed.  
@@ -278,12 +278,12 @@ Lemma~\ref{main_lemma} above provides us with \textit{i.i.d} one-parameter famil
 Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphex. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are  \textit{i.i.d} conditioning on some random link function $g : [0,1]^2 \rightarrow [0,1]$ and unit-Poisson process $\mathbf{\theta}$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \} \setminus \{ A_{ii} \} $ , $i \in \{ 1,2,... , n \}$ are conditionally \textit{i.i.d} on its underlying distribution, specifically conditioning on random link function $g$ and $\mathbf{\theta}$.  
 \end{lemma}	
 
-Similar to Lemma~\ref{main_lemma}, we are able to prove exchangeability of a transition matrix in graphex case, which leads to conditional \textit{i.i.d} of its diffusion maps. If exchangeable diffusion maps are applicable to distance-based test statistics, e.g. \texttt{MGC}, we are almost able to dispense with obstacles in testing network independence. Assume that we have a finite sample of infinitely exchangeable sequence $(\mathbf{X}, \mathbf{Y}) = \{ ( \mathbf{x}_{i}, \mathbf{y}_{i} ) : i=1,2, \ldots, n \}$, which is identically distributed as $(\mathbf{x}, \mathbf{y})$ with finite second moment. Then, by the properties of exchangeable sequences, there exist some random measure $\theta$ and its probability measure $P$ such that : 
+Similar to Lemma~\ref{main_lemma}, we are able to show exchangeability of a transition matrix in graphex case, which leads to conditional \textit{i.i.d} of its diffusion maps. If exchangeable diffusion maps are applicable to distance-based test statistics, e.g. \texttt{MGC}, we are almost able to dispense with obstacles in testing network independence. Assume that we have a finite sample of infinitely exchangeable sequence $(\mathbf{X}, \mathbf{Y}) = \{ ( \mathbf{x}_{i}, \mathbf{y}_{i} ) : i=1,2, \ldots, n \}$, which is identically distributed as $(\mathbf{x}, \mathbf{y})$ with finite second moment. Then, by the properties of exchangeable sequences, there exist some random measure $\theta$ and its probability measure $P$ such that : 
 \begin{equation}
 \begin{split}
 & x_{i} | \theta  \overset{i.i.d}{\sim} \prod\limits_{i=1}^{n} f_{\mathbf{x}_{i} | \theta}(\mathbf{x}_{i} | \theta)  \\
 & \int \prod\limits_{i=1}^{n} f_{ \mathbf{x}_{i} | \theta} ( \mathbf{x}_{i} | \theta ) P(d\theta)  \stackrel{d}{=}   \prod\limits_{i=1}^{n} f_{\mathbf{x}}(\mathbf{x}_{i})  \\
-& \mathbf{x}_{i}   \overset{i.i.d}{\sim}  f_{X}(\mathbf{x})  \quad \mbox{ conditioning on the underlying distribution } f_{\mathbf{X}},
+& \mathbf{x}_{i}   \overset{i.i.d}{\sim}  f_{\mathbf{x}}(\mathbf{x})  \quad \mbox{ conditioning on the underlying distribution } f_{\mathbf{X}},
 \end{split}
 \label{eq:iid}
 \end{equation}
@@ -320,31 +320,31 @@ Lemma~\ref{lemma1} and its following Lemma~\ref{lemma2} facilitate the use of di
 	\begin{eqnarray}
 		\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\longrightarrow 0 \quad \mbox{ as } n \rightarrow \infty
 	\end{eqnarray}	
-	\textit{if and only if} $\mathbf{x}$ is independent of $\mathbf{y}$. Moreover, \texttt{dCorr} and \texttt{MGC} are consistent for testing dependence between $\mathbf{x}$ and $\mathbf{y}$, i.e., the testing power converges to $1$ asymptotically for any dependency of finite moments.
+	\textit{if and only if} $\mathbf{x}$ is independent of $\mathbf{y}$. Moreover, \texttt{dCorr} and \texttt{MGC} are consistent for testing dependence between $\mathbf{x}$ and $\mathbf{y}$, i.e., the testing power converges to $1$ asymptotically for any dependency of finite second moment.
 	\label{theoremMain}
 \end{theorem}
 
 Note that if $\{ \mathbf{x}_{i} : i = 1,2,\ldots, n \}$ are \textit{i.i.d}, they are exchangeable. Thus estimated latent factors, which are assumed \textit{i.i.d} by \cite{fosdick2015testing} can also be applied to Theorem~\ref{theoremMain}. We already have shown that even under undirected network, diffusion maps remain exchangeable at each diffusion time point $t$. 
 \begin{theorem}
 	\label{theorem2}
-	Then \texttt{MGC} is consistent in testing network independence through testing $H_{0}: f_{\mathbf{U}^{(t)} \cdot \mathbf{X}  }  = f_{\mathbf{U^{(t)}}} \cdot f_{\mathbf{X}}$. In particular, the consistency also holds for the estimated latent positions and adjacency matrix of directed network instead of diffusion map.
+	Then \texttt{MGC} is consistent in testing network independence through testing $H_{0}: f_{\mathbf{U}^{(t)} \cdot \mathbf{X}  }  = f_{\mathbf{U^{(t)}}} \cdot f_{\mathbf{X}}$. In particular, the consistency also holds for the estimated latent positions and adjacency matrix of directed network instead of diffusion maps.
 \end{theorem}		
 Moreover, we are not going to state otherwise but if you assume to be given a unit-Poisson process $\{ \theta_{i} \}_{i=1}^{n}$, you can lead to the same results for sparse graphex as Theorem~\ref{theoremMain}. 
 
 \subsection{Measure for Node Contribution}
 
-On the other hand, in the presence of nonlinear dependency, some nodes often exert more reliance on their attributes than the others. Like other node-specific measure of importance, e.g. centrality,  the amount of each node's leverage on dependence can be of interest. Here we suggest the measure of node's contribution to detecting dependence using \texttt{MGC} statistic. Let $(k^{*}, l^{*})$ be the optimal neighborhood choice in distance matrix $(C, D)$ respectively.  Denote the contribution of node $v \in V(G)$ to the testing statistic by  $c(\cdot) : v \rightarrow \mathbb{R}$
+On the other hand, in the presence of nonlinear dependency, some nodes often exert more reliance on their attributes than the others. Like other node-specific measure of importance, e.g. centrality,  the amount of each node's leverage on dependence can be of interest. Here we suggest the measure of node's contribution to detecting dependence by utilizing \texttt{MGC} statistic. Let $(k^{*}, l^{*})$ be the optimal neighborhood choice in distance matrix $(C, D)$ respectively.  Denote the contribution of node $v \in V(G)$ to the testing statistic by  $c(\cdot) : v \rightarrow \mathbb{R}$
 \begin{equation}
-\label{contribution}
+\label{eq:contribution}
 c(v) \propto \sum\limits_{j=1}^{n} \tilde{C}_{j v} \tilde{D}_{j v} I \big(  r (C_{j v}) \leq k^{*}  \big) I \big( r (D_{ j v }) \leq l^{*} \big), 
 \end{equation}
-which is proportional to $v^{th}$ column-sum of the pre-summed test statistic~\ref{eq:MGC}. Note that the deviation of non-negative \texttt{MGC} statistic from zero implies departure from the independence and also note that we truncate the correlation in \texttt{dCov} by column entry's rank. Thus $\tilde{C}_{jv} \tilde{D}_{jv}$ would not be truncated if node $j$ $(\in \{ 1,2, \ldots, n \} \setminus v )$ is important to node $v$ and its larger, positive value would contribute to ${\mathcal{V}^{*}_{n}}^2$ more. We illustrate how this contribution measure works in the next section~\ref{ssec:node}. 
+which is proportional to $v^{th}$ column-sum of the pre-summed test statistic~\ref{eq:MGC}. Note that the deviation of non-negative \texttt{MGC} statistic from zero implies departure from the independence and also note that we truncate the \texttt{dCov} statistics by column entry's rank. Thus $\tilde{C}_{jv} \tilde{D}_{jv}$ would not be truncated if node $j$ $(\in \{ 1,2, \ldots, n \} \setminus v )$ is important to node $v$ and its larger, positive value would contribute to ${\mathcal{V}^{*}_{n}}^2$ more. The statistic $c(v)$ comes out from these observations. We illustrate how this contribution measure works in the next section~\ref{ssec:node}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulation Study}
 \label{sec:sim}
 	
-In simulation studies presented in this paper, we make a comparison between empirical testing power across various multivariate independence test statistics: \texttt{MGC}, \texttt{dCorr}(\texttt{mCorr}), Heller-Heller-Gorfine (\texttt{HHG}) \citep{heller2012consistent}, and likelihood ratio test of Fosdick and Hoff (\texttt{FH}). For computing statistical power, we used type I error $\alpha = 0.05$ and obtain p-values of each sample network via permutations. For fair comparison between these testing methods, we also present an additive model of latent factors, which \texttt{FH} mostly watch for. All the simulation models are illustrated by joint distribution of adjacent matrix $\mathbf{A}$, nodal attributes $\mathbf{X}$, and latent variable $\mathbf{Z}$, which explains dependence structure between $\mathbf{A}$ and $\mathbf{X}$. 
+In the simulation studies, we make a comparison between empirical testing power across various multivariate independence test statistics: \texttt{MGC}, \texttt{dCorr}(\texttt{mCorr}), Heller-Heller-Gorfine (\texttt{HHG}) \citep{heller2012consistent}, and likelihood ratio test of Fosdick and Hoff (\texttt{FH}). For computing statistical power, we used type I error $\alpha = 0.05$ and obtain p-values of each sample network via permutations. For fair comparison between these testing methods, we also present an additive and multiplicative effect model which \texttt{FH} mostly watch for. All the simulation models are illustrated by joint distribution of adjacent matrix $\mathbf{A}$, nodal attributes $\mathbf{X}$, and latent variable $\mathbf{Z}$, which explains dependence structure between $\mathbf{A}$ and $\mathbf{X}$. 
 \begin{equation}
 \begin{split}
 f(\mathbf{A}, \mathbf{X}, \mathbf{Z}) & = f_{A | Z}(\mathbf{A} | \mathbf{Z}) \cdot f_{Z | X}(\mathbf{Z} | \mathbf{X}) \cdot f_{X}(\mathbf{X}) 
@@ -352,15 +352,15 @@ f(\mathbf{A}, \mathbf{X}, \mathbf{Z}) & = f_{A | Z}(\mathbf{A} | \mathbf{Z}) \cd
 \end{split}
 \label{eq:joint_model}
 \end{equation}	
-According to the joint model~\ref{eq:joint_model}, edge distribution and nodal attributes are correlated only through a node-specific latent variable $\mathbf{Z}$ no matter whether $\mathbf{X}$ is modeled via $\mathbf{Z}$ or vice versa. For each simulated network, empirical power will be derived by comparing observed statistic to the empirical distribution under the null. 
+According to the joint model~\ref{eq:joint_model}, distribution of edges and nodal attributes are correlated only through a node-specific latent variable $\mathbf{Z}$ no matter whether $\mathbf{X}$ is modeled via $\mathbf{Z}$ or vice versa. For each simulated network, empirical power will be derived by comparing observed statistic to the empirical distribution under the null. 
 						
-\subsection{Stochastic Block Model}
+\subsection{Stochastic block model}
 
 
 \begin{SCfigure}[][h]
 	\centering
 	\includegraphics[width=0.4\paperwidth, height=0.4\paperwidth]{../Figure/ThreeSBM_results_simple.pdf}
-	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) under diffusion distance matrix (\texttt{DF}) in three SBM (model~\ref{eq:Three}), compared to under adjacency matrix distance (\texttt{Adj}) or latent factor distance (\texttt{LT}). \textbf{This demonstrates that especially in the presence of nonlinear network dependency, \texttt{MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.}}
+	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) under diffusion distance matrix (\texttt{DF}) in three SBM (model~\ref{eq:Three}), compared to under adjacency matrix distance (\texttt{Adj}) or latent factor distance (\texttt{LT}). \textbf{This demonstrates one exemplary network where \texttt{MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.}}
 	\label{fig:threeSBM}
 \end{SCfigure}
 
@@ -378,11 +378,11 @@ E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 
 	\caption{X-axis of $\theta$ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, \textbf{mostly due to decreasing power of global test but relatively stable power of \texttt{MGC} under nonlinear dependency} as presented in the left panel.}
 	\label{fig:powerplot}
 \end{figure}
-If you see Figure~\ref{fig:powerplot}, power of \texttt{dCorr} starts to drop from $\theta = 0.2$ while that of \texttt{MGC} almost stays clam, which implies \texttt{MGC} keeps its sensitivity even under nonlinear dependency compared to \texttt{dCorr}.
+If you see Figure~\ref{fig:powerplot}, power of \texttt{dCorr} starts to drop from $\theta = 0.2$ while that of \texttt{MGC} almost stays clam.This implies \texttt{MGC} keeps its sensitivity even under nonlinear dependency compared to \texttt{dCorr}.
 
-\subsection{degree-corrected two block model}
+\subsection{Degree-corrected two block model}
 
-The SBM connotes that all nodes within the same block have the same expected degree. However, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with highly varying node degrees within blocks or communities. Instead, the Degree-Corrected Stochastic Block model (DCSBM) proposed by \cite{karrer2011stochastic} varies distribution of node degree within a block, preserving the overall block community structure. Consider two block SBM having more variability induced by $\theta$ (model~\ref{eq:dcVariance}). Here we have an edge distribution as a linear function of Euclidean distance of $X$. However its variance becomes inflated due to $\tau > 0$. Relatively poor performance of an adjacency metric as presented in Figure~\ref{fig:dcSBM} can be attributed to large variability in it. Even in this case, \texttt{MGC} achieves almost same level of power across increasing $\tau$s. On the other hand, node-specific latent factors look more sensitive in \texttt{FH} model, but still diffusion maps metrics work better.
+The SBM connotes that all nodes within the same block have the same expected degree. However the network model of homogeneous distribution within block leads to a poor fit to networks with highly varying node degrees even within block. Out of this concern, the Degree-Corrected Stochastic Block model (DCSBM) varies distribution of node degree within a block, preserving the overall block community structure~\citep{karrer2011stochastic}. Consider two block SBM having more variability induced by $\theta$ (model~\ref{eq:dcVariance}). Here we have an edge distribution as a linear function of Euclidean distance of $X$. However its variance becomes inflated due to $\tau > 0$. Relatively poor performance of an adjacency metric as presented in Figure~\ref{fig:dcSBM} can be attributed to large variability in it. Even in this case, \texttt{MGC} achieves almost same level of power across increasing $\tau$s. On the other hand, node-specific latent factors look more sensitive in \texttt{FH} model, but still diffusion maps metrics work better.
 
 
 \begin{figure}[H]
@@ -402,10 +402,9 @@ The SBM connotes that all nodes within the same block have the same expected deg
 \end{figure}	
 	
 \subsection{Additive and multiplicative graph model}
+\label{ssec:ame}
 
-
-
-\cite{hoff2002latent} proposed an approach of jointly modeling network and its attributes, where networks possess additional structure via sender-specific(or row-specific) and receiver-specific(or column-specific) latent factors. Whereas \cite{fosdick2015testing} embedded nodes into network factors assuming that additive an multiplicative network model is \textit{correct}, a family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship. Thus in the model~\ref{eq:ame}, where logit of $A$ is an additive and multiplicative function of their estimated factors, estimated latent position would be very close to the truth, much closer than embedding made from diffusion maps. However we rarely see the network which is fitted to the model in reality. If we should, using network factors as independent observations from graph \textbf{G} and applying them to \texttt{MGC} performs not very worse than \texttt{FH} statistic (Figure~\ref{fig:ame}). In other words, if network really fits well to the network model with node-specific latent factors as covariates, then it would safe to use those factors in testing independence directly. Since they assume \textit{i.i.d} generative model for factors, there is nothing wrong with applying \texttt{MGC} using \textit{i.i.d} observations of estimated factors.
+\cite{hoff2002latent} proposed an approach of modeling network as an additive and multiplicative function of node-specific latent factors. Whereas \cite{fosdick2015testing} embedded nodes into latent factors assuming that their network model is \textit{correct}, a family of diffusion maps are nonparametric version of embedding nodes into multivariate variable without losing any information on adjacent relationship. Thus in the model~\ref{eq:ame}, where logit of $A$ obeys the presumed model, the estimated latent factors would be very close to the truth, much closer than embedding made from diffusion maps. Even though we rarely see the network nearly follows the model in reality, If we should, using network factors as independent observations from graph \textbf{G} and applying them to \texttt{MGC} performs not very worse than \texttt{FH} statistic (Figure~\ref{fig:ame}). In other words, if network really fits well to the network model with node-specific latent factors as covariates, then it would safe to use those factors in the \texttt{MGC} statistic directly. Since they assume \textit{i.i.d} generative model for factors, there is nothing wrong with applying \texttt{MGC} using \textit{i.i.d} observations of estimated factors.
 
 \subsection{Node Contribution Test}
 \label{ssec:node}
@@ -413,32 +412,33 @@ The SBM connotes that all nodes within the same block have the same expected deg
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{../Figure/nodecontri.pdf}
-	\caption{This plot describes both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to contribute to the independence test, \textbf{which validates the use of node contribution measure in independence test.}}
+	\caption{This plot describes that both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, \textbf{which validates the use of node contribution measure in independence test.}}
 	\label{fig:contribution}
 \end{figure}
-To examine the effectiveness of node contribution measure in testing dependency as presented in Eq.~\ref{contribution}, we deliberately simulate the network and its nodal attributes as half of the nodes are independent while the other half are dependent on network (model~\ref{eq:contri}). As an ad hoc test of node contribution, we rank the nodes in terms of decreasing order of $c(v)$ and count the ratio of dependent samples's ranks within the number of dependent nodes. If it works perfectly, all dependent nodes would take higher rank than every independent node so thus the rate equals to one. We call this rate as \textit{inclusion rate}:
+To examine the effectiveness of node contribution measure in testing dependency as presented in the statistic~\ref{eq:contribution}, we deliberately simulate the network and its nodal attributes as half of the nodes are independent while the other half are dependent on network (model~\ref{eq:contri}). As an ad hoc test of node contribution, we rank the nodes in terms of decreasing order of $c(v)$ and count the ratio of dependent samples's ranks within the number of dependent nodes. If it works perfectly, all dependent nodes would take higher rank than every independent node so thus the rate equals to one. We call this rate as \textit{inclusion rate}:
 \begin{equation}
-\mbox{ inclustion rate}\big(  c(v) \big) = \# \big\{  rank_{c(v)}\big(  u \big)  \leq  m  \big\}   /  m,
+\mbox{ inclustion rate}\big(  c(v) \big) = \sum\limits_{v \in V(\mathbf{G})} \big\{  rank_{c(v)}\big(  v \big)  \leq  m  \big\}   /  m,
 \label{eq:inclusion_rate}
 \end{equation}
-where $m (\leq |V(G)|)$ is the number of nodes under network dependence. We set $m=n/2$ out of $|V(\mathbf{G})| = n$.
+where $m (\leq |V(\mathbf{G})|)$ is the number of nodes under network dependence. We set $m=n/2$ out of $n = |V(\mathbf{G})|$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real Data Examples}
 \label{sec:real}
-	
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{../Figure/two_politics.pdf}
-	\caption{Both networks depict the collaboration network during the two time periods where it turns out significant network dependency in types of organizations. \textbf{Using \texttt{MGC} statistics, we are not only able to test network independence but also rank each node in terms of the amount of contribution to detecting dependence, which is proportional to node size here.}}
+	\caption{Both panels depict the collaborative networks during the two time periods having significant network dependency in types of organizations. \textbf{Using \texttt{MGC} statistics, we are not only able to test network independence but also calculate each node's amount of contribution to detecting dependence, which is proportional to node size here.} You can tell that the tendency to collaborate within the same type is strongest among the business group while scientist relatively collaborates less with any others, especially in the first period.}
 	\label{fig:politics}
 \end{figure}
 	
+In the field of political science, who exerts more powerful impacts than others over political network and which factors impact on the power differentials are one of the interests~\citep{ingold2014structural}. \cite{minhas2016inferential} made an inference from political networks~\citep{cranmer2016navigating} via the additive and multiplicative effects (AME). As mentioned in Section~\ref{ssec:ame}, the AME model estimates the latent factors and uses them to test independence with the nodal attributes. Among diverse attributes that \cite{cranmer2016navigating} provided, we focus on the types of organizations and how 34 political organizations having different types are participating policy network. We changed a given directed network into undirected network and use a dissimilarity matrix for distance matrix of the attributes, i.e., $\parallel \mathbf{X}_{i}  - \mathbf{X}_{j} \parallel = 0$ if and only if node $i$ and node $j$ are from the same type and one otherwise. Two collaboration networks comprised of the same set of nodes across two time periods are provided~\citep{ingold2014structural}. Figure~\ref{fig:politics} and Figure~\ref{fig:barplots} illustrates these two networks and shows each node's reliance on its organization type when collaborating. For two periods, the network independence test statistics of \texttt{MGC}, \texttt{dCorr} using diffusion distance matrices result in significant p-values across diffusion times from $t=1$ to $t=10$. The conclusion from the \texttt{FH} test is also the same.  
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\linewidth]{../Figure/barplots.pdf}	
-	\caption{You can tell that collaboration within the same type is strongest among the Business group while scientist relatively collaborates less with any others, and generally organizations co-work more actively between different types but still their collaboration network is highly dependent on their organization types.}
+	\includegraphics[width=\linewidth]{../Figure/barplots_nolegend.pdf}	
+	\caption{In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure~\ref{fig:politics}. Generally organizations co-work more actively between different types in the second period, having relatively narrow range near zero, but still their collaboration network is highly dependent on their organization types.}
 	\label{fig:barplots}
 \end{figure}
 
@@ -446,7 +446,10 @@ where $m (\leq |V(G)|)$ is the number of nodes under network dependence. We set 
 \section{Discussions}
 \label{sec:discussion}
 	
-In this paper, we have shown that \texttt{MGC}, merged with a family of diffusion distance, provides us powerful independence test statistics in network. Having multiscale statistics, i.e. one parameter family of statistics, is not avoidable because we regard distance between nodes over network as a dynamic process. We suggest this time-varying network-based distance matrix and utilize it in testing independence to attributes $\mathbf{X}$. However obtaining a full family of statistics are computationally infeasible. Also we did not suggest any theoretically supported tools to select one metrics among them so thus we have one single statistic. As an ad hoc, we selected an \textit{optimal} diffusion time $t$ with highest power from $t=1$ to $t=10$ for our simulation since we could observe a stabilized empirical power within this period. \textbf{Developing the adaptive method to find this optimal $t$ when dependence is maximized would be a natural next step.} Despite these shortcomings, a range of applications based on our work are very diverse. Even though we specifically constraint the statistic into testing independence between network and nodal attributes, \textbf{we are able to implement independence testing between two networks of same size by using diffusion distance of each network.} This type of test will be useful when we want to investigate whether a pair of networks are topologically or structurally independent. 
+In this paper, we have shown that \texttt{MGC}, merged with a family of diffusion distance, provides us powerful independence test statistics in network. Having multiscale statistics, i.e. one parameter family of statistics, is not avoidable because \textbf{we regard distance between nodes over network as a dynamic process.} Through simulation studies, we demonstrated that our methods work better that the others especially under nonlinear dependency, and we are able to measure each node's contribution to detecting dependence. Deriving the contributions is particularly important in nonlinear network dependence since we assume possibly different amount of the dependencies among the nodes.  
+
+However obtaining a full family of statistics are computationally infeasible. Also we did not suggest any theoretically supported tools to select one metrics among them so thus we have one single statistic. As an ad hoc, we selected an \textit{optimal} diffusion time $t$ with highest power from $t=1$ to $t=10$ for our simulation since we could observe a stabilized empirical power within this period. In the real data study we have significant p-values across diffusion time $t=1$ to $t=10$. 
+\textbf{Developing the adaptive method to find this optimal $t$ when dependence is maximized would be a natural next step.} Despite these shortcomings, a range of applications based on our work are very diverse. Even though we specifically constraint the statistic into testing independence between network and nodal attributes, \textbf{we are able to implement independence testing between two networks of same size by using diffusion distance of each network.} This type of test will be useful when we want to investigate whether a pair of networks are topologically or structurally independent. In this possible extension, we could also enjoy both \texttt{MGC} and a family of diffusion distances which are specialized in preserving local relationship between the two data sets. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
@@ -461,9 +464,9 @@ In this paper, we have shown that \texttt{MGC}, merged with a family of diffusio
 	\label{eq:Three}
 	\begin{gathered}
 	\begin{aligned}
-	&  X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Multi(1/3, 1/3, 1/3), i = 1, \ldots , n \\ 
+	&  X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Multi(1/3, 1/3, 1/3), \quad i = 1, \ldots , n \\ 
 	&  Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Multi(0.5, 0.25, 0.25) I( x = 1 ) +   Multi(0.25, 0.5, 0.25) I (x = 2)  \qquad  \\ & \quad \quad + Multi(0.25, 0.25, 0.5)I(x = 3), \quad  i = 1,\ldots,n  \\
-	&  A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}  Bern(0.5) I ( |z_{i} - z_{j}| = 0 )  + Bern(0.2) I(|z_{i} - z_{j}| = 1) \\ & \quad \quad + Bern(0.3) I (|z_{i} - z_{j}| = 2),  \quad i,j=1, \ldots n ; i < j.
+	&  A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}  Bern(0.5) I ( |z_{i} - z_{j}| = 0 )  + Bern(0.2) I(|z_{i} - z_{j}| = 1) \\ & \quad \quad + Bern(0.3) I (|z_{i} - z_{j}| = 2),  \quad i,j=1, \ldots n ; \quad i < j.
 	\end{aligned}
 	\end{gathered}
 	\end{equation}
@@ -473,8 +476,8 @@ In this paper, we have shown that \texttt{MGC}, merged with a family of diffusio
 	\label{eq:dcVariance}
 	\begin{gathered}
 	\begin{aligned}
-	& \theta_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau), i = 1, \ldots, n; \quad \tau = 0, 0.2, \ldots, 1\\ 
-	& A_{ij} | \mathbf{Z}, \mathbf{\theta}   \overset{i.i.d}{\sim}   f_{A|Z, \theta}(a_{ij} | z_{i}, z_{j}, \theta_{i}, \theta_{j}) \stackrel{d}{=} Bern(0.2 \cdot \theta_{i}\theta_{j}) I ( |z_{i} - z_{j}| = 0 ) \\ & \quad \quad + Bern(0.05 \cdot \theta_{i} \theta_{j} ) I(|z_{i} - z_{j}| = 1), \quad i,j=1, \ldots, n; i < j. 
+	& \theta_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau),\quad i = 1, \ldots, n; \quad \tau = 0, 0.2, \ldots, 1\\ 
+	& A_{ij} | Z_{i}, Z_{j}, \theta_{i}, \theta_{j}   \overset{i.i.d}{\sim}   f_{A|Z, \theta}(a_{ij} | z_{i}, z_{j}, \theta_{i}, \theta_{j}) \stackrel{d}{=} Bern(0.2 \cdot \theta_{i}\theta_{j}) I ( |z_{i} - z_{j}| = 0 ) \\ & \quad \quad + Bern(0.05 \cdot \theta_{i} \theta_{j} ) I(|z_{i} - z_{j}| = 1), \quad i,j=1, \ldots, n; i < j. 
 	\end{aligned}
 	\end{gathered}
 	\end{equation}
@@ -492,7 +495,6 @@ In this paper, we have shown that \texttt{MGC}, merged with a family of diffusio
 \end{equation}	
 
 \item \textbf{Node Contribution}
-
 \begin{equation}
 \begin{gathered}
 \begin{aligned}
@@ -589,15 +591,9 @@ In this paper, we have shown that \texttt{MGC}, merged with a family of diffusio
 \subsection{Lemmas and Theorems}
 	
 \begin{theorem}[de Finetti's Theorem] 
-	\label{finetti}
-	
+\label{finetti}	
 \bigskip			
-1. Let $X_{1}, X_{2}, ...$ be an infinite sequence of random variables with values in a space of $\mathbf{X}$. The sequence $X_{1}, X_{2}, ...$ is exchangeable \textit{if and only if} there is a random probability measure $\eta$ on $\mathbf{X}$ such that the $X_{i}$ are conditionally i.i.d. given $\eta$. 
-		
-2. If the sequence is exchangeable, the empirical distributions
-		
-$$\hat{S}_{n} ( . ) := \frac{1}{n} \sum\limits_{i=1}^{n} \delta_{X_{i}} ( .), n \in \mathbb{N}$$
-		converges to $\eta$ as $n \rightarrow \infty$ with probability 1.
+Let $\mathbf{X}_{1}, \mathbf{X}_{2}, ...$ be an infinite sequence of random variables with values in a space of $\mathbf{X}$. The sequence $\mathbf{X}_{1}, \mathbf{X}_{2}, ...$ is exchangeable \textit{if and only if} there is a random probability measure $\eta$ on $\mathbf{X}$ such that the $X_{i}$ are conditionally i.i.d. given $\eta$. 
 \end{theorem}
 	
 \begin{theorem}[Aldous Hoover Theorem]
@@ -611,6 +607,32 @@ $$\hat{S}_{n} ( . ) := \frac{1}{n} \sum\limits_{i=1}^{n} \delta_{X_{i}} ( .), n 
 		where $(U_{i})_{i \in \mathbb{N}}$ and $(U_{ij})_{i,j > i \in \mathbb{N}}$ with $U_{ij} = U_{ji}$ are a sequence and matrix, respectively, of \textit{i.i.d} Uniform[0,1] random variables. 
 \end{theorem}
 	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}[\textbf{Proof of spectral decomposition of diffusion distance}]
+	Diffusion distance of $\mathbf{G}$ can be represented via a spectral decomposition of its transition matrix $P$~\citep{coifman2006diffusion,lafon2006diffusion}. Recall that diffusion distance at time $t$, $C_{t}$, is a functional $L^2$ distance, weighted by 1/$\pi$ in the statistic~\ref{eq:diffusion}. Since an adjacency matrix $A$ does not guarantee a symmetry of $P$, define a symmetric kernel $Q = \Pi^{1/2} P \Pi^{-1/2}$, where $\Pi$ is a $n \times n$ diagonal matrix of which $i$th diagonal element is $\pi(i)$. Under compactness of $P$, $Q$ has a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}_{r = \{1,2,...,q \}}$ and a set of their corresponding orthonormal eigenvectors $\{ \psi_{r} \}_{r = \{1,2,..., q \} },$ i.e. $Q[i,j] = \sum\limits_{r=1}^{q} \lambda_{r} \psi_{r}(i) \psi_{r}(j)$ ($1 \leq q \leq n$). Returning to the transition probability between Node $i$ and Node $j$,
+	
+	\begin{equation}
+	\begin{split}
+	P[i,j] &  = \sqrt{\pi(j) / \pi(i) } Q[i,j] \\ &   = \sum\limits_{r=1}^{q} \lambda_{r} \big\{ \psi_{r}(i) / \sqrt{\pi(i)}  \big\} \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}  \\ & : = \sum\limits_{r=1}^{q} \lambda_{r} \phi_{r}(i) \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}
+	\end{split}
+	\end{equation}
+	where $\phi_{r}(i) := \psi_{r}(i) / \sqrt{\pi(i)}$. Since $\sum\limits_{r=1}^{q} \psi^2_{r}(j) = 1$ for all $j \in \{1,2,...,n\}$, we can represent the diffusion distance at time $t$ as: 	
+	\begin{equation}
+	\begin{split}
+	C^2_{t}[i,j]  = \sum\limits_{r=1}^{n} \lambda^{2t}_{r} \big( \phi_{r} (i) - \phi_{r}(j)   \big)^2  
+	\end{split}
+	\end{equation}
+	That is,
+	\begin{equation}
+	C_{t}[i,j] = \parallel \mathbf{U}_{t}(i) - \mathbf{U}_{t}(j) \parallel
+	\end{equation}
+	where 
+	\begin{equation} 
+	\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \ldots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{T} \in \mathbb{R}^{q}.
+	\end{equation}
+	
+\end{proof}	
+	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
 \begin{proof}[\textbf{Proof of Lemma~\ref{lemma_graphon} }] 
 	By \textit{Aldous-Hoover Theorem}~\ref{Aldous_Hoover}, a random array $(A_{ij})$ is jointly exchangeable \textit{if and only if} it can be represented as follows : 
@@ -622,41 +644,14 @@ $$\hat{S}_{n} ( . ) := \frac{1}{n} \sum\limits_{i=1}^{n} \delta_{X_{i}} ( .), n 
 where $W_{i} \overset{i.i.d.}{\sim} Uniform(0,1)$. Thus if $\mathbf{A}$ is an adjacency matrix of an undirected, exchangeable network, for any $i,j = 1,... , n; i < j$:
 \begin{equation}
 \begin{split}
-	P \big(  A_{ij} = a_{ij} \big) & = \int P \big( A_{ij} \big| w_{i}, w_{j} \big) Pr(W_{i} = w_{i}) Pr(W_{j} = w_{j}) dw_{i} dw_{j} \\ & = \int_{0}^{1} \int_{0}^{1} g( w_{i},  w_{j})^{a_{ij}} \big( 1- g( w_{i},  w_{j}) \big)^{1-a_{ij}} dw_{i} dw_{j} 
+	f_{A} \big(  a_{ij} \big) & = \int f_{A} \big( a_{ij} \big| w_{i}, w_{j} \big) f_{W}(w_{i}) f_{W}(w_{j}) dw dw \\ & = \int_{0}^{1} \int_{0}^{1} g( w_{i},  w_{j})^{a_{ij}} \big( 1- g( w_{i},  w_{j}) \big)^{1-a_{ij}} dw_{i} dw_{j} 
 \end{split}
 \end{equation}
 		
 Then within each row, adjacent elements are independent and also identically distributed except a diagonal element.
 
 \end{proof}
-	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{proof}[\textbf{Proof of spectral decomposition of diffusion distance}]
-Diffusion distance of $\mathbf{G}$ can be represented via a spectral decomposition of its transition matrix $P$~\citep{coifman2006diffusion,lafon2006diffusion}. Recall that diffusion distance at time $t$, $C_{t}$, is a functional $L^2$ distance, weighted by 1/$\pi$ in Eq.~\ref{eq:diffusion}. Since an adjacency matrix $A$ does not guarantee a symmetry of $P$, define a symmetric kernel $Q = \Pi^{1/2} P \Pi^{-1/2}$, where $\Pi$ is a $n \times n$ diagonal matrix of which $i$th diagonal element is $\pi(i)$. Under compactness of $P$, $Q$ has a discrete set of real nonzero eigenvalues $\{ \lambda_{r} \}_{r = \{1,2,...,q \}}$ and a set of their corresponding orthonormal eigenvectors $\{ \psi_{r} \}_{r = \{1,2,..., q \} },$ i.e. $Q[i,j] = \sum\limits_{r=1}^{q} \lambda_{r} \psi_{r}(i) \psi_{r}(j)$ ($1 \leq q \leq n$). Returning to the transition probability between Node $i$ and Node $j$,
-
-\begin{equation}
-\begin{split}
-P[i,j] &  = \sqrt{\pi(j) / \pi(i) } Q[i,j] \\ &   = \sum\limits_{r=1}^{q} \lambda_{r} \big\{ \psi_{r}(i) / \sqrt{\pi(i)}  \big\} \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}  \\ & : = \sum\limits_{r=1}^{q} \lambda_{r} \phi_{r}(i) \big\{ \psi_{r}(j) \sqrt{\pi(j)} \big\}
-\end{split}
-\end{equation}
-where $\phi_{r}(i) := \psi_{r}(i) / \sqrt{\pi(i)}$. Since $\sum\limits_{r=1}^{q} \psi^2_{r}(j) = 1$ for all $j \in \{1,2,...,n\}$, we can represent the diffusion distance at time $t$ as: 	
-\begin{equation}
-\begin{split}
-C^2_{t}[i,j]  = \sum\limits_{r=1}^{n} \lambda^{2t}_{r} \big( \phi_{r} (i) - \phi_{r}(j)   \big)^2  
-\end{split}
-\end{equation}
-That is,
-\begin{equation}
-C_{t}[i,j] = \parallel \mathbf{U}_{t}(i) - \mathbf{U}_{t}(j) \parallel
-\end{equation}
-where 
-\begin{equation} 
-\mathbf{U}_{t}(i) = \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \ldots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{T} \in \mathbb{R}^{q}.
-\end{equation}
-
-\end{proof}	
-	
-	
+		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{proof}[\textbf{Proof of Lemma~\ref{main_lemma}}]
 We have shown that for fixed time $t$, diffusion distance is defined as an Euclidean distance of diffusion maps. Diffusion map at time $t$ is represented as follows :
@@ -680,25 +675,21 @@ When $i = j$, $P_{ij} = P_{\sigma(i) \sigma(j)} = 0$ for $i=1,2, \ldots, n$. Thu
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{proof}[\textbf{Proof of Lemma~\ref{lemma_graphex}}]
-	Based on Kallenberg and Exchangeable Graph (KEG) frameworks, introduced in \cite{veitch2015class}, a random array $(A_{ij})$ is jointly exchangeable in in terms of Poisson process \textit{if and only if} it can be represented as follows : there is a random function $g : \mathbb{R}^{2}_{+} \rightarrow [0,1]$ such that 
+	Based on Kallenberg and Exchangeable Graph (KEG) frameworks, introduced in \cite{veitch2015class}, a random array $(A_{ij})$ is jointly exchangeable in terms of Poisson process \textit{if and only if} it can be represented as follows : there is a random function $g : \mathbb{R}^{2}_{+} \rightarrow [0,1]$ such that 
 	
 	\begin{equation}
-	(A_{ij})  \stackrel{d}{=} (A_{v_{i}, v_{j}} )  \stackrel{d}{=} Bern( g( \vartheta_{i}, \vartheta_{j})), \quad i,j=1,\ldots,n ; i < j,
+	(A_{ij})  \stackrel{d}{=} (A_{v_{i}, v_{j}} )  \stackrel{d}{=} Bern( g( \vartheta_{i}, \vartheta_{j})), \quad i,j=1,\ldots,n ;\quad i < j,
 	\end{equation}
-	where $v_{i} \overset{i.i.d.}{\sim} Poisson(1), \vartheta_{i} \overset{i.i.d.}{\sim} Poisson(1), v_{i} \leq \nu$, for some pre-specified $\nu >0$ so that finite size graphs can include nodes only if they participate in at least one edges. Thus if $\mathbf{A}$ is an adjacency matrix of such undirected, exchangeable network, for any $i,j = 1,... , n; i < j$:
+	where $v_{i} \overset{i.i.d.}{\sim} Poisson(1), \vartheta_{i} \overset{i.i.d.}{\sim} Poisson(1), v_{i} \leq \nu$, for some pre-specified $\nu >0$ so that finite-sized graph can deliberately include nodes only if they participate in at least one edges. Thus if $\mathbf{A}$ is an adjacency matrix of such undirected, exchangeable network, for any $i,j = 1,... , n; i < j$:
 \begin{equation}
 \begin{split}
-	P \big(  A_{ij} = a_{ij} \big| V_{i}, V_{j} \big) & = \int P \big( A_{ij} \big| v_{i}, v_{j} \big) f_{\vartheta} ( \vartheta_{i}) f_{\vartheta}(\vartheta_{j})   d\vartheta_{i} d\vartheta_{j}   \\ & = \int_{0}^{\nu} \int_{0}^{\nu}   g( \vartheta_{i},  \vartheta_{j})^{a_{ij}} \big( 1- g( \vartheta_{i},  \vartheta_{j}) \big)^{1-a_{ij}}  \cdot dPois_{1}(\vartheta_{i}) \cdot dPois_{1}(\vartheta_{j})  d \vartheta_{i} d \vartheta_{j}.
+	f_{A | V} \big( a_{ij} \big| v_{i}, v_{j} \big) & = \int f_{A | V, \vartheta} \big( a_{ij} \big| v_{i}, v_{j}, \vartheta_{i}, \vartheta_{j} \big) f_{\vartheta} ( \vartheta_{i}) f_{\vartheta}(\vartheta_{j})   d\vartheta_{i} d\vartheta_{j}   \\ & = \int_{0}^{\nu} \int_{0}^{\nu}   g( \vartheta_{i},  \vartheta_{j})^{a_{ij}} \big( 1- g( \vartheta_{i},  \vartheta_{j}) \big)^{1-a_{ij}}  \cdot dPois_{1}(\vartheta_{i}) \cdot dPois_{1}(\vartheta_{j})  d \vartheta_{i} d \vartheta_{j}.
 \end{split}
 \end{equation}
-\end{proof}
 where $dPois_{1}(\cdot)$ is a probability distribution function of Poisson process with rate of 1.  Thus given $\{ \mathbf{V} \}$, edge probability except self-loop within each row (or column) is conditionally $\textit{i.i.d}$ given a link function $g$ and Poisson process $V$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-
-
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{proof}[\textbf{Proof of Lemma~\ref{lemma1}} Convergence of empirical characteristic function of exchangeable variables] 
+\begin{proof}[\textbf{Proof of Lemma~\ref{lemma1}} Convergence of empirical characteristic functions of exchangeable variables] 
 	
 This follows exactly the same as \textit{Theorem 1} in \cite{szekely2007measuring}. Note that this Lemma always holds without any assumption on $\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$, e.g., it holds without assuming exchangeability, nor identically distributed, nor finite second moments.
 \end{proof}
@@ -726,8 +717,8 @@ Under the exchangeability and finite moments assumptions of underlying distribut
 
 \begin{proof}[\textbf{Proof of Theorem~\ref{theorem2}} Consistency of \texttt{MGC} applied to exchangeable variables]
 
-Suppose that we have undirected, connected network $\mathbf{G}$ with a family of diffusion maps $\{ \mathbf{u}_{t}  \}$ and with nodal attributes $\{ \mathbf{x}  \}$. We have shown in the Lemma~\ref{main_lemma} that $\{ \mathbf{u}_{t}  \}$ are exchangeable for each $t \in \mathbb{N}$. Thus there exists an underlying distribution of $\mathbf{u}_{t}$ such that $\mathbf{u} \overset{i.i.d}{\sim} f_{\mathbf{u}^{(t)}}$ for $t= 1,2,\ldots $; and we have $\mathbf{x}_{i} \overset{i.i.d}{\sim} f_{\mathbf{X}}$. Under the assumption of finite second moment of $\mathbf{u}^{(t)}$ and $\mathbf{x}$, \texttt{MGC} statistics constructed by $\{  (  \mathbf{u}_{ti}, \mathbf{x}_{i} ) : i = 1,2,\ldots, n  \}$ yield a consistent testing which determines the independence between underlying distributions of $\mathbf{u}^{(t)}$ and $\mathbf{x}$, followed by Lemma~\ref{lemma2}. 
-From the same setting of network $\mathbf{G}$, we have estimated \textit{i.i.d} node-specific network factors $\{ \mathbf{F}_{i} \}$, we have n-pair of \textit{i.i.d} $\{ ( \mathbf{F}_{i}, \mathbf{x}_{i} )  \}$ and they can be applied it to \texttt{MGC} without assuming conditioning underlying distribution. In case of using adjacency matrix directly into test, we must assume the adjacency matrix comes from directed network $\mathbf{G}$, i.e. $A_{ij} \overset{i.i.d}{\sim} f_{A}$ for all $i,j=1,2,\ldots, n$; otherwise, each column is dependent on one another.  
+Suppose that we have undirected, connected network $\mathbf{G}$ having a family of diffusion maps $\{ \mathbf{u}_{it} : i = 1, \ldots , n ; ~t \in \mathbb{N} \}$ and with nodal attributes $\{ \mathbf{x}_{i} :  i = 1, \ldots , n  \}$. We have shown in the Lemma~\ref{main_lemma} that $\{ \mathbf{u}_{t}  \}$ are exchangeable for each $t \in \mathbb{N}$. Thus there exists an underlying distribution of $\mathbf{u}_{t}$ such that $\mathbf{u}_{t} \overset{i.i.d}{\sim} f_{\mathbf{u}^{(t)}}$ for $t= 1,2,\ldots $; and we have $\mathbf{x}_{i} \overset{i.i.d}{\sim} f_{\mathbf{X}}$. Under the assumption of finite second moment of $\mathbf{u}^{(t)}$ and $\mathbf{x}$, \texttt{MGC} statistics constructed by $\{  (  \mathbf{u}_{ti}, \mathbf{x}_{i} ) : i = 1,2,\ldots, n  \}$ yield a consistent testing which determines the independence between underlying distributions of $\mathbf{u}^{(t)}$ and $\mathbf{x}$, followed by Lemma~\ref{lemma2}. 
+From the same setting of network $\mathbf{G}$, we have estimated \textit{i.i.d} node-specific network factors $\{ \mathbf{F}_{i} \}$, we have n-pair of \textit{i.i.d} $\{ ( \mathbf{F}_{i}, \mathbf{x}_{i} )  \}$ and they can be applied it to \texttt{MGC} without assuming conditional underlying distribution. In case of using adjacency matrix directly into test, we must assume the adjacency matrix comes from directed network $\mathbf{G}$, i.e. $A_{ij} \overset{i.i.d}{\sim} f_{A}$ for all $i,j=1,2,\ldots, n$; otherwise, each column is dependent on one another.  
 \end{proof}
 
 

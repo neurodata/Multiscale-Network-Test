@@ -5,48 +5,53 @@ The style file: Chicago.bst
 Database file #1: Biblio.bib
 Warning--no number and no volume in caron2014sparse
 Warning--page numbers missing in caron2014sparse
+Warning--no number and no volume in cranmer2016navigating
+Warning--page numbers missing in cranmer2016navigating
 Warning--no number and no volume in heller2012consistent
+Warning--no number and no volume in ingold2014structural
+Warning--no number and no volume in minhas2016inferential
+Warning--page numbers missing in minhas2016inferential
 Warning--no number and no volume in veitch2015class
 Warning--page numbers missing in veitch2015class
-You've used 21 entries,
+You've used 24 entries,
             2861 wiz_defined-function locations,
-            752 strings with 8456 characters,
-and the built_in function-call counts, 15787 in all, are:
-= -- 1398
-> -- 1154
+            766 strings with 9127 characters,
+and the built_in function-call counts, 17927 in all, are:
+= -- 1568
+> -- 1345
 < -- 2
-+ -- 360
-- -- 410
-* -- 1429
-:= -- 2807
-add.period$ -- 65
-call.type$ -- 21
-change.case$ -- 151
-chr.to.int$ -- 21
-cite$ -- 26
-duplicate$ -- 400
-empty$ -- 933
-format.name$ -- 486
-if$ -- 2960
++ -- 418
+- -- 472
+* -- 1635
+:= -- 3205
+add.period$ -- 74
+call.type$ -- 24
+change.case$ -- 175
+chr.to.int$ -- 24
+cite$ -- 34
+duplicate$ -- 449
+empty$ -- 1043
+format.name$ -- 560
+if$ -- 3354
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 21
-newline$ -- 108
-num.names$ -- 210
-pop$ -- 98
+missing$ -- 24
+newline$ -- 123
+num.names$ -- 240
+pop$ -- 113
 preamble$ -- 1
-purify$ -- 277
+purify$ -- 319
 quote$ -- 0
-skip$ -- 457
+skip$ -- 513
 stack$ -- 0
-substring$ -- 923
-swap$ -- 138
+substring$ -- 1001
+swap$ -- 153
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 420
-warning$ -- 5
-while$ -- 224
+type$ -- 480
+warning$ -- 10
+while$ -- 247
 width$ -- 0
-write$ -- 279
-(There were 5 warnings)
+write$ -- 318
+(There were 10 warnings)

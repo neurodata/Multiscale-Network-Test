@@ -33,6 +33,13 @@ Coifman, R.~R. and S.~Lafon (2006).
 \newblock {\em Applied and computational harmonic analysis\/}~{\em 21\/}(1),
   5--30.
 
+\bibitem[\protect\citeauthoryear{Cranmer, Leifeld, McClurg, and Rolfe}{Cranmer
+  et~al.}{2016}]{cranmer2016navigating}
+Cranmer, S.~J., P.~Leifeld, S.~D. McClurg, and M.~Rolfe (2016).
+\newblock Navigating the range of statistical tools for inferential network
+  analysis.
+\newblock {\em American Journal of Political Science\/}.
+
 \bibitem[\protect\citeauthoryear{Fosdick and Hoff}{Fosdick and
   Hoff}{2015}]{fosdick2015testing}
 Fosdick, B.~K. and P.~D. Hoff (2015).
@@ -68,6 +75,14 @@ Howard, M., E.~Cox~Pahnke, W.~Boeker, et~al. (2016).
   random graph models.
 \newblock {\em Strategic Management Journal\/}~{\em 37\/}(1), 22--44.
 
+\bibitem[\protect\citeauthoryear{Ingold and Leifeld}{Ingold and
+  Leifeld}{2014}]{ingold2014structural}
+Ingold, K. and P.~Leifeld (2014).
+\newblock Structural and institutional determinants of influence reputation: a
+  comparison of collaborative and adversarial policy networks in decision
+  making and implementation.
+\newblock {\em Journal of Public Administration Research and Theory\/}, muu043.
+
 \bibitem[\protect\citeauthoryear{Kallenberg}{Kallenberg}{1990}]{kallenberg1990exchangeable}
 Kallenberg, O. (1990).
 \newblock Exchangeable random measures in the plane.
@@ -99,6 +114,13 @@ Lov{\'a}sz, L. and B.~Szegedy (2006).
 Lyons, R. et~al. (2013).
 \newblock Distance covariance in metric spaces.
 \newblock {\em The Annals of Probability\/}~{\em 41\/}(5), 3284--3305.
+
+\bibitem[\protect\citeauthoryear{Minhas, Hoff, and Ward}{Minhas
+  et~al.}{2016}]{minhas2016inferential}
+Minhas, S., P.~D. Hoff, and M.~D. Ward (2016).
+\newblock Inferential approaches for network analyses: Amen for latent factor
+  models.
+\newblock {\em arXiv preprint arXiv:1611.00460\/}.
 
 \bibitem[\protect\citeauthoryear{Orbanz and Roy}{Orbanz and
   Roy}{2015}]{orbanz2015bayesian}

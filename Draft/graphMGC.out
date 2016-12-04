@@ -2,11 +2,11 @@
 \BOOKMARK [1][-]{section.2}{Methodology}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Multiscale Generalized Correlation}{section.2}% 3
 \BOOKMARK [2][-]{subsection.2.2}{Exchangeable Graph}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Family of Network Distances}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{Family of Network Distances and Test Statistics}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.4}{Measure for Node Contribution}{section.2}% 6
 \BOOKMARK [1][-]{section.3}{Simulation Study}{}% 7
-\BOOKMARK [2][-]{subsection.3.1}{Stochastic Block Model}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.2}{degree-corrected two block model}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Stochastic block model}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Degree-corrected two block model}{section.3}% 9
 \BOOKMARK [2][-]{subsection.3.3}{Additive and multiplicative graph model}{section.3}% 10
 \BOOKMARK [2][-]{subsection.3.4}{Node Contribution Test}{section.3}% 11
 \BOOKMARK [1][-]{section.4}{Real Data Examples}{}% 12
