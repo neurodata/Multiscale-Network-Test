@@ -359,7 +359,7 @@ According to the joint model~\ref{eq:joint_model}, distribution of edges and nod
 
 \begin{SCfigure}[][h]
 	\centering
-	\includegraphics[width=0.4\paperwidth, height=0.4\paperwidth]{../Figure/ThreeSBM_results_simple.pdf}
+	\includegraphics[width=0.4\paperwidth, height=0.4\paperwidth]{../Figure/ThreeSBM_results_simple.png}
 	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) under diffusion distance matrix (\texttt{DF}) in three SBM (model~\ref{eq:Three}), compared to under adjacency matrix distance (\texttt{Adj}) or latent factor distance (\texttt{LT}). \textbf{This demonstrates one exemplary network where \texttt{MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.}}
 	\label{fig:threeSBM}
 \end{SCfigure}
@@ -387,16 +387,7 @@ The SBM connotes that all nodes within the same block have the same expected deg
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{0.35\textwidth}
-		\includegraphics[width=\textwidth]{../Figure/onlytau.pdf}
-		\caption{}
-		\label{fig:dcSBM}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.6\textwidth}
-		\includegraphics[width=\textwidth]{../Figure/ame_part.pdf}
-		\caption{}
-		\label{fig:ame}
-	\end{subfigure}
+		\includegraphics[width=\textwidth]{../Figure/amedc.pdf}
 	\caption{(a) In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt{FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt{MGC}. (b) \texttt{MGC} utilizing diffusion distances loses some power under additive and multiplicative model which favors estimated latent position metrics, but \texttt{MGC} does as good as \texttt{FH} tests under latent factor metrics which closes to the truth. This reveals the flexibility in distance-based matrix in \texttt{MGC} statistics, which can be chosen depending on model fit or preliminary knowledge.}
 	\label{fig:combined}
 \end{figure}	

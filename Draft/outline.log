@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  3 DEC 2016 00:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  5 DEC 2016 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -618,12 +618,13 @@ Package pdftex.def Info: ../Figure/two_politics.pdf used on input line 137.
 (pdftex.def)             Requested size: 455.24411pt x 227.62413pt.
  [3 <../Figure/powerplot_simple.pdf> <../Figure/onlytau.pdf> <../Figure/ame_par
 t.pdf>]
-<../Figure/barplots.pdf, id=180, 1589.94pt x 505.89pt>
-File: ../Figure/barplots.pdf Graphic file (type pdf)
+<../Figure/barplots_nolegend.pdf, id=180, 1445.4pt x 505.89pt>
+File: ../Figure/barplots_nolegend.pdf Graphic file (type pdf)
 
-<use ../Figure/barplots.pdf>
-Package pdftex.def Info: ../Figure/barplots.pdf used on input line 145.
-(pdftex.def)             Requested size: 455.24411pt x 144.85172pt.
+<use ../Figure/barplots_nolegend.pdf>
+Package pdftex.def Info: ../Figure/barplots_nolegend.pdf used on input line 145
+.
+(pdftex.def)             Requested size: 455.24411pt x 159.33302pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -637,7 +638,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
- [5 <../Figure/barplots.pdf>] [6]
+ [5 <../Figure/barplots_nolegend.pdf>] [6]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 230.
  [7]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 230.
@@ -654,7 +655,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 230.
  ) 
 Here is how much of TeX's memory you used:
  9835 strings out of 494447
- 146982 string characters out of 6166766
+ 147027 string characters out of 6166766
  235329 words of memory out of 5000000
  12992 multiletter control sequences out of 15000+600000
  12963 words of font info for 49 fonts, out of 8000000 for 9000
@@ -672,10 +673,10 @@ blic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type
 ype1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016basic/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2016basic/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on outline.pdf (7 pages, 687628 bytes).
+Output written on outline.pdf (7 pages, 668711 bytes).
 PDF statistics:
- 301 PDF objects out of 1000 (max. 8388607)
- 227 compressed objects within 3 object streams
+ 279 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
  27 named destinations out of 1000 (max. 500000)
  84 words of extra memory for PDF output out of 10000 (max. 10000000)
 
