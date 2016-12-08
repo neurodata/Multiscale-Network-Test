@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  7 DEC 2016 21:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  8 DEC 2016 12:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -561,14 +561,21 @@ File: ../Figure/ThreeSBM_results_simple.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../Figure/ThreeSBM_results_simple.pdf used on input li
 ne 88.
 (pdftex.def)             Requested size: 239.0034pt x 239.0034pt.
+
+
+LaTeX Warning: Reference `eq:Three' on page 2 undefined on input line 91.
+
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 91.
+
+LaTeX Warning: Reference `eq:Three' on page 2 undefined on input line 91.
+
 
 Underfull \hbox (badness 1158) in paragraph at lines 91--91
 [][]\OT1/cmr/bx/n/10.95 : |\OT1/cmr/m/n/10.95 This power heatmap il-lus-
  []
 
-<../Figure/powerplot_simple.pdf, id=75, 1300.86pt x 361.35pt>
+<../Figure/powerplot_simple.pdf, id=73, 1300.86pt x 361.35pt>
 File: ../Figure/powerplot_simple.pdf Graphic file (type pdf)
 
 <use ../Figure/powerplot_simple.pdf>
@@ -578,14 +585,14 @@ Package pdftex.def Info: ../Figure/powerplot_simple.pdf used on input line 97.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figure/onlytau.pdf, id=76, 505.89pt x 361.35pt>
+<../Figure/onlytau.pdf, id=74, 505.89pt x 361.35pt>
 File: ../Figure/onlytau.pdf Graphic file (type pdf)
 
 <use ../Figure/onlytau.pdf>
 Package pdftex.def Info: ../Figure/onlytau.pdf used on input line 109.
 (pdftex.def)             Requested size: 159.33821pt x 113.81482pt.
 
-<../Figure/ame_part.pdf, id=77, 867.24pt x 361.35pt>
+<../Figure/ame_part.pdf, id=75, 867.24pt x 361.35pt>
 File: ../Figure/ame_part.pdf Graphic file (type pdf)
 
 <use ../Figure/ame_part.pdf>
@@ -593,7 +600,7 @@ Package pdftex.def Info: ../Figure/ame_part.pdf used on input line 114.
 (pdftex.def)             Requested size: 273.14923pt x 113.80931pt.
  [2 <../Figure/Dx1.pdf> <../Figure/Dx5.pdf> <../Figure/Dx50.pdf> <../Figure/Thr
 eeSBM_results_simple.pdf>]
-<../Figure/nodecontri.pdf, id=140, 1084.05pt x 361.35pt>
+<../Figure/nodecontri.pdf, id=137, 1084.05pt x 361.35pt>
 File: ../Figure/nodecontri.pdf Graphic file (type pdf)
 
 <use ../Figure/nodecontri.pdf>
@@ -603,7 +610,7 @@ Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 127.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figure/two_politics.pdf, id=141, 722.7pt x 361.35pt>
+<../Figure/two_politics.pdf, id=138, 722.7pt x 361.35pt>
 File: ../Figure/two_politics.pdf Graphic file (type pdf)
 
 <use ../Figure/two_politics.pdf>
@@ -611,7 +618,7 @@ Package pdftex.def Info: ../Figure/two_politics.pdf used on input line 137.
 (pdftex.def)             Requested size: 455.24411pt x 227.62413pt.
  [3 <../Figure/powerplot_simple.pdf> <../Figure/onlytau.pdf> <../Figure/ame_par
 t.pdf>]
-<../Figure/barplots_nolegend.pdf, id=183, 1445.4pt x 505.89pt>
+<../Figure/barplots_nolegend.pdf, id=180, 1445.4pt x 505.89pt>
 File: ../Figure/barplots_nolegend.pdf Graphic file (type pdf)
 
 <use ../Figure/barplots_nolegend.pdf>
@@ -622,13 +629,13 @@ Package pdftex.def Info: ../Figure/barplots_nolegend.pdf used on input line 145
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figure/Adj0.pdf, id=184, 505.89pt x 505.89pt>
+<../Figure/Adj0.pdf, id=181, 505.89pt x 505.89pt>
 File: ../Figure/Adj0.pdf Graphic file (type pdf)
  <use ../Figure/Adj0.pdf>
 Package pdftex.def Info: ../Figure/Adj0.pdf used on input line 154.
 (pdftex.def)             Requested size: 204.85846pt x 204.86116pt.
 
-<../Figure/Adj1.pdf, id=185, 505.89pt x 505.89pt>
+<../Figure/Adj1.pdf, id=182, 505.89pt x 505.89pt>
 File: ../Figure/Adj1.pdf Graphic file (type pdf)
  <use ../Figure/Adj1.pdf>
 Package pdftex.def Info: ../Figure/Adj1.pdf used on input line 159.
@@ -636,52 +643,52 @@ Package pdftex.def Info: ../Figure/Adj1.pdf used on input line 159.
 
 [4 <../Figure/nodecontri.pdf> <../Figure/two_politics.pdf>] [5 <../Figure/barpl
 ots_nolegend.pdf> <../Figure/Adj0.pdf> <../Figure/Adj1.pdf>]
-<../Figure/sim_Adj0.pdf, id=238, 505.89pt x 505.89pt>
+<../Figure/sim_Adj0.pdf, id=235, 505.89pt x 505.89pt>
 File: ../Figure/sim_Adj0.pdf Graphic file (type pdf)
 
 <use ../Figure/sim_Adj0.pdf>
 Package pdftex.def Info: ../Figure/sim_Adj0.pdf used on input line 175.
 (pdftex.def)             Requested size: 136.57462pt x 136.57668pt.
- <../Figure/step0.pdf, id=239, 722.7pt x 361.35pt>
+ <../Figure/step0.pdf, id=236, 722.7pt x 361.35pt>
 File: ../Figure/step0.pdf Graphic file (type pdf)
 
 <use ../Figure/step0.pdf>
 Package pdftex.def Info: ../Figure/step0.pdf used on input line 180.
 (pdftex.def)             Requested size: 273.14923pt x 136.57558pt.
 
-<../Figure/sim_Adj1.pdf, id=240, 505.89pt x 505.89pt>
+<../Figure/sim_Adj1.pdf, id=237, 505.89pt x 505.89pt>
 File: ../Figure/sim_Adj1.pdf Graphic file (type pdf)
 
 <use ../Figure/sim_Adj1.pdf>
 Package pdftex.def Info: ../Figure/sim_Adj1.pdf used on input line 191.
 (pdftex.def)             Requested size: 136.57462pt x 136.57668pt.
- <../Figure/step1.pdf, id=241, 722.7pt x 361.35pt>
+ <../Figure/step1.pdf, id=238, 722.7pt x 361.35pt>
 File: ../Figure/step1.pdf Graphic file (type pdf)
 
 <use ../Figure/step1.pdf>
 Package pdftex.def Info: ../Figure/step1.pdf used on input line 196.
 (pdftex.def)             Requested size: 273.14923pt x 136.57558pt.
 
-<../Figure/sim_Adj2.pdf, id=242, 505.89pt x 505.89pt>
+<../Figure/sim_Adj2.pdf, id=239, 505.89pt x 505.89pt>
 File: ../Figure/sim_Adj2.pdf Graphic file (type pdf)
 
 <use ../Figure/sim_Adj2.pdf>
 Package pdftex.def Info: ../Figure/sim_Adj2.pdf used on input line 207.
 (pdftex.def)             Requested size: 136.57462pt x 136.57668pt.
- <../Figure/step2.pdf, id=243, 722.7pt x 361.35pt>
+ <../Figure/step2.pdf, id=240, 722.7pt x 361.35pt>
 File: ../Figure/step2.pdf Graphic file (type pdf)
 
 <use ../Figure/step2.pdf>
 Package pdftex.def Info: ../Figure/step2.pdf used on input line 212.
 (pdftex.def)             Requested size: 273.14923pt x 136.57558pt.
 
-<../Figure/sim_Adj3.pdf, id=244, 505.89pt x 505.89pt>
+<../Figure/sim_Adj3.pdf, id=241, 505.89pt x 505.89pt>
 File: ../Figure/sim_Adj3.pdf Graphic file (type pdf)
 
 <use ../Figure/sim_Adj3.pdf>
 Package pdftex.def Info: ../Figure/sim_Adj3.pdf used on input line 223.
 (pdftex.def)             Requested size: 136.57462pt x 136.57668pt.
- <../Figure/step3.pdf, id=245, 722.7pt x 361.35pt>
+ <../Figure/step3.pdf, id=242, 722.7pt x 361.35pt>
 File: ../Figure/step3.pdf Graphic file (type pdf)
 
 <use ../Figure/step3.pdf>
@@ -689,62 +696,81 @@ Package pdftex.def Info: ../Figure/step3.pdf used on input line 228.
 (pdftex.def)             Requested size: 273.14923pt x 136.57558pt.
  [6 <../Figure/sim_Adj0.pdf> <../Figure/step0.pdf> <../Figure/sim_Adj1.pdf> <..
 /Figure/step1.pdf> <../Figure/sim_Adj2.pdf> <../Figure/step2.pdf>] <../Figure/s
-im_Adj4.pdf, id=296, 505.89pt x 505.89pt>
+im_Adj4.pdf, id=293, 505.89pt x 505.89pt>
 File: ../Figure/sim_Adj4.pdf Graphic file (type pdf)
 
 <use ../Figure/sim_Adj4.pdf>
 Package pdftex.def Info: ../Figure/sim_Adj4.pdf used on input line 239.
 (pdftex.def)             Requested size: 136.57462pt x 136.57668pt.
- <../Figure/step4.pdf, id=297, 722.7pt x 361.35pt>
+ <../Figure/step4.pdf, id=294, 722.7pt x 361.35pt>
 File: ../Figure/step4.pdf Graphic file (type pdf)
 
 <use ../Figure/step4.pdf>
 Package pdftex.def Info: ../Figure/step4.pdf used on input line 244.
 (pdftex.def)             Requested size: 273.14923pt x 136.57558pt.
 
-Overfull \hbox (2.53952pt too wide) detected at line 262
+Overfull \hbox (2.53952pt too wide) detected at line 263
 [] []
  []
 
-<../Figure/negcontri.pdf, id=298, 794.97pt x 505.89pt>
+<../Figure/negcontri.pdf, id=295, 794.97pt x 505.89pt>
 File: ../Figure/negcontri.pdf Graphic file (type pdf)
 
 <use ../Figure/negcontri.pdf>
-Package pdftex.def Info: ../Figure/negcontri.pdf used on input line 268.
+Package pdftex.def Info: ../Figure/negcontri.pdf used on input line 269.
 (pdftex.def)             Requested size: 455.24411pt x 289.71115pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+Overfull \hbox (2.53952pt too wide) detected at line 284
+[] []
+ []
+
 [7 <../Figure/sim_Adj3.pdf> <../Figure/step3.pdf> <../Figure/sim_Adj4.pdf> <../
-Figure/step4.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 279.
+Figure/step4.pdf>] <../Figure/revcontri.pdf, id=332, 794.97pt x 505.89pt>
+File: ../Figure/revcontri.pdf Graphic file (type pdf)
+
+<use ../Figure/revcontri.pdf>
+Package pdftex.def Info: ../Figure/revcontri.pdf used on input line 290.
+(pdftex.def)             Requested size: 455.24411pt x 289.71115pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8 <../Figure/negcontri.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 304.
 
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 279.
- [8 <../Figure/negcontri.pdf>] [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 354.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 354.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 304.
+ [9 <../Figure/revcontri.pdf>] [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 379.
+ [11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 379.
  (./outline.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 354.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 354.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 379.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 379.
 Package rerunfilecheck Info: File `outline.out' has not changed.
 (rerunfilecheck)             Checksum: 61A491569EE3FEC54E935240371F3E9D;44.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 354.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 379.
  ) 
 Here is how much of TeX's memory you used:
- 9939 strings out of 494447
- 149010 string characters out of 6166766
- 237070 words of memory out of 5000000
- 13069 multiletter control sequences out of 15000+600000
+ 9952 strings out of 494447
+ 149225 string characters out of 6166766
+ 239269 words of memory out of 5000000
+ 13076 multiletter control sequences out of 15000+600000
  12963 words of font info for 49 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 38i,18n,48p,981b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,18n,48p,981b,535s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 0.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/
@@ -759,10 +785,10 @@ ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016basic/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016basic/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2016basic/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on outline.pdf (10 pages, 772861 bytes).
+Output written on outline.pdf (11 pages, 778496 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 306 compressed objects within 4 object streams
- 41 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 422 PDF objects out of 1000 (max. 8388607)
+ 318 compressed objects within 4 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 154 words of extra memory for PDF output out of 10000 (max. 10000000)
 

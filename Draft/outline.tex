@@ -250,8 +250,9 @@ anchorcolor = blue]{hyperref}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Simulations}
 
+\subsubsection*{Group 3 having sparse distribution}
 \begin{equation}
-\label{eq:Three}
+\label{eq:sim1}
 \begin{gathered}
 \begin{aligned}
 &  X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Multi(1/3, 1/3, 1/3), i = 1, \ldots , n \\ 
@@ -269,6 +270,30 @@ In this case, similar to politic network example, I treated $X$ as a categorical
 	\caption{Group 3 has sparse edge distribution compared to Group 1 or Group2.}
 	\label{fig:negcontri}
 \end{figure}
+
+\subsubsection*{Group 3 having more relationship to other groups}
+\begin{equation}
+\label{eq:sim2}
+\begin{gathered}
+\begin{aligned}
+&  X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Multi(1/3, 1/3, 1/3), i = 1, \ldots , n \\ 
+&  Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Multi(0.5, 0.25, 0.25) I( x = 1 ) +   Multi(0.25, 0.5, 0.25) I (x = 2)  \qquad  \\ & \quad \quad + Multi(0.25, 0.25, 0.5)I(x = 3), \quad  i = 1,\ldots,n  \\
+&  A_{ij} | Z_{i}, Z_{j}   = \left[ \begin{array}{c|c|c} 0.5 & 0.1 & \color{red}{0.4} \\ \hline 0.1 & 0.5 & \color{red}{0.4} \\ \hline \color{red}{0.4} & \color{red}{0.4} & \color{red}{0.2}   \end{array} \right]
+\end{aligned}
+\end{gathered}
+\end{equation}
+
+In this case, similar to politic network example, I treated $X$ as a categorical random variable having a value of 1, 2, or 3 and use its dissimilarity matrix.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{../Figure/revcontri.pdf}	
+	\caption{Group 3 has different network patterns compared to Group 1 or Group2.}
+	\label{fig:revcontri}
+\end{figure}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
