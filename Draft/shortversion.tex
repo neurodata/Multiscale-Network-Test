@@ -122,7 +122,7 @@ Now back to the network independence test, we are ready to derive the Euclidean 
 
 In order to satisfy the requirement of being \textit{i.i.d}, we are going to restrict applicable network to a certain family of graphs and suggest valid graph geometries that furnish us useful metrics. A graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \citep{orbanz2015bayesian}, i.e.~for every permutation $\sigma$ of $n$, $(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma(j)})$. Even though exchangeability itself cannot guarantee being \textit{i.i.d}, thanks to the \textit{de Finetti}'s representation theorem and \textit{Aldous-Hoover theorem}, exchangeable graph, often called \textit{graphon} \citep{lovasz2006limits}, can be defined through conditionally \textit{i.i.d} edge distribution \citep{chan2013estimation}. We then take advantage of this \textit{i.i.d} expression which draws \textit{i.i.d} network geometries called \textit{diffusion maps}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.23\textwidth}
 		\includegraphics[width=\textwidth]{../Figure/Pmat.pdf}
@@ -180,7 +180,7 @@ which is proportional to $v^{th}$ column-sum of the pre-summed test statistic~\r
 \label{sec:simulation}
 	\vspace*{-0.2cm}
 In our simulation studies, we make a comparison between empirical testing power between \texttt{MGC} and \texttt{mCorr}, and network model-based test of Fosdick and Hoff (\texttt{FH})~\citep{fosdick2015testing}. We use type I error of $\alpha = 0.05$ and obtain p-values from each simulated network via permutation test. All the simulation models can be illustrated by joint distribution of adjacent matrix $\mathbf{A}$, nodal attributes $\mathbf{X}$, and latent variable $\mathbf{Z}$ that explains dependence structure between $\mathbf{A}$ and $\mathbf{X}$. You can find the detailed simulation models in the Appendix~\ref{ssec:models}. We introduced a popular network model of Stochastic Block Model (SBM) as our main simulated networks. To scrutinize our conjecture on better performance of local optimal scaled \texttt{MGC} over global scale of \texttt{mCorr}, we control the amount of \textit{nonlinear dependency} through changing the value of $\theta \in (0, 1)$ in the three block model~\ref{eq:mono}. When $\theta > 0.2$, linear dependency of edge distribution in $\mathbf{A}$ upon nodal attribute of $X$ is lost. If you see Figure~\ref{fig:powerplot}, power of \texttt{mCorr} starts to drop from $\theta = 0.2$ while that of \texttt{MGC} almost stays clam, which implies \texttt{MGC} is significantly more sensitive to nonlinear dependency compared to \texttt{mCorr}.  
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../Figure/mono_simple.pdf}
 	\caption{X-axis of $\theta$ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt{mCorr} or \texttt{FH} test but relatively stable power of \texttt{MGC} under nonlinear dependency.}
@@ -195,7 +195,7 @@ E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 
 
 % degree-corrected two block model
 The SBM connotes that all nodes within the same block have the same expected degree. Thus, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with highly varying node degrees within block or community. Instead the Degree-Corrected Stochastic Block model (DCSBM) proposed by \cite{karrer2011stochastic} add another random variable associated with each node to vary the node degrees. In the model~\ref{eq:dcVariance}, we controlled the amount of such variability by $\tau$; the larger the value $\tau$ is, the more variability degree or edge distribution has. In Figure~\ref{fig:dcSBM}, power based on Euclidean distance of $\mathbf{A}$ or that of estimated network factors (locations) becomes less sensitive as $\tau$ increases. Compared to these two, diffusion maps are more robust to such variability. 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../Figure/tau_simple.pdf}
 	\caption{In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt{FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt{MGC}.}
