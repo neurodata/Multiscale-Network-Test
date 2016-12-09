@@ -1,12 +1,12 @@
 %&pdflatex
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage{url,enumerate, amssymb, amsfonts}
 \usepackage[colorlinks = true,
 linkcolor = blue,
 urlcolor  = blue,
 citecolor = green,
 anchorcolor = blue]{hyperref}
-\usepackage{setspace,listings}
+%\usepackage{setspace,listings}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{amsmath}
 \usepackage{psfrag}
@@ -15,10 +15,13 @@ anchorcolor = blue]{hyperref}
 \usepackage{natbib}
 \usepackage{url} % not cruci
 %\pdfminorversion=4
+\usepackage{setspace}
+\usepackage{lscape}
 \usepackage{color,amssymb}
 \usepackage{mathtools}
 \usepackage{dcolumn}
 \usepackage{indentfirst, verbatim, float}
+\usepackage[margin=0.82in]{geometry}
 %\newcounter{equationset, sectsty, breqn}
 %\usepackage{setspace, amsmath,color}
 %\usepackage{color,amssymb}
@@ -34,16 +37,10 @@ anchorcolor = blue]{hyperref}
 \usepackage{titlesec}
 \sidecaptionvpos{figure}{c}
 
-
 % NOTE: To produce blinded version, replace "0" with "1" below.
 \newcommand{\blind}{1}
 
 % DON'T change margins - should be 1 inch all around.
-\addtolength{\oddsidemargin}{-.5in}%
-\addtolength{\evensidemargin}{-.5in}%
-\addtolength{\textwidth}{1in}%
-\addtolength{\textheight}{-.3in}%
-\addtolength{\topmargin}{-.8in}%
 
 \begin{document}
 
