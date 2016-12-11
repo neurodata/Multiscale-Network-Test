@@ -77,7 +77,7 @@ Investigating how network structures are associated with nodal attributes of int
 \end{abstract}
 
 \noindent%
-{\it Keywords:} network dependence, diffusion maps, exchangeable graph, distance correlation
+{\it Keywords:} network dependence, distance correlation, exchangeable graph, diffusion maps
 
 \sloppy
 \doublespacing
@@ -89,19 +89,17 @@ Investigating how network structures are associated with nodal attributes of int
 Propelled by increasing demand and supply of graph data from various disciplines, the ubiquitous influence of network inferences has motivated numerous recent advances and applications in statistics, physics, computer science, biology, social science, etc., which further poses many new challenges to data scientists. One of the most fundamental statistical question is to determine and characterize the relationship among multiple modalities of a given data set, for which the first step is to test the existence of any dependency. However, the lack of a principal notion of correlation in the graph domain has not only hindered the progress of nonparametric dependency testing methods, but also deterred a rich literature of statistical techniques in other inferences (e.g., regression, feature screening, two-sample test) from being directly applied to graphs.
  
 % Testing dependence
-Statisticians have long considered the problem of revealing the relationship between two data sets. The most classical approach is the Pearson's correlation (\cite{Pearson1895}), which determine the existence of linear relationship via a correlation coefficient in the range of $[-1,1]$, with $0$ indicating no linear association while $\pm 1$ indicating perfect linear association. To capture all types of dependencies not limited to linear relationship, many new correlation measures and nonparametric statistics have been suggested~\citep{mantel1967, RobertEscoufier1976, szekely2007measuring, GrettonGyorfi2010, Reshef2011, HellerGorfine2013,szekelyRizzo2013a, heller2016consistent, shen2016discovering}. In particular, the distance correlation by Szekely et al. \citep{szekely2007measuring} is the first correlation measure that is consistent against all possible dependencies (with finite moments), and the multiscale generalized correlation (MGC) statistic by Shen et al. \cite{shen2016discovering} inherits the same consistency of distance correlation with significantly better finite-sample testing powers under high-dimensional and nonlinear dependencies, via defining a family of distance-based local correlations and efficiently searching the optimal correlation for testing.
+Statisticians have long considered the problem of revealing the relationship between two data sets. The most classical approach is the Pearson's correlation (\cite{Pearson1895}), which determine the existence of linear relationship via a correlation coefficient in the range of $[-1,1]$, with $0$ indicating no linear association while $\pm 1$ indicating perfect linear association. To capture all types of dependencies not limited to linear relationship, many new correlation measures and nonparametric statistics have been suggested to test independence between two random vectors~\citep{mantel1967, RobertEscoufier1976, szekely2007measuring, GrettonGyorfi2010, Reshef2011, HellerGorfine2013,szekelyRizzo2013a, heller2016consistent, shen2016discovering}. In particular, the distance correlation by Szekely et al. \citep{szekely2007measuring} is the first correlation measure that is consistent against all possible dependencies (with finite moments), and the multiscale generalized correlation (MGC) statistic by Shen et al. \cite{shen2016discovering} inherits the same consistency of distance correlation with significantly better finite-sample testing powers under high-dimensional and nonlinear dependencies, via defining a family of distance-based local correlations and efficiently searching the optimal correlation for testing.
 
 % Graph data general
-Despite of many recent development, the network data still suffers from a dearth of proper analysis, due to its structured and high-dimensional nature. Mathematically, a graph $G=(V,E)$ consists of a set $V$ of nodes (or vertices) together with a set $E$ of edges, which is often represented via an adjacency matrix $A = \{A_{ij} : i,j= 1,..,n \}$, e.g. for an unweighted and undirected network, $A_{ij} = 1$ if node $i$ and node $j$ are connected by an edge, and zero otherwise. Therefore, $A$ is a symmetric square matrix that does not satisfy traditional data assumptions, e.g., each observation can be assumed independently and identically distributed, the sample size increases faster than the feature dimension, etc., which is a huge obstacle for directly applying conventional statistical methods. 
+Despite of many recent development, the network data, different from a random vector, still suffers from a dearth of proper analysis, due to its structured and high-dimensional nature. Mathematically, a graph $G=(V,E)$ consists of a set $V$ of nodes (or vertices) together with a set $E$ of edges, which is often represented via an adjacency matrix $A = \{A_{ij} : i,j= 1,..,n \}$, e.g. for an unweighted and undirected network, $A_{ij} = 1$ if node $i$ and node $j$ are connected by an edge, and zero otherwise. Therefore, $A$ is a symmetric square matrix that does not satisfy traditional data assumptions, e.g., each observation can be assumed independently and identically distributed, the sample size increases faster than the feature dimension, etc., which is a huge obstacle for directly applying conventional statistical methods. 
 
 % testing dependence on graphs
-A core problem in network science is to detect dependency between network topology and nodal attributes, i.e., certain properties defined on nodes. For example, each person on Facebook is tied with a number of attributes (say personal behaviors), and is also linked to other people via the social network; in neuro-science, each brain region has its own functionality, but is connected with other regions in the brain map. Identifying dependency between network and nodal attributes has primarily focused on their relationship explained only by network model under the boundary of model assumption \citep{wasserman1996logit, howard2016understanding}. A fundamental difficulty of model-based independence tests comes from the fact that not all networks exhibit the structures described by known network models. \cite{fosdick2015testing} overcome this issue by estimating network factors which are believed to embody each node's locations in network space. Their network models, however, still rely on the assumption that all the nodes in network would follow the same pattern of dependence -- subject to additive and multiplicative effect. To our best knowledge so far, there is no principled method to compute a model-free correlation measure for testing network dependency. In particular, all the aforementioned correlation measures no longer have the theoretical properties when directly applied to graph testing.
-Youjin: rephrased the second half of the paragraph, makes it understand-able and more straightforward.
+When it comes to investigating relationships in network data, a core problem is to detect dependency between network topology and nodal attributes, i.e., certain properties defined on nodes. For example, each person on Facebook is tied with a number of attributes (say personal behaviors), and is also linked to other people via the social network; in neuro-science, each brain region has its own functionality, but is connected with other regions in the brain map. Identifying dependency between network and nodal attributes has primarily focused on their relationship explained only by network model under the boundary of model assumption \citep{wasserman1996logit, howard2016understanding, fosdick2015testing}. A fundamental difficulty of model-based independence tests comes from the fact that not all networks exhibit the structures described by known network models. \cite{fosdick2015testing} tried to overcome this issue by estimating node-specific network factors with any dimensions which are believed to embody each node's locations in network space. Their network models, however, still rely on the assumption that all the nodes in network would follow the same pattern of dependence -- subject to additive and multiplicative effect. To our best knowledge so far, there is no principled method to compute a model-free correlation measure for testing network dependency. 
 
 %Most network analysis starts with a proper model, i.e., latent position model, stochastic block model, random dot product model \citep{HollandEtAl1983, YoungScheinerman2007,RoheEtAl2011,karrer2011stochastic,ZhaoLevinaZhu2012,SussmanEtAl2012,TangSussmanPriebe2013}
-
 % proposed solution
-To overcome this obstacle, we first define a family of distance metrics on network data via the diffusion maps, then apply MGC to the diffusion distance of the network topology and the Euclidean distance of the nodal attributes. Theoretical results show that under very mild condition, the diffusion maps can allow distance-based correlation measures to be consistent in testing network dependencies, and utilizing MGC offers major power improvement under various scenarios in finite-sample testing. We further illustrate the advantages of diffusion maps and MGC over existing benchmarks via comprehensive simulations under popular network models.
+To overcome the obstacles due to the distinct structure of network data and also due to model-based method, we first define a family of distance metrics on network data via the diffusion maps, then apply MGC to the diffusion distance of the network topology and the Euclidean distance of the nodal attributes. Theoretical results show that under very mild condition, the diffusion maps can allow distance-based correlation measures to be consistent in testing network dependencies, and utilizing MGC offers major power improvement under various scenarios in finite-sample testing. We further illustrate the advantages of diffusion maps and MGC over existing benchmarks via comprehensive simulations under popular network models.
 
 % literature reviews about testing network independence. 
 
@@ -207,7 +205,7 @@ which is proportional to $v^{th}$ column-sum of the pre-summed test statistic~\r
 \section{Simulation Study}
 \label{sec:simulation}
 	\vspace*{-0.2cm}
-In our simulation studies, we make a comparison between empirical testing power between \texttt{MGC}, \texttt{mCorr}, Heller-Heller-Gorfine (\texttt{HHG}) \citep{heller2012consistent}, and likelihood ratio test of Fosdick and Hoff (\texttt{FH})~\citep{fosdick2015testing}. We use type I error of $\alpha = 0.05$ and obtain p-values from each simulated network via permutation test. All the simulation models can be illustrated by joint distribution of adjacent matrix $\mathbf{A}$, nodal attributes $\mathbf{X}$, and latent variable $\mathbf{Z}$ that explains dependence structure between $\mathbf{A}$ and $\mathbf{X}$. You can find the detailed simulation models in the Appendix~\ref{ssec:models}. We introduced a popular network model of Stochastic Block Model (SBM) as our main simulated networks. 
+In our simulation studies, we make a comparison between empirical testing power between \texttt{MGC}, \texttt{mCorr}, Heller-Heller-Gorfine (\texttt{HHG}) \citep{heller2012consistent}, and likelihood ratio test of Fosdick and Hoff (\texttt{FH})~\citep{fosdick2015testing}. We use type I error of $\alpha = 0.05$ and obtain p-values from each simulated network via permutation test. All the simulation models can be illustrated by joint distribution of adjacent matrix $\mathbf{A}$ and nodal attributes $\mathbf{X}$. We introduced a popular network model of Stochastic Block Model (SBM) as our main simulated networks. 
 
 \subsection{Stochastic Block Model}
 
@@ -217,17 +215,18 @@ In our simulation studies, we make a comparison between empirical testing power 
 	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) under diffusion distance matrix (\texttt{DF}) in three SBM (model~\ref{eq:Three}), compared to under adjacency matrix distance (\texttt{Adj}) or latent factor distance (\texttt{LT}). This demonstrates one exemplary network where \texttt{MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.}
 	\label{fig:threeSBM}
 \end{SCfigure}
-We present the SBM with $K=3$ blocks (model~\ref{eq:Three}) where block affiliation for each node is correlated with its attributes $X$. Figure~\ref{fig:threeSBM} illustrates superior performance of \texttt{MGC} as a test statistic combined with diffusion maps (\texttt{DF}) as a network metric. To simply represent model~\ref{eq:Three}, we have
+We present the SBM with $K=3$ blocks (model~\ref{eq:Three}) where block affiliation for each node is correlated with its attributes $X$. Figure~\ref{fig:threeSBM} illustrates superior performance of \texttt{MGC} as a test statistic combined with diffusion maps (\texttt{DF}) as a network metric. Assume that for $i,j = 1, \ldots , n = 100$, we have
 \begin{equation}
-E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 1) + 0.3 I(|X_{i} - X_{j}| = 2).
+\label{eq:Three}
+E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 1) + 0.3 I(|X_{i} - X_{j}| = 2), 
 \end{equation}
-When $X_{i} = X_{j}$, these two nodes are most likely to have an edge but when $X_{i}$ and  $X_{j}$ differ by one, they are even less likely to have an edge, with probability of 0.2, than the most different pairs of nodes. This actually describes nonlinear dependence where \texttt{MGC} is believed to work better than the distance correlation. To scrutinize our conjecture on better performance of local optimal scaled \texttt{MGC} over global scale of \texttt{mCorr}, we control the amount of \textit{nonlinear dependency} through changing the value of $\theta \in (0, 1)$ in the three block model~\ref{eq:mono}. 
+where $X_{i} \overset{i.i.d}{\sim} Multiple(1/3, 1/3, 1/3); i = 1, \ldots, 100$. When $X_{i} = X_{j}$, these two nodes are most likely to have an edge but when $X_{i}$ and  $X_{j}$ differ by one, they are even less likely to have an edge, with probability of 0.2, than the most different pairs of nodes. This actually describes nonlinear dependence where \texttt{MGC} is believed to work better than the distance correlation. To scrutinize our conjecture on better performance of local optimal scaled \texttt{MGC} over global scale of \texttt{mCorr}, we control the amount of \textit{nonlinear dependency} through changing the value of $\theta \in (0, 1)$ in the three block model~\ref{eq:mono}. 
 \begin{equation}
-E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2).
+E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 1) + \theta I(|X_{i} - X_{j}| = 2), \quad i,j = 1, \ldots, n = 100, 
 \label{eq:mono}
 \vspace*{-0.4cm}
 \end{equation}
-When $\theta > 0.2$, linear dependency of edge distribution in $\mathbf{A}$ upon nodal attribute of $X$ is lost. If you see Figure~\ref{fig:powerplot}, power of \texttt{mCorr} starts to drop from $\theta = 0.2$ while that of \texttt{MGC} almost stays clam, which implies \texttt{MGC} is significantly more sensitive to nonlinear dependency compared to \texttt{mCorr}.  
+where  $X_{i} \overset{i.i.d}{\sim} Bern(0.5); i =1, \ldots, 100$. When $\theta > 0.2$, linear dependency of edge distribution in $\mathbf{A}$ upon nodal attribute of $X$ is lost. If you see Figure~\ref{fig:powerplot}, power of \texttt{mCorr} starts to drop from $\theta = 0.2$ while that of \texttt{MGC} almost stays clam, which implies \texttt{MGC} is significantly more sensitive to nonlinear dependency compared to \texttt{mCorr}.  
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../Figure/mono_simple.pdf}
@@ -239,10 +238,11 @@ When $\theta > 0.2$, linear dependency of edge distribution in $\mathbf{A}$ upon
 On the other hand, the SBM connotes that all nodes within the same block have the same expected degree. Thus, this block model is limited by homogeneous distribution within block and provides a poor fit to networks with highly varying node degrees within block or community. Instead the Degree-Corrected Stochastic Block model (DCSBM) proposed by \cite{karrer2011stochastic} add another random variable associated with each node to vary the node degrees. In the model~\ref{eq:tau}, we controlled the amount of such variability by $\tau$; the larger the value $\tau$ is, the more variability degree or edge distribution has. In Figure~\ref{fig:dcSBM}, power based on Euclidean distance of $\mathbf{A}$ or that of estimated network factors (locations) becomes less sensitive as $\tau$ increases. Compared to these two, diffusion maps are more robust to such variability. 
 \vspace*{-0.4cm}
 \begin{equation}
-E( A_{ij} | \mathbf{X}, \mathbf{V} )  = 0.2 V_{i} V_{j} \cdot I ( |X_{i} - X_{j}| = 0 ) + 0.05 V_{i} V_{j} \cdot I(|X_{i} - X_{j}| = 1), \quad \mbox{ where } V_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau). 
+E( A_{ij} | \mathbf{X}, \mathbf{V} )  = 0.2 V_{i} V_{j} \cdot I ( |X_{i} - X_{j}| = 0 ) + 0.05 V_{i} V_{j} \cdot I(|X_{i} - X_{j}| = 1),
 \label{eq:tau}
 \vspace*{-0.4cm}
 \end{equation} 
+where $X_{i} \overset{i.i.d.}{\sim} Bern(0.5);  V_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau), i = 1, \ldots, 250.$
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../Figure/tau_simple.pdf}
@@ -259,7 +259,17 @@ E( A_{ij} | \mathbf{X}, \mathbf{V} )  = 0.2 V_{i} V_{j} \cdot I ( |X_{i} - X_{j}
 	\caption{This plot describes that both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, which validates the use of node contribution measure in independence test.}
 	\label{fig:contribution}
 \end{figure}
-To examine the effectiveness of node contribution measure in testing dependency as presented in the statistic~\ref{eq:contribution}, we deliberately simulate the network and its nodal attributes as half of the nodes are independent while the other half are dependent on network (model~\ref{eq:contri}). As an ad hoc test of node contribution, we rank the nodes in terms of decreasing order of $c(v)$ and count the ratio of dependent samples's ranks within the number of dependent nodes. If it works perfectly, all dependent nodes would take higher rank than every independent node so thus the rate equals to one. We call this rate as \textit{inclusion rate}:
+To examine the effectiveness of node contribution measure in testing dependency as presented in the statistic~\ref{eq:contribution}, we deliberately simulate the network and its nodal attributes as half of the nodes are independent while the other half are dependent on network (model~\ref{eq:contri}). 
+\begin{equation}
+\begin{gathered}
+\begin{aligned}
+	& X_{i} \overset{i.i.d}{\sim}  Bern(0.5)  \quad i = 1, \ldots ,n/2, \ldots, n \\
+	& E( A_{ij} | X_{i}, X_{j} )   \stackrel{d}{=} \left\{  \begin{array}{cc} 0.4 I(|X_{i} - X_{j}| = 0)  + Bern(0.1) I(|X_{i} - X_{j}| > 0) & i = 1,\ldots,n/2 \\   0.25  & i=1+n/2, \ldots, n  \end{array} \right.
+	\end{aligned}
+	\end{gathered}
+\label{eq:contri}
+\end{equation}
+As an ad hoc test of node contribution, we rank the nodes in terms of decreasing order of $c(v)$ and count the ratio of dependent samples's ranks within the number of dependent nodes. If it works perfectly, all dependent nodes would take higher rank than every independent node so thus the rate equals to one. We call this rate as \textit{inclusion rate}:
 \begin{equation}
 \mbox{ inclustion rate}\big(  c(v) \big) = \sum\limits_{v \in V(\mathbf{G})} \big\{  rank_{c(v)}\big(  v \big)  \leq  m  \big\}   /  m,
 \label{eq:inclusion_rate}
@@ -275,7 +285,7 @@ where $m (\leq |V(\mathbf{G})|)$ is the number of nodes under network dependence
 	\caption{Both panels depict the collaborative networks during the two time periods having significant network dependency in types of organizations. Using \texttt{MGC} statistics, we are not only able to test network independence but also calculate each node's amount of contribution to detecting dependence, which is proportional to node size here. You can tell that the tendency to collaborate within the same type is strongest among the business group while scientist relatively collaborates less with any others, especially in the first period.}
 	\label{fig:politics}
 \end{figure}
-In the field of political science, who exerts more powerful impacts than the others over political network and which factors impact on the power differentials are one of the interests~\citep{ingold2014structural}. \cite{minhas2016inferential} made an inference from political networks~\citep{cranmer2016navigating} via the additive and multiplicative effects (AME). The AME model estimates the latent factors and uses them to test independence with the nodal attributes. Among diverse attributes that \cite{cranmer2016navigating} provided, we focus on the types of organizations and how 34 political organizations having different types are participating policy network. We changed a given directed network into undirected network and use a dissimilarity matrix for distance matrix of the attributes, i.e., $\parallel \mathbf{X}_{i}  - \mathbf{X}_{j} \parallel = 0$ if and only if node $i$ and node $j$ are from the same type and one otherwise. Two collaboration networks comprised of the same set of nodes across two time periods are provided~\citep{ingold2014structural}. Figure~\ref{fig:politics} and Figure~\ref{fig:barplots} illustrates these two networks and shows each node's reliance on its organization type when collaborating. During the two periods, the network independence test statistics of \texttt{MGC} and \texttt{dCorr} using diffusion distance matrices result in significant p-values across diffusion times from $t=1$ to $t=10$. The conclusion from the \texttt{FH} test is also the same.  
+In the field of political science, who exerts more powerful impacts than the others over political network and which factors impact on the power differentials are one of the interests~\citep{ingold2014structural}. \cite{minhas2016inferential} made an inference from political networks~\citep{cranmer2016navigating} via the additive and multiplicative effects (AME). The AME model estimates the latent factors and uses them to test independence with the nodal attributes. Among diverse attributes that \cite{cranmer2016navigating} provided, we focus on the types of organizations and how 34 political organizations having different types are participating policy network. We changed a given directed network into undirected network and use a dissimilarity matrix for distance matrix of the attributes, i.e., $\parallel \mathbf{X}_{i}  - \mathbf{X}_{j} \parallel = 0$ if and only if node $i$ and node $j$ are from the same type and one otherwise. Two collaboration networks comprised of the same set of nodes across two time periods are provided~\citep{ingold2014structural}. Figure~\ref{fig:politics} and Figure~\ref{fig:barplots} illustrates these two networks and shows each node's reliance on its organization type when collaborating. During the two periods, the network independence test statistics of \texttt{MGC} (p-value : (0.002 , 0.002)) and \texttt{dCorr} (p-value : ( 0.000, 0.000)) using diffusion distance matrices result in significant p-values across diffusion times from $t=1$ to $t=10$. The conclusion from the \texttt{FH} test (p-value : ( 0.000, 0.000)) is also the same.  
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\linewidth]{../Figure/barplots_nolegend.pdf}	
@@ -354,36 +364,5 @@ if and only if $g_{\mathbf{w},\mathbf{y}}(t,s) = g_{\mathbf{w}}(t) g_{\mathbf{y}
 	
 Under the exchangeability and finite second moment assumptions of underlying distribution, $\mathcal{V}^{2}_{n}(\mathbf{W},\mathbf{Y}) \xrightarrow{n \rightarrow \infty}  0$ if and only if underlying distribution of $\{\mathbf{w}_{i} \}$, $f_{\mathbf{w}}$ is independent from underlying distribution of $\{ \mathbf{y}_{i}  \}$, $f_{\mathbf{y}}$. Now suppose that we have undirected, connected network $\mathbf{G}$ with a family of diffusion maps $\{ \mathbf{u}_{t}  \}$ and with nodal attributes $\{ \mathbf{x}  \}$. We have shown in the Lemma~\ref{main_lemma} that $\{ \mathbf{u}_{t}  \}$ are exchangeable for each $t \in \mathbb{N}$. Thus there exists an underlying distribution of $\mathbf{u}_{t}$ such that $\mathbf{u}_{t}(i) \overset{i.i.d}{\sim} f_{\mathbf{u}^{(t)}}$ for each of $t= 1,2,\ldots $; and we have $\mathbf{x}_{i} \overset{i.i.d}{\sim} f_{\mathbf{X}}$. Under the assumption of finite second moment of $\mathbf{u}^{(t)}$ and $\mathbf{x}$, \texttt{MGC} statistics constructed by $\{  (  \mathbf{u}_{t}(i), \mathbf{x}_{i} ) : i = 1,2,\ldots, n  \}$ yield a consistent testing which determines the independence between underlying distributions of $\mathbf{u}^{(t)}$ and $\mathbf{x}$. From the same setting of network $\mathbf{G}$, we have estimated \textit{i.i.d} node-specific network factors $\{ \mathbf{F}_{i} \}$ so that $n$-pair of \textit{i.i.d} $\{ ( \mathbf{F}_{i}, \mathbf{x}_{i} )  \}$ can be applied to \texttt{MGC} or other distance-based tests without assuming conditioning underlying distribution. In case of using adjacency matrix directly into test, we must assume that the adjacency matrix comes from connected directed network, i.e. $A_{ij} \overset{i.i.d}{\sim} f_{A}$ for all $i,j=1,2,\ldots, n$; otherwise, each column is dependent on one another.  
 \end{proof}
-
-\subsection{Simulation Data}
-\label{ssec:models}
-
-\begin{itemize}	
-	\item \textbf{Three Block SBM} $(n = 100)$
-	\vspace*{-0.5cm}
-	\begin{equation}
-	\label{eq:Three}
-	\begin{gathered}
-	\begin{aligned}
-	&  X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Multi(1/3, 1/3, 1/3), i = 1, \ldots , n \\ 
-	&  Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Multi(0.5, 0.25, 0.25) I( x = 1 ) +   Multi(0.25, 0.5, 0.25) I (x = 2)  \qquad  \\ & \quad \quad + Multi(0.25, 0.25, 0.5)I(x = 3), \quad  i = 1,\ldots,n  \\
-	&  A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j}) \stackrel{d}{=}  Bern(0.5) I ( |z_{i} - z_{j}| = 0 )  + Bern(0.2) I(|z_{i} - z_{j}| = 1) \\ & \quad \quad + Bern(0.3) I (|z_{i} - z_{j}| = 2),  \quad i < j, i,j=1, \ldots n 
-	\end{aligned}
-	\end{gathered}
-	\end{equation}
-		
-	\item \textbf{Node Contribution}
-	\vspace*{-0.5cm}
-	\begin{equation}
-	\begin{gathered}
-	\begin{aligned}
-	& X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Bern(0.5)  \quad i = 1, \ldots ,n/2, \ldots, n \\ & Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Bern(0.6) I(x = 0) + Bern(0.4) I(x=1), \quad  i = 1,\ldots,n/2, \ldots, n \\
-	& A_{ij} | Z_{i}, Z_{j}   \overset{i.i.d}{\sim}   f_{A|Z}(a_{ij} | z_{i}, z_{j})  \\ & \quad  \quad \stackrel{d}{=} \left\{  \begin{array}{cc} Bern(0.4) I(|z_{i} - z_{j}| = 0)  + Bern(0.1) I(|z_{i} - z_{j}| > 0) & i = 1,\ldots,n/2 \\   Bern(0.25)  & i=1+n/2, \ldots, n  \end{array} \right.
-	\end{aligned}
-	\end{gathered}
-	\label{eq:contri}
-	\end{equation}
-	
-\end{itemize}
 
 \end{document}

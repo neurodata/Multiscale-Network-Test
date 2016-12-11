@@ -23,7 +23,7 @@
 \citation{shen2016discovering}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
 \newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
-\citation{wasserman1996logit,howard2016understanding}
+\citation{wasserman1996logit,howard2016understanding,fosdick2015testing}
 \citation{fosdick2015testing}
 \citation{orbanz2015bayesian}
 \citation{lovasz2006limits}
@@ -67,9 +67,10 @@
 \newlabel{sec:simulation}{{3}{6}{Simulation Study}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Stochastic Block Model}{6}{subsection.3.1}}
 \citation{karrer2011stochastic}
-\newlabel{SC@1}{{\caption@xref {??}{ on input line 219}}{7}{Stochastic Block Model}{figure.caption.2}{}}
+\newlabel{SC@1}{{\caption@xref {??}{ on input line 217}}{7}{Stochastic Block Model}{figure.caption.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt  {MGC}) under diffusion distance matrix (\texttt  {DF}) in three SBM (model\nobreakspace  {}\ref  {eq:Three}), compared to under adjacency matrix distance (\texttt  {Adj}) or latent factor distance (\texttt  {LT}). This demonstrates one exemplary network where \texttt  {MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.\relax }}{7}{figure.caption.2}}
 \newlabel{fig:threeSBM}{{2}{7}{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt {MGC}) under diffusion distance matrix (\texttt {DF}) in three SBM (model~\ref {eq:Three}), compared to under adjacency matrix distance (\texttt {Adj}) or latent factor distance (\texttt {LT}). This demonstrates one exemplary network where \texttt {MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.\relax }{figure.caption.2}{}}
+\newlabel{eq:Three}{{6}{7}{Stochastic Block Model}{equation.3.6}{}}
 \newlabel{eq:mono}{{7}{7}{Stochastic Block Model}{equation.3.7}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces X-axis of $\theta $ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt  {mCorr} or \texttt  {FH} test but relatively stable power of \texttt  {MGC} under nonlinear dependency.\relax }}{8}{figure.caption.3}}
 \newlabel{fig:powerplot}{{3}{8}{X-axis of $\theta $ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt {mCorr} or \texttt {FH} test but relatively stable power of \texttt {MGC} under nonlinear dependency.\relax }{figure.caption.3}{}}
@@ -85,7 +86,8 @@
 \citation{ingold2014structural}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces This plot describes that both power of \texttt  {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, which validates the use of node contribution measure in independence test.\relax }}{9}{figure.caption.5}}
 \newlabel{fig:contribution}{{5}{9}{This plot describes that both power of \texttt {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, which validates the use of node contribution measure in independence test.\relax }{figure.caption.5}{}}
-\newlabel{eq:inclusion_rate}{{9}{9}{Node Contribution Test}{equation.3.9}{}}
+\newlabel{eq:contri}{{9}{9}{Node Contribution Test}{equation.3.9}{}}
+\newlabel{eq:inclusion_rate}{{10}{9}{Node Contribution Test}{equation.3.10}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Real Data Examples}{9}{section.4}}
 \newlabel{sec:real}{{4}{9}{Real Data Examples}{section.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Both panels depict the collaborative networks during the two time periods having significant network dependency in types of organizations. Using \texttt  {MGC} statistics, we are not only able to test network independence but also calculate each node's amount of contribution to detecting dependence, which is proportional to node size here. You can tell that the tendency to collaborate within the same type is strongest among the business group while scientist relatively collaborates less with any others, especially in the first period.\relax }}{10}{figure.caption.6}}
@@ -95,12 +97,12 @@
 \bibdata{reference}
 \bibcite{chan2013estimation}{{1}{2013}{{Chan et~al.}}{{Chan, Costa, and Airoldi}}}
 \bibcite{coifman2006diffusion}{{2}{2006}{{Coifman and Lafon}}{{}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure\nobreakspace  {}\ref  {fig:politics}. Generally organizations cooperate more actively between different types in the second period but still their collaboration network is highly dependent on their organization types especially for business group.\relax }}{11}{figure.caption.7}}
+\newlabel{fig:barplots}{{7}{11}{In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure~\ref {fig:politics}. Generally organizations cooperate more actively between different types in the second period but still their collaboration network is highly dependent on their organization types especially for business group.\relax }{figure.caption.7}{}}
 \bibcite{cranmer2016navigating}{{3}{2016}{{Cranmer et~al.}}{{Cranmer, Leifeld, McClurg, and Rolfe}}}
 \bibcite{fosdick2015testing}{{4}{2015}{{Fosdick and Hoff}}{{}}}
 \bibcite{GrettonGyorfi2010}{{5}{2010}{{Gretton and Gyorfi}}{{}}}
 \bibcite{HellerGorfine2013}{{6}{2013}{{Heller et~al.}}{{Heller, Heller, and Gorfine}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure\nobreakspace  {}\ref  {fig:politics}. Generally organizations cooperate more actively between different types in the second period but still their collaboration network is highly dependent on their organization types especially for business group.\relax }}{11}{figure.caption.7}}
-\newlabel{fig:barplots}{{7}{11}{In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure~\ref {fig:politics}. Generally organizations cooperate more actively between different types in the second period but still their collaboration network is highly dependent on their organization types especially for business group.\relax }{figure.caption.7}{}}
 \bibcite{heller2012consistent}{{7}{2012}{{Heller et~al.}}{{Heller, Heller, and Gorfine}}}
 \bibcite{heller2016consistent}{{8}{2016}{{Heller et~al.}}{{Heller, Heller, Kaufman, Brill, and Gorfine}}}
 \bibcite{howard2016understanding}{{9}{2016}{{Howard et~al.}}{{Howard, Cox~Pahnke, Boeker, et~al.}}}
@@ -119,17 +121,13 @@
 \bibcite{szekely2013distance}{{22}{2013}{{Sz{\'e}kely and Rizzo}}{{}}}
 \bibcite{szekely2007measuring}{{23}{2007}{{Sz{\'e}kely et~al.}}{{Sz{\'e}kely, Rizzo, Bakirov, et~al.}}}
 \bibcite{wasserman1996logit}{{24}{1996}{{Wasserman and Pattison}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Appendix}{13}{section.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Lemmas and Theorems}{13}{subsection.6.1}}
-\newlabel{ssec:proof}{{6.1}{13}{Lemmas and Theorems}{subsection.6.1}{}}
+\citation{szekely2007measuring}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Appendix}{14}{section.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Lemmas and Theorems}{14}{subsection.6.1}}
+\newlabel{ssec:proof}{{6.1}{14}{Lemmas and Theorems}{subsection.6.1}{}}
+\newlabel{eq:conv1}{{13}{14}{Lemmas and Theorems}{equation.6.13}{}}
 \citation{szekely2007measuring}
 \citation{szekely2007measuring}
-\citation{szekely2007measuring}
-\newlabel{eq:conv1}{{12}{14}{Lemmas and Theorems}{equation.6.12}{}}
-\newlabel{eq:SLLN}{{13}{14}{Lemmas and Theorems}{equation.6.13}{}}
 \citation{shen2016discovering}
-\newlabel{eq:conv2}{{14}{15}{Lemmas and Theorems}{equation.6.14}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Simulation Data}{15}{subsection.6.2}}
-\newlabel{ssec:models}{{6.2}{15}{Simulation Data}{subsection.6.2}{}}
-\newlabel{eq:Three}{{15}{15}{Simulation Data}{equation.6.15}{}}
-\newlabel{eq:contri}{{16}{16}{Simulation Data}{equation.6.16}{}}
+\newlabel{eq:SLLN}{{14}{15}{Lemmas and Theorems}{equation.6.14}{}}
+\newlabel{eq:conv2}{{15}{15}{Lemmas and Theorems}{equation.6.15}{}}
