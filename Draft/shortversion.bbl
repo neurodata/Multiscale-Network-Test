@@ -1,29 +1,15 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Chan et~al.(2013)Chan, Costa, and Airoldi]{chan2013estimation}
-Stanley~H Chan, Thiago~B Costa, and Edoardo~M Airoldi.
-\newblock Estimation of exchangeable graph models by stochastic blockmodel
-  approximation.
-\newblock In \emph{Global Conference on Signal and Information Processing
-  (GlobalSIP), 2013 IEEE}, pages 293--296. IEEE, 2013.
-
 \bibitem[Coifman and Lafon(2006)]{coifman2006diffusion}
 Ronald~R Coifman and St{\'e}phane Lafon.
 \newblock Diffusion maps.
 \newblock \emph{Applied and computational harmonic analysis}, 21\penalty0
   (1):\penalty0 5--30, 2006.
-
-\bibitem[Cranmer et~al.(2016)Cranmer, Leifeld, McClurg, and
-  Rolfe]{cranmer2016navigating}
-Skyler~J Cranmer, Philip Leifeld, Scott~D McClurg, and Meredith Rolfe.
-\newblock Navigating the range of statistical tools for inferential network
-  analysis.
-\newblock \emph{American Journal of Political Science}, 2016.
 
 \bibitem[Fosdick and Hoff(2015)]{fosdick2015testing}
 Bailey~K Fosdick and Peter~D Hoff.
@@ -44,12 +30,6 @@ R.~Heller, Y.~Heller, and M.~Gorfine.
   distances.
 \newblock \emph{Biometrika}, 100\penalty0 (2):\penalty0 503--510, 2013.
 
-\bibitem[Heller et~al.(2012)Heller, Heller, and Gorfine]{heller2012consistent}
-Ruth Heller, Yair Heller, and Malka Gorfine.
-\newblock A consistent multivariate test of association based on ranks of
-  distances.
-\newblock \emph{Biometrika}, page ass070, 2012.
-
 \bibitem[Heller et~al.(2016)Heller, Heller, Kaufman, Brill, and
   Gorfine]{heller2016consistent}
 Ruth Heller, Yair Heller, Shachar Kaufman, Barak Brill, and Malka Gorfine.
@@ -58,6 +38,11 @@ Ruth Heller, Yair Heller, Shachar Kaufman, Barak Brill, and Malka Gorfine.
 \newblock \emph{Journal of Machine Learning Research}, 17\penalty0
   (29):\penalty0 1--54, 2016.
 
+\bibitem[Holland et~al.(1983)Holland, Laskey, and Leinhardt]{HollandEtAl1983}
+P.~Holland, K.~Laskey, and S.~Leinhardt.
+\newblock Stochastic blockmodels: First steps.
+\newblock \emph{Social Networks}, 5\penalty0 (2):\penalty0 109--137, 1983.
+
 \bibitem[Howard et~al.(2016)Howard, Cox~Pahnke, Boeker,
   et~al.]{howard2016understanding}
 Michael Howard, Emily Cox~Pahnke, Warren Boeker, et~al.
@@ -65,14 +50,6 @@ Michael Howard, Emily Cox~Pahnke, Warren Boeker, et~al.
   random graph models.
 \newblock \emph{Strategic Management Journal}, 37\penalty0 (1):\penalty0
   22--44, 2016.
-
-\bibitem[Ingold and Leifeld(2014)]{ingold2014structural}
-Karin Ingold and Philip Leifeld.
-\newblock Structural and institutional determinants of influence reputation: a
-  comparison of collaborative and adversarial policy networks in decision
-  making and implementation.
-\newblock \emph{Journal of Public Administration Research and Theory}, page
-  muu043, 2014.
 
 \bibitem[Karrer and Newman(2011)]{karrer2011stochastic}
 Brian Karrer and Mark~EJ Newman.
@@ -86,23 +63,11 @@ Stephane Lafon and Ann~B Lee.
 \newblock \emph{IEEE transactions on pattern analysis and machine
   intelligence}, 28\penalty0 (9):\penalty0 1393--1403, 2006.
 
-\bibitem[Lov{\'a}sz and Szegedy(2006)]{lovasz2006limits}
-L{\'a}szl{\'o} Lov{\'a}sz and Bal{\'a}zs Szegedy.
-\newblock Limits of dense graph sequences.
-\newblock \emph{Journal of Combinatorial Theory, Series B}, 96\penalty0
-  (6):\penalty0 933--957, 2006.
-
 \bibitem[Mantel(1967)]{mantel1967}
 N.~Mantel.
 \newblock The detection of disease clustering and a generalized regression
   approach.
 \newblock \emph{Cancer Research}, 27\penalty0 (2):\penalty0 209--220, 1967.
-
-\bibitem[Minhas et~al.(2016)Minhas, Hoff, and Ward]{minhas2016inferential}
-Shahryar Minhas, Peter~D Hoff, and Michael~D Ward.
-\newblock Inferential approaches for network analyses: Amen for latent factor
-  models.
-\newblock \emph{arXiv preprint arXiv:1611.00460}, 2016.
 
 \bibitem[Orbanz and Roy(2015)]{orbanz2015bayesian}
 Peter Orbanz and Daniel~M Roy.
@@ -143,12 +108,6 @@ G.~Szekely and M.~Rizzo.
 \newblock \emph{Journal of Multivariate Analysis}, 117:\penalty0 193--213,
   2013.
 
-\bibitem[Sz{\'e}kely and Rizzo(2013)]{szekely2013distance}
-G{\'a}bor~J Sz{\'e}kely and Maria~L Rizzo.
-\newblock The distance correlation t-test of independence in high dimension.
-\newblock \emph{Journal of Multivariate Analysis}, 117:\penalty0 193--213,
-  2013.
-
 \bibitem[Sz{\'e}kely et~al.(2007)Sz{\'e}kely, Rizzo, Bakirov,
   et~al.]{szekely2007measuring}
 G{\'a}bor~J Sz{\'e}kely, Maria~L Rizzo, Nail~K Bakirov, et~al.
@@ -161,5 +120,19 @@ Stanley Wasserman and Philippa Pattison.
 \newblock Logit models and logistic regressions for social networks: I. an
   introduction to markov graphs andp.
 \newblock \emph{Psychometrika}, 61\penalty0 (3):\penalty0 401--425, 1996.
+
+\bibitem[Young and Scheinerman(2007)]{YoungScheinerman2007}
+S.~Young and E.~Scheinerman.
+\newblock Random dot product graph models for social networks.
+\newblock In \emph{Algorithms and Models for the Web-Graph}, pages 138--149.
+  Springer Berlin Heidelberg, 2007.
+
+\bibitem[Zhao et~al.(2012)Zhao, Levina, and Zhu]{ZhaoLevinaZhu2012}
+Y.~Zhao, E.~Levina, and J.~Zhu.
+\newblock Consistency of community detection in networks under degree-corrected
+  stochastic block modelstection in networks under degree-corrected stochastic
+  block models.
+\newblock \emph{Annals of Statistics}, 40\penalty0 (4):\penalty0 2266--2292,
+  2012.
 
 \end{thebibliography}
