@@ -34,6 +34,7 @@
 \citation{orbanz2015bayesian}
 \citation{lovasz2006limits}
 \citation{chan2013estimation}
+\newlabel{eq:dCov}{{1}{3}{Distance-based Independence Test}{equation.2.1}{}}
 \newlabel{eq:MGC}{{2}{3}{Distance-based Independence Test}{equation.2.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Family of Network Independence Test Statistics}{3}{subsection.2.2}}
 \newlabel{ssec:method2}{{2.2}{3}{Family of Network Independence Test Statistics}{subsection.2.2}{}}
@@ -48,44 +49,78 @@
 \newlabel{sub@fig:c}{{c}{4}{\relax }{figure.caption.1}{}}
 \newlabel{fig:d}{{1d}{4}{\relax }{figure.caption.1}{}}
 \newlabel{sub@fig:d}{{d}{4}{\relax }{figure.caption.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Figure (a) shows data generating probability of adjacency matrix $\mathbf  {A}$ and nodal attributes $\mathbf  {X}$. Diffusion matrix, as a proposed network metrics, provides one-parameter family of network-based distances where as time goes by the pattern shown in the distance matrix changes, and at time point $t = 5$, distance matrix (c) illustrates most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf  {X}$.\relax }}{4}{figure.caption.1}}
-\newlabel{fig:diffusions}{{1}{4}{Figure (a) shows data generating probability of adjacency matrix $\mathbf {A}$ and nodal attributes $\mathbf {X}$. Diffusion matrix, as a proposed network metrics, provides one-parameter family of network-based distances where as time goes by the pattern shown in the distance matrix changes, and at time point $t = 5$, distance matrix (c) illustrates most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf {X}$.\relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Figure (a) shows data generating probability of an adjacency matrix $\mathbf  {A}$ and nodal attributes $\mathbf  {X}$. Diffusion matrix, as a proposed network metric, provides one-parameter family of network-based distances where as time goes by the pattern shown in the distance matrix changes, and at time point $t = 5$, distance matrix (c) illustrates most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf  {X}$.\relax }}{4}{figure.caption.1}}
+\newlabel{fig:diffusions}{{1}{4}{Figure (a) shows data generating probability of an adjacency matrix $\mathbf {A}$ and nodal attributes $\mathbf {X}$. Diffusion matrix, as a proposed network metric, provides one-parameter family of network-based distances where as time goes by the pattern shown in the distance matrix changes, and at time point $t = 5$, distance matrix (c) illustrates most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf {X}$.\relax }{figure.caption.1}{}}
 \newlabel{eq:diffusion}{{3}{4}{Family of Network Independence Test Statistics}{equation.2.3}{}}
 \citation{fosdick2015testing}
 \citation{fosdick2015testing}
 \newlabel{main_lemma}{{2.1}{5}{Exchangeability and \textit {i.i.d} of diffusion maps $\mathbf {U}_{t}$}{theorem.2.1}{}}
-\newlabel{theorem2}{{2.2}{5}{}{theorem.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Measure for Node Contribution}{5}{subsection.2.3}}
-\newlabel{contribution}{{4}{5}{Measure for Node Contribution}{equation.2.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Simulation Study}{5}{section.3}}
-\newlabel{sec:simulation}{{3}{5}{Simulation Study}{section.3}{}}
+\newlabel{theoremMain}{{2.2}{5}{}{equation.2.4}{}}
+\newlabel{theorem2}{{2.3}{5}{}{theorem.2.3}{}}
+\citation{heller2012consistent}
+\citation{fosdick2015testing}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Measure for Node Contribution}{6}{subsection.2.3}}
+\newlabel{eq:contribution}{{5}{6}{Measure for Node Contribution}{equation.2.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Simulation Study}{6}{section.3}}
+\newlabel{sec:simulation}{{3}{6}{Simulation Study}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Stochastic Block Model}{6}{subsection.3.1}}
 \citation{karrer2011stochastic}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces X-axis of $\theta $ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt  {mCorr} or \texttt  {FH} test but relatively stable power of \texttt  {MGC} under nonlinear dependency.\relax }}{6}{figure.caption.2}}
-\newlabel{fig:powerplot}{{2}{6}{X-axis of $\theta $ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt {mCorr} or \texttt {FH} test but relatively stable power of \texttt {MGC} under nonlinear dependency.\relax }{figure.caption.2}{}}
-\newlabel{eq:mono}{{5}{6}{Simulation Study}{equation.3.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{6}{section.4}}
-\newlabel{sec:conc}{{4}{6}{Conclusion}{section.4}{}}
+\newlabel{SC@1}{{\caption@xref {??}{ on input line 207}}{7}{Stochastic Block Model}{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt  {MGC}) under diffusion distance matrix (\texttt  {DF}) in three SBM (model\nobreakspace  {}\ref  {eq:Three}), compared to under adjacency matrix distance (\texttt  {Adj}) or latent factor distance (\texttt  {LT}). This demonstrates one exemplary network where \texttt  {MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.\relax }}{7}{figure.caption.2}}
+\newlabel{fig:threeSBM}{{2}{7}{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt {MGC}) under diffusion distance matrix (\texttt {DF}) in three SBM (model~\ref {eq:Three}), compared to under adjacency matrix distance (\texttt {Adj}) or latent factor distance (\texttt {LT}). This demonstrates one exemplary network where \texttt {MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.\relax }{figure.caption.2}{}}
+\newlabel{eq:mono}{{7}{7}{Stochastic Block Model}{equation.3.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces X-axis of $\theta $ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt  {mCorr} or \texttt  {FH} test but relatively stable power of \texttt  {MGC} under nonlinear dependency.\relax }}{8}{figure.caption.3}}
+\newlabel{fig:powerplot}{{3}{8}{X-axis of $\theta $ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt {mCorr} or \texttt {FH} test but relatively stable power of \texttt {MGC} under nonlinear dependency.\relax }{figure.caption.3}{}}
+\newlabel{eq:tau}{{8}{8}{Stochastic Block Model}{equation.3.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt  {FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt  {MGC}.\relax }}{8}{figure.caption.4}}
+\newlabel{fig:dcSBM}{{4}{8}{In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt {FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt {MGC}.\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Node Contribution Test}{8}{subsection.3.2}}
+\newlabel{ssec:node}{{3.2}{8}{Node Contribution Test}{subsection.3.2}{}}
+\citation{ingold2014structural}
+\citation{minhas2016inferential}
+\citation{cranmer2016navigating}
+\citation{cranmer2016navigating}
+\citation{ingold2014structural}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces This plot describes that both power of \texttt  {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, which validates the use of node contribution measure in independence test.\relax }}{9}{figure.caption.5}}
+\newlabel{fig:contribution}{{5}{9}{This plot describes that both power of \texttt {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, which validates the use of node contribution measure in independence test.\relax }{figure.caption.5}{}}
+\newlabel{eq:inclusion_rate}{{9}{9}{Node Contribution Test}{equation.3.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Real Data Examples}{9}{section.4}}
+\newlabel{sec:real}{{4}{9}{Real Data Examples}{section.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Both panels depict the collaborative networks during the two time periods having significant network dependency in types of organizations. Using \texttt  {MGC} statistics, we are not only able to test network independence but also calculate each node's amount of contribution to detecting dependence, which is proportional to node size here. You can tell that the tendency to collaborate within the same type is strongest among the business group while scientist relatively collaborates less with any others, especially in the first period.\relax }}{9}{figure.caption.6}}
+\newlabel{fig:politics}{{6}{9}{Both panels depict the collaborative networks during the two time periods having significant network dependency in types of organizations. Using \texttt {MGC} statistics, we are not only able to test network independence but also calculate each node's amount of contribution to detecting dependence, which is proportional to node size here. You can tell that the tendency to collaborate within the same type is strongest among the business group while scientist relatively collaborates less with any others, especially in the first period.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure\nobreakspace  {}\ref  {fig:politics}. Generally organizations cooperate more actively between different types in the second period but still their collaboration network is highly dependent on their organization types especially for business group.\relax }}{10}{figure.caption.7}}
+\newlabel{fig:barplots}{{7}{10}{In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure~\ref {fig:politics}. Generally organizations cooperate more actively between different types in the second period but still their collaboration network is highly dependent on their organization types especially for business group.\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}}
+\newlabel{sec:conc}{{5}{10}{Conclusion}{section.5}{}}
 \bibdata{reference}
 \bibcite{chan2013estimation}{{1}{2013}{{Chan et~al.}}{{Chan, Costa, and Airoldi}}}
 \bibcite{coifman2006diffusion}{{2}{2006}{{Coifman and Lafon}}{{}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt  {FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt  {MGC}.\relax }}{7}{figure.caption.3}}
-\newlabel{fig:dcSBM}{{3}{7}{In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt {FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt {MGC}.\relax }{figure.caption.3}{}}
-\bibcite{fosdick2015testing}{{3}{2015}{{Fosdick and Hoff}}{{}}}
-\bibcite{heller2012consistent}{{4}{2012}{{Heller et~al.}}{{Heller, Heller, and Gorfine}}}
-\bibcite{howard2016understanding}{{5}{2016}{{Howard et~al.}}{{Howard, Cox~Pahnke, Boeker, et~al.}}}
-\bibcite{karrer2011stochastic}{{6}{2011}{{Karrer and Newman}}{{}}}
-\bibcite{lafon2006diffusion}{{7}{2006}{{Lafon and Lee}}{{}}}
-\bibcite{lovasz2006limits}{{8}{2006}{{Lov{\'a}sz and Szegedy}}{{}}}
-\bibcite{orbanz2015bayesian}{{9}{2015}{{Orbanz and Roy}}{{}}}
-\bibcite{shen2016discovering}{{10}{2016}{{Shen et~al.}}{{Shen, Priebe, Maggioni, and Vogelstein}}}
-\bibcite{szekely2013distance}{{11}{2013}{{Sz{\'e}kely and Rizzo}}{{}}}
-\bibcite{szekely2007measuring}{{12}{2007}{{Sz{\'e}kely et~al.}}{{Sz{\'e}kely, Rizzo, Bakirov, et~al.}}}
-\bibcite{taskinen2005multivariate}{{13}{2005}{{Taskinen et~al.}}{{Taskinen, Oja, and Randles}}}
-\bibcite{wasserman1996logit}{{14}{1996}{{Wasserman and Pattison}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Appendix}{9}{section.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Lemmas and Theorems}{9}{subsection.5.1}}
-\newlabel{ssec:proof}{{5.1}{9}{Lemmas and Theorems}{subsection.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Simulation Data}{10}{subsection.5.2}}
-\newlabel{ssec:models}{{5.2}{10}{Simulation Data}{subsection.5.2}{}}
-\newlabel{eq:Three}{{8}{10}{Simulation Data}{equation.5.8}{}}
-\newlabel{eq:dcVariance}{{9}{10}{Simulation Data}{equation.5.9}{}}
+\bibcite{cranmer2016navigating}{{3}{2016}{{Cranmer et~al.}}{{Cranmer, Leifeld, McClurg, and Rolfe}}}
+\bibcite{fosdick2015testing}{{4}{2015}{{Fosdick and Hoff}}{{}}}
+\bibcite{heller2012consistent}{{5}{2012}{{Heller et~al.}}{{Heller, Heller, and Gorfine}}}
+\bibcite{howard2016understanding}{{6}{2016}{{Howard et~al.}}{{Howard, Cox~Pahnke, Boeker, et~al.}}}
+\bibcite{ingold2014structural}{{7}{2014}{{Ingold and Leifeld}}{{}}}
+\bibcite{karrer2011stochastic}{{8}{2011}{{Karrer and Newman}}{{}}}
+\bibcite{lafon2006diffusion}{{9}{2006}{{Lafon and Lee}}{{}}}
+\bibcite{lovasz2006limits}{{10}{2006}{{Lov{\'a}sz and Szegedy}}{{}}}
+\bibcite{minhas2016inferential}{{11}{2016}{{Minhas et~al.}}{{Minhas, Hoff, and Ward}}}
+\bibcite{orbanz2015bayesian}{{12}{2015}{{Orbanz and Roy}}{{}}}
+\bibcite{shen2016discovering}{{13}{2016}{{Shen et~al.}}{{Shen, Priebe, Maggioni, and Vogelstein}}}
+\bibcite{szekely2013distance}{{14}{2013}{{Sz{\'e}kely and Rizzo}}{{}}}
+\bibcite{szekely2007measuring}{{15}{2007}{{Sz{\'e}kely et~al.}}{{Sz{\'e}kely, Rizzo, Bakirov, et~al.}}}
+\bibcite{taskinen2005multivariate}{{16}{2005}{{Taskinen et~al.}}{{Taskinen, Oja, and Randles}}}
+\bibcite{wasserman1996logit}{{17}{1996}{{Wasserman and Pattison}}{{}}}
+\citation{szekely2007measuring}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Appendix}{13}{section.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Lemmas and Theorems}{13}{subsection.6.1}}
+\newlabel{ssec:proof}{{6.1}{13}{Lemmas and Theorems}{subsection.6.1}{}}
+\newlabel{eq:conv1}{{12}{13}{Lemmas and Theorems}{equation.6.12}{}}
+\citation{szekely2007measuring}
+\citation{szekely2007measuring}
+\citation{shen2016discovering}
+\newlabel{eq:SLLN}{{13}{14}{Lemmas and Theorems}{equation.6.13}{}}
+\newlabel{eq:conv2}{{14}{14}{Lemmas and Theorems}{equation.6.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Simulation Data}{15}{subsection.6.2}}
+\newlabel{ssec:models}{{6.2}{15}{Simulation Data}{subsection.6.2}{}}
+\newlabel{eq:Three}{{15}{15}{Simulation Data}{equation.6.15}{}}
+\newlabel{eq:contri}{{16}{15}{Simulation Data}{equation.6.16}{}}

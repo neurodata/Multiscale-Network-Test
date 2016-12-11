@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  5 DEC 2016 15:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  10 DEC 2016 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -795,7 +795,7 @@ r/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
 pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t12.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on graphMGC.pdf (32 pages, 896173 bytes).
+Output written on graphMGC.pdf (32 pages, 896161 bytes).
 PDF statistics:
  714 PDF objects out of 1000 (max. 8388607)
  606 compressed objects within 7 object streams
