@@ -11,47 +11,49 @@ Warning--no number and no volume in heller2012consistent
 Warning--no number and no volume in ingold2014structural
 Warning--no number and no volume in minhas2016inferential
 Warning--page numbers missing in minhas2016inferential
+Warning--no number and no volume in shen2016discovering
+Warning--page numbers missing in shen2016discovering
 Warning--no number and no volume in veitch2015class
 Warning--page numbers missing in veitch2015class
-You've used 24 entries,
+You've used 25 entries,
             2861 wiz_defined-function locations,
-            766 strings with 9127 characters,
-and the built_in function-call counts, 17927 in all, are:
-= -- 1568
-> -- 1345
+            770 strings with 9314 characters,
+and the built_in function-call counts, 18683 in all, are:
+= -- 1623
+> -- 1423
 < -- 2
-+ -- 418
-- -- 472
-* -- 1635
-:= -- 3205
-add.period$ -- 74
-call.type$ -- 24
-change.case$ -- 175
-chr.to.int$ -- 24
-cite$ -- 34
-duplicate$ -- 449
-empty$ -- 1043
-format.name$ -- 560
-if$ -- 3354
++ -- 442
+- -- 496
+* -- 1714
+:= -- 3348
+add.period$ -- 77
+call.type$ -- 25
+change.case$ -- 184
+chr.to.int$ -- 25
+cite$ -- 37
+duplicate$ -- 465
+empty$ -- 1077
+format.name$ -- 588
+if$ -- 3492
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 24
-newline$ -- 123
-num.names$ -- 240
-pop$ -- 113
+missing$ -- 25
+newline$ -- 128
+num.names$ -- 250
+pop$ -- 119
 preamble$ -- 1
-purify$ -- 319
+purify$ -- 334
 quote$ -- 0
-skip$ -- 513
+skip$ -- 530
 stack$ -- 0
-substring$ -- 1001
-swap$ -- 153
+substring$ -- 1021
+swap$ -- 158
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 480
-warning$ -- 10
-while$ -- 247
+type$ -- 500
+warning$ -- 12
+while$ -- 253
 width$ -- 0
-write$ -- 318
-(There were 10 warnings)
+write$ -- 331
+(There were 12 warnings)

@@ -133,7 +133,7 @@ Statisticians have long considered the problem of revealing the relationship bet
 \textbf{Different from a random vector, network or equivalently graph involves a particular construction which we should take into account.} Throughout this paper, we assume that we are given an unweighted and undirected, connected network, equivalently a graph $\mathbf{G}$ without self-loop, comprised of $n (\in \mathbb{N})$ nodes. An adjacency matrix of this given network, denoted by $A = \{A_{ij} : i,j= 1,..,n \}$, is to formalize the relational data of network, where $A_{ij} = 1$ if node $i$ and node $j$ are adjacent each other and zero otherwise. Let us define a $m$-variate ($m \in \mathbb{N}$) random variable associated with each node, i.e. nodal attributes, $\mathbf{X}  \in \mathbb{R}^{m}$ which we are interested in. Investigating correlation between $\mathbf{G}$ and $\mathbf{X}$, i.e. testing whether their distributions are independent or not is a key focus in our study. An observed network $\mathbf{G}$ can represent social network of students within a school and $\mathbf{X}$ is student-specific grades or heights, for example; or $\mathbf{G}$ can be a collaboration network and $\mathbf{X}$ denotes some properties of participants under collaboration as in Figure~\ref{fig:intro}.  We aim to detecting significant association between network topology configured in $\mathbf{G}$ and nodal attributes $\mathbf{X}$ whatever the true nature of network is and however the network is correlated with $\mathbf{X}$. We first have to consider increasing amount of information inherent in network data as the number of nodes increases, which might lead to diverse pattern in dependency as well. In addition, by its definition, an adjacency matrix $A$ involves dependency among its columns and row, so thus we may not utilize an adjacency matrix directly when required independent observations.
 	
 % 2-3 summary of what you did.	
-\textbf{To overcome these challenges, we propose applying distance-based statistic called multiscale generalized correlation (\texttt{MGC}) into testing network independnece which deals with correlation between high dimensional data sets possibly having nonlinear dependence.} However we still confront with the difficulty in finding the valid \textit{i.i.d} node-specific coordinates of which Euclidean distance will be an ingredient for the statistics. We claim that graph geometries derived from random walk on graph furnish robust network metrics against to increased variability in edge distributions as well as they satisfy theoretical constraints.
+\textbf{To overcome these challenges, we propose applying distance-based statistic called multiscale generalized correlation (\texttt{MGC})~\citep{shen2016discovering} into testing network independnece which deals with correlation between high dimensional data sets possibly having nonlinear dependence.} However we still confront with the difficulty in finding the valid \textit{i.i.d} node-specific coordinates of which Euclidean distance will be an ingredient for the statistics. We claim that graph geometries derived from random walk on graph furnish robust network metrics against to increased variability in edge distributions as well as they satisfy theoretical constraints.
 	
 % 2-3 sentence summary on how your work changes the world. 
 \textbf{In this paper, beyond the traditional setting of the data in independence test, e.g. between two random vectors, we suggest the method to investigate unique but also ubiquitous data of network and its nodal attributes by utilizing the method testing two random vectors.} By suggesting using a family of network metrics which are equipped with favored theoretical and practical properties, we are able to better understand relative locations of each node over network. We are going to elaborate the statistic and demonstrate its validity under some network metrics in Section~\ref{sec:method}. In Section~\ref{sec:sim}, simulation results demonstrate the best performance of our method compared to the existing under various circumstances. Real data example in section~\ref{sec:real} show one of the applications among many.  
@@ -149,7 +149,7 @@ Relationship between network and nodal attributes often exhibits local or nonlin
 \begin{equation}	 
 \mathcal{V}^2_{n}(\mathbf{W}, \mathbf{Y}) = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij}.
 \end{equation}
-Here $\tilde{C}$ and $\tilde{D}$ is doubly-centered $C$ and $D$ by its column mean and row mean respectively. Distance correlation $\mathcal{R}^{2}_{n}(\mathbf{W}, \mathbf{Y})$ is a standardized \texttt{dCov} scaled by $\mathcal{V}^2_{n}(\mathbf{W}, \mathbf{W})$ and $\mathcal{V}^2_{n}(\mathbf{Y}, \mathbf{Y}).$ In addition, a modified distance covariance (\texttt{mCov}) $\mathcal{V}^*_{n}$ and a modified distance correlation (\texttt{mCorr}) $\mathcal{R}^{*}_{n}$ especially for testing high dimensional random vectors were also proposed in \cite{szekely2013distance}. Unfortunately, these correlation measures with nice closed form often fail to capture nonlinear associations especially embedded in high-dimensional data set. Out of this concern, Cencheng et al* (2016) proposed Multiscale Generalized Correlation (\texttt{MGC}) via computing all pairs of local correlation coefficients, excluding distant pairs beyond the certain neighborhood. To be specific, the following set of correlation covariances are calculated:
+Here $\tilde{C}$ and $\tilde{D}$ is doubly-centered $C$ and $D$ by its column mean and row mean respectively. Distance correlation $\mathcal{R}^{2}_{n}(\mathbf{W}, \mathbf{Y})$ is a standardized \texttt{dCov} scaled by $\mathcal{V}^2_{n}(\mathbf{W}, \mathbf{W})$ and $\mathcal{V}^2_{n}(\mathbf{Y}, \mathbf{Y}).$ In addition, a modified distance covariance (\texttt{mCov}) $\mathcal{V}^*_{n}$ and a modified distance correlation (\texttt{mCorr}) $\mathcal{R}^{*}_{n}$ especially for testing high dimensional random vectors were also proposed in \cite{szekely2013distance}. Unfortunately, these correlation measures with nice closed form often fail to capture nonlinear associations especially embedded in high-dimensional data set~\citep{shen2016discovering, heller2012consistent}. Out of this concern, \cite{shen2016discovering} proposed Multiscale Generalized Correlation (\texttt{MGC}) via computing all pairs of local correlation coefficients, excluding distant pairs beyond the certain neighborhood. To be specific, the following set of correlation covariances are calculated:
 \begin{equation}
 \label{eq:MGC}
 {\mathcal{V}^{*}}^2_{n} (\mathbf{W}, \mathbf{Y})_{kl} = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij} I \big( r(C_{ij}) \leq k \big) I \big( r(D_{ij}) \leq l  \big) \quad k,l=1,2,..., n ,
@@ -182,7 +182,7 @@ where $r(C_{ij})$ ($r(D_{ij})$) denotes a rank of $\mathbf{w}_{i}$ ($\mathbf{y}_
 				\caption{}
 			\label{fig:d}
 		\end{subfigure}
-	\caption{Assume that a set of edges follow certain stochastic block model, also depending on the distribution function of nodal attributes $X$ (a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes (b) of which Euclidean distances (c $\&$ d) are suggested to be used in standard distance-based independence test but neither of them manifests block structures evident in the data generating model.}
+	\caption{Assume that a set of edges follow certain stochastic block model, also depending on the distribution function of nodal attributes $X$ (a), then with some amount of noise we have a realized adjacency matrix and a set of attribute outcomes (b) of which Euclidean distances ((c) $\&$ (d)) are suggested to be used in standard distance-based independence test but neither of them manifests block structures evident in the data generating model.}
 	\label{fig:matrics}
 \end{figure}
 
@@ -278,12 +278,12 @@ Lemma~\ref{main_lemma} above provides us with \textit{i.i.d} one-parameter famil
 Assume that a connected, undirected and unweighted graph $\mathbf{G}$ is a graphex. Then 2-array of $\{ A_{ij} : i = 1,2,... ,n , i < j \}$ are  \textit{i.i.d} conditioning on some random link function $g : [0,1]^2 \rightarrow [0,1]$ and unit-Poisson process $\mathbf{\theta}$. Thus for fixed row (column) of $\mathbf{A}$, $\{ A_{i1}, A_{i2}, ... , A_{in} \} \setminus \{ A_{ii} \} $ , $i \in \{ 1,2,... , n \}$ are conditionally \textit{i.i.d} on its underlying distribution, specifically conditioning on random link function $g$ and $\mathbf{\theta}$.  
 \end{lemma}	
 
-Similar to Lemma~\ref{main_lemma}, we are able to show exchangeability of a transition matrix in graphex case, which leads to conditional \textit{i.i.d} of its diffusion maps. If exchangeable diffusion maps are applicable to distance-based test statistics, e.g. \texttt{MGC}, we are almost able to dispense with obstacles in testing network independence. Assume that we have a finite sample of infinitely exchangeable sequence $(\mathbf{X}, \mathbf{Y}) = \{ ( \mathbf{x}_{i}, \mathbf{y}_{i} ) : i=1,2, \ldots, n \}$, which is identically distributed as $(\mathbf{x}, \mathbf{y})$ with finite second moment. Then, by the properties of exchangeable sequences, there exist some random measure $\theta$ and its probability measure $P$ such that : 
+Similar to Lemma~\ref{main_lemma}, we are able to show exchangeability of a transition matrix in graphex case, which leads to conditional \textit{i.i.d} of its diffusion maps. If exchangeable diffusion maps are applicable to distance-based test statistics, e.g. \texttt{MGC}, we are then able to dispense with obstacles in testing network independence. Assume that we have a finite sample of infinitely exchangeable sequence $(\mathbf{W}, \mathbf{Y}) = \{ ( \mathbf{w}_{i}, \mathbf{y}_{i} ) : i=1,2, \ldots, n \}$, which is identically distributed as $(\mathbf{w}, \mathbf{y})$ with finite second moment. Then, by the properties of exchangeable sequences, there exists some random measure $\theta$ and its probability measure $P$ such that : 
 \begin{equation}
 \begin{split}
-& x_{i} | \theta  \overset{i.i.d}{\sim} \prod\limits_{i=1}^{n} f_{\mathbf{x}_{i} | \theta}(\mathbf{x}_{i} | \theta)  \\
-& \int \prod\limits_{i=1}^{n} f_{ \mathbf{x}_{i} | \theta} ( \mathbf{x}_{i} | \theta ) P(d\theta)  \stackrel{d}{=}   \prod\limits_{i=1}^{n} f_{\mathbf{x}}(\mathbf{x}_{i})  \\
-& \mathbf{x}_{i}   \overset{i.i.d}{\sim}  f_{\mathbf{x}}(\mathbf{x})  \quad \mbox{ conditioning on the underlying distribution } f_{\mathbf{X}},
+& w_{i} | \theta  \overset{i.i.d}{\sim} \prod\limits_{i=1}^{n} f_{\mathbf{w}_{i} | \theta}(\mathbf{w}_{i} | \theta)  \\
+& \int \prod\limits_{i=1}^{n} f_{ \mathbf{w}_{i} | \theta} ( \mathbf{w}_{i} | \theta ) P(d\theta)  \stackrel{d}{=}   \prod\limits_{i=1}^{n} f_{\mathbf{w}}(\mathbf{w}_{i})  \\
+& \mathbf{w}_{i}   \overset{i.i.d}{\sim}  f_{\mathbf{w}}(\mathbf{w})  \quad \mbox{ conditioning on the underlying distribution } f_{\mathbf{w}},
 \end{split}
 \label{eq:iid}
 \end{equation}
@@ -293,38 +293,38 @@ where $f$ is a random, marginal distribution integrated over $\theta$; same argu
 	\label{lemma1}
    Under the above conditions, we have 
 	\begin{eqnarray*}
-		\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) &= \|g_{\mathbf{x},\mathbf{y}}^{n}(t,s)-g_{\mathbf{x}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2},
+		\mathcal{V}^{2}_{n}(\mathbf{W},\mathbf{Y}) &= \|g_{\mathbf{w},\mathbf{y}}^{n}(t,s)-g_{\mathbf{w}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2},
 	\end{eqnarray*}
-	where $g_{\cdot}^{n}$ is the empirical characteristic function based upon $\{(\mathbf{x}_{i},\mathbf{y}_{i}), i=1,2,...,n\}$
+	where $g_{\cdot}^{n}$ is the empirical characteristic function based upon $\{(\mathbf{w}_{i},\mathbf{y}_{i}), i=1,2,...,n\}$
 \end{lemma}
 
 \begin{lemma}
 	\label{lemma2}
 We have 
 	\begin{eqnarray}
-		\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\longrightarrow \mathcal{V}^{2}(\mathbf{x},\mathbf{y}) \quad \quad \mbox{ as } n \rightarrow \infty
+		\mathcal{V}_{n}^{2}(\mathbf{W},\mathbf{Y}) &\longrightarrow \mathcal{V}^{2}(\mathbf{w},\mathbf{y}) \quad \quad \mbox{ as } n \rightarrow \infty
 	\label{eq:conv1}
 	\end{eqnarray}
-where $\mathcal{V}^{2} (\mathbf{x},\mathbf{y}) := \| g_{\mathbf{x},\mathbf{y}}(t,s) - g_{\mathbf{x}}(t) g_{\mathbf{y}}(s) \|^2$, and $g_{\cdot}$ is a characteristic function, e.g., $g_{\mathbf{x},\mathbf{y}}(t,s) = E\{\exp\{i \left\langle t,\mathbf{x} \right\rangle  +i \left\langle  s,\mathbf{y}\right\rangle \}\}$.
+where $\mathcal{V}^{2} (\mathbf{w},\mathbf{y}) := \| g_{\mathbf{w},\mathbf{y}}(t,s) - g_{\mathbf{w}}(t) g_{\mathbf{y}}(s) \|^2$, and $g_{\cdot}$ is a characteristic function, e.g., $g_{\mathbf{w},\mathbf{y}}(t,s) = E\{\exp\{i \left\langle t,\mathbf{w} \right\rangle  +i \left\langle  s,\mathbf{y}\right\rangle \}\}$.
 	It follows that 
 	\begin{eqnarray}
-		\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\rightarrow 0 \quad \mbox{ as } n \rightarrow \infty
+		\mathcal{V}_{n}^{2}(\mathbf{W},\mathbf{Y}) &\rightarrow 0 \quad \mbox{ as } n \rightarrow \infty
 		\label{eq:conv2}
 	\end{eqnarray}
-	if and only if $g_{\mathbf{x},\mathbf{y}}(t,s) = g_{\mathbf{x}}(t) g_{\mathbf{y}}(s)$, i.e., $\mathbf{x}$ is independent of $\mathbf{y}$.
+	if and only if $g_{\mathbf{w},\mathbf{y}}(t,s) = g_{\mathbf{w}}(t) g_{\mathbf{y}}(s)$, i.e., $\mathbf{w}$ is independent of $\mathbf{y}$.
 \end{lemma}
 Lemma~\ref{lemma1} and its following Lemma~\ref{lemma2} facilitate the use of distance correlation while satisfying \textit{Theorem 2} in \cite{szekely2007measuring}.  
 
 \begin{theorem}
-	Suppose that we are given $n$ pairs of exchangeable observations $(\mathbf{X}, \mathbf{Y}) = \{  (\mathbf{x}_{i}, \mathbf{y}_{i} ) ; i = 1,2, \ldots, n \}$ having finite second moment. Assume $\mathbf{x}_{i} \overset{i.i.d}{\sim} f_{\mathbf{x}}$ and $\mathbf{y}_{i} \overset{i.i.d}{\sim} f_{\mathbf{y}}$ given underlying distribution for $i = 1,2, \ldots, n$. Then
+	Suppose that we are given $n$ pairs of exchangeable observations $(\mathbf{W}, \mathbf{Y}) = \{  (\mathbf{w}_{i}, \mathbf{y}_{i} ) ; i = 1,2, \ldots, n \}$ having finite second moment. Assume $\mathbf{w}_{i} \overset{i.i.d}{\sim} f_{\mathbf{w}}$ and $\mathbf{y}_{i} \overset{i.i.d}{\sim} f_{\mathbf{y}}$ given underlying distribution for $i = 1,2, \ldots, n$. Then
 	\begin{eqnarray}
-		\mathcal{V}_{n}^{2}(\mathbf{X},\mathbf{Y}) &\longrightarrow 0 \quad \mbox{ as } n \rightarrow \infty
+		\mathcal{V}_{n}^{2}(\mathbf{W},\mathbf{Y}) &\longrightarrow 0 \quad \mbox{ as } n \rightarrow \infty
 	\end{eqnarray}	
-	\textit{if and only if} $\mathbf{x}$ is independent of $\mathbf{y}$. Moreover, \texttt{dCorr} and \texttt{MGC} are consistent for testing dependence between $\mathbf{x}$ and $\mathbf{y}$, i.e., the testing power converges to $1$ asymptotically for any dependency of finite second moment.
+	\textit{if and only if} $\mathbf{w}$ is independent of $\mathbf{y}$. Moreover, \texttt{dCorr} and \texttt{MGC} are consistent for testing dependence between $\mathbf{w}$ and $\mathbf{y}$, i.e., the testing power converges to $1$ asymptotically for any dependency of finite second moment.
 	\label{theoremMain}
 \end{theorem}
 
-Note that if $\{ \mathbf{x}_{i} : i = 1,2,\ldots, n \}$ are \textit{i.i.d}, they are exchangeable. Thus estimated latent factors, which are assumed \textit{i.i.d} by \cite{fosdick2015testing} can also be applied to Theorem~\ref{theoremMain}. We already have shown that even under undirected network, diffusion maps remain exchangeable at each diffusion time point $t$. 
+Note that if $\{ \mathbf{w}_{i} : i = 1,2,\ldots, n \}$ are \textit{i.i.d}, they are exchangeable. Thus estimated latent factors, which are assumed \textit{i.i.d} by \cite{fosdick2015testing} can also be applied to Theorem~\ref{theoremMain}. We already have shown that even under undirected network, diffusion maps remain exchangeable at each diffusion time point $t$. 
 \begin{theorem}
 	\label{theorem2}
 	Then \texttt{MGC} is consistent in testing network independence through testing $H_{0}: f_{\mathbf{U}^{(t)} \cdot \mathbf{X}  }  = f_{\mathbf{U^{(t)}}} \cdot f_{\mathbf{X}}$. In particular, the consistency also holds for the estimated latent positions and adjacency matrix of directed network instead of diffusion maps.
@@ -382,8 +382,7 @@ If you see Figure~\ref{fig:powerplot}, power of \texttt{dCorr} starts to drop fr
 
 \subsection{Degree-corrected two block model}
 
-The SBM connotes that all nodes within the same block have the same expected degree. However the network model of homogeneous distribution within block leads to a poor fit to networks with highly varying node degrees even within block. Out of this concern, the Degree-Corrected Stochastic Block model (DCSBM) varies distribution of node degree within a block, preserving the overall block community structure~\citep{karrer2011stochastic}. Consider two block SBM having more variability induced by $\theta$ (model~\ref{eq:dcVariance}). Here we have an edge distribution as a linear function of Euclidean distance of $X$. However its variance becomes inflated due to $\tau > 0$. Relatively poor performance of an adjacency metric as presented in Figure~\ref{fig:dcSBM} can be attributed to large variability in it. Even in this case, \texttt{MGC} achieves almost same level of power across increasing $\tau$s. On the other hand, node-specific latent factors look more sensitive in \texttt{FH} model, but still diffusion maps metrics work better.
-
+The SBM connotes that all nodes within the same block have the same expected degree. However the network model of homogeneous distribution within block leads to a poor fit to networks with highly varying node degrees even within block. Out of this concern, the Degree-Corrected Stochastic Block model (DCSBM) varies distribution of node degree within a block, preserving the overall block community structure~\citep{karrer2011stochastic}. Consider two block SBM having more variability induced by $V$ (model~\ref{eq:dcVariance}). Here we have an edge distribution as a linear function of Euclidean distance of $X$. However its variance becomes inflated due to $\tau > 0$. Relatively poor performance of an adjacency metric as presented in Figure~\ref{fig:dcSBM} can be attributed to large variability in it. Even in this case, \texttt{MGC} achieves almost same level of power across increasing $\tau$s. On the other hand, node-specific latent factors look more sensitive in \texttt{FH} model, but still diffusion maps metrics work better.
 
 \begin{figure}[H]
 	\centering
@@ -424,12 +423,12 @@ where $m (\leq |V(\mathbf{G})|)$ is the number of nodes under network dependence
 	\label{fig:politics}
 \end{figure}
 	
-In the field of political science, who exerts more powerful impacts than others over political network and which factors impact on the power differentials are one of the interests~\citep{ingold2014structural}. \cite{minhas2016inferential} made an inference from political networks~\citep{cranmer2016navigating} via the additive and multiplicative effects (AME). As mentioned in Section~\ref{ssec:ame}, the AME model estimates the latent factors and uses them to test independence with the nodal attributes. Among diverse attributes that \cite{cranmer2016navigating} provided, we focus on the types of organizations and how 34 political organizations having different types are participating policy network. We changed a given directed network into undirected network and use a dissimilarity matrix for distance matrix of the attributes, i.e., $\parallel \mathbf{X}_{i}  - \mathbf{X}_{j} \parallel = 0$ if and only if node $i$ and node $j$ are from the same type and one otherwise. Two collaboration networks comprised of the same set of nodes across two time periods are provided~\citep{ingold2014structural}. Figure~\ref{fig:politics} and Figure~\ref{fig:barplots} illustrates these two networks and shows each node's reliance on its organization type when collaborating. For two periods, the network independence test statistics of \texttt{MGC}, \texttt{dCorr} using diffusion distance matrices result in significant p-values across diffusion times from $t=1$ to $t=10$. The conclusion from the \texttt{FH} test is also the same.  
+In the field of political science, who exerts more powerful impacts than others over political network and which factors impact on the power differentials are one of the interests~\citep{ingold2014structural}. \cite{minhas2016inferential} made an inference from political networks~\citep{cranmer2016navigating} via the additive and multiplicative effects (AME). As mentioned in Section~\ref{ssec:ame}, the AME model estimates the latent factors and uses them to test independence with the nodal attributes. Among diverse attributes that \cite{cranmer2016navigating} provided, we focus on the types of organizations and how 34 political organizations having different types are participating policy network. We changed a given directed network into undirected network and use a dissimilarity matrix for distance matrix of the attributes, i.e., $\parallel \mathbf{X}_{i}  - \mathbf{X}_{j} \parallel = 0$ if and only if node $i$ and node $j$ are from the same type and one otherwise. Two collaboration networks comprised of the same set of nodes across two time periods are provided~\citep{ingold2014structural}. Figure~\ref{fig:politics} and Figure~\ref{fig:barplots} illustrates these two networks and shows each node's reliance on its organization type when collaborating. For two periods, the network independence test statistics of \texttt{MGC} and \texttt{dCorr} using diffusion distance matrices result in significant p-values across diffusion times from $t=1$ to $t=10$. The conclusion from the \texttt{FH} test is also the same.  
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\linewidth]{../Figure/barplots_nolegend.pdf}	
-	\caption{In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure~\ref{fig:politics}. Generally organizations co-work more actively between different types in the second period, having relatively narrow range near zero, but still their collaboration network is highly dependent on their organization types.}
+	\caption{In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure~\ref{fig:politics}. Generally organizations cooperate more actively between different types in the second period but still their collaboration network is highly dependent on their organization types.}
 	\label{fig:barplots}
 \end{figure}
 
@@ -684,7 +683,7 @@ where $dPois_{1}(\cdot)$ is a probability distribution function of Poisson proce
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{proof}[\textbf{Proof of Lemma~\ref{lemma1}} Convergence of empirical characteristic functions of exchangeable variables] 
 	
-This follows exactly the same as \textit{Theorem 1} in \cite{szekely2007measuring}. Note that this Lemma always holds without any assumption on $\{(\mathbf{x}_{j},\mathbf{y}_{j}), j=1,2,...,n\}$, e.g., it holds without assuming exchangeability, nor identically distributed, nor finite second moments.
+This follows exactly the same as \textit{Theorem 1} in \cite{szekely2007measuring}. Note that this Lemma always holds without any assumption on $\{(\mathbf{w}_{i},\mathbf{y}_{j}), i=1,2,...,n\}$, e.g., it holds without assuming exchangeability, nor identically distributed, nor finite second moments.
 \end{proof}
 
 \begin{proof}[\textbf{Proof of Lemma~\ref{lemma2}} Empirical characteristic function of exchangeable variables] 
@@ -694,22 +693,22 @@ Proving the first one is equivalent to \textit{Theorem 2} in \cite{szekely2007me
 
 Followed by \textit{de Finetti's Theorem}~\ref{finetti}, if and only if $\{ w_{i} \}$ are (infinitely) exchangeable, there exists an underlying distribution $f_{\mathbf{w}}$ of $\mathbf{w}$ such that $\mathbf{w}_{i}  \overset{i.i.d}{\sim} f_{\mathbf{w}} $. By the same logic there exists a random, we have an underlying distribution $f_{\mathbf{y}}$ where $\mathbf{y}_{i} \overset{i.i.d}{\sim} f_{\mathbf{y}}$. Let $(\mathbf{w}_{i}, \mathbf{y}_{i}) \overset{i.i.d}{\sim}   f_{\mathbf{w}, \mathbf{y}}$. Then under the assumption of finite second moment of the underlying distributions and measurable, conditioned random functions, we have a strong large number for V-statistics followed by \cite{szekely2007measuring}, i.e., 
 \begin{eqnarray}
-		\displaystyle\int_{D(\delta)}{\|g_{\mathbf{w},\mathbf{y}}^{n}(t,s)-g_{\mathbf{w}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2}}dw &\stackrel{n \rightarrow \infty}{\longrightarrow} 
-		 \displaystyle\int_{D(\delta)}{\|g_{\mathbf{w},\mathbf{y}}(t,s)-g_{\mathbf{w}}(t)g_{\mathbf{y}}(s)\|^{2}}dw,
+		\displaystyle\int_{D(\delta)}{\|g_{\mathbf{w},\mathbf{y}}^{n}(t,s)-g_{\mathbf{w}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2}}dh &\stackrel{n \rightarrow \infty}{\longrightarrow} 
+		 \displaystyle\int_{D(\delta)}{\|g_{\mathbf{w},\mathbf{y}}(t,s)-g_{\mathbf{w}}(t)g_{\mathbf{y}}(s)\|^{2}}dh,
 \label{eq:SLLN}
 \end{eqnarray}
-where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and $w(t,s)$ is the weight function chosen in \cite{szekely2007measuring}. 
+where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and $h(t,s)$ is the weight function chosen in \cite{szekely2007measuring}. 
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 \begin{proof}[\textbf{Proof of Theorem~\ref{theoremMain}} Consistency of \texttt{dCorr} applied to exchangeable variables]
 \bigskip
-Under the exchangeability and finite moments assumptions of underlying distribution, it follows from Lemma~\ref{lemma1} and ~\ref{lemma2} that $\mathcal{V}^{2}_{n}(\mathbf{X},\mathbf{Y}) \xrightarrow{n \rightarrow \infty}  0$ if and only if underlying distribution of $\{\mathbf{x}_{i} \}$, $\mathbf{x}$ is independent from underlying distribution of $\{ \mathbf{y}_{i}  \}$, $\mathbf{y}$. Therefore, the \texttt{dCorr} or \texttt{mCorr} converges to $0$ if and only if  underlying distributions are independent; and its testing power converges to $1$ under any joint distribution of finite moments. Since the multiscale generalized correlation based on any consistent global correlation is also consistent (see in [Cencheng]), \texttt{MGC} statistic constructed by \texttt{dCorr} or \texttt{mCorr} is also consistent in testing dependence.
+Under the exchangeability and finite moments assumptions of underlying distribution, it follows from Lemma~\ref{lemma1} and \ref{lemma2} that $\mathcal{V}^{2}_{n}(\mathbf{W},\mathbf{Y}) \xrightarrow{n \rightarrow \infty}  0$ if and only if underlying distribution of $\{\mathbf{w}_{i} \}$, $\mathbf{w}$ is independent from underlying distribution of $\{ \mathbf{y}_{i}  \}$, $\mathbf{y}$. Therefore, the \texttt{dCorr} or \texttt{mCorr} converges to $0$ if and only if  underlying distributions are independent; and its testing power converges to $1$ under any joint distribution of finite moments. Since the multiscale generalized correlation based on any consistent global correlation is also consistent~\citep{shen2016discovering}, \texttt{MGC} statistic constructed by \texttt{dCorr} or \texttt{mCorr} is also consistent in testing dependence.
 \end{proof}
 
 \begin{proof}[\textbf{Proof of Theorem~\ref{theorem2}} Consistency of \texttt{MGC} applied to exchangeable variables]
 
-Suppose that we have undirected, connected network $\mathbf{G}$ having a family of diffusion maps $\{ \mathbf{u}_{it} : i = 1, \ldots , n ; ~t \in \mathbb{N} \}$ and with nodal attributes $\{ \mathbf{x}_{i} :  i = 1, \ldots , n  \}$. We have shown in the Lemma~\ref{main_lemma} that $\{ \mathbf{u}_{t}  \}$ are exchangeable for each $t \in \mathbb{N}$. Thus there exists an underlying distribution of $\mathbf{u}_{t}$ such that $\mathbf{u}_{t} \overset{i.i.d}{\sim} f_{\mathbf{u}^{(t)}}$ for $t= 1,2,\ldots $; and we have $\mathbf{x}_{i} \overset{i.i.d}{\sim} f_{\mathbf{X}}$. Under the assumption of finite second moment of $\mathbf{u}^{(t)}$ and $\mathbf{x}$, \texttt{MGC} statistics constructed by $\{  (  \mathbf{u}_{ti}, \mathbf{x}_{i} ) : i = 1,2,\ldots, n  \}$ yield a consistent testing which determines the independence between underlying distributions of $\mathbf{u}^{(t)}$ and $\mathbf{x}$, followed by Lemma~\ref{lemma2}. 
+Suppose that we have undirected, connected network $\mathbf{G}$ having a family of diffusion maps $\{ \mathbf{u}_{t}(i) : i = 1, \ldots , n ; ~t \in \mathbb{N} \}$ and with nodal attributes $\{ \mathbf{x}_{i} :  i = 1, \ldots , n  \}$. We have shown in the Lemma~\ref{main_lemma} that $\{ \mathbf{u}_{t}  \}$ are exchangeable for each $t \in \mathbb{N}$. Thus there exists an underlying distribution of $\mathbf{u}_{t}$ such that $\mathbf{u}_{t}(i) \overset{i.i.d}{\sim} f_{\mathbf{u}^{(t)}}$ for each of $t= 1,2,\ldots $; and we have $\mathbf{x}_{i} \overset{i.i.d}{\sim} f_{\mathbf{X}}$. Under the assumption of finite second moment of $\mathbf{u}^{(t)}$ and $\mathbf{x}$, \texttt{MGC} statistics constructed by $\{  (  \mathbf{u}_{t}(i), \mathbf{x}_{i} ) : i = 1,2,\ldots, n  \}$ yield a consistent testing which determines the independence between underlying distributions of $\mathbf{u}^{(t)}$ and $\mathbf{x}$, followed by Lemma~\ref{lemma2}. 
 From the same setting of network $\mathbf{G}$, we have estimated \textit{i.i.d} node-specific network factors $\{ \mathbf{F}_{i} \}$, we have n-pair of \textit{i.i.d} $\{ ( \mathbf{F}_{i}, \mathbf{x}_{i} )  \}$ and they can be applied it to \texttt{MGC} without assuming conditional underlying distribution. In case of using adjacency matrix directly into test, we must assume the adjacency matrix comes from directed network $\mathbf{G}$, i.e. $A_{ij} \overset{i.i.d}{\sim} f_{A}$ for all $i,j=1,2,\ldots, n$; otherwise, each column is dependent on one another.  
 \end{proof}
 
