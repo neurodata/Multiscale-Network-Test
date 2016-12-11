@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{22}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -96,11 +96,23 @@ P.~Robert and Y.~Escoufier.
 \newblock \emph{Journal of the Royal Statistical Society. Series C},
   25\penalty0 (3):\penalty0 257--265, 1976.
 
+\bibitem[Rohe et~al.(2011)Rohe, Chatterjee, and Yu]{rohe2011spectral}
+Karl Rohe, Sourav Chatterjee, and Bin Yu.
+\newblock Spectral clustering and the high-dimensional stochastic blockmodel.
+\newblock \emph{The Annals of Statistics}, pages 1878--1915, 2011.
+
 \bibitem[Shen et~al.(2016)Shen, Priebe, Maggioni, and
   Vogelstein]{shen2016discovering}
 Cencheng Shen, Carey~E Priebe, Mauro Maggioni, and Joshua~T Vogelstein.
 \newblock Discovering relationships across disparate data modalities.
 \newblock \emph{arXiv preprint arXiv:1609.05148}, 2016.
+
+\bibitem[Sussman et~al.(2014)Sussman, Tang, and Priebe]{sussman2014consistent}
+Daniel~L Sussman, Minh Tang, and Carey~E Priebe.
+\newblock Consistent latent position estimation and vertex classification for
+  random dot product graphs.
+\newblock \emph{IEEE transactions on pattern analysis and machine
+  intelligence}, 36\penalty0 (1):\penalty0 48--57, 2014.
 
 \bibitem[Szekely and Rizzo(2013)]{szekelyRizzo2013a}
 G.~Szekely and M.~Rizzo.
