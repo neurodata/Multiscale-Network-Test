@@ -467,8 +467,10 @@ However obtaining a full family of statistics are computationally infeasible. Al
 	\label{eq:dcVariance}
 	\begin{gathered}
 	\begin{aligned}
-	& \theta_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau),\quad i = 1, \ldots, n; \quad \tau = 0, 0.2, \ldots, 1\\ 
-	& A_{ij} | Z_{i}, Z_{j}, \theta_{i}, \theta_{j}   \overset{i.i.d}{\sim}   f_{A|Z, \theta}(a_{ij} | z_{i}, z_{j}, \theta_{i}, \theta_{j}) \stackrel{d}{=} Bern(0.2 \cdot \theta_{i}\theta_{j}) I ( |z_{i} - z_{j}| = 0 ) \\ & \quad \quad + Bern(0.05 \cdot \theta_{i} \theta_{j} ) I(|z_{i} - z_{j}| = 1), \quad i,j=1, \ldots, n; i < j. 
+	&  X_{i} \overset{i.i.d}{\sim} f_{X}(x)   \stackrel{d}{=}  Bern(0.5), \quad i = 1, \ldots , n \\ 
+	&  Z_{i} | X_{i}  \overset{i.i.d}{\sim}    f_{Z|X}(z|x)  \stackrel{d}{=}   Bern(0.6) I( x = 0 ) +   Bern(0.4) I (x = 1), \quad  i = 1,\ldots,n  \\
+	& V_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau),\quad i = 1, \ldots, n; \quad \tau = 0, 0.2, \ldots, 1\\ 
+	& A_{ij} | Z_{i}, Z_{j}, V_{i}, V_{j}   \overset{i.i.d}{\sim}   f_{A|Z, V}(a_{ij} | z_{i}, z_{j}, v_{i}, v_{j}) \stackrel{d}{=} Bern(0.2 \cdot v_{i} v_{j}) I ( |z_{i} - z_{j}| = 0 ) \\ & \quad \quad + Bern(0.05 \cdot v_{i} v_{j} ) I(|z_{i} - z_{j}| = 1), \quad i,j=1, \ldots, n; i < j. 
 	\end{aligned}
 	\end{gathered}
 	\end{equation}
@@ -581,20 +583,20 @@ However obtaining a full family of statistics are computationally infeasible. Al
 \newpage
 \subsection{Lemmas and Theorems}
 	
-\begin{theorem}[de Finetti's Theorem] 
+\begin{theorem}[\textit{de Finetti's Theorem}] 
 \label{finetti}	
 \bigskip			
 Let $\mathbf{X}_{1}, \mathbf{X}_{2}, ...$ be an infinite sequence of random variables with values in a space of $\mathbf{X}$. The sequence $\mathbf{X}_{1}, \mathbf{X}_{2}, ...$ is exchangeable \textit{if and only if} there is a random probability measure $\eta$ on $\mathbf{X}$ such that the $X_{i}$ are conditionally i.i.d. given $\eta$. 
 \end{theorem}
 	
-\begin{theorem}[Aldous Hoover Theorem]
+\begin{theorem}[\textit{Aldous Hoover Theorem}]
 		\label{Aldous_Hoover}
 		
-		Let $\mathbf{A} = \{A_{ij}\}, 1 \leq i,j \leq \infty$ be a jointly exchangeable binary array if and only if there exists a random measurable function $f : [0,1]^{3} \rightarrow \mathbf{A}$ such that 
+Let $\mathbf{A} = \{A_{ij}\}, 1 \leq i,j \leq \infty$ be a jointly exchangeable binary array if and only if there exists a random measurable function $f : [0,1]^{3} \rightarrow \mathbf{A}$ such that 
 		
-		\begin{equation}
-		\big(  A_{ij}  \big) \stackrel{d}{=} \left( f \big( U_{i}, U_{j}, U_{ij} \big)  \right),
-		\end{equation}
+\begin{equation}
+	\big(  A_{ij}  \big) \stackrel{d}{=} \left( f \big( U_{i}, U_{j}, U_{ij} \big)  \right),
+\end{equation}
 		where $(U_{i})_{i \in \mathbb{N}}$ and $(U_{ij})_{i,j > i \in \mathbb{N}}$ with $U_{ij} = U_{ji}$ are a sequence and matrix, respectively, of \textit{i.i.d} Uniform[0,1] random variables. 
 \end{theorem}
 	
@@ -688,12 +690,12 @@ This follows exactly the same as \textit{Theorem 1} in \cite{szekely2007measurin
 \begin{proof}[\textbf{Proof of Lemma~\ref{lemma2}} Empirical characteristic function of exchangeable variables] 
 \bigskip	
 It suffices to prove the first argument~\ref{eq:conv1} since the second argument~\ref{eq:conv2} immediately follows from the first one by the property of characteristic functions.
-Proving the first one is equivalent to \textit{Theorem 2} in \cite{szekely2007measuring}. However, they required $\{(\mathbf{x}_{i},\mathbf{y}_{i})\}$ to be independently identically distributed as $(\mathbf{x},\mathbf{y})$ with finite second moments; here we have exchangeable $\{ ( \mathbf{x}_{i}, \mathbf{y}_{i}  ) \}$ instead. 
+Proving the first one is equivalent to \textit{Theorem 2} in \cite{szekely2007measuring}. However, they required $\{(\mathbf{w}_{i},\mathbf{y}_{i})\}$ to be independently identically distributed as $(\mathbf{w},\mathbf{y})$ with finite second moments; here we have exchangeable $\{ ( \mathbf{w}_{i}, \mathbf{y}_{i}  ) \}$ instead. 
 
-Followed by \textit{de Finetti's Theorem}~\ref{finetti}, if and only if $\{ x_{i} \}$ are (infinitely) exchangeble, there exist an underlying distribution $f_{\mathbf{x}}$ of $\mathbf{x}$ such that $\mathbf{x}_{i}  \overset{i.i.d}{\sim} f_{\mathbf{x}} $. By the same logic there exists a random, we have an underlying distribution $f_{\mathbf{y}}$ where $\mathbf{y}_{i} \overset{i.i.d}{\sim} f_{\mathbf{y}}$. Let $(\mathbf{x}_{i}, \mathbf{y}_{i}) \overset{i.i.d}{\sim}   f_{\mathbf{x}, \mathbf{y}}$. Then under the assumption of finite second moment of the underlying distributions and measurable, conditioned random functions, we have a strong large number for V-statistics followed by \cite{szekely2007measuring}, i.e., 
+Followed by \textit{de Finetti's Theorem}~\ref{finetti}, if and only if $\{ w_{i} \}$ are (infinitely) exchangeable, there exists an underlying distribution $f_{\mathbf{w}}$ of $\mathbf{w}$ such that $\mathbf{w}_{i}  \overset{i.i.d}{\sim} f_{\mathbf{w}} $. By the same logic there exists a random, we have an underlying distribution $f_{\mathbf{y}}$ where $\mathbf{y}_{i} \overset{i.i.d}{\sim} f_{\mathbf{y}}$. Let $(\mathbf{w}_{i}, \mathbf{y}_{i}) \overset{i.i.d}{\sim}   f_{\mathbf{w}, \mathbf{y}}$. Then under the assumption of finite second moment of the underlying distributions and measurable, conditioned random functions, we have a strong large number for V-statistics followed by \cite{szekely2007measuring}, i.e., 
 \begin{eqnarray}
-		\displaystyle\int_{D(\delta)}{\|g_{\mathbf{x},\mathbf{y}}^{n}(t,s)-g_{\mathbf{x}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2}}dw &\stackrel{n \rightarrow \infty}{\longrightarrow} 
-		 \displaystyle\int_{D(\delta)}{\|g_{\mathbf{x},\mathbf{y}}(t,s)-g_{\mathbf{x}}(t)g_{\mathbf{y}}(s)\|^{2}}dw,
+		\displaystyle\int_{D(\delta)}{\|g_{\mathbf{w},\mathbf{y}}^{n}(t,s)-g_{\mathbf{w}}^{n}(t)g_{\mathbf{y}}^{n}(s)\|^{2}}dw &\stackrel{n \rightarrow \infty}{\longrightarrow} 
+		 \displaystyle\int_{D(\delta)}{\|g_{\mathbf{w},\mathbf{y}}(t,s)-g_{\mathbf{w}}(t)g_{\mathbf{y}}(s)\|^{2}}dw,
 \label{eq:SLLN}
 \end{eqnarray}
 where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and $w(t,s)$ is the weight function chosen in \cite{szekely2007measuring}. 
