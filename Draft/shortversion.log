@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  10 DEC 2016 22:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  10 DEC 2016 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -258,12 +258,20 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \c@ContinuedFloat=\count112
 Package caption Info: hyperref package is loaded.
 )
+(./authblk.sty
+Package: authblk 2001/02/27 1.3 (PWD)
+\affilsep=\skip47
+\@affilsep=\skip48
+\c@Maxaffil=\count113
+\c@authors=\count114
+\c@affil=\count115
+)
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip47
-\bibsep=\skip48
+\bibhang=\skip49
+\bibsep=\skip50
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count113
+\c@NAT@ctr=\count116
 )
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
@@ -284,16 +292,16 @@ Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count114
-\calc@Bcount=\count115
+\calc@Acount=\count117
+\calc@Bcount=\count118
 \calc@Adimen=\dimen125
 \calc@Bdimen=\dimen126
-\calc@Askip=\skip49
-\calc@Bskip=\skip50
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count116
-\calc@Cskip=\skip51
+\calc@Ccount=\count119
+\calc@Cskip=\skip53
 )
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
@@ -302,9 +310,9 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count117
+\g_MT_multlinerow_int=\count120
 \l_MT_multwidth_dim=\dimen127
-\origjot=\skip52
+\origjot=\skip54
 \l_MT_shortvdotswithinadjustabove_dim=\dimen128
 \l_MT_shortvdotswithinadjustbelow_dim=\dimen129
 \l_MT_above_intertext_sep=\dimen130
@@ -320,8 +328,8 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen134
 \extrarowheight=\dimen135
 \NC@list=\toks22
-\extratabsurround=\skip53
-\backup@length=\skip54
+\extratabsurround=\skip55
+\backup@length=\skip56
 ))
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
@@ -334,7 +342,7 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 )
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count118
+\c@float@type=\count121
 \float@exts=\toks25
 \float@box=\box28
 \@float@everytoks=\toks26
@@ -342,9 +350,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count119
-\Gm@cntv=\count120
-\c@Gm@tempcnt=\count121
+\Gm@cnth=\count122
+\Gm@cntv=\count123
+\c@Gm@tempcnt=\count124
 \Gm@bindingoffset=\dimen136
 \Gm@wd@mp=\dimen137
 \Gm@odd@mp=\dimen138
@@ -362,20 +370,20 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headfont=\toks30
 \thm@notefont=\toks31
 \thm@headpunct=\toks32
-\thm@preskip=\skip55
-\thm@postskip=\skip56
-\thm@headsep=\skip57
+\thm@preskip=\skip57
+\thm@postskip=\skip58
+\thm@headsep=\skip59
 \dth@everypar=\toks33
 )
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
-\c@subfigure=\count122
-\c@subtable=\count123
+\c@subfigure=\count125
+\c@subtable=\count126
 )
-\c@definition=\count124
-\c@theorem=\count125
-\c@corollary=\count126
-\c@remark=\count127
+\c@definition=\count127
+\c@theorem=\count128
+\c@corollary=\count129
+\c@remark=\count130
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/sidecap/sidecap.sty
 Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
@@ -387,14 +395,14 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \SC@CAPWD=\dimen145
 \SC@tempdima=\dimen146
 \SC@tempdimb=\dimen147
-\c@SC@C=\count128
+\c@SC@C=\count131
 \SC@BOX=\box30
 )
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box31
-\beforetitleunit=\skip58
-\aftertitleunit=\skip59
+\beforetitleunit=\skip60
+\aftertitleunit=\skip61
 \ttl@plus=\dimen148
 \ttl@minus=\dimen149
 \ttl@toksa=\toks34
@@ -429,7 +437,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 y
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count129
+\c@section@level=\count132
 )
 LaTeX Info: Redefining \ref on input line 45.
 LaTeX Info: Redefining \pageref on input line 45.
@@ -441,16 +449,16 @@ LaTeX Info: Redefining \nameref on input line 45.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
+\scratchcounter=\count133
 \scratchdimen=\dimen153
 \scratchbox=\box33
-\nofMPsegments=\count131
-\nofMParguments=\count132
+\nofMPsegments=\count134
+\nofMParguments=\count135
 \everyMPshowfont=\toks35
-\MPscratchCnt=\count133
+\MPscratchCnt=\count136
 \MPscratchDim=\dimen154
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
 \everyMPtoPDFconversion=\toks36
 ) (/usr/local/texlive/2016basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -516,93 +524,79 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 126.
 )
-\CenteringLeftskip=\skip60
-\RaggedLeftLeftskip=\skip61
-\RaggedRightLeftskip=\skip62
-\CenteringRightskip=\skip63
-\RaggedLeftRightskip=\skip64
-\RaggedRightRightskip=\skip65
-\CenteringParfillskip=\skip66
-\RaggedLeftParfillskip=\skip67
-\RaggedRightParfillskip=\skip68
-\JustifyingParfillskip=\skip69
-\CenteringParindent=\skip70
-\RaggedLeftParindent=\skip71
-\RaggedRightParindent=\skip72
-\JustifyingParindent=\skip73
+\CenteringLeftskip=\skip62
+\RaggedLeftLeftskip=\skip63
+\RaggedRightLeftskip=\skip64
+\CenteringRightskip=\skip65
+\RaggedLeftRightskip=\skip66
+\RaggedRightRightskip=\skip67
+\CenteringParfillskip=\skip68
+\RaggedLeftParfillskip=\skip69
+\RaggedRightParfillskip=\skip70
+\JustifyingParfillskip=\skip71
+\CenteringParindent=\skip72
+\RaggedLeftParindent=\skip73
+\RaggedRightParindent=\skip74
+\JustifyingParindent=\skip75
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+LaTeX Font Info:    Try loading font information for U+msa on input line 92.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+LaTeX Font Info:    Try loading font information for U+msb on input line 92.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 62.
-
-(/usr/local/texlive/2016basic/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 62.
- [1
+) [1
 Non-PDF special ignored!
 
 {/usr/local/texlive/2016basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
-] [3]
-<../Figure/Pmat.pdf, id=126, 505.89pt x 505.89pt>
+] <../Figure/Pmat.pdf, id=100, 505.89pt x 505.89pt>
 File: ../Figure/Pmat.pdf Graphic file (type pdf)
- <use ../Figure/Pmat.pdf>
-Package pdftex.def Info: ../Figure/Pmat.pdf used on input line 130.
-(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
-<../Figure/Dx1.pdf, id=127, 505.89pt x 505.89pt>
+<use ../Figure/Pmat.pdf>
+Package pdftex.def Info: ../Figure/Pmat.pdf used on input line 122.
+(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
+ <../Figure/Dx1.pdf, id=101, 505.89pt x 505.89pt>
 File: ../Figure/Dx1.pdf Graphic file (type pdf)
- <use ../Figure/Dx1.pdf>
-Package pdftex.def Info: ../Figure/Dx1.pdf used on input line 137.
-(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
-<../Figure/Dx5.pdf, id=128, 505.89pt x 505.89pt>
+<use ../Figure/Dx1.pdf>
+Package pdftex.def Info: ../Figure/Dx1.pdf used on input line 129.
+(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
+ <../Figure/Dx5.pdf, id=102, 505.89pt x 505.89pt>
 File: ../Figure/Dx5.pdf Graphic file (type pdf)
- <use ../Figure/Dx5.pdf>
-Package pdftex.def Info: ../Figure/Dx5.pdf used on input line 144.
-(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
-<../Figure/Dx50.pdf, id=129, 505.89pt x 505.89pt>
+<use ../Figure/Dx5.pdf>
+Package pdftex.def Info: ../Figure/Dx5.pdf used on input line 136.
+(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
+ <../Figure/Dx50.pdf, id=103, 505.89pt x 505.89pt>
 File: ../Figure/Dx50.pdf Graphic file (type pdf)
- <use ../Figure/Dx50.pdf>
-Package pdftex.def Info: ../Figure/Dx50.pdf used on input line 149.
-(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
-[4 <../Figure/Pmat.pdf> <../Figure/Dx1.pdf> <../Figure/Dx5.pdf> <../Figure/Dx50
-.pdf>] [5] <../Figure/ThreeSBM_results_simple.png, id=214, 481.8pt x 481.8pt>
+<use ../Figure/Dx50.pdf>
+Package pdftex.def Info: ../Figure/Dx50.pdf used on input line 141.
+(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
+ [3 <../Figure/Pmat.pdf> <../Figure/Dx1.pdf> <../Figure/Dx5.pdf> <../Figure/Dx5
+0.pdf>] [4] [5]
+<../Figure/ThreeSBM_results_simple.png, id=198, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_results_simple.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_results_simple.png>
 Package pdftex.def Info: ../Figure/ThreeSBM_results_simple.png used on input li
-ne 204.
+ne 216.
 (pdftex.def)             Requested size: 245.71474pt x 245.71474pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6] <../Figure/mono_simple.pdf, id=232, 1084.05pt x 433.62pt>
+[6] <../Figure/mono_simple.pdf, id=215, 1084.05pt x 433.62pt>
 File: ../Figure/mono_simple.pdf Graphic file (type pdf)
 
 <use ../Figure/mono_simple.pdf>
-Package pdftex.def Info: ../Figure/mono_simple.pdf used on input line 221.
+Package pdftex.def Info: ../Figure/mono_simple.pdf used on input line 233.
 (pdftex.def)             Requested size: 347.0383pt x 138.81416pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (0.93596pt too wide) detected at line 233
+ [7 <../Figure/ThreeSBM_results_simple.png>]
+Overfull \hbox (0.93596pt too wide) detected at line 245
 \OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 A[]\OMS/cmsy/m/n/1
 0.95 j\OT1/cmr/bx/n/10.95 X\OML/cmm/m/it/10.95 ; \OT1/cmr/bx/n/10.95 V\OT1/cmr/
 m/n/10.95 ) = 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 V[]
@@ -617,43 +611,37 @@ msy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 X[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.
 5 ^^\\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 :
  []
 
-[7 <../Figure/ThreeSBM_results_simple.png>]
-<../Figure/tau_simple.pdf, id=248, 1084.05pt x 433.62pt>
+<../Figure/tau_simple.pdf, id=229, 1084.05pt x 433.62pt>
 File: ../Figure/tau_simple.pdf Graphic file (type pdf)
 
 <use ../Figure/tau_simple.pdf>
-Package pdftex.def Info: ../Figure/tau_simple.pdf used on input line 236.
+Package pdftex.def Info: ../Figure/tau_simple.pdf used on input line 248.
 (pdftex.def)             Requested size: 347.0383pt x 138.81416pt.
 
-<../Figure/nodecontri.pdf, id=249, 1228.59pt x 433.62pt>
+<../Figure/nodecontri.pdf, id=230, 1228.59pt x 433.62pt>
 File: ../Figure/nodecontri.pdf Graphic file (type pdf)
 
 <use ../Figure/nodecontri.pdf>
-Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 246.
+Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 258.
 (pdftex.def)             Requested size: 347.0383pt x 122.48463pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[8 <../Figure/mono_simple.pdf> <../Figure/tau_simple.pdf>]
-<../Figure/two_politics.pdf, id=269, 722.7pt x 361.35pt>
+ [8 <../Figure/mono_simple.pdf> <../Figure/tau_simple.pdf>] <../Figure/two_poli
+tics.pdf, id=252, 722.7pt x 361.35pt>
 File: ../Figure/two_politics.pdf Graphic file (type pdf)
 
 <use ../Figure/two_politics.pdf>
-Package pdftex.def Info: ../Figure/two_politics.pdf used on input line 262.
+Package pdftex.def Info: ../Figure/two_politics.pdf used on input line 274.
 (pdftex.def)             Requested size: 495.77116pt x 247.88716pt.
 
-<../Figure/barplots_nolegend.pdf, id=282, 1445.4pt x 505.89pt>
+<../Figure/barplots_nolegend.pdf, id=260, 1445.4pt x 505.89pt>
 File: ../Figure/barplots_nolegend.pdf Graphic file (type pdf)
 
 <use ../Figure/barplots_nolegend.pdf>
-Package pdftex.def Info: ../Figure/barplots_nolegend.pdf used on input line 269
+Package pdftex.def Info: ../Figure/barplots_nolegend.pdf used on input line 281
 .
 (pdftex.def)             Requested size: 495.77116pt x 173.52101pt.
- [9 <../Figure/nodecontri.pdf> <../Figure/two_politics.pdf>] [10 <../Figure/bar
-plots_nolegend.pdf>] (./shortversion.bbl
-[11]) [12]
-Underfull \hbox (badness 1152) in paragraph at lines 300--305
+ [9 <../Figure/nodecontri.pdf>] [10 <../Figure/two_politics.pdf>] (./shortversi
+on.bbl [11 <../Figure/barplots_nolegend.pdf>] [12])
+Underfull \hbox (badness 1152) in paragraph at lines 312--317
 \OT1/cmr/m/n/10.95 for any $\OML/cmm/m/it/10.95 r$\OT1/cmr/m/n/10.95 th row ($\
 OML/cmm/m/it/10.95 r \OMS/cmsy/m/n/10.95 2 f\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/1
 0.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; :::; q\OMS/cmsy/m/n/10.95 g$\O
@@ -663,30 +651,36 @@ T1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^U[]^^^[]$ \OT1/cmr/m/n/10.95 where $\O
 ML/cmm/m/it/10.95 ^^^[] \OT1/cmr/m/n/10.95 =
  []
 
-[13]
-Underfull \hbox (badness 5316) in paragraph at lines 343--344
+[13] [14]
+Underfull \hbox (badness 5316) in paragraph at lines 355--356
 []\OT1/cmr/m/n/10.95 Under the ex-change-
  []
 
-[14]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 362.
+
+(/usr/local/texlive/2016basic/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 350.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 377.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 362.
  [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 377.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 389.
+
+[16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 389.
  (./shortversion.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 377.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 377.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 389.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 389.
 Package rerunfilecheck Info: File `shortversion.out' has not changed.
-(rerunfilecheck)             Checksum: A9AE4EF455DBFB3367E39D7A97C73FF8;813.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 377.
+(rerunfilecheck)             Checksum: F38B3BCE159D5253504B76D2BF1101A2;813.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 389.
  ) 
 Here is how much of TeX's memory you used:
- 9450 strings out of 494447
- 142642 string characters out of 6166766
- 240711 words of memory out of 5000000
- 12559 multiletter control sequences out of 15000+600000
- 17660 words of font info for 68 fonts, out of 8000000 for 9000
+ 9531 strings out of 494447
+ 143680 string characters out of 6166766
+ 243898 words of memory out of 5000000
+ 12634 multiletter control sequences out of 15000+600000
+ 14868 words of font info for 57 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  36i,18n,48p,1820b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
@@ -701,21 +695,18 @@ ype1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016basic/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016basic/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016basic/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016basic/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016basic/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016basic/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016basi
-c/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016ba
-sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-16basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
-/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texl
-ive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
-texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/lo
-cal/texlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
->
-Output written on shortversion.pdf (15 pages, 592146 bytes).
+-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016basic/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016basic/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016bas
+ic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016
+basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
+ve/2016basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/t
+exlive/2016basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on shortversion.pdf (16 pages, 564981 bytes).
 PDF statistics:
- 443 PDF objects out of 1000 (max. 8388607)
- 375 compressed objects within 4 object streams
- 72 named destinations out of 1000 (max. 500000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 351 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
  155 words of extra memory for PDF output out of 10000 (max. 10000000)
 
