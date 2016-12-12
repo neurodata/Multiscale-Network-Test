@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.7)  12 DEC 2016 10:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.7)  12 DEC 2016 15:03
 entering extended mode
 **shortversion.tex
 ("C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\overleaf version\shortversion.tex"
@@ -514,60 +514,65 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Non-PDF special ignored!
 
 {C:/Users/Charlie/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
-<Pmat.pdf, id=122, 505.89pt x 505.89pt>
+<Pmat.pdf, id=134, 505.89pt x 505.89pt>
 File: Pmat.pdf Graphic file (type pdf)
  <use Pmat.pdf>
-Package pdftex.def Info: Pmat.pdf used on input line 147.
+Package pdftex.def Info: Pmat.pdf used on input line 145.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
- <Dx1.pdf, id=123, 505.89pt x 505.89pt>
+ <Dx1.pdf, id=135, 505.89pt x 505.89pt>
 File: Dx1.pdf Graphic file (type pdf)
  <use Dx1.pdf>
-Package pdftex.def Info: Dx1.pdf used on input line 154.
+Package pdftex.def Info: Dx1.pdf used on input line 152.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
-<Dx5.pdf, id=124, 505.89pt x 505.89pt>
+<Dx5.pdf, id=136, 505.89pt x 505.89pt>
 File: Dx5.pdf Graphic file (type pdf)
  <use Dx5.pdf>
-Package pdftex.def Info: Dx5.pdf used on input line 161.
+Package pdftex.def Info: Dx5.pdf used on input line 159.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
- <Dx50.pdf, id=125, 505.89pt x 505.89pt>
+ <Dx50.pdf, id=137, 505.89pt x 505.89pt>
 File: Dx50.pdf Graphic file (type pdf)
  <use Dx50.pdf>
-Package pdftex.def Info: Dx50.pdf used on input line 166.
+Package pdftex.def Info: Dx50.pdf used on input line 164.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 175.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 173.
  [4 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/overleaf version/Pmat.pdf> <C:/Work/Applications/GitHub/M
 ultiscale-Network-Test/Draft/overleaf version/Dx1.pdf> <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/overle
 af version/Dx5.pdf> <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/overleaf version/Dx50.pdf>] [5] [6]
-<ThreeSBM_results_simple.png, id=193, 481.8pt x 481.8pt>
+<ThreeSBM_results_simple.png, id=202, 481.8pt x 481.8pt>
 File: ThreeSBM_results_simple.png Graphic file (type png)
  <use ThreeSBM_results_simple.png>
-Package pdftex.def Info: ThreeSBM_results_simple.png used on input line 237.
+Package pdftex.def Info: ThreeSBM_results_simple.png used on input line 232.
 (pdftex.def)             Requested size: 245.71474pt x 245.71474pt.
  [7 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/overleaf version/ThreeSBM_results_simple.png>]
-<mono_simple.pdf, id=206, 1084.05pt x 433.62pt>
+<mono_simple.pdf, id=215, 1084.05pt x 433.62pt>
 File: mono_simple.pdf Graphic file (type pdf)
  <use mono_simple.pdf>
-Package pdftex.def Info: mono_simple.pdf used on input line 254.
+Package pdftex.def Info: mono_simple.pdf used on input line 249.
 (pdftex.def)             Requested size: 347.0383pt x 138.81416pt.
- <tau_simple.pdf, id=210, 1084.05pt x 433.62pt>
+ <tau_simple.pdf, id=219, 1084.05pt x 433.62pt>
 File: tau_simple.pdf Graphic file (type pdf)
 
 <use tau_simple.pdf>
-Package pdftex.def Info: tau_simple.pdf used on input line 271.
+Package pdftex.def Info: tau_simple.pdf used on input line 266.
 (pdftex.def)             Requested size: 347.0383pt x 138.81416pt.
- <nodecontri.pdf, id=211, 1228.59pt x 433.62pt>
+ <nodecontri.pdf, id=220, 1228.59pt x 433.62pt>
 File: nodecontri.pdf Graphic file (type pdf)
  <use nodecontri.pdf>
-Package pdftex.def Info: nodecontri.pdf used on input line 282.
+Package pdftex.def Info: nodecontri.pdf used on input line 277.
 (pdftex.def)             Requested size: 347.0383pt x 122.48463pt.
  [8 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/overleaf version/mono_simple.pdf>] [9 <C:/Work/Applicatio
 ns/GitHub/Multiscale-Network-Test/Draft/overleaf version/tau_simple.pdf> <C:/Work/Applications/GitHub/Multiscale-Network
 -Test/Draft/overleaf version/nodecontri.pdf>] ("C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\overleaf versi
-on\shortversion.bbl" [10]
-[11]) [12]
-Underfull \hbox (badness 1152) in paragraph at lines 346--351
+on\shortversion.bbl"
+Missing character: There is no Å in font cmr10!
+Missing character: There is no ‘ in font cmr10!
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no © in font cmr10!
+ [10]
+[11] [12])
+Underfull \hbox (badness 1152) in paragraph at lines 341--346
 \OT1/cmr/m/n/10.95 for any $\OML/cmm/m/it/10.95 r$\OT1/cmr/m/n/10.95 th row ($\OML/cmm/m/it/10.95 r \OMS/cmsy/m/n/10.95 
 2 f\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; :::; q\OMS/cmsy/m/n/10.95 g$\OT1/
 cmr/m/n/10.95 , $(\OML/cmm/m/it/10.95 q \OMS/cmsy/m/n/10.95  \OML/cmm/m/it/10.95 n\OT1/cmr/m/n/10.95 )$), we can see th
@@ -576,21 +581,25 @@ at $\OML/cmm/m/it/10.95 P[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 [][]$ \O
  []
 
 [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 390.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 385.
  [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 390.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 385.
  ("C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\overleaf version\shortversion.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 390.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 390.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 385.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 385.
 Package rerunfilecheck Info: File `shortversion.out' has not changed.
 (rerunfilecheck)             Checksum: 24438BE1210567B196C212838AB4C340;691.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 390.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 385.
  ) 
 Here is how much of TeX's memory you used:
- 9351 strings out of 493921
- 139205 string characters out of 3147277
- 234875 words of memory out of 3000000
- 12436 multiletter control sequences out of 15000+200000
+ 9371 strings out of 493921
+ 139646 string characters out of 3147277
+ 235016 words of memory out of 3000000
+ 12451 multiletter control sequences out of 15000+200000
  15373 words of font info for 60 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  36i,18n,46p,1805b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -605,9 +614,9 @@ cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/m
 sbm10.pfb>
-Output written on shortversion.pdf (14 pages, 532752 bytes).
+Output written on shortversion.pdf (14 pages, 534671 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
- 68 named destinations out of 1000 (max. 500000)
+ 361 PDF objects out of 1000 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
  129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
