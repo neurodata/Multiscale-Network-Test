@@ -49,7 +49,7 @@ anchorcolor = blue]{hyperref}
 {#1}\small\normalsize} \spacingset{1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{\bf Testing independence in networks via family of network metrics}
+\title{\bf Nonparametric Network Dependence Testing By Diffusion Distance}
 \if1\blind
 {\author[1]{Youjin Lee (ylee160@jhu.edu)} %\thanks{cshen6@jhu.edu}}
 	\author[2]{Cencheng Shen} %\thanks{cshen6@jhu.edu}}
@@ -67,18 +67,18 @@ anchorcolor = blue]{hyperref}
 		\bigskip
 		\bigskip
 		\begin{center}
-			{\LARGE\bf Testing independence in networks via family of network metrics}
+			{\LARGE\bf Nonparametric Network Dependence Testing By Diffusion Maps}
 		\end{center}
 		\medskip
 	} \fi
 
 \begin{abstract}
 %The text of your abstract. 200 or fewer words.
-Investigating how network structures are associated with nodal attributes of interest is a core problem in network science. As the network topology is a structured and often high-dimensional object, many traditional nonparametric tests are no longer applicable and parametric approaches are dominant in graph inferences. Here we propose a new procedure to testing dependence between graphs and attributes, via diffusion distances and distance-based correlation testing. We demonstrate that our nonparametric method not only yields a consistent test statistic under common network models, but also significantly surpasses the testing power of existing benchmarks under various circumstances.  	\cs{changetitle? what about Network Dependence Testing? or add Nonparametric before that, and diffusion distance after that?}
+Investigating how network structures are associated with nodal attributes of interest is a core problem in network science. As the network topology is a structured and often high-dimensional object, many traditional nonparametric tests are no longer applicable and parametric approaches are dominant in graph inferences. Here we propose a new procedure to testing dependence between graphs and attributes, via diffusion distances and distance-based correlation testing. We demonstrate that our nonparametric method not only yields a consistent test statistic under common network models, but also significantly surpasses the testing power of existing benchmarks under various circumstances. 
 \end{abstract}
 
 \noindent%
-{\it Keywords:} network dependence, distance correlation, exchangeable graph, diffusion maps
+{\it Keywords:} testing independence, exchangeable graph, diffusion distance, distance correlation, multiscale generalized correlation
 
 \sloppy
 \doublespacing
@@ -94,7 +94,7 @@ Mathematically, a graph (or equivalently a network) $\mathbf{G}=(V,E)$ consists 
 %Despite of many recent development, the network data, different from a random vector, still suffers from a dearth of proper analysis, mainly due to its structured and high-dimensional nature. 
 
 % testing dependence on graphs
-When it comes to investigating the relationships among network data, a core problem is to detect dependency between network topology and nodal attributes, i.e., certain properties defined on nodes. For example, each person on Facebook not only has a number of distinct attributes (e.g., occupations, sex, personal behaviors), but also interacts with other persons via the social network; in neuro-science, each brain region has its own functionality, and is connected with other regions in the brain map. Identifying dependency between network and nodal attributes has also primarily focused on their relationship explained only by network model under the boundary of model assumption \cite{wasserman1996logit, howard2016understanding, fosdick2015testing}. For example, the test by Fosdick and Hoff \cite{fosdick2015testing} estimates the latent factor of each node, then proceeds to test network dependence on the covariance via assuming a normal distribution of the latent factors. \cs{is that right?} To our best knowledge so far, there is no principled method to compute a model-free correlation measure for testing network dependency. 
+When it comes to investigating the relationships among network data, a core problem is to detect dependency between network topology and nodal attributes, i.e., certain properties defined on nodes. For example, each person on Facebook not only has a number of distinct attributes (e.g., occupations, sex, personal behaviors), but also interacts with other persons via the social network; in neuro-science, each brain region has its own functionality, and is connected with other regions in the brain map. Identifying dependency between network and nodal attributes has also primarily focused on their relationship explained only by network model under the boundary of model assumption \cite{wasserman1996logit, howard2016understanding, fosdick2015testing}. For example, the test by Fosdick and Hoff \cite{fosdick2015testing} estimates the latent factor of each node, then proceeds to test network dependence on the covariance via assuming a multivariate normal distribution of the latent factors. To our best knowledge so far, there is no principled method to compute a model-free correlation measure for testing network dependency. 
 
 % Testing dependence
 On the other hand, the general problem of dependence testing between two random vectors has seen notable progress in recent years. The Pearson's correlation~\cite{Pearson1895} is the most classical approach, which determines the existence of linear relationship via a correlation coefficient in the range of $[-1,1]$, with $0$ indicating no linear association while $\pm 1$ indicating perfect linear association. To capture all types of dependencies not limited to linear relationship, new correlation measures and nonparametric statistics have been suggested recently, such as the Mantel coefficient \cite{mantel1967}, RV coefficient \cite{RobertEscoufier1976}, distance correlation and energy statistic \cite{szekely2007measuring,szekelyRizzo2013a, RizzoSzekely2016}, kernel-based independence test \cite{GrettonGyorfi2010}, HHG test by chi-square table \cite{HellerGorfine2013,heller2016consistent}, and multiscale generalized correlation \cite{shen2016discovering}. In particular, the distance correlation by Szekely et al. \cite{szekely2007measuring} is the first correlation measure that is consistent against all possible dependencies (with finite moments), and the multiscale generalized correlation (\texttt{MGC}) statistic by Shen et al. \cite{shen2016discovering} inherits the same consistency of distance correlation with remarkable better finite-sample testing powers under high-dimensional and nonlinear dependencies, via defining a family of distance-based local correlations and efficiently searching the optimal correlation in testing. Since all above methods are non-parametric and do not depend on particular models, the network dependency testing may be significantly improved if some of them can be employed on graphs.
@@ -110,8 +110,7 @@ To overcome the theoretical barricades by the distinct structure of network data
 \subsection{Diffusion Maps and Diffusion Distances}
 \label{ssec:method2}
 
-In this section, we introduce a family of network geometries of an exchangeable graph \cite{coifman2006diffusion} that can yield conditional \textit{i.i.d.} samples.
-\cs{why geometries?}
+In this section, we introduce a family of network geometries of an exchangeable graph \cite{coifman2006diffusion} that can yield node-wise conditional \textit{i.i.d.} samples.
 
 A graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \cite{orbanz2015bayesian}, i.e.~for every permutation $\sigma$ of $n$, $(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma(j)})$. Most generative statistical network models satisfy this property, including all aforementioned graph models.
 
@@ -129,15 +128,17 @@ Under an exchangeable graph, Lemma~\ref{main_lemma} proves that the node-specifi
 	\label{main_lemma}
 	Assume that $\mathbf{G}$ is an exchangeable random graph that is connected. Then the diffusion maps $\{ \mathbf{U}_{t}(i) : i = 1, \ldots, n \}$ are conditionally \textit{i.i.d} given its underlying distribution.   
 \end{lemma}
-\cs{removed undirected and unweighted for now; need to change proof accordingly} 
+\cs{removed undirected and unweighted for now; I still need to change proof accordingly} 
+
+\cs{add in a lemma saying all models above are exchangeable}
 
 Then we can define the \textit{diffusion distance} between each pair of nodes, by computing the Euclidean distance of the diffusion maps. 
 \begin{equation}
 \label{eq:diffusion}
 C^2_{t}[i,j]  :=   \parallel \mathbf{U}_{t}(i) - \mathbf{U}_{t}(j) \parallel   \quad i,j = 1,2, \ldots , n.
 \end{equation}
-As diffusion time $t$ increases, the corresponding diffusion distance $C_{t}$ reveals the geometric structure of the network topology in a larger and larger scale, and is thus more likely to take into account of two nodes which are relatively difficult to reach each other. Figure~\ref{fig:diffusions} shows how diffusion distance can better reflects the connectivity and exhibits the community structure in a graph, when a reasonable $t$ is chosen in the family of diffusion distances $\{ C_{t} : t \in \mathbb{N} \}$. In practice, $t \in [5,20]$ usually yields similar diffusion distance and suffices for later inferences. Compared to adjacent relation or geodesic distance which are two extremes in terms of the range of nodes in the count, diffusion distance well reflects the connectivity since it takes into account every possible path between the two nodes. 
-\cs{is the above sentence correct? Adjacent relation is equivalent to $t=0$ and geodesic corresponds to $t=\infty$?} : \textcolor{red}{I did not mean adjacent relation necessarily corresponds to the case $t=0$ and geodesic to $t = \infty$ but they are extreme in general.}
+As diffusion time $t$ increases, the corresponding diffusion distance $C_{t}$ reveals the geometric structure of the network topology in a larger and larger scale, and is thus more likely to take into account of two nodes which are relatively difficult to reach each other. Figure~\ref{fig:diffusions} shows how diffusion distance can better reflects the connectivity and exhibits the community structure in a graph, when a reasonable $t$ is chosen in the family of diffusion distances $\{ C_{t} : t \in \mathbb{N} \}$. In practice, $t \in [5,20]$ usually yields similar diffusion distance and suffices for later inferences. Compared to adjacent relation or geodesic distance%which are two extremes in terms of the range of nodes in the count
+, diffusion distance better reflects the connectivity since it takes into account every possible path between the two nodes. 
 
 \begin{figure}[ht]
 	\centering
@@ -165,7 +166,7 @@ As diffusion time $t$ increases, the corresponding diffusion distance $C_{t}$ re
 		\caption{}
 		\label{fig:d}
 	\end{subfigure}
-	\caption{Figure (a) shows data generating probability of an adjacency matrix $\mathbf{A}$ and nodal attributes $\mathbf{X}$. Diffusion matrix, as a proposed network metric, provides one-parameter family of network-based distances where as time goes by the pattern shown in the distance matrix changes, and at time point $t = 5$, distance matrix (c) illustrates most clear block structures and at the same time it exhibits most dependence to distance matrix of $\mathbf{X}$.}
+	\caption{Panel (a) shows data generating probability of an adjacency matrix $\mathbf{A}$ and nodal attributes $\mathbf{X}$. Diffusion distances, as a proposed network metric, provides one-parameter family of network-based distances where as time goes by the pattern shown in the distance matrix changes, and at time point $t = 5$, distance distance in panel (c) illustrates most clear block structures and the most distinct dependency to the attributes $\mathbf{X}$.}
 	\label{fig:diffusions}
 \end{figure}
 
@@ -219,21 +220,21 @@ For each simulation model and each test, we repeatedly generate sample data for 
 
 \subsection{Stochastic Block Model}
 
-We first consider a Stochastic Block Model (SBM) with $3$ blocks, i.e., partition the vertices into $3$ communities, and generate the edges by a Bernoulli random variable whose probability that is determined by the communities of the connecting vertices. Assume $n=100$ vertices whose class label $\mathbf{x}_i$ takes value in $0,1,2$ equally likely. The edge probability is designed as
+We first consider a Stochastic Block Model (SBM) with $3$ blocks, i.e., partition the vertices into $3$ communities, and generate the edges by a Bernoulli random variable whose probability that is determined by the communities of the connecting vertices. Assume $n=100$ vertices whose class label $\mathbf{x}_i$ takes values in $0,1,2$ equally likely. The edge probability is designed as
 \begin{equation}
 \label{eq:Three}
 E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 1) + 0.3 I(|X_{i} - X_{j}| = 2), \quad i,j = 1, \ldots, n = 100.
 \end{equation} 
 Namely, within-block edge probability is $0.5$, between-block edge probability is $0.2$ or $0.3$ depending on the communities. This 3-block model describes a nonlinear dependency between the network topology and the class labels, where \texttt{MGC} should work the best when coupled with a proper metric. Indeed, Figure~\ref{fig:threeSBM} illustrates that \texttt{MGC} combined with diffusion maps yields the most superior power comparing to all other benchmarks.
-\cs{what is the choice of t? It is better to say we take $t=5$ or $10$ throughout than hand-picking the optimal.}
+\cs{I will say $t=5$ here, and add $t=3$ to $10$ is very similar.}
 
 \begin{SCfigure}[][ht]
 	\centering
 	\includegraphics[width=0.4\paperwidth, height=0.4\paperwidth]{ThreeSBM_results_simple.png}
-	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) with diffusion distance in the three-block SBM (equation~\ref{eq:Three}), compared to with adjacency matrix distance or latent factor distance, or other test statistics on the three distance metrics. This demonstrates one exemplary network where \texttt{MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.}
+	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) with diffusion distance in the three-block SBM (equation~\ref{eq:Three}), compared to all other choices of distance metric and all other test statistics.}
 	\label{fig:threeSBM}
 \end{SCfigure}
-\cs{change mcorr to dcorr in this figure}
+\cs{change mcorr to dcorr in figure2-5}
 
 To further validate the advantage of our procedure, and better understand the advantage of \texttt{MGC}, next we control the amount of \textit{nonlinear dependency} through changing the value of $\theta \in (0, 1)$ in the edge probability by the following model
 \begin{equation}
@@ -241,13 +242,11 @@ E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 
 \label{eq:mono}
 \vspace*{-0.4cm}
 \end{equation}
-%where  $X_{i} \overset{i.i.d}{\sim} Bern(0.5); i =1, \ldots, 100$.
-\cs{it used to say $X_i$ iid bern(0.5) here. Shouldn't be same as previous model?} 
 When $\theta > 0.2$, the network dependency changes from a close to linear relationship to strongly nonlinear, and Figure~\ref{fig:powerplot} shows how the power change with respect to $\theta$. There is a clear trend that both the \texttt{dcorr} and \texttt{FH} tests have deteriorating power, while \texttt{MGC} under the graph domain still inherits its advantage in tackling nonlinear dependency. The same advantage holds by varying the SBM parameters.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{mono_simple.pdf}
-	\caption{X-axis of $\theta$ controls the existence/amount of nonlinear dependency and in this particular case strong nonlinearity exists when $\theta > 0.2$ and gets more obvious as $\theta$ increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt{mCorr} or \texttt{FH} test but relatively stable power of \texttt{MGC} under nonlinear dependency.}
+	\caption{This demonstrates how the \texttt{MGC} statistic can better capture the nonlinear dependencies than other statistics. X-axis of $\theta$ controls the existence/amount of nonlinear dependency, where strong nonlinearity exists when $\theta > 0.2$ and gets stronger as $\theta$ increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt{mCorr} or \texttt{FH} test but relatively stable power of \texttt{MGC} under nonlinear dependency.}
 	\label{fig:powerplot}
 \end{figure}
 
@@ -260,7 +259,6 @@ E( A_{ij} | \mathbf{X}, \mathbf{V} )  = 0.2 V_{i} V_{j} \cdot I ( |X_{i} - X_{j}
 \vspace*{-0.4cm}
 \end{equation} 
 where $X_{i} \overset{i.i.d.}{\sim} Bern(0.5);  V_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau), i = 1, \ldots, 250.$
-\cs{again, is $X_i$ right? two block?}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.7\linewidth]{tau_simple.pdf}
@@ -268,7 +266,7 @@ where $X_{i} \overset{i.i.d.}{\sim} Bern(0.5);  V_{i} \overset{i.i.d}{\sim} Unif
 	\label{fig:dcSBM}
 	\vspace*{-0.5cm}
 \end{figure}	
-\cs{it is a bit confusing this figure has different legends}
+\cs{it is a bit confusing figure 3 \& 4 has different legends. Let us do MGC $\circ$ DM, MGC $\circ$ AM, MGC $\circ$ LF for the legends.}
 
 \subsection{Node Contribution Test}
 \label{ssec:node}
