@@ -37,6 +37,9 @@
 \citation{shen2016discovering}
 \citation{coifman2006diffusion}
 \citation{orbanz2015bayesian}
+\citation{rohe2011spectral,todeschini2016exchangeable}
+\citation{todeschini2016exchangeable}
+\citation{sussman2014consistent}
 \citation{coifman2006diffusion,lafon2006diffusion}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Results}{3}{section.2}}
 \newlabel{sec:method}{{2}{3}{Results}{section.2}{}}
@@ -55,9 +58,9 @@
 \newlabel{sub@fig:d}{{d}{4}{\relax }{figure.caption.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Panel (a) shows data generating probability of an adjacency matrix $\mathbf  {A}$ and nodal attributes $\mathbf  {X}$. Diffusion distances, as a proposed network metric, provides one-parameter family of network-based distances where as time goes by the pattern shown in the distance matrix changes, and at time point $t = 5$, distance distance in panel (c) illustrates most clear block structures and the most distinct dependency to the attributes $\mathbf  {X}$.\relax }}{4}{figure.caption.1}}
 \newlabel{fig:diffusions}{{1}{4}{Panel (a) shows data generating probability of an adjacency matrix $\mathbf {A}$ and nodal attributes $\mathbf {X}$. Diffusion distances, as a proposed network metric, provides one-parameter family of network-based distances where as time goes by the pattern shown in the distance matrix changes, and at time point $t = 5$, distance distance in panel (c) illustrates most clear block structures and the most distinct dependency to the attributes $\mathbf {X}$.\relax }{figure.caption.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Dependence Testing via \texttt  {MGC}}{4}{subsection.2.2}}
-\newlabel{ssec:method1}{{2.2}{4}{Dependence Testing via \texttt {MGC}}{subsection.2.2}{}}
 \citation{HellerGorfine2013}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Dependence Testing via \texttt  {MGC}}{5}{subsection.2.2}}
+\newlabel{ssec:method1}{{2.2}{5}{Dependence Testing via \texttt {MGC}}{subsection.2.2}{}}
 \newlabel{eq:dCov}{{2}{5}{Dependence Testing via \texttt {MGC}}{equation.2.2}{}}
 \citation{fosdick2015testing}
 \newlabel{theoremMain}{{2.2}{6}{}{theorem.2.2}{}}
@@ -70,28 +73,28 @@
 \newlabel{SC@1}{{\caption@xref {??}{ on input line 236}}{7}{Stochastic Block Model}{figure.caption.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt  {MGC}) with diffusion distance in the three-block SBM (equation\nobreakspace  {}\ref  {eq:Three}), compared to all other choices of distance metric and all other test statistics.\relax }}{7}{figure.caption.2}}
 \newlabel{fig:threeSBM}{{2}{7}{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt {MGC}) with diffusion distance in the three-block SBM (equation~\ref {eq:Three}), compared to all other choices of distance metric and all other test statistics.\relax }{figure.caption.2}{}}
-\newlabel{eq:mono}{{5}{7}{Stochastic Block Model}{equation.3.5}{}}
 \citation{karrer2011stochastic}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces This demonstrates how the \texttt  {MGC} statistic can better capture the nonlinear dependencies than other statistics. X-axis of $\theta $ controls the existence/amount of nonlinear dependency, where strong nonlinearity exists when $\theta > 0.2$ and gets stronger as $\theta $ increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt  {mCorr} or \texttt  {FH} test but relatively stable power of \texttt  {MGC} under nonlinear dependency.\relax }}{8}{figure.caption.3}}
-\newlabel{fig:powerplot}{{3}{8}{This demonstrates how the \texttt {MGC} statistic can better capture the nonlinear dependencies than other statistics. X-axis of $\theta $ controls the existence/amount of nonlinear dependency, where strong nonlinearity exists when $\theta > 0.2$ and gets stronger as $\theta $ increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt {mCorr} or \texttt {FH} test but relatively stable power of \texttt {MGC} under nonlinear dependency.\relax }{figure.caption.3}{}}
+\newlabel{eq:mono}{{5}{8}{Stochastic Block Model}{equation.3.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces This demonstrates how the \texttt  {MGC} statistic can better capture the nonlinear dependencies than other statistics. X-axis of $\theta $ controls the existence/amount of nonlinear dependency, where strong nonlinearity exists when $\theta > 0.2$ and gets stronger as $\theta $ increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt  {dCorr} or \texttt  {FH} test but relatively stable power of \texttt  {MGC} under nonlinear dependency.\relax }}{8}{figure.caption.3}}
+\newlabel{fig:powerplot}{{3}{8}{This demonstrates how the \texttt {MGC} statistic can better capture the nonlinear dependencies than other statistics. X-axis of $\theta $ controls the existence/amount of nonlinear dependency, where strong nonlinearity exists when $\theta > 0.2$ and gets stronger as $\theta $ increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt {dCorr} or \texttt {FH} test but relatively stable power of \texttt {MGC} under nonlinear dependency.\relax }{figure.caption.3}{}}
 \newlabel{eq:tau}{{6}{8}{Stochastic Block Model}{equation.3.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Node Contribution Test}{8}{subsection.3.2}}
-\newlabel{ssec:node}{{3.2}{8}{Node Contribution Test}{subsection.3.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt  {FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt  {MGC}.\relax }}{9}{figure.caption.4}}
 \newlabel{fig:dcSBM}{{4}{9}{In degree-corrected SBM where the variability in degree distribution increases as $\tau $ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt {FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt {MGC}.\relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Node Contribution Test}{9}{subsection.3.2}}
+\newlabel{ssec:node}{{3.2}{9}{Node Contribution Test}{subsection.3.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces This plot describes that both power of \texttt  {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, which validates the use of node contribution measure in independence test.\relax }}{9}{figure.caption.5}}
 \newlabel{fig:contribution}{{5}{9}{This plot describes that both power of \texttt {MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, which validates the use of node contribution measure in independence test.\relax }{figure.caption.5}{}}
 \newlabel{eq:contri}{{7}{9}{Node Contribution Test}{equation.3.7}{}}
-\newlabel{eq:inclusion_rate}{{8}{9}{Node Contribution Test}{equation.3.8}{}}
 \bibdata{reference}
 \bibcite{coifman2006diffusion}{{1}{2006}{{Coifman and Lafon}}{{}}}
 \bibcite{erdosrenyi1959}{{2}{1959}{{Erdős and Rényi}}{{}}}
 \bibcite{fosdick2015testing}{{3}{2015}{{Fosdick and Hoff}}{{}}}
+\newlabel{eq:inclusion_rate}{{8}{10}{Node Contribution Test}{equation.3.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{10}{section.4}}
+\newlabel{sec:conc}{{4}{10}{Conclusion}{section.4}{}}
 \bibcite{Gilbert1959}{{4}{1959}{{Gilbert}}{{}}}
 \bibcite{GrettonGyorfi2010}{{5}{2010}{{Gretton and Gyorfi}}{{}}}
 \bibcite{HellerGorfine2013}{{6}{2013}{{Heller et~al.}}{{Heller, Heller, and Gorfine}}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{10}{section.4}}
-\newlabel{sec:conc}{{4}{10}{Conclusion}{section.4}{}}
 \bibcite{heller2016consistent}{{7}{2016}{{Heller et~al.}}{{Heller, Heller, Kaufman, Brill, and Gorfine}}}
 \bibcite{HollandEtAl1983}{{8}{1983}{{Holland et~al.}}{{Holland, Laskey, and Leinhardt}}}
 \bibcite{howard2016understanding}{{9}{2016}{{Howard et~al.}}{{Howard, Cox~Pahnke, Boeker, et~al.}}}
@@ -110,16 +113,17 @@
 \bibcite{szekelyRizzo2013a}{{22}{2013}{{Szekely and Rizzo}}{{}}}
 \bibcite{szekely2007measuring}{{23}{2007}{{Sz{\'e}kely et~al.}}{{Sz{\'e}kely, Rizzo, Bakirov, et~al.}}}
 \bibcite{TangSussmanPriebe2013}{{24}{2013}{{Tang et~al.}}{{Tang, Sussman, and Priebe}}}
-\bibcite{wasserman1996logit}{{25}{1996}{{Wasserman and Pattison}}{{}}}
-\bibcite{YoungScheinerman2007}{{26}{2007}{{Young and Scheinerman}}{{}}}
-\bibcite{ZhaoLevinaZhu2012}{{27}{2012}{{Zhao et~al.}}{{Zhao, Levina, and Zhu}}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Appendix}{12}{section.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Lemmas and Theorems}{12}{subsection.5.1}}
-\newlabel{ssec:proof}{{5.1}{12}{Lemmas and Theorems}{subsection.5.1}{}}
+\bibcite{todeschini2016exchangeable}{{25}{2016}{{Todeschini and Caron}}{{}}}
+\bibcite{wasserman1996logit}{{26}{1996}{{Wasserman and Pattison}}{{}}}
+\bibcite{YoungScheinerman2007}{{27}{2007}{{Young and Scheinerman}}{{}}}
+\bibcite{ZhaoLevinaZhu2012}{{28}{2012}{{Zhao et~al.}}{{Zhao, Levina, and Zhu}}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Appendix}{13}{section.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Lemmas and Theorems}{13}{subsection.5.1}}
+\newlabel{ssec:proof}{{5.1}{13}{Lemmas and Theorems}{subsection.5.1}{}}
 \citation{szekely2007measuring}
 \citation{szekely2007measuring}
-\newlabel{eq:conv1}{{11}{13}{Lemmas and Theorems}{equation.5.11}{}}
 \citation{szekely2007measuring}
 \citation{shen2016discovering}
+\newlabel{eq:conv1}{{11}{14}{Lemmas and Theorems}{equation.5.11}{}}
 \newlabel{eq:SLLN}{{12}{14}{Lemmas and Theorems}{equation.5.12}{}}
 \newlabel{eq:conv2}{{13}{14}{Lemmas and Theorems}{equation.5.13}{}}

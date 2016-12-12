@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -157,6 +157,12 @@ M.~Tang, D.~L. Sussman, and C.~E. Priebe.
   graphs.
 \newblock \emph{Annals of Statistics}, 41\penalty0 (3):\penalty0 1406--1430,
   2013.
+
+\bibitem[Todeschini and Caron(2016)]{todeschini2016exchangeable}
+Adrien Todeschini and Fran{\c{c}}ois Caron.
+\newblock Exchangeable random measures for sparse and modular graphs with
+  overlapping communities.
+\newblock \emph{arXiv preprint arXiv:1602.02114}, 2016.
 
 \bibitem[Wasserman and Pattison(1996)]{wasserman1996logit}
 Stanley Wasserman and Philippa Pattison.

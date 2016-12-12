@@ -112,7 +112,7 @@ To overcome the theoretical barricades by the distinct structure of network data
 
 In this section, we introduce a family of network geometries of an exchangeable graph \cite{coifman2006diffusion} that can yield node-wise conditional \textit{i.i.d.} samples.
 
-A graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \cite{orbanz2015bayesian}, i.e.~for every permutation $\sigma$ of $n$, $(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma(j)})$. Most generative statistical network models satisfy this property, including all aforementioned graph models.
+A graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \cite{orbanz2015bayesian}, i.e.~for every permutation $\sigma$ of $n$, $(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma(j)})$. Most generative statistical network models, such as stochastic block model~\citep{rohe2011spectral, todeschini2016exchangeable}, degree-corrected stochastic block model~\citep{todeschini2016exchangeable}, and latent position model~\citep{sussman2014consistent}, satisfy this property.
 
 Coifman and Lafon~\cite{coifman2006diffusion,lafon2006diffusion} proposed multiscale geometries of data called diffusion maps, which is constructed by iterating the transition matrix that determines random walk on graph. 
 %inherit every local relation between the nodes when applied in network. The diffusion maps are constructed by iterating transition matrix which determines random walk on graph, i.e.,
@@ -128,9 +128,9 @@ Under an exchangeable graph, Lemma~\ref{main_lemma} proves that the node-specifi
 	\label{main_lemma}
 	Assume that $\mathbf{G}$ is an exchangeable random graph that is connected. Then the diffusion maps $\{ \mathbf{U}_{t}(i) : i = 1, \ldots, n \}$ are conditionally \textit{i.i.d} given its underlying distribution.   
 \end{lemma}
-\cs{removed undirected and unweighted for now; I still need to change proof accordingly} 
+\cs{removed undirected and unweighted for now; I still need to change proof accordingly} : \textcolor{red}{I haven't tried to prove in this case. If you want to try undirected graph, you need different definitions on diffusion maps, and i think unweighted graph needs different proof.}
 
-\cs{add in a lemma saying all models above are exchangeable}
+\cs{add in a lemma saying all models above are exchangeable} \textcolor{red}{I added references in the above.}
 
 Then we can define the \textit{diffusion distance} between each pair of nodes, by computing the Euclidean distance of the diffusion maps. 
 \begin{equation}
@@ -214,7 +214,7 @@ which is proportional to $v^{th}$ column-sum of the pre-summed test statistic of
 \section{Simulation Study}
 \label{sec:simulation}
 	\vspace*{-0.2cm}
-Next we investigate our approach via simulated models and empirical performances. In the simulation studies, we compare the empirical testing powers of four test statistics: \texttt{MGC}, \texttt{dCorr}, Heller-Heller-Gorfine (\texttt{HHG}), and likelihood ratio test of Fosdick and Hoff (\texttt{FH})~\cite{fosdick2015testing}. For the first three statistics, we further experiment on three different metrics of the network topology: the Euclidean distances of the diffusion maps (\texttt{DF}), of the adjacency vectors ((\texttt{Adj})), and of the latent factors (\texttt{LT}, which is based on singular value decomposition of the adjacency matrix). The \texttt{FH} likelihood ratio test must always be based on the latent factors.
+Next we investigate our approach via simulated models and empirical performances. In the simulation studies, we compare the empirical testing powers of four test statistics: \texttt{MGC}, \texttt{dCorr}, Heller-Heller-Gorfine (\texttt{HHG}), and likelihood ratio test of Fosdick and Hoff (\texttt{FH})~\cite{fosdick2015testing}. For the first three statistics, we further experiment on three different metrics of the network topology: the Euclidean distances of the diffusion maps (\texttt{DF}), of each column of adjacency matrix (\texttt{AM}), and of the latent factors (\texttt{LF}, which is based on singular value decomposition of the adjacency matrix). The \texttt{FH} likelihood ratio test must always be based on the latent factors.
 
 For each simulation model and each test, we repeatedly generate sample data for $500$ times, carry out the permutation test, and reject the null if the resulting p-value is less than $0.05$. The testing power of each method equals the percentage of correct rejection. %The simulation models are shown by joint distribution of adjacent matrix $\mathbf{A}$ and nodal attributes $\mathbf{X}$. %We introduced a popular network model of Stochastic Block Model (SBM) as our main simulated networks. 
 
@@ -230,7 +230,7 @@ Namely, within-block edge probability is $0.5$, between-block edge probability i
 
 \begin{SCfigure}[][ht]
 	\centering
-	\includegraphics[width=0.4\paperwidth, height=0.4\paperwidth]{ThreeSBM_results_simple.png}
+	\includegraphics[width=0.4\paperwidth, height=0.4\paperwidth]{ThreeSBM_results_short.png}
 	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) with diffusion distance in the three-block SBM (equation~\ref{eq:Three}), compared to all other choices of distance metric and all other test statistics.}
 	\label{fig:threeSBM}
 \end{SCfigure}
@@ -245,8 +245,8 @@ E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 
 When $\theta > 0.2$, the network dependency changes from a close to linear relationship to strongly nonlinear, and Figure~\ref{fig:powerplot} shows how the power change with respect to $\theta$. There is a clear trend that both the \texttt{dcorr} and \texttt{FH} tests have deteriorating power, while \texttt{MGC} under the graph domain still inherits its advantage in tackling nonlinear dependency. The same advantage holds by varying the SBM parameters.
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{mono_simple.pdf}
-	\caption{This demonstrates how the \texttt{MGC} statistic can better capture the nonlinear dependencies than other statistics. X-axis of $\theta$ controls the existence/amount of nonlinear dependency, where strong nonlinearity exists when $\theta > 0.2$ and gets stronger as $\theta$ increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt{mCorr} or \texttt{FH} test but relatively stable power of \texttt{MGC} under nonlinear dependency.}
+	\includegraphics[width=0.7\linewidth]{mono_short.pdf}
+	\caption{This demonstrates how the \texttt{MGC} statistic can better capture the nonlinear dependencies than other statistics. X-axis of $\theta$ controls the existence/amount of nonlinear dependency, where strong nonlinearity exists when $\theta > 0.2$ and gets stronger as $\theta$ increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt{dCorr} or \texttt{FH} test but relatively stable power of \texttt{MGC} under nonlinear dependency.}
 	\label{fig:powerplot}
 \end{figure}
 
@@ -261,7 +261,7 @@ E( A_{ij} | \mathbf{X}, \mathbf{V} )  = 0.2 V_{i} V_{j} \cdot I ( |X_{i} - X_{j}
 where $X_{i} \overset{i.i.d.}{\sim} Bern(0.5);  V_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau), i = 1, \ldots, 250.$
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{tau_simple.pdf}
+	\includegraphics[width=0.7\linewidth]{tau_short.pdf}
 	\caption{In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt{FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt{MGC}.}
 	\label{fig:dcSBM}
 	\vspace*{-0.5cm}
