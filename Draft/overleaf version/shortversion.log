@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.7)  11 DEC 2016 21:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.7)  11 DEC 2016 21:25
 entering extended mode
 **shortversion.tex
-(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion.tex
+(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion\shortversion.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, arabic, armenian, assamese, basque, bengali
 , bokmal, bulgarian, catalan, coptic, croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, galic
@@ -252,15 +252,14 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \c@ContinuedFloat=\count112
 Package caption Info: hyperref package is loaded.
 )
-(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\authblk.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\preprint\authblk.sty"
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip47
 \@affilsep=\skip48
 \c@Maxaffil=\count113
 \c@authors=\count114
 \c@affil=\count115
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip49
 \bibsep=\skip50
@@ -268,10 +267,10 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count116
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
  ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
@@ -291,8 +290,7 @@ LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count119
 \calc@Cskip=\skip53
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\mh\mhsetup.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\mh\mhsetup.sty"
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
@@ -306,19 +304,21 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen131
 \l_MT_above_shortintertext_sep=\dimen132
 \l_MT_below_shortintertext_sep=\dimen133
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\dcolumn.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\dcolumn.sty"
 Package: dcolumn 2001/05/28 v1.06 decimal alignment package (DPC)
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen134
 \extrarowheight=\dimen135
 \NC@list=\toks22
 \extratabsurround=\skip55
 \backup@length=\skip56
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks23
 \verbatim@line=\toks24
@@ -330,7 +330,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box28
 \@float@everytoks=\toks26
 \@floatcapt=\box29
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@cnth=\count122
 \Gm@cntv=\count123
@@ -392,7 +393,7 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidthlast=\dimen151
 \titlewidthfirst=\dimen152
 )
-(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion.aux)
+(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion\shortversion.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
 LaTeX Font Info:    ... okay on input line 46.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
@@ -422,8 +423,8 @@ LaTeX Info: Redefining \ref on input line 46.
 LaTeX Info: Redefining \pageref on input line 46.
 LaTeX Info: Redefining \nameref on input line 46.
 
-(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion.out)
-(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion.out)
+(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion\shortversion.out)
+(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion\shortversion.out)
 \@outlinefile=\write4
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -514,63 +515,60 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Non-PDF special ignored!
 
 {C:/Users/Charlie/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3]
-<../Figure/Pmat.pdf, id=123, 505.89pt x 505.89pt>
-File: ../Figure/Pmat.pdf Graphic file (type pdf)
- <use ../Figure/Pmat.pdf>
-Package pdftex.def Info: ../Figure/Pmat.pdf used on input line 135.
+<Pmat.pdf, id=123, 505.89pt x 505.89pt>
+File: Pmat.pdf Graphic file (type pdf)
+ <use Pmat.pdf>
+Package pdftex.def Info: Pmat.pdf used on input line 135.
+(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
+ <Dx1.pdf, id=124, 505.89pt x 505.89pt>
+File: Dx1.pdf Graphic file (type pdf)
+ <use Dx1.pdf>
+Package pdftex.def Info: Dx1.pdf used on input line 142.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
-<../Figure/Dx1.pdf, id=124, 505.89pt x 505.89pt>
-File: ../Figure/Dx1.pdf Graphic file (type pdf)
- <use ../Figure/Dx1.pdf>
-Package pdftex.def Info: ../Figure/Dx1.pdf used on input line 142.
+<Dx5.pdf, id=125, 505.89pt x 505.89pt>
+File: Dx5.pdf Graphic file (type pdf)
+ <use Dx5.pdf>
+Package pdftex.def Info: Dx5.pdf used on input line 149.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
-
-<../Figure/Dx5.pdf, id=125, 505.89pt x 505.89pt>
-File: ../Figure/Dx5.pdf Graphic file (type pdf)
- <use ../Figure/Dx5.pdf>
-Package pdftex.def Info: ../Figure/Dx5.pdf used on input line 149.
+ <Dx50.pdf, id=126, 505.89pt x 505.89pt>
+File: Dx50.pdf Graphic file (type pdf)
+ <use Dx50.pdf>
+Package pdftex.def Info: Dx50.pdf used on input line 154.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
-
-<../Figure/Dx50.pdf, id=126, 505.89pt x 505.89pt>
-File: ../Figure/Dx50.pdf Graphic file (type pdf)
- <use ../Figure/Dx50.pdf>
-Package pdftex.def Info: ../Figure/Dx50.pdf used on input line 154.
-(pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
- [4 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Figure/Pmat.pdf> <C:/Work/Applications/GitHub/Multiscale-Networ
-k-Test/Figure/Dx1.pdf> <C:/Work/Applications/GitHub/Multiscale-Network-Test/Figure/Dx5.pdf> <C:/Work/Applications/GitHub
-/Multiscale-Network-Test/Figure/Dx50.pdf>]
-[5]
+ [4 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/shortversion/Pmat.pdf> <C:/Work/Applications/GitHub/Multi
+scale-Network-Test/Draft/shortversion/Dx1.pdf> <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/shortversion/D
+x5.pdf> <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/shortversion/Dx50.pdf>] [5]
 
 LaTeX Warning: Reference `eq:MGC' on page 6 undefined on input line 203.
 
-[6] <../Figure/ThreeSBM_results_simple.png, id=195, 481.8pt x 481.8pt>
-File: ../Figure/ThreeSBM_results_simple.png Graphic file (type png)
- <use ../Figure/ThreeSBM_results_simple.png>
-Package pdftex.def Info: ../Figure/ThreeSBM_results_simple.png used on input line 225.
+[6] <ThreeSBM_results_simple.png, id=195, 481.8pt x 481.8pt>
+File: ThreeSBM_results_simple.png Graphic file (type png)
+ <use ThreeSBM_results_simple.png>
+Package pdftex.def Info: ThreeSBM_results_simple.png used on input line 225.
 (pdftex.def)             Requested size: 245.71474pt x 245.71474pt.
 
-<../Figure/mono_simple.pdf, id=201, 1084.05pt x 433.62pt>
-File: ../Figure/mono_simple.pdf Graphic file (type pdf)
- <use ../Figure/mono_simple.pdf>
-Package pdftex.def Info: ../Figure/mono_simple.pdf used on input line 239.
+<mono_simple.pdf, id=201, 1084.05pt x 433.62pt>
+File: mono_simple.pdf Graphic file (type pdf)
+ <use mono_simple.pdf>
+Package pdftex.def Info: mono_simple.pdf used on input line 239.
 (pdftex.def)             Requested size: 347.0383pt x 138.81416pt.
- [7 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Figure/ThreeSBM_results_simple.png>] <../Figure/tau_simple.pdf,
- id=214, 1084.05pt x 433.62pt>
-File: ../Figure/tau_simple.pdf Graphic file (type pdf)
+ [7 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/shortversion/ThreeSBM_results_simple.png>] <tau_simple.pd
+f, id=214, 1084.05pt x 433.62pt>
+File: tau_simple.pdf Graphic file (type pdf)
 
-<use ../Figure/tau_simple.pdf>
-Package pdftex.def Info: ../Figure/tau_simple.pdf used on input line 255.
+<use tau_simple.pdf>
+Package pdftex.def Info: tau_simple.pdf used on input line 255.
 (pdftex.def)             Requested size: 347.0383pt x 138.81416pt.
- <../Figure/nodecontri.pdf, id=215, 1228.59pt x 433.62pt>
-File: ../Figure/nodecontri.pdf Graphic file (type pdf)
- <use ../Figure/nodecontri.pdf>
-Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 265.
+ <nodecontri.pdf, id=215, 1228.59pt x 433.62pt>
+File: nodecontri.pdf Graphic file (type pdf)
+ <use nodecontri.pdf>
+Package pdftex.def Info: nodecontri.pdf used on input line 265.
 (pdftex.def)             Requested size: 347.0383pt x 122.48463pt.
-
-[8 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Figure/mono_simple.pdf> <C:/Work/Applications/GitHub/Multiscale-
-Network-Test/Figure/tau_simple.pdf>] [9 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Figure/nodecontri.pdf>]
-(C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion.bbl [10] [11])
+ [8 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Draft/shortversion/mono_simple.pdf> <C:/Work/Applications/GitHu
+b/Multiscale-Network-Test/Draft/shortversion/tau_simple.pdf>] [9 <C:/Work/Applications/GitHub/Multiscale-Network-Test/Dr
+aft/shortversion/nodecontri.pdf>] (C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion\shortversion.b
+bl [10] [11])
 Underfull \hbox (badness 1152) in paragraph at lines 329--334
 \OT1/cmr/m/n/10.95 for any $\OML/cmm/m/it/10.95 r$\OT1/cmr/m/n/10.95 th row ($\OML/cmm/m/it/10.95 r \OMS/cmsy/m/n/10.95 
 2 f\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; :::; q\OMS/cmsy/m/n/10.95 g$\OT1/
@@ -583,7 +581,7 @@ at $\OML/cmm/m/it/10.95 P[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 [][]$ \O
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 375.
  [13]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 375.
- (C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion.aux)
+ (C:\Work\Applications\GitHub\Multiscale-Network-Test\Draft\shortversion\shortversion.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 375.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 375.
 Package rerunfilecheck Info: File `shortversion.out' has not changed.
@@ -599,8 +597,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 375.
  ) 
 Here is how much of TeX's memory you used:
  9349 strings out of 493921
- 139244 string characters out of 3147277
- 233824 words of memory out of 3000000
+ 139108 string characters out of 3147277
+ 233828 words of memory out of 3000000
  12435 multiletter control sequences out of 15000+200000
  15204 words of font info for 59 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -615,7 +613,7 @@ am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/Mi
 cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on shortversion.pdf (13 pages, 530407 bytes).
+Output written on shortversion.pdf (13 pages, 530491 bytes).
 PDF statistics:
  345 PDF objects out of 1000 (max. 8388607)
  67 named destinations out of 1000 (max. 500000)
