@@ -132,26 +132,26 @@ As diffusion time $t$ increases, the corresponding diffusion distance $C_{t}$ is
 \begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.23\textwidth}
-		\includegraphics[width=\textwidth]{Pmat.pdf}
+		\includegraphics[width=\textwidth]{../Figure/Pmat.pdf}
 		\caption{}
 		\label{fig:a}
 	\end{subfigure}
 	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
 	%(or a blank line to force the subfigure onto a new line)
 	\begin{subfigure}[b]{0.23\textwidth}
-		\includegraphics[width=\textwidth]{Dx1.pdf}
+		\includegraphics[width=\textwidth]{../Figure/Dx1.pdf}
 		\caption{}
 		\label{fig:b}
 	\end{subfigure}
 	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
 	%(or a blank line to force the subfigure onto a new line)
 	\begin{subfigure}[b]{0.23\textwidth}
-		\includegraphics[width=\textwidth]{Dx5.pdf}
+		\includegraphics[width=\textwidth]{../Figure/Dx5.pdf}
 		\caption{}
 		\label{fig:c}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.23\textwidth}
-		\includegraphics[width=\textwidth]{Dx50.pdf}
+		\includegraphics[width=\textwidth]{../Figure/Dx50.pdf}
 		\caption{}
 		\label{fig:d}
 	\end{subfigure}
@@ -222,7 +222,7 @@ these two nodes are most likely to have an edge but when $X_{i}$ and  $X_{j}$ di
 
 \begin{SCfigure}[][ht]
 	\centering
-	\includegraphics[width=0.4\paperwidth, height=0.4\paperwidth]{ThreeSBM_results_simple.png}
+	\includegraphics[width=0.4\paperwidth, height=0.4\paperwidth]{../Figure/ThreeSBM_results_simple.png}
 	\caption{This power heatmap illustrates the superior power of multiscale generalized correlation (\texttt{MGC}) under diffusion distance matrix (\texttt{DF}) in three-block SBM (equation~\ref{eq:Three}), compared to under adjacency matrix distance (\texttt{Adj}) or latent factor distance (\texttt{LT}). This demonstrates one exemplary network where \texttt{MGC} statistic along with a family of diffusion distances catches non monotonic correlations efficiently than the other statistics and metrics.}
 	\label{fig:threeSBM}
 \end{SCfigure}
@@ -236,7 +236,7 @@ E(A_{ij} | X_{i}, X_{j}) = 0.5 I(|X_{i} - X_{j}| = 0) + 0.2 I(|X_{i} - X_{j}| = 
 where  $X_{i} \overset{i.i.d}{\sim} Bern(0.5); i =1, \ldots, 100$. When $\theta > 0.2$, linear dependency of edge distribution in $\mathbf{A}$ upon nodal attribute of $X$ is lost. If you see Figure~\ref{fig:powerplot}, power of \texttt{mCorr} starts to drop from $\theta = 0.2$ while that of \texttt{MGC} almost stays clam, which implies \texttt{MGC} is significantly more sensitive to nonlinear dependency compared to \texttt{mCorr}.  
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{mono_simple.pdf}
+	\includegraphics[width=0.7\linewidth]{../Figure/mono_simple.pdf}
 	\caption{X-axis of $\theta$ controls the existence/amount of nonlinear dependency and in this particular case nonlinearity exists when $\theta > 0.2$ and gets larger as it increases. You can see the discrepancy in power between global and local scale tests also gets larger accordingly, mostly due to decreasing power of \texttt{mCorr} or \texttt{FH} test but relatively stable power of \texttt{MGC} under nonlinear dependency.}
 	\label{fig:powerplot}
 \end{figure}
@@ -252,7 +252,7 @@ E( A_{ij} | \mathbf{X}, \mathbf{V} )  = 0.2 V_{i} V_{j} \cdot I ( |X_{i} - X_{j}
 where $X_{i} \overset{i.i.d.}{\sim} Bern(0.5);  V_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau), i = 1, \ldots, 250.$
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{tau_simple.pdf}
+	\includegraphics[width=0.7\linewidth]{../Figure/tau_simple.pdf}
 	\caption{In degree-corrected SBM where the variability in degree distribution increases as $\tau$ increases, testing power of diffusion maps are more likely to be robust against increasing variability compared to other network metrics, e.g. adjacency matrix or latent positions. \texttt{FH} test statistics allowing different dimensions of network factors perform consistently well but still have less power than \texttt{MGC}.}
 	\label{fig:dcSBM}
 	\vspace*{-0.5cm}
@@ -262,7 +262,7 @@ where $X_{i} \overset{i.i.d.}{\sim} Bern(0.5);  V_{i} \overset{i.i.d}{\sim} Unif
 \label{ssec:node}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{nodecontri.pdf}
+	\includegraphics[width=0.7\linewidth]{../Figure/nodecontri.pdf}
 	\caption{This plot describes that both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, which validates the use of node contribution measure in independence test.}
 	\label{fig:contribution}
 \end{figure}
