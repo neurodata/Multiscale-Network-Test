@@ -22,7 +22,7 @@ anchorcolor = blue]{hyperref}
 \usepackage{mathtools}
 \usepackage{dcolumn}
 \usepackage{indentfirst, verbatim, float}
-\usepackage[margin=1.2in]{geometry}
+\usepackage[margin=1.1in]{geometry}
 %\newcounter{equationset, sectsty, breqn}
 %\usepackage{setspace, amsmath,color}
 %\usepackage{color,amssymb}
@@ -185,7 +185,7 @@ Using Lemma~\ref{main_lemma}, our next result shows that both the \texttt{dCorr}
 \begin{theorem}[\texttt{MGC} Consistency via Diffusion Distance]
 Assume that $\mathbf{G}$ is an exchangeable random graph that is connected and unweighted, and its diffusion maps are $\mathbf{U}$ at certain $t \in \mathbf{N}$ with finite moment; and the nodal attributes $\mathbf{X}=\{ \mathbf{x}_{i}, i = 1,2, \ldots, n \}$ is \textit{i.i.d.} as a random vector $\mathbf{x}$ of finite moment. 
 
-Then $\texttt{dCorr}(\mathbf{U}, \mathbf{X}) \longrightarrow 0 \quad \mbox{ as } n \rightarrow \infty$ if and only if $\mathbf{U}$ is independent of $\mathbf{X}$. Therefore, both \texttt{dCorr} and \texttt{MGC} are consistent for testing dependence between $\mathbf{U}$ and $\mathbf{X}$.
+Then $\texttt{dCorr}(\mathbf{U}, \mathbf{X}) \longrightarrow 0 \mbox{ as } n \rightarrow \infty$ if and only if $\mathbf{U}$ is independent of $\mathbf{X}$. And both \texttt{MGC} and \texttt{dCorr} are consistent for testing dependence between any $\mathbf{U}$ and $\mathbf{X}$ satisfying the above condition.
 	\label{theoremMain}
 \end{theorem}
 The proof is postponed to the Appendix.
@@ -323,26 +323,34 @@ There are a number of additional potential extensions of this work. First, how t
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{proof}[\textbf{Proof of Theorem~\ref{theoremMain}} \texttt{MGC} Consistency via Diffusion Distance]
 
-Assume that an exchangeable sequence of $(\mathbf{U}, \mathbf{X}) = \{ (\mathbf{u}_{i}, \mathbf{x}_{i}) ; i = 1,2, \ldots, n \}$ is identically distributed as $(\mathbf{u}, \mathbf{x})$ with finite second moment. Then we have 
+Assume that $(\mathbf{U}, \mathbf{X}) = \{ (\mathbf{u}_{i}, \mathbf{x}_{i}) ; i = 1,2, \ldots, n \}$ is identically distributed as $(\mathbf{u}, \mathbf{x})$. By \textit{Theorem 1} in \cite{szekely2007measuring}, we immediately have
 \begin{eqnarray}
-\mathcal{V}_{n}^{2}(\mathbf{U},\mathbf{X}) &\longrightarrow \mathcal{V}^{2}(\mathbf{u},\mathbf{x}) \quad \quad \mbox{ as } n \rightarrow \infty
+dCov(\mathbf{U},\mathbf{X}) &\longrightarrow \int_{D(\delta)}{\|g_{\mathbf{u},\mathbf{x}}^{n}(t,s)-g_{\mathbf{u}}^{n}(t)g_{\mathbf{x}}^{n}(s)\|^{2}}dw \quad \quad \mbox{ as } n \rightarrow \infty
 \label{eq:conv1}
 \end{eqnarray}
-where $\mathcal{V}^{2} (\mathbf{u},\mathbf{x}) := \| g_{\mathbf{u},\mathbf{x}}(t,s) - g_{\mathbf{u}}(t) g_{\mathbf{x}}(s) \|^2$, and $g_{\cdot}$ is a characteristic function, e.g., $g_{\mathbf{u},\mathbf{x}}(t,s) = E\{\exp\{i \left\langle t,\mathbf{u} \right\rangle  +i \left\langle  s,\mathbf{x}\right\rangle \}\}$. This follows exactly the same as \textit{Theorem 1} in \cite{szekely2007measuring}. Note that this Lemma always holds without any assumption on $\{(\mathbf{u}_{i},\mathbf{x}_{i}), i=1,2,...,n\}$.
+where $g_{\mathbf{u},\mathbf{x}}^{n}(t,s), g_{\mathbf{u}}^{n}(t), g_{\mathbf{x}}^{n}(s)$ are the sample characteristic functions, e.g., $g_{\mathbf{u},\mathbf{x}}^{n}(t,s)=\frac{1}{n}\sum_{j=1}^{n}\exp\{i \left\langle t,\mathbf{u}_{j} \right\rangle  +i \left\langle  s,\mathbf{x}_{j}\right\rangle \}$, and $w(t,s)$ is the weight function chosen in \cite{szekely2007measuring}. %This part holds without indepednent or finite moment assumption.
 
-Followed by \textit{de Finetti's Theorem}, if and only if $\{ \mathbf{u}_{i} \}$ are (infinitely) exchangeable, there exists an underlying distribution $f_{\mathbf{u}}$ of $\mathbf{u}$ such that $\mathbf{u}_{i}  \overset{i.i.d}{\sim} f_{\mathbf{u}}, i = 1, \ldots, n$. By the same logic, we have an underlying distribution $f_{\mathbf{x}}$ where $\mathbf{x}_{i} \overset{i.i.d}{\sim} f_{\mathbf{x}}$. Then under the assumption of finite second moment of the underlying distributions and measurable, conditioned random functions, we have a strong large number for V-statistics followed by \cite{szekely2007measuring}, i.e., 
+Lemma~\ref{main_lemma} shows that $\{ \mathbf{u}_{i} \}$ are conditional \textit{i.i.d.} for an exchangeable graph, i.e., there exists an underlying distribution random variable $\mathbf{u}$ such that $\mathbf{u}_{i}|\mathbf{u}$ are \textit{i.i.d.} as $n \rightarrow \infty$. By the strong law of large number for V-statistics \cite{KoroljukBook}, under finite moment assumption of $\mathbf{u}$ and $\mathbf{x}$, we have 
 \begin{eqnarray}
-\displaystyle\int_{D(\delta)}{\|g_{\mathbf{u},\mathbf{x}}^{n}(t,s)-g_{\mathbf{u}}^{n}(t)g_{\mathbf{x}}^{n}(s)\|^{2}}dh &\stackrel{n \rightarrow \infty}{\longrightarrow} 
-\displaystyle\int_{D(\delta)}{\|g_{\mathbf{u},\mathbf{x}}(t,s)-g_{\mathbf{u}}(t)g_{\mathbf{x}}(s)\|^{2}}dh,
+\displaystyle\int_{D(\delta)}{\|g_{\mathbf{u},\mathbf{x}}^{n}(t,s)-g_{\mathbf{u}}^{n}(t)g_{\mathbf{x}}^{n}(s)\|^{2}}dw &\stackrel{n \rightarrow \infty}{\longrightarrow} 
+\displaystyle\int_{D(\delta)}{\|g_{\mathbf{u},\mathbf{x}}(t,s)-g_{\mathbf{u}}(t)g_{\mathbf{x}}(s)\|^{2}}dw,
 \label{eq:SLLN}
 \end{eqnarray}
-where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and $h(t,s)$ is the weight function chosen in \cite{szekely2007measuring}. 	
-It follows that 
+within a bounded circle $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$ for any $\delta>0$, where $g_{\cdot}(\cdot)$ is the population characteristic function, i.e., $g_{\mathbf{u},\mathbf{x}}(t,s) = E\{\exp\{i \left\langle t,\mathbf{u} \right\rangle  +i \left\langle  s,\mathbf{x}\right\rangle \}\}$. The same convergence still holds out of the circle $D(\delta)$, and a technical proof is in \textit{Theorem 2} of \cite{szekely2007measuring}.
+
+Combining equation~\ref{eq:conv1} and equation~\ref{eq:SLLN} yields
 \begin{eqnarray}
-\mathcal{V}_{n}^{2}(\mathbf{U},\mathbf{X}) &\rightarrow 0 \quad \mbox{ as } n \rightarrow \infty
-\label{eq:conv2}
+dCov(\mathbf{U},\mathbf{X}) &\longrightarrow \displaystyle\int{\|g_{\mathbf{u},\mathbf{x}}(t,s)-g_{\mathbf{u}}(t)g_{\mathbf{x}}(s)\|^{2}}dw,
+\label{eq:main2}
 \end{eqnarray}
-if and only if $g_{\mathbf{u},\mathbf{x}}(t,s) = g_{\mathbf{u}}(t) g_{\mathbf{x}}(s)$, i.e., $\mathbf{u}$ is independent of $\mathbf{x}.$ Therefore, the \texttt{dCorr} converges to $0$ if and only if $\mathbf{u}$ and $\mathbf{x}$ are independent; and its testing power converges to $1$ under any joint distribution of finite moments. Since the multiscale generalized correlation based on any consistent global correlation is also consistent~\cite{shen2016discovering}, \texttt{MGC} statistic constructed by \texttt{dCorr} or \texttt{mCorr} is also consistent in testing dependence.
+which clearly equals $0$ if and only if independence holds. As distance correlation is just a normalized version of distance covariance, we also have 
+\begin{eqnarray}
+dCorr(\mathbf{U},\mathbf{X}) &\longrightarrow 0,
+\label{eq:main1}
+\end{eqnarray}
+if and only if the diffusion maps $\mathbf{U}$ is independent of the nodal attributes $\mathbf{X}$.
+
+By \cite{shen2016discovering}, Equation~\ref{eq:main1} holds under the same condition, when \texttt{dCorr} is replaced by \texttt{MGC}. Therefore, both \texttt{MGC} and \texttt{dCorr} are consistent in network dependence testing between the diffusion maps $\mathbf{U}$ and the nodal attributes $\mathbf{X}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%5
 %\begin{proof}[\textbf{Proof of Theorem~\ref{theorem2}} Consistency of \texttt{MGC} applied to exchangeable variables]
