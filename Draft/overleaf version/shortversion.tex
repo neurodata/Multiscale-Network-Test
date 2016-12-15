@@ -291,24 +291,28 @@ There are a number of additional potential extensions of this work. First, how t
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{proof}[\textbf{Proof of Lemma~\ref{main_lemma}}]
-	To prove conditional \textit{i.i.d.} of $\{\mathbf{u}(i)\}$ for $i=1,\ldots,n$ as $n \rightarrow \infty$, by the celebrated \textit{de Finetti's Theorem}~\cite{diaconis1980finite}, it suffices to prove that $\mathbf{u}(i)$ for $i=1,\ldots,n$ are exchangeable, i.e., for any permutation $\sigma$, the permuted sequence $\mathbf{u}(\sigma(1)), \mathbf{u}(\sigma(2)), \ldots,\mathbf{u}(\sigma(n))$ distributes the same as the original sequence $\mathbf{u}(1), \mathbf{u}(2), \ldots,\mathbf{u}(n)$.
+	To prove conditional \textit{i.i.d.} of $\{\mathbf{u}(i)\}$ for $i=1,\ldots,n$ as $n \rightarrow \infty$, by the celebrated \textit{de Finetti's Theorem}~\cite{diaconis1980finite}, it suffices to prove that $\mathbf{u}(i)$ for $i=1,\ldots,n$ are exchangeable, i.e., for any permutation $\sigma$, the permuted sequence $\mathbf{u}(\sigma(1)), \mathbf{u}(\sigma(2)), \ldots,\mathbf{u}(\sigma(n))$ distributes the same as the original sequence $\mathbf{u}(1), \mathbf{u}(2), \ldots,\mathbf{u}(n)$. Denote the permutation matrix as $\pi$, it is to show $\mathbf{U}$ always distributes the same as $\mathbf{U}\pi^{T}$ in matrix notation. 
 	
 	Recall that the diffusion map at time $t$ is represented as follows :
 	\begin{align*}
 	\mathbf{U} &=[ \mathbf{u}(1) , \ldots, \mathbf{u}(n) ]\\
+    &= \Lambda \Phi^{T} \\
     &= \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \cdots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{T} \in \mathbb{R}^{n \times q},
 	\end{align*}
-	where $\{ \lambda_{j} \}$ and $\{ \phi_{j}  \}$ are the non-zero eigenvalues and corresponding eigenvectors of the transition matrix $\mathbf{P}$. 
+	where $\Lambda=diag\{ \lambda_{1},\lambda_2,\ldots,\lambda_q \}$ and $\Phi =[ \phi_1, \phi_2,\cdots,\phi_q ]$ are the diagonal matrix of non-zero eigenvalues and the corresponding matrix of eigenvectors of the transition matrix $\mathbf{P}$, i.e, $\mathbf{P}=\Phi \Lambda \Phi^{T}$. 
     
-		Denote any permutation matrix as $\pi$, it suffices to show $\mathbf{U}$ distributes the same as $\mathbf{U}\pi$. By basic matrix manipulation of the eigenvectors, it is equivalent to show $\mathbf{P}$ distributes the same as $\pi \mathbf{P}\pi$. 
-		
-		By the definition of an exchangeable graph, $A_{\sigma(i)\sigma(j)}$ distributes the same $A_{ij}$. It follows that
+Given the graph $G$ is exchangeable, i.e., $A_{\sigma(i)\sigma(j)} \stackrel{d}{=} A_{ij}$, we have
 				\begin{align*}
 	\mathbf{P}_{\sigma(i) \sigma(j)} &= A_{\sigma(i) \sigma(j)} / \sum\limits_{j} A_{\sigma(i)\sigma(j)} \\
 	  &\stackrel{d}{=} A_{ij} /  \sum\limits_{j} A_{ij} \\
-		&= \mathbf{P}_{ij}.
+		&= \mathbf{P}_{ij},
 	\end{align*}
-	
+    from which it follows that
+    \begin{align*}
+	 \pi\mathbf{P} \pi^{T} &\stackrel{d}{=} \mathbf{P} \\
+	  \Rightarrow (\pi \Phi) \Lambda (\pi\Phi)^{T} &\stackrel{d}{=} \Phi \Lambda \Phi^{T} \\
+		\Rightarrow \mathbf{U}\pi^{T}= \Lambda (\pi\Phi)^{T} &\stackrel{d}{=} \Lambda \Phi^{T} = \mathbf{U}
+	\end{align*}	
 	Therefore, the diffusion maps are exchangeable, and also conditional \textit{i.i.d.} asymptotically.
 \end{proof}
 
