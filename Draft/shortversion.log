@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  12 DEC 2016 16:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.7.29)  15 DEC 2016 00:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -413,22 +413,22 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 (./shortversion.aux)
 \openout1 = `shortversion.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring ON on input line 46.
+Package hyperref Info: Link coloring ON on input line 47.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -439,9 +439,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count132
 )
-LaTeX Info: Redefining \ref on input line 46.
-LaTeX Info: Redefining \pageref on input line 46.
-LaTeX Info: Redefining \nameref on input line 46.
+LaTeX Info: Redefining \ref on input line 47.
+LaTeX Info: Redefining \pageref on input line 47.
+LaTeX Info: Redefining \nameref on input line 47.
  (./shortversion.out) (./shortversion.out)
 \@outlinefile=\write4
 \openout4 = `shortversion.out'.
@@ -539,12 +539,12 @@ LaTeX Info: Redefining \selectfont on input line 126.
 \RaggedRightParindent=\skip74
 \JustifyingParindent=\skip75
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 93.
+LaTeX Font Info:    Try loading font information for U+msa on input line 94.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 93.
+LaTeX Font Info:    Try loading font information for U+msb on input line 94.
 
 (/usr/local/texlive/2016basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -556,63 +556,63 @@ Non-PDF special ignored!
 <../Figure/Pmat.pdf, id=124, 505.89pt x 505.89pt>
 File: ../Figure/Pmat.pdf Graphic file (type pdf)
  <use ../Figure/Pmat.pdf>
-Package pdftex.def Info: ../Figure/Pmat.pdf used on input line 135.
+Package pdftex.def Info: ../Figure/Pmat.pdf used on input line 140.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
 <../Figure/Dx1.pdf, id=125, 505.89pt x 505.89pt>
 File: ../Figure/Dx1.pdf Graphic file (type pdf)
  <use ../Figure/Dx1.pdf>
-Package pdftex.def Info: ../Figure/Dx1.pdf used on input line 142.
+Package pdftex.def Info: ../Figure/Dx1.pdf used on input line 147.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
 <../Figure/Dx5.pdf, id=126, 505.89pt x 505.89pt>
 File: ../Figure/Dx5.pdf Graphic file (type pdf)
  <use ../Figure/Dx5.pdf>
-Package pdftex.def Info: ../Figure/Dx5.pdf used on input line 149.
+Package pdftex.def Info: ../Figure/Dx5.pdf used on input line 154.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
 <../Figure/Dx50.pdf, id=127, 505.89pt x 505.89pt>
 File: ../Figure/Dx50.pdf Graphic file (type pdf)
  <use ../Figure/Dx50.pdf>
-Package pdftex.def Info: ../Figure/Dx50.pdf used on input line 154.
+Package pdftex.def Info: ../Figure/Dx50.pdf used on input line 159.
 (pdftex.def)             Requested size: 114.02524pt x 114.02103pt.
 
 [4 <../Figure/Pmat.pdf> <../Figure/Dx1.pdf> <../Figure/Dx5.pdf> <../Figure/Dx50
 .pdf>] [5]
 
-LaTeX Warning: Reference `eq:MGC' on page 6 undefined on input line 203.
+LaTeX Warning: Reference `eq:MGC' on page 6 undefined on input line 209.
 
-[6] <../Figure/ThreeSBM_results_simple.png, id=197, 481.8pt x 481.8pt>
+[6] <../Figure/ThreeSBM_results_simple.png, id=196, 481.8pt x 481.8pt>
 File: ../Figure/ThreeSBM_results_simple.png Graphic file (type png)
 
 <use ../Figure/ThreeSBM_results_simple.png>
 Package pdftex.def Info: ../Figure/ThreeSBM_results_simple.png used on input li
-ne 225.
+ne 234.
 (pdftex.def)             Requested size: 245.71474pt x 245.71474pt.
 
-<../Figure/mono_simple.pdf, id=203, 1084.05pt x 433.62pt>
+<../Figure/mono_simple.pdf, id=202, 1084.05pt x 433.62pt>
 File: ../Figure/mono_simple.pdf Graphic file (type pdf)
 
 <use ../Figure/mono_simple.pdf>
-Package pdftex.def Info: ../Figure/mono_simple.pdf used on input line 239.
+Package pdftex.def Info: ../Figure/mono_simple.pdf used on input line 248.
 (pdftex.def)             Requested size: 347.0383pt x 138.81416pt.
  [7 <../Figure/ThreeSBM_results_simple.png>]
-<../Figure/tau_simple.pdf, id=216, 1084.05pt x 433.62pt>
+<../Figure/tau_simple.pdf, id=215, 1084.05pt x 433.62pt>
 File: ../Figure/tau_simple.pdf Graphic file (type pdf)
 
 <use ../Figure/tau_simple.pdf>
-Package pdftex.def Info: ../Figure/tau_simple.pdf used on input line 255.
+Package pdftex.def Info: ../Figure/tau_simple.pdf used on input line 264.
 (pdftex.def)             Requested size: 347.0383pt x 138.81416pt.
 
-<../Figure/nodecontri.pdf, id=217, 1228.59pt x 433.62pt>
+<../Figure/nodecontri.pdf, id=216, 1228.59pt x 433.62pt>
 File: ../Figure/nodecontri.pdf Graphic file (type pdf)
 
 <use ../Figure/nodecontri.pdf>
-Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 265.
+Package pdftex.def Info: ../Figure/nodecontri.pdf used on input line 274.
 (pdftex.def)             Requested size: 347.0383pt x 122.48463pt.
- [8 <../Figure/mono_simple.pdf> <../Figure/tau_simple.pdf>] [9 <../Figure/nodec
+ [8 <../Figure/mono_simple.pdf>] [9 <../Figure/tau_simple.pdf> <../Figure/nodec
 ontri.pdf>] (./shortversion.bbl [10] [11])
-Underfull \hbox (badness 1152) in paragraph at lines 329--334
+Underfull \hbox (badness 1152) in paragraph at lines 338--343
 \OT1/cmr/m/n/10.95 for any $\OML/cmm/m/it/10.95 r$\OT1/cmr/m/n/10.95 th row ($\
 OML/cmm/m/it/10.95 r \OMS/cmsy/m/n/10.95 2 f\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/1
 0.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; :::; q\OMS/cmsy/m/n/10.95 g$\O
@@ -622,26 +622,26 @@ T1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^U[]^^^[]$ \OT1/cmr/m/n/10.95 where $\O
 ML/cmm/m/it/10.95 ^^^[] \OT1/cmr/m/n/10.95 =
  []
 
-[12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 375.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 375.
+[12] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 384.
+ [14]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 384.
  (./shortversion.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 375.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 375.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 384.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 384.
 Package rerunfilecheck Info: File `shortversion.out' has not changed.
 (rerunfilecheck)             Checksum: 8C9BF0A95025E2831A68ADF07A4EAC60;680.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 375.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 384.
  ) 
 Here is how much of TeX's memory you used:
- 9481 strings out of 494447
- 142633 string characters out of 6166766
- 239687 words of memory out of 5000000
- 12601 multiletter control sequences out of 15000+600000
+ 9483 strings out of 494447
+ 142644 string characters out of 6166766
+ 239708 words of memory out of 5000000
+ 12602 multiletter control sequences out of 15000+600000
  15204 words of font info for 59 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  36i,18n,48p,2053b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -662,10 +662,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016basic
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016b
 asic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
 016basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on shortversion.pdf (13 pages, 493324 bytes).
+Output written on shortversion.pdf (14 pages, 494517 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 294 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 500000)
+ 353 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
+ 68 named destinations out of 1000 (max. 500000)
  129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
