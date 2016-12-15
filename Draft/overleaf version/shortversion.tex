@@ -112,15 +112,17 @@ To overcome the theoretical barricades by the distinct structure of network data
 
 In this section, we introduce the diffusion maps as a family of network geometries for a graph \cite{coifman2006diffusion}, and show that they can yield node-wise conditional \textit{i.i.d.} samples for an exchangeable graph as sample size increases to infinity.
 
-Coifman and Lafon~\cite{coifman2006diffusion,lafon2006diffusion} proposed multiscale geometries of data called diffusion maps, which are constructed by iterating the transition matrix that determines random walk on graph. Given the $n \times n$ adjacency matrix $\mathbf{A}$, the $n \times n$ transition matrix of $\mathbf{P}$ is defined by $P_{ij} = A_{ij} /  \sum\limits_{j=1}^{n} A_{ij}$, indicating the probability of moving forward from node $i$ to node $j$ for $i,j = 1, \ldots , n$. The diffusion maps at time $t$ are computed as follows : 
+Coifman and Lafon~\cite{coifman2006diffusion,lafon2006diffusion} proposed multiscale geometries of data called diffusion maps, which are constructed by iterating the transition matrix that determines random walk on graph. 
+\cs{do they really proposed diffusion maps on graphs by transition matrix? from wikipedia they proposed diffusion maps on any kernel/similarity matrix, but not this specific form. Or is it from Minh's work? if not from coifman, break the above sentence, say they proposed it on any similarity matrix, and we (or cite minh) tailored to the transition matrix. }
+Given the $n \times n$ adjacency matrix $\mathbf{A}$, the $n \times n$ transition matrix of $\mathbf{P}$ is defined by $P_{ij} = A_{ij} /  \sum\limits_{j=1}^{n} A_{ij}$, indicating the probability of moving forward from node $i$ to node $j$ for $i,j = 1, \ldots , n$. The diffusion maps at time $t$ are computed as follows : 
 	\begin{align*}
-	\mathbf{U}_{t} &=\{ \mathbf{u}_{t}(1) , \ldots, \mathbf{u}_{t}(n) \}\\
-    &= \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \cdots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}.
+	\mathbf{U}_{t} &=[ \mathbf{u}_{t}(1) , \ldots, \mathbf{u}_{t}(n) ]\\
+    &= \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i), \lambda^{t}_{2} \phi_{2} (i), \cdots, \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{T} \in \mathbb{R}^{n \times q}.
 	\end{align*}
-where $\{ \lambda_{j} \}$ and $\{ \phi_{j}  \}$ are the non-zero eigenvalues and corresponding eigenvectors of the transition matrix $\mathbf{P}$, $q$ is the number of non-zero eigenvalues, and $\lambda^{t}_{j}$ is the $t^{\mbox{th}}$~power of the eigenvalue. Then diffusion maps locate each node's position at every diffusion time and provide node-wise multivariate coordinates through $\mathbf{U}_{t}(i)$.   
+where $\{ \lambda_{j} \}$ and $\{ \phi_{j}  \}$ are the non-zero eigenvalues and corresponding eigenvectors of the transition matrix $\mathbf{P}$, $q$ is the number of non-zero eigenvalues, $\lambda^{t}_{j}$ is the $t^{\mbox{th}}$~power of the eigenvalue, and ${\cdot}^{T}$ is the matrix transpose. Then diffusion maps locate each node's position at every diffusion time and provide node-wise multivariate coordinates through $\{\mathbf{u}_{t}(i)\}$.   
 
 A graph $\mathbf{G}$ is called exchangeable if and only if its adjacency matrix $\mathbf{A}$ is jointly exchangeable \cite{orbanz2015bayesian}, i.e.,~for every permutation $\sigma$ of $n$ elements, $(A_{ij}) \stackrel{d}{=} (A_{\sigma(i) \sigma(j)})$. Exchangeability is a mild condition that most generative statistical network models satisfy, including all aforementioned models such as the stochastic block model and latent position model \cite{rohe2011spectral, sussman2014consistent, todeschini2016exchangeable}. Lemma~\ref{main_lemma} proves that the node-wise multivariate coordinates $\{ \mathbf{U}_{t} \}_{t \in \mathbb{N}}$ can furnish conditional \textit{i.i.d.} samples for vertices by an exchangeable graph, with the proof supplied in the Appendix.
-\begin{lemma}[Conditional \textit{i.i.d.} of diffusion maps $\mathbf{u}_{t}(i)$]
+\begin{lemma}[Conditional \textit{i.i.d.} of diffusion maps $\{\mathbf{u}_{t}(i)\}$]
 	\label{main_lemma}
 	Assume that $\mathbf{G}$ is an exchangeable random graph. Then as $n \rightarrow \infty$, the diffusion maps $\{ \mathbf{u}_{t}(i) : i = 1, \ldots, n \}$ are conditionally \textit{i.i.d.} given its underlying distribution.  
 \end{lemma}
@@ -291,23 +293,23 @@ There are a number of additional potential extensions of this work. First, how t
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{proof}[\textbf{Proof of Lemma~\ref{main_lemma}}]
-	To prove conditional \textit{i.i.d.} of $\mathbf{u}(i)$ for $i=1,\ldots,n$ as $n \rightarrow \infty$, by the celebrated \textit{de Finetti's Theorem}~\cite{diaconis1980finite}, it suffices to prove that $\mathbf{u}(i)$ for $i=1,\ldots,n$ are exchangeable, i.e., for any permutation $\sigma$, the permuted sequence $\mathbf{u}(\sigma(1)), \mathbf{u}(\sigma(2)), \ldots,\mathbf{u}(\sigma(n))$ distributes the same as the original sequence $\mathbf{u}(1), \mathbf{u}(2), \ldots,\mathbf{u}(3)$.
+	To prove conditional \textit{i.i.d.} of $\{\mathbf{u}(i)\}$ for $i=1,\ldots,n$ as $n \rightarrow \infty$, by the celebrated \textit{de Finetti's Theorem}~\cite{diaconis1980finite}, it suffices to prove that $\mathbf{u}(i)$ for $i=1,\ldots,n$ are exchangeable, i.e., for any permutation $\sigma$, the permuted sequence $\mathbf{u}(\sigma(1)), \mathbf{u}(\sigma(2)), \ldots,\mathbf{u}(\sigma(n))$ distributes the same as the original sequence $\mathbf{u}(1), \mathbf{u}(2), \ldots,\mathbf{u}(n)$.
 	
 	Recall that the diffusion map at time $t$ is represented as follows :
 	\begin{align*}
-	\mathbf{U}(i) &=\{ \mathbf{u}(1) , \ldots, \mathbf{u}(n) \}\\
-    &= \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \cdots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix} \in \mathbb{R}^{q},
+	\mathbf{U} &=[ \mathbf{u}(1) , \ldots, \mathbf{u}(n) ]\\
+    &= \begin{pmatrix} \lambda^{t}_{1} \phi_{1}(i) & \lambda^{t}_{2} \phi_{2} (i)  & \cdots & \lambda^{t}_{q} \phi_{q}(i) \end{pmatrix}^{T} \in \mathbb{R}^{n \times q},
 	\end{align*}
-	where $\{ \lambda_{j} \}$ and $\{ \phi_{j}  \}$ are the non-zero eigenvalues and corresponding eigenvectors of the transition matrix $\mathbf{P}$. Namely, $P \phi_{j} = \lambda_{j} \phi_{j}$ for $j \in \{1,2, ... , q \}$. If one can show that $\mathbf{P}$ is always exchangeable, i.e., $\mathbf{P}_{\sigma(i) \sigma(j)}$ always distributes the same as $\mathbf{P}_{ij}$ for $i,j=1,\ldots,n$, then its eigenvalues and eigenvectors are also exchangeable, so are the diffusion maps.
-	
-		Given joint exchangeability of the graph $\mathbf{G}$, we have $(A_{ij}) \stackrel{d}{=} \big( A_{\sigma(i) \sigma(j)} \big)$, where $\stackrel{d}{=}$ stands for same distribution. 
-	It follows that
-		\begin{align*}
-	\mathbf{P}_{\sigma(i) \sigma(j)} &= A_{\sigma(i) \sigma(j)} / \sum\limits_{j} A_{\sigma(i)j} \\
+	where $\{ \lambda_{j} \}$ and $\{ \phi_{j}  \}$ are the non-zero eigenvalues and corresponding eigenvectors of the transition matrix $\mathbf{P}$. 
+    
+		Denote any permutation matrix as $\pi$, it suffices to show $\mathbf{U}$ distributes the same as $\mathbf{U}\pi$. By basic matrix manipulation of the eigenvectors, it is equivalent to show $\mathbf{P}$ distributes the same as $\pi \mathbf{P}\pi$. 
+		
+		By the definition of an exchangeable graph, $A_{\sigma(i)\sigma(j)}$ distributes the same $A_{ij}$. It follows that
+				\begin{align*}
+	\mathbf{P}_{\sigma(i) \sigma(j)} &= A_{\sigma(i) \sigma(j)} / \sum\limits_{j} A_{\sigma(i)\sigma(j)} \\
 	  &\stackrel{d}{=} A_{ij} /  \sum\limits_{j} A_{ij} \\
-		&= \mathbf{P}_{ij},
+		&= \mathbf{P}_{ij}.
 	\end{align*}
-	as both the numerator and the denominator have the same distribution and have the same dependent structure, before or after the permutation. Therefore $P$ is always exchangeable given an exchangeable graph $\mathbf{G}$.
 	
 	Therefore, the diffusion maps are exchangeable, and also conditional \textit{i.i.d.} asymptotically.
 \end{proof}
