@@ -168,6 +168,23 @@ Adrien Todeschini and Fran{\c{c}}ois Caron.
   overlapping communities.
 \newblock {\em arXiv preprint arXiv:1602.02114}, 2016.
 
+\bibitem{szekely2013distance}
+G{\'a}bor~J Sz{\'e}kely and Maria~L Rizzo.
+\newblock The distance correlation t-test of independence in high dimension.
+\newblock {\em Journal of Multivariate Analysis}, 117:193--213, 2013.
+
+\bibitem{heller2012consistent}
+Ruth Heller, Yair Heller, and Malka Gorfine.
+\newblock A consistent multivariate test of association based on ranks of
+  distances.
+\newblock {\em Biometrika}, page ass070, 2012.
+
+\bibitem{hoff2002latent}
+Peter~D Hoff, Adrian~E Raftery, and Mark~S Handcock.
+\newblock Latent space approaches to social network analysis.
+\newblock {\em Journal of the american Statistical association},
+  97(460):1090--1098, 2002.
+
 \bibitem{ingold2014structural}
 Karin Ingold and Philip Leifeld.
 \newblock Structural and institutional determinants of influence reputation: a
