@@ -82,76 +82,79 @@ n.perm = 500 # the number of permutations
 G.adj = as.matrix(get.adjacency(undirected.G))
 #### n.random = number of random edges.
 
-n.random = as.integer(34*c(1:10)*0.1)
+n.random = as.integer(34*c(1:10)*0.1) # percentage of contamination.
 
-# the number of edges 1651 / 
+hhg.1 =  matrix(0, nrow = 10, ncol = 20); hhg.2 =  matrix(0, nrow = 10, ncol = 20); hhg.5 = matrix(0, nrow= 10, ncol = 20)
+mcorr.1 = matrix(0, nrow = 10, ncol = 20); mcorr.2 = matrix(0, nrow = 10, ncol = 20); mcorr.5 = matrix(0, nrow = 10, ncol = 20)
+mgc.1 = matrix(0, nrow = 10, ncol = 20); mgc.2 = matrix(0, nrow = 10, ncol = 20); mgc.5 = matrix(0, nrow = 10, ncol = 20)
 
-Dx.G1 = matrix(0, nrow = 20, ncol = 20); Dx.G2 =  matrix(0, nrow = 20, ncol = 20)
-hhg.1 =  matrix(0, nrow = 20, ncol = 20); hhg.2 =  matrix(0, nrow = 20, ncol = 20)
-mcorr.1 = matrix(0, nrow = 20, ncol = 20); mcorr.2 = matrix(0, nrow = 20, ncol = 20)
-fh.G = matrix(0, nrow = 20, ncol = 20)
-mgc.1 = matrix(0, nrow = 20, ncol = 20);  mgc.2 = matrix(0, nrow = 20, ncol = 20)
+fh.G = matrix(0, nrow = 10, ncol = 20)
 
-hhg.5 = matrix(0, nrow=20, ncol = 20); mcorr.5 = matrix(0, nrow = 20, ncol = 20)
-mgc.5 = matrix(0, nrow = 20, ncol = 20)
-
-
-for(nr in 1:10){
-  for(ii in 1:20){
+for(nr in 1:10){ # nr iterates n.random, i.e. the percentage of pollution.
+  for(ii in 1:20){ # per each pollution level, generate 20 simulated networks.
     set.seed(ii)
   ## permutation 
-      permute.ind = sample(c(1:34), n.random[nr])
-      notpermute.ind = setdiff(c(1:34), permute.ind)
-      delete.G.adj = G.adj[c(permute.ind, notpermute.ind), c(permute.ind, notpermute.ind)]
+      permute.ind = sample(c(1:34), n.random[nr]) # select n.random[nr] nodes from 34 nodes for permutation.
+      notpermute.ind = setdiff(c(1:34), permute.ind) # the remaining is not permutated.
 
-      delete.G.adj[c(1: n.random[nr]) ,c(1: n.random[nr])] = 0
+      # locate the contaminated nodes first.
+      permute.G.adj = G.adj[c(permute.ind, notpermute.ind), c(permute.ind, notpermute.ind)]
+
+      # delete every edge in the set of contaminated nodes.
+      permute.G.adj[c(1: n.random[nr]), c(1: n.random[nr])] = 0
+
+      # arbitrarily assign edges between the contaminated node with probability 0.1
       for(i in 1: (n.random[nr]-1)){
         for(j in (i+1): n.random[nr]){
-          delete.G.adj[i,j] = rbinom(1,1,0.1)
-          delete.G.adj[j,i] = delete.G.adj[i,j]
+          permute.G.adj[i,j] = rbinom(1,1,0.1)
+          permute.G.adj[j,i] = permute.G.adj[i,j]
         }
       }
-  
-      p.types = types[c(permute.ind[order(permute.ind)], notpermute.ind)]
-      p.Dy.types = Dy.types[c(permute.ind[order(permute.ind)], notpermute.ind), c(permute.ind[order(permute.ind)], notpermute.ind)]
- 
-      tmp = ifelse(rowSums(delete.G.adj) == 0, 1, rowSums(delete.G.adj))
-      delete.G.P = delete.G.adj / tmp
-  
-      delete.G.dmaps = dmap(delete.G.P, c(1,2,5))
-  
-      Dx.G1 = as.matrix(dist(delete.G.dmaps[[1]], diag = TRUE, upper = TRUE)) 
-      mcorr.1[nr, ii] <- dcor.ttest(Dx.G1, p.Dy.types, distance = TRUE)$p.value
-      hhg.1[nr, ii] <- hhg.test(Dx.G1, p.Dy.types, nr.perm = n.perm)$perm.pval.hhg.sl
-      mgc.1[nr, ii] <- MGCPermutationTest(Dx.G1, p.Dy.types, rep = n.perm, option = 'mcor')[[1]]
       
-      Dx.G2 = as.matrix(dist(delete.G.dmaps[[2]], diag = TRUE, upper = TRUE)) 
+      # Dy.types : 0-1 dissimilarity matrix of five categorical attributes.
+      # types : a vector of categorical outcomes.
+
+      p.types = types[c(permute.ind, notpermute.ind)] # reorder a vector of types with contaminated nodes first.
+      p.Dy.types = Dy.types[c(permute.ind, notpermute.ind), c(permute.ind, notpermute.ind)] # reordered dissimilarity matrix
+      
+      # in case of zero-degree, set degree one to prevent zero denominator.
+      tmp = ifelse(rowSums(permute.G.adj) == 0, 1, rowSums(permute.G.adj)) 
+      permute.G.P = permute.G.adj / tmp # permutation matrix
+      
+      # prints out diffusion maps at t=1,2 and 5 (as a list).
+      permute.G.dmaps = dmap(permute.G.P, c(1,2,5))
+      
+      ## diffusion time t = 1
+      Dx.G1 = as.matrix(dist(permute.G.dmaps[[1]], diag = TRUE, upper = TRUE)) # diffusion distance at t = 1
+      mcorr.1[nr, ii] <- dcor.ttest(Dx.G1, p.Dy.types, distance = TRUE)$p.value 
+      hhg.1[nr, ii] <- hhg.test(Dx.G1, p.Dy.types, nr.perm = n.perm)$perm.pval.hhg.sl
+      mgc.1[nr, ii] <- MGCPermutationTest(Dx.G1, p.Dy.types, rep = n.perm, option = 'mcor')[[1]] # sample MGC
+      
+      ## diffusion time t = 2
+      Dx.G2 = as.matrix(dist(permute.G.dmaps[[2]], diag = TRUE, upper = TRUE)) # diffusion distance at t = 2
       mcorr.2[nr, ii] <- dcor.ttest(Dx.G1, p.Dy.types, distance = TRUE)$p.value
       hhg.2[nr, ii] <- hhg.test(Dx.G1, p.Dy.types, nr.perm = n.perm)$perm.pval.hhg.sl
-      mgc.2[nr, ii] <- MGCPermutationTest(Dx.G1, p.Dy.types, rep = n.perm, option = 'mcor')[[1]]
-  
-      Dx.G5 = as.matrix(dist(delete.G.dmaps[[3]], diag = TRUE, upper = TRUE)) 
+      mgc.2[nr, ii] <- MGCPermutationTest(Dx.G1, p.Dy.types, rep = n.perm, option = 'mcor')[[1]] # sample MGC
+      
+      ## diffusion time t = 5
+      Dx.G5 = as.matrix(dist(permute.G.dmaps[[3]], diag = TRUE, upper = TRUE)) # diffusion distance at t = 5
       mcorr.5[nr, ii] <- dcor.ttest(Dx.G2, p.Dy.types, distance = TRUE)$p.value
       hhg.5[nr, ii] <- hhg.test(Dx.G2, p.Dy.types, nr.perm = n.perm)$perm.pval.hhg.sl
-      mgc.5[nr, ii] <- MGCPermutationTest(Dx.G2, p.Dy.types, rep = n.perm, option = 'mcor')[[1]]
-      print(mgc.1[nr, ii])
+      mgc.5[nr, ii] <- MGCPermutationTest(Dx.G2, p.Dy.types, rep = n.perm, option = 'mcor')[[1]] # sample MGC
     
       #### Latent space model
-      fh.G[nr, ii] <- min(FH_test2(delete.G.adj, p.types, k.range = c(0:5), n.iter = 300))
+      # FH_test2(Adjacency matrix, multivariate nodal attributes, ...)
+      # as an ad hoc, select the mininum p-value among the models having dimension of multiplicative factors from 0 - 5.
+      fh.G[nr, ii] <- min(FH_test2(permute.G.adj, p.types, k.range = c(0:5), n.iter = 300))
   
-      print(fh.G[nr,ii])
   }
 }
 
-
-mgc.p = c()
-mcorr.p = c()
-hhg.p = c()
-fh.p = c()
-mgc.p = rowMeans(mgc.2)
-mcorr.p = rowMeans(mcorr.2)
-hhg.p = rowMeans(hhg.2)
-fh.p = rowMeans(fh.G)
+# compute average of p-values for each level of contamination.
+mgc.p = rowMeans(mgc.1)
+mcorr.p = rowMeans(mcorr.1)
+hhg.p = rowMeans(hhg.1)
+fh.p = rowMeans(fh.1)
 
 pdf("figure/tmppvalue.pdf")
 par(mfrow = c(1,1), cex.lab = 3, cex.axis = 3,
