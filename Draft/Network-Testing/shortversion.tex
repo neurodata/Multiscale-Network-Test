@@ -100,7 +100,7 @@ Mathematically, a graph (or equivalently a network) $\mathbf{G}=(V,E)$ consists 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=4in]{../Figure/introplot.pdf}	
+	\includegraphics[width=4in]{introplot.pdf}	
 	\caption{You may conjecture that organizations with the same type are more likely to collaborate each other at first glance; but there has been a lack of statistical method to test if there exists any significant relationship between network topology and node-specific attributes and if any, which node exerts the most dependency on network.}
 	\label{fig:intro}
 \end{figure}
@@ -224,18 +224,18 @@ On the other hand, in the presence of nonlinear dependency, some nodes often exe
 \label{eq:contribution}
 h(v) =  \frac{1}{n} \sum\limits_{j=1}^{n} C^{k^{*}}_{j v} D^{l^{*}}_{j v} I \big(  r (C_{j v}) \leq k^{*}  \big) I \big( r (D_{ j v }) \leq l^{*} \big), 
 \end{equation}
-which is proportional to $v^{th}$ column-sum of the pre-summed test statistic~\ref{eq:MGC}. Note that the deviation of non-negative \texttt{MGC} statistic from zero implies departure from the independence and also note that we truncate the \texttt{dCov} statistics by column entry's rank. Thus $C^{k^{*}}_{j v} D^{l^{*}}_{j v}$ would not be truncated if node $j$ $(\in \{ 1,2, \ldots, n \} \setminus v )$ is important to node $v$ and its larger, positive value would contribute to the \texttt{MGC} statistic more. The statistic $h(v)$ comes out from these observations, and the following Theorem supports our conjectures. 
+which is proportional to $v^{th}$ column-sum of the pre-summed test statistic~\ref{eq:MGC}. Note that the deviation of non-negative \texttt{MGC} statistic from zero implies departure from the independence and also note that we truncate the \texttt{dCov} statistics by column entry's rank. Thus $\tilde{C}_{jv} \tilde{D}_{jv}$ would not be truncated if node $j$ $(\in \{ 1,2, \ldots, n \} \setminus v )$ is important to node $v$ and its larger, positive value would contribute to ${\mathcal{V}^{*}_{n}}^2$ more. The statistic $c(v)$ comes out from these observations. 
 
 \begin{theorem}[Node contribution theorem]
 	\label{contributiontheorem}
-	Assume two nodes $u$ and $v$ in a given network $\mathbf{G}$, i.e., $u, v \in V(\mathbf{G})$ and network topology associated with node $u$  is dependent on the attributes $X$ associated with node $u$; while network topology of $v$ is independent of the nodal attributes of $v$. Then $P\big(  h(u)  \geq h(v) \big) \longrightarrow 1$ as $n \rightarrow \infty$.
+	Assume two nodes $u$ and $v$ in a given network $\mathbf{G}$, i.e., $u, v \in V(\mathbf{G})$ and network topology associated with node $u$  is dependent on the attributes $X$ associated with node $u$; while network topology of $v$ is independent of the nodal attributes of $v$. Then $P\big(  c(u)  \geq c(v) \big) \longrightarrow 1$ as $n \rightarrow \infty$.
 \end{theorem}	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulation Study}
 \label{sec:simulation}
 	\vspace*{-0.2cm}
-In this section we investigate our approach via simulated models and empirical performances. In the simulation studies, we compare the empirical testing powers of four test statistics: \texttt{MGC}, \texttt{mCorr}, \texttt{HHG}, and the likelihood ratio test by Fosdick and Hoff (\texttt{FH})~\cite{fosdick2015testing}. For the first three statistics, we further consider three different metrics of the network topology: the Euclidean distances of the diffusion maps (\texttt{DM}), of each column of adjacency matrix (\texttt{AM}), and of the latent factors (\texttt{LF}, which is based on singular value decomposition of the adjacency matrix). The \texttt{FH} likelihood ratio test must always be based on the latent factors.
+Next we investigate our approach via simulated models and empirical performances. In the simulation studies, we compare the empirical testing powers of four test statistics: \texttt{MGC}, \texttt{mCorr}, \texttt{HHG}, and the likelihood ratio test by Fosdick and Hoff (\texttt{FH})~\cite{fosdick2015testing}. For the first three statistics, we further consider three different metrics of the network topology: the Euclidean distances of the diffusion maps (\texttt{DM}), of each column of adjacency matrix (\texttt{AM}), and of the latent factors (\texttt{LF}, which is based on singular value decomposition of the adjacency matrix). The \texttt{FH} likelihood ratio test must always be based on the latent factors.
 
 Note that all latent factors based methods require a selection of a dimension parameter $q$, which we vary $q \in [1,10]$ and take the optimal power within the range (e.g., as a benchmark, the \texttt{FH} test actually has its power maximized over the parameter range). While for the diffusion maps, it suffices to fix $t=5$ as discussed in Section~\ref{ssec:method2}.
 
@@ -316,7 +316,7 @@ Even though we rarely see the network nearly follows the model in reality, If we
 \end{figure}
 To examine the effectiveness of node contribution measure in testing dependency as presented in the statistic~\ref{eq:contribution}, we deliberately simulate the network and its nodal attributes as half of the nodes are independent while the other half are dependent on network. As an ad hoc test of node contribution, we rank the nodes in terms of decreasing order of $c(v)$ and count the ratio of dependent samples's ranks within the number of dependent nodes. If it works perfectly, all dependent nodes would take higher rank than every independent node so thus the rate equals to one. We call this rate as \textit{inclusion rate}:
 \begin{equation}
-\mbox{ inclusion rate}\big(  h(v) \big) = \sum\limits_{v \in V(\mathbf{G})} \big\{  rank_{c(v)}\big(  v \big)  \leq  m  \big\}   /  m,
+\mbox{ inclustion rate}\big(  c(v) \big) = \sum\limits_{v \in V(\mathbf{G})} \big\{  rank_{c(v)}\big(  v \big)  \leq  m  \big\}   /  m,
 \label{eq:inclusion_rate}
 \end{equation}
 where $m (\leq |V(\mathbf{G})|)$ is the number of nodes under network dependence. We set $m=n/2$ out of $n = |V(\mathbf{G})|$.
@@ -327,14 +327,14 @@ where $m (\leq |V(\mathbf{G})|)$ is the number of nodes under network dependence
 \label{sec:real}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\linewidth]{../Figure/two_politics.pdf}
+	\includegraphics[width=\linewidth]{two_politics.pdf}
 	\caption{Both panels depict the collaborative networks during the two time periods having significant network dependency in types of organizations. Using \texttt{MGC} statistics, we are not only able to test network independence but also calculate each node's amount of contribution to detecting dependence, which is proportional to node size here. You can tell that the tendency to collaborate within the same type is strongest among the business group while scientist relatively collaborates less with any others, especially in the first period.}
 	\label{fig:politics}
 \end{figure}
 In the field of political science, who exerts more powerful impacts than the others over political network and which factors impact on the power differentials are one of the interests~\cite{ingold2014structural}. \cite{minhas2016inferential} made an inference from political networks~\cite{cranmer2016navigating} via the additive and multiplicative effects (AME). The AME model estimates the latent factors and uses them to test independence with the nodal attributes. Among diverse attributes that \cite{cranmer2016navigating} provided, we focus on the types of organizations and how 34 political organizations having different types are participating policy network. We changed a given directed network into undirected network and use a dissimilarity matrix for distance matrix of the attributes, i.e., $\parallel \mathbf{X}_{i}  - \mathbf{X}_{j} \parallel = 0$ if and only if node $i$ and node $j$ are from the same type and one otherwise. Two collaboration networks comprised of the same set of nodes across two time periods are provided~\cite{ingold2014structural}. Figure~\ref{fig:politics} and Figure~\ref{fig:barplots} illustrates these two networks and shows each node's reliance on its organization type when collaborating. During the two periods, the network independence test statistics of \texttt{MGC} (p-value : (0.002 , 0.002)) and \texttt{mCorr} (p-value : ( 0.000, 0.000)) using diffusion distance matrices result in significant p-values across diffusion times from $t=1$ to $t=10$. The conclusion from the \texttt{FH} test (p-value : ( 0.000, 0.000)) is also the same.  
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=\linewidth]{../Figure/barplots_nolegend.pdf}	
+	\includegraphics[width=\linewidth]{barplots_nolegend.pdf}	
 	\caption{In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure~\ref{fig:politics}. Generally organizations cooperate more actively between different types in the second period but still their collaboration network is highly dependent on their organization types especially for business group.}
 	\label{fig:barplots}
 \end{figure}
