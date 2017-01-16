@@ -3,44 +3,49 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: shortversion.aux
 The style file: unsrt.bst
 Database file #1: reference.bib
-You've used 36 entries,
+Repeated entry---line 730 of file reference.bib
+ : @article{tang2010graph
+ :                       ,
+I'm skipping whatever remains of this entry
+You've used 38 entries,
             1791 wiz_defined-function locations,
-            682 strings with 9553 characters,
-and the built_in function-call counts, 8792 in all, are:
-= -- 828
-> -- 345
+            694 strings with 10041 characters,
+and the built_in function-call counts, 9262 in all, are:
+= -- 866
+> -- 376
 < -- 5
-+ -- 128
-- -- 92
-* -- 618
-:= -- 1365
-add.period$ -- 109
-call.type$ -- 36
-change.case$ -- 35
++ -- 139
+- -- 101
+* -- 655
+:= -- 1446
+add.period$ -- 115
+call.type$ -- 38
+change.case$ -- 37
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 379
-empty$ -- 843
-format.name$ -- 92
-if$ -- 1972
+cite$ -- 38
+duplicate$ -- 396
+empty$ -- 883
+format.name$ -- 101
+if$ -- 2070
 int.to.chr$ -- 0
-int.to.str$ -- 36
-missing$ -- 37
-newline$ -- 183
-num.names$ -- 36
-pop$ -- 64
+int.to.str$ -- 38
+missing$ -- 39
+newline$ -- 193
+num.names$ -- 38
+pop$ -- 68
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 197
+skip$ -- 204
 stack$ -- 0
-substring$ -- 739
-swap$ -- 92
+substring$ -- 770
+swap$ -- 94
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 87
-width$ -- 38
-write$ -- 394
+while$ -- 91
+width$ -- 40
+write$ -- 415
+(There was 1 error message)
