@@ -198,13 +198,17 @@ If a pair of data $(\mathbf{u}_{i}, \mathbf{x}_{i} )$ can be further assumed ind
 \end{equation}
 where $\tilde{C}$ and $\tilde{D}$ is doubly-centered $C$ and $D$ by its column mean and row mean respectively, i.e., $\tilde{C}=HCH$, where $H=I_{n}-\frac{J_{n}}{n}$ (the double centering matrix), $I_n$ is the $n \times n$ identity matrix (ones on the diagonal, zeros elsewhere), and $J_n$ is the $n \times n$ matrix of all ones. The distance correlation (\texttt{dCorr}) follows by normalizing the distance covariance and is in the range of $[0,1]$. The best property of distance correlation is its consistency against almost all alternatives, i.e., $\texttt{dCorr}(\mathbf{U}, \mathbf{X})$ has testing power $1$ for sufficiently large $n$, for any joint distributions of finite second moment. In addition, a modified distance correlation (\texttt{mCorr}) was also proposed by Szekely and Rizzo~\cite{szekely2013distance} especially for testing high dimensional random vectors but unfortunately, the \texttt{mCorr} often fails to capture nonlinear associations especially embedded in high-dimensional data set~\citep{shen2016discovering, heller2012consistent}. 
 
-The \texttt{MGC} test inherits the consistency of distance correlation and significantly improves the finite-sample testing power via utilizing the correlation from a subset of data points. To be specific, we first compute all local correlations $c^{kl}_{n}$ still based on the distance matrices of $\mathbf{U}$ and $\mathbf{X}$ but only including up to $k$-nearest points and up to $l$-nearest points for each data set. 
+The \texttt{MGC} test inherits the consistency of distance correlation and significantly improves the finite-sample testing power via utilizing the correlation from a subset of data points. To be specific, we first compute all local covariances $c^{kl}_{n}$ still based on the distance matrices of $\mathbf{U}$ and $\mathbf{X}$ but only including up to $k$-nearest points and up to $l$-nearest points for each data set. 
 % include the MGC statistic
 \begin{equation}
 \label{eq:MGC}
-c^{kl}_{n} = \frac{1}{n^2 \sigma^{k}_{C} \sigma^{l}_{D}} \sum\limits_{i,j=1}^{n} C^{k}_{ij} D^{l}_{ij} I\big( r(C_{ij}) \leq k \big) I\big(  r(D_{ij}) \leq l  \big), \quad k= 1, \ldots, K_{\mathbf{U}}; l =1, \ldots, L_{\mathbf{L}},
+c^{kl}_{n} = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{C}_{ij} \tilde{D}_{ij} I\big( r(C_{ij}) \leq k \big) I\big(  r(D_{ij}) \leq l  \big), \quad k= 1, \ldots, K_{\mathbf{U}}; l =1, \ldots, L_{\mathbf{L}},
 \end{equation}
-where $C^{k}_{ij} = C_{ij} - \bar{C}^{k}$ and $D^{k}_{ij} = D_{ij} - \bar{D}^{k}$ with local mean $\bar{C}^{k}$ and $\bar{D}^{l}$; $r(C_{ij})$ denotes a rank function of data $\mathbf{U}$ indicating the rank of $\mathbf{u}_{i}$ with respect to $\mathbf{u}_{j}$, and the same definition for $r(D_{ij})$ in data $\mathbf{X}$; $\sigma^{k}_{C}$ and $\sigma^{l}_{D}$ denote the standard deviations for the truncated pairwise comparison in data $\mathbf{U}$ and data $\mathbf{X}$ respectively; $K_{\mathbf{U}} (\leq n)$ and $L_{\mathbf{X}} (\leq n)$ is the number of distinct values in data $\mathbf{U}$ and $\mathbf{X}$ respectively. Among all $( K_{\mathbf{U}} \times L_{\mathbf{X}} )$ combinations of distinct neighborhood choices, we locate the optimal choice of neighborhood $(k^{*}, l^{*})$, which leads to the \texttt{MGC} statistic $c^{k^{*} l^{*}}_{n}$. 
+where %$C^{k}_{ij} = C_{ij} - \bar{C}^{k}$ and $D^{k}_{ij} = D_{ij} - \bar{D}^{k}$ with local mean $\bar{C}^{k}$ and $\bar{D}^{l}$; 
+$r(C_{ij})$ denotes a rank function of data $\mathbf{U}$ indicating the rank of $\mathbf{u}_{i}$ with respect to $\mathbf{u}_{j}$, and the same definition for $r(D_{ij})$ in data $\mathbf{X}$; 
+%$\sigma^{k}_{C}$ and $\sigma^{l}_{D}$ denote the standard deviations for the truncated pairwise comparison in data $\mathbf{U}$ and data $\mathbf{X}$ respectively; 
+$K_{\mathbf{U}} (\leq n)$ and $L_{\mathbf{X}} (\leq n)$ is the number of distinct values in data $\mathbf{U}$ and $\mathbf{X}$ respectively. Then the local correlations are the normalizations of the local covariance into $[-1,1]$, and the MGC statistic is denoted by $c^{k^{*} l^{*}}_{n}$ via locating the optimal choice of neighborhood $(k^{*}, l^{*})$ among all possible neighborhood choices.
+\cs{I rephrased the above MGC definition a little. Still need a few tweaks later. Better explain a bit on computation advantage, and what it means to be optimal here. }
 
 However, as the \textit{i.i.d.} assumption is not satisfied under network topology, the consistency of distance correlation is no longer guaranteed when applied to the arbitrary distance metric of the graph. In particular, neither the Euclidean distance of the adjacency vector nor the shortest-path distance can work together with distance correlation without breaking its consistency proof. 
 
@@ -238,7 +242,6 @@ if and only if $g_{\mathbf{u},\mathbf{x}}(t,s) = g_{\mathbf{u}}(t) g_{\mathbf{x}
 
 Followed by Lemma~\ref{main_lemma}, Lemma~\ref{lemma1} and Lemma~\ref{lemma2}, our next result shows that both the \texttt{dCorr} and \texttt{MGC} defined on the diffusion distance can have the same consistency when extended to network dependency test of exchangeable graphs.
 
-
 \begin{theorem}[\texttt{MGC} Consistency via Diffusion Distance]
 Under the conditions above, 
 $$\texttt{dCorr}(\mathbf{U}, \mathbf{X}) \longrightarrow 0 \mbox{ as } n \rightarrow \infty$$ 
@@ -248,6 +251,11 @@ if and only if $\mathbf{U}$ is independent of $\mathbf{X}$. And both \texttt{MGC
 
 Therefore, our approach not only yields an easy-to-use methodology in network dependence testing, but also enjoys solid theoretical property and thus offers a principal approach to study correlation on network data. You can find the proof of this theorem in Appendix~\ref{ssec:proof}.
 
+\cs{I think, maybe we should take certain contents out of Section 2, and make a separate review section on diffusion maps and MGC. Then in the results section, we can be more concentrated and clearer about our contribution and theorems. Also add another subsection describing the full network testing procedure. What do you think?}
+\textcolor{red}{I am very certain what it does mean but I agree that we now have heavy section 2. Let us discuss this next week.}
+
+\cs{For the directed case, if it does not work we simply exclude; otherwise we can either add it here or in the appendix (so as not to further complicate the main content)}
+\textcolor{red}{As long as I found, spectral decomposition diffusion maps of asymmetric weight matrix is not tractable; so it is not unusual to transform asymmetric kernel to the symmetric. Why don't we just mention one sentence suggesting such alternatives?  }
 %Note that if $\{ \mathbf{w}_{i} : i = 1,2,\ldots, n \}$ are \textit{i.i.d}, they are also exchangeable. Thus estimated latent network factors, which are assumed \textit{i.i.d} by \cite{fosdick2015testing} can also be applied to Theorem~\ref{theoremMain}. We already have shown that even under undirected network, diffusion maps remain exchangeable at each diffusion time point $t$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -256,14 +264,17 @@ Therefore, our approach not only yields an easy-to-use methodology in network de
 On the other hand, in the presence of nonlinear dependency, some nodes often exert more reliance on their attributes than the others. Like other node-specific measures of importance, e.g. centrality,  the amount of each node's leverage on dependence can be of interest. Here we suggest the measure of node's contribution to detecting dependence by utilizing \texttt{MGC} statistic. Let $(k^{*}, l^{*})$ be the optimal neighborhood choice in the distance matrix $(C, D)$ respectively. Denote the contribution of node $v \in V(\mathbf{G})$ to the testing statistic by  $h(\cdot) : v \rightarrow \mathbb{R}$
 \begin{equation}
 \label{eq:contribution}
-h(v) =  \frac{1}{n} \sum\limits_{j=1}^{n} C^{k^{*}}_{j v} D^{l^{*}}_{j v} I \big(  r (C_{j v}) \leq k^{*}  \big) I \big( r (D_{ j v }) \leq l^{*} \big), 
+h(v) =  \frac{1}{n} \sum\limits_{j=1}^{n} C_{j v} D_{j v} I \big(  r (C_{j v}) \leq k^{*}  \big) I \big( r (D_{ j v }) \leq l^{*} \big), 
 \end{equation}
-which is proportional to $v^{th}$ column-sum of the pre-summed test statistic~\ref{eq:MGC} at optimal neighborhood choice. Note that the deviation of non-negative \texttt{MGC} statistic from zero implies departure from the independence and also note that we truncate the \texttt{dCov} statistics by column entry's rank. Thus $C_{jv} D_{jv}$ would not be truncated if node $j$ $(\in \{ 1,2, \ldots, n \} \setminus v )$ is important to node $v$ and its larger, positive value would contribute to ${\mathcal{V}^{*}_{n}}^2$ more. The statistic $c(v)$ comes out from these observations. 
+which is proportional to $v^{th}$ column-sum of the pre-summed test statistic~\ref{eq:MGC} at optimal neighborhood choice. Note that the deviation of non-negative \texttt{MGC} statistic from zero implies departure from the independence and also note that we truncate the \texttt{dCov} statistics by column entry's rank. Thus $C_{jv} D_{jv}$ would not be truncated if node $j$ $(\in \{ 1,2, \ldots, n \} \setminus v )$ is important to node $v$ and its larger, positive value would contribute to $h(v)$ more. The statistic $c(v)$ comes out from these observations. 
 
 \begin{theorem}[\textcolor{red}{Node contribution theorem}]
 	\label{contributiontheorem}
 	Assume two nodes $u$ and $v$ in a given network $\mathbf{G}$, i.e., $u, v \in V(\mathbf{G})$ and network topology associated with node $u$  is dependent on the attributes $X$ associated with node $u$; while network topology of $v$ is independent of the nodal attributes of $v$. Then $P\big(  h(u)  \geq h(v) \big) \longrightarrow 1$ as $n \rightarrow \infty$.
 \end{theorem}	
+\cs{I will rephrase this theorem.}
+\textcolor{red}{I will think about contribution theorem after doing real data experiment enough.}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulation Study}
@@ -341,12 +352,14 @@ Even though we rarely see the network nearly follows the model in reality, if so
 \subsection{Node Contribution Test}
 \label{ssec:node}
 
+
 %\begin{figure}[ht]
 %	\centering
 %	\includegraphics[width=\linewidth]{nodecontri.pdf}
 %	\caption{This plot describes that both power of \texttt{MGC} and the rate of correctly-ranked node contribution increase as the number of nodes increases when only half of the nodes for each simulation actually are set to be dependent on network, which validates the use of node contribution measure in independence test.}
 %	\label{fig:contribution}
 %\end{figure}
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\linewidth]{nodecontri2.pdf}
@@ -364,7 +377,7 @@ where $m (\leq |V(\mathbf{G})|)$ is the number of nodes under network dependence
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Real Data Examples}
 \label{sec:real}
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=\linewidth]{two_politics.pdf}
 	\caption{Both panels depict the collaborative networks during the two time periods having significant network dependency in types of organizations. Using \texttt{MGC} statistics, we are not only able to test network independence but also calculate each node's amount of contribution to detecting dependence, which is proportional to node size here. You can tell that the tendency to collaborate within the same type is strongest among the business group while scientist relatively collaborates less with any others, especially in the first period.}
@@ -377,6 +390,8 @@ In the field of political science, who exerts more powerful impacts than the oth
 	\caption{In the first period, we have two extreme cases among the business group and science group, which reflects our observations in Figure~\ref{fig:politics}. Generally organizations cooperate more actively between different types in the second period but still their collaboration network is highly dependent on their organization types especially for business group.}
 	\label{fig:barplots}
 \end{figure}
+\cs{can we expand the real data section? It looks too short for now, although it is probably ok for stat journal.}
+\textcolor{red}{I am considering manipulation MRI data in order to show the case where MGC > others... }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace*{-0.5cm}
@@ -480,7 +495,7 @@ Different from the former undirected case, $\Pi^{1/2} \mathbf{P} \Pi^{-1/2}$ doe
 \subsection{Algorithms}
 \alglanguage{pseudocode}
 
-\begin{algorithm}[H]
+\begin{algorithm}[ht]
 	\caption{Mutiscale representation of nodes in network}
 	\begin{algorithmic}[1]
 		\Require Transition probability matrix $P$ of network $G$ and a set of time points $\{ t_{i}  : t_{i} \in \mathbb{N} \}$  of diffusion time. 
@@ -506,7 +521,7 @@ Different from the former undirected case, $\Pi^{1/2} \mathbf{P} \Pi^{-1/2}$ doe
 \end{algorithm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{algorithm}[H]
+\begin{algorithm}[ht]
 	\caption{Multiscale Generalized Correlation (\texttt{MGC}) test statistics with diffusion maps as a network-based distance.}
 	\begin{algorithmic}[1]
 		\Require A connected, undirected network $G$ with its nodal attributes $\mathbf{X}$.
@@ -530,7 +545,7 @@ Different from the former undirected case, $\Pi^{1/2} \mathbf{P} \Pi^{-1/2}$ doe
 \end{algorithm}
 
 %%%%%%%%%%%%%%%%%%%%%%
-\begin{algorithm}[H]
+\begin{algorithm}[ht]
 	\caption{Node-specific contribution to detecting dependency via \texttt{MGC} statistic}
 	\begin{algorithmic}[1]
 		\Require Distance metric of graph $G$, $C$, and attributes $X$, $D$, and (one of) the estimated optimal scales $\{ k^{*}, l^{*} \}$ 
