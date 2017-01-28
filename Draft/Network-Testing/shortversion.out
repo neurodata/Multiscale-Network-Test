@@ -1,16 +1,21 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Results}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Diffusion Maps and Diffusion Distances}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Dependence Testing via MGC}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Node Contribution to Testing Dependence}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Simulation Study}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Stochastic Block Model}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.2}{Degree-corrected Stochastic Block Model}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.3}{Additive and Multiplicative Graph Model}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.4}{Node Contribution Test}{section.3}% 10
-\BOOKMARK [1][-]{section.4}{Real Data Examples}{}% 11
-\BOOKMARK [1][-]{section.5}{Conclusion And Future Work}{}% 12
-\BOOKMARK [1][-]{section.6}{Appendix}{}% 13
-\BOOKMARK [2][-]{subsection.6.1}{Proofs}{section.6}% 14
-\BOOKMARK [2][-]{subsection.6.2}{Diffusion Distance in Directed Graphs}{section.6}% 15
-\BOOKMARK [2][-]{subsection.6.3}{Algorithms}{section.6}% 16
+\BOOKMARK [2][-]{subsection.1.1}{Data Structure of Graph with Nodal Attributes}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Testing Network Dependence}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Testing Dependence in General Settings}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Outline of the Article}{section.1}% 5
+\BOOKMARK [1][-]{section.2}{Method}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Diffusion Maps and Diffusion Distances}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.2}{Dependence Testing via MGC}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{Theoretical Properties}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Node Contribution to Testing Dependence}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Simulation Study}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Stochastic Block Model}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Degree-corrected Stochastic Block Model}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.3}{Additive and Multiplicative Graph Model}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.4}{Node Contribution Test}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Real Data Examples}{}% 16
+\BOOKMARK [1][-]{section.6}{Conclusion And Future Work}{}% 17
+\BOOKMARK [1][-]{section.7}{Appendix}{}% 18
+\BOOKMARK [2][-]{subsection.7.1}{Proofs}{section.7}% 19
+\BOOKMARK [2][-]{subsection.7.2}{Diffusion Distance in Directed Graphs}{section.7}% 20
+\BOOKMARK [2][-]{subsection.7.3}{Algorithms}{section.7}% 21
