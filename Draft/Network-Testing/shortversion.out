@@ -7,15 +7,13 @@
 \BOOKMARK [2][-]{subsection.2.1}{Diffusion Maps and Diffusion Distances}{section.2}% 7
 \BOOKMARK [2][-]{subsection.2.2}{Dependence Testing via MGC}{section.2}% 8
 \BOOKMARK [1][-]{section.3}{Theoretical Properties}{}% 9
-\BOOKMARK [2][-]{subsection.3.1}{Node Contribution to Testing Dependence}{section.3}% 10
-\BOOKMARK [1][-]{section.4}{Simulation Study}{}% 11
-\BOOKMARK [2][-]{subsection.4.1}{Stochastic Block Model}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.2}{Degree-corrected Stochastic Block Model}{section.4}% 13
-\BOOKMARK [2][-]{subsection.4.3}{Additive and Multiplicative Graph Model}{section.4}% 14
-\BOOKMARK [2][-]{subsection.4.4}{Node Contribution Test}{section.4}% 15
-\BOOKMARK [1][-]{section.5}{Real Data Examples}{}% 16
-\BOOKMARK [1][-]{section.6}{Conclusion And Future Work}{}% 17
-\BOOKMARK [1][-]{section.7}{Appendix}{}% 18
-\BOOKMARK [2][-]{subsection.7.1}{Proofs}{section.7}% 19
-\BOOKMARK [2][-]{subsection.7.2}{Diffusion Distance in Directed Graphs}{section.7}% 20
-\BOOKMARK [2][-]{subsection.7.3}{Algorithms}{section.7}% 21
+\BOOKMARK [1][-]{section.4}{Simulation Study}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Stochastic Block Model}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Degree-corrected Stochastic Block Model}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Additive and Multiplicative Graph Model}{section.4}% 13
+\BOOKMARK [1][-]{section.5}{Real Data Example}{}% 14
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 15
+\BOOKMARK [1][-]{section.7}{Appendix}{}% 16
+\BOOKMARK [2][-]{subsection.7.1}{Proofs}{section.7}% 17
+\BOOKMARK [2][-]{subsection.7.2}{Diffusion Distance in Directed Graphs}{section.7}% 18
+\BOOKMARK [2][-]{subsection.7.3}{Algorithms}{section.7}% 19

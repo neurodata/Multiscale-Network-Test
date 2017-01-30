@@ -168,6 +168,17 @@ Minh Tang and Michael Trosset.
 \newblock Graph metrics and dimension reduction.
 \newblock {\em Indiana University, Indianapolis, IN}, 2010.
 
+\bibitem{szekely2013distance}
+G{\'a}bor~J Sz{\'e}kely and Maria~L Rizzo.
+\newblock The distance correlation t-test of independence in high dimension.
+\newblock {\em Journal of Multivariate Analysis}, 117:193--213, 2013.
+
+\bibitem{heller2012consistent}
+Ruth Heller, Yair Heller, and Malka Gorfine.
+\newblock A consistent multivariate test of association based on ranks of
+  distances.
+\newblock {\em Biometrika}, page ass070, 2012.
+
 \bibitem{orbanz2015bayesian}
 Peter Orbanz and Daniel~M Roy.
 \newblock Bayesian models of graphs, arrays and other exchangeable random
@@ -180,37 +191,6 @@ Adrien Todeschini and Fran{\c{c}}ois Caron.
 \newblock Exchangeable random measures for sparse and modular graphs with
   overlapping communities.
 \newblock {\em arXiv preprint arXiv:1602.02114}, 2016.
-
-\bibitem{szekely2013distance}
-G{\'a}bor~J Sz{\'e}kely and Maria~L Rizzo.
-\newblock The distance correlation t-test of independence in high dimension.
-\newblock {\em Journal of Multivariate Analysis}, 117:193--213, 2013.
-
-\bibitem{heller2012consistent}
-Ruth Heller, Yair Heller, and Malka Gorfine.
-\newblock A consistent multivariate test of association based on ranks of
-  distances.
-\newblock {\em Biometrika}, page ass070, 2012.
-
-\bibitem{ingold2014structural}
-Karin Ingold and Philip Leifeld.
-\newblock Structural and institutional determinants of influence reputation: a
-  comparison of collaborative and adversarial policy networks in decision
-  making and implementation.
-\newblock {\em Journal of Public Administration Research and Theory}, page
-  muu043, 2014.
-
-\bibitem{minhas2016inferential}
-Shahryar Minhas, Peter~D Hoff, and Michael~D Ward.
-\newblock Inferential approaches for network analyses: Amen for latent factor
-  models.
-\newblock {\em arXiv preprint arXiv:1611.00460}, 2016.
-
-\bibitem{cranmer2016navigating}
-Skyler~J Cranmer, Philip Leifeld, Scott~D McClurg, and Meredith Rolfe.
-\newblock Navigating the range of statistical tools for inferential network
-  analysis.
-\newblock {\em American Journal of Political Science}, 2016.
 
 \bibitem{diaconis1980finite}
 Persi Diaconis and David Freedman.
