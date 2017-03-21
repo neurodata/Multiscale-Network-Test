@@ -1,0 +1,252 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Chen, Shen, Vogelstein, and Priebe}{Chen
+  et~al.}{2016}]{ChenShenVogelsteinPriebe2016}
+Chen, L., C.~Shen, J.~T. Vogelstein, and C.~E. Priebe (2016).
+\newblock Robust vertex classification.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine
+  Intelligence\/}~{\em 38\/}(3), 578--590.
+
+\bibitem[\protect\citeauthoryear{Coifman and Lafon}{Coifman and
+  Lafon}{2006}]{coifman2006diffusion}
+Coifman, R.~R. and S.~Lafon (2006).
+\newblock Diffusion maps.
+\newblock {\em Applied and computational harmonic analysis\/}~{\em 21\/}(1),
+  5--30.
+
+\bibitem[\protect\citeauthoryear{Coifman, Lafon, Lee, Maggioni, Nadler, Warner,
+  and Zucker}{Coifman et~al.}{2005}]{coifman2005geometric}
+Coifman, R.~R., S.~Lafon, A.~B. Lee, M.~Maggioni, B.~Nadler, F.~Warner, and
+  S.~W. Zucker (2005).
+\newblock Geometric diffusions as a tool for harmonic analysis and structure
+  definition of data: Diffusion maps.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America\/}~{\em 102\/}(21), 7426--7431.
+
+\bibitem[\protect\citeauthoryear{Diaconis and Freedman}{Diaconis and
+  Freedman}{1980}]{diaconis1980finite}
+Diaconis, P. and D.~Freedman (1980).
+\newblock Finite exchangeable sequences.
+\newblock {\em The Annals of Probability\/}, 745--764.
+
+\bibitem[\protect\citeauthoryear{Erdos and Renyi}{Erdos and
+  Renyi}{1959}]{erdosrenyi1959}
+Erdos, P. and A.~Renyi (1959).
+\newblock On random graphs. i.
+\newblock {\em Publicationes Mathematicae\/}~{\em 6}, 290--297.
+
+\bibitem[\protect\citeauthoryear{Fosdick and Hoff}{Fosdick and
+  Hoff}{2015}]{fosdick2015testing}
+Fosdick, B.~K. and P.~D. Hoff (2015).
+\newblock Testing and modeling dependencies between a network and nodal
+  attributes.
+\newblock {\em Journal of the American Statistical Association\/}~{\em
+  110\/}(511), 1047--1056.
+
+\bibitem[\protect\citeauthoryear{Gilbert}{Gilbert}{1959}]{Gilbert1959}
+Gilbert, E. (1959).
+\newblock Random graphs.
+\newblock {\em Annals of Mathematical Statistics\/}~{\em 30\/}(4), 1141--1144.
+
+\bibitem[\protect\citeauthoryear{Gretton and Gyorfi}{Gretton and
+  Gyorfi}{2010}]{GrettonGyorfi2010}
+Gretton, A. and L.~Gyorfi (2010).
+\newblock Consistent nonparametric tests of independence.
+\newblock {\em Journal of Machine Learning Research\/}~{\em 11}, 1391--1423.
+
+\bibitem[\protect\citeauthoryear{Heller, Heller, and Gorfine}{Heller
+  et~al.}{2013}]{HellerGorfine2013}
+Heller, R., Y.~Heller, and M.~Gorfine (2013).
+\newblock A consistent multivariate test of association based on ranks of
+  distances.
+\newblock {\em Biometrika\/}~{\em 100\/}(2), 503--510.
+
+\bibitem[\protect\citeauthoryear{Heller, Heller, Kaufman, Brill, and
+  Gorfine}{Heller et~al.}{2016}]{heller2016consistent}
+Heller, R., Y.~Heller, S.~Kaufman, B.~Brill, and M.~Gorfine (2016).
+\newblock Consistent distribution-free $k$-sample and independence tests for
+  univariate random variables.
+\newblock {\em Journal of Machine Learning Research\/}~{\em 17\/}(29), 1--54.
+
+\bibitem[\protect\citeauthoryear{Holland, Laskey, and Leinhardt}{Holland
+  et~al.}{1983}]{HollandEtAl1983}
+Holland, P., K.~Laskey, and S.~Leinhardt (1983).
+\newblock Stochastic blockmodels: First steps.
+\newblock {\em Social Networks\/}~{\em 5\/}(2), 109--137.
+
+\bibitem[\protect\citeauthoryear{Howard, Cox~Pahnke, Boeker, et~al.}{Howard
+  et~al.}{2016}]{howard2016understanding}
+Howard, M., E.~Cox~Pahnke, W.~Boeker, et~al. (2016).
+\newblock Understanding network formation in strategy research: Exponential
+  random graph models.
+\newblock {\em Strategic Management Journal\/}~{\em 37\/}(1), 22--44.
+
+\bibitem[\protect\citeauthoryear{Karrer and Newman}{Karrer and
+  Newman}{2011}]{karrer2011stochastic}
+Karrer, B. and M.~E. Newman (2011).
+\newblock Stochastic blockmodels and community structure in networks.
+\newblock {\em Physical Review E\/}~{\em 83\/}(1), 016107.
+
+\bibitem[\protect\citeauthoryear{Kiar, Gorgolewski, Kleissas, Roncal, Litt,
+  Wandell, Poldrack, Wiener, Vogelstein, Burns, et~al.}{Kiar
+  et~al.}{2016}]{kiar2016science}
+Kiar, G., K.~J. Gorgolewski, D.~Kleissas, W.~G. Roncal, B.~Litt, B.~Wandell,
+  R.~A. Poldrack, M.~Wiener, R.~J. Vogelstein, R.~Burns, et~al. (2016).
+\newblock Science in the cloud (sic): A use case in mri connectomics.
+\newblock {\em arXiv preprint arXiv:1610.08484\/}.
+
+\bibitem[\protect\citeauthoryear{Kiar, Roncal, Mhembere, Bridgeford, Burns, and
+  Vogelstein}{Kiar et~al.}{2016}]{kiar2016ndmg}
+Kiar, G., W.~G. Roncal, D.~Mhembere, E.~Bridgeford, R.~Burns, and J.~Vogelstein
+  (2016).
+\newblock ndmg: Neurodata’s mri graphs pipeline.
+
+\bibitem[\protect\citeauthoryear{Koroljuk and Borovskich}{Koroljuk and
+  Borovskich}{1994}]{KoroljukBook}
+Koroljuk, V.~S. and Y.~V. Borovskich (1994).
+\newblock {\em Theory of U-statistics}.
+\newblock Springer Science+Business Media Dordrecht.
+
+\bibitem[\protect\citeauthoryear{Lafon and Lee}{Lafon and
+  Lee}{2006}]{lafon2006diffusion}
+Lafon, S. and A.~B. Lee (2006).
+\newblock Diffusion maps and coarse-graining: A unified framework for
+  dimensionality reduction, graph partitioning, and data set parameterization.
+\newblock {\em IEEE transactions on pattern analysis and machine
+  intelligence\/}~{\em 28\/}(9), 1393--1403.
+
+\bibitem[\protect\citeauthoryear{Lei and Rinaldo}{Lei and
+  Rinaldo}{2015}]{Lei2015}
+Lei, J. and A.~Rinaldo (2015).
+\newblock Consistency of spectral clustering in stochastic block models.
+\newblock {\em The Annals of Statistics\/}~{\em 43\/}(1), 215--237.
+
+\bibitem[\protect\citeauthoryear{Li, Zhong, and Zhu}{Li
+  et~al.}{2012}]{LiZhongZhu2012}
+Li, R., W.~Zhong, and L.~Zhu (2012).
+\newblock Feature screening via distance correlation learning.
+\newblock {\em Journal of American Statistical Association\/}~{\em 107},
+  1129--1139.
+
+\bibitem[\protect\citeauthoryear{Mantel}{Mantel}{1967}]{mantel1967}
+Mantel, N. (1967).
+\newblock The detection of disease clustering and a generalized regression
+  approach.
+\newblock {\em Cancer Research\/}~{\em 27\/}(2), 209--220.
+
+\bibitem[\protect\citeauthoryear{Orbanz and Roy}{Orbanz and
+  Roy}{2015}]{orbanz2015bayesian}
+Orbanz, P. and D.~M. Roy (2015).
+\newblock Bayesian models of graphs, arrays and other exchangeable random
+  structures.
+\newblock {\em IEEE transactions on pattern analysis and machine
+  intelligence\/}~{\em 37\/}(2), 437--461.
+
+\bibitem[\protect\citeauthoryear{Pearson}{Pearson}{1895}]{Pearson1895}
+Pearson, K. (1895).
+\newblock Notes on regression and inheritance in the case of two parents.
+\newblock {\em Proceedings of the Royal Society of London\/}~{\em 58},
+  240--242.
+
+\bibitem[\protect\citeauthoryear{Rizzo and Sz{\'e}kely}{Rizzo and
+  Sz{\'e}kely}{2016}]{RizzoSzekely2016}
+Rizzo, M. and G.~Sz{\'e}kely (2016).
+\newblock Energy distance.
+\newblock {\em Wiley Interdisciplinary Reviews: Computational
+  Statistics\/}~{\em 8\/}(1), 27--38.
+
+\bibitem[\protect\citeauthoryear{Rohe, Chatterjee, and Yu}{Rohe
+  et~al.}{2011}]{rohe2011spectral}
+Rohe, K., S.~Chatterjee, and B.~Yu (2011).
+\newblock Spectral clustering and the high-dimensional stochastic blockmodel.
+\newblock {\em The Annals of Statistics\/}, 1878--1915.
+
+\bibitem[\protect\citeauthoryear{Shen, Priebe, Maggioni, and Vogelstein}{Shen
+  et~al.}{2017}]{shen2016discovering}
+Shen, C., C.~E. Priebe, M.~Maggioni, and J.~T. Vogelstein (2017).
+\newblock Discovering relationships across disparate data modalities.
+\newblock {\em arXiv preprint arXiv:1609.05148\/}.
+
+\bibitem[\protect\citeauthoryear{Sussman, Tang, Fishkind, and Priebe}{Sussman
+  et~al.}{2012}]{SussmanEtAl2012}
+Sussman, D., M.~Tang, D.~Fishkind, and C.~Priebe (2012).
+\newblock A consistent adjacency spectral embedding for stochastic blockmodel
+  graphs.
+\newblock {\em Journal of the American Statistical Association\/}~{\em
+  107\/}(499), 1119--1128.
+
+\bibitem[\protect\citeauthoryear{Sussman, Tang, and Priebe}{Sussman
+  et~al.}{2014}]{sussman2014consistent}
+Sussman, D.~L., M.~Tang, and C.~E. Priebe (2014).
+\newblock Consistent latent position estimation and vertex classification for
+  random dot product graphs.
+\newblock {\em IEEE transactions on pattern analysis and machine
+  intelligence\/}~{\em 36\/}(1), 48--57.
+
+\bibitem[\protect\citeauthoryear{Sz{\'e}kely and Rizzo}{Sz{\'e}kely and
+  Rizzo}{2013a}]{szekelyRizzo2013a}
+Sz{\'e}kely, G. and M.~Rizzo (2013a).
+\newblock The distance correlation t-test of independence in high dimension.
+\newblock {\em Journal of Multivariate Analysis\/}~{\em 117}, 193--213.
+
+\bibitem[\protect\citeauthoryear{Sz{\'e}kely and Rizzo}{Sz{\'e}kely and
+  Rizzo}{2014}]{SzekelyRizzo2014}
+Sz{\'e}kely, G. and M.~Rizzo (2014).
+\newblock Partial distance correlation with methods for dissimilarities.
+\newblock {\em Annals of Statistics\/}~{\em 42\/}(6), 2382--2412.
+
+\bibitem[\protect\citeauthoryear{Sz{\'e}kely and Rizzo}{Sz{\'e}kely and
+  Rizzo}{2013b}]{szekely2013distance}
+Sz{\'e}kely, G.~J. and M.~L. Rizzo (2013b).
+\newblock The distance correlation t-test of independence in high dimension.
+\newblock {\em Journal of Multivariate Analysis\/}~{\em 117}, 193--213.
+
+\bibitem[\protect\citeauthoryear{Sz{\'e}kely, Rizzo, Bakirov,
+  et~al.}{Sz{\'e}kely et~al.}{2007}]{szekely2007measuring}
+Sz{\'e}kely, G.~J., M.~L. Rizzo, N.~K. Bakirov, et~al. (2007).
+\newblock Measuring and testing dependence by correlation of distances.
+\newblock {\em The Annals of Statistics\/}~{\em 35\/}(6), 2769--2794.
+
+\bibitem[\protect\citeauthoryear{Tang, Sussman, and Priebe}{Tang
+  et~al.}{2013}]{TangSussmanPriebe2013}
+Tang, M., D.~L. Sussman, and C.~E. Priebe (2013).
+\newblock Universally consistent vertex classification for latent positions
+  graphs.
+\newblock {\em Annals of Statistics\/}~{\em 41\/}(3), 1406--1430.
+
+\bibitem[\protect\citeauthoryear{Wasserman and Pattison}{Wasserman and
+  Pattison}{1996}]{wasserman1996logit}
+Wasserman, S. and P.~Pattison (1996).
+\newblock Logit models and logistic regressions for social networks: I. an
+  introduction to markov graphs andp.
+\newblock {\em Psychometrika\/}~{\em 61\/}(3), 401--425.
+
+\bibitem[\protect\citeauthoryear{Young and Scheinerman}{Young and
+  Scheinerman}{2007}]{YoungScheinerman2007}
+Young, S. and E.~Scheinerman (2007).
+\newblock Random dot product graph models for social networks.
+\newblock In {\em Algorithms and Models for the Web-Graph}, pp.\  138--149.
+  Springer Berlin Heidelberg.
+
+\bibitem[\protect\citeauthoryear{Zhang, Filippi, Gretton, and Sejdinovic}{Zhang
+  et~al.}{2017}]{zhang2017large}
+Zhang, Q., S.~Filippi, A.~Gretton, and D.~Sejdinovic (2017).
+\newblock Large-scale kernel methods for independence testing.
+\newblock {\em Statistics and Computing\/}, 1--18.
+
+\bibitem[\protect\citeauthoryear{Zhao, Levina, and Zhu}{Zhao
+  et~al.}{2012}]{ZhaoLevinaZhu2012}
+Zhao, Y., E.~Levina, and J.~Zhu (2012).
+\newblock Consistency of community detection in networks under degree-corrected
+  stochastic block models.
+\newblock {\em Annals of Statistics\/}~{\em 40\/}(4), 2266--2292.
+
+\bibitem[\protect\citeauthoryear{Zhu and Ghodsi}{Zhu and
+  Ghodsi}{2006}]{ZhuGhodsi2006}
+Zhu, M. and A.~Ghodsi (2006).
+\newblock Automatic dimensionality selection from the scree plot via the use of
+  profile likelihood.
+\newblock {\em Computational Statistics and Data Analysis\/}~{\em 51},
+  918--930.
+
+\end{thebibliography}
