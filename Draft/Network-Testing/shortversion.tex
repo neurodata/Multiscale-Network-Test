@@ -77,6 +77,7 @@ anchorcolor = blue]{hyperref}
 		\end{center}
 		\medskip
 	} \fi
+
 	
 	\begin{abstract}
 		%The text of your abstract. 200 or fewer words.
@@ -92,6 +93,23 @@ anchorcolor = blue]{hyperref}
 	\section{Introduction}
 	\label{sec:intro}
 	
+
+
+\begin{abstract}
+%The text of your abstract. 200 or fewer words.
+Deciphering the association between network structures and corresponding nodal attributes of interest is a core problem in network science. As the network topology is structured and often high-dimensional, parametric approaches are dominant in network inferences, whereas nonparametric tests are often not applicable. In this paper, we propose a new nonparametric procedure for testing dependence between network topology and nodal attributes, via diffusion maps and distance-based correlation measures. Specifically, under an exchangeable graph, we prove that the diffusion maps defined on the adjacency matrix provide a set of conditional independent coordinates for the vertices, which can be combined with distance-based correlation to yield consistent statistic for network dependence testing. We demonstrate via simulations that the new method exhibits significantly better testing power than existing benchmarks under various circumstances, due to its' consistency against almost all common network models and its' capability to better capture nonlinear associations. An application on brain data is provided to further illustrate its advantage and utility. \cs{once real data is done, may need rephrase}
+\end{abstract}
+
+\noindent%
+{\it Keywords:} testing independence, exchangeable graph, diffusion distance, distance correlation, multiscale generalized correlation
+
+\sloppy
+\doublespacing
+
+\section{Introduction}
+\label{sec:intro}
+
+
 	% General Backgrounds
 	Propelled by increasing demand and supply of graph data from various disciplines, the ubiquitous influence of network inferences has motivated numerous recent advances and applications in statistics, physics, computer science, biology, social science, etc., which further poses many new challenges to data scientists. One of the most fundamental statistical questions is to determine and characterize the relationship among multiple modalities of a given data set, for which the first step is to test the existence of any dependency between the data sets. However, the lack of a principal notion of correlation in the graph domain has not only hindered the progress of nonparametric dependency testing methods, but also deterred a rich literature of statistical techniques in other inferences (e.g., regression, feature screening, two-sample test) from being directly applied to graphs.
 	

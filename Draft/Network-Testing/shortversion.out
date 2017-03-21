@@ -1,19 +1,20 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Data Structure of Graph with Nodal Attributes}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Testing Network Dependence}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Testing Dependence in General Settings}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Outline of the Article}{section.1}% 5
-\BOOKMARK [1][-]{section.2}{Method}{}% 6
-\BOOKMARK [2][-]{subsection.2.1}{Diffusion Maps and Diffusion Distances}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.2}{Dependence Testing via MGC}{section.2}% 8
-\BOOKMARK [1][-]{section.3}{Theoretical Properties}{}% 9
-\BOOKMARK [1][-]{section.4}{Simulation Study}{}% 10
-\BOOKMARK [2][-]{subsection.4.1}{Stochastic Block Model}{section.4}% 11
-\BOOKMARK [2][-]{subsection.4.2}{Degree-corrected Stochastic Block Model}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.3}{Additive and Multiplicative Graph Model}{section.4}% 13
-\BOOKMARK [1][-]{section.5}{Real Data Example}{}% 14
-\BOOKMARK [1][-]{section.6}{Discussion}{}% 15
-\BOOKMARK [1][-]{section.7}{Appendix}{}% 16
-\BOOKMARK [2][-]{subsection.7.1}{Proofs}{section.7}% 17
-\BOOKMARK [2][-]{subsection.7.2}{Diffusion Distance in Directed Graphs}{section.7}% 18
-\BOOKMARK [2][-]{subsection.7.3}{Algorithms}{section.7}% 19
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Data Structure of Graph with Nodal Attributes}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Testing Network Dependence}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Testing Dependence in General Settings}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Outline of the Article}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Method}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Diffusion Maps and Diffusion Distances}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Dependence Testing via MGC}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Theoretical Properties}{}% 10
+\BOOKMARK [1][-]{section.5}{Simulation Study}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{Stochastic Block Model}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{Degree-corrected Stochastic Block Model}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.3}{Additive and Multiplicative Graph Model}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Real Data Example}{}% 15
+\BOOKMARK [1][-]{section.7}{Discussion}{}% 16
+\BOOKMARK [1][-]{section.8}{Appendix}{}% 17
+\BOOKMARK [2][-]{subsection.8.1}{Proofs}{section.8}% 18
+\BOOKMARK [2][-]{subsection.8.2}{Diffusion Distance in Directed Graphs}{section.8}% 19
+\BOOKMARK [2][-]{subsection.8.3}{Algorithms}{section.8}% 20
