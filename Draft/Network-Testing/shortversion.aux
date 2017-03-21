@@ -28,11 +28,13 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Data Structure of Graph with Nodal Attributes}{1}{subsection.1.1}}
 \citation{wasserman1996logit,fosdick2015testing,howard2016understanding}
 \citation{fosdick2015testing}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \leavevmode {\color  {red}First figure needs to be replaced by brain network.. after the real data example in section 5 is affirmed.}You may conjecture that organizations with the same type are more likely to collaborate each other at first glance; but there has been a lack of statistical method to test if there exists any significant relationship between network topology and node-specific attributes and if any, which node exerts the most dependency on network.\relax }}{2}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:intro}{{1}{2}{\textcolor {red}{First figure needs to be replaced by brain network.. after the real data example in section 5 is affirmed.}You may conjecture that organizations with the same type are more likely to collaborate each other at first glance; but there has been a lack of statistical method to test if there exists any significant relationship between network topology and node-specific attributes and if any, which node exerts the most dependency on network.\relax }{figure.caption.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \leavevmode {\color  {red}First figure needs to be replaced by brain network.. after the real data example in section 5 is affirmed.}\relax }}{3}{figure.caption.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Testing Network Dependence}{3}{subsection.1.2}}
+\newlabel{fig:adj}{{1a}{2}{\relax }{figure.caption.1}{}}
+\newlabel{sub@fig:adj}{{a}{2}{\relax }{figure.caption.1}{}}
+\newlabel{fig:attri}{{1b}{2}{\relax }{figure.caption.1}{}}
+\newlabel{sub@fig:attri}{{b}{2}{\relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces (a) Adjacency matrix and (b) (shifted) $xyz$ coordinates of 95 nodes in brain network shows that a pair of nodes neighboring in terms of $x$-axis are more likely to be adjacent via edges than those who are located near over $y$ or $z$ axis or those who lie apart over $x$-axis.\relax }}{2}{figure.caption.1}}
+\newlabel{fig:into}{{1}{2}{(a) Adjacency matrix and (b) (shifted) $xyz$ coordinates of 95 nodes in brain network shows that a pair of nodes neighboring in terms of $x$-axis are more likely to be adjacent via edges than those who are located near over $y$ or $z$ axis or those who lie apart over $x$-axis.\relax }{figure.caption.1}{}}
 \citation{Pearson1895}
 \citation{mantel1967}
 \citation{RobertEscoufier1976}
@@ -42,6 +44,9 @@
 \citation{shen2016discovering}
 \citation{szekely2007measuring}
 \citation{shen2016discovering}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \leavevmode {\color  {red}First figure needs to be replaced by brain network.. after the real data example in section 5 is affirmed.}You may conjecture that organizations with the same type are more likely to collaborate each other at first glance; but there has been a lack of statistical method to test if there exists any significant relationship between network topology and node-specific attributes and if any, which node exerts the most dependency on network.\relax }}{3}{figure.caption.2}}
+\newlabel{fig:intro}{{2}{3}{\textcolor {red}{First figure needs to be replaced by brain network.. after the real data example in section 5 is affirmed.}You may conjecture that organizations with the same type are more likely to collaborate each other at first glance; but there has been a lack of statistical method to test if there exists any significant relationship between network topology and node-specific attributes and if any, which node exerts the most dependency on network.\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Testing Network Dependence}{3}{subsection.1.2}}
 \citation{coifman2006diffusion}
 \citation{coifman2006diffusion,lafon2006diffusion}
 \citation{coifman2006diffusion,coifman2005geometric}
@@ -88,7 +93,7 @@
 \citation{shen2016discovering}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Stochastic Block Model}{11}{subsection.4.1}}
 \newlabel{eq:Three}{{9}{11}{Stochastic Block Model}{equation.4.9}{}}
-\newlabel{SC@1}{{\caption@xref {??}{ on input line 312}}{12}{Stochastic Block Model}{figure.caption.4}{}}
+\newlabel{SC@1}{{\caption@xref {??}{ on input line 324}}{12}{Stochastic Block Model}{figure.caption.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The power heatmap under the SBM with three blocks (Equation\nobreakspace  {}\ref  {eq:Three}) demonstrates that for all possible combinations of test statistics with distance metrics the \texttt  {MGC} with the diffusion maps yields the best power comparing to all other methods.\relax }}{12}{figure.caption.4}}
 \newlabel{fig:threeSBM}{{4}{12}{The power heatmap under the SBM with three blocks (Equation~\ref {eq:Three}) demonstrates that for all possible combinations of test statistics with distance metrics the \texttt {MGC} with the diffusion maps yields the best power comparing to all other methods.\relax }{figure.caption.4}{}}
 \newlabel{eq:mono}{{10}{12}{Stochastic Block Model}{equation.4.10}{}}
@@ -104,9 +109,9 @@
 \newlabel{eq:ame}{{12}{14}{Additive and Multiplicative Graph Model}{equation.4.12}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Real Data Example}{14}{section.5}}
 \newlabel{sec:real}{{5}{14}{Real Data Example}{section.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Example plot\relax }}{15}{figure.caption.7}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{16}{section.6}}
-\newlabel{sec:conc}{{6}{16}{Discussion}{section.6}{}}
+\newlabel{eq:randomedge}{{13}{15}{Real Data Example}{equation.5.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{15}{section.6}}
+\newlabel{sec:conc}{{6}{15}{Discussion}{section.6}{}}
 \bibdata{reference}
 \bibcite{erdosrenyi1959}{{1}{}{{}}{{}}}
 \bibcite{Gilbert1959}{{2}{}{{}}{{}}}
@@ -153,16 +158,17 @@
 \citation{diaconis1980finite}
 \citation{szekely2007measuring}
 \citation{szekely2007measuring}
-\newlabel{eq:SLLN}{{14}{22}{Proofs}{equation.7.14}{}}
-\newlabel{eq:main2}{{15}{22}{Proofs}{equation.7.15}{}}
+\newlabel{eq:SLLN}{{15}{22}{Proofs}{equation.7.15}{}}
+\newlabel{eq:main2}{{16}{22}{Proofs}{equation.7.16}{}}
 \citation{shen2016discovering}
 \citation{tang2010graph}
-\newlabel{eq:main1}{{16}{23}{Proofs}{equation.7.16}{}}
+\newlabel{eq:main1}{{17}{23}{Proofs}{equation.7.17}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Diffusion Distance in Directed Graphs}{23}{subsection.7.2}}
 \newlabel{ssec:directed}{{7.2}{23}{Diffusion Distance in Directed Graphs}{subsection.7.2}{}}
-\newlabel{eq:directed}{{17}{23}{Diffusion Distance in Directed Graphs}{equation.7.17}{}}
+\newlabel{eq:directed}{{18}{23}{Diffusion Distance in Directed Graphs}{equation.7.18}{}}
+\citation{shen2016discovering}
+\citation{shen2016discovering}
+\citation{shen2016discovering}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Algorithms}{24}{subsection.7.3}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Mutiscale representation of nodes in network\relax }}{24}{algorithm.1}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Multiscale Generalized Correlation (\texttt  {MGC}) test statistics with diffusion maps as a network-based distance.\relax }}{25}{algorithm.2}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces Node-specific contribution to detecting dependency via \texttt  {MGC} statistic\relax }}{25}{algorithm.3}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces  Derive Multiscale Generalized Correlation (\texttt  {MGC}) test statistic and its p-value having diffusion map of fixed dimension $q ( \leq n )$ at a given diffusion time $t$ as a network-based distance.\relax }}{24}{algorithm.1}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
