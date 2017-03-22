@@ -194,9 +194,9 @@ A flowchart of the above procedure is provided in Figure~\ref{fig:flow}.
 \node (S1) [node, below of=in1] {Kernel Matrix $\mathbf{K}=(\mathbf{A}+\mathbf{A}^{'})/2$};
 
 \node (S2) [node, below of=S1] {Diffusion Map $\mathbf{U}=\{\mathbf{u}_{i}\} \in \mathbb{R}^{q \times n}$};
-\node (S2x) [node, below of=in2, yshift=-4cm] {Euclidean Distance $\mathbf{D}= \{\| \mathbf{x}_{i}- \mathbf{x}_{i}\|\} \in \mathbb{R}^{n \times n}$};
+\node (S2x) [node, below of=in2, yshift=-4cm] {Euclidean Distance $\mathbf{D}= \{\| \mathbf{x}_{i}- \mathbf{x}_{j}\|\} \in \mathbb{R}^{n \times n}$};
 
-\node (S3) [node, below of=S2] {Diffusion Distance $\mathbf{C}= \{\| \mathbf{u}_{i}- \mathbf{u}_{i}\|\} \in \mathbb{R}^{n \times n}$};
+\node (S3) [node, below of=S2] {Diffusion Distance $\mathbf{C}= \{\| \mathbf{u}_{i}- \mathbf{u}_{j}\|\} \in \mathbb{R}^{n \times n}$};
 
 \node (D1) [node, below of=S3, xshift=4cm] {\texttt{MGC} statistic $\rho^{*}(\mathbf{C},\mathbf{D})$};
 \node (D2) [node, below of=D1] {Compute P-value};
