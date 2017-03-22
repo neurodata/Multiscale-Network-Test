@@ -1,6 +1,6 @@
 library(amen)
 
-FH_test = function(A, X, k.range, n.iter){
+FH_factor = function(A, k.range){
   # this function test independence between network topology and nodal attributes
   # via Fosdick & Hoff (2015) 's method of testing where A is binary
   ################################################
@@ -16,23 +16,17 @@ FH_test = function(A, X, k.range, n.iter){
   # pvalues : pvalues of each model of different dimension of factors
   #           pavlues are based on Wilks' statistic 
   ################################################
-  wilks.pvalues = c()
+  factors = list()
   
   for(k in 1:length(k.range)){
     
     fit = ame(A, burn = 1, nscan = n.iter, odens = 1,
                model = "bin", print = FALSE, rvar = TRUE, cvar = TRUE,
                R = k.range[k] , plot = FALSE, symmetric = TRUE) 
-    factors = cbind(fit$APM, fit$U)
+    factors[[k]] = cbind(fit$APM, fit$U)
     
-    # regress using Multivariate ANOVE
-    anov = lm(factors ~ X)
-    if(ncol(factors) == 1){
-    	wilks.pvalues[k] = anova(anov)[1,5]
-    }else{    
-    	wilks.pvalues[k] = summary(manova(anov), test = "Wilks")$stats[1,6]
     }
-  }
   
-  return(wilks.pvalues)
+  return(factors)
+  
 }
