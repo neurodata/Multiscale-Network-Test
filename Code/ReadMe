@@ -1,0 +1,27 @@
+### Auxiliary Code Files ###
+connect_graph.R 
+- diffmaps.R : prints out diffusion maps with given dimension.
+- dmaps.R : prints out diffusion maps with full dimension.
+- elbowmap.R : prints out eigenvalues of transition matrix.
+- FH_factor.R : prints out latent position of AME model.
+- FH_test.R : tests Fosdick and Hoff network independence test.
+- getElbows.R : implements elbow test (scree plot test).
+- NetworkTest.R : performs network dependence test.
+- notsimple3blok.R : generates three-block SBM (allowing nonlinear probability).
+- varyA.R : generates degree-corrected (two-block) SBM.
+
+
+### Simulation ###
+## these codes depends on R functions used for MGC
+## https://github.com/neurodata/MGC/tree/master/Code/R
+## created by Cencheng Shen
+- MatrixFigures : generates Figure 2 and Figure 3; dependent on SampleGraph.RData.
+- ReadThreeSBM.R : generates Figure 4 and ThreeSBM.csv.
+- ReadGeneralSBM.R : generates Figure 5(a) and GeneralSBM.RData.
+- ReadDCSBM.R : generates Figure 5(b) and dcSBM.RData.
+- ReadLatent.R : generates RDPG.RData.
+
+### Realdata analysis ###
+## Full realdata can be found in 
+## http://openconnecto.me/data/public/MR/m2g_v1_1_1/KKI2009/derivatives/bg/
+- RealExample.R : generates Figure 6 and RealAnalysis.RData; dependent on SubBrain.RData.

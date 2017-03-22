@@ -168,9 +168,14 @@ for(ii in 1:100){
 
 }
 
+############### save the result ############
+RealAnalysis[[1]] = mgc.pval
+RealAnalysis[[2]] = mcorr.pval
+RealAnalysis[[3]] = hhg.pval
+RealAnalysis[[4]] = fh.pval
 
-RealAnalysis = cbind(mgc.pval, mcorr.pval, hhg.pval, fh.pval)
-write.csv(RealAnalysis, file = "../Data/RealAnalysis.csv")
+save(RealAnalysis, file = "../Data/RealAnalysis.RData")
+
 
 mgc.pval.mean = colMeans(mgc.pval)
 mcorr.pval.mean = colMeans(mcorr.pval)
