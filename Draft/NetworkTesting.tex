@@ -108,7 +108,7 @@ A notable obstacle in the network dependence testing problem is that the adjacen
 
 To tackle the challenges, we propose a new model-free method to test network dependency, via diffusion maps and distance-based correlations. We first apply the diffusion maps \cite{coifman2005geometric,coifman2006diffusion,lafon2006diffusion} to the adjacency matrix to compute a node-wise embedding, then proceed to test independence between the diffusion distance of the adjacency matrix and the Euclidean distance of the nodal attributes. Assuming an infinitely exchangeable graph and mild regularity conditions, the new approach provides a set of asymptotic conditional i.i.d. embedding for the nodes, which results in consistent test statistics for network dependence testing by taking advantages of the recent progress in the distance-based correlation framework \cite{szekely2007measuring,szekelyRizzo2013a, shen2016discovering}. Moreover, our method is computationally inexpensive and robust against parameter mis-specifications while efficiently capturing a wide variety of nonlinear and high-dimensional relationships.  
 
-The remaining of the paper is organized as follows: In Section~\ref{sec:pre}, we briefly review diffusion maps and distance-based correlations, which will be the main ingredients for the proposed test. In Section~\ref{sec:method} we formally propose the testing method and prove relevant theoretical properties under mild distributional assumptions, followed by discussions on implementation details and immediate extensions. Section~\ref{sec:simulation} is dedicated to numerical experiments, where we illustrate the advantages of the proposed method. Proofs are put into the supplementary material, and the \texttt{R} codes for implementation and experimentation are available online \footnotemark\footnotetext{\url{https://github.com/neurodata/Multiscale-Network-Test}}.
+The remaining of the paper is organized as follows: In Section~\ref{sec:pre}, we briefly review diffusion maps and distance-based correlations, which will be the main ingredients for the proposed test. In Section~\ref{sec:method} we formally propose the testing method and prove relevant theoretical properties under mild distributional assumptions, followed by immediate extensions and further discussions. Section~\ref{sec:simulation} is dedicated to numerical experiments, where we illustrate the advantages of the proposed method. Proofs are put into the supplementary material, and the \texttt{R} codes for implementation and experimentation are available online \footnotemark\footnotetext{\url{https://github.com/neurodata/Multiscale-Network-Test}}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Preliminaries}
@@ -168,7 +168,7 @@ It is worthwhile to note that \texttt{MGC} is computationally efficient, despite
 
 \section{Network Dependence Testing}
 \label{sec:method}
-In this section we propose our approach built on diffusion maps and \texttt{MGC}. Theoretical properties are presented in Section~\ref{sec:theory}, with discussions and extensions followed in Section~\ref{ss:dis}.
+In this section we propose our approach built on diffusion maps and \texttt{MGC}. Theoretical properties are presented in Section~\ref{sec:theory}, with discussions followed in Section~\ref{ss:dis}.
 
 \subsection{A Nonparametric Approach}
 \label{ssec:method}
@@ -253,14 +253,30 @@ if and only if $u$ is independent of $x$. Namely, it is a consistent statistic f
 	\label{theoremMain}
 \end{theorem} 
 
+The following corollary summarizes some immediate extensions of the main testing procedure.
+
+\begin{corollary}
+\label{main_corollary}
+Theorem~\ref{theoremMain} still holds, when any of the following changes are applied to the testing procedure described in Section~\ref{ssec:method}:
+\begin{description}[align=left]
+\item [] (1) Instead of $t=3$ and $q$ as the third elbow, $t$ and $q$ are chosen as any other finite positive integers;
+
+\item [] (2) The nodal attributes in the input is replaced by a second graph of the same node set, which satisfies condition (C1) and has its' distance matrix $\mathbf{D}$ computed by the same diffusion map process;
+
+\item [] (3) The \texttt{MGC} statistic in step 2 is replaced by either \texttt{dCorr} or \texttt{mCorr}.
+\end{description}
+\end{corollary}
+
+Namely, the theoretical consistency always holds regardless of $t$ and $q$; the same approach can be applied to test dependency between graphs of arbitrary structures, e.g., testing between a weighted directed graph and an unweighted undirected graph, by deriving the diffusion distance for each graph individually; once the appropriate distance is determined, distance-based measures other than \texttt{MGC} can also be consistent, such as \texttt{dCorr} and \texttt{mCorr}. 
+
+Therefore, we offer more discussions on the parameter selection in the next section, provide a two-graph testing scenario in the simulation for illustration, and use \texttt{mCorr} and \texttt{HHG} in the simulations to further benchmark the main approach.
+
 All proofs are supplied in Appendix~\ref{ssec:proof}.
 
-\subsection{Discussions and Extensions}
+\subsection{Discussions}
 \label{ss:dis}
  
-In this section, we discuss some implementation choices and useful extensions of the proposed approach, including parameter selection, extension to testing two graphs, embedding methods other than the diffusion maps, and correlation measures other than \texttt{MGC}. 
-
-\subsubsection*{Parameter Choice}
+In this section, we discuss the parameter selection and the advantages of diffusion maps over other embeddings. Note that the advantages of \texttt{MGC} is extensively demonstrated in \cite{shen2016discovering}.
 
 There are two parameters to choose for the diffusion map, i.e., the time step $t$, and the dimension of graph embedding $q$. Theoretical properties always hold for finite $t$ and $q$, but their choices may affect the testing power. Empirically, it turns out that the diffusion map is relatively insensitive to choice of $t$, and able to well capture the geometric structure in a wide range of $t>1$, from which we choose to fix $t=3$ throughout; upon fixing $t$, the diffusion distance is also indifferent to the choice of $q$, for which we opt to select $q$ as the third elbow of the eigenvalue scree plot by the profile likelihood method from \cite{ZhuGhodsi2006}. This is a widely-used automatic algorithm for selecting the number of important features, whenever eigenvalues or singular values are involved. 
 
@@ -341,42 +357,18 @@ In comparison, standard graph embedding methods are often sensitive to the choic
 \label{fig:embedding}
 \end{figure}
 
-\subsubsection*{Graph versus Graph}
-Although the main approach is presented for testing dependence between graph adjacency and nodal attributes, it is directly applicable to testing between two graphs of arbitrary structures, e.g., testing between a weighted directed graph and an unweighted undirected graph. 
+Therefore, our motivation to use diffusion maps is three-fold: it yields an embedding of the graph structure into the Euclidean space; it is relatively robust against parameter mis-specification; and it allows a seamless integration with distance-based correlations for consistent dependency testing. On the other hand, it is tempting to use other embedding methods, like adjacency spectral embedding, Laplacian spectral embedding \cite{rohe2011spectral}, the latent factor embedding \cite{fosdick2015testing}, etc. Those embeddings can also be directly combined with \texttt{dCorr} or \texttt{MGC} to test dependence, but may lose the theoretical properties without more strict model assumption and often more sensitive to the parameter choice, thereby leading to sub-optimal performance. For comparison purposes, we include other embedding choices for benchmark in the simulations.
 
-Given two graphs, it suffices to derive the diffusion map for each graph individually, compute the \texttt{MGC} statistic between two diffusion distance matrices, and keep all other steps intact. The theoretical properties and numerical advantages remain the same assuming each graph is exchangeable.
-
-\subsubsection*{Embeddings Other Than Diffusion Maps}
-Our motivation to use diffusion maps is three-fold: it yields an embedding of the graph structure into the Euclidean space; it is relatively robust against parameter mis-specification; and it allows a seamless integration with distance-based correlations for consistent dependency testing. On the other hand, it is tempting to use other embedding methods, like adjacency spectral embedding, Laplacian spectral embedding \cite{rohe2011spectral}, the latent factor embedding \cite{fosdick2015testing}, etc. Those embeddings can also be directly combined with \texttt{dCorr} or \texttt{MGC} to test dependence.
-
-However, those alternatives will lose the theoretical properties without more strict model assumption, and they are often more sensitive to the parameter choice, thereby leading to sub-optimal performance. For comparison purposes, we include other embedding techniques in the simulations.
-
-\subsubsection*{Correlation Measures Other Than \texttt{MGC}} 
-Once the appropriate distance is determined, it is possible to replace \texttt{MGC} by other distance-based measures, e.g., \texttt{dCorr} and \texttt{mCorr} are directly applicable without affecting the theoretical consistency; and the \texttt{HHG} test is another suitable and competitive candidate. Therefore, we include \texttt{mCorr} and \texttt{HHG} in the simulations to benchmark the main approach.
-
-The following corollary summarizes the theoretical equivalence of the above-mentioned extensions.
-
-\begin{corollary}
-\label{main_corollary}
-Theorem~\ref{theoremMain} still holds, when we apply any of the following changes to the testing procedure described in Section~\ref{ssec:method}:
-\begin{description}[align=left]
-\item [] (1) Instead of $t=3$ and $q$ as the third elbow, $t$ and $q$ are chosen as any other finite positive integers.
-
-\item [] (2) The nodal attributes in the input is replaced by a second graph of the same node set, which satisfies condition (C1) and has its' distance matrix $\mathbf{D}$ computed by the same diffusion map process;
-
-\item [] (3) The \texttt{MGC} statistic in step 2 is replaced by either \texttt{dCorr} or \texttt{mCorr}.
-\end{description}
-\end{corollary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Numerical Studies}
 \label{sec:simulation}
 
-In this section, we demonstrate the advantages of our approach via simulations and real data experiment. Throughout the numerical studies, we mainly compare our proposed approach to the likelihood ratio test proposed by Fosdick and Hoff (\texttt{FH})~\cite{fosdick2015testing}, as well as a number of variants mentioned in Section~\ref{ss:dis}: in place of \texttt{MGC}, we consider applying \texttt{mCorr} and \texttt{HHG} to the distances; and instead of diffusion distance as the metric, we consider using the Euclidean distances of the adjacency matrix (\texttt{AM}) or the latent factors (\texttt{LF}), prior to computing the distance-based correlation. Our main approach is denoted as $\texttt{MGC} \circ \texttt{DM}$, whereas the other variants are denoted as $\texttt{MGC} \circ \texttt{AM}$, $\texttt{mCorr} \circ \texttt{DM}$, etc. 
+In this section, we demonstrate the advantages of our approach via simulations and real data experiment. Throughout the numerical studies, we mainly compare our proposed approach to the likelihood ratio test proposed by Fosdick and Hoff (\texttt{FH})~\cite{fosdick2015testing}, as well as a number of variants mentioned in Section~\ref{sec:method}: in place of \texttt{MGC}, we consider applying \texttt{mCorr} and \texttt{HHG} to the distances; and instead of diffusion distance as the metric, we consider using the Euclidean distances of the adjacency matrix (\texttt{AM}) or the latent factors (\texttt{LF}), prior to computing the distance-based correlation. Our main approach is denoted as $\texttt{MGC} \circ \texttt{DM}$, whereas the other variants are denoted as $\texttt{MGC} \circ \texttt{AM}$, $\texttt{mCorr} \circ \texttt{DM}$, $\texttt{HHG} \circ \texttt{LF}$, etc. 
 
 For each simulation, we generate sample graph and the corresponding attributes, carry out the permutation test for each method, and reject the null if the resulting p-value is less than $\alpha = 0.05$. The testing power of each method equals the percentage of correct rejection out of $500$ Monte-Carlo replicates, and a higher power indicates a better method. For the real data experiment, we directly report the p-value of the permutation test, since the testing power is not available, and a lower p-value indicates a better method assuming the existence of relationships. 
 
-Whenever dimension selection is required, i.e., selection of $q$ for \texttt{DM} and \texttt{LF}, we always pick the third elbow of the scree plot bounded above by $q \leq \min(n, 100)$. 
+Whenever dimension selection is required, i.e., selection of $q$ for \texttt{DM} and \texttt{LF}, we always pick the third elbow of the scree plot bounded above by $\min(n, 100)$. 
 
 \subsection{Stochastic Block Model}
 
