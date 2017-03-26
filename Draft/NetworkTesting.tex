@@ -268,9 +268,9 @@ Theorem~\ref{theoremMain} still holds, when any of the following changes are app
 \end{description}
 \end{corollary}
 
-Namely, the theoretical consistency always holds regardless of choice on $t$ and $q$; the same approach can be applied to test dependency between graphs of arbitrary structures, e.g., testing between a weighted directed graph and an unweighted undirected graph, by deriving the diffusion distance for each graph individually; once the appropriate distance is determined, distance-based measures other than \texttt{MGC} can also be consistent, such as \texttt{dCorr} and \texttt{mCorr}. 
+Namely, the theoretical consistency always holds regardless of the choice on $t$ and $q$; the same approach can be applied to test dependency between graphs of arbitrary structures, e.g., testing between a weighted directed graph and an unweighted undirected graph, by deriving the diffusion distance for each graph individually; that is, once the appropriate distance is determined, distance-based measures other than \texttt{MGC} can also be consistent, such as \texttt{dCorr} and \texttt{mCorr}. 
 
-Therefore, we offer more discussions on the parameter selection in the next section, provide a two-graph testing scenario in the simulation for illustration, and use \texttt{mCorr} and \texttt{HHG} in the simulations to further make a comparison with the main approach.
+Therefore, we offer more discussions on the parameter selection in the next section, suggest a two-graph testing scenario, and use \texttt{mCorr} and \texttt{HHG} in the simulations to further make a comparison with the main approach.
 
 All proofs are supplied in Appendix~\ref{ssec:proof}.
 
@@ -365,22 +365,21 @@ Therefore, our motivation to use diffusion maps is three-fold: it yields an embe
 \section{Numerical Studies}
 \label{sec:simulation}
 
-In this section, we demonstrate the advantages of our approach via simulations and real data experiment. Throughout the numerical studies, we mainly compare our proposed approach to the likelihood ratio test proposed by Fosdick and Hoff (\texttt{FH})~\cite{fosdick2015testing}, as well as a number of variants mentioned in Section~\ref{sec:method}: in place of \texttt{MGC}, we consider applying \texttt{mCorr} and \texttt{HHG} to the distances; and instead of diffusion distance as the metric, we consider using the Euclidean distances of the adjacency matrix (\texttt{AM}) or the latent factors (\texttt{LF}), prior to computing the distance-based correlation. Our main approach is denoted as $\texttt{MGC} \circ \texttt{DM}$, whereas the other variants are denoted as $\texttt{MGC} \circ \texttt{AM}$, $\texttt{mCorr} \circ \texttt{DM}$, $\texttt{HHG} \circ \texttt{LF}$, etc. 
+In this section, we demonstrate the advantages of our approach via simulations and real data experiment. Throughout the numerical studies, we mainly compare our approach to the likelihood ratio test proposed by Fosdick and Hoff (\texttt{FH})~\cite{fosdick2015testing}, as well as a number of variants mentioned in Section~\ref{sec:method}: in place of \texttt{MGC}, we consider applying \texttt{mCorr} and \texttt{HHG} to the distances; and instead of diffusion distance as the network metric, we consider using the Euclidean distances of the adjacency matrix (\texttt{AM}) or the latent factors (\texttt{LF}), prior to computing the distance-based correlation. Our main approach is denoted as $\texttt{MGC} \circ \texttt{DM}$ (\texttt{MGC} statistic applied to diffusion maps), whereas the other variants are denoted as $\texttt{MGC} \circ \texttt{AM}$, $\texttt{mCorr} \circ \texttt{DM}$, $\texttt{HHG} \circ \texttt{LF}$, etc. 
 
-For each simulation, we generate sample graph and the corresponding attributes, carry out the permutation test for each method, and reject the null if the resulting p-value is less than $\alpha = 0.05$. The testing power of each method equals the percentage of correct rejection out of $500$ Monte-Carlo replicates, and a higher power indicates a better method. For the real data experiment, we directly report the p-value of the permutation test, since the testing power is not available, and a lower p-value indicates a better method assuming the existence of relationships. 
+For each simulation, we generate sample graph and the corresponding attributes, carry out the permutation test for each method, and reject the null if the resulting p-value is less than $\alpha = 0.05$. The testing power of each method equals the percentage of correct rejection out of $500$ Monte-Carlo replicates, and a higher power implies a better method. For the real data experiment, we directly report the p-value of the permutation test, since the testing power is not available, and a lower p-value indicates a better method assuming the existence of relationships. 
 
 Whenever dimension selection is required, i.e., selection of $q$ for \texttt{DM} and \texttt{LF}, we always pick the third elbow of the scree plot bounded above by $\min(n, 100)$. 
 
 \subsection{Stochastic Block Model}
 
-The first simulation generates graphs by the stochastic block model (SBM), which is one of the most popular network models that many network methodologies have been built on. The SBM assumes that each of $n$ nodes in $\mathbf{G}$ must belong to one of $K \in \mathbb{N}$ blocks, and determines the edge probability based on the block affiliations of the connecting nodes: For $i=1,\ldots,n$, assume that a latent variable of $\mathbf{z}_{i} \overset{i.i.d.}{\sim} Multinomial\big( \pi_{1}, \pi_{2}, ... , \pi_{K} \big)$ denotes the block membership of each node, and $p_{kl} \in [0,1]$ implies the edge probability between any two nodes of class $k$ and $l$ respectively; then the upper triangular entries of $\mathbf{A}$ are independent and identically distributed conditional on $\{\mathbf{z}_{i}\}$:
+The first simulation generates graphs by the stochastic block model (SBM), which is one of the most popular network models which many network methodologies have been built on. The SBM assumes that each of $n$ nodes in $\mathbf{G}$ must belong to one of $K \in \mathbb{N}$ blocks, and determines the edge probability based on the block affiliations of the connecting nodes: For $i=1,\ldots,n$, assume that a latent variable of $\mathbf{z}_{i} \overset{i.i.d.}{\sim} Multinomial\big( \pi_{1}, \pi_{2}, ... , \pi_{K} \big)$ denotes the block membership of each node, and $p_{kl} \in [0,1]$ implies the edge probability between any two nodes of class $k$ and $l$ respectively; then the upper triangular entries of $\mathbf{A}$ are independent and identically distributed conditioned on $\{\mathbf{z}_{i}\}$:
 \begin{equation} 
-\mathbf{A}_{ij} \big| \mathbf{z}_{i}, \mathbf{z}_{j} \overset{i.i.d.}{\sim} Bernoulli\big( \sum\limits_{k,l=1}^{K} p_{kl} \mathbf{I} \big( \mathbf{z}_{i} = k, \mathbf{z}_{j} = l  \big)    \big), \quad \forall  i < j,
+\mathbf{A}_{ij} \big| \mathbf{z}_{i}, \mathbf{z}_{j} \overset{i.i.d.}{\sim} Bernoulli\big( \sum\limits_{k,l=1}^{K} p_{kl} \mathbf{I} \big( \mathbf{z}_{i} = k, \mathbf{z}_{j} = l  \big)    \big); \quad \forall  i < j,
 \end{equation}
 where $\mathbf{I}(\cdot)$ is the indicator function. %We consider the undirected, unweighted, and no self-loop version of SBM.
 
-It is of common interest to detect whether the block structure has anything to do with the graph connectivity; and a noisy block structure often better reflects reality and adds difficulty to the testing. Thus we consider testing dependency between the adjacency matrix $\mathbf{A}$ and a noisy block membership $\mathbf{X}$, based on the true block memberships $\mathbf{Z}$. 
-We set $n=100$ and $K=3$, select $\mathbf{z}_i$ uniformly from $\Omega=\{1,2,3\}$ for each $i$, generate the edge probability by
+It is of common interest to detect whether the block structure has anything to do with the graph connectivity; and noisy information on the block structure often better reflects reality and adds difficulty to the testing. Thus we consider testing dependency between the graph having the adjacency matrix $\mathbf{A}$ and a noisy block membership $\mathbf{X}$, which are correlated through true block memberships $\mathbf{Z}$. We set $n=100$ and $K=3$, select $\mathbf{z}_i$ uniformly from $\Omega=\{1,2,3\}$ for each $i$, generate the edge probability by
 \begin{equation}
 \label{eq:Three}
 E(\mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j}) = 0.5 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 0) + 0.2 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1) + 0.3 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 2), \quad i,j = 1, \ldots, n,
@@ -390,7 +389,7 @@ and contaminate the true block membership by: for each $i$, $\mathbf{x}_{i}=\mat
 Namely, within-block edge probability is always $0.5$, while between-block edge probability is $0.2$ when the block labels differ by $1$, and $0.3$ when the block labels differ by $2$. A visualization of the sample data is shown in Figure~\ref{fig:diffusions}. 
 Notably, although within-block edge probability is the largest, the between-block edge probability is not linearly related to the distance of the block-memberships, i.e., the edge probability between a node of block $1$ and a node of block $3$ is higher than the edge probability between block $1$ and block $2$. 
 
-Therefore, this three-block SBM generates a noisy and nonlinear dependency structure between $\mathbf{A}$ and $\mathbf{X}$, for which \texttt{MGC} is expected to work better than \texttt{mCorr}, \texttt{HHG}, and the standard likelihood ratio test; moreover, the diffusion map should be more robust than the other two metrics. Indeed, Figure~\ref{fig:diffusions} shows that the main approach (i.e., \texttt{MGC} $\circ$ \texttt{DM}) prevails in the testing powers among all the methods.
+Therefore, this three-block SBM generates a noisy and nonlinear dependency structure between $\mathbf{A}$ and $\mathbf{X}$, for which \texttt{MGC} is expected to work better than \texttt{mCorr}, \texttt{HHG}, and the standard likelihood ratio test; moreover, the diffusion map should be more robust than the other two metrics of adjacency matrix (\texttt{AM}) and latent factors (\texttt{LF}). Indeed, Figure~\ref{fig:diffusions} shows that the main approach (i.e., \texttt{MGC} $\circ$ \texttt{DM}) prevails in the testing powers among all the methods.
 
 \begin{SCfigure}[][ht]
 	\centering
@@ -400,24 +399,32 @@ Therefore, this three-block SBM generates a noisy and nonlinear dependency struc
 \end{SCfigure}
 
 \subsection{SBM with Linear and Nonlinear Dependencies}
+
 To better illuminate the advantage of our main approach under different scenarios, here we use the same three-block SBM and its block memberships $\{ \mathbf{z}_{i} : i=1,2, \ldots, n=100 \}$ as in the last section, except that the edge probability is now controlled by $\theta \in (0, 1)$ as follows:
 \begin{equation}
-E(\mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j}) = 0.5 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 0) + 0.2 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1) + \theta \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 2), \quad i,j = 1, \ldots, n.
+E(\mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j}) = 0.5 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 0) + 0.2 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1) + \theta \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 2); \quad i,j = 1, \ldots, n.
 \label{eq:mono}
 \end{equation}
-The noisy block memberships $\mathbf{X}$ is the same as before.
+The noisy block memberships $\mathbf{X}$ is generated in the same way as before.
 
-When $\theta = 0.2$, the three-block SBM is the same as a two-block SBM, where within-block edge probability equals $0.5$ while the between-block edge probability is always $0.2$, i.e., it represents a linear association between the adjacency matrix and the block membership; when $\theta<0.2$, the association is still close to linear; when $\theta > 0.2$ and gets further aways, the relationship becomes strongly nonlinear.
+When $\theta = 0.2$, the three-block SBM is the same as a two-block SBM, where within-block edge probability equals $0.5$ while the between-block edge probability is always $0.2$, i.e., it represents a linear association between the adjacency matrix and the block membership; when $\theta<0.2$, the association is still close to linear; when $\theta > 0.2$ and gets further away, the relationship becomes strongly nonlinear.
 
 Figure~\ref{fig:powerplot} plots the power against $\theta$ of \texttt{DM} based on all methods. All of \texttt{MGC}, \texttt{mCorr}, and \texttt{HHG} perform almost the same at linear or close to linear dependency (i.e, $\theta \leq 0.2$), with \texttt{MGC} being significantly more powerful as the dependency shifts to strongly nonlinear. This observation confirms that the \texttt{MGC} is able to capture nonlinear dependencies in network testing, suggesting it is a better test statistic for general usage.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.7\linewidth]{../Figure/monoelbow3_t3.pdf}
-	\caption{The power curve with respect to increasing $\theta$ under three-block SBM. $\{\theta : \theta \leq 0.2 \}$ represents a close to linear dependency between the adjacency matrix and the block structure, while $\{ \theta : \theta > 0.2 \}$ generates nonlinear dependency and becomes strongly nonlinear as $\theta$ gets further away from $0.2$. Among other benchmarks utilizing diffusion maps, \texttt{MGC} is the best performing method throughout all possible $\theta$, implying that it is able to better capture nonlinear dependencies.} 
-	\label{fig:powerplot}
+	\begin{subfigure}[b]{0.7\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/monoelbow3_t3.pdf}
+		\caption{} 
+		\label{fig:powerplot}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.7\textwidth}
+		\includegraphics[width=\textwidth]{../Figure/elbow3_dcSBM.pdf}
+		\caption{} 
+		\label{fig:tau}
+	\end{subfigure}
+	\caption{ (Figure~\ref{fig:powerplot}) The power curve with respect to increasing $\theta$ under three-block SBM (Equation~\ref{eq:mono}) where $\{\theta : \theta \leq 0.2 \}$ represents a close to linear dependency between the adjacency matrix and the block structure; while $\{ \theta : \theta > 0.2 \}$ generates nonlinear dependency and it becomes strongly nonlinear as $\theta$ gets further away from $0.2$. Among other benchmarks utilizing diffusion maps, \texttt{MGC} is the best performing method throughout all possible $\theta$, implying that it is able to better capture nonlinear dependencies. (Figure~\ref{fig:tau}) The power curve with respect to increasing $\tau$ under DC-SBM (Equation~\ref{eq:tau}). As the edge variability increases as $\tau$ does, the testing power of diffusion maps are relatively stable against increasing variability compared to the adjacency matrix; while the latent positions fail to detect the dependency across all levels of $\tau$.} 
 \end{figure}
-
 \subsection{Degree-corrected Stochastic Block Model}
 Next we investigate the degree-corrected stochastic block model (DC-SBM), which better reflects many sparse networks in reality. The DC-SBM is an extension of SBM by introducing an additional random variable $\mathbf{c}_{i}$ to control the degree of each node. 
 
@@ -427,18 +434,11 @@ We set $n=200$ and $K=2$, select the block membership $\mathbf{z}_i$ uniformly i
 E( \mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j},\mathbf{c}_{i},\mathbf{c}_{j} )  = 0.2 \mathbf{c}_{i} \mathbf{c}_{j} \cdot \mathbf{I}( |\mathbf{z}_{i} - \mathbf{z}_{j}| = 0 ) + 0.05 \mathbf{c}_{i} \mathbf{c}_{j} \cdot \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1),
 \label{eq:tau}
 \end{equation} 
-where $\mathbf{c}_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau)$ for $i = 1, \ldots, n$, and $\tau \in [0, 1]$ is a parameter to control the amount of variability in the edge degree, e.g., as $\tau$ increases, the model becomes more complex as the variability of the edge probability becomes larger; when $\tau=0$, the above model reduces to a two-block SBM. 
+where $\mathbf{c}_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau)$ for $i = 1, \ldots, n$, and $\tau \in [0, 1]$ is a parameter to control the amount of variability in the edge degree, e.g., as $\tau$ increases, the model becomes more complex as the variability of the edge probability becomes larger; when $\tau=0$, the above model reduces to a two-block SBM without any variability induced by $\{ \mathbf{c}_{i} \}$. 
 
-Similar to before, we generate the nodal attributes $\mathbf{X}$ as a noisy version of the true block memberships via the Bernoulli distribution, i.e., for each $i$, $\mathbf{x}_{i}= \mathbf{z}_{i}$ with probability $0.6$, and equals the wrong label with probability $0.4$.
+Similar as before, we generate the nodal attributes $\mathbf{X}$ as a noisy version of the true block memberships via Bernoulli distribution, i.e., for each $i$, $\mathbf{x}_{i}= \mathbf{z}_{i}$ with probability $0.6$, and equals the wrong label with probability $0.4$.
 
-Under the DC-SBM model, the main approach also has the most superior power. In particular, Figure~\ref{fig:tau} compares different metrics using \texttt{MGC}, which illustrates that the diffusion map is capable to better reflect the network topology of DC-SBM with respect to the block structure throughout different choices of $\tau$.
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.7\linewidth]{../Figure/elbow3_dcSBM.pdf}
-	\caption{The power curve with respect to increasing $\tau$ under DC-SBM. As the edge variability increases, the testing power of diffusion maps are relatively stable against increasing variability compared to the adjacency matrix; while the latent positions fail to detect the dependency across all levels of $\tau$.} 
-	\label{fig:tau}
-\end{figure}
+Under the DC-SBM model, the main approach also has the most superior power. In particular, Figure~\ref{fig:tau} compares different metrics using \texttt{MGC}, which illustrates that the diffusion map consistently reflect the network topology of DC-SBM better throughout different choices of $\tau$.
 
 %\subsection{Random Dot Product Graph}
 %\label{ssec:RDPG}
@@ -617,7 +617,7 @@ All major steps in proving Theorem 2 of \cite{szekely2007measuring} are essentia
 \end{proof}
 
 \begin{proof}[\textbf{Proof of Corollary~\ref{main_corollary}}] 
-(1) All the proofs are the same regardless of the choice of $t$ and $q$, as long as they are finite positive integers.
+(1) All the proofs remain the same regardless of the choice of $t$ and $q$, as long as they are finite positive integers.
 
 (2) When the nodal attribute is replaced by a second graph with the same node set as the first graph, we simply compute the diffusion map of the second graph by the same procedure as for the first graph. The resulting diffusion map of the second graph clearly satisfies both Theorem~\ref{main_lemma} and Lemma~\ref{main_lemma_1}, and the proof of Theorem~\ref{theoremMain} works for two asymptotic conditional i.i.d. latent variables without any change.
 
