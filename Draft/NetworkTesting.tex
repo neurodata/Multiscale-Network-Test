@@ -90,7 +90,7 @@ Deciphering potential associations between network structures and the correspond
 \end{abstract}
 
 \noindent%
-{\it Keywords:} testing independence, kernel matrix, diffusion distance, infinitely exchangeable graph, distance correlation, multiscale generalized correlation
+{\it Keywords:} kernel matrix, diffusion distance, infinitely exchangeable graph, multiscale generalized correlation
 
 \sloppy
 \doublespacing
@@ -514,16 +514,15 @@ The authors thank Dr.~Daniel Sussman, Dr.~Minh Tang,  and Dr.~Carey Priebe for i
 \appendix
 \section{Proofs}
 \label{ssec:proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	
 \begin{proof}[\textbf{Proof of Theorem~\ref{main_lemma}}]
 To prove conditional i.i.d. of the diffusion map $\mathbf{U} = \{\mathbf{u}_i : i=1,\ldots,n\}$ as $n \rightarrow \infty$, by the celebrated \textit{de Finetti's Theorem}~\cite{diaconis1980finite,orbanz2015bayesian} it is equivalent to prove that $\{ \mathbf{u}_i : i=1,\ldots,n \}$ are infinitely exchangeable, i.e., for any $n$ and all possible permutation $\sigma$, the permuted sequence $\{\mathbf{u}_{\sigma(1)}, \mathbf{u}_{\sigma(2)}, \ldots,\mathbf{u}_{\sigma(n)}\}$ always distributes the same as the original sequence $\{\mathbf{u}_{1}, \mathbf{u}_{2}, \ldots,\mathbf{u}_{n}\}$.
 
-From now on, denote $\mathbf{U}$ as the $q \times n$ matrix having $\mathbf{u}_i$ as its $i^{th}$ column, and the permuted matrix as $\mathbf{U} \pi$ with $\pi$ being the permutation matrix. Transforming Equation~\ref{eq:U} into matrix notation yields
+From now on, denote $\mathbf{U}$ as the $q \times n$ matrix having $\mathbf{u}_i$ as its $i^{\mbox{th}}$ column, and the permuted matrix as $\mathbf{U} \pi$ with $\pi$ being the permutation matrix. Transforming Equation~\ref{eq:U} into matrix notation yields
 \begin{align*}
 \mathbf{U}=\Lambda^{t}\Phi^{'},
 \end{align*}
-where $\Lambda=diag\{ \lambda_{1},\lambda_2,\ldots,\lambda_q \}$ is the diagonal matrix of selected eigenvalues of the transition matrix $\mathbf{\widetilde{K}}$; $\Phi =[ \mathbf{\phi}_1, \mathbf{\phi}_2,\cdots, \mathbf{\phi}_q ]$ consists of the corresponding eigenvectors; $\cdot^{t}$ denotes $t$th power; and $\cdot^{'}$ is the matrix transpose. Therefore, it suffices to show that $\mathbf{U}$ always distributes the same as $\mathbf{U} \pi$ for any $n$ and $\pi$.
+where $\Lambda=\mbox{diag} \{ \lambda_{1},\lambda_2,\ldots,\lambda_q \}$ is the diagonal matrix having selected eigenvalues of the transition matrix $\mathbf{\widetilde{K}}$; $\Phi =[ \mathbf{\phi}_1, \mathbf{\phi}_2,\cdots, \mathbf{\phi}_q ]$ consists of the corresponding eigenvectors; $\cdot^{t}$ denotes $t^{\mbox{th}}$ power; and $\cdot^{'}$ is the matrix transpose. Therefore, it suffices to show that $\mathbf{U}$ always distributes as same as $\mathbf{U} \pi$ for any $n$ and $\pi$.
 
 Given that the graph $\mathbf{G}$ is infinitely exchangeable, i.e., $\mathbf{A}_{\sigma(i)\sigma(j)} \stackrel{d}{=} \mathbf{A}_{ij}$, we have
 \begin{align*}
@@ -539,7 +538,7 @@ By eigen-decomposition, the first $q$ eigenvectors and the corresponding eigenva
         \Leftrightarrow \quad
         & \mathbf{U}=\Lambda^{t} \Phi^{'}  \stackrel{d}{=} \Lambda^{t} \Phi^{'} \pi = \mathbf{U} \pi 
 \end{align*}	
-Therefore, the diffusion maps are also infinitely exchangeable, and there exists a latent variable $u$ such that the diffusion map is conditional i.i.d. asymptotically. 
+Therefore, the diffusion maps are also infinitely exchangeable so that there exists a latent variable $u$ such that the diffusion map is conditional i.i.d. asymptotically. 
 \end{proof}
 
 %%%%%%%%%%%
@@ -569,7 +568,7 @@ We first state two useful lemmas:
 \begin{eqnarray}
 		\mathcal{V}^{2}_{n}(\mathbf{U},\mathbf{X}) &=   \|g_{\mathbf{U},\mathbf{X}}^{n}(t,s)-g_{\mathbf{U}}^{n}(t)g_{\mathbf{X}}^{n}(s)\|^{2},
 \end{eqnarray}
-	where $g_{\cdot}^{n}$ is the empirical characteristic function of $\{(\mathbf{u}_{i},\mathbf{x}_{i}) : i=1,2,...,n\}$ or the marginals, e.g., $g_{\mathbf{U},\mathbf{X}}^{n}(t,s)=\frac{1}{n}\sum_{i=1}^{n}\exp\{i \left\langle t,\mathbf{u}_{i} \right\rangle+i \left\langle s,\mathbf{x}_{i} \right\rangle\}$, with the understanding that the $i$ before the inner product is the imaginary unit.
+	where $g_{\cdot}^{n}$ is the empirical characteristic function of $\{(\mathbf{u}_{i},\mathbf{x}_{i}) : i=1,2,...,n\}$ or the marginals, e.g., $g_{\mathbf{U},\mathbf{X}}^{n}(t,s)=\frac{1}{n}\sum_{i=1}^{n}\exp\{i \left\langle t,\mathbf{u}_{i} \right\rangle+i \left\langle s,\mathbf{x}_{i} \right\rangle\}$, with the understanding that the $i$ ahead of the inner product denotes the imaginary unit.
 \end{lemma}
 
 \begin{lemma}
