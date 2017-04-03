@@ -1,11 +1,46 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: NetworkTesting.aux
-The style file: Chicago.bst
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: NetworkTesting.aux
+The style file: apalike.bst
 Database file #1: reference.bib
-Warning--no number and no volume in diaconis1980finite
-Warning--no number and no volume in kiar2016science
-Warning--page numbers missing in kiar2016science
-Warning--no number and no volume in rohe2011spectral
-Warning--no number and no volume in shen2016discovering
-Warning--page numbers missing in shen2016discovering
-Warning--no number and no volume in zhang2017large
-(There were 7 warnings)
+You've used 38 entries,
+            1935 wiz_defined-function locations,
+            724 strings with 10238 characters,
+and the built_in function-call counts, 16249 in all, are:
+= -- 1605
+> -- 676
+< -- 25
++ -- 238
+- -- 226
+* -- 1448
+:= -- 2785
+add.period$ -- 114
+call.type$ -- 38
+change.case$ -- 299
+chr.to.int$ -- 36
+cite$ -- 38
+duplicate$ -- 564
+empty$ -- 1126
+format.name$ -- 300
+if$ -- 3189
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 38
+newline$ -- 192
+num.names$ -- 114
+pop$ -- 224
+preamble$ -- 1
+purify$ -- 300
+quote$ -- 0
+skip$ -- 444
+stack$ -- 0
+substring$ -- 1302
+swap$ -- 71
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 226
+warning$ -- 0
+while$ -- 132
+width$ -- 0
+write$ -- 491

@@ -4,6 +4,6 @@
 - ThreeSBM.csv : p-values under three-block SBM.
 - GeneralSBM.RData : a collection of p-values under general three-block SBM.
 - dcSBM : a collection of p-values under degree-corrected SBM.
-- RDPG.RData : a collect of p-values under Random-Dot-Product-Graph.
+- twoGraphs : a collection of p-values under two-graph test.
 - SubBrain.RData : subsample of brain network used for real data analysis.
 - RealAnalysis.RData : a collection of p-values under contamination.

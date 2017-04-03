@@ -10,6 +10,8 @@
 \BOOKMARK [2][-]{subsection.4.1}{Stochastic Block Model}{section.4}% 10
 \BOOKMARK [2][-]{subsection.4.2}{SBM with Linear and Nonlinear Dependencies}{section.4}% 11
 \BOOKMARK [2][-]{subsection.4.3}{Degree-corrected Stochastic Block Model}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.4}{Real Data Experiment}{section.4}% 13
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 14
-\BOOKMARK [1][-]{appendix.A}{Proofs}{}% 15
+\BOOKMARK [2][-]{subsection.4.4}{Two-graph Testing under the Random Dot Graph Model}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.5}{Real Data Experiment with Contamination}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 15
+\BOOKMARK [1][-]{section.5}{Acknowledgment}{}% 16
+\BOOKMARK [1][-]{appendix.A}{Proofs}{}% 17

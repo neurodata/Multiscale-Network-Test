@@ -19,7 +19,7 @@ connect_graph.R
 - ReadThreeSBM.R : generates Figure 4 and ThreeSBM.csv.
 - ReadGeneralSBM.R : generates Figure 5(a) and GeneralSBM.RData.
 - ReadDCSBM.R : generates Figure 5(b) and dcSBM.RData.
-- ReadLatent.R : generates RDPG.RData.
+- twoGraphs.R : generates twoGraphs.RData.
 
 ### Realdata analysis ###
 ## Full realdata can be found in 
