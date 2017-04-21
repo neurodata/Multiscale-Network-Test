@@ -145,13 +145,13 @@ hhg.power =  c(hhg.power40, hhg.power50, hhg.power60, hhg.power70, hhg.power80,
                hhg.power90, hhg.power100, hhg.power110, hhg.power120)
 
 ## Make Figure
-pdf("../Figure/Graphs.pdf", width = 12, height = 6)
-par(mfrow = c(1,1), cex.lab = 5, cex.axis = 3,
+pdf("../Figure/Graphs.pdf", width = 15, height = 6)
+par(mfrow = c(1,1), cex.lab = 4, cex.axis = 3,
     mar = c(8,10,3,20), tcl = 0.5)
 plot(seq(40, 120, 10), mgc.power, col = "red", 
      lty = 1, lwd = 5, ylab = "Power",
-     ylim = c(0,1.1), type = "l", mgp = c(6,2,0),
-     xlab = "number of nodes", yaxt = 'n', frame.plot = FALSE)
+     ylim = c(0,1.0), type = "l", mgp = c(6,2,0),
+     xlab = "number of nodes", yaxt = 'n')
 axis(side = 2, at = c(0.0, 0.25, 0.5,  0.75, 1.0), 
      labels = c(0.0, 0.25, 0.5,  0.75, 1.0), 
      tck = 0.05)
@@ -159,10 +159,11 @@ lines(seq(40, 120, 10), mcorr.power, col = "dodgerblue",
       lty =2, lwd = 5,  type = "l")
 lines(seq(40, 120, 10), hhg.power, col = "lightsalmon4", 
       lty =3, lwd = 5,  type = "l")
-legend("topright", inset=c(-0.6, 0.5), 
+legend("topright", inset=c(-0.4, 0.5), 
        c(expression(MGC), expression(mCorr), expression(HHG)),
        col = c("red", "dodgerblue", "lightsalmon4"), seg.len = 3,
-       lty = c(1,2,3), lwd = 4, bty = 'n', cex = 2.5, xpd = NA)
+       lty = c(1,2,3), lwd = 4, bty = 'n', cex = 2, xpd = NA)
 dev.off()
+
 
 

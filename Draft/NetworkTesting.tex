@@ -138,15 +138,15 @@ anchorcolor = blue]{hyperref}
 	
 	Fixing $q$ as the embedding dimension and $t$ as the iteration time step, the diffusion map $\mathbf{U}=\{\mathbf{u}_i, i=1,\ldots,n\}$ is computed as 
 	\begin{align}
-		\label{eq:U}
-		\mathbf{u}_i  &= \begin{pmatrix} \lambda^{t}_{1} \mathbf{\phi}_{1}(i) & \lambda^{t}_{2} \mathbf{\phi}_{2} (i)  & \cdots & \lambda^{t}_{q} \mathbf{\phi}_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}; \quad i = 1, \ldots, n,
+	\label{eq:U}
+	\mathbf{u}_i  &= \begin{pmatrix} \lambda^{t}_{1} \mathbf{\phi}_{1}(i) & \lambda^{t}_{2} \mathbf{\phi}_{2} (i)  & \cdots & \lambda^{t}_{q} \mathbf{\phi}_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}; \quad i = 1, \ldots, n,
 	\end{align}
 	where $\{ \lambda_{j} \}$ and $\{ \phi_{j}  \}$ denote the $q$ largest eigenvalues and corresponding eigenvectors of $\mathbf{\widetilde{K}}$, and $\lambda^{t}_{j}$ denotes the $t^{\mbox{th}}$~power of the $j^{\mbox{th}}$~eigenvalue.
 	
 	The diffusion distance between the $i^{\mbox{th}}$~observation and the $j^{\mbox{th}}$~observation is defined as the similarity of the two points in the observation space with respect to the connectivity between them, which turns out to equal the Euclidean distance in the diffusion coordinate, i.e,
 	\begin{equation}
-		\label{eq:diffusion}
-		\mathbf{C}(i,j)  =   \| \mathbf{u}_i - \mathbf{u}_j \|; \quad i,j = 1,2, \ldots , n.
+	\label{eq:diffusion}
+	\mathbf{C}(i,j)  =   \| \mathbf{u}_i - \mathbf{u}_j \|; \quad i,j = 1,2, \ldots , n.
 	\end{equation}
 	
 	Alternatively, the diffusion maps can be viewed as a nonlinear embedding method that integrates local similarities at different time steps. Compared to other nonlinear dimension reduction or feature extraction methods, the algorithm of diffusion maps is robust to noise perturbation and computationally inexpensive (i.e., the eigenvalue decomposition is the only time-consuming step). 
@@ -163,20 +163,20 @@ anchorcolor = blue]{hyperref}
 	
 	Then the distance covariance of the sample data is defined as 
 	\begin{equation}	 
-		\label{eq:dCov}
-		\texttt{dCov}(\mathbf{C}, \mathbf{D}) = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{\mathbf{C}}_{ij} \tilde{\mathbf{D}}_{ij},
+	\label{eq:dCov}
+	\texttt{dCov}(\mathbf{C}, \mathbf{D}) = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{\mathbf{C}}_{ij} \tilde{\mathbf{D}}_{ij},
 	\end{equation}
 	where $\tilde{\mathbf{C}}$ and $\tilde{\mathbf{D}}$ doubly-center $\mathbf{C}$ and $\mathbf{D}$ by its column mean and row mean respectively, i.e., $\tilde{\mathbf{C}}=\mathbf{H}\mathbf{C}\mathbf{H}$, where $\mathbf{H}=I_{n}- J_{n} / n$ (the double centering operation matrix), $I_n$ is the $n \times n$ identity matrix (ones on the diagonal, zeros elsewhere), and $J_n$ is the $n \times n$ matrix of all ones. The distance correlation (\texttt{dCorr}) follows by normalizing the above distance covariance, and lies in the range of $[0,1]$. In \cite{szekely2007measuring}, the \texttt{dCorr} has been shown to be asymptotically $0$ if and only if $\mathbf{u}$ is independent of $\mathbf{x}$, resulting in a consistent statistic for independence testing. In addition, a modified version of distance correlation (\texttt{mCorr}) is proposed to eliminate the sample bias of \texttt{dCorr} for improved testing performance \citep{szekely2013distance, SzekelyRizzo2014}.
 	
 	The \texttt{MGC} statistic is an optimal local version of a given distance-based global correlation, aiming for improved finite-sample testing power. Taking the distance correlation for example, it first derives all local distance covariances $\texttt{dCov}^{kl}_{n}$ as 
 	\begin{equation}
-		\label{eq:MGC}
-		\texttt{dCov}^{kl}_{n} = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{\mathbf{C}}_{ij} \tilde{\mathbf{D}}_{ij} I\big( r(\mathbf{C}_{ij}) \leq k \big) I\big(  r(\mathbf{D}_{ij}) \leq l  \big); \quad k,l= 1, \ldots, n,
+	\label{eq:MGC}
+	\texttt{dCov}^{kl}_{n} = \frac{1}{n^2} \sum\limits_{i,j=1}^{n} \tilde{\mathbf{C}}_{ij} \tilde{\mathbf{D}}_{ij} I\big( r(\mathbf{C}_{ij}) \leq k \big) I\big(  r(\mathbf{D}_{ij}) \leq l  \big); \quad k,l= 1, \ldots, n,
 	\end{equation}
 	where $r(\mathbf{C}_{ij})$ is the rank function of $\mathbf{u}_{i}$ relative to $\mathbf{u}_{j}$, i.e., $r(\mathbf{C}_{ij})=k$ if $\mathbf{u}_{i}$ is the $k^{\mbox{th}}$ nearest neighbor of $\mathbf{u}_{j}$, and define equivalently $r(\mathbf{D}_{ij})$ for $\mathbf{X}$. Then the local distance correlations $\texttt{dCorr}_{n}^{kl}$ are the normalizations of the local distance covariances into $[-1,1]$. Among all possible neighborhood choices, the \texttt{MGC} statistic $\rho^{*}$ equals the largest local distance correlation up-to a smoothing operation $S(\cdot)$, i.e.,
 	\begin{align}
-		\label{eq:MGC2}
-		& \rho^{*}=\texttt{dCorr}_{n}^{(kl)^{*}}, \mbox{ where } (kl)^{*}=\arg\max_{(kl)}S(\texttt{dCorr}_{n}^{kl}).
+	\label{eq:MGC2}
+	& \rho^{*}=\texttt{dCorr}_{n}^{(kl)^{*}}, \mbox{ where } (kl)^{*}=\arg\max_{(kl)}S(\texttt{dCorr}_{n}^{kl}).
 	\end{align}
 	The \texttt{MGC} statistic is also applicable to \texttt{mCorr} as well, which is the default implementation for the proposed approach in Section~\ref{sec:method}. More details of \texttt{mCorr} implementation and the smoothing function are available in \cite{shen2016discovering}.  
 	
@@ -237,7 +237,7 @@ anchorcolor = blue]{hyperref}
 	\begin{description}[align=left]
 		\item [(C1)] Graph $\mathbf{G}$ is from an infinitely exchangeable graph, i.e., the adjacency matrix $\mathbf{A}$ is generated by an $n \times n$ random matrix $\mathcal{A}$ such that 
 		\begin{align*}
-			\mathcal{A}_{ij} \stackrel{d}{=} \mathcal{A}_{\sigma(i) \sigma(j)}
+		\mathcal{A}_{ij} \stackrel{d}{=} \mathcal{A}_{\sigma(i) \sigma(j)}
 		\end{align*}
 		for any $i,j=1,\ldots,n$ and any permutation $\sigma$ of size $n$, where $n$ can be finite or infinite. The notation $\stackrel{d}{=}$ stands for equality in distribution. 
 		
@@ -263,7 +263,7 @@ anchorcolor = blue]{hyperref}
 	\begin{theorem}
 		Assume the graph $\mathbf{G}$ and the attributes $\mathbf{X}$ satisfy condition (C1) and (C2). Then the \texttt{MGC} statistic between the derived diffusion map $\mathbf{U}$ and the nodal attributes $\mathbf{X}$ satisfies:
 		\begin{equation}
-			\rho^{*}(\mathbf{C}, \mathbf{D}) \longrightarrow 0 \mbox{ as } n \rightarrow \infty
+		\rho^{*}(\mathbf{C}, \mathbf{D}) \longrightarrow 0 \mbox{ as } n \rightarrow \infty
 		\end{equation}
 		if and only if $u$ is independent of $x$. Namely, it is a consistent statistic for testing independence between the network topology and nodal attributes.
 		\label{theoremMain}
@@ -289,7 +289,7 @@ anchorcolor = blue]{hyperref}
 	
 	All proofs are supplied in Appendix~\ref{ssec:proof}.
 	
-	\subsection{Discussions}
+	\subsection{Discussion}
 	\label{ss:dis}
 	
 	In this section, we discuss the parameter selection and the advantages of diffusion maps over other embeddings. %Note that the advantages of \texttt{MGC} is extensively demonstrated in \cite{shen2016discovering}.
@@ -343,7 +343,7 @@ anchorcolor = blue]{hyperref}
 			\caption{}
 			\label{fig:q10}
 		\end{subfigure}
-		\caption{Diffusion maps are robust against parameter mis-specifications. Panel (a) illustrates the three-block adjacency matrix $\mathbf{A}$ generated by Equation~\ref{eq:Three}. Panel (b)-(d) show the diffusion distance matrix at $q=10$ and increasing $t$, while panel (e)-(h) present the diffusion distance at $t=3$ and increasing $q$. The distance matrix exhibits a clear block structure, for $t \in [2,10]$ and $q \in [2,n]$. Note that at $t=3$, the first three elbows of eigenvalues are $(1,3,84)$ respectively.}
+		\caption{Diffusion maps are robust against parameter mis-specifications. Panel (a) illustrates the three-block adjacency matrix $\mathbf{A}$ generated by Equation~\ref{eq:Three}. Panel (b)-(d) show the diffusion distance matrix at $q=10$ and increasing $t$, while panel (e)-(h) present the diffusion distance at $t=3$ and increasing $q$. The distance matrix exhibits a clear block structure, for $t \in [2,10]$ and $q \in [2,n]$. Note that at $t=3$, the first three elbows of eigenvalues are $(1,2,21)$ respectively.}
 		\label{fig:diffusions}
 	\end{figure}
 	
@@ -390,14 +390,14 @@ anchorcolor = blue]{hyperref}
 	
 	The first simulation generates graphs by the stochastic block model (SBM), which is one of the most popular network models which many network methodologies have been built on. The SBM assumes that each of $n$ nodes in $\mathbf{G}$ must belong to one of $K \in \mathbb{N}$ blocks, and determines the edge probability based on the block-membership of the connecting nodes: For $i=1,\ldots,n$, assume that a latent variable of $\mathbf{z}_{i} \overset{i.i.d.}{\sim} Multinomial\big( \pi_{1}, \pi_{2}, ... , \pi_{K} \big)$ denotes the block-membership of each node, and $p_{kl} \in [0,1]$ implies the edge probability between any two nodes of class $k$ and $l$ respectively; then the upper triangular entries of $\mathbf{A}$ are independently and identically distributed conditioned on $\{\mathbf{z}_{i}\}$:
 	\begin{equation} 
-		\mathbf{A}_{ij} \big| \mathbf{z}_{i}, \mathbf{z}_{j} \overset{i.i.d.}{\sim} Bernoulli\big( \sum\limits_{k,l=1}^{K} p_{kl} \mathbf{I} \big( \mathbf{z}_{i} = k, \mathbf{z}_{j} = l  \big)    \big); \quad \forall  i < j,~i,j = 1,2, \ldots, n,
+	\mathbf{A}_{ij} \big| \mathbf{z}_{i}, \mathbf{z}_{j} \overset{i.i.d.}{\sim} Bernoulli\big( \sum\limits_{k,l=1}^{K} p_{kl} \mathbf{I} \big( \mathbf{z}_{i} = k, \mathbf{z}_{j} = l  \big)    \big); \quad \forall  i < j,~i,j = 1,2, \ldots, n,
 	\end{equation}
 	where $\mathbf{I}(\cdot)$ is the indicator function. %We consider the undirected, unweighted, and no self-loop version of SBM.
 	
 	It is of common interest to detect whether the block structure has anything to do with the graph connectivity; and noisy information on the block structure often better reflects reality and adds difficulty to the testing. Thus we consider testing dependency between the graph having the adjacency matrix $\mathbf{A}$ and a noisy block-membership $\mathbf{X}$, which are correlated through true block-membership $\mathbf{Z}$. We set $n=100$ and $K=3$, select $\mathbf{z}_i$ uniformly from $\Omega=\{1,2,3\}$ for each $i$, generate the edge probability by
 	\begin{equation}
-		\label{eq:Three}
-		E(\mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j}) = 0.5 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 0) + 0.2 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1) + 0.3 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 2), \quad i,j = 1, \ldots, n,
+	\label{eq:Three}
+	E(\mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j}) = 0.5 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 0) + 0.2 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1) + 0.3 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 2), \quad i,j = 1, \ldots, n,
 	\end{equation} 
 	and contaminate the true block-membership by: for each $i$, $\mathbf{x}_{i}=\mathbf{z}_{i}$ with probability $0.5$, and equally likely to take other values in $\Omega$, i.e., the true block-membership are observed half of the time.
 	
@@ -417,8 +417,8 @@ anchorcolor = blue]{hyperref}
 	
 	To better understand the advantage of our main approach under different scenarios, here we use the same three-block SBM and its block-membership $\{ \mathbf{z}_{i} : i=1,2, \ldots, n=100 \}$ as in the previous section, except that the edge probability is now controlled by $\theta \in (0, 1)$ as follows:
 	\begin{equation}
-		E(\mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j}) = 0.5 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 0) + 0.2 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1) + \theta \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 2); \quad i,j = 1, \ldots, n.
-		\label{eq:mono}
+	E(\mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j}) = 0.5 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 0) + 0.2 \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1) + \theta \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 2); \quad i,j = 1, \ldots, n.
+	\label{eq:mono}
 	\end{equation}
 	The noisy block-membership $\mathbf{X}$ is generated in the same way as before.
 	
@@ -440,8 +440,8 @@ anchorcolor = blue]{hyperref}
 	We set $n=200$ and $K=2$, select the block-membership $\mathbf{z}_i$ uniformly in $\Omega=\{0,1\}$, and generate the edge probability by  
 	\vspace*{-0.4cm}
 	\begin{equation}
-		E( \mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j},\mathbf{c}_{i},\mathbf{c}_{j} )  = 0.2 \mathbf{c}_{i} \mathbf{c}_{j} \cdot \mathbf{I}( |\mathbf{z}_{i} - \mathbf{z}_{j}| = 0 ) + 0.05 \mathbf{c}_{i} \mathbf{c}_{j} \cdot \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1),
-		\label{eq:tau}
+	E( \mathbf{A}_{ij} | \mathbf{z}_{i}, \mathbf{z}_{j},\mathbf{c}_{i},\mathbf{c}_{j} )  = 0.2 \mathbf{c}_{i} \mathbf{c}_{j} \cdot \mathbf{I}( |\mathbf{z}_{i} - \mathbf{z}_{j}| = 0 ) + 0.05 \mathbf{c}_{i} \mathbf{c}_{j} \cdot \mathbf{I}(|\mathbf{z}_{i} - \mathbf{z}_{j}| = 1),
+	\label{eq:tau}
 	\end{equation} 
 	where $\mathbf{c}_{i} \overset{i.i.d}{\sim} Uniform(1 - \tau, 1 + \tau)$ for $i = 1, \ldots, n$, and $\tau \in [0, 1]$ is a parameter to control the amount of variability in the edge degree, e.g., as $\tau$ increases, the model becomes more complex as the variability of the edge probability becomes larger; when $\tau=0$, the above model reduces to a two-block SBM without any variability induced by $\{ \mathbf{c}_{i} \}$. 
 	
@@ -462,13 +462,13 @@ anchorcolor = blue]{hyperref}
 	The next simulation applies the network dependency test approach to two graphs; instead of testing dependencies between one graph and the corresponding attributes, we test two graphs of the same node set with different edges, which is a scenario included in Corollary~\ref{main_corollary}. 
 	Assume two graphs $\mathbf{G}_{1}$ and $\mathbf{G}_{2}$ are generated via a latent variable $\mathbf{u}_{i} = ( u_{1i}~ u_{2i}~ \cdots ~u_{5i} ) \in \mathbb{R}^{5}$ as follows:
 	\begin{equation}
-		\begin{split}
-			u_{ki} & \overset{i.i.d.}{\sim} Unif(0, 1), \quad i = 1,2, \ldots, n;~k = 1,2,\ldots, 5 \\
-			w_{i} & := (1- u_{i1} )^{2}, \quad i = 1,2, \ldots, n \\
-			A^{(1)}_{ij} \big| \mathbf{u}_{i}, \mathbf{u}_{j} & \sim Bernoulli \big( <\mathbf{u}_{i}/5, \mathbf{u}_{j}/5  > \big), \quad \forall i < j;~i,j=1,2,\ldots,n;~\mathbf{u}_{i}, \mathbf{u}_{j} \in \mathbb{R}^{5} \\
-			A^{(2)}_{ij} \big| w_{i}, w_{j} & \sim Bernoulli \big( <w_{i}, w_{j}  > \big), \quad \forall i < j;~i,j=1,2,\ldots,n.
-		\end{split}
-		\label{eq:twoGraphs}
+	\begin{split}
+	u_{ki} & \overset{i.i.d.}{\sim} Unif(0, 1), \quad i = 1,2, \ldots, n;~k = 1,2,\ldots, 5 \\
+	w_{i} & := (1- u_{i1} )^{2}, \quad i = 1,2, \ldots, n \\
+	A^{(1)}_{ij} \big| \mathbf{u}_{i}, \mathbf{u}_{j} & \sim Bernoulli \big( <\mathbf{u}_{i}/5, \mathbf{u}_{j}/5  > \big), \quad \forall i < j;~i,j=1,2,\ldots,n;~\mathbf{u}_{i}, \mathbf{u}_{j} \in \mathbb{R}^{5} \\
+	A^{(2)}_{ij} \big| w_{i}, w_{j} & \sim Bernoulli \big( <w_{i}, w_{j}  > \big), \quad \forall i < j;~i,j=1,2,\ldots,n.
+	\end{split}
+	\label{eq:twoGraphs}
 	\end{equation}
 	
 	\begin{figure}[ht]
@@ -539,23 +539,23 @@ anchorcolor = blue]{hyperref}
 		
 		From now on, denote $\mathbf{U}$ as the $q \times n$ matrix having $\mathbf{u}_i$ as its $i^{\mbox{th}}$ column, and the permuted matrix as $\mathbf{U} \pi$ with $\pi$ being the permutation matrix. Transforming Equation~\ref{eq:U} into matrix notation yields
 		\begin{align*}
-			\mathbf{U}=\Lambda^{t}\Phi^{'},
+		\mathbf{U}=\Lambda^{t}\Phi^{'},
 		\end{align*}
 		where $\Lambda=\mbox{diag} \{ \lambda_{1},\lambda_2,\ldots,\lambda_q \}$ is the diagonal matrix having selected eigenvalues of the transition matrix $\mathbf{\widetilde{K}}$; $\Phi =[ \mathbf{\phi}_1, \mathbf{\phi}_2,\cdots, \mathbf{\phi}_q ]$ consists of the corresponding eigenvectors; $\cdot^{t}$ denotes $t^{\mbox{th}}$ power; and $\cdot^{'}$ is the matrix transpose. Therefore, it suffices to show that $\mathbf{U}$ always distributes as same as $\mathbf{U} \pi$ for any $n$ and $\pi$.
 		
 		Given that the graph $\mathbf{G}$ is infinitely exchangeable, i.e., $\mathbf{A}_{\sigma(i)\sigma(j)} \stackrel{d}{=} \mathbf{A}_{ij}$, we have
 		\begin{align*}
-			\mathbf{\widetilde{K}}_{\sigma(i) \sigma(j)} &= \max\{\mathbf{A}_{\sigma(i) \sigma(j)},\mathbf{A}_{\sigma(j) \sigma(i)}\} / \sum\limits_{j} \max\{\mathbf{A}_{\sigma(i) \sigma(j)},\mathbf{A}_{\sigma(j) \sigma(i)}\} \\
-			&\stackrel{d}{=} \max\{\mathbf{A}_{ij},\mathbf{A}_{ji}\} / \sum\limits_{j} \max\{\mathbf{A}_{ij},\mathbf{A}_{ji}\} \\
-			&= \mathbf{\widetilde{K}}_{ij}.
+		\mathbf{\widetilde{K}}_{\sigma(i) \sigma(j)} &= \max\{\mathbf{A}_{\sigma(i) \sigma(j)},\mathbf{A}_{\sigma(j) \sigma(i)}\} / \sum\limits_{j} \max\{\mathbf{A}_{\sigma(i) \sigma(j)},\mathbf{A}_{\sigma(j) \sigma(i)}\} \\
+		&\stackrel{d}{=} \max\{\mathbf{A}_{ij},\mathbf{A}_{ji}\} / \sum\limits_{j} \max\{\mathbf{A}_{ij},\mathbf{A}_{ji}\} \\
+		&= \mathbf{\widetilde{K}}_{ij}.
 		\end{align*}
 		Thus the transition matrix $\mathbf{\widetilde{K}}$ is also infinitely exchangeable, i.e., $\pi^{'} \mathbf{\widetilde{K}} \pi \stackrel{d}{=} \mathbf{\widetilde{K}}$ for any permutation $\pi$ and any size $n$. 
 		
 		By eigen-decomposition, the first $q$ eigenvectors and the corresponding eigenvalues of $\pi^{'} \mathbf{\widetilde{K}} \pi$ are $\Lambda$ and $\pi^{'} \Phi$, so it follows that
 		\begin{align*}
-			& \Phi \stackrel{d}{=} \pi^{'} \Phi\\
-			\Leftrightarrow \quad
-			& \mathbf{U}=\Lambda^{t} \Phi^{'}  \stackrel{d}{=} \Lambda^{t} \Phi^{'} \pi = \mathbf{U} \pi 
+		& \Phi \stackrel{d}{=} \pi^{'} \Phi\\
+		\Leftrightarrow \quad
+		& \mathbf{U}=\Lambda^{t} \Phi^{'}  \stackrel{d}{=} \Lambda^{t} \Phi^{'} \pi = \mathbf{U} \pi 
 		\end{align*}	
 		Therefore, the diffusion maps are also infinitely exchangeable so that there exists a latent variable $u$ such that the diffusion map is conditional i.i.d. asymptotically. 
 	\end{proof}
@@ -566,9 +566,9 @@ anchorcolor = blue]{hyperref}
 		
 		By Equation~\ref{eq:U}, we have 
 		\begin{align*}
-			\| \mathbf{u}_i \|_{2}^{2}  &= \sum_{j=1}^{q} \lambda^{2t}_{j}\mathbf{\phi}_{j}^{2}(i) \\ 
-			& \leq \sum_{j=1}^{q} \lambda^{2t}_{j} \\
-			& \leq q,
+		\| \mathbf{u}_i \|_{2}^{2}  &= \sum_{j=1}^{q} \lambda^{2t}_{j}\mathbf{\phi}_{j}^{2}(i) \\ 
+		& \leq \sum_{j=1}^{q} \lambda^{2t}_{j} \\
+		& \leq q,
 		\end{align*}
 		where the second line follows by noting $\mathbf{\phi}_{j}(i) \in [-1,1]$ (the eigenvector $\mathbf{\phi}_{j}$ is always of unit norm), and the third line follows by observing that $| \lambda_{j}| \leq \|\widetilde{\mathbf{K}}\|_{\infty}= 1$.
 		
@@ -585,7 +585,7 @@ anchorcolor = blue]{hyperref}
 			Let $\mathcal{V}^2_{n}(\mathbf{U}, \mathbf{X})$ be the distance covariance (\texttt{dCov}) of $(\mathbf{U}, \mathbf{X}) = \{  ( \mathbf{u}_{i}, \mathbf{x}_{i}  )  : i = 1, \ldots, n \}$ defined as Equation~\ref{eq:dCov}.
 			It follows that
 			\begin{eqnarray}
-				\mathcal{V}^{2}_{n}(\mathbf{U},\mathbf{X}) &=   \|g_{\mathbf{U},\mathbf{X}}^{n}(t,s)-g_{\mathbf{U}}^{n}(t)g_{\mathbf{X}}^{n}(s)\|^{2},
+			\mathcal{V}^{2}_{n}(\mathbf{U},\mathbf{X}) &=   \|g_{\mathbf{U},\mathbf{X}}^{n}(t,s)-g_{\mathbf{U}}^{n}(t)g_{\mathbf{X}}^{n}(s)\|^{2},
 			\end{eqnarray}
 			where $g_{\cdot}^{n}$ is the empirical characteristic function of $\{(\mathbf{u}_{i},\mathbf{x}_{i}) : i=1,2,...,n\}$ or the marginals, e.g., $g_{\mathbf{U},\mathbf{X}}^{n}(t,s)=\frac{1}{n}\sum_{i=1}^{n}\exp\{i \left\langle t,\mathbf{u}_{i} \right\rangle+i \left\langle s,\mathbf{x}_{i} \right\rangle\}$, with the understanding that the $i$ ahead of the inner product denotes the imaginary unit.
 		\end{lemma}
@@ -594,8 +594,8 @@ anchorcolor = blue]{hyperref}
 			\label{lemma3}
 			Assume $\{ \mathbf{u}_{i} : i = 1,2, \ldots, n \}$ are conditional i.i.d. based on $u$, and $\{\mathbf{x}_{i} \stackrel{i.i.d.}{\sim} x,~i = 1, 2, \ldots, n\}$, where $u$ and $x$ are both of finite second moment. It follows that
 			\begin{eqnarray}
-				\mathcal{V}_{n}^{2}(\mathbf{U},\mathbf{X}) &\longrightarrow \mathcal{V}^{2}(u,x) \quad \quad \mbox{ as } n \rightarrow \infty
-				\label{eq:conv1}
+			\mathcal{V}_{n}^{2}(\mathbf{U},\mathbf{X}) &\longrightarrow \mathcal{V}^{2}(u,x) \quad \quad \mbox{ as } n \rightarrow \infty
+			\label{eq:conv1}
 			\end{eqnarray}
 			where $\mathcal{V}^{2} (u,x) := \| g_{u,x}(t,s) - g_{u}(t) g_{x}(s) \|^2$, and $g_{\cdot}$ is the characteristic function, e.g., $g_{u,x}(t,s) = E(\exp\{i \left\langle t,u \right\rangle  +i \left\langle  s,x\right\rangle \})$.
 		\end{lemma}
@@ -604,14 +604,14 @@ anchorcolor = blue]{hyperref}
 		
 		Therefore a direct application of Lemma~\ref{lemma2} and Lemma~\ref{lemma3} yields that
 		\begin{eqnarray}
-			\mbox{\texttt{dCov}}(\mathbf{U},\mathbf{X}) &\longrightarrow \| g_{u,x}(t,s) - g_{u}(t) g_{x}(s) \|^2,
+		\mbox{\texttt{dCov}}(\mathbf{U},\mathbf{X}) &\longrightarrow \| g_{u,x}(t,s) - g_{u}(t) g_{x}(s) \|^2,
 		\end{eqnarray}
 		which equals $0$ if and only if $u$ is independent of $x$.
 		
 		As distance correlation is just a normalized version of distance covariance, it further leads to
 		\begin{eqnarray}
-			\mbox{\texttt{dCorr}}(\mathbf{U},\mathbf{X}) &\longrightarrow 0,
-			\label{eq:main1}
+		\mbox{\texttt{dCorr}}(\mathbf{U},\mathbf{X}) &\longrightarrow 0,
+		\label{eq:main1}
 		\end{eqnarray}
 		if and only if independence.
 		
@@ -627,9 +627,9 @@ anchorcolor = blue]{hyperref}
 		
 		All major steps in proving Theorem 2 of \cite{szekely2007measuring} are essentially the same for either i.i.d. random variables or infinitely exchangeable random variables \citep{InoueTaylor2006}. In particular, under the finite second moment assumption, we still have the large number for V-statistics \citep{KoroljukBook}, i.e., 
 		\begin{eqnarray}
-			\displaystyle\int_{D(\delta)}{\|g_{u,x}^{n}(t,s)-g_{u}^{n}(t)g_{x}^{n}(s)\|^{2}}dh &\stackrel{n \rightarrow \infty}{\longrightarrow} 
-			\displaystyle\int_{D(\delta)}{\|g_{u,x}(t,s)-g_{u}(t)g_{x}(s)\|^{2}}dh,
-			\label{eq:SLLN}
+		\displaystyle\int_{D(\delta)}{\|g_{u,x}^{n}(t,s)-g_{u}^{n}(t)g_{x}^{n}(s)\|^{2}}dh &\stackrel{n \rightarrow \infty}{\longrightarrow} 
+		\displaystyle\int_{D(\delta)}{\|g_{u,x}(t,s)-g_{u}(t)g_{x}(s)\|^{2}}dh,
+		\label{eq:SLLN}
 		\end{eqnarray}
 		where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and $h(t,s)$ is a weight function chosen in \cite{szekely2007measuring}. 
 	\end{proof}
