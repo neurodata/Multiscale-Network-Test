@@ -63,7 +63,7 @@ for(N in 1:9){
       X = rnorm(popn, U, 0.5) # nodal attributes
       A = as.matrix(get.adjacency(G))
       P = A  / pmax(rowSums(A), 1)
-      diffusion.q  =  min( max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3)), n.sample[N]-1)
+      diffusion.q  =  min( max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), n.sample[N]-1)
       mgc.results[i] =  NetworkTest.q(G, X, option = 1, diffusion = TRUE, dstep = 3, n.perm = n.perm, q = diffusion.q)[[1]][[1]]
           
   

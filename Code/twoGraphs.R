@@ -83,19 +83,19 @@ for(N in 1:length(popn)){
     P1 = A1  / pmax(rowSums(A1), 1)
     P2 = A2 / pmax(rowSums(A2), 1)
   
-    tmp = try( max(getElbows(print.lambda(P1, times = 3)[[1]], plot = FALSE, n = 3)), silent = TRUE)
+    tmp = try( max(getElbows(print.lambda(P1, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), silent = TRUE)
     if(class(tmp) == "try-error"){
       diffusion.q1 = 1 # when the elbow method does not work well
     }else{
-      diffusion.q1  =  min( max(getElbows(print.lambda(P1, times = 3)[[1]], plot = FALSE, n = 3)), popn/2)
+      diffusion.q1  =  min( max(getElbows(print.lambda(P1, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), popn/2)
     }
   
   
-    tmp = try( max(getElbows(print.lambda(P2, times = 3)[[1]], plot = FALSE, n = 3)), silent = TRUE)
+    tmp = try( max(getElbows(print.lambda(P2, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), silent = TRUE)
     if(class(tmp) == "try-error"){
       diffusion.q2 = 1 # when the elbow method does not work well
     }else{
-      diffusion.q2  =  min( max(getElbows(print.lambda(P2, times = 3)[[1]], plot = FALSE, n = 3)), popn/2)
+      diffusion.q2  =  min( max(getElbows(print.lambda(P2, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), popn/2)
    }
   
     dmap1 = dmap.q(P1, times = 3, q = diffusion.q1)[[1]]
@@ -147,22 +147,22 @@ hhg.power =  c(hhg.power40, hhg.power50, hhg.power60, hhg.power70, hhg.power80,
 ## Make Figure
 pdf("../Figure/Graphs.pdf", width = 15, height = 6)
 par(mfrow = c(1,1), cex.lab = 4, cex.axis = 3,
-    mar = c(8,10,3,20), tcl = 0.5)
-plot(seq(40, 120, 10), mgc.power, col = "red", 
-     lty = 1, lwd = 5, ylab = "Power",
-     ylim = c(0,1.0), type = "l", mgp = c(6,2,0),
-     xlab = "number of nodes", yaxt = 'n')
-axis(side = 2, at = c(0.0, 0.25, 0.5,  0.75, 1.0), 
-     labels = c(0.0, 0.25, 0.5,  0.75, 1.0), 
-     tck = 0.05)
-lines(seq(40, 120, 10), mcorr.power, col = "dodgerblue", 
-      lty =2, lwd = 5,  type = "l")
-lines(seq(40, 120, 10), hhg.power, col = "lightsalmon4", 
-      lty =3, lwd = 5,  type = "l")
-legend("topright", inset=c(-0.4, 0.5), 
-       c(expression(MGC), expression(mCorr), expression(HHG)),
-       col = c("red", "dodgerblue", "lightsalmon4"), seg.len = 3,
-       lty = c(1,2,3), lwd = 4, bty = 'n', cex = 2, xpd = NA)
+mar = c(8,10,3,20), tcl = 0.5)
+plot(seq(40, 120, 10), mgc.power, col = "red",
+    lty = 1, lwd = 5, ylab = "Power",
+    ylim = c(0,0.8), type = "l", mgp = c(6,2,0),
+    xlab = "number of nodes", yaxt = 'n')
+axis(side = 2, at = c(0.0, 0.2, 0.4, 0.6, 0.8),
+    labels = c(0.0, 0.2, 0.4,  0.6, 0.8),
+    tck = 0.05)
+lines(seq(40, 120, 10), mcorr.power, col = "dodgerblue",
+    lty =2, lwd = 5,  type = "l")
+lines(seq(40, 120, 10), hhg.power, col = "lightsalmon4",
+    lty =3, lwd = 5,  type = "l")
+legend("topright", inset=c(-0.4, 0.5),
+    c(expression(MGC), expression(mCorr), expression(HHG)),
+    col = c("red", "dodgerblue", "lightsalmon4"), seg.len = 3,
+    lty = c(1,2,3), lwd = 4, bty = 'n', cex = 2, xpd = NA)
 dev.off()
 
 

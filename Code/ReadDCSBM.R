@@ -49,7 +49,7 @@ for(N in 1:6){
         X = V(G)$outcome
         
         # upper bound of dimension is set to 100.
-        diffusion.q = min( max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3)), 100)
+        diffusion.q = min( max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), 100)
         mgc.result[i] =  NetworkTest.q(G, X, option = 1, diffusion = TRUE, dstep = 3, n.perm = n.perm, q = diffusion.q)[[1]][[1]]
         adj.result[i] =  NetworkTest.q(G, X, option = 1, diffusion = FALSE, dstep = 3, n.perm = n.perm, q = diffusion.q)
         

@@ -41,7 +41,7 @@ for(N in 1:12){
     X = V(G)$outcome
     A = as.matrix(get.adjacency(G))
     P =  A / pmax(rowSums(A),1)
-    diffusion.q  =  min( max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3)), popn-1)
+    diffusion.q  =  min( max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), popn-1)
 
     mgc.results[i] =  NetworkTest.q(G, X, option = 1, diffusion = TRUE, dstep = 3, n.perm = n.perm, q = diffusion.q)[[1]][[1]]
     mcorr.results[i] =  NetworkTest.q(G, X, option = 2, diffusion = TRUE, dstep = 3, n.perm = n.perm, q = diffusion.q)

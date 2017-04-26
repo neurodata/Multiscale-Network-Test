@@ -57,7 +57,7 @@ Dy = as.matrix(dist(X), diag = TRUE, upper = TRUE)
 ## dimensional choice of network metrics
 SVD.A = svd(A, nu = 95, nv = 95, LINPACK = FALSE)
 fh.k0 =  min( max(getElbows(SVD.A$d, n = 3, plot = FALSE)), 95-1 )
-diffusion.q0  = max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3))
+diffusion.q0  = max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0))
 
 
 ## network test without contamination
@@ -147,7 +147,7 @@ for(ii in 1:100){
   # contaminated transition matrix
   contam.P = contam.G.adj[[nr]] / rowSums(contam.G.adj[[nr]]) 
   # choose the dimension of diffusion map
-  diffusion.q[ii,nr]  = max(getElbows(print.lambda(contam.P, times = 3)[[1]], plot = FALSE, n = 3))
+  diffusion.q[ii,nr]  = max(getElbows(print.lambda(contam.P, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0))
   
   mgc.pval[ii,nr] =  NetworkTest.q(G, X, option = 1, diffusion = TRUE, dstep = 3, 
                               n.perm = 500, q = diffusion.q[nr])[[1]][[1]]
