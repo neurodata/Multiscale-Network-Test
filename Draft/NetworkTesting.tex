@@ -115,15 +115,15 @@ anchorcolor = blue]{hyperref}
 	
 	Propelled by increasing demand and supply of network data, the ubiquitous influence of network inferences has motivated numerous recent advances and applications in statistics, physics, computer science, biology, social science, etc., which poses many new challenges to data scientists and statisticians due to its distinct structure. A graph, or equivalently a network, is formally defined as an ordered pair $\mathbf{G}=(V,E)$, where $V$ represents the set of nodes (or vertices) and $E$ is the set of edges. The graph can be conveniently represented by the adjacency matrix $\mathbf{A} = \{\mathbf{A}_{ij} : i,j= 1,..,n = |V| \}$, with $\mathbf{A}_{ij}$ being the edge weight between node $i$ and node $j$, e.g., for an unweighted and undirected network, $\mathbf{A}_{ij} =\mathbf{A}_{ji} = 1$ if and only if node $i$ and node $j$ are connected by an edge, and zero otherwise.
 	
-	Due to the distinct structure of graphs from traditional data analysis, statistical studies of network sciences are often model-based, e.g., the Erdos-Renyi model \citep{erdosrenyi1959,Gilbert1959}, stochastic block model~\citep{HollandEtAl1983, rohe2011spectral,SussmanEtAl2012,Lei2015} and its degree-corrected version~\citep{karrer2011stochastic, ZhaoLevinaZhu2012}, the latent position model~\citep{TangSussmanPriebe2013,fosdick2015testing}, the random dot product model~\citep{YoungScheinerman2007, sussman2014consistent} have all played significant roles in a range of tasks such as hypothesis testing, community detection, dimension reduction, etc. Despite their success so far, model-based statistical methods have limited applicability on real networks, e.g., statistical models and relevant inferences usually assume a connected, unweighted, and undirected graph, which only represents a subset of real networks; whether the given graph actually satisfies the presumed model can be challenging and expensive to verify; parameter selection under a given model is often difficult and un-guaranteed in practice, etc. Indeed, model mis-specification can largely affect the inference performance on networks \citep{ChenShenVogelsteinPriebe2016}; and it is becoming more desirable to develop robust and model-free approaches on graph analysis, so as to better handle a large variety of disparate graphs. 
+	Due to the distinct structure of graphs from traditional data analysis, statistical studies of network sciences are often model-based, e.g., the Erdos-Renyi model \citep{erdosrenyi1959,Gilbert1959}, stochastic block model~\citep{HollandEtAl1983, rohe2011spectral,SussmanEtAl2012,Lei2015} and its degree-corrected version~\citep{karrer2011stochastic, ZhaoLevinaZhu2012}, the latent position model~\citep{TangSussmanPriebe2013,fosdick2015testing}, the random dot product model~\citep{YoungScheinerman2007, sussman2014consistent} have all played significant roles in a range of tasks such as hypothesis testing, community detection, dimension reduction, etc. Despite their success so far, model-based statistical methods have limited applicability on real networks, e.g., statistical models and relevant inferences usually assume a connected, unweighted, and undirected graph, which only represents a subset of real networks; whether the given graph actually satisfies the presumed model can be challenging and expensive to verify; parameter selection under a given model is often difficult and un-guaranteed in practice, etc. Indeed, model mis-specification can largely affect the inference performance on networks \citep{ChenShenVogelsteinPriebe2016}, and there is generally no ground truth in real network inference \citep{Leto2017}. Therefore it is becoming more desirable to develop robust and model-free approaches on graph analysis, so as to better handle a large variety of disparate graphs. 
 	
 	In this paper, we focus on one of the most fundamental statistical inference tasks on networks-- testing independence between the nodal attributes and network topology; that is, given an adjacency matrix $\mathbf{A}$ and corresponding nodal attributes $\mathbf{X} = \{  \mathbf{x}_{i} \in \mathbb{R}^{q_{x}} : i = 1, \ldots, n \}$ associated with each node, we would like to test whether the graph topology constructed via $\mathbf{A}$ has any relationship with the nodal attributes $\mathbf{X}$. For example, each person on Facebook has a number of distinct attributes (e.g., occupations, sex, personal behaviors), and also has connections with other persons and entities via the social network; in neuroscience, each brain region has its own distinct functionality, and is also linked with other regions in the brain map. Therefore, determining the existence of relationship between network connectivity and certain properties of the nodes is often a crucial first step in exploring the network data. 
 	
 	A notable obstacle in the network dependence testing problem is that the adjacency matrix $\mathbf{A}$ is structured (e.g., $\mathbf{A}$ is a symmetric matrix under un-directed graph), which prevents many well-established methodology from being directly used, e.g., unlike in traditional data analysis where one can comfortably assume independently identically distributed (i.i.d.) of each observation, there is no correlation measure straightly applicable between $\mathbf{A}$ and $\mathbf{X}$. Therefore, the primary focus so far has been on developing parametric tests on networks~\citep{wasserman1996logit, fosdick2015testing, howard2016understanding}, which are limited by the boundary of model assumption. For example, the network dependence test proposed by Fosdick and Hoff \citep{fosdick2015testing} assumes that the adjacency matrix is generated from a multivariate normal distribution of the latent factors, then proceeds to estimate the latent factor associated with each node from $\mathbf{A}$ (requiring dimension selection of the latent factor), followed by applying the standard likelihood ratio test on the normal distribution.
 	
-	To tackle the challenges from parametric tests, we propose a new model-free method to test network dependency, via diffusion maps and distance-based correlations. We first compute the diffusion maps~\citep{coifman2005geometric,coifman2006diffusion,lafon2006diffusion} from the adjacency matrix to obtain a node-wise embedding, then proceed to test independence between the diffusion distance of the adjacency matrix and the Euclidean distance of the nodal attributes. Assuming an infinitely exchangeable graph and mild regularity conditions, the new approach provides a set of asymptotic conditional i.i.d. embedding for the nodes, which results in consistent test statistics for network dependence testing by taking advantages of the recent progress in the distance-based correlation framework \citep{szekely2007measuring,szekelyRizzo2013a, shen2016discovering}. Moreover, our method is computationally inexpensive and robust against parameter mis-specifications, very efficient in capturing a wide variety of nonlinear and high-dimensional relationships, and readily extend-able to testing independence between two graphs. 
+	To tackle the challenges from parametric tests, we propose a new model-free method to test network dependency, via diffusion maps and distance-based correlations. We first compute the diffusion maps~\citep{coifman2005geometric,coifman2006diffusion,lafon2006diffusion} from the adjacency matrix to obtain a node-wise embedding, then proceed to test independence between the diffusion distance of the adjacency matrix and the Euclidean distance of the nodal attributes. Assuming an infinitely exchangeable graph and mild regularity conditions, the new approach provides a set of asymptotic conditional i.i.d. embedding for the nodes, which results in consistent test statistics for network dependence testing by taking advantages of the recent progress in the distance-based correlation framework \citep{szekely2007measuring,szekelyRizzo2013a, shen2016discovering}. Moreover, our method is computationally inexpensive and robust against parameter mis-specifications, highly efficient in capturing a wide variety of nonlinear and high-dimensional relationships, and readily extend-able to testing independence between two graphs. 
 	
-	The remaining of the paper is organized as follows: In Section~\ref{sec:pre} we briefly review diffusion maps and distance-based correlations, which are the main ingredients for the proposed test. In Section~\ref{sec:method} we formally propose the testing method and prove the relevant theoretical properties under mild distributional assumptions, followed by discussions on implementation details and immediate extensions. Section~\ref{sec:simulation} is dedicated to numerical experiments, where we illustrate the advantages of the proposed method under various scenarios. Proofs are put into the supplementary material, and the \texttt{R} codes and accompanying data are available online \footnotemark\footnotetext{\url{https://github.com/neurodata/Multiscale-Network-Test}}.
+	The remaining of the paper is organized as follows: In Section~\ref{sec:pre} we briefly review diffusion maps and distance-based correlations, which are the main ingredients for the proposed test. In Section~\ref{sec:method} we formally propose the testing method and prove the relevant theoretical properties under mild distributional assumptions, followed by immediate extensions and parameter selection discussions. Section~\ref{sec:simulation} is dedicated to numerical experiments, where we illustrate the advantages of the proposed method under various scenarios. Proofs are put into the supplementary material, and the \texttt{R} codes and accompanying data are available online \footnotemark\footnotetext{\url{https://github.com/neurodata/Multiscale-Network-Test}}.
 	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -136,14 +136,14 @@ anchorcolor = blue]{hyperref}
 	
 	To derive the diffusion maps for sample observations of size $n$, the first step is to find an $n \times n$ kernel matrix $\mathbf{K}$ that represents the similarity within the sample data, under the restriction that the kernel is symmetric and positive preserving, i.e., $\mathbf{K}_{ij}=\mathbf{K}_{ji}$, and $\mathbf{K}_{ij} \geq 0$ for all $i,j \in \{1, 2, \ldots, n\}$. Next we normalize the kernel matrix into a transition matrix $\mathbf{\widetilde{K}}$, where $\mathbf{\widetilde{K}}_{ij} = \mathbf{K}_{ij} / \sum\limits_{j=1}^{n} \mathbf{K}_{ij}$ when $\sum\limits_{j=1}^{n} \mathbf{K}_{ij} \neq 0$, and $\mathbf{\widetilde{K}}_{ij}=0$ otherwise.
 	
-	Fixing $q$ as the embedding dimension and $t$ as the iteration time step, the diffusion map $\mathbf{U}=\{\mathbf{u}_i, i=1,\ldots,n\}$ is computed as 
+	Fixing $q$ as the embedding dimension and $t$ as the iteration time step, the diffusion map $\mathbf{U}=\{\mathbf{u}_i : i=1,\ldots,n\}$ is computed as 
 	\begin{align}
-	\label{eq:U}
-	\mathbf{u}_i  &= \begin{pmatrix} \lambda^{t}_{1} \mathbf{\phi}_{1}(i) & \lambda^{t}_{2} \mathbf{\phi}_{2} (i)  & \cdots & \lambda^{t}_{q} \mathbf{\phi}_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}; \quad i = 1, \ldots, n,
+		\label{eq:U}
+		\mathbf{u}_i  &= \begin{pmatrix} \lambda^{t}_{1} \mathbf{\phi}_{1}(i) & \lambda^{t}_{2} \mathbf{\phi}_{2} (i)  & \cdots & \lambda^{t}_{q} \mathbf{\phi}_{q}(i) \end{pmatrix} \in \mathbb{R}^{q}; \quad i = 1, \ldots, n,
 	\end{align}
 	where $\{ \lambda_{j} \}$ and $\{ \phi_{j}  \}$ denote the $q$ largest eigenvalues and corresponding eigenvectors of $\mathbf{\widetilde{K}}$, and $\lambda^{t}_{j}$ denotes the $t^{\mbox{th}}$~power of the $j^{\mbox{th}}$~eigenvalue.
 	
-	The diffusion distance between the $i^{\mbox{th}}$~observation and the $j^{\mbox{th}}$~observation is defined as the similarity of the two points in the observation space with respect to the connectivity between them, which turns out to equal the Euclidean distance in the diffusion coordinate, i.e,
+	The diffusion distance between the $i^{\mbox{th}}$~observation and the $j^{\mbox{th}}$~observation is defined as the dissimilarity of the two points in the observation space with respect to the connectivity between them, which turns out to equal the Euclidean distance in the diffusion coordinate, i.e,
 	\begin{equation}
 	\label{eq:diffusion}
 	\mathbf{C}(i,j)  =   \| \mathbf{u}_i - \mathbf{u}_j \|; \quad i,j = 1,2, \ldots , n.
@@ -159,7 +159,7 @@ anchorcolor = blue]{hyperref}
 	
 	The general problem of dependence testing between two random variables has seen notable progress in recent years. The Pearson's correlation~\citep{Pearson1895} is the most classical approach, which determines the existence of linear relationship via a correlation coefficient in the range of $[-1,1]$, with $0$ indicating no linear association and $\pm 1$ indicating perfect linear association. To better capture the dependencies not limited to linear relationship, a variety of distance-based correlation measures have been suggested recently, such as the Mantel coefficient \citep{mantel1967}, distance correlation (\texttt{dCorr}) and energy statistic \citep{szekely2007measuring,szekelyRizzo2013a, RizzoSzekely2016}, kernel-based independence test \citep{GrettonGyorfi2010}, Heller-Heller-Gorfine (\texttt{HHG}) test \citep{HellerGorfine2013,heller2016consistent}, and multiscale generalized correlation (\texttt{MGC}) \citep{shen2016discovering}, among others. In particular, the distance correlation by \cite{szekely2007measuring} is the first correlation measure that is consistent against all possible dependencies with finite second moment. The multiscale generalized correlation statistic (\texttt{MGC}) by \cite{shen2016discovering} inherits the same consistency of distance correlation with remarkably better finite-sample testing powers under high-dimensional and nonlinear dependencies, by defining a family of distance-based local correlations and efficiently searching for the optimal correlation in testing. Here we briefly introduce \texttt{dCorr} and \texttt{MGC}.
 	
-	Suppose a pair of sample data $(\mathbf{U}, \mathbf{X}) = \{  (\mathbf{u}_{i}, \mathbf{x}_{i} );~i = 1,2, \ldots, n \}$ are independently and identically distributed as $(\mathbf{u},\mathbf{x}) \in \mathbb{R}^{q \times q_x}$ ($q$ and $q_x$ are the respective feature dimension). Denote the pairwise distances within $\mathbf{U}=\{\mathbf{u}_{i}\}_{i=1}^{n}$ and $\mathbf{X}=\{\mathbf{x}_{i}\}_{i=1}^{n}$ as $\mathbf{C}_{ij} = \| \mathbf{u}_{i} - \mathbf{u}_{j} \|$ and $\mathbf{D}_{ij} = \| \mathbf{x}_{i} - \mathbf{x}_{j} \|$ for $i,j=1,2, \ldots , n$, where $\| \cdot \|$ is the Euclidean distance.
+	Suppose a pair of sample data $(\mathbf{U}, \mathbf{X}) = \{  (\mathbf{u}_{i}, \mathbf{x}_{i} ) : i = 1,2, \ldots, n \}$ are independently and identically distributed as $(\mathbf{u},\mathbf{x}) \in \mathbb{R}^{q} \times \mathbb{R}^{q_x}$ ($q$ and $q_x$ are the respective feature dimension). Denote the pairwise distances within $\mathbf{U}=\{\mathbf{u}_{i}\}_{i=1}^{n}$ and $\mathbf{X}=\{\mathbf{x}_{i}\}_{i=1}^{n}$ as $\mathbf{C}_{ij} = \| \mathbf{u}_{i} - \mathbf{u}_{j} \|$ and $\mathbf{D}_{ij} = \| \mathbf{x}_{i} - \mathbf{x}_{j} \|$ for $i,j=1,2, \ldots , n$, where $\| \cdot \|$ is the Euclidean distance.
 	
 	Then the distance covariance of the sample data is defined as 
 	\begin{equation}	 
@@ -175,23 +175,23 @@ anchorcolor = blue]{hyperref}
 	\end{equation}
 	where $r(\mathbf{C}_{ij})$ is the rank function of $\mathbf{u}_{i}$ relative to $\mathbf{u}_{j}$, i.e., $r(\mathbf{C}_{ij})=k$ if $\mathbf{u}_{i}$ is the $k^{\mbox{th}}$ nearest neighbor of $\mathbf{u}_{j}$, and define equivalently $r(\mathbf{D}_{ij})$ for $\mathbf{X}$. Then the local distance correlations $\texttt{dCorr}_{n}^{kl}$ are the normalizations of the local distance covariances into $[-1,1]$. Among all possible neighborhood choices, the \texttt{MGC} statistic $\rho^{*}$ equals the largest local distance correlation up-to a smoothing operation $S(\cdot)$, i.e.,
 	\begin{align}
-	\label{eq:MGC2}
-	& \rho^{*}=\texttt{dCorr}_{n}^{(kl)^{*}}, \mbox{ where } (kl)^{*}=\arg\max_{(kl)}S(\texttt{dCorr}_{n}^{kl}).
+		\label{eq:MGC2}
+		& \rho^{*}=\texttt{dCorr}_{n}^{(kl)^{*}}, \mbox{ where } (kl)^{*}=\arg\max_{(kl)}S(\texttt{dCorr}_{n}^{kl}).
 	\end{align}
 	The \texttt{MGC} statistic is also applicable to \texttt{mCorr} as well, which is the default implementation for the proposed approach in Section~\ref{sec:method}. More details of \texttt{mCorr} implementation and the smoothing function are available in \cite{shen2016discovering}.  
 	
-	It is worthwhile to note that \texttt{MGC} is computationally efficient, despite of searching over all possible neighborhoods for the optimal local correlation. Assuming sample size is $n$ and the maximal feature dimension of $\mathbf{U}$ and $\mathbf{X}$ is $q$, \texttt{MGC} runs in $O(n^2 \max\{\log n,q\})$. In comparison, \texttt{dCorr} and \texttt{mCorr} run in $O(n^2 q)$, while the \texttt{HHG} statistic (another distance-based method excellent for testing nonlinear dependency) has the same complexity as \texttt{MGC}. The space requirement for any above-mentioned method is $O(n^2)$.
+	It is worthwhile to note that \texttt{MGC} is computationally efficient, despite searching over all possible neighborhoods for the optimal local correlation. Assuming sample size is $n$ and the maximal feature dimension of $\mathbf{U}$ and $\mathbf{X}$ is $q$, \texttt{MGC} runs in $O(n^2 \max\{\log n,q\})$. In comparison, \texttt{dCorr} and \texttt{mCorr} run in $O(n^2 q)$, while the \texttt{HHG} statistic (another distance-based method excellent for testing nonlinear dependency) has the same complexity as \texttt{MGC}. The space requirement for any above-mentioned method is $O(n^2)$.
 	
 	\section{Network Dependence Testing}
 	\label{sec:method}
-	In this section we propose our approach built on diffusion maps and \texttt{MGC}. Theoretical properties are presented in Section~\ref{sec:theory}, with discussions followed in Section~\ref{ss:dis}.
+	In this section we propose our approach built on diffusion maps and \texttt{MGC}. Theoretical properties are presented in Section~\ref{sec:theory}, with discussions on parameter selections followed in Section~\ref{ss:dis}.
 	
 	\subsection{A Nonparametric Approach}
 	\label{ssec:method}
 	\begin{description}[align=left]
-		\item [Input: ]  The adjacency matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$ for the network topology, and the nodal attributes $\mathbf{X}=\{\mathbf{x}_i \in \mathbb{R}^{q_{x}}, i=1,\ldots,n\}$. Note that the input graph can be of any structure, e.g., directed or undirected, weighted or unweighted, connected or disconnected, has self-loop or not. 
+		\item [Input: ]  The adjacency matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$ for the network topology, and the nodal attributes $\mathbf{X}=\{\mathbf{x}_i \in \mathbb{R}^{q_{x}} : i=1,\ldots,n\}$. Note that the input graph can be of any structure, e.g., directed or undirected, weighted or unweighted, connected or disconnected, has self-loop or not. 
 		
-		\item [Step 1:] Transform the adjacency matrix into a proper Euclidean embedding via the diffusion maps. We set the symmetric kernel matrix as $\mathbf{K}_{ij}=(\mathbf{A}_{ij}+\mathbf{A}_{ji})/2$, then the diffusion map $\mathbf{U}=\{\mathbf{u}_{i},i=1,\ldots,n\}$ follows by applying the eigen-decomposition to the normalized kernel matrix $\mathbf{\widetilde{K}}$ as in Equation~\ref{eq:U}. For the parameters, we fix $t=3$, and select $q$ by the third elbow of the eigenvalue scree plot using the profile likelihood method in \cite{ZhuGhodsi2006}.
+		\item [Step 1:] Transform the adjacency matrix into a proper Euclidean embedding via the diffusion maps. We set the symmetric kernel matrix as $\mathbf{K}_{ij}=(\mathbf{A}_{ij}+\mathbf{A}_{ji})/2$, then the diffusion map $\mathbf{U}=\{\mathbf{u}_{i} : i=1,\ldots,n\}$ follows by applying the eigen-decomposition to the normalized kernel matrix $\mathbf{\widetilde{K}}$ as in Equation~\ref{eq:U}. For the parameters, we fix $t=3$, and select $q$ by the third elbow of the eigenvalue scree plot using the profile likelihood method in \cite{ZhuGhodsi2006}.
 		
 		\item [Step 2:] Calculate the \texttt{MGC} statistic $\rho^{*}(\mathbf{C}, \mathbf{D})$ from the pairwise distances. $\mathbf{C}$ is computed as the diffusion distance matrix from $\mathbf{U}$, and $\mathbf{D}$ is the Euclidean distance matrix of $\mathbf{X}$, followed by applying Equation~\ref{eq:MGC} and \ref{eq:MGC2}.
 		
@@ -206,7 +206,7 @@ anchorcolor = blue]{hyperref}
 		\small
 		\begin{tikzpicture}[node distance=2cm]
 		\node (in1) [node, xshift=2cm] {Graph Adjacency $\mathbf{A} \in \mathbb{R}^{n \times n}$};
-		\node (in2) [node, xshift=10cm] {Attributes $\mathbf{X}=\{\mathbf{x}_{i};~i=1,\ldots,n \} \in \mathbb{R}^{q_{x} \times n}$};
+		\node (in2) [node, xshift=10cm] {Attributes $\mathbf{X}=\{\mathbf{x}_{i} : i=1,\ldots,n \} \in \mathbb{R}^{q_{x} \times n}$};
 		\node (S1) [node, below of=in1] {Kernel Matrix $\mathbf{K}=(\mathbf{A}+\mathbf{A}^{'})/2$};
 		
 		\node (S2) [node, below of=S1] {Diffusion Map $\mathbf{U}=\{\mathbf{u}_{i}\} \in \mathbb{R}^{q \times n}$};
@@ -235,16 +235,16 @@ anchorcolor = blue]{hyperref}
 	Throughout this section, we assume that the parameters $t$ and $q$, and the dimension of the nodal attributes $q_x$ are fixed and finite. Moreover, we require the following distributional conditions on the graph $\mathbf{G}$ and the nodal attributes $\mathbf{X}$: 
 	
 	\begin{description}[align=left]
-		\item [(C1)] Graph $\mathbf{G}$ is from an infinitely exchangeable graph, i.e., the adjacency matrix $\mathbf{A}$ is generated by an $n \times n$ random matrix $\mathcal{A}$ such that 
+		\item [(C1)] Graph $\mathbf{G}$ is from an infinitely exchangeable graph, i.e., the adjacency matrix $\mathbf{A}$ is generated by a $n \times n$ random matrix $\mathcal{A}$ such that 
 		\begin{align*}
-		\mathcal{A}_{ij} \stackrel{d}{=} \mathcal{A}_{\sigma(i) \sigma(j)}
+			\mathcal{A}_{ij} \stackrel{d}{=} \mathcal{A}_{\sigma(i) \sigma(j)}
 		\end{align*}
 		for any $i,j=1,\ldots,n$ and any permutation $\sigma$ of size $n$, where $n$ can be finite or infinite. The notation $\stackrel{d}{=}$ stands for equality in distribution. 
 		
-		\item [(C2)] The underlying distribution of the nodal attributes are of finite second moment, i.e., we assume $\{\mathbf{x}_{i};~i=1,\ldots,n\}$ are independently and identically distributed as $x$, whose second moment is finite.
+		\item [(C2)] The underlying distribution of the nodal attributes are of finite second moment, i.e., we assume $\{\mathbf{x}_{i} : i=1,\ldots,n\}$ are independent and identically distributed as $x$, whose second moment is finite.
 	\end{description}
 	
-	Condition (C1) is straightforward to verify and most popular statistical networks models satisfy this condition under regularity conditions. For example, both the stochastic block model and latent position model can be thought of as a subgraph of an infinitely exchangeable random graph, when the block-membership or latent positions are assumed independently and identically distributed in each model. From condition (C1), we prove that the diffusion map $\mathbf{U}$ can furnish asymptotic conditional i.i.d. embedding for the set of nodes $V$. 
+	Condition (C1) is straightforward to verify and most popular statistical networks models satisfy this condition under regularity conditions. For example, both the stochastic block model and latent position model can be thought of as a subgraph of an infinitely exchangeable random graph, when the block-membership or latent positions are assumed independent and identically distributed in each model. From condition (C1), we prove that the diffusion map $\mathbf{U}$ can furnish asymptotic conditional i.i.d. embedding for the set of nodes $V$. 
 	
 	\begin{theorem}
 		\label{main_lemma}
@@ -277,7 +277,7 @@ anchorcolor = blue]{hyperref}
 		\begin{description}[align=left]
 			\item [] (1) Instead of $t=3$ and $q$ as the third elbow, $t$ and $q$ are chosen as any other finite positive integers;
 			
-			\item [] (2) The nodal attributes in the input are replaced by a second graph of the same node set, which satisfies condition (C1) and has its' distance matrix $\mathbf{D}$ computed by the same diffusion map process;
+			\item [] (2) The nodal attributes in the input are replaced by a second graph of the same node set, which satisfies condition (C1) and has its distance matrix $\mathbf{D}$ computed by the same diffusion map process;
 			
 			\item [] (3) The \texttt{MGC} statistic in step 2 is replaced by either \texttt{dCorr} or \texttt{mCorr}.
 		\end{description}
@@ -289,18 +289,42 @@ anchorcolor = blue]{hyperref}
 	
 	All proofs are supplied in Appendix~\ref{ssec:proof}.
 	
-	\subsection{Discussion}
+	\subsection{Parameter Selection}
 	\label{ss:dis}
 	
-	In this section, we discuss the parameter selection and the advantages of diffusion maps over other embeddings. %Note that the advantages of \texttt{MGC} is extensively demonstrated in \cite{shen2016discovering}.
-	
 	There are two parameters to choose for the diffusion map, i.e., the time step $t$, and the dimension of graph embedding $q$. Theoretical properties always hold for finite $t$ and $q$, but their choices may affect the testing power. Empirically, it turns out that the diffusion map is relatively insensitive to choice of $t$, and able to well capture the geometric structure in a wide range of $t>1$, from which we choose to fix $t=3$ throughout; upon fixing $t$, the diffusion distance is also relatively indifferent to the choice of $q$, for which we opt to select $q$ as the third elbow of the eigenvalue scree plot by the profile likelihood method from~\cite{ZhuGhodsi2006}. This is a widely-used automatic algorithm for selecting the number of important features, whenever eigenvalues or singular values are involved. 
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[b]{0.23\textwidth}
+			\includegraphics[width=\textwidth]{../Figure/E1.pdf}
+			\caption{}
+			\label{fig:e1}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.23\textwidth}
+			\includegraphics[width=\textwidth]{../Figure/E3.pdf}
+			\caption{}
+			\label{fig:e3}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.23\textwidth}
+			\includegraphics[width=\textwidth]{../Figure/E10.pdf}
+			\caption{}
+			\label{fig:e10}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.23\textwidth}
+			\includegraphics[width=\textwidth]{../Figure/E99.pdf}
+			\caption{}
+			\label{fig:e99}
+		\end{subfigure}
+		\caption{Adjacency spectral embedding is not robust against dimension misspecification particularly compared to the diffusion maps. Panel (a)-(d) show the Euclidean distance matrix of ASE at increasing $q$, using the same adjacency matrix in Figure~\ref{fig:diffusions}(a). Only ASE at $q=3$, namely the correct dimension, is able to display a clear block structure. Note that the first three elbows are $(1,45,70)$, so that it is difficult for ASE to recognize the block structure when the dimension is chosen via the scree plot.}
+		\label{fig:embedding}
+	\end{figure}
 	
 	To support our parameter choices, we provide empirical evidence in Figure~\ref{fig:diffusions}: an adjacency matrix of $n=100$ is generated by the three-block stochastic block model in Equation~\ref{eq:Three} (details in Section~\ref{sec:simulation}), followed by the diffusion distances at different $t$ and $q$. The diffusion distance matrix is always able to preserve the block structures for $t \in [2,10]$ and $q \in [2,n]$. Recognizing such block structures is important in detecting dependence between the graph structure and block-membership.
 	
 	In comparison, standard graph embedding methods are often sensitive to the choice of $q$. Figure~\ref{fig:embedding} shows the Euclidean distance of the adjacency spectral embedding (ASE) \citep{SussmanEtAl2012} applied to the same adjacency matrix. For ASE, the correct dimensional choice equals the number of blocks, i.e., the distance matrix at $q=3$ shows a clear block structure. However, a slight mis-specification of $q$ can cause the embedding to have a more obscure block structure, and the elbow method often fails to find the correct $q$ for ASE.
 	
-	\begin{figure}[!ht]
+	\begin{figure}[H]
 		\centering
 		\begin{subfigure}[b]{0.23\textwidth}
 			\includegraphics[width=\textwidth]{../Figure/Amat.pdf}
@@ -347,32 +371,6 @@ anchorcolor = blue]{hyperref}
 		\label{fig:diffusions}
 	\end{figure}
 	
-	\begin{figure}[!ht]
-		\centering
-		\begin{subfigure}[b]{0.23\textwidth}
-			\includegraphics[width=\textwidth]{../Figure/E1.pdf}
-			\caption{}
-			\label{fig:e1}
-		\end{subfigure}
-		\begin{subfigure}[b]{0.23\textwidth}
-			\includegraphics[width=\textwidth]{../Figure/E3.pdf}
-			\caption{}
-			\label{fig:e3}
-		\end{subfigure}
-		\begin{subfigure}[b]{0.23\textwidth}
-			\includegraphics[width=\textwidth]{../Figure/E10.pdf}
-			\caption{}
-			\label{fig:e10}
-		\end{subfigure}
-		\begin{subfigure}[b]{0.23\textwidth}
-			\includegraphics[width=\textwidth]{../Figure/E99.pdf}
-			\caption{}
-			\label{fig:e99}
-		\end{subfigure}
-		\caption{Adjacency spectral embedding is not robust against dimension misspecification particularly compared to the diffusion maps. Panel (a)-(d) show the Euclidean distance matrix of ASE at increasing $q$, using the same adjacency matrix in Figure~\ref{fig:diffusions}(a). Only ASE at $q=3$, namely the correct dimension, is able to display a clear block structure. Note that the first three elbows are $(1,45,70)$, so that it is difficult for ASE to recognize the block structure when the dimension is chosen via the scree plot.}
-		\label{fig:embedding}
-	\end{figure}
-	
 	Therefore, our motivation to use diffusion maps is three-fold: it yields an embedding of the graph structure into the Euclidean space; it is relatively robust against parameter mis-specification; and it allows a seamless integration with distance-based correlations for consistent dependency testing. On the other hand, it is tempting to use other embedding methods, like adjacency spectral embedding, Laplacian spectral embedding \citep{rohe2011spectral}, the latent factor embedding \citep{fosdick2015testing}, etc. Those embeddings can also be directly combined with \texttt{dCorr} or \texttt{MGC} to test dependence, but they may lose the theoretical properties without more strict model assumption and are often more sensitive to the parameter choice, thereby leading to sub-optimal performance. For comparison purposes, we include other embedding choices for benchmark in the simulations.
 	
 	
@@ -382,7 +380,7 @@ anchorcolor = blue]{hyperref}
 	
 	In this section, we demonstrate the advantages of our approach via simulations and real data experiment. Throughout the numerical studies, we mainly compare our approach to the likelihood ratio test proposed by Fosdick and Hoff (\texttt{FH})~\citep{fosdick2015testing}, as well as a number of variants mentioned in Section~\ref{sec:method}: in place of \texttt{MGC}, we consider applying \texttt{mCorr} and \texttt{HHG} to the distances; and instead of diffusion distance as network metric, we consider using the Euclidean distances of the adjacency matrix (\texttt{AM}) or the latent factors (\texttt{LF}), prior to computing the distance-based correlation. Thus the main approach is denoted as $\texttt{MGC} \circ \texttt{DM}$ (\texttt{MGC} statistic applied to diffusion maps), whereas the other variants are denoted as $\texttt{MGC} \circ \texttt{AM}$, $\texttt{mCorr} \circ \texttt{DM}$, $\texttt{HHG} \circ \texttt{LF}$, etc. 
 	
-	For each simulation, we generate sample graph and the corresponding attributes (or two sample graphs in Section~\ref{ssec:twographs}), carry out the permutation test for each method, and reject the null if the resulting p-value is less than $\alpha = 0.05$. The testing power of each method equals the percentage of correct rejection out of $500$ Monte-Carlo replicates, and a higher power implies a better method. For the real data experiment, we directly report the p-value of the permutation test, since the testing power is not available, and a lower p-value indicates a better method assuming the existence of relationships. 
+	For each simulation, we generate a sample graph and the corresponding attributes (or two sample graphs in Section~\ref{ssec:twographs}), carry out the permutation test for each method, and reject the null if the resulting p-value is less than $\alpha = 0.05$. The testing power of each method equals the percentage of correct rejection out of $500$ Monte-Carlo replicates, and a higher power implies a better method. For the real data experiment, we directly report the p-value of the permutation test, since the testing power is not available, and a lower p-value indicates a better method assuming the existence of relationships. 
 	
 	Whenever dimension selection is required, i.e., selection of $q$ for \texttt{DM} and \texttt{LF}, we always pick the third elbow of the scree plot bounded above by $\min(n, 100)$. 
 	
@@ -488,16 +486,16 @@ anchorcolor = blue]{hyperref}
 	\subsection{Real Data Experiment with Contamination}
 	\label{ssec:real}
 	
-	To demonstrate the application of the proposed method in real data, we test independence on the brain network, where each node indicates voxel in the brain and edges represent brain fibers connecting each region~\citep{kiar2016ndmg}. Along with the information of the functional connectivity between the voxels, the data also provides the physical locations of each voxel in the brain represented by 3-dimensional voxel-wise coordinates. The brain network has been constructed by combining dMRI and sMRI data using the tool called \texttt{ndmg}~\citep{kiar2016science}, and the data is publicly available online \footnote{\url{http://openconnecto.me/data/public/MR/m2g_v1_1_1/KKI2009/derivatives/bg/}}.
+	To demonstrate the application of the proposed method in real data, we test independence upon the brain network, where each node indicates voxel in the brain and edges represent brain fibers connecting each region~\citep{kiar2016ndmg}. Along with the information of the functional connectivity between the voxels, the data also provides the physical locations of each voxel in the brain represented by 3-dimensional voxel-wise coordinates. The brain network has been constructed by combining dMRI and sMRI data using the tool called \texttt{ndmg}~\citep{kiar2016science}, and the data is publicly available online \footnote{\url{http://openconnecto.me/data/public/MR/m2g_v1_1_1/KKI2009/derivatives/bg/}}.
 	
 	The whole brain network data itself contains millions of nodes, so it is highly time-consuming to use all data for testing. As it is a common practice to sub-sample a small portion of big data for testing (under the assumption that significant relationship within the sub-sample is representative of the full data), we randomly selected one connected component having 95 nodes and 337 edges to test dependency between the functional connectivity versus each voxel's physical location. Moreover, we consider data contamination by edge flipping of the adjacency matrix: at contamination rate $c \%$, we randomly select $c \%$ of ones in the adjacency matrix and make them zeros, then randomly select $c \%$ of non-diagonal zeros and make them ones. Therefore, $c=0$ equals the original data, while $c=100$ flips all edges and it is merely a transformation of the original graph.
 	
-	Figure~\ref{fig:realexample} shows the p-value against the level of contamination $c \%$. The diffusion maps-based tests perform the best, with \texttt{MGC} and \texttt{mCorr} being slightly better than $\texttt{HHG}$. All other tests are less robust as the contamination level increases, e.g., \texttt{FH} test is able to yield a significant p-value at $c=0$, but fails at $c=100$ while the proposed approach is still able to test significant relationship. Note that there is only one p-value to report at $c=0$ and $c=100$, while at other choices of $c$ we randomly contaminate the data for $100$ replicates and report the mean p-value of them.
+	Figure~\ref{fig:realexample} shows empirical power against the level of contamination $c \%$. The diffusion maps-based tests perform the best, and \texttt{MGC} maintain the best performance under the assumption of true dependence. All other tests are less robust across contamination levels, e.g., \texttt{FH} test is able to yield nearly the highest power when $c<50$, but fails around $c=100$; while the proposed approach is still able to test significant relationship. Note that as there is only one p-value to report at $c=0$ and $c=100$, the power is determined by whether each of p-value less than $\alpha = 0.5$ or not. At other choices of $c$, we randomly contaminate the data for $300$ replicates and report the proportion of rejecting the null at $\alpha = 0.05$.
 	
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=0.7\textwidth]{../Figure/Elbow3_t3.pdf}
-		\caption{P-values are obtained through 100 random contamination for each of contamination level $c\% \in \{ 10\%, 20\%, \ldots, 90\% \}$. As the level of contamination increases, it is less likely to reject the independence hypothesis with the \texttt{FH Test} than with our proposed approach.}
+		\includegraphics[width=0.7\textwidth]{../Figure/RealData_power.pdf}
+		\caption{Powers are obtained through 300 random contamination for each of contamination level $c\% \in \{ 10\%, 20\%, \ldots, 90\% \}$. As the level of contamination increases, it is less likely to reject the independence hypothesis with the \texttt{FH Test} than with our proposed approach.}
 		\label{fig:realexample}
 	\end{figure}
 	
@@ -516,13 +514,15 @@ anchorcolor = blue]{hyperref}
 	
 	\section*{Acknowledgment}
 	\addcontentsline{toc}{section}{Acknowledgment}
-	This work was partially supported by the
+	This work was partially supported by 
 	%
-	National Security Science and Engineering Faculty Fellowship (NSSEFF),
+	the National Science Foundation Division of Mathematical Sciences award DMS-1712947,
 	%
-	the Johns Hopkins University Human Language Technology Center of Excellence (JHU HLT COE),  the
+	the National Security Science and Engineering Faculty Fellowship (NSSEFF),
 	%
-	Defense Advanced Research Projects Agency's (DARPA) SIMPLEX program through SPAWAR contract N66001-15-C-4041,
+	the Johns Hopkins University Human Language Technology Center of Excellence (JHU HLT COE), 
+	%
+	the Defense Advanced Research Projects Agency's (DARPA) SIMPLEX program through SPAWAR contract N66001-15-C-4041,
 	%
 	the XDATA program of DARPA administered through Air Force Research Laboratory contract FA8750-12-2-0303.
 	%
@@ -539,23 +539,23 @@ anchorcolor = blue]{hyperref}
 		
 		From now on, denote $\mathbf{U}$ as the $q \times n$ matrix having $\mathbf{u}_i$ as its $i^{\mbox{th}}$ column, and the permuted matrix as $\mathbf{U} \pi$ with $\pi$ being the permutation matrix. Transforming Equation~\ref{eq:U} into matrix notation yields
 		\begin{align*}
-		\mathbf{U}=\Lambda^{t}\Phi^{'},
+			\mathbf{U}=\Lambda^{t}\Phi^{'},
 		\end{align*}
 		where $\Lambda=\mbox{diag} \{ \lambda_{1},\lambda_2,\ldots,\lambda_q \}$ is the diagonal matrix having selected eigenvalues of the transition matrix $\mathbf{\widetilde{K}}$; $\Phi =[ \mathbf{\phi}_1, \mathbf{\phi}_2,\cdots, \mathbf{\phi}_q ]$ consists of the corresponding eigenvectors; $\cdot^{t}$ denotes $t^{\mbox{th}}$ power; and $\cdot^{'}$ is the matrix transpose. Therefore, it suffices to show that $\mathbf{U}$ always distributes as same as $\mathbf{U} \pi$ for any $n$ and $\pi$.
 		
 		Given that the graph $\mathbf{G}$ is infinitely exchangeable, i.e., $\mathbf{A}_{\sigma(i)\sigma(j)} \stackrel{d}{=} \mathbf{A}_{ij}$, we have
 		\begin{align*}
-		\mathbf{\widetilde{K}}_{\sigma(i) \sigma(j)} &= \max\{\mathbf{A}_{\sigma(i) \sigma(j)},\mathbf{A}_{\sigma(j) \sigma(i)}\} / \sum\limits_{j} \max\{\mathbf{A}_{\sigma(i) \sigma(j)},\mathbf{A}_{\sigma(j) \sigma(i)}\} \\
-		&\stackrel{d}{=} \max\{\mathbf{A}_{ij},\mathbf{A}_{ji}\} / \sum\limits_{j} \max\{\mathbf{A}_{ij},\mathbf{A}_{ji}\} \\
-		&= \mathbf{\widetilde{K}}_{ij}.
+			\mathbf{\widetilde{K}}_{\sigma(i) \sigma(j)} &= \max\{\mathbf{A}_{\sigma(i) \sigma(j)},\mathbf{A}_{\sigma(j) \sigma(i)}\} / \sum\limits_{j} \max\{\mathbf{A}_{\sigma(i) \sigma(j)},\mathbf{A}_{\sigma(j) \sigma(i)}\} \\
+			&\stackrel{d}{=} \max\{\mathbf{A}_{ij},\mathbf{A}_{ji}\} / \sum\limits_{j} \max\{\mathbf{A}_{ij},\mathbf{A}_{ji}\} \\
+			&= \mathbf{\widetilde{K}}_{ij}.
 		\end{align*}
 		Thus the transition matrix $\mathbf{\widetilde{K}}$ is also infinitely exchangeable, i.e., $\pi^{'} \mathbf{\widetilde{K}} \pi \stackrel{d}{=} \mathbf{\widetilde{K}}$ for any permutation $\pi$ and any size $n$. 
 		
 		By eigen-decomposition, the first $q$ eigenvectors and the corresponding eigenvalues of $\pi^{'} \mathbf{\widetilde{K}} \pi$ are $\Lambda$ and $\pi^{'} \Phi$, so it follows that
 		\begin{align*}
-		& \Phi \stackrel{d}{=} \pi^{'} \Phi\\
-		\Leftrightarrow \quad
-		& \mathbf{U}=\Lambda^{t} \Phi^{'}  \stackrel{d}{=} \Lambda^{t} \Phi^{'} \pi = \mathbf{U} \pi 
+			& \Phi \stackrel{d}{=} \pi^{'} \Phi\\
+			\Leftrightarrow \quad
+			& \mathbf{U}=\Lambda^{t} \Phi^{'}  \stackrel{d}{=} \Lambda^{t} \Phi^{'} \pi = \mathbf{U} \pi 
 		\end{align*}	
 		Therefore, the diffusion maps are also infinitely exchangeable so that there exists a latent variable $u$ such that the diffusion map is conditional i.i.d. asymptotically. 
 	\end{proof}
@@ -566,9 +566,9 @@ anchorcolor = blue]{hyperref}
 		
 		By Equation~\ref{eq:U}, we have 
 		\begin{align*}
-		\| \mathbf{u}_i \|_{2}^{2}  &= \sum_{j=1}^{q} \lambda^{2t}_{j}\mathbf{\phi}_{j}^{2}(i) \\ 
-		& \leq \sum_{j=1}^{q} \lambda^{2t}_{j} \\
-		& \leq q,
+			\| \mathbf{u}_i \|_{2}^{2}  &= \sum_{j=1}^{q} \lambda^{2t}_{j}\mathbf{\phi}_{j}^{2}(i) \\ 
+			& \leq \sum_{j=1}^{q} \lambda^{2t}_{j} \\
+			& \leq q,
 		\end{align*}
 		where the second line follows by noting $\mathbf{\phi}_{j}(i) \in [-1,1]$ (the eigenvector $\mathbf{\phi}_{j}$ is always of unit norm), and the third line follows by observing that $| \lambda_{j}| \leq \|\widetilde{\mathbf{K}}\|_{\infty}= 1$.
 		
@@ -582,29 +582,29 @@ anchorcolor = blue]{hyperref}
 		We first state two useful lemmas:
 		\begin{lemma}
 			\label{lemma2}
-			Let $\mathcal{V}^2_{n}(\mathbf{U}, \mathbf{X})$ be the distance covariance (\texttt{dCov}) of $(\mathbf{U}, \mathbf{X}) = \{  ( \mathbf{u}_{i}, \mathbf{x}_{i}  )  : i = 1, \ldots, n \}$ defined as Equation~\ref{eq:dCov}.
+			Let $\mathcal{V}_{n}(\mathbf{U}, \mathbf{X})$ be the distance covariance (\texttt{dCov}) of $(\mathbf{U}, \mathbf{X}) = \{  ( \mathbf{u}_{i}, \mathbf{x}_{i}  )  : i = 1, \ldots, n \}$ defined as Equation~\ref{eq:dCov}.
 			It follows that
 			\begin{eqnarray}
-			\mathcal{V}^{2}_{n}(\mathbf{U},\mathbf{X}) &=   \|g_{\mathbf{U},\mathbf{X}}^{n}(t,s)-g_{\mathbf{U}}^{n}(t)g_{\mathbf{X}}^{n}(s)\|^{2},
+			\mathcal{V}_{n}(\mathbf{U},\mathbf{X}) &=   \int |g_{\mathbf{U},\mathbf{X}}^{n}(t,s)-g_{\mathbf{U}}^{n}(t)g_{\mathbf{X}}^{n}(s)|^{2} dw,
 			\end{eqnarray}
-			where $g_{\cdot}^{n}$ is the empirical characteristic function of $\{(\mathbf{u}_{i},\mathbf{x}_{i}) : i=1,2,...,n\}$ or the marginals, e.g., $g_{\mathbf{U},\mathbf{X}}^{n}(t,s)=\frac{1}{n}\sum_{i=1}^{n}\exp\{i \left\langle t,\mathbf{u}_{i} \right\rangle+i \left\langle s,\mathbf{x}_{i} \right\rangle\}$, with the understanding that the $i$ ahead of the inner product denotes the imaginary unit.
+			where $w$ is a nonnegative weight function that equals $(c_{q}c_{q_{x}}|t|_{q}^{1+q}|s|_{q_{x}}^{1+q_{x}})^{-1}$, $g_{\cdot}^{n}$ is the empirical characteristic function of $\{(\mathbf{u}_{i},\mathbf{x}_{i}) : i=1,2,...,n\}$ or the marginals, e.g., $g_{\mathbf{U},\mathbf{X}}^{n}(t,s)=\frac{1}{n}\sum_{i=1}^{n}\exp\{\textbf{i} \left\langle t,\mathbf{u}_{i} \right\rangle+\textbf{i} \left\langle s,\mathbf{x}_{i} \right\rangle\}$ with $\textbf{i}$ representing the imaginary unit.
 		\end{lemma}
 		
 		\begin{lemma}
 			\label{lemma3}
 			Assume $\{ \mathbf{u}_{i} : i = 1,2, \ldots, n \}$ are conditional i.i.d. based on $u$, and $\{\mathbf{x}_{i} \stackrel{i.i.d.}{\sim} x,~i = 1, 2, \ldots, n\}$, where $u$ and $x$ are both of finite second moment. It follows that
 			\begin{eqnarray}
-			\mathcal{V}_{n}^{2}(\mathbf{U},\mathbf{X}) &\longrightarrow \mathcal{V}^{2}(u,x) \quad \quad \mbox{ as } n \rightarrow \infty
+			\mathcal{V}_{n}(\mathbf{U},\mathbf{X}) &\longrightarrow \mathcal{V}(u,x) \quad \quad \mbox{ as } n \rightarrow \infty
 			\label{eq:conv1}
 			\end{eqnarray}
-			where $\mathcal{V}^{2} (u,x) := \| g_{u,x}(t,s) - g_{u}(t) g_{x}(s) \|^2$, and $g_{\cdot}$ is the characteristic function, e.g., $g_{u,x}(t,s) = E(\exp\{i \left\langle t,u \right\rangle  +i \left\langle  s,x\right\rangle \})$.
+			where $\mathcal{V} (u,x) := \int | g_{u,x}(t,s) - g_{u}(t) g_{x}(s) |^2 dw$, and $g_{\cdot}$ is the characteristic function, e.g., $g_{u,x}(t,s) = E(\exp\{\textbf{i} \left\langle t,u \right\rangle  +\textbf{i} \left\langle  s,x\right\rangle \})$.
 		\end{lemma}
 		
 		By Theorem~\ref{main_lemma}, each observation in the diffusion map $\mathbf{U}$ is asymptotic i.i.d. conditioned on $u$ under an infinitely exchangeable graph, while the nodal attributes $\mathbf{X}$ are assumed i.i.d. as $x$. The finite moment of $u$ is guaranteed by Lemma~\ref{main_lemma_1}, and the finite moment of $x$ is assumed in (C2).
 		
 		Therefore a direct application of Lemma~\ref{lemma2} and Lemma~\ref{lemma3} yields that
 		\begin{eqnarray}
-		\mbox{\texttt{dCov}}(\mathbf{U},\mathbf{X}) &\longrightarrow \| g_{u,x}(t,s) - g_{u}(t) g_{x}(s) \|^2,
+		\mbox{\texttt{dCov}}(\mathbf{U},\mathbf{X}) &\longrightarrow \int | g_{u,x}(t,s) - g_{u}(t) g_{x}(s) |^2 dw,
 		\end{eqnarray}
 		which equals $0$ if and only if $u$ is independent of $x$.
 		
@@ -627,11 +627,11 @@ anchorcolor = blue]{hyperref}
 		
 		All major steps in proving Theorem 2 of \cite{szekely2007measuring} are essentially the same for either i.i.d. random variables or infinitely exchangeable random variables \citep{InoueTaylor2006}. In particular, under the finite second moment assumption, we still have the large number for V-statistics \citep{KoroljukBook}, i.e., 
 		\begin{eqnarray}
-		\displaystyle\int_{D(\delta)}{\|g_{u,x}^{n}(t,s)-g_{u}^{n}(t)g_{x}^{n}(s)\|^{2}}dh &\stackrel{n \rightarrow \infty}{\longrightarrow} 
-		\displaystyle\int_{D(\delta)}{\|g_{u,x}(t,s)-g_{u}(t)g_{x}(s)\|^{2}}dh,
+		\displaystyle\int_{D(\delta)}{|g_{u,x}^{n}(t,s)-g_{u}^{n}(t)g_{x}^{n}(s)|^{2}}dw &\stackrel{n \rightarrow \infty}{\longrightarrow} 
+		\displaystyle\int_{D(\delta)}{|g_{u,x}(t,s)-g_{u}(t)g_{x}(s)|^{2}}dw,
 		\label{eq:SLLN}
 		\end{eqnarray}
-		where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and $h(t,s)$ is a weight function chosen in \cite{szekely2007measuring}. 
+		where $D(\delta)=\{(t,s):\delta \leq |t|_{p} \leq 1/\delta,\delta \leq |s|_{q} \leq 1/\delta\}$, and the nonnegative weight function $w(t,s)$ is chosen by \cite{szekely2007measuring}. 
 	\end{proof}
 	
 	\begin{proof}[\textbf{Proof of Corollary~\ref{main_corollary}}] 

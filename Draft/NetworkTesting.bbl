@@ -80,16 +80,15 @@ Karrer, B. and Newman, M.~E. (2011).
 \newblock Stochastic blockmodels and community structure in networks.
 \newblock {\em Physical Review E}, 83(1):016107.
 
-\bibitem[Kiar et~al., 2016a]{kiar2016science}
+\bibitem[Kiar et~al., 2016]{kiar2016science}
 Kiar, G., Gorgolewski, K.~J., Kleissas, D., Roncal, W.~G., Litt, B., Wandell,
-  B., Poldrack, R.~A., Wiener, M., Vogelstein, R.~J., Burns, R., et~al.
-  (2016a).
+  B., Poldrack, R.~A., Wiener, M., Vogelstein, R.~J., Burns, R., et~al. (2016).
 \newblock Science in the cloud (sic): A use case in mri connectomics.
 \newblock {\em arXiv preprint arXiv:1610.08484}.
 
-\bibitem[Kiar et~al., 2016b]{kiar2016ndmg}
+\bibitem[Kiar et~al., 016a]{kiar2016ndmg}
 Kiar, G., Roncal, W.~G., Mhembere, D., Bridgeford, E., Burns, R., and
-  Vogelstein, J. (2016b).
+  Vogelstein, J. (2016a).
 \newblock ndmg: Neurodata’s mri graphs pipeline.
 
 \bibitem[Koroljuk and Borovskich, 1994]{KoroljukBook}
@@ -131,6 +130,11 @@ Orbanz, P. and Roy, D.~M. (2015).
 Pearson, K. (1895).
 \newblock Notes on regression and inheritance in the case of two parents.
 \newblock {\em Proceedings of the Royal Society of London}, 58:240--242.
+
+\bibitem[Peel et~al., 2017]{Leto2017}
+Peel, L., Larremore, D.~B., and Clauset, A. (2017).
+\newblock The ground truth about metadata and community detection in networks.
+\newblock {\em Science Advances}.
 
 \bibitem[Rizzo and Sz{\'e}kely, 2016]{RizzoSzekely2016}
 Rizzo, M. and Sz{\'e}kely, G. (2016).

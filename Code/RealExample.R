@@ -182,21 +182,21 @@ mcorr.pval.mean = colMeans(mcorr.pval)
 hhg.pval.mean = colMeans(hhg.pval)
 fh.pval.mean = colSums(fh.pval) 
 ############### making a figure ######################
-pdf("../Figure/Elbow3_t3.pdf", width = 15, height = 6)
+pdf("figure/RealData_power.pdf", width = 15, height = 6)
 par(mfrow = c(1,1), cex.lab = 5, cex.axis = 3,
     mar = c(8,10,3,20), tcl = 0.5)
-plot(seq(0,100,10), c(mgc.pval0, mgc.pval.mean), col = "red", 
+plot(seq(0,100,10), c(1, colMeans(mgc.pvalues <= 0.05)), col = "red", 
      lty = 1, lwd = 5, 
      ylim = c(0, 1.0), type = "l", mgp = c(6,2,0),
-     xlab = "contamination (%)", yaxt = "n", ylab = "p-value")
-axis(side = 2, at = c(0.0, 0.5, 1.0), 
-     labels = c(0.0, 0.5, 1.0), 
+     xlab = "contamination (%)", yaxt = "n", ylab = "Power")
+axis(side = 2, at = c(0.0, 0.25, 0.5, 0.75, 1.0), 
+     labels = c(0.0, 0.25, 0.5, 0.75,  1.0), 
      tck = 0.05)
-lines(seq(0,100,10), c(dcorr.pval0, mcorr.pval.mean), col = "dodgerblue", 
+lines(seq(0,100,10),c(1, colMeans(mcorr.pvalues <= 0.05)), col = "dodgerblue", 
       lty = 2, lwd = 5, yaxis = NULL, type = "l")
-lines(seq(0,100,10), c(hhg.pval0, hhg.pval.mean), col = "hotpink", 
+lines(seq(0,100,10), c(1, colMeans(hhg.pvalues <= 0.05)), col = "hotpink", 
       lty = 3, lwd = 5, yaxis = NULL, type = "l")
-lines(seq(0,100,10), c(fh.pval0, fh.pval.mean), col = "darkgreen", 
+lines(seq(0,100,10), c(1, colMeans(fh.pvalues <= 0.05)), col = "darkgreen", 
       lty = 4, lwd = 5, yaxis = NULL,  type = "l")
 legend("topright", inset=c(-0.43, 0.4), 
        c(expression(MGC %.% DM), expression(mCorr %.% DM), 
