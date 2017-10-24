@@ -26,7 +26,8 @@
 NetworkTest.diffusion.stat = function(G, X, option, diffusion, t.range, n.perm){
   
   A = as.matrix(get.adjacency(G))
-  P = A / pmax(rowSums(A), 1)
+  D = diag(pmin( (rowSums(A))^(-1/2) , 1))
+  P = D %*% A %*% D
   
   if(diffusion == FALSE){ 
     Dx = as.matrix(dist((A)), diag = TRUE, upper = TRUE) 
@@ -48,7 +49,7 @@ NetworkTest.diffusion.stat = function(G, X, option, diffusion, t.range, n.perm){
   
   for(s in 1:length(t.range)){
     
-    diffusion.q  =  min( max(getElbows(abs(print.lambda(P, times = t.range[s])[[1]]), plot = FALSE, n = 3)), nrow(A)-1)
+    diffusion.q  =  min( max(getElbows(abs(print.lambda(P, times = 1)[[1]]), plot = FALSE, n = 2)), nrow(A)-1)
     U  =  dmap.q(P, t.range[s], diffusion.q)[[1]]
     Dx = as.matrix(dist((U)), diag = TRUE, upper = TRUE) 
     Dy = as.matrix(dist((X)), diag = TRUE, upper = TRUE)
@@ -75,7 +76,7 @@ NetworkTest.diffusion.stat = function(G, X, option, diffusion, t.range, n.perm){
     
     for(s in 1:length(t.range)){
       
-      diffusion.q  =  min( max(getElbows(abs(print.lambda(P, times = t.range[s])[[1]]), plot = FALSE, n = 3)), nrow(A)-1)
+      diffusion.q  =  min( max(getElbows(abs(print.lambda(P, times = 1)[[1]]), plot = FALSE, n = 2)), nrow(A)-1)
       U  =  dmap.q(P, t.range[s], diffusion.q)[[1]]
       per = sample(length(X));
       newX = X[per]
