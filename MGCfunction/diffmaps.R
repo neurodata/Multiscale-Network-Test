@@ -1,7 +1,7 @@
-#' This function prints out eigenvalues of transition matrix at given times.
+#' This function prints out eigenvalues of a normalized graph Laplacian at given times.
 #' A set of returned eigenvalues are often used for finding the dimension of embeddings.
 #'
-#' @param trans is a igraph object having n nodes;
+#' @param L is a normalized graph Laplacian having n nodes;
 #' @param times is is a range of Markov iteration times applied for diffusion map embeddings;
 #' @importFrom DTMCPack statdistr
 #' @importFrom Matrix Diagonal
@@ -10,11 +10,11 @@
 #' @export
 #'
 
-print.lambda = function(trans, times){
+print.lambda = function(L, times){
 
   maps = list()
   
-  pi = statdistr(trans)
+  pi = statdistr(L)
   isolated = which(pi <= 0)
   pi[isolated] = 0
   pi.mat1 = as.matrix(Diagonal(length(pi), pi^(1/2)))
@@ -24,7 +24,7 @@ print.lambda = function(trans, times){
   pi.mat2[,isolated] = 0
   
   # symmetric kernel
-  Q = pi.mat1 %*% trans %*% pi.mat2
+  Q = pi.mat1 %*% L %*% pi.mat2
   
   Q[,isolated] = 0
   Q[,isolated] = 0
@@ -43,9 +43,9 @@ print.lambda = function(trans, times){
   return(lambda.set)
 }
 
-#' This function prints out the diffusion maps having a fixed dimension.
+#' This function prints out the diffusion maps having a fixed dimension from a normalized graph Laplacian.
 #'
-#' @param trans is a igraph object having n nodes;
+#' @param L is a normalized graph Laplacian having n nodes;
 #' @param times is is a range of Markov iteration times applied for diffusion map embeddings;
 #' @importFrom DTMCPack statdistr
 #' @importFrom Matrix Diagonal
@@ -54,12 +54,12 @@ print.lambda = function(trans, times){
 #' @export
 #'
 
-dmap.q = function(trans, times, q){
+dmap.q = function(L, times, q){
 
   maps = list(); maps.q = list()
   
   # stationary distribution (probability)
-  pi = statdistr(trans)
+  pi = statdistr(L)
   isolated = which(pi <= 0)
   pi[isolated] = 0
   pi.mat1 = as.matrix(Diagonal(length(pi), pi^(1/2)))
@@ -69,7 +69,7 @@ dmap.q = function(trans, times, q){
   pi.mat2[,isolated] = 0
   # symmetric kernel
   
-  Q <- pi.mat1 %*% trans %*% pi.mat2
+  Q <- pi.mat1 %*% L %*% pi.mat2
   
   Q[,isolated] = 0
   Q[,isolated] = 0

@@ -3,15 +3,16 @@
 #' 
 #' @param stat.list is interpreted as:
 #' \describe{
-#'    \item{list of length [2]}{List of a length-q vector and nr x q matrix comprised of statistics under the alternative and under the null.}
+#'    \item{list of length [2]}{List of a length-[q] vector and [nr x q] matrix comprised of statistics under the alternative and under the null.}
 #' }
-#' @return p-value using the opitmal scale; a collection of statistics and optiaml t chosen for the alternative and [nr] cases of null.
+#' @param default is the position of default Markov time [t] among [q].
+#' @return p-value using the opitmal scale; a collection of statistics; optiaml t chosen for the alternative and for [nr] cases of null.
 #' @author Youjin Lee
 #' @export
 #'
 
 
-print.stat.optimal = function(stat.list){
+print.stat.optimal = function(stat.list, default.t){
 
   null.stat = c(); null.t = c()
   
@@ -19,8 +20,8 @@ print.stat.optimal = function(stat.list){
     alt.stat = stat.list[[1]][mean(order(-stat.list[[1]])[1:3])]
     alt.t = mean(order(-stat.list[[1]])[1:3])
   }else{
-    alt.stat = stat.list[[1]][1]
-    alt.t = 1
+    alt.stat = stat.list[[1]][default.t]
+    alt.t = default.t
   }
   
   for(j in 1:nrow(stat.list[[2]])){
@@ -28,8 +29,8 @@ print.stat.optimal = function(stat.list){
       null.stat[j] = stat.list[[2]][j,mean(order(-stat.list[[2]][j,])[1:3])]
       null.t[j] = mean(order(-stat.list[[2]][j,])[1:3])
     }else{
-      null.stat[j] = stat.list[[2]][j,1]
-      null.t[j] = 1
+      null.stat[j] = stat.list[[2]][j,default.t]
+      null.t[j] = default.t
     }
   }
   

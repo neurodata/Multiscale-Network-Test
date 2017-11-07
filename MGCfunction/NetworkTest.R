@@ -2,7 +2,7 @@
 #' The statistics depend on the choice of diffusion map embeddings. 
 #'
 #' @param G is a igraph object having n nodes;
-#' @param X is a vector of length n;
+#' @param X is a vector of length [n] or [nxn] matrix;
 #' @param option specifies the types of distance-based independence test statistic.
 #' \describe{
 #'    \item{'1'}{use the MGC.}
@@ -27,7 +27,7 @@ NetworkTest.diffusion.stat = function(G, X, option, diffusion, t.range, n.perm){
   
   A = as.matrix(get.adjacency(G))
   D = diag(pmin( (rowSums(A))^(-1/2) , 1))
-  P = D %*% A %*% D
+  P = D %*% A %*% D # a nomalized graph Laplacian
   
   if(diffusion == FALSE){ 
     Dx = as.matrix(dist((A)), diag = TRUE, upper = TRUE) 
@@ -48,9 +48,10 @@ NetworkTest.diffusion.stat = function(G, X, option, diffusion, t.range, n.perm){
   mgc.stat = c(); dcor.stat = c(); hhg.stat = c()
   
   for(s in 1:length(t.range)){
-    
-    diffusion.q  =  min( max(getElbows(abs(print.lambda(P, times = 1)[[1]]), plot = FALSE, n = 2)), nrow(A)-1)
-    U  =  dmap.q(P, t.range[s], diffusion.q)[[1]]
+
+    # as a dimensional choice, use the second elbow of absolute eivengalues from a diffusion map at t = 1.
+    diffusion.q  =  min(max(getElbows(abs(print.lambda(P, times = 1)[[1]]), plot = FALSE, n = 2)), nrow(A)-1)
+    U  =  dmap.q(P, t.range[s], diffusion.q)[[1]] # dmap.q(Laplacian, Markov time t, dimension q)
     Dx = as.matrix(dist((U)), diag = TRUE, upper = TRUE) 
     Dy = as.matrix(dist((X)), diag = TRUE, upper = TRUE)
     
@@ -78,8 +79,16 @@ NetworkTest.diffusion.stat = function(G, X, option, diffusion, t.range, n.perm){
       
       diffusion.q  =  min( max(getElbows(abs(print.lambda(P, times = 1)[[1]]), plot = FALSE, n = 2)), nrow(A)-1)
       U  =  dmap.q(P, t.range[s], diffusion.q)[[1]]
-      per = sample(length(X));
-      newX = X[per]
+
+      if(class(X) == "numeric"){
+        per = sample(length(X));
+        newX = X[per]
+      }else if(class(X) = "matrix"){
+        per=sample(nrow(X));
+        newX = X[per,]
+      }
+
+
       Dx = as.matrix(dist(U), diag = TRUE, upper = TRUE) 
       Dy = as.matrix(dist(newX), diag = TRUE, upper = TRUE)
     
