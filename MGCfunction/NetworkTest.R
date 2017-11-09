@@ -83,7 +83,7 @@ NetworkTest.diffusion.stat = function(G, X, option, diffusion, t.range, n.perm){
       if(class(X) == "numeric"){
         per = sample(length(X));
         newX = X[per]
-      }else if(class(X) = "matrix"){
+      }else if(class(X) == "matrix"){
         per=sample(nrow(X));
         newX = X[per,]
       }
