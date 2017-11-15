@@ -14,91 +14,186 @@ library(SDMTools)
 
 source("notsimple3block.R")
 source("diffmaps.R")
-source("dmaps.R")
-source("elbowmap.R")
-source("FH_factor.R")
 source("FH_test.R")
 source("getElbows.R")
 source("NetworkTest.R")
-source("varyA.R")
+source("optimalT.R")
+###
+varyA = function(popn, p, q, tau){
+  n.group = 2
+  ## 1. generate an outcome variable
+  outcome = rbern(popn, 0.5)
+  theta = runif(popn, 1-tau, 1+tau)
+  
+  ## 2. divide sample into two blocks
+  multip = matrix(0, nrow = popn, ncol = n.group)
+  for(i in 1:popn){
+    if(outcome[i] <= 0.5){
+      multip[i,] = c(0.6, 0.4)
+    }else{
+      multip[i,] = c(0.4, 0.6)
+    }
+  }
+
+  group = rep(0, popn)
+  for(i in 1:popn){
+    group[i] = which(rmultinom(1, 1, multip[i,]) == 1)
+  }
+  
+  ## 3. generate an edge variable
+  adj = matrix(0, popn, popn)
+  for(i in 1:popn){
+    for(j in i:popn){
+      if(i == j){
+        adj[i,j] = 0
+      }else{
+        adj[i,j] = rbinom(1, 1, theta[i]*theta[j]*q)
+      }
+      adj[j,i] = adj[i,j]
+    }
+  }
+  
+  prob = matrix(0, popn, popn)
+  group1.index = which(group == 1)
+  group2.index = which(group == 2)
+  
+  # for group1
+  for(i in 1:length(group1.index)){
+    for(j in i:length(group1.index)){
+      id1 = group1.index[i]
+      id2 = group1.index[j]
+      if (id1 == id2){
+        prob[id1, id2] = 0.0
+      }else{
+        prob[id1, id2] = p*theta[id1]*theta[id2]
+      }  
+      adj[id1, id2] = rbinom(1,1, prob[id1, id2])
+      adj[id2, id1] = adj[id1, id2]
+    }
+  }
+
+  # for group2
+  for(i in 1:length(group2.index)){
+    for(j in i:length(group2.index)){
+      id1 = group2.index[i]
+      id2 = group2.index[j]
+      if (id1 == id2){
+        prob[id1, id2] = 0.0
+      }else{
+        prob[id1, id2] = p*theta[id1]*theta[id2]
+      }  
+      adj[id1, id2] = rbinom(1,1,prob[id1, id2])
+      adj[id2, id1] = adj[id1, id2]
+    }
+  }
+
+  G = graph.adjacency(adj, "undirected")
+  G = connect_graph(G)
+  V(G)$outcome = outcome
+  V(G)$group = group
+
+  return(G)
+  
+}
 
 ### setting
 tau = c(0, 0.2, 0.4, 0.6, 0.8, 1.0)
 
 popn = 200
-dstep = 3
-n.perm = 500
-n.iter = n.perm
+n.perm = 500; n.iter = n.perm
+M = 100; alpha = 0.05
+dcSBM = list(); results = list()
 
-M = 500
-rho = c(0,2,4,6,8,10)
-alpha = 0.05
-
-dcSBM = list()
-mgc.result = c(); adj.result = c(); fh.result = c(); fmgc.results = c()
 
 for(N in 1:6){
     # for each tau
     for(i in 1:M){
-        set.seed(i)
-        
-        G  = varyA(popn, p = 0.2, q = 0.05, tau = tau[N])
-       
-        A = as.matrix(get.adjacency(G))
-        P = A / pmax(rowSums(A), 1)
-        X = V(G)$outcome
-        
-        # upper bound of dimension is set to 100.
-        diffusion.q = min( max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), 100)
-        mgc.result[i] =  NetworkTest.q(G, X, option = 1, diffusion = TRUE, dstep = 3, n.perm = n.perm, q = diffusion.q)[[1]][[1]]
-        adj.result[i] =  NetworkTest.q(G, X, option = 1, diffusion = FALSE, dstep = 3, n.perm = n.perm, q = diffusion.q)
-        
-        SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
-        # upper bound of dimension is set to 100
-        fh.k = min( max(getElbows(SVD.A$d, n = 3, plot = FALSE)), 100)
-        
-        fh.result[i] = FH_test(A, X, k.range = fh.k, n.iter = n.iter)
-        factors = FH_factor(A, k.range = fh.k)
-        Dx = as.matrix(dist(factors[[1]]), diag = TRUE, upper = TRUE)
-        Dy = as.matrix(dist(X), diag = TRUE, upper = TRUE)
-        fmgc.result[i] = MGCPermutationTest(Dx, Dy, rep = n.perm, option = 'mcor')[[1]]
+      set.seed(i)
+      G  = varyA(popn, p = 0.2, q = 0.05, tau = tau[N])
+      if(!is.connected(G)) G = connect_graph(G)
+      A = as.matrix(get.adjacency(G))
+      X = V(G)$outcome
+      
+      mgc.result =  NetworkTest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+      adj.result =  NetworkTest.diffusion.stat(G, X, option = 1, diffusion = FALSE, t.range = c(0:10), n.perm = n.perm)
+      # estimate the matrix M based on SVD
+      SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
+      # FH
+      fh.k = min( max(getElbows(abs(SVD.A$d), n = 2, plot = FALSE)), popn-10)
+      fh.result = FH_test(A, X, k.range = fh.k, n.iter = n.iter)
+      factors = FH_factor(A, k.range = fh.k)
+      Dx = as.matrix(dist(factors[[1]]), diag = TRUE, upper = TRUE)
+      Dy = as.matrix(dist(X), diag = TRUE, upper = TRUE)
+      fmgc.result = MGCPermutationTest(Dx, Dy, rep = n.perm, option = 'mcor')
+  
+      results[[i]] = list(mgc.result, adj.result, fmgc.result, fh.result))  
     }
-    dcSBM[[N]] = cbind(mgc.result, adj.result, fh.result, fmgc.result)
+    dcSBM[[N]] = results
 }
 
 ## save the pvalues
 save(dcSBM, file = "../Data/dcSBM.RData")
 
+multi_tau0 = dcSBM[[1]]; multi_tau2 = dcSBM[[2]]
+multi_tau4 = dcSBM[[3]]; multi_tau6 = dcSBM[[4]]
+multi_tau8 = dcSBM[[5]]; multi_tau10 = dcSBM[[6]]
 
-for(N in 1:6){
 
-  df.results = dcSBM[[N]][,1]
-  adj.results = dcSBM[[N]][,2]
-  fmgc.results = dcSBM[[N]][,3]
-  fh.results = dcSBM[[N]][,4]
-    
-  assign( paste("df.power", rho[N], sep=""),  rep(0,1))   
-  assign( paste("adj.power", rho[N], sep=""),  rep(0,1)) 
-  assign( paste("lf.power", rho[N], sep=""),  rep(0,1)) 
-  assign( paste("fh.power", rho[N], sep=""),  rep(0,1))
-  
-  for(i in 1:M){
-    assign(paste("df.power", rho[N], sep="") , eval(parse(text = paste("df.power", rho[N], sep=""))) + (df.results[i] <= alpha) / M)
-    assign(paste("adj.power", rho[N], sep="") , eval(parse(text = paste("adj.power", rho[N], sep=""))) + (adj.results[i] <= alpha) / M)
-    assign(paste("lf.power", rho[N], sep="") , eval(parse(text = paste("lf.power", rho[N], sep=""))) + (fmgc.results[i] <= alpha) / M)
-    assign(paste("fh.power", rho[N], sep="") , eval(parse(text = paste("fh.power", rho[N], sep=""))) + (fh.results[i] <= alpha) / M)
-  }
-
+df.tau0 = c(); adj.tau0 = c(); lf.tau0 = c(); fh.tau0 = c()
+for(i in 1:length(multi_tau0)){
+  df.tau0[i] = print.stat.optimal(multi_tau0[[i]][[1]], 4)$pvalue
+  adj.tau0[i] = multi_tau0[[i]][[2]]$pMGC
+  lf.tau0[i] = multi_tau0[[i]][[3]]$pMGC
+  fh.tau0[i] = multi_tau0[[i]][[4]]
 }
 
-df.power = c(df.power0, df.power2, df.power4, df.power6, df.power8, df.power10)
-adj.power = c(adj.power0, adj.power2, adj.power4, adj.power6, adj.power8, adj.power10)
-lf.power = c(lf.power0, lf.power2, lf.power4, lf.power6, lf.power8, lf.power10)
-fh.power = c(fh.power0, fh.power2, fh.power4, fh.power6, fh.power8, fh.power10)
+df.tau2 = c(); adj.tau2 = c(); lf.tau2 = c(); fh.tau2 = c()
+for(i in 1:length(multi_tau2)){
+  df.tau2[i] = print.stat.optimal(multi_tau2[[i]][[1]], 4)$pvalue
+  adj.tau2[i] = multi_tau2[[i]][[2]]$pMGC
+  lf.tau2[i] = multi_tau2[[i]][[3]]$pMGC
+  fh.tau2[i] = multi_tau2[[i]][[4]]
+}
 
+df.tau4 = c(); adj.tau4 = c(); lf.tau4 = c(); fh.tau4 = c()
+for(i in 1:length(multi_tau4)){
+  df.tau4[i] = print.stat.optimal(multi_tau4[[i]][[1]], 4)$pvalue
+  adj.tau4[i] = multi_tau4[[i]][[2]]$pMGC
+  lf.tau4[i] = multi_tau4[[i]][[3]]$pMGC
+  fh.tau4[i] = multi_tau4[[i]][[4]]
+}
+
+df.tau6 = c(); adj.tau6 = c(); lf.tau6 = c(); fh.tau6 = c()
+for(i in 1:length(multi_tau6)){
+  df.tau6[i] = print.stat.optimal(multi_tau6[[i]][[1]], 4)$pvalue
+  adj.tau6[i] = multi_tau6[[i]][[2]]$pMGC
+  lf.tau6[i] = multi_tau6[[i]][[3]]$pMGC
+  fh.tau6[i] = multi_tau6[[i]][[4]]
+}
+
+df.tau8 = c(); adj.tau8 = c(); lf.tau8 = c(); fh.tau8 = c()
+for(i in 1:length(multi_tau8)){
+  df.tau8[i] = print.stat.optimal(multi_tau8[[i]][[1]], 4)$pvalue
+  adj.tau8[i] = multi_tau8[[i]][[2]]$pMGC
+  lf.tau8[i] = multi_tau8[[i]][[3]]$pMGC
+  fh.tau8[i] = multi_tau8[[i]][[4]]
+}
+
+df.tau10 = c(); adj.tau10 = c(); lf.tau10 = c(); fh.tau10 = c()
+for(i in 1:length(multi_tau10)){
+  df.tau10[i] = print.stat.optimal(multi_tau10[[i]][[1]], 4)$pvalue
+  adj.tau10[i] = multi_tau10[[i]][[2]]$pMGC
+  lf.tau10[i] = multi_tau10[[i]][[3]]$pMGC
+  fh.tau10[i] = multi_tau10[[i]][[4]]
+}
+
+df.power = colMeans(cbind(df.tau0, df.tau2, df.tau4, df.tau6, df.tau8, df.tau10) <= 0.05)
+adj.power = colMeans(cbind(adj.tau0, adj.tau2, adj.tau4, adj.tau6, adj.tau8, adj.tau10) <= 0.05)
+lf.power = colMeans(cbind(lf.tau0, lf.tau2, lf.tau4, lf.tau6, lf.tau8, lf.tau10) <= 0.05)
+fh.power = colMeans(cbind(fh.tau0, fh.tau2, fh.tau4, fh.tau6, fh.tau8, fh.tau10) <= 0.05)
 
 ### Make plot
-pdf("../Figure/elbow3_dcSBM.pdf", width = 15, height = 6)
+pdf("../Figure/multi_DCSBM.pdf", width = 15, height = 6)
 par(mfrow = c(1,1), cex.lab = 5, cex.axis = 3,
     mar = c(8,10,3,20), tcl = 0.5)
 plot(seq(0,1,0.2),  df.power, col = "red", 
@@ -120,4 +215,3 @@ legend("topright", inset=c(-0.4, 0.5),
        col = c("red", "dodgerblue", "midnightblue", "darkgreen"),
        lty = c(1,2,3,4), lwd = 4, bty = 'n',  xpd = NA, cex = 2)
 dev.off()
-

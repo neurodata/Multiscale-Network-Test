@@ -12,21 +12,16 @@ library(doParallel)
 library(ecodist)
 library(SDMTools)
 
-source("diffmaps.R")
-source("dmaps.R")
-source("elbowmap.R")
 source("FH_factor.R")
 source("FH_test.R")
 source("getElbows.R")
 source("NetworkTest.R")
-
+source("diffmaps.R")
+source("optimalT.R")
 
 ### setting
-dstep = 3
 n.perm = 500
 n.iter = n.perm
-
-M = 500
 alpha = 0.05
 
 ### generate two graphs from RDPG but different link functions
@@ -62,108 +57,105 @@ GraphRDPG = function(popn){
 
 
 #### implement
-popn = seq(40, 120, 10) # the number of nodes
-pval = matrix(0, 500, length(popn)); twoGraphs = list()
+popn = seq(50, 150, 20) # the number of nodes
+results = list(); twoGraphs = list();
 
 for(N in 1:length(popn)){
-  for(i in 1:500){
+  
+  for(i in 1:100){
     set.seed(i)
     generateG = GraphRDPG(popn)
-  
+
     G1 = generateG[[1]]
     G2 = generateG[[2]]
-  
-    # connect the disconnected components
+    
     G1 = connect_graph(G1)
     G2 = connect_graph(G2)
-  
-    A1 = as.matrix(get.adjacency(G1))
-    A2 = as.matrix(get.adjacency(G2))
-  
-    P1 = A1  / pmax(rowSums(A1), 1)
-    P2 = A2 / pmax(rowSums(A2), 1)
-  
-    tmp = try( max(getElbows(print.lambda(P1, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), silent = TRUE)
-    if(class(tmp) == "try-error"){
-      diffusion.q1 = 1 # when the elbow method does not work well
-    }else{
-      diffusion.q1  =  min( max(getElbows(print.lambda(P1, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), popn/2)
-    }
-  
-  
-    tmp = try( max(getElbows(print.lambda(P2, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), silent = TRUE)
-    if(class(tmp) == "try-error"){
-      diffusion.q2 = 1 # when the elbow method does not work well
-    }else{
-      diffusion.q2  =  min( max(getElbows(print.lambda(P2, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0)), popn/2)
-   }
-  
-    dmap1 = dmap.q(P1, times = 3, q = diffusion.q1)[[1]]
-    dmap2 = dmap.q(P2, times = 3, q = diffusion.q2)[[1]] 
-  
-    Dx = as.matrix(dist(dmap1), diag = TRUE, upper = TRUE)
-    Dy = as.matrix(dist(dmap2), diag = TRUE, upper = TRUE)
-  
-    mgc.result = MGCPermutationTest(Dx, Dy, n.perm, option = 'mcor')[[1]]
-    mcorr.result = dcor.ttest(Dx, Dy, distance = TRUE)$p.value
-    hhg.result = hhg.test(Dx, Dy, nr.perm = n.perm)$perm.pval.hhg.sl
-  
-  
-    pvals[i,] = c(mgc.result, mcorr.result, hhg.result)
+ 
+    mgc.result =  TwoGraphs.diffusion.stat(G1, G2, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+    mcorr.result =  TwoGraphs.diffusion.stat(G1, G2, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+    hhg.result =  TwoGraphs.diffusion.stat(G1, G2, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+        
+    results[[i]] = list(mgc.result, mcorr.result, hhg.result) 
   }
-    twoGraphs[[N]] = pvals # matrix with p-values from 500 replicates.
-}
+    
+    twoGraphs[[N]] = results
 
+}
 
 save(twoGraphs, file = "../Data/twoGraphs.RData")
+############################################
+multi_graph50 = twoGraphs[[1]]; multi_graph70 = twoGraphs[[2]]
+multi_graph90 = twoGraphs[[3]]; multi_graph110 = twoGraphs[[4]]
+multi_graph130 = twoGraphs[[5]]; multi_graph150 = twoGraphs[[6]]
 
-
-for(N in 1:9){
-  
-  mgc.result = twoGraphs[[N]][,1]
-  mcorr.result = twoGraphs[[N]][,2]
-  hhg.result = twoGraphs[[N]][,3]
-  
-  assign( paste("mgc.power", popn[N], sep=""),  rep(0,1))   
-  assign( paste("mcorr.power", popn[N], sep=""),  rep(0,1))
-  assign( paste("hhg.power", popn[N], sep=""),  rep(0,1))
- 
-  
-  for(i in 1:M){
-    assign(paste("mgc.power", popn[N], sep="") , eval(parse(text = paste("mgc.power", popn[N], sep=""))) + (mgc.result[i] <= alpha) / M)
-    assign(paste("mcorr.power", popn[N], sep="") , eval(parse(text = paste("mcorr.power", popn[N], sep=""))) + (mcorr.result[i] <= alpha) / M)
-    assign(paste("hhg.power", popn[N], sep="") , eval(parse(text = paste("hhg.power", popn[N], sep=""))) + (hhg.result[i] <= alpha) / M)
-  }
-  
+pval.mgc = c(); pval.mcorr = c(); pval.hhg = c()
+for(i in 1:length(multi_graph50)){
+  pval.mgc[i] = print.stat.optimal(multi_graph50[[i]][[1]], 4)$pvalue
+  pval.mcorr[i] = print.stat.optimal(multi_graph50[[i]][[2]], 4)$pvalue
+  pval.hhg[i] = print.stat.optimal(multi_graph50[[i]][[3]], 4)$pvalue
 }
+power50 = colMeans(cbind(pval.mgc, pval.mcorr, pval.hhg) <= 0.05)
 
-mgc.power = c(mgc.power40, mgc.power50, mgc.power60, mgc.power70, mgc.power80,
-              mgc.power90, mgc.power100, mgc.power110, mgc.power120)
-mcorr.power = c(mcorr.power40, mcorr.power50, mcorr.power60, mcorr.power70, mcorr.power80,
-                mcorr.power90, mcorr.power100, mcorr.power110, mcorr.power120)
-hhg.power =  c(hhg.power40, hhg.power50, hhg.power60, hhg.power70, hhg.power80,
-               hhg.power90, hhg.power100, hhg.power110, hhg.power120)
+for(i in 1:length(multi_graph70)){
+  pval.mgc[i] = print.stat.optimal(multi_graph70[[i]][[1]], 4)$pvalue
+  pval.mcorr[i] = print.stat.optimal(multi_graph70[[i]][[2]], 4)$pvalue
+  pval.hhg[i] = print.stat.optimal(multi_graph70[[i]][[3]], 4)$pvalue
+}
+power70 = colMeans(cbind(pval.mgc, pval.mcorr, pval.hhg) <= 0.05)
+
+for(i in 1:length(multi_graph90)){
+  pval.mgc[i] = print.stat.optimal(multi_graph90[[i]][[1]], 4)$pvalue
+  pval.mcorr[i] = print.stat.optimal(multi_graph90[[i]][[2]], 4)$pvalue
+  pval.hhg[i] = print.stat.optimal(multi_graph90[[i]][[3]], 4)$pvalue
+}
+power90 = colMeans(cbind(pval.mgc, pval.mcorr, pval.hhg) <= 0.05)
+
+for(i in 1:length(multi_graph110)){
+  pval.mgc[i] = print.stat.optimal(multi_graph110[[i]][[1]], 4)$pvalue
+  pval.mcorr[i] = print.stat.optimal(multi_graph110[[i]][[2]], 4)$pvalue
+  pval.hhg[i] = print.stat.optimal(multi_graph110[[i]][[3]], 4)$pvalue
+}
+power110 = colMeans(cbind(pval.mgc, pval.mcorr, pval.hhg) <= 0.05)
+
+for(i in 1:length(multi_graph130)){
+  pval.mgc[i] = print.stat.optimal(multi_graph130[[i]][[1]], 4)$pvalue
+  pval.mcorr[i] = print.stat.optimal(multi_graph130[[i]][[2]], 4)$pvalue
+  pval.hhg[i] = print.stat.optimal(multi_graph130[[i]][[3]], 4)$pvalue
+}
+power130 = colMeans(cbind(pval.mgc, pval.mcorr, pval.hhg) <= 0.05)
+
+for(i in 1:length(multi_graph150)){
+  pval.mgc[i] = print.stat.optimal(multi_graph150[[i]][[1]], 4)$pvalue
+  pval.mcorr[i] = print.stat.optimal(multi_graph150[[i]][[2]], 4)$pvalue
+  pval.hhg[i] = print.stat.optimal(multi_graph150[[i]][[3]], 4)$pvalue
+}
+power150 = colMeans(cbind(pval.mgc, pval.mcorr, pval.hhg) <= 0.05)
+
+
+mat = rbind(power50, power70, power90, power110, power130, power150)
+mgc.power = mat[,1]; mcorr.power = mat[,2];  hhg.power = mat[,3]
 
 ## Make Figure
-pdf("../Figure/Graphs.pdf", width = 15, height = 6)
-par(mfrow = c(1,1), cex.lab = 4, cex.axis = 3,
-mar = c(8,10,3,20), tcl = 0.5)
-plot(seq(40, 120, 10), mgc.power, col = "red",
-    lty = 1, lwd = 5, ylab = "Power",
-    ylim = c(0,0.8), type = "l", mgp = c(6,2,0),
-    xlab = "number of nodes", yaxt = 'n')
-axis(side = 2, at = c(0.0, 0.2, 0.4, 0.6, 0.8),
-    labels = c(0.0, 0.2, 0.4,  0.6, 0.8),
-    tck = 0.05)
-lines(seq(40, 120, 10), mcorr.power, col = "dodgerblue",
-    lty =2, lwd = 5,  type = "l")
-lines(seq(40, 120, 10), hhg.power, col = "lightsalmon4",
-    lty =3, lwd = 5,  type = "l")
-legend("topright", inset=c(-0.4, 0.5),
-    c(expression(MGC), expression(mCorr), expression(HHG)),
-    col = c("red", "dodgerblue", "lightsalmon4"), seg.len = 3,
-    lty = c(1,2,3), lwd = 4, bty = 'n', cex = 2, xpd = NA)
+pdf("../Figure/multi_graphs.pdf", width = 13, height = 6)
+par(mfrow = c(1,1), cex.lab = 3, cex.axis = 2,
+    mar = c(5,8,3,16), tcl = 0.5)
+plot(c(50, 70, 90, 110, 130, 150), mgc.power, col = "red",
+     lty = 1, lwd = 5, ylab = "Power",
+     ylim = c(0,1), type = "l", mgp = c(4,2,0),
+     xlab = "number of nodes", yaxt = 'n', xaxt = 'n')
+axis(side = 2, at = seq(0, 1, 0.2),
+     labels = seq(0, 1, 0.2),
+     tck = 0.05)
+axis(side = 1, at = seq(50, 150, 20),
+     labels = seq(50, 150, 20),
+     tck = 0.05)
+lines(c(50, 70, 90, 110, 130, 150), mcorr.power, col = "dodgerblue",
+      lty =2, lwd = 5,  type = "l")
+lines(c(50, 70, 90, 110, 130, 150), hhg.power, col = "lightsalmon4",
+      lty =5, lwd = 5,  type = "l")
+legend("topright", inset=c(-0.3, 0.5),
+       c(expression(MGC), expression(dCorr), expression(HHG)),
+       col = c("red", "dodgerblue", "lightsalmon4"), seg.len = 3,
+       lty = c(1,2,5), lwd = 4, bty = 'n', cex = 2, xpd = NA)
 dev.off()
-
-
-
