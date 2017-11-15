@@ -37,9 +37,9 @@ for(i in 1:M){
   X = V(G)$outcome
   A = as.matrix(get.adjacency(G))
       
-  mgc.result =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = FALSE, t.range = c(0:10), n.perm = n.perm)
-  dcov.result =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = FALSE, t.range = c(0:10), n.perm = n.perm)
-  hhg.result =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = FALSE, t.range = c(0:10), n.perm = n.perm)
+  mgc.result =  Networktest.diffusion.stat(G, X, option = 1, diffusion = FALSE, t.range = c(0:10), n.perm = n.perm)
+  dcov.result =  Networktest.diffusion.stat(G, X, option = 2, diffusion = FALSE, t.range = c(0:10), n.perm = n.perm)
+  hhg.result =  Networktest.diffusion.stat(G, X, option = 3, diffusion = FALSE, t.range = c(0:10), n.perm = n.perm)
   adjthree[[i]] = list(mgc.result, dcov.result, hhg.result)
 
 
@@ -56,9 +56,9 @@ for(i in 1:M){
   hhg.result = hhg.test(Dx, Dy, nr.perm = n.perm)$perm.pval.hhg.sl
   lfthree[[i]] = list(mgc.result, dcov.result, hhg.result, fh.result)  
 
-  mgc.result =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  dcov.result =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.result =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.result =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  dcov.result =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.result =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   dfthree[[i]] = list(mgc.result, dcov.result, hhg.result)             
 }
 

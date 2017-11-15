@@ -49,9 +49,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -74,9 +74,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -99,9 +99,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -125,9 +125,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -150,9 +150,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -176,9 +176,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -201,9 +201,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -228,9 +228,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -253,9 +253,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -279,9 +279,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -304,9 +304,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -329,9 +329,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -354,9 +354,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -380,9 +380,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -406,9 +406,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -432,9 +432,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -457,9 +457,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -483,9 +483,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -508,9 +508,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH
@@ -533,9 +533,9 @@ for(i in 1:M){
       A[i,j] = rbinom(1,1,p); A[j,i] = A[i,j]
   }}
   G = graph.adjacency(A, "undirected")
-  mgc.results =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  mcorr.results =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-  hhg.results =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mgc.results =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  mcorr.results =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+  hhg.results =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
   # estimate the matrix M based on SVD
   SVD.A = svd(A, nu = popn, nv = popn, LINPACK = FALSE)
   # FH

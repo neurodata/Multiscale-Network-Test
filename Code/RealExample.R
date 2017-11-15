@@ -51,29 +51,8 @@ for(i in 1:length(V(SubBrain))){
   position[i,] = mortonXYZ(V(SubBrain)$spatial_id[i])
 }
 
-A = as.matrix(get.adjacency(SubBrain)) # symmetric! yay!
-P = A / pmax(rowSums(A),1)
+A = as.matrix(get.adjacency(SubBrain)) 
 X = position
-Dy = as.matrix(dist(X), diag = TRUE, upper = TRUE)
-
-## dimensional choice of network metrics
-SVD.A = svd(A, nu = 95, nv = 95, LINPACK = FALSE)
-fh.k0 =  min( max(getElbows(SVD.A$d, n = 3, plot = FALSE)), 95-1 )
-diffusion.q0  = max(getElbows(print.lambda(P, times = 3)[[1]], plot = FALSE, n = 3, threshold = 0))
-
-
-## network test without contamination
-mgc.pval0 = NetworkTest.q(SubBrain, X, option = 1, diffusion = TRUE, dstep = 5, 
-                            n.perm = 500, q = diffusion.q0)[[1]][[1]]
-
-mcorr.pval0 = NetworkTest.q(SubBrain, X, option = 2, diffusion = TRUE, dstep = 5, 
-                               n.perm = 500, q = diffusion.q0)
-
-hhg.pval0 = NetworkTest.q(SubBrain, X, option = 3, diffusion = TRUE, dstep = 5, 
-                              n.perm = 500, q = diffusion.q0)
-
-fh.pval0 = FH_test(A, X, k.range = fh.k0, n.iter = 500)
-
 
 ############### contamination process ######################
 mgc.results = list(); mcorr.results = list(); hhg.results = list()
@@ -145,9 +124,9 @@ for(ii in 1:100){
     contam.P = contam.G.adj[[nr]] / rowSums(contam.G.adj[[nr]]) 
   
     # choose the dimension of diffusion map
-    mgc.results[[nr]] =  NetworkTest.diffusion.stat.multi(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-    mcorr.results[[nr]] =  NetworkTest.diffusion.stat.multi(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-    hhg.results[[nr]] =  NetworkTest.diffusion.stat.multi(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+    mgc.results[[nr]] =  NetworkTest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+    mcorr.results[[nr]] =  NetworkTest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+    hhg.results[[nr]] =  NetworkTest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
         
     # estimate the matrix M based on SVD
     SVD.A = svd(contam.G.adj[[nr]], nu = 95, nv = 95, LINPACK = FALSE)

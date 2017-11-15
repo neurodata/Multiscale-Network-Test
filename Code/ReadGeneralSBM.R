@@ -35,9 +35,9 @@ for(N in 1:12){
     G = notsimple3block(popn, p, q, r)
     X = V(G)$outcome
 
-    mgc.result =  NetworkTest.diffusion.stat.sym(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-    dcov.result =  NetworkTest.diffusion.stat.sym(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
-    hhg.result =  NetworkTest.diffusion.stat.sym(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+    mgc.result =  Networktest.diffusion.stat(G, X, option = 1, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+    dcov.result =  Networktest.diffusion.stat(G, X, option = 2, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
+    hhg.result =  Networktest.diffusion.stat(G, X, option = 3, diffusion = TRUE, t.range = c(0:10), n.perm = n.perm)
         
    
     # estimate the matrix M based on SVD
