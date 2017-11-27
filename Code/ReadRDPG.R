@@ -884,6 +884,6 @@ legend("topright", inset=c(-0.18, 0),
        c( expression(MGC %.% DM), expression(dCorr %.% DM), 
           expression(HHG %.% DM), "FH Test"), 
        col = c("red",  "dodgerblue", "lightsalmon4", "darkgreen"),
-       pch = c(1,4,5,6), bty = 'n', lwd = 10, xpd = NA, cex = 3)
+       pch = c(1,4,5,6), bty = 'n', xpd = NA, cex = 4, pt.cex = 5, pt.lwd = 10)
 dev.off()
 

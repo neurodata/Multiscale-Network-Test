@@ -194,24 +194,24 @@ fh.power = colMeans(cbind(fh.tau0, fh.tau2, fh.tau4, fh.tau6, fh.tau8, fh.tau10)
 
 ### Make plot
 pdf("../Figure/multi_DCSBM.pdf", width = 15, height = 6)
-par(mfrow = c(1,1), cex.lab = 5, cex.axis = 3,
-    mar = c(8,10,3,20), tcl = 0.5)
+par(mfrow = c(1,1), cex.lab = 3, cex.axis = 2,
+    mar = c(6,8,3,17), tcl = 0.5)
 plot(seq(0,1,0.2),  df.power, col = "red", 
      lty = 1, lwd = 4, ylab = "Power",
-     ylim = c(0, 1.0), type = "l", mgp = c(6,2,0),
+     ylim = c(0, 1.0), type = "l", mgp = c(5,2,0),
      xlab = expression(paste(tau)), yaxt = "n")
 axis(side = 2, at = c(0.0, 0.25, 0.5,  0.75, 1.0), 
      labels = c(0.0, 0.25, 0.5,  0.75, 1.0), 
      tck = 0.05)
-lines(seq(0,1,0.2),  adj.power, col = "dodgerblue", 
+lines(seq(0,1,0.2),  adj.power, col = "mediumblue", 
       lty = 2, lwd = 4, yaxis = NULL, type = "l")
-lines(seq(0,1,0.2),  lf.power, col = "midnightblue", 
-      lty = 3, lwd = 4, yaxis = NULL,  type = "l")
+lines(seq(0,1,0.2),  lf.power, col = "gold4", 
+      lty = 5, lwd = 4, yaxis = NULL,  type = "l")
 lines(seq(0,1,0.2),  fh.power, col = "darkgreen", 
       lty = 4, lwd = 4, yaxis = NULL,  type = "l")
-legend("topright", inset=c(-0.4, 0.5), 
+legend("topright", inset=c(-0.32, 0.5), 
        c(expression(MGC %.% DM), expression(MGC %.% AM),
          expression(paste( MGC %.% LF)), "FH Test"), seg.len = 3,
-       col = c("red", "dodgerblue", "midnightblue", "darkgreen"),
-       lty = c(1,2,3,4), lwd = 4, bty = 'n',  xpd = NA, cex = 2)
+       col = c("red", "mediumblue", "gold4", "darkgreen"),
+       lty = c(1,2,5,4), lwd = 4, bty = 'n',  xpd = NA, cex = 2)
 dev.off()

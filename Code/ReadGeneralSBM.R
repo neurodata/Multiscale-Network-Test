@@ -104,11 +104,11 @@ mgc.power = colMeans(mono.mgc <= 0.05); mcorr.power = colMeans(mono.mcorr <= 0.0
 hhg.power = colMeans(mono.hhg <= 0.05); fh.power = colMeans(mono.fh <= 0.05)
 
 pdf("../Figure/multi_monoton.pdf", width = 15, height = 6)
-par(mfrow = c(1,1), cex.lab = 5, cex.axis = 3,
-    mar = c(8,10,3,20), tcl = 0.5)
+par(mfrow = c(1,1), cex.lab = 3, cex.axis = 2,
+    mar = c(6,8,3,17), tcl = 0.5)
 plot(seq(0.05, 0.60, 0.05),  mgc.power, col = "red", 
       lty = 1, lwd = 5, ylab = "Power",
-      ylim = c(0, 0.8), type = "l", mgp = c(6,2,0),
+      ylim = c(0, 0.8), type = "l", mgp = c(5,2,0),
       xlab = expression(theta), yaxt = 'n')
 axis(side = 2, at = seq(0.0, 0.8, 0.2), 
      labels = seq(0.0, 0.8, 0.2), 
@@ -119,7 +119,7 @@ lines( seq(0.05, 0.60, 0.05),  hhg.power, col = "lightsalmon4",
        lty = 5, lwd = 5,  type = "l")
 lines( seq(0.05, 0.60, 0.05),  fh.power, col = "darkgreen", 
        lty =4, lwd = 5,  type = "l")
-legend("topright", inset=c(-0.4, 0.5), 
+legend("topright", inset=c(-0.32, 0.5), 
        c( expression(MGC %.% DM), expression(dCorr %.% DM), 
           expression(HHG %.% DM), "FH Test"), 
        col = c("red",  "dodgerblue", "lightsalmon4", "darkgreen"), seg.len = 3,
