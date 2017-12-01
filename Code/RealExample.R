@@ -174,11 +174,11 @@ for(r in 1:10){
 
 ############### making a figure ######################
 pdf("../Figure/multi_brain.pdf", width = 15, height = 6)
-par(mfrow = c(1,1), cex.lab = 5, cex.axis = 3,
-    mar = c(8,10,3,20), tcl = 0.5)
+par(mfrow = c(1,1), cex.lab = 3, cex.axis = 2,
+    mar = c(8,8,3,17), tcl = 0.5)
 plot(seq(0,100,10), c(1, colMeans(pval.mgc <= 0.05)), col = "red", 
      lty = 1, lwd = 5, 
-     ylim = c(0, 1.0), type = "l", mgp = c(6,2,0),
+     ylim = c(0, 1.0), type = "l", mgp = c(5,2,0),
      xlab = "contamination (%)", yaxt = "n", ylab = "Power")
 axis(side = 2, at = c(0.0, 0.25, 0.5, 0.75, 1.0), 
      labels = c(0.0, 0.25, 0.5, 0.75,  1.0), 
@@ -189,10 +189,10 @@ lines(seq(0,100,10), c(1, colMeans(pval.hhg <= 0.05)), col = "lightsalmon4",
       lty = 5, lwd = 5, yaxis = NULL, type = "l")
 lines(seq(0,100,10), c(1, colMeans(pval.fh <= 0.05)), col = "darkgreen", 
       lty = 4, lwd = 5, yaxis = NULL,  type = "l")
-legend("topright", inset=c(-0.43, 0.4), 
+legend("topright", inset=c(-0.32, 0.4), 
        c(expression(MGC %.% DM), expression(dCorr %.% DM), 
          expression(HHG %.% DM), "FH Test"), 
        seg.len = 2,
        col = c("red", "dodgerblue", "lightsalmon4", "darkgreen"),
-       lty = c(1,2,5,4), lwd = 4, bty = 'n', xpd = NA, cex = 2.5)
+       lty = c(1,2,5,4), lwd = 4, bty = 'n', xpd = NA, cex = 2)
 dev.off() 
